@@ -27,3 +27,9 @@ All checkpoints completed four experiences; all metrics were finite. Replay has 
 [Machine-readable proof and command outputs](clean_clone_check.json) records identities, file hashes, every command's return code/output, and the local audit script location. Raw command logs, exact absolute import provenance, weights, and run data remain under the ignored `runs/public_clone_check` folder. The first explicit-registry cache lookup failed; the second used the configured default registry cache and succeeded offline.
 
 This was a local Windows CPU check, not a hosted CI run. It verifies installation and smoke execution, not cross-device equality or evidence for the research hypothesis.
+
+The first audit assertion incorrectly expected a monitor event on every update.
+The audit was corrected to use the configured four-update monitor cadence;
+all 32 optimizer updates were checked separately in the allocation trace.
+Both nonzero command attempts remain in the proof. No training source or
+experiment result was changed to pass the audit.

@@ -29,7 +29,7 @@ The v3 implementation source was frozen at `bac05cf`, with SHA-256
 `cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe`.
 A fresh Windows CPU environment (Python 3.10.11, Torch 2.8.0+cpu, NumPy 2.2.6)
 completed all seven v3 smoke methods and the actual reset/gain/cap/replay audit.
-Its full suite passed 407 tests; one CUDA test and two Windows symlink-privilege
+Its full suite passed 443 tests; one CUDA test and two Windows symlink-privilege
 tests were skipped. CUDA smoke and the same allocation audit also passed.
 These checks do not claim a successful hosted workflow or cross-platform
 bitwise reproduction. Existing v2 numerical claims remain attached to their
