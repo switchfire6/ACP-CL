@@ -53,7 +53,7 @@ automatically. Oracle and yoked results are labeled extra-information diagnostic
 
 The CIFAR commands download the official dataset if absent. If the Toronto origin's single connection is slow, first run `.venv\Scripts\python.exe scripts\download_cifar100.py`; it fetches canonical byte ranges and verifies torchvision's official archive checksum.
 
-Override methods or seeds with `--methods er er_recycle acp --seeds 11 22 33`. Add `--resume` to the **same command/output** to continue completed-experience checkpoints or reuse completed results. Changed configurations, source versions, or execution devices require a fresh output directory. Only resume trusted local checkpoints. Analyze existing results with `.venv\Scripts\python.exe -m acp_cl analyze runs\my_cifar`.
+Override methods or seeds with `--methods er er_recycle acp --seeds 11 22 33`. Add `--resume` to the **same command/output** to continue completed-experience checkpoints or reuse completed results. Changed configurations, source versions, execution devices, or recorded runtimes require a fresh output directory. Only resume trusted local checkpoints. Analyze existing results with `.venv\Scripts\python.exe -m acp_cl analyze runs\my_cifar`.
 
 Each suite writes `manifest.json`, per-method/seed results, controller events, checkpoints, paired bootstrap summaries, CSV, and PNG/SVG plots. A separate fresh-model diagnostic is trained on each experience using its identical current-data sequence. All shipped configurations evaluate **validation** images; the test split remains excluded from development decisions.
 
@@ -72,6 +72,10 @@ Each suite writes `manifest.json`, per-method/seed results, controller events, c
 | `acp_no_consolidation`, `acp_no_replay`, `acp_no_recycling` | Component-removal controls |
 | `acp_global`, `acp_no_relaxation`, `acp_no_reopening` | Locality and reopening controls |
 | `acp_no_damage`, `acp_no_health`, `acp_random_recycling` | Sensor and replacement-selection controls |
+| `acp_v2` | Local newborn periods, frozen input drift, fixed initial schedule, mature reopening |
+| `acp_v2_no_newborn`, `acp_v2_no_reopening`, `acp_v2_learned_sensor` | V2 mechanism controls |
+| `acp_v2_oracle` | Extra-information diagnostic with true signal-domain change times |
+| `er_recycle_yoked`, `er_recycle_yoked_gain` | Extra-information controls with v2's recorded reset schedule; optional constant matched mean gain |
 
 The head is always trainable; no task ID or per-task output mask is used. Image models include an explicit recyclable adapter so channel resetting does not break residual/GroupNorm dependencies. The optimizer gates momentum displacement and separately tracks consolidation anchors and importance-window origins. See the algorithm document for exact departures from the original proposal and cited methods.
 
@@ -79,6 +83,13 @@ The important endpoints are final accuracy, forgetting, and late-stream early-le
 
 ## Current scope
 
+The [v2 results](reports/v2_results.md) cover 102 comparative runs, including
+100-experience recurrent, stationary, and noise-only streams. V2 does not
+establish an improvement over replay plus recycling. A constant matched-gain
+diagnostic is much stronger and retains its advantage when color shortcuts
+are removed. The report includes an exact reproduction of late update
+instability, all negative results, and the proposed next comparison.
+
 Correctness tests cover phase transitions, finite-update validation, momentum gating, maturity/protection, adjacent recycling resets, replay RNG isolation, metrics, all method variants, evaluation isolation, exact checkpoint continuation, and provenance rejection. The initial synthetic pilot stayed open throughout: its high accuracy therefore does **not** validate critical-period control. Subsequent calibration and real-image results are reported separately in [reports/development_results.md](reports/development_results.md).
 
-Not yet completed: publication-grade baseline reproductions (including UPGD), matched tuning/compute studies, a preregistered confirmatory cohort, CORe50/Infinite dSprites adapters, and long-horizon replication. Current image-model recycling is limited to the final adapter. Replay-damage feedback is sampled and delayed, not an old-knowledge guarantee. These limitations define the next experiments rather than a successful scientific claim.
+Not yet completed: publication-grade baseline reproductions (including UPGD), matched tuning/compute studies, a preregistered confirmatory cohort, CORe50/Infinite dSprites adapters, and independent long-horizon replication on established benchmarks. Current image-model recycling is limited to the final adapter. Replay-damage feedback is sampled and delayed, not an old-knowledge guarantee. These limitations define the next experiments rather than a successful scientific claim.

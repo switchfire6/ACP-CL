@@ -1,0 +1,240 @@
+{
+  "status": "exploratory; unadjusted paired percentile bootstrap intervals",
+  "eval_split": "validation",
+  "config": {
+    "stage": "v2 exploratory 100-experience stationary control; validation only",
+    "data": {
+      "dataset": "procedural_shapes",
+      "n_experiences": 100,
+      "n_domains": 8,
+      "regime": "stationary",
+      "train_per_class": 160,
+      "validation_per_class": 32,
+      "test_per_class": 0,
+      "image_size": 32
+    },
+    "model": "cnn",
+    "width": 64,
+    "batch_size": 32,
+    "steps_per_experience": 20,
+    "eval_every_steps": 4,
+    "early_examples": 256,
+    "eval_split": "validation",
+    "replay_capacity": 256,
+    "replay_batch_size": 32,
+    "probe_batch_size": 32,
+    "monitor_decay": 0.7,
+    "scratch_reference": true,
+    "checkpoint": true,
+    "threads": 2,
+    "methods": [
+      "er_recycle",
+      "acp_v2",
+      "acp_v2_no_reopening"
+    ],
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "primary_method": "acp_v2",
+    "retention_eval_every_experiences": 10,
+    "progress_every_experiences": 10,
+    "controller": {
+      "monitor_interval": 5,
+      "scaffold_steps": 20,
+      "min_open_steps": 40,
+      "stable_windows": 2,
+      "stability_loss_tol": 0.1,
+      "stability_drift_tol": 0.2,
+      "closing_windows": 4,
+      "novel_windows": 2,
+      "reopen_max_windows": 3,
+      "cooldown_windows": 1,
+      "top_k": 1,
+      "g_min": 0.1,
+      "novelty_bias": 1.5,
+      "open_threshold": 0.5
+    },
+    "plasticity": {
+      "lr": 0.03,
+      "momentum": 0.9,
+      "weight_decay": 0.0001,
+      "maturity_steps": 30,
+      "recycle_interval": 20,
+      "recycle_fraction": 0.05,
+      "adult_recycle_fraction": 0.05,
+      "consolidation_rate": 0.3,
+      "newborn_steps": 30
+    }
+  },
+  "config_sha256": "8a7a8436423594f9cf32524af23eecb4fd061cea0fd48a46ef3f12439e908a82",
+  "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+  "methods": [
+    {
+      "method": "acp_v2_no_reopening",
+      "n_seeds": 3,
+      "information_access": "training stream only",
+      "final_accuracy": 0.7293489583333334,
+      "final_accuracy_sd": 0.16610680094343355,
+      "forgetting": 0.14520202020202022,
+      "forgetting_sd": 0.2484914967519301,
+      "late_early_auc": 0.8502864583333333,
+      "late_early_auc_sd": 0.10291395258445762,
+      "late_plasticity_gap": 0.5830859375,
+      "late_plasticity_gap_sd": 0.11179045311525866,
+      "wall_seconds": 73.15743296667158,
+      "replay_bytes": 788480.0,
+      "peak_cuda_bytes": 87514624.0,
+      "reopening_events": 0.0
+    },
+    {
+      "method": "acp_v2",
+      "n_seeds": 3,
+      "information_access": "training stream only",
+      "final_accuracy": 0.791953125,
+      "final_accuracy_sd": 0.0871200946319038,
+      "forgetting": 0.01120580808080808,
+      "forgetting_sd": 0.016680030380874986,
+      "late_early_auc": 0.7830859375,
+      "late_early_auc_sd": 0.09164532869695359,
+      "late_plasticity_gap": 0.5158854166666668,
+      "late_plasticity_gap_sd": 0.09308626807449345,
+      "wall_seconds": 71.84382326666673,
+      "replay_bytes": 788480.0,
+      "peak_cuda_bytes": 87714816.0,
+      "reopening_events": 2.6666666666666665
+    },
+    {
+      "method": "er_recycle",
+      "n_seeds": 3,
+      "information_access": "training stream only",
+      "final_accuracy": 0.9610416666666667,
+      "final_accuracy_sd": 0.06382661093165477,
+      "forgetting": 0.03119739057239057,
+      "forgetting_sd": 0.052190613832808985,
+      "late_early_auc": 0.94484375,
+      "late_early_auc_sd": 0.03298344144670125,
+      "late_plasticity_gap": 0.6776432291666667,
+      "late_plasticity_gap_sd": 0.03811387863960354,
+      "wall_seconds": 52.763731500002905,
+      "replay_bytes": 788480.0,
+      "peak_cuda_bytes": 87101440.0,
+      "reopening_events": 0.0
+    }
+  ],
+  "paired": [
+    {
+      "contrast": "acp_v2 - acp_v2_no_reopening",
+      "endpoint": "final_accuracy",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": 0.06260416666666664,
+      "ci_low": 0.00015624999999996891,
+      "ci_high": 0.18718749999999995,
+      "n_pairs": 3
+    },
+    {
+      "contrast": "acp_v2 - acp_v2_no_reopening",
+      "endpoint": "forgetting",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": -0.13399621212121213,
+      "ci_low": -0.40167297979797983,
+      "ci_high": 0.00023674242424242425,
+      "n_pairs": 3
+    },
+    {
+      "contrast": "acp_v2 - acp_v2_no_reopening",
+      "endpoint": "late_early_auc",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": -0.06720052083333335,
+      "ci_low": -0.20390625000000007,
+      "ci_high": 0.0014062499999999423,
+      "n_pairs": 3
+    },
+    {
+      "contrast": "acp_v2 - acp_v2_no_reopening",
+      "endpoint": "late_plasticity_gap",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": -0.06720052083333335,
+      "ci_low": -0.20390625000000004,
+      "ci_high": 0.0014062499999999978,
+      "n_pairs": 3
+    },
+    {
+      "contrast": "acp_v2 - er_recycle",
+      "endpoint": "final_accuracy",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": -0.16908854166666665,
+      "ci_low": -0.26226562499999995,
+      "ci_high": 0.0050000000000000044,
+      "n_pairs": 3
+    },
+    {
+      "contrast": "acp_v2 - er_recycle",
+      "endpoint": "forgetting",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": -0.019991582491582494,
+      "ci_low": -0.08948863636363637,
+      "ci_high": 0.02919823232323232,
+      "n_pairs": 3
+    },
+    {
+      "contrast": "acp_v2 - er_recycle",
+      "endpoint": "late_early_auc",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": -0.1617578125,
+      "ci_low": -0.255,
+      "ci_high": -0.02621093749999992,
+      "n_pairs": 3
+    },
+    {
+      "contrast": "acp_v2 - er_recycle",
+      "endpoint": "late_plasticity_gap",
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": -0.16175781250000004,
+      "ci_low": -0.25500000000000006,
+      "ci_high": -0.02621093750000003,
+      "n_pairs": 3
+    }
+  ]
+}

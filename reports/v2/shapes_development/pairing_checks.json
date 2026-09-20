@@ -1,0 +1,81 @@
+{
+  "suite": "v2_shapes_development",
+  "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+  "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+  "checks_passed": true,
+  "seeds": [
+    {
+      "seed": 101,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_learned_sensor",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "buffer_and_sampling_rng_sha256": "af8b2abffb1636a2d781cee069af79d549a1fbf18474a95b3650a3ec42103c6f",
+      "common_training_exposure": {
+        "current_examples": 10240,
+        "replay_examples": 10208,
+        "probe_forward_examples": 4096,
+        "train_forward_calls": 639,
+        "backward_calls": 639
+      },
+      "exact_prefix_updates_verified": {}
+    },
+    {
+      "seed": 202,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_learned_sensor",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "buffer_and_sampling_rng_sha256": "74e76b00d1e7d6db11d77a624739e7f02967929eb5f43b14ee18920025719eec",
+      "common_training_exposure": {
+        "current_examples": 10240,
+        "replay_examples": 10208,
+        "probe_forward_examples": 4096,
+        "train_forward_calls": 639,
+        "backward_calls": 639
+      },
+      "exact_prefix_updates_verified": {}
+    },
+    {
+      "seed": 303,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_learned_sensor",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "buffer_and_sampling_rng_sha256": "6d25a8117fd7b09a99733ed0351466617d130c2426ee7275f3eaab000e8c5cd2",
+      "common_training_exposure": {
+        "current_examples": 10240,
+        "replay_examples": 10208,
+        "probe_forward_examples": 4096,
+        "train_forward_calls": 639,
+        "backward_calls": 639
+      },
+      "exact_prefix_updates_verified": {}
+    }
+  ],
+  "scope": "actual replay tensors, membership/train/probe RNGs, exposure counts; optional exact curves/allocation prefixes"
+}

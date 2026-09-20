@@ -1,0 +1,60 @@
+{
+  "suite": "v2_shapes_noise_only",
+  "config_sha256": "892eadf80120b6298ca7eba3f858bb571f0a967d854badaba71fb9eb80eee509",
+  "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+  "checks_passed": true,
+  "seeds": [
+    {
+      "seed": 101,
+      "methods": [
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_reopening"
+      ],
+      "buffer_and_sampling_rng_sha256": "ac3957b402f8983247a6627dbddd8571345823e737895bba6eb0fc203a8df3b2",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {}
+    },
+    {
+      "seed": 202,
+      "methods": [
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_reopening"
+      ],
+      "buffer_and_sampling_rng_sha256": "ec37f24931361d4a9ba583f5686ba061d8ef11ba2b8458d75d3e1ac2ad5411e8",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {}
+    },
+    {
+      "seed": 303,
+      "methods": [
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_reopening"
+      ],
+      "buffer_and_sampling_rng_sha256": "89da43b31cdeabadc15b5a141b08c0a600f62489be5bdba7f154b4074c005c0f",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {}
+    }
+  ],
+  "scope": "actual replay tensors, membership/train/probe RNGs, exposure counts; optional exact curves/allocation prefixes"
+}

@@ -1,0 +1,127 @@
+{
+  "status": "all planned runs complete",
+  "comparative_runs": 102,
+  "scratch_fits": 972,
+  "additional_exact_failure_reproductions": 1,
+  "suites": [
+    {
+      "suite": "v2_gaussian",
+      "comparative_runs": 30,
+      "scratch_fits": 24,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_learned_sensor",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "experiences": 8,
+      "config_sha256": "c39489e894bc7d594594bf238103868dda45e6ec59aae22bcf88871d55902559",
+      "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+      "device": "cpu",
+      "training_code_commit": "ad09b75637d6d2a496ca0e27d69e29735a57dc31"
+    },
+    {
+      "suite": "v2_shapes_development",
+      "comparative_runs": 30,
+      "scratch_fits": 48,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_learned_sensor",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "experiences": 16,
+      "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+      "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+      "device": "cuda",
+      "training_code_commit": "ad09b75637d6d2a496ca0e27d69e29735a57dc31"
+    },
+    {
+      "suite": "v2_shapes_long",
+      "comparative_runs": 24,
+      "scratch_fits": 300,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "experiences": 100,
+      "config_sha256": "37456c6b2dd7c8ed0e690a9f04e00e3537ed165c82b73be6ccb104e2e47ba12d",
+      "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+      "device": "cuda",
+      "training_code_commit": "ad09b75637d6d2a496ca0e27d69e29735a57dc31"
+    },
+    {
+      "suite": "v2_shapes_stationary",
+      "comparative_runs": 9,
+      "scratch_fits": 300,
+      "methods": [
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_reopening"
+      ],
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "experiences": 100,
+      "config_sha256": "8a7a8436423594f9cf32524af23eecb4fd061cea0fd48a46ef3f12439e908a82",
+      "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+      "device": "cuda",
+      "training_code_commit": "ad09b75637d6d2a496ca0e27d69e29735a57dc31"
+    },
+    {
+      "suite": "v2_shapes_noise_only",
+      "comparative_runs": 9,
+      "scratch_fits": 300,
+      "methods": [
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_reopening"
+      ],
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "experiences": 100,
+      "config_sha256": "892eadf80120b6298ca7eba3f858bb571f0a967d854badaba71fb9eb80eee509",
+      "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+      "device": "cuda",
+      "training_code_commit": "ad09b75637d6d2a496ca0e27d69e29735a57dc31"
+    }
+  ]
+}

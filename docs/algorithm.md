@@ -1,5 +1,7 @@
 # ACP-CL reference algorithm, version 0.1
 
+The later `acp_v2` revision is documented separately in [algorithm_v2.md](algorithm_v2.md).
+
 This is a deterministic experimental candidate derived from the supplied report. It is not a biological simulation, a canonical SI/CBP reproduction, or an established improvement over replay. The narrower claim and primary-source audit are in [research_review.md](research_review.md); the planned scientific study is in [experiment_protocol.md](experiment_protocol.md).
 
 ## What is implemented

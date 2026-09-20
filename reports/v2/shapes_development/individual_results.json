@@ -1,0 +1,3946 @@
+[
+  {
+    "method": "acp",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.4013671875,
+      "average_incremental_accuracy": 0.3442057291666667,
+      "backward_transfer": 0.0265625,
+      "forgetting": 0.03958333333333333,
+      "late_early_auc": 0.39697265625,
+      "mean_early_auc": 0.343017578125,
+      "late_plasticity_gap": 0.147216796875
+    },
+    "accuracy_matrix": [
+      [0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.3359375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.4296875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.3828125, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.296875, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4765625, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.40625, 0.4375, 0.4375, 0.3984375, 0.3359375, 0.296875, 0.46875, 0.359375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.40625, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.671875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.46875, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.375, null],
+      [0.4453125, 0.3671875, 0.4609375, 0.3984375, 0.453125, 0.3125, 0.3359375, 0.3828125, 0.453125, 0.40625, 0.5625, 0.40625, 0.46875, 0.2578125, 0.375, 0.3359375]
+    ],
+    "early_auc": [0.2578125, 0.2578125, 0.271484375, 0.150390625, 0.322265625, 0.376953125, 0.35546875, 0.3203125, 0.45703125, 0.392578125, 0.42578125, 0.41015625, 0.50390625, 0.26171875, 0.337890625, 0.38671875],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.00390625, 0.03125, -0.115234375, 0.083984375, 0.103515625, 0.1171875, 0.05859375, 0.203125, 0.140625, 0.189453125, 0.1484375, 0.265625, 0.001953125, 0.08984375, 0.138671875],
+    "phase_monitor_counts": {
+      "open": 61,
+      "scaffold": 3
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 8.413333699994837,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 87301632,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.9578124997535017,
+      "summed_feature_data_displacement": 26.373253747968256,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "0d2f0af786df10cb17e975ce4134d6c36b69ce874fb1b3464525b1107baaa41b",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "scaffold_complete"
+      }
+    ],
+    "risk_contractions": 3
+  },
+  {
+    "method": "acp",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.40771484375,
+      "average_incremental_accuracy": 0.3916341145833333,
+      "backward_transfer": 0.013020833333333334,
+      "forgetting": 0.030729166666666665,
+      "late_early_auc": 0.39208984375,
+      "mean_early_auc": 0.355224609375,
+      "late_plasticity_gap": 0.120361328125
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.3984375, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4453125, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.4453125, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null],
+      [0.3671875, 0.5078125, 0.3828125, 0.25, 0.46875, 0.359375, 0.5390625, 0.3984375, 0.3828125, 0.578125, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.3984375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.2734375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.328125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.484375, null],
+      [0.4375, 0.484375, 0.3203125, 0.390625, 0.375, 0.421875, 0.46875, 0.3828125, 0.4453125, 0.484375, 0.3515625, 0.3046875, 0.4296875, 0.328125, 0.484375, 0.4140625]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.369140625, 0.396484375, 0.251953125, 0.291015625, 0.375, 0.41015625, 0.474609375, 0.283203125, 0.33203125, 0.416015625, 0.33203125, 0.48046875, 0.408203125],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.134765625, 0.1171875, -0.041015625, -0.08203125, 0.125, 0.15625, 0.216796875, 0.005859375, 0.083984375, 0.16796875, 0.080078125, 0.10546875, 0.146484375],
+    "phase_monitor_counts": {
+      "open": 61,
+      "scaffold": 3
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.684938999998849,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 88502784,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 24.272403368376537,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "882a981ea2c824e40a259a537dec2e20e248fbaeb128d2f7f88d848806323c98",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "scaffold_complete"
+      }
+    ],
+    "risk_contractions": 0
+  },
+  {
+    "method": "acp",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.38330078125,
+      "average_incremental_accuracy": 0.38583984374999997,
+      "backward_transfer": -0.06822916666666666,
+      "forgetting": 0.1265625,
+      "late_early_auc": 0.40087890625,
+      "mean_early_auc": 0.3511962890625,
+      "late_plasticity_gap": 0.123779296875
+    },
+    "accuracy_matrix": [
+      [0.375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.3359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.5703125, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.6640625, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.28125, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4765625, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.34375, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.421875, null, null, null, null, null, null, null],
+      [0.265625, 0.40625, 0.265625, 0.5625, 0.2421875, 0.296875, 0.6640625, 0.53125, 0.328125, 0.4296875, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.453125, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.5859375, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4609375, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.6484375, null],
+      [0.28125, 0.265625, 0.375, 0.6015625, 0.2578125, 0.3359375, 0.46875, 0.4921875, 0.2890625, 0.25, 0.4609375, 0.578125, 0.25, 0.2890625, 0.4453125, 0.4921875]
+    ],
+    "early_auc": [0.396484375, 0.25, 0.21484375, 0.09765625, 0.361328125, 0.232421875, 0.49609375, 0.36328125, 0.380859375, 0.3359375, 0.40234375, 0.466796875, 0.51171875, 0.384765625, 0.375, 0.349609375],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0, -0.03515625, -0.15234375, 0.03125, -0.017578125, 0.208984375, 0.0859375, 0.060546875, 0.087890625, 0.119140625, 0.173828125, 0.240234375, 0.138671875, 0.1015625, 0.068359375],
+    "phase_monitor_counts": {
+      "open": 61,
+      "scaffold": 3
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 8.546033000005991,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 91505664,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.9718749998356678,
+      "summed_feature_data_displacement": 26.90189721215711,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "53e325d7e6f877aef382530ed9f956aef0b619a1d0fdf10720ef22a7e97c0f2d",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "scaffold_complete"
+      }
+    ],
+    "risk_contractions": 2
+  },
+  {
+    "method": "acp_v2_learned_sensor",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.3583984375,
+      "average_incremental_accuracy": 0.32936197916666665,
+      "backward_transfer": -0.058333333333333334,
+      "forgetting": 0.103125,
+      "late_early_auc": 0.388427734375,
+      "mean_early_auc": 0.34765625,
+      "late_plasticity_gap": 0.138671875
+    },
+    "accuracy_matrix": [
+      [0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.4453125, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.46875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.3515625, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.3046875, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.5390625, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.40625, 0.4375, 0.4375, 0.390625, 0.34375, 0.296875, 0.46875, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.5234375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.71875, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.6171875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.375, null],
+      [0.484375, 0.3203125, 0.2265625, 0.3984375, 0.3671875, 0.265625, 0.3515625, 0.3671875, 0.4453125, 0.359375, 0.2265625, 0.4140625, 0.40625, 0.2734375, 0.390625, 0.4375]
+    ],
+    "early_auc": [0.2578125, 0.2578125, 0.271484375, 0.150390625, 0.435546875, 0.421875, 0.34765625, 0.3125, 0.45703125, 0.357421875, 0.439453125, 0.4375, 0.533203125, 0.220703125, 0.3046875, 0.357421875],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.00390625, 0.03125, -0.115234375, 0.197265625, 0.1484375, 0.109375, 0.05078125, 0.203125, 0.10546875, 0.203125, 0.17578125, 0.294921875, -0.0390625, 0.056640625, 0.109375],
+    "phase_monitor_counts": {
+      "adult": 31,
+      "closing": 4,
+      "open": 8,
+      "reopened": 18,
+      "scaffold": 3
+    },
+    "reopening_events": 6,
+    "diagnostics": {
+      "mean_consolidation": 0.1655079573392868,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 44,
+      "total_maturations": 38,
+      "total_local_consolidations": 29,
+      "newborn_units": 6,
+      "pending_maturation_units": 6,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 10.033348900004057,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 87301632,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.26530590594191444,
+      "summed_feature_data_displacement": 14.268964916449868,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [90, 120, 150, 190, 230, 270],
+      "changes_with_reopening_in_window": 5,
+      "delays_within_window": [10, 10, 10, 10, 10],
+      "reopenings_outside_change_windows": 1,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "9b7231558eaa2e44f029829806d07d938f4788078334d115b2a0a81d83bab52c",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 90,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 105,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 120,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 135,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 150,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 165,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 190,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 205,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 230,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 245,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 270,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 285,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      }
+    ],
+    "risk_contractions": 3
+  },
+  {
+    "method": "acp_v2_learned_sensor",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.41845703125,
+      "average_incremental_accuracy": 0.39677734375,
+      "backward_transfer": 0.03958333333333333,
+      "forgetting": 0.030208333333333334,
+      "late_early_auc": 0.40185546875,
+      "mean_early_auc": 0.3536376953125,
+      "late_plasticity_gap": 0.130126953125
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.3828125, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.234375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.390625, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null],
+      [0.3984375, 0.609375, 0.296875, 0.296875, 0.46875, 0.40625, 0.328125, 0.390625, 0.3984375, 0.6875, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.25, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.296875, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.484375, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.328125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.484375, null],
+      [0.3984375, 0.4765625, 0.359375, 0.34375, 0.3984375, 0.4375, 0.4921875, 0.4453125, 0.4453125, 0.484375, 0.3515625, 0.375, 0.4609375, 0.3046875, 0.4921875, 0.4296875]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.37109375, 0.3984375, 0.25, 0.248046875, 0.3125, 0.443359375, 0.4921875, 0.26171875, 0.33984375, 0.458984375, 0.306640625, 0.498046875, 0.4140625],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.13671875, 0.119140625, -0.04296875, -0.125, 0.0625, 0.189453125, 0.234375, -0.015625, 0.091796875, 0.2109375, 0.0546875, 0.123046875, 0.15234375],
+    "phase_monitor_counts": {
+      "adult": 34,
+      "closing": 4,
+      "open": 8,
+      "reopened": 15,
+      "scaffold": 3
+    },
+    "reopening_events": 5,
+    "diagnostics": {
+      "mean_consolidation": 0.16125327348709106,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 36,
+      "total_maturations": 32,
+      "total_local_consolidations": 23,
+      "newborn_units": 4,
+      "pending_maturation_units": 4,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 10.214592600008473,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 89703936,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.31492750637836664,
+      "summed_feature_data_displacement": 13.80661950122064,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [110, 170, 210, 270, 310],
+      "changes_with_reopening_in_window": 5,
+      "delays_within_window": [10, 10, 10, 10, 10],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "0300a446a7881c072295f6e4e1d7999533bd837408692a34763d76e68dd023a3",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 110,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 125,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 170,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 185,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 210,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 225,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 270,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 285,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 310,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      }
+    ],
+    "risk_contractions": 0
+  },
+  {
+    "method": "acp_v2_learned_sensor",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.4306640625,
+      "average_incremental_accuracy": 0.40761718750000003,
+      "backward_transfer": -0.003125,
+      "forgetting": 0.06510416666666667,
+      "late_early_auc": 0.34814453125,
+      "mean_early_auc": 0.3004150390625,
+      "late_plasticity_gap": 0.071044921875
+    },
+    "accuracy_matrix": [
+      [0.375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.3359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.6015625, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.46875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.2734375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4609375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.421875, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.578125, null, null, null, null, null, null, null],
+      [0.4140625, 0.4453125, 0.2265625, 0.4140625, 0.4765625, 0.3203125, 0.6484375, 0.3828125, 0.4296875, 0.4140625, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.34375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.5078125, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4765625, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4453125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.5625, null],
+      [0.375, 0.3515625, 0.453125, 0.59375, 0.3984375, 0.40625, 0.46875, 0.46875, 0.390625, 0.3046875, 0.46875, 0.578125, 0.40625, 0.359375, 0.4375, 0.4296875]
+    ],
+    "early_auc": [0.396484375, 0.25, 0.21484375, 0.0859375, 0.251953125, 0.275390625, 0.26953125, 0.27734375, 0.375, 0.33203125, 0.31640625, 0.41015625, 0.435546875, 0.390625, 0.296875, 0.228515625],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0, -0.03515625, -0.1640625, -0.078125, 0.025390625, -0.017578125, 0.0, 0.0546875, 0.083984375, 0.033203125, 0.1171875, 0.1640625, 0.14453125, 0.0234375, -0.052734375],
+    "phase_monitor_counts": {
+      "adult": 34,
+      "closing": 4,
+      "open": 8,
+      "reopened": 15,
+      "scaffold": 3
+    },
+    "reopening_events": 5,
+    "diagnostics": {
+      "mean_consolidation": 0.14727072417736053,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 39,
+      "total_local_consolidations": 27,
+      "newborn_units": 6,
+      "pending_maturation_units": 6,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 9.889334799998323,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 91505664,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.2932018608693622,
+      "summed_feature_data_displacement": 14.686901313154722,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [110, 150, 190, 270, 310],
+      "changes_with_reopening_in_window": 5,
+      "delays_within_window": [10, 10, 10, 10, 10],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "7cbb7e1ff325e80e3769accaad05f0543aa823ae80bca22ea434b076c52bf2d9",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 110,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 125,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 150,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 165,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 190,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 205,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 270,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 285,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 310,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      }
+    ],
+    "risk_contractions": 1
+  },
+  {
+    "method": "acp_v2_no_newborn",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.35498046875,
+      "average_incremental_accuracy": 0.3287434895833333,
+      "backward_transfer": -0.05260416666666667,
+      "forgetting": 0.10416666666666667,
+      "late_early_auc": 0.37451171875,
+      "mean_early_auc": 0.3402099609375,
+      "late_plasticity_gap": 0.124755859375
+    },
+    "accuracy_matrix": [
+      [0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.4453125, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.4765625, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.3203125, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4921875, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.40625, 0.4375, 0.4140625, 0.40625, 0.359375, 0.3046875, 0.46875, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.4765625, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.703125, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.6328125, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4140625, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.3671875, null],
+      [0.515625, 0.28125, 0.2421875, 0.4140625, 0.3515625, 0.2109375, 0.34375, 0.3828125, 0.5078125, 0.3671875, 0.2109375, 0.40625, 0.3671875, 0.28125, 0.390625, 0.40625]
+    ],
+    "early_auc": [0.2578125, 0.2578125, 0.271484375, 0.150390625, 0.435546875, 0.419921875, 0.345703125, 0.30859375, 0.439453125, 0.3515625, 0.423828125, 0.4296875, 0.513671875, 0.1953125, 0.302734375, 0.33984375],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.00390625, 0.03125, -0.115234375, 0.197265625, 0.146484375, 0.107421875, 0.046875, 0.185546875, 0.099609375, 0.1875, 0.16796875, 0.275390625, -0.064453125, 0.0546875, 0.091796875],
+    "phase_monitor_counts": {
+      "adult": 27,
+      "closing": 4,
+      "open": 8,
+      "reopened": 22,
+      "scaffold": 3
+    },
+    "reopening_events": 8,
+    "diagnostics": {
+      "mean_consolidation": 0.15122149884700775,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 9.319425499998033,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 86713856,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.2622514390041607,
+      "summed_feature_data_displacement": 14.425604816696927,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [90, 120, 150, 190, 230, 260, 290, 320],
+      "changes_with_reopening_in_window": 5,
+      "delays_within_window": [10, 10, 10, 10, 10],
+      "reopenings_outside_change_windows": 3,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "e99b513fd5ea0161f81b78d347c9d89d43a900b2f2781f7042ab573290f5e287",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 90,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 105,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 120,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 135,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 150,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 165,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 190,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 205,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 230,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 245,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 260,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 275,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 290,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 305,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 320,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      }
+    ],
+    "risk_contractions": 3
+  },
+  {
+    "method": "acp_v2_no_newborn",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.39697265625,
+      "average_incremental_accuracy": 0.3640950520833333,
+      "backward_transfer": 0.0671875,
+      "forgetting": 0.005729166666666666,
+      "late_early_auc": 0.340576171875,
+      "mean_early_auc": 0.3193359375,
+      "late_plasticity_gap": 0.06884765625
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.40625, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null],
+      [0.3984375, 0.4765625, 0.234375, 0.34375, 0.3984375, 0.2578125, 0.25, 0.2265625, 0.4453125, 0.484375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.25, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.2890625, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.5, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.25, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.25, null],
+      [0.3984375, 0.4765625, 0.3359375, 0.34375, 0.3984375, 0.375, 0.4765625, 0.296875, 0.4453125, 0.484375, 0.3828125, 0.375, 0.4609375, 0.328125, 0.4921875, 0.28125]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.37109375, 0.3984375, 0.25, 0.25, 0.251953125, 0.419921875, 0.515625, 0.248046875, 0.349609375, 0.439453125, 0.251953125, 0.25390625, 0.24609375],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.13671875, 0.119140625, -0.04296875, -0.123046875, 0.001953125, 0.166015625, 0.2578125, -0.029296875, 0.1015625, 0.19140625, 0.0, -0.12109375, -0.015625],
+    "phase_monitor_counts": {
+      "adult": 28,
+      "closing": 4,
+      "open": 8,
+      "reopened": 21,
+      "scaffold": 3
+    },
+    "reopening_events": 7,
+    "diagnostics": {
+      "mean_consolidation": 0.1786946952342987,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 37,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 9.726588100005756,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 89116160,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.32561904215935933,
+      "summed_feature_data_displacement": 13.665905334054585,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [90, 120, 170, 210, 240, 270, 300],
+      "changes_with_reopening_in_window": 4,
+      "delays_within_window": [10, 10, 10, 10],
+      "reopenings_outside_change_windows": 3,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "bacce5cf00a74f83fbc215e01570182b90d8786ef1862c32906b0239d1cd3adf",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 90,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 105,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 120,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 135,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 170,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 185,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 210,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 225,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 240,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 255,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 270,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 285,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 300,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 315,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      }
+    ],
+    "risk_contractions": 0
+  },
+  {
+    "method": "acp_v2_no_newborn",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.408203125,
+      "average_incremental_accuracy": 0.39674479166666665,
+      "backward_transfer": -0.007291666666666667,
+      "forgetting": 0.07239583333333334,
+      "late_early_auc": 0.389892578125,
+      "mean_early_auc": 0.32763671875,
+      "late_plasticity_gap": 0.11279296875
+    },
+    "accuracy_matrix": [
+      [0.375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.3359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.6015625, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.53125, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.328125, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.375, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.46875, null, null, null, null, null, null, null],
+      [0.4140625, 0.3515625, 0.3828125, 0.484375, 0.4375, 0.3515625, 0.4765625, 0.390625, 0.4296875, 0.3515625, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.296875, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.4921875, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4765625, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.640625, null],
+      [0.4140625, 0.25, 0.4609375, 0.359375, 0.3828125, 0.515625, 0.453125, 0.46875, 0.421875, 0.2421875, 0.4921875, 0.4140625, 0.390625, 0.4140625, 0.40625, 0.4453125]
+    ],
+    "early_auc": [0.396484375, 0.25, 0.21484375, 0.0859375, 0.27734375, 0.296875, 0.302734375, 0.298828125, 0.41015625, 0.330078125, 0.419921875, 0.26953125, 0.44921875, 0.400390625, 0.46875, 0.37109375],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0, -0.03515625, -0.1640625, -0.052734375, 0.046875, 0.015625, 0.021484375, 0.08984375, 0.08203125, 0.13671875, -0.0234375, 0.177734375, 0.154296875, 0.1953125, 0.08984375],
+    "phase_monitor_counts": {
+      "adult": 28,
+      "closing": 4,
+      "open": 8,
+      "reopened": 21,
+      "scaffold": 3
+    },
+    "reopening_events": 7,
+    "diagnostics": {
+      "mean_consolidation": 0.15657757222652435,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 41,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 10.229588900008821,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 90917888,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.29984256417363764,
+      "summed_feature_data_displacement": 15.27162923092873,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [90, 120, 150, 190, 230, 270, 310],
+      "changes_with_reopening_in_window": 6,
+      "delays_within_window": [10, 10, 10, 10, 10, 10],
+      "reopenings_outside_change_windows": 1,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "4ff1b84d89828184eb592b82385b660ed74754aa81eedfb44cebe74fa52c4954",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 90,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 105,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 120,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 135,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 150,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 165,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 190,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 205,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 230,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 245,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 270,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 285,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 310,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      }
+    ],
+    "risk_contractions": 1
+  },
+  {
+    "method": "acp_v2_no_reopening",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.3974609375,
+      "average_incremental_accuracy": 0.34238281249999997,
+      "backward_transfer": -0.005729166666666666,
+      "forgetting": 0.06614583333333333,
+      "late_early_auc": 0.39599609375,
+      "mean_early_auc": 0.35205078125,
+      "late_plasticity_gap": 0.146240234375
+    },
+    "accuracy_matrix": [
+      [0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.4453125, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.4609375, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.3984375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.6171875, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.40625, 0.4375, 0.4375, 0.3984375, 0.3359375, 0.296875, 0.46875, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.6953125, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.546875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.421875, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.375, null],
+      [0.5703125, 0.328125, 0.2890625, 0.4453125, 0.40625, 0.296875, 0.4453125, 0.3671875, 0.5703125, 0.3828125, 0.2265625, 0.4140625, 0.4296875, 0.3203125, 0.4921875, 0.375]
+    ],
+    "early_auc": [0.2578125, 0.2578125, 0.271484375, 0.150390625, 0.435546875, 0.435546875, 0.37109375, 0.28515625, 0.4765625, 0.3671875, 0.419921875, 0.439453125, 0.5234375, 0.2890625, 0.279296875, 0.373046875],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.00390625, 0.03125, -0.115234375, 0.197265625, 0.162109375, 0.1328125, 0.0234375, 0.22265625, 0.115234375, 0.18359375, 0.177734375, 0.28515625, 0.029296875, 0.03125, 0.125],
+    "phase_monitor_counts": {
+      "adult": 49,
+      "closing": 4,
+      "open": 8,
+      "scaffold": 3
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.12021403759717941,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 44,
+      "total_maturations": 38,
+      "total_local_consolidations": 30,
+      "newborn_units": 6,
+      "pending_maturation_units": 6,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 9.677314700005809,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 87915008,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.26265188411075036,
+      "summed_feature_data_displacement": 12.414417906607522,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "ad284507693800b176c4027f78126bf530cc248e80c893c161b4c88cb8002742",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      }
+    ],
+    "risk_contractions": 3
+  },
+  {
+    "method": "acp_v2_no_reopening",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.4326171875,
+      "average_incremental_accuracy": 0.3975911458333334,
+      "backward_transfer": 0.046875,
+      "forgetting": 0.016145833333333335,
+      "late_early_auc": 0.401611328125,
+      "mean_early_auc": 0.3541259765625,
+      "late_plasticity_gap": 0.1298828125
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.3828125, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.46875, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.4140625, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null],
+      [0.3984375, 0.4765625, 0.3203125, 0.34375, 0.3984375, 0.4453125, 0.390625, 0.4609375, 0.4453125, 0.484375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.328125, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.25, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.5390625, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.328125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.484375, null],
+      [0.390625, 0.640625, 0.3125, 0.3203125, 0.4609375, 0.4140625, 0.4296875, 0.4296875, 0.4140625, 0.6953125, 0.3828125, 0.3046875, 0.515625, 0.3671875, 0.4375, 0.40625]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.37109375, 0.3984375, 0.25, 0.25, 0.3203125, 0.447265625, 0.529296875, 0.251953125, 0.31640625, 0.44921875, 0.34375, 0.478515625, 0.396484375],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.13671875, 0.119140625, -0.04296875, -0.123046875, 0.0703125, 0.193359375, 0.271484375, -0.025390625, 0.068359375, 0.201171875, 0.091796875, 0.103515625, 0.134765625],
+    "phase_monitor_counts": {
+      "adult": 49,
+      "closing": 4,
+      "open": 8,
+      "scaffold": 3
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.12327881157398224,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 39,
+      "total_local_consolidations": 28,
+      "newborn_units": 6,
+      "pending_maturation_units": 6,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 10.05469480001193,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 89716736,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.3048409884308755,
+      "summed_feature_data_displacement": 12.501876151465666,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "2d1e4cbedf993d5ea547176a3decc9489c36616681c8fee1520404ad258d79e4",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      }
+    ],
+    "risk_contractions": 0
+  },
+  {
+    "method": "acp_v2_no_reopening",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.39013671875,
+      "average_incremental_accuracy": 0.40634765624999997,
+      "backward_transfer": -0.0515625,
+      "forgetting": 0.1578125,
+      "late_early_auc": 0.364501953125,
+      "mean_early_auc": 0.30078125,
+      "late_plasticity_gap": 0.08740234375
+    },
+    "accuracy_matrix": [
+      [0.375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.3359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.6015625, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.46875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.4921875, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.53125, null, null, null, null, null, null, null],
+      [0.7109375, 0.359375, 0.3984375, 0.265625, 0.8359375, 0.34375, 0.4140625, 0.1640625, 0.703125, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.515625, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.7578125, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.453125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.5703125, null],
+      [0.3046875, 0.3125, 0.40625, 0.5703125, 0.3046875, 0.4140625, 0.4296875, 0.40625, 0.296875, 0.2734375, 0.4453125, 0.5625, 0.2890625, 0.3671875, 0.40625, 0.453125]
+    ],
+    "early_auc": [0.396484375, 0.25, 0.21484375, 0.0859375, 0.251953125, 0.275390625, 0.201171875, 0.220703125, 0.33984375, 0.353515625, 0.39453125, 0.29296875, 0.59375, 0.421875, 0.20703125, 0.3125],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0, -0.03515625, -0.1640625, -0.078125, 0.025390625, -0.0859375, -0.056640625, 0.01953125, 0.10546875, 0.111328125, 0.0, 0.322265625, 0.17578125, -0.06640625, 0.03125],
+    "phase_monitor_counts": {
+      "adult": 49,
+      "closing": 4,
+      "open": 8,
+      "scaffold": 3
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.11452561616897583,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 39,
+      "total_local_consolidations": 28,
+      "newborn_units": 6,
+      "pending_maturation_units": 6,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 9.37099580001086,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 91518464,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.2907716052139169,
+      "summed_feature_data_displacement": 13.055747447711504,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "dfd61d3340e34dda3756a04b41a5a0fa4ff88c8ab4d318dbb8b1260f6aad261b",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      }
+    ],
+    "risk_contractions": 1
+  },
+  {
+    "method": "acp_v2_oracle",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.3759765625,
+      "average_incremental_accuracy": 0.3331380208333333,
+      "backward_transfer": -0.043229166666666666,
+      "forgetting": 0.090625,
+      "late_early_auc": 0.405517578125,
+      "mean_early_auc": 0.355224609375,
+      "late_plasticity_gap": 0.15576171875
+    },
+    "accuracy_matrix": [
+      [0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.4453125, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.46875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.296875, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.65625, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.390625, 0.4375, 0.390625, 0.390625, 0.3515625, 0.296875, 0.46875, 0.3359375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.4765625, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.6171875, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.7734375, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.40625, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.375, null],
+      [0.53125, 0.3046875, 0.265625, 0.390625, 0.4296875, 0.296875, 0.34375, 0.3515625, 0.515625, 0.390625, 0.25, 0.421875, 0.4375, 0.3125, 0.390625, 0.3828125]
+    ],
+    "early_auc": [0.2578125, 0.2578125, 0.271484375, 0.150390625, 0.435546875, 0.423828125, 0.357421875, 0.28515625, 0.46484375, 0.38671875, 0.509765625, 0.453125, 0.53515625, 0.216796875, 0.318359375, 0.359375],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.00390625, 0.03125, -0.115234375, 0.197265625, 0.150390625, 0.119140625, 0.0234375, 0.2109375, 0.134765625, 0.2734375, 0.19140625, 0.296875, -0.04296875, 0.0703125, 0.111328125],
+    "phase_monitor_counts": {
+      "adult": 25,
+      "closing": 4,
+      "open": 8,
+      "reopened": 24,
+      "scaffold": 3
+    },
+    "reopening_events": 8,
+    "diagnostics": {
+      "mean_consolidation": 0.17512211203575134,
+      "consolidated_fraction": 0.004310344811528921,
+      "total_recycled": 44,
+      "total_maturations": 38,
+      "total_local_consolidations": 30,
+      "newborn_units": 6,
+      "pending_maturation_units": 6,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 9.652517499998794,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 88515584,
+    "information_access": "true signal-domain change times; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.26592537101009395,
+      "summed_feature_data_displacement": 14.052391652390693,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [85, 110, 145, 170, 205, 230, 265, 290],
+      "changes_with_reopening_in_window": 8,
+      "delays_within_window": [5, 10, 5, 10, 5, 10, 5, 10],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "e0b4c41ae2ba8ae58259a8760c248a98e2c0bb380ca661c26c59e18b7c25e0fe",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 85,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 100,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 110,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 125,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 145,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 160,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 170,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 185,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 205,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 220,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 230,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 245,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 265,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 280,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 290,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 305,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      }
+    ],
+    "risk_contractions": 3
+  },
+  {
+    "method": "acp_v2_oracle",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.41845703125,
+      "average_incremental_accuracy": 0.37672526041666665,
+      "backward_transfer": 0.034375,
+      "forgetting": 0.0140625,
+      "late_early_auc": 0.388916015625,
+      "mean_early_auc": 0.3482666015625,
+      "late_plasticity_gap": 0.1171875
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.40625, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.2265625, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.34375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.453125, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null],
+      [0.390625, 0.5078125, 0.1796875, 0.34375, 0.4140625, 0.3828125, 0.1484375, 0.3515625, 0.4453125, 0.515625, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.3359375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.2265625, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.546875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.328125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.484375, null],
+      [0.4609375, 0.46875, 0.3515625, 0.3046875, 0.421875, 0.40625, 0.484375, 0.4453125, 0.453125, 0.5234375, 0.3515625, 0.34375, 0.4296875, 0.328125, 0.4921875, 0.4296875]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.37109375, 0.3984375, 0.25, 0.25390625, 0.32421875, 0.44921875, 0.4921875, 0.216796875, 0.32421875, 0.427734375, 0.337890625, 0.44921875, 0.4140625],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.13671875, 0.119140625, -0.04296875, -0.119140625, 0.07421875, 0.1953125, 0.234375, -0.060546875, 0.076171875, 0.1796875, 0.0859375, 0.07421875, 0.15234375],
+    "phase_monitor_counts": {
+      "adult": 25,
+      "closing": 4,
+      "open": 8,
+      "reopened": 24,
+      "scaffold": 3
+    },
+    "reopening_events": 8,
+    "diagnostics": {
+      "mean_consolidation": 0.19468560814857483,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 34,
+      "total_maturations": 30,
+      "total_local_consolidations": 21,
+      "newborn_units": 4,
+      "pending_maturation_units": 4,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 10.622245499995188,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 90304512,
+    "information_access": "true signal-domain change times; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.323910046007221,
+      "summed_feature_data_displacement": 13.994285954444388,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [85, 110, 145, 170, 205, 230, 265, 290],
+      "changes_with_reopening_in_window": 8,
+      "delays_within_window": [5, 10, 5, 10, 5, 10, 5, 10],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "1c562f439e5d91b269d0105cbf1de86bffaed46c72ff57f42058f3efef99ec37",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 85,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 100,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 110,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 125,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 145,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 160,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 170,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 185,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 205,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 220,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 230,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 245,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 265,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 280,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 290,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 305,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      }
+    ],
+    "risk_contractions": 0
+  },
+  {
+    "method": "acp_v2_oracle",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.41552734375,
+      "average_incremental_accuracy": 0.41090494791666665,
+      "backward_transfer": 0.0036458333333333334,
+      "forgetting": 0.052083333333333336,
+      "late_early_auc": 0.38818359375,
+      "mean_early_auc": 0.3243408203125,
+      "late_plasticity_gap": 0.111083984375
+    },
+    "accuracy_matrix": [
+      [0.375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.3359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.6015625, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.625, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.265625, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.359375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.34375, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.5625, null, null, null, null, null, null, null],
+      [0.5234375, 0.375, 0.390625, 0.421875, 0.7265625, 0.359375, 0.4765625, 0.2578125, 0.5625, 0.328125, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.4609375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4765625, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4375, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4453125, null],
+      [0.421875, 0.2890625, 0.4140625, 0.5625, 0.484375, 0.3984375, 0.46875, 0.390625, 0.4296875, 0.2578125, 0.4609375, 0.453125, 0.46875, 0.3515625, 0.4375, 0.359375]
+    ],
+    "early_auc": [0.396484375, 0.25, 0.21484375, 0.0859375, 0.271484375, 0.275390625, 0.345703125, 0.244140625, 0.44140625, 0.244140625, 0.4296875, 0.400390625, 0.48828125, 0.359375, 0.396484375, 0.345703125],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0, -0.03515625, -0.1640625, -0.05859375, 0.025390625, 0.05859375, -0.033203125, 0.12109375, -0.00390625, 0.146484375, 0.107421875, 0.216796875, 0.11328125, 0.123046875, 0.064453125],
+    "phase_monitor_counts": {
+      "adult": 25,
+      "closing": 4,
+      "open": 8,
+      "reopened": 24,
+      "scaffold": 3
+    },
+    "reopening_events": 8,
+    "diagnostics": {
+      "mean_consolidation": 0.1715153306722641,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 40,
+      "total_maturations": 36,
+      "total_local_consolidations": 26,
+      "newborn_units": 4,
+      "pending_maturation_units": 4,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 10.351330000004964,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 92119040,
+    "information_access": "true signal-domain change times; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.29838819854359466,
+      "summed_feature_data_displacement": 16.15904475667497,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [85, 110, 145, 170, 205, 230, 265, 290],
+      "changes_with_reopening_in_window": 8,
+      "delays_within_window": [5, 10, 5, 10, 5, 10, 5, 10],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "d8f7eb1425b14548ad5f5dd33e9f4331c11ae684450221ffec1a14d31e99678e",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 85,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 100,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 110,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 125,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 145,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 160,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 170,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 185,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 205,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 220,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 230,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 245,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 265,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 280,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 290,
+        "phase": "reopened",
+        "reason": "oracle_boundary"
+      },
+      {
+        "step": 305,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      }
+    ],
+    "risk_contractions": 1
+  },
+  {
+    "method": "acp_v2",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.376953125,
+      "average_incremental_accuracy": 0.33554687499999997,
+      "backward_transfer": -0.0328125,
+      "forgetting": 0.0828125,
+      "late_early_auc": 0.38720703125,
+      "mean_early_auc": 0.3470458984375,
+      "late_plasticity_gap": 0.137451171875
+    },
+    "accuracy_matrix": [
+      [0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.234375, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.4453125, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.46875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.3515625, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.3046875, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.5390625, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.40625, 0.4375, 0.4375, 0.390625, 0.34375, 0.296875, 0.46875, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.5234375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.71875, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.625, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.40625, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.375, null],
+      [0.5546875, 0.328125, 0.2578125, 0.3984375, 0.3984375, 0.296875, 0.34375, 0.3515625, 0.53125, 0.390625, 0.2421875, 0.4140625, 0.46875, 0.296875, 0.390625, 0.3671875]
+    ],
+    "early_auc": [0.2578125, 0.2578125, 0.271484375, 0.150390625, 0.435546875, 0.421875, 0.34765625, 0.3125, 0.45703125, 0.357421875, 0.439453125, 0.4375, 0.533203125, 0.22265625, 0.30859375, 0.341796875],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.00390625, 0.03125, -0.115234375, 0.197265625, 0.1484375, 0.109375, 0.05078125, 0.203125, 0.10546875, 0.203125, 0.17578125, 0.294921875, -0.037109375, 0.060546875, 0.09375],
+    "phase_monitor_counts": {
+      "adult": 27,
+      "closing": 4,
+      "open": 8,
+      "reopened": 22,
+      "scaffold": 3
+    },
+    "reopening_events": 8,
+    "diagnostics": {
+      "mean_consolidation": 0.1700509786605835,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 44,
+      "total_maturations": 38,
+      "total_local_consolidations": 29,
+      "newborn_units": 6,
+      "pending_maturation_units": 6,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 10.955392999996548,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 87915008,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.2656382213715231,
+      "summed_feature_data_displacement": 14.361554868473652,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [90, 120, 150, 190, 230, 260, 290, 320],
+      "changes_with_reopening_in_window": 5,
+      "delays_within_window": [10, 10, 10, 10, 10],
+      "reopenings_outside_change_windows": 3,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "e58a9e68fcc3ff3f75e6bf1dcdf430d06271216e5573b8b2ea45c3ae4ea468f1",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 90,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 105,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 120,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 135,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 150,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 165,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 190,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 205,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 230,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 245,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 260,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 275,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 290,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 305,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 320,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      }
+    ],
+    "risk_contractions": 3
+  },
+  {
+    "method": "acp_v2",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.41064453125,
+      "average_incremental_accuracy": 0.36891276041666665,
+      "backward_transfer": 0.06041666666666667,
+      "forgetting": 0.005729166666666666,
+      "late_early_auc": 0.36376953125,
+      "mean_early_auc": 0.330810546875,
+      "late_plasticity_gap": 0.092041015625
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.40625, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.2421875, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.2578125, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null],
+      [0.3984375, 0.4765625, 0.2421875, 0.34375, 0.3984375, 0.25, 0.2578125, 0.2265625, 0.4453125, 0.484375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.25, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.2890625, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.5, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.25, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4609375, null],
+      [0.3984375, 0.4765625, 0.3515625, 0.34375, 0.3984375, 0.40625, 0.4765625, 0.390625, 0.4453125, 0.484375, 0.3515625, 0.375, 0.4609375, 0.328125, 0.4921875, 0.390625]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.37109375, 0.3984375, 0.25, 0.248046875, 0.251953125, 0.41796875, 0.515625, 0.25, 0.3515625, 0.4609375, 0.251953125, 0.326171875, 0.3359375],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.13671875, 0.119140625, -0.04296875, -0.125, 0.001953125, 0.1640625, 0.2578125, -0.02734375, 0.103515625, 0.212890625, 0.0, -0.048828125, 0.07421875],
+    "phase_monitor_counts": {
+      "adult": 31,
+      "closing": 4,
+      "open": 8,
+      "reopened": 18,
+      "scaffold": 3
+    },
+    "reopening_events": 6,
+    "diagnostics": {
+      "mean_consolidation": 0.17990818619728088,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 35,
+      "total_maturations": 32,
+      "total_local_consolidations": 22,
+      "newborn_units": 3,
+      "pending_maturation_units": 3,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 9.57411349999893,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 89116160,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.32286443704849405,
+      "summed_feature_data_displacement": 13.448786084485672,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [90, 120, 170, 210, 240, 270],
+      "changes_with_reopening_in_window": 4,
+      "delays_within_window": [10, 10, 10, 10],
+      "reopenings_outside_change_windows": 2,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "1ac1e301a8d3f95edb5cacb8205d5994390a310d7508fd81879c87bde71693f4",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 90,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 105,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 120,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 135,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 170,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 185,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 210,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 225,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 240,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 255,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 270,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 285,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      }
+    ],
+    "risk_contractions": 0
+  },
+  {
+    "method": "acp_v2",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.396484375,
+      "average_incremental_accuracy": 0.3907552083333334,
+      "backward_transfer": -0.023958333333333335,
+      "forgetting": 0.06822916666666666,
+      "late_early_auc": 0.374755859375,
+      "mean_early_auc": 0.3177490234375,
+      "late_plasticity_gap": 0.09765625
+    },
+    "accuracy_matrix": [
+      [0.375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.3359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.6015625, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.546875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.2421875, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.265625, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.3828125, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4453125, null, null, null, null, null, null, null],
+      [0.4140625, 0.34375, 0.3828125, 0.421875, 0.4765625, 0.34375, 0.46875, 0.390625, 0.4296875, 0.3359375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.484375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.53125, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4765625, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.3984375, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.5546875, null],
+      [0.390625, 0.25, 0.4140625, 0.40625, 0.3515625, 0.40625, 0.46875, 0.4609375, 0.40625, 0.2421875, 0.4609375, 0.421875, 0.375, 0.3671875, 0.4375, 0.484375]
+    ],
+    "early_auc": [0.396484375, 0.25, 0.21484375, 0.0859375, 0.251953125, 0.296875, 0.296875, 0.29296875, 0.396484375, 0.333984375, 0.447265625, 0.322265625, 0.31640625, 0.4453125, 0.396484375, 0.33984375],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0, -0.03515625, -0.1640625, -0.078125, 0.046875, 0.009765625, 0.015625, 0.076171875, 0.0859375, 0.1640625, 0.029296875, 0.044921875, 0.19921875, 0.123046875, 0.05859375],
+    "phase_monitor_counts": {
+      "adult": 28,
+      "closing": 4,
+      "open": 8,
+      "reopened": 21,
+      "scaffold": 3
+    },
+    "reopening_events": 7,
+    "diagnostics": {
+      "mean_consolidation": 0.17059113085269928,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 39,
+      "total_maturations": 35,
+      "total_local_consolidations": 25,
+      "newborn_units": 4,
+      "pending_maturation_units": 4,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 10240
+    },
+    "wall_seconds": 10.609503499988932,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 90917888,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.3020179567495891,
+      "summed_feature_data_displacement": 15.210344332534751,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [90, 120, 150, 190, 230, 270, 310],
+      "changes_with_reopening_in_window": 6,
+      "delays_within_window": [10, 10, 10, 10, 10, 10],
+      "reopenings_outside_change_windows": 1,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 12544,
+    "allocation_trace_sha256": "ec985d8b2fad845089518b917288dd91ab2d3053d3538d7ba3bfd77880507d79",
+    "transitions": [
+      {
+        "step": 20,
+        "phase": "open",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 60,
+        "phase": "closing",
+        "reason": "initial_fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "adult",
+        "reason": "initial_fixed_consolidation_complete"
+      },
+      {
+        "step": 90,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 105,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 120,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 135,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 150,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 165,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 190,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 205,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 230,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 245,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 270,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      },
+      {
+        "step": 285,
+        "phase": "adult",
+        "reason": "reopening_timeout"
+      },
+      {
+        "step": 310,
+        "phase": "reopened",
+        "reason": "sustained_novelty"
+      }
+    ],
+    "risk_contractions": 1
+  },
+  {
+    "method": "er_recycle",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.3662109375,
+      "average_incremental_accuracy": 0.39394531250000003,
+      "backward_transfer": -0.026041666666666668,
+      "forgetting": 0.08177083333333333,
+      "late_early_auc": 0.385986328125,
+      "mean_early_auc": 0.342041015625,
+      "late_plasticity_gap": 0.13623046875
+    },
+    "accuracy_matrix": [
+      [0.421875, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.3203125, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.46875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.2890625, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.671875, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.3984375, 0.4375, 0.421875, 0.3984375, 0.328125, 0.3046875, 0.4765625, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.4140625, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.40625, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4609375, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.375, null],
+      [0.2890625, 0.3359375, 0.28125, 0.546875, 0.4296875, 0.2734375, 0.3515625, 0.359375, 0.25, 0.375, 0.296875, 0.515625, 0.4453125, 0.28125, 0.390625, 0.4375]
+    ],
+    "early_auc": [0.2578125, 0.267578125, 0.2421875, 0.283203125, 0.25, 0.431640625, 0.333984375, 0.318359375, 0.41015625, 0.373046875, 0.365234375, 0.431640625, 0.46875, 0.3515625, 0.33984375, 0.34765625],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.013671875, 0.001953125, 0.017578125, 0.01171875, 0.158203125, 0.095703125, 0.056640625, 0.15625, 0.12109375, 0.12890625, 0.169921875, 0.23046875, 0.091796875, 0.091796875, 0.099609375],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.794836100001703,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 86701056,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 26.804134282195857,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "a2706d093b345f79b8c0ca69ff8ea3ac7f9cd5cce8a6b57346d3f735e6618fc0",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.40771484375,
+      "average_incremental_accuracy": 0.3916341145833333,
+      "backward_transfer": 0.013020833333333334,
+      "forgetting": 0.030729166666666665,
+      "late_early_auc": 0.39208984375,
+      "mean_early_auc": 0.355224609375,
+      "late_plasticity_gap": 0.120361328125
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.3984375, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4453125, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.4453125, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null],
+      [0.3671875, 0.5078125, 0.3828125, 0.25, 0.46875, 0.359375, 0.5390625, 0.3984375, 0.3828125, 0.578125, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.3984375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.2734375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.328125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.484375, null],
+      [0.4375, 0.484375, 0.3203125, 0.390625, 0.375, 0.421875, 0.46875, 0.3828125, 0.4453125, 0.484375, 0.3515625, 0.3046875, 0.4296875, 0.328125, 0.484375, 0.4140625]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.369140625, 0.396484375, 0.251953125, 0.291015625, 0.375, 0.41015625, 0.474609375, 0.283203125, 0.33203125, 0.416015625, 0.33203125, 0.48046875, 0.408203125],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.134765625, 0.1171875, -0.041015625, -0.08203125, 0.125, 0.15625, 0.216796875, 0.005859375, 0.083984375, 0.16796875, 0.080078125, 0.10546875, 0.146484375],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.147651899998891,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 89103360,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 24.272403368376537,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "882a981ea2c824e40a259a537dec2e20e248fbaeb128d2f7f88d848806323c98",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.42138671875,
+      "average_incremental_accuracy": 0.42197265624999997,
+      "backward_transfer": -0.014583333333333334,
+      "forgetting": 0.05572916666666667,
+      "late_early_auc": 0.39208984375,
+      "mean_early_auc": 0.366943359375,
+      "late_plasticity_gap": 0.114990234375
+    },
+    "accuracy_matrix": [
+      [0.4296875, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.375, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.3984375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.6484375, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.4375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4765625, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.34375, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.5, null, null, null, null, null, null, null],
+      [0.46875, 0.4140625, 0.3984375, 0.328125, 0.453125, 0.3359375, 0.484375, 0.390625, 0.484375, 0.390625, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.4609375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.5625, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.3984375, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.40625, null],
+      [0.4140625, 0.34375, 0.3828125, 0.5625, 0.4609375, 0.3671875, 0.5234375, 0.4296875, 0.4375, 0.3046875, 0.421875, 0.453125, 0.3984375, 0.3125, 0.53125, 0.3984375]
+    ],
+    "early_auc": [0.396484375, 0.2734375, 0.244140625, 0.23828125, 0.44921875, 0.35546875, 0.41015625, 0.3671875, 0.361328125, 0.3359375, 0.45703125, 0.34765625, 0.544921875, 0.353515625, 0.4140625, 0.322265625],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0234375, -0.005859375, -0.01171875, 0.119140625, 0.10546875, 0.123046875, 0.08984375, 0.041015625, 0.087890625, 0.173828125, 0.0546875, 0.2734375, 0.107421875, 0.140625, 0.041015625],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 45,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 8.015435699999216,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 90905088,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 28.78743695005708,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "d3a004f873e5036334e3148f65897f4722a2e1edfdbbcfa32d53c991e416ca80",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle_yoked_gain",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.3984375,
+      "average_incremental_accuracy": 0.37604166666666666,
+      "backward_transfer": -0.014583333333333334,
+      "forgetting": 0.052083333333333336,
+      "late_early_auc": 0.381103515625,
+      "mean_early_auc": 0.3331298828125,
+      "late_plasticity_gap": 0.13134765625
+    },
+    "accuracy_matrix": [
+      [0.3359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.2734375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.28125, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.4375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.3984375, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.3671875, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.3515625, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.3515625, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.6875, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.390625, 0.4375, 0.4453125, 0.390625, 0.3359375, 0.296875, 0.46875, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.453125, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.5390625, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.46875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.5, null],
+      [0.5, 0.3515625, 0.4140625, 0.4296875, 0.4453125, 0.28125, 0.3046875, 0.3984375, 0.5078125, 0.3828125, 0.484375, 0.4453125, 0.46875, 0.25, 0.3359375, 0.375]
+    ],
+    "early_auc": [0.318359375, 0.251953125, 0.25390625, 0.193359375, 0.25, 0.341796875, 0.333984375, 0.337890625, 0.4609375, 0.361328125, 0.400390625, 0.3203125, 0.48046875, 0.359375, 0.3671875, 0.298828125],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.009765625, -0.001953125, 0.013671875, -0.072265625, 0.01171875, 0.068359375, 0.095703125, 0.076171875, 0.20703125, 0.109375, 0.1640625, 0.05859375, 0.2421875, 0.099609375, 0.119140625, 0.05078125],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 44,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.382805200002622,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 88502784,
+    "information_access": "offline ACP-v2 allocation trace; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.2656382517455844,
+      "summed_feature_data_displacement": 13.831840018256802,
+      "steps": 320
+    },
+    "allocation_source_sha256": "e58a9e68fcc3ff3f75e6bf1dcdf430d06271216e5573b8b2ea45c3ae4ea468f1",
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "0cd1400e7d21577e77613ce1b93951147edaf1d41d52e84f99fd0d5611898be9",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle_yoked_gain",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.47265625,
+      "average_incremental_accuracy": 0.41692708333333334,
+      "backward_transfer": 0.027604166666666666,
+      "forgetting": 0.023958333333333335,
+      "late_early_auc": 0.431884765625,
+      "mean_early_auc": 0.3831787109375,
+      "late_plasticity_gap": 0.16015625
+    },
+    "accuracy_matrix": [
+      [0.3203125, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.4921875, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.484375, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.2734375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.515625, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.5703125, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.5, null, null, null, null, null, null, null],
+      [0.296875, 0.734375, 0.3671875, 0.2890625, 0.546875, 0.359375, 0.5546875, 0.34375, 0.2890625, 0.796875, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.28125, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.6953125, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.3203125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.46875, null],
+      [0.390625, 0.7578125, 0.375, 0.2734375, 0.578125, 0.375, 0.4765625, 0.4765625, 0.453125, 0.8359375, 0.359375, 0.28125, 0.671875, 0.3515625, 0.4765625, 0.4296875]
+    ],
+    "early_auc": [0.2734375, 0.341796875, 0.248046875, 0.30078125, 0.40234375, 0.265625, 0.427734375, 0.416015625, 0.51171875, 0.623046875, 0.375, 0.31640625, 0.515625, 0.291015625, 0.482421875, 0.33984375],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [0.005859375, 0.091796875, -0.001953125, 0.06640625, 0.123046875, -0.02734375, 0.0546875, 0.166015625, 0.2578125, 0.365234375, 0.09765625, 0.068359375, 0.267578125, 0.0390625, 0.107421875, 0.078125],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 35,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 8.217730300006224,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 90304512,
+    "information_access": "offline ACP-v2 allocation trace; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.3228644426357876,
+      "summed_feature_data_displacement": 13.220015808376896,
+      "steps": 320
+    },
+    "allocation_source_sha256": "1ac1e301a8d3f95edb5cacb8205d5994390a310d7508fd81879c87bde71693f4",
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "d829805ed9d5b2f1b9098a3075a0bb5fb42d76af4003051fc77d852efe34f76c",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle_yoked_gain",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.3994140625,
+      "average_incremental_accuracy": 0.4873046875,
+      "backward_transfer": -0.14479166666666668,
+      "forgetting": 0.21458333333333332,
+      "late_early_auc": 0.35791015625,
+      "mean_early_auc": 0.32861328125,
+      "late_plasticity_gap": 0.080810546875
+    },
+    "accuracy_matrix": [
+      [0.5703125, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.296875, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.765625, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.8671875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.4765625, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4921875, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4609375, null, null, null, null, null, null, null],
+      [0.6796875, 0.4375, 0.2890625, 0.328125, 0.7734375, 0.359375, 0.6640625, 0.25, 0.7109375, 0.4296875, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.625, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.5234375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.8125, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.390625, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.671875, null],
+      [0.2421875, 0.2578125, 0.40625, 0.7265625, 0.2421875, 0.4140625, 0.453125, 0.5, 0.2578125, 0.2421875, 0.4296875, 0.671875, 0.234375, 0.3671875, 0.4453125, 0.5]
+    ],
+    "early_auc": [0.345703125, 0.259765625, 0.197265625, 0.212890625, 0.341796875, 0.384765625, 0.36328125, 0.2890625, 0.29296875, 0.357421875, 0.3046875, 0.34375, 0.4453125, 0.392578125, 0.40625, 0.3203125],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.048828125, 0.009765625, -0.052734375, -0.037109375, 0.01171875, 0.134765625, 0.076171875, 0.01171875, -0.02734375, 0.109375, 0.021484375, 0.05078125, 0.173828125, 0.146484375, 0.1328125, 0.0390625],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 39,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.950331699990784,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 92706816,
+    "information_access": "offline ACP-v2 allocation trace; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 0.3020179393577686,
+      "summed_feature_data_displacement": 16.5824053016823,
+      "steps": 320
+    },
+    "allocation_source_sha256": "ec985d8b2fad845089518b917288dd91ab2d3053d3538d7ba3bfd77880507d79",
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "ba958284cb8bae0316e10b08ed909cd0af732f047f1b0a9a1c87c58c91af3844",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle_yoked",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.3935546875,
+      "average_incremental_accuracy": 0.40358072916666665,
+      "backward_transfer": 0.005208333333333333,
+      "forgetting": 0.05677083333333333,
+      "late_early_auc": 0.389892578125,
+      "mean_early_auc": 0.343994140625,
+      "late_plasticity_gap": 0.14013671875
+    },
+    "accuracy_matrix": [
+      [0.421875, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.3203125, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.46875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.2890625, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.671875, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.3984375, 0.4375, 0.4375, 0.3984375, 0.328125, 0.3046875, 0.4765625, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.3515625, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.4453125, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.46875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.375, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.390625, null],
+      [0.3125, 0.34375, 0.3984375, 0.5546875, 0.3671875, 0.390625, 0.328125, 0.453125, 0.2890625, 0.375, 0.4140625, 0.515625, 0.3671875, 0.359375, 0.3671875, 0.4609375]
+    ],
+    "early_auc": [0.2578125, 0.267578125, 0.2421875, 0.283203125, 0.25, 0.431640625, 0.333984375, 0.318359375, 0.41015625, 0.373046875, 0.365234375, 0.435546875, 0.466796875, 0.359375, 0.3515625, 0.357421875],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.013671875, 0.001953125, 0.017578125, 0.01171875, 0.158203125, 0.095703125, 0.056640625, 0.15625, 0.12109375, 0.12890625, 0.173828125, 0.228515625, 0.099609375, 0.103515625, 0.109375],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 44,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.507451400000718,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 88502784,
+    "information_access": "offline ACP-v2 allocation trace; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 26.416905387632482,
+      "steps": 320
+    },
+    "allocation_source_sha256": "e58a9e68fcc3ff3f75e6bf1dcdf430d06271216e5573b8b2ea45c3ae4ea468f1",
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "5512f7be98bf1b3c6083842a8832c70878f614cd6520fb58bb81f10797e1295e",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle_yoked",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.43798828125,
+      "average_incremental_accuracy": 0.40068359375,
+      "backward_transfer": 0.043229166666666666,
+      "forgetting": 0.0203125,
+      "late_early_auc": 0.3984375,
+      "mean_early_auc": 0.3583984375,
+      "late_plasticity_gap": 0.126708984375
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.34375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.3984375, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4453125, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.4453125, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4296875, null, null, null, null, null, null, null],
+      [0.3828125, 0.5, 0.3984375, 0.2890625, 0.421875, 0.3671875, 0.5, 0.375, 0.4140625, 0.5546875, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.3828125, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.34375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.328125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.484375, null],
+      [0.4375, 0.6484375, 0.3203125, 0.3828125, 0.5, 0.421875, 0.46875, 0.3828125, 0.4375, 0.6875, 0.3515625, 0.2421875, 0.5, 0.328125, 0.484375, 0.4140625]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.369140625, 0.396484375, 0.251953125, 0.291015625, 0.375, 0.41015625, 0.474609375, 0.291015625, 0.3359375, 0.423828125, 0.326171875, 0.517578125, 0.408203125],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.134765625, 0.1171875, -0.041015625, -0.08203125, 0.125, 0.15625, 0.216796875, 0.013671875, 0.087890625, 0.17578125, 0.07421875, 0.142578125, 0.146484375],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 35,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.970251699996879,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 90304512,
+    "information_access": "offline ACP-v2 allocation trace; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 24.148465477530184,
+      "steps": 320
+    },
+    "allocation_source_sha256": "1ac1e301a8d3f95edb5cacb8205d5994390a310d7508fd81879c87bde71693f4",
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "f701f7fc18ee850e7af54f423c6b0f771f463336b8a3bcd3782436da7d6d518c",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle_yoked",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.421875,
+      "average_incremental_accuracy": 0.42213541666666665,
+      "backward_transfer": -0.016145833333333335,
+      "forgetting": 0.051041666666666666,
+      "late_early_auc": 0.389892578125,
+      "mean_early_auc": 0.3658447265625,
+      "late_plasticity_gap": 0.11279296875
+    },
+    "accuracy_matrix": [
+      [0.4296875, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.375, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.3984375, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.6484375, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.4375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4765625, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.34375, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.5, null, null, null, null, null, null, null],
+      [0.46875, 0.4140625, 0.3984375, 0.328125, 0.453125, 0.3359375, 0.484375, 0.390625, 0.484375, 0.390625, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.4609375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.5703125, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.3984375, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.421875, null],
+      [0.4140625, 0.2734375, 0.390625, 0.5703125, 0.4453125, 0.359375, 0.4921875, 0.421875, 0.4609375, 0.296875, 0.4609375, 0.4609375, 0.4296875, 0.390625, 0.4765625, 0.40625]
+    ],
+    "early_auc": [0.396484375, 0.2734375, 0.244140625, 0.23828125, 0.44921875, 0.35546875, 0.41015625, 0.3671875, 0.361328125, 0.3359375, 0.45703125, 0.34765625, 0.544921875, 0.349609375, 0.42578125, 0.296875],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0234375, -0.005859375, -0.01171875, 0.119140625, 0.10546875, 0.123046875, 0.08984375, 0.041015625, 0.087890625, 0.173828125, 0.0546875, 0.2734375, 0.103515625, 0.15234375, 0.015625],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 39,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.904579099995317,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 92106240,
+    "information_access": "offline ACP-v2 allocation trace; diagnostic only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 28.79585303378768,
+      "steps": 320
+    },
+    "allocation_source_sha256": "ec985d8b2fad845089518b917288dd91ab2d3053d3538d7ba3bfd77880507d79",
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "4cb3bc062b34cd3c58e3895063f236ef6e2b9aab05096141e9d97de36312d5f7",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er",
+    "seed": 101,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.40185546875,
+      "average_incremental_accuracy": 0.4068684895833334,
+      "backward_transfer": 0.029166666666666667,
+      "forgetting": 0.03958333333333333,
+      "late_early_auc": 0.3994140625,
+      "mean_early_auc": 0.34814453125,
+      "late_plasticity_gap": 0.149658203125
+    },
+    "accuracy_matrix": [
+      [0.421875, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.2421875, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.3046875, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.40625, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.28125, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.3203125, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.2890625, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.4921875, null, null, null, null, null, null, null],
+      [0.4765625, 0.3515625, 0.40625, 0.4375, 0.4453125, 0.3984375, 0.3203125, 0.3203125, 0.46875, 0.34375, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.359375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.59375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.484375, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.4609375, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.375, null],
+      [0.4453125, 0.4140625, 0.4296875, 0.3984375, 0.40625, 0.421875, 0.296875, 0.40625, 0.453125, 0.4375, 0.4609375, 0.40625, 0.4453125, 0.3671875, 0.2734375, 0.3671875]
+    ],
+    "early_auc": [0.2578125, 0.267578125, 0.2421875, 0.2109375, 0.294921875, 0.43359375, 0.33984375, 0.328125, 0.4609375, 0.353515625, 0.400390625, 0.458984375, 0.419921875, 0.36328125, 0.35546875, 0.3828125],
+    "scratch_early_auc": [0.328125, 0.25390625, 0.240234375, 0.265625, 0.23828125, 0.2734375, 0.23828125, 0.26171875, 0.25390625, 0.251953125, 0.236328125, 0.26171875, 0.23828125, 0.259765625, 0.248046875, 0.248046875],
+    "plasticity_gap": [-0.0703125, 0.013671875, 0.001953125, -0.0546875, 0.056640625, 0.16015625, 0.1015625, 0.06640625, 0.20703125, 0.1015625, 0.1640625, 0.197265625, 0.181640625, 0.103515625, 0.107421875, 0.134765625],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 0,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.431641100003617,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 86100480,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 26.349431742506948,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "d7a416b741304b2ab501f1b1a0aca32cc670a4649b3084b4712bf4c12b42fa42",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er",
+    "seed": 202,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.4130859375,
+      "average_incremental_accuracy": 0.3962890625,
+      "backward_transfer": 0.0234375,
+      "forgetting": 0.025,
+      "late_early_auc": 0.416748046875,
+      "mean_early_auc": 0.36474609375,
+      "late_plasticity_gap": 0.14501953125
+    },
+    "accuracy_matrix": [
+      [0.34375, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.515625, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.25, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.3515625, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.3671875, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.25, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.4609375, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.4453125, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.40625, null, null, null, null, null, null, null],
+      [0.40625, 0.515625, 0.375, 0.3515625, 0.421875, 0.34375, 0.5234375, 0.375, 0.4296875, 0.578125, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.34375, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.2734375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.4296875, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.328125, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.5, null],
+      [0.4453125, 0.515625, 0.3203125, 0.4140625, 0.390625, 0.421875, 0.46875, 0.3828125, 0.46875, 0.4296875, 0.3515625, 0.3515625, 0.421875, 0.328125, 0.484375, 0.4140625]
+    ],
+    "early_auc": [0.248046875, 0.36328125, 0.251953125, 0.36328125, 0.400390625, 0.279296875, 0.25, 0.345703125, 0.455078125, 0.564453125, 0.3515625, 0.33984375, 0.3984375, 0.341796875, 0.478515625, 0.404296875],
+    "scratch_early_auc": [0.267578125, 0.25, 0.25, 0.234375, 0.279296875, 0.29296875, 0.373046875, 0.25, 0.25390625, 0.2578125, 0.27734375, 0.248046875, 0.248046875, 0.251953125, 0.375, 0.26171875],
+    "plasticity_gap": [-0.01953125, 0.11328125, 0.001953125, 0.12890625, 0.12109375, -0.013671875, -0.123046875, 0.095703125, 0.201171875, 0.306640625, 0.07421875, 0.091796875, 0.150390625, 0.08984375, 0.103515625, 0.142578125],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 0,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.027556300003198,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 88502784,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 26.23335772517711,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.25,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "6c38fc76c28a193c0dc7d3d9743f5b7f2efc713ea30b9105f2a53eec6dbe6a31",
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er",
+    "seed": 303,
+    "config_sha256": "930a601f9c45a94cb6437bd80cdbcb34f4b712a5f617aecf115df5ee35764e61",
+    "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [0, 1, 2, 3],
+    "metrics": {
+      "final_accuracy": 0.37158203125,
+      "average_incremental_accuracy": 0.41396484375000003,
+      "backward_transfer": -0.1046875,
+      "forgetting": 0.15260416666666668,
+      "late_early_auc": 0.413330078125,
+      "mean_early_auc": 0.366455078125,
+      "late_plasticity_gap": 0.13623046875
+    },
+    "accuracy_matrix": [
+      [0.4296875, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, 0.359375, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, 0.4453125, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, 0.453125, null, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, 0.5390625, null, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, 0.3984375, null, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 0.6328125, null, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, 0.3359375, null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, 0.546875, null, null, null, null, null, null, null],
+      [0.546875, 0.40625, 0.2734375, 0.40625, 0.6484375, 0.2421875, 0.6640625, 0.265625, 0.5859375, 0.3671875, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, 0.4921875, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, 0.375, null, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, 0.6640625, null, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, 0.46875, null, null],
+      [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.546875, null],
+      [0.328125, 0.25, 0.34375, 0.546875, 0.2734375, 0.28125, 0.515625, 0.484375, 0.328125, 0.234375, 0.375, 0.5078125, 0.265625, 0.3046875, 0.4453125, 0.4609375]
+    ],
+    "early_auc": [0.396484375, 0.2734375, 0.24609375, 0.232421875, 0.45703125, 0.3203125, 0.326171875, 0.3046875, 0.447265625, 0.361328125, 0.328125, 0.39453125, 0.53515625, 0.38671875, 0.408203125, 0.4453125],
+    "scratch_early_auc": [0.296875, 0.25, 0.25, 0.25, 0.330078125, 0.25, 0.287109375, 0.27734375, 0.3203125, 0.248046875, 0.283203125, 0.29296875, 0.271484375, 0.24609375, 0.2734375, 0.28125],
+    "plasticity_gap": [0.099609375, 0.0234375, -0.00390625, -0.017578125, 0.126953125, 0.0703125, 0.0390625, 0.02734375, 0.126953125, 0.11328125, 0.044921875, 0.1015625, 0.263671875, 0.140625, 0.134765625, 0.1640625],
+    "phase_monitor_counts": {
+      "uncontrolled": 64
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 0,
+      "total_maturations": 0,
+      "total_local_consolidations": 0,
+      "newborn_units": 0,
+      "pending_maturation_units": 0,
+      "recyclable_units": 64,
+      "optimizer_state_bytes": 457408,
+      "unit_state_bytes": 1536
+    },
+    "cost": {
+      "current_examples": 10240,
+      "replay_examples": 10208,
+      "probe_forward_examples": 4096,
+      "train_forward_calls": 639,
+      "backward_calls": 639,
+      "evaluation_examples": 15360,
+      "sensor_forward_examples": 0
+    },
+    "wall_seconds": 7.847001999994973,
+    "replay_bytes": 788480,
+    "model_parameters": 28116,
+    "peak_cuda_bytes": 90905088,
+    "information_access": "training stream only",
+    "evaluation_schedule": {
+      "retention_every": 10,
+      "early_examples": 256,
+      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"
+    },
+    "allocation_summary": {
+      "mean_feature_gain": 1.0,
+      "summed_feature_data_displacement": 29.70475226742544,
+      "steps": 320
+    },
+    "input_centroid_accuracy": 0.240234375,
+    "detector_audit": {
+      "signal_change_steps": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300],
+      "post_warmup_changes": 12,
+      "tolerance_steps": 10,
+      "reopening_steps": [],
+      "changes_with_reopening_in_window": 0,
+      "delays_within_window": [],
+      "reopenings_outside_change_windows": 0,
+      "interpretation": "descriptive proximity only; endogenous health/loss can also justify reopening"
+    },
+    "sensor_state_bytes": 0,
+    "allocation_trace_sha256": "58d6e479725b9a25add16e3e23b84cc06bcbe960f68bf51db4f2f5095ccf33ee",
+    "transitions": [],
+    "risk_contractions": 0
+  }
+]

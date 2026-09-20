@@ -1,0 +1,60 @@
+{
+  "suite": "v2_shapes_stationary",
+  "config_sha256": "8a7a8436423594f9cf32524af23eecb4fd061cea0fd48a46ef3f12439e908a82",
+  "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+  "checks_passed": true,
+  "seeds": [
+    {
+      "seed": 101,
+      "methods": [
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_reopening"
+      ],
+      "buffer_and_sampling_rng_sha256": "e670f92cf06c2d16c2208d6dc8c099833e6cd236b674ba0378ad661e166a32bb",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {}
+    },
+    {
+      "seed": 202,
+      "methods": [
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_reopening"
+      ],
+      "buffer_and_sampling_rng_sha256": "3bc99388e06abfce5d70fe11aa8f737a395e9ac0a3dcb132a5d07e9dff683c33",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {}
+    },
+    {
+      "seed": 303,
+      "methods": [
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_reopening"
+      ],
+      "buffer_and_sampling_rng_sha256": "dfb77f6e2ba40da9bcaaa1c2efdbf085bb1fc8cff62d35936c099c3921c6df61",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {}
+    }
+  ],
+  "scope": "actual replay tensors, membership/train/probe RNGs, exposure counts; optional exact curves/allocation prefixes"
+}

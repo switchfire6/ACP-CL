@@ -1,0 +1,99 @@
+{
+  "suite": "v2_shapes_long",
+  "config_sha256": "37456c6b2dd7c8ed0e690a9f04e00e3537ed165c82b73be6ccb104e2e47ba12d",
+  "source_sha256": "67ae36402607f257f1e55c4f3ef2bbb477a88555d2111a4bd0139e27668eee0a",
+  "checks_passed": true,
+  "seeds": [
+    {
+      "seed": 101,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "buffer_and_sampling_rng_sha256": "c09c6ba2817a74f4f4160902066568f80a890b705d9b71b13d60b7f94faf7a7e",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {
+        "er": 320,
+        "er_recycle": 320,
+        "acp_v2": 320,
+        "acp_v2_no_newborn": 320,
+        "acp_v2_no_reopening": 320,
+        "acp_v2_oracle": 320,
+        "er_recycle_yoked": 320
+      }
+    },
+    {
+      "seed": 202,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "buffer_and_sampling_rng_sha256": "76c9968488b43f0bbe91f5f6b5e38a79f34577adc541fd90c79ba0a9c3b841c8",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {
+        "er": 320,
+        "er_recycle": 320,
+        "acp_v2": 320,
+        "acp_v2_no_newborn": 320,
+        "acp_v2_no_reopening": 320,
+        "acp_v2_oracle": 320,
+        "er_recycle_yoked": 320
+      }
+    },
+    {
+      "seed": 303,
+      "methods": [
+        "er",
+        "er_recycle",
+        "acp_v2",
+        "acp_v2_no_newborn",
+        "acp_v2_no_reopening",
+        "acp_v2_oracle",
+        "er_recycle_yoked",
+        "er_recycle_yoked_gain"
+      ],
+      "buffer_and_sampling_rng_sha256": "c98a49577e6b7cfdae6e8a939705037d3b1561e6847e25c5a95e7dac18ecb4d7",
+      "common_training_exposure": {
+        "current_examples": 64000,
+        "replay_examples": 63968,
+        "probe_forward_examples": 25600,
+        "train_forward_calls": 3999,
+        "backward_calls": 3999
+      },
+      "exact_prefix_updates_verified": {
+        "er": 320,
+        "er_recycle": 320,
+        "acp_v2": 320,
+        "acp_v2_no_newborn": 320,
+        "acp_v2_no_reopening": 320,
+        "acp_v2_oracle": 320,
+        "er_recycle_yoked": 320
+      }
+    }
+  ],
+  "scope": "actual replay tensors, membership/train/probe RNGs, exposure counts; optional exact curves/allocation prefixes"
+}

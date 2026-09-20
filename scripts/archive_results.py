@@ -6,6 +6,17 @@ from pathlib import Path
 import shutil
 
 
+def reviewable_json(value, depth: int = 0) -> str:
+    """Keep numeric matrix rows compact while retaining object indentation."""
+    indent, inner = "  " * depth, "  " * (depth+1)
+    if isinstance(value, dict) and value:
+        return "{\n" + ",\n".join(inner + json.dumps(key) + ": " + reviewable_json(item, depth+1)
+                                  for key, item in value.items()) + "\n" + indent + "}"
+    if isinstance(value, list) and any(isinstance(item, (dict, list)) for item in value):
+        return "[\n" + ",\n".join(inner + reviewable_json(item, depth+1) for item in value) + "\n" + indent + "]"
+    return json.dumps(value, allow_nan=False)
+
+
 def archive(source: Path, destination: Path) -> None:
     destination.mkdir(parents=True, exist_ok=True)
     for name in ("manifest.json", "summary.json", "summary.csv", "summary.md", "overview.png", "overview.svg"):
@@ -21,7 +32,8 @@ def archive(source: Path, destination: Path) -> None:
               "plasticity_gap", "phase_monitor_counts", "reopening_events", "diagnostics",
               "cost", "wall_seconds", "replay_bytes", "model_parameters", "peak_cuda_bytes",
               "information_access", "evaluation_schedule", "allocation_summary", "allocation_source_sha256",
-              "input_centroid_accuracy", "detector_audit", "sensor_state_bytes", "allocation_trace_sha256")
+              "input_centroid_accuracy", "detector_audit", "sensor_state_bytes", "allocation_trace_sha256",
+              "runtime_fingerprint", "runtime_sha256")
     results = []
     for file in sorted(source.glob("*/result.json")):
         result = json.loads(file.read_text(encoding="utf-8"))
@@ -32,7 +44,7 @@ def archive(source: Path, destination: Path) -> None:
                                for e in events if e.get("controller", {}).get("transition")]
         item["risk_contractions"] = sum(bool(e.get("controller", {}).get("safety_contracted")) for e in events)
         results.append(item)
-    (destination / "individual_results.json").write_text(json.dumps(results, indent=2)+"\n", encoding="utf-8")
+    (destination / "individual_results.json").write_text(reviewable_json(results)+"\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
