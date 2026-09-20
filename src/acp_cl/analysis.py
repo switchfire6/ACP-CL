@@ -11,7 +11,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from .experiment import write_json
+from .experiment import config_hash, write_json
 from .metrics import paired_bootstrap
 
 
@@ -23,9 +23,19 @@ def analyze(directory: Path) -> dict:
     if not files:
         raise ValueError(f"no completed results in {directory}")
     results = [json.loads(file.read_text(encoding="utf-8")) for file in files]
+    # Uniform legacy artifacts may omit both new keys. Mixed legacy/new
+    # artifacts, or inconsistent descriptor/hash pairs, must never be pooled.
+    for result in results:
+        fingerprint, digest = result.get("runtime_fingerprint"), result.get("runtime_sha256")
+        if fingerprint is not None or digest is not None:
+            if not isinstance(fingerprint, dict) or digest != config_hash(fingerprint):
+                raise ValueError("refusing to pool invalid or incomplete runtime fingerprints")
     identities = {(r["config_sha256"], r["source_sha256"], r.get("execution_device"),
+                   r.get("runtime_sha256"), r.get("environment", {}).get("python"),
                    r.get("environment", {}).get("torch"),
                    r.get("environment", {}).get("numpy"),
+                   r.get("environment", {}).get("cuda_runtime")
+                   if r.get("execution_device", "").startswith("cuda") else None,
                    r.get("environment", {}).get("gpu") if r.get("execution_device", "").startswith("cuda") else None)
                   for r in results}
     if len(identities) != 1:
@@ -76,7 +86,10 @@ def analyze(directory: Path) -> dict:
     summary = {"status": "exploratory; unadjusted paired percentile bootstrap intervals",
                "eval_split": results[0]["eval_split"], "config": results[0]["config"],
                "config_sha256": results[0]["config_sha256"],
-               "source_sha256": results[0]["source_sha256"], "methods": rows, "paired": paired}
+               "source_sha256": results[0]["source_sha256"],
+               "runtime_fingerprint": results[0].get("runtime_fingerprint"),
+               "runtime_sha256": results[0].get("runtime_sha256"),
+               "methods": rows, "paired": paired}
     write_json(directory / "summary.json", summary)
     with (directory / "summary.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))

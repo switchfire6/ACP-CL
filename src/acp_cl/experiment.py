@@ -55,6 +55,16 @@ def source_hash() -> str:
     return digest.hexdigest()
 
 
+def runtime_identity(device: torch.device) -> dict:
+    """Canonical execution runtime, independent of optional environment logging."""
+    fingerprint = {"python": platform.python_version(),
+                   "torch": str(torch.__version__), "numpy": str(np.__version__)}
+    if device.type == "cuda":
+        fingerprint.update(cuda_runtime=torch.version.cuda,
+                           gpu=torch.cuda.get_device_name(device))
+    return {"runtime_fingerprint": fingerprint, "runtime_sha256": config_hash(fingerprint)}
+
+
 def environment() -> dict:
     def git(*args):
         try:
@@ -168,11 +178,11 @@ def scratch_reference(config: dict, stream: Stream, seed: int, device: torch.dev
         return None
     file = output / f"scratch_seed{seed}.json"
     identity = {"config_sha256": config_hash(config), "source_sha256": source_hash(),
-                "seed": seed, "execution_device": str(device)}
+                "seed": seed, "execution_device": str(device), **runtime_identity(device)}
     if resume and file.exists():
         result = json.loads(file.read_text(encoding="utf-8"))
         if any(result.get(k) != v for k, v in identity.items()):
-            raise ValueError(f"scratch cache configuration/source mismatch: {file}")
+            raise ValueError(f"scratch cache configuration/source/runtime mismatch: {file}")
         return result
     start = time.perf_counter()
     curves, aucs, costs = [], [], []
@@ -197,7 +207,8 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
     result_file = run_dir / "result.json"
     checkpoint_file = run_dir / "checkpoint.pt"
     identity = {"config_sha256": config_hash(config), "source_sha256": source_hash(),
-                "method": method, "seed": seed, "execution_device": str(device)}
+                "method": method, "seed": seed, "execution_device": str(device),
+                **runtime_identity(device)}
     allocation = None
     if method in YOKED_METHODS:
         source_dir = output / f"acp_v2_seed{seed}"
@@ -206,7 +217,7 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
         source_result = json.loads((source_dir / "result.json").read_text(encoding="utf-8"))
         if source_result.get("method") != "acp_v2" or \
                 any(source_result.get(k) != identity[k] for k in identity if k != "method"):
-            raise ValueError("yoked source configuration/source/seed/device mismatch")
+            raise ValueError("yoked source configuration/source/seed/device/runtime mismatch")
         source_bytes = (source_dir / "allocation.json").read_bytes()
         identity["allocation_source_sha256"] = hashlib.sha256(source_bytes).hexdigest()
         if identity["allocation_source_sha256"] != source_result.get("allocation_trace_sha256"):
@@ -217,8 +228,15 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
             raise FileExistsError(f"run already exists: {run_dir}; choose a new --output or --resume")
         result = json.loads(result_file.read_text(encoding="utf-8"))
         if any(result.get(k) != v for k, v in identity.items()):
-            raise ValueError(f"configuration/source mismatch: {result_file}")
+            raise ValueError(f"configuration/source/runtime mismatch: {result_file}")
         return result
+    checkpoint = None
+    if resume and checkpoint_file.exists():
+        # Only deserialize local, trusted checkpoints produced by this program.
+        # Check identity before constructing a learner or loading model state.
+        checkpoint = torch.load(checkpoint_file, map_location="cpu", weights_only=False)
+        if any(checkpoint.get(k) != v for k, v in identity.items()):
+            raise ValueError(f"checkpoint configuration/source/runtime mismatch: {checkpoint_file}")
     run_dir.mkdir(parents=True, exist_ok=True)
     learner = new_learner(config, stream, method, seed, device)
     if allocation is not None:
@@ -227,11 +245,7 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
     matrix = np.full((count, count), np.nan)
     curves, experience_times = [], []
     completed, previous_seconds = 0, 0.0
-    if resume and checkpoint_file.exists():
-        # Only load a local, trusted checkpoint produced by this program.
-        checkpoint = torch.load(checkpoint_file, map_location="cpu", weights_only=False)
-        if any(checkpoint.get(k) != v for k, v in identity.items()):
-            raise ValueError(f"checkpoint configuration/source mismatch: {checkpoint_file}")
+    if checkpoint is not None:
         learner.load_state_dict(checkpoint["learner"])
         matrix = np.asarray(checkpoint["matrix"], dtype=float)
         curves, experience_times = checkpoint["curves"], checkpoint["experience_times"]
@@ -320,6 +334,31 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
     return clean_json(result)
 
 
+def _preflight_resume(output: Path, seeds: list[int], methods: list[str],
+                      identity: dict, scratch_required: bool) -> None:
+    """Validate consumed artifacts before overwriting provenance or loading learners."""
+    required_methods = list(methods)
+    if any(method in YOKED_METHODS for method in methods) and "acp_v2" not in required_methods:
+        required_methods.append("acp_v2")
+    for seed in seeds:
+        candidates = []
+        if scratch_required:
+            candidates.append((output / f"scratch_seed{seed}.json", {**identity, "seed": seed}))
+        for method in required_methods:
+            run_dir = output / f"{method}_seed{seed}"
+            result_file = run_dir / "result.json"
+            # A completed result is the consumed cache; its old checkpoint is unused.
+            file = result_file if result_file.exists() else run_dir / "checkpoint.pt"
+            candidates.append((file, {**identity, "seed": seed, "method": method}))
+        for file, expected in candidates:
+            if not file.exists():
+                continue
+            saved = (torch.load(file, map_location="cpu", weights_only=False)
+                     if file.suffix == ".pt" else json.loads(file.read_text(encoding="utf-8")))
+            if any(saved.get(k) != v for k, v in expected.items()):
+                raise ValueError(f"resume configuration/source/runtime mismatch: {file}")
+
+
 def run_suite(config: dict, *, output: Path, seeds: list[int], methods: list[str],
               device_name: str = "auto", resume: bool = False) -> list[dict]:
     validate_config(config)
@@ -330,14 +369,18 @@ def run_suite(config: dict, *, output: Path, seeds: list[int], methods: list[str
     device = resolve_device(device_name)
     output.mkdir(parents=True, exist_ok=True)
     suite_identity = {"config_sha256": config_hash(config), "source_sha256": source_hash(),
-                      "execution_device": str(device)}
+                      "execution_device": str(device), **runtime_identity(device)}
     manifest_file = output / "manifest.json"
     if manifest_file.exists():
         old = json.loads(manifest_file.read_text(encoding="utf-8"))
         if not resume:
             raise FileExistsError(f"output exists: {output}; use --resume or a fresh directory")
         if any(old.get(k) != v for k, v in suite_identity.items()):
-            raise ValueError("suite config/source changed; use a fresh output directory")
+            raise ValueError("suite config/source changed or runtime/device mismatch; "
+                             "use a fresh output directory")
+    if resume:
+        _preflight_resume(output, seeds, methods, suite_identity,
+                          scratch_required=config.get("scratch_reference", True))
     write_json(manifest_file, {**suite_identity, "config": config, "seeds": seeds,
                                "methods": methods, "environment": environment(), "device": str(device)})
     results = []
