@@ -13,6 +13,11 @@ color association is an intentional shortcut whose permutation changes across
 domains.  Area matching and position randomization remove obvious deterministic
 size/location cues; they do not establish that the benchmark is shortcut-free.
 At very low resolution, rasterization can still change apparent shape/area.
+
+The optional independent and early_biased color policies use fixed palette RNG
+consumption. They support paired curricula with identical non-palette latent
+draws, and always evaluate with label-independent foreground colors. The default
+original policy retains the version-1 images and metadata without modification.
 """
 
 from __future__ import annotations
@@ -56,6 +61,7 @@ class _RenderedSample:
     area_side: float
     angle: float
     placement_radius: float
+    palette_index: int
 
 
 def _private_rng(seed: int, *namespace: int) -> np.random.Generator:
@@ -135,11 +141,21 @@ def _texture(
 
 
 def _render_sample(
-    rng: np.random.Generator, label: int, domain: ShapeDomain, image_size: int
+    rng: np.random.Generator, label: int, domain: ShapeDomain, image_size: int,
+    *, fixed_color_draws: bool = False,
 ) -> _RenderedSample:
-    """Render an RGB sample; masks/geometry are returned only for generator QA."""
+    """Render an RGB sample; latent diagnostics never enter training tensors.
+
+    With fixed_color_draws, every sample consumes both the association draw and
+    the uniform palette draw, whether or not the latter is selected. Changing
+    color_correlation then changes only the selected palette entry, preserving
+    all other random draws in this sample and every subsequent sample. The
+    default follows the original version-1 branch-dependent RNG consumption.
+    """
     if label not in range(4):
         raise ValueError("shape label must be one of 0, 1, 2, 3")
+    if type(fixed_color_draws) is not bool:
+        raise ValueError("fixed_color_draws must be a boolean")
     # The filled area of every continuous silhouette is area_side**2.
     area_side = float(rng.uniform(0.20, 0.36) * image_size)
     placement_radius = _TRIANGLE_RADIUS_PER_AREA_SIDE * area_side
@@ -178,10 +194,15 @@ def _render_sample(
         domain.foreground_texture, grid_x, grid_y,
         domain.foreground_angle, domain.foreground_frequency, rng,
     )
-    if rng.random() < domain.color_correlation:
-        palette_index = domain.label_palette[label]
+    if fixed_color_draws:
+        use_correlated_color = rng.random() < domain.color_correlation
+        random_palette_index = int(rng.integers(4))
+        palette_index = domain.label_palette[label] if use_correlated_color else random_palette_index
     else:
-        palette_index = int(rng.integers(4))
+        if rng.random() < domain.color_correlation:
+            palette_index = domain.label_palette[label]
+        else:
+            palette_index = int(rng.integers(4))
     background = np.array(domain.background_color) + rng.uniform(-0.025, 0.025, size=3)
     foreground = np.array(domain.foreground_palette[palette_index]) + rng.uniform(-0.03, 0.03, size=3)
     background = background + domain.background_amplitude * background_texture[:, :, None]
@@ -191,7 +212,7 @@ def _render_sample(
     # when only the sensor amplitude is changed in a noise-only control.
     image += domain.sensor_noise_amplitude * rng.uniform(-1, 1, size=image.shape)
     image = np.rint(np.clip(image, 0, 1) * 255).astype(np.uint8).transpose(2, 0, 1).copy()
-    return _RenderedSample(image, alpha, (center_x, center_y), area_side, angle, placement_radius)
+    return _RenderedSample(image, alpha, (center_x, center_y), area_side, angle, placement_radius, palette_index)
 
 
 def build_shapes_stream(config: dict, seed: int):
@@ -200,6 +221,12 @@ def build_shapes_stream(config: dict, seed: int):
     ``classes_per_experience`` is deliberately irrelevant: all experiences have
     all four labels.  A domain recurrence repeats its *distribution*, never its
     exact examples.  No task/domain identifier is included in training tensors.
+
+    color_policy='original' preserves version-1 behavior. 'independent' always
+    uses color_correlation=0. 'early_biased' uses 0.95 for training experiences
+    with index < bias_experiences (default 8), then zero; validation and test
+    always use zero. A bias horizon longer than the stream is allowed for short
+    smoke runs, but such a run contains no late independent-training period.
     """
     # Imported here because data.build_stream dispatches back to this module.
     from .data import Experience, Stream
@@ -215,6 +242,13 @@ def build_shapes_stream(config: dict, seed: int):
     regime = str(config.get("regime", "recurring")).lower()
     if regime not in {"recurring", "stationary", "noise_only"}:
         raise ValueError("regime must be recurring, stationary, or noise_only")
+    color_policy = config.get("color_policy", "original")
+    if not isinstance(color_policy, str) or color_policy not in {"original", "independent", "early_biased"}:
+        raise ValueError("color_policy must be original, independent, or early_biased")
+    if "bias_experiences" in config and color_policy != "early_biased":
+        raise ValueError("bias_experiences is only used with color_policy='early_biased'")
+    bias_experiences = _integer(config, "bias_experiences", 8) if color_policy == "early_biased" else 0
+    fixed_color_draws = color_policy != "original"
     domains = _make_domains(seed, n_domains)
     domain_cycle = [int(value) for value in _private_rng(seed, 402).permutation(n_domains)]
     base_domain_id = domain_cycle[0]
@@ -230,7 +264,16 @@ def build_shapes_stream(config: dict, seed: int):
         domains = [base_domain for _ in range(n_domains)]
         for domain_id, level in zip(domain_cycle, levels):
             domains[domain_id] = replace(base_domain, sensor_noise_amplitude=float(level))
+    if fixed_color_draws:
+        # Recorded domains describe the common independent evaluation condition.
+        # A separate, explicit training schedule supplies the early bias below.
+        domains = [replace(domain, color_correlation=0.0) for domain in domains]
     signal_domain_order = domain_order if regime == "recurring" else [base_domain_id] * n_experiences
+    train_correlations = [
+        0.95 if color_policy == "early_biased" and index < bias_experiences
+        else domains[domain_id].color_correlation
+        for index, domain_id in enumerate(domain_order)
+    ]
 
     experiences = []
     split_seeds: list[dict[str, list[int]]] = []
@@ -238,6 +281,9 @@ def build_shapes_stream(config: dict, seed: int):
         datasets = {}
         experience_seeds = {}
         for split_id, (split_name, count) in enumerate(counts.items()):
+            render_domain = domains[domain_id]
+            if fixed_color_draws and split_name == "train":
+                render_domain = replace(render_domain, color_correlation=train_correlations[experience_index])
             images = np.empty((4 * count, 3, image_size, image_size), dtype=np.uint8)
             labels = np.repeat(np.arange(4, dtype=np.int64), count)
             experience_seeds[split_name] = []
@@ -249,7 +295,9 @@ def build_shapes_stream(config: dict, seed: int):
                 experience_seeds[split_name].append(draw_seed)
                 rng = np.random.default_rng(draw_seed)
                 for sample_index in range(count):
-                    rendered = _render_sample(rng, label, domains[domain_id], image_size)
+                    rendered = _render_sample(
+                        rng, label, render_domain, image_size, fixed_color_draws=fixed_color_draws,
+                    )
                     images[label * count + sample_index] = rendered.image
             datasets[split_name] = TensorDataset(torch.from_numpy(images), torch.from_numpy(labels))
         split_seeds.append(experience_seeds)
@@ -294,4 +342,30 @@ def build_shapes_stream(config: dict, seed: int):
             "Recurrence reuses nuisance parameters while generating fresh independent examples.",
         ],
     }
+    if fixed_color_draws:
+        # Keep the original-policy metadata schema and values byte compatible.
+        metadata.update({
+            "generator_version": 2,
+            "color_policy": color_policy,
+            "train_color_correlation_by_experience": train_correlations,
+            "evaluation_color_correlation_by_experience": [0.0] * n_experiences,
+            "evaluation_color_splits": ["validation", "test"],
+            "train_color_change_flags": [False] + [
+                a != b for a, b in zip(train_correlations, train_correlations[1:])
+            ],
+            "palette_rng_consumption": "association draw and uniform palette draw consumed for every sample",
+            "color_policy_visibility": "curriculum settings and color-change flags are evaluator-only metadata",
+            "domain_parameter_color_condition": "independent evaluation; training overrides are recorded per experience",
+        })
+        if color_policy == "early_biased":
+            metadata["bias_experiences"] = bias_experiences
+            metadata["observed_biased_training_experiences"] = min(bias_experiences, n_experiences)
+        metadata["limitations"][2] = (
+            "Foreground palette choices are independent of labels in every split."
+            if color_policy == "independent" else
+            "Early training has an intentional color shortcut; validation, test, and late training use independent colors."
+        )
+        metadata["limitations"].append(
+            "Fixed palette draws pair non-palette latents across new color policies; original mode retains legacy branch-dependent draws."
+        )
     return Stream(experiences, (3, image_size, image_size), 4, [0, 1, 2, 3], metadata)

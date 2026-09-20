@@ -1,0 +1,61 @@
+{
+  "data": {
+    "dataset": "procedural_shapes",
+    "n_experiences": 60,
+    "n_domains": 8,
+    "regime": "recurring",
+    "color_policy": "independent",
+    "train_per_class": 160,
+    "validation_per_class": 32,
+    "test_per_class": 0,
+    "image_size": 32
+  },
+  "model": "cnn",
+  "width": 64,
+  "batch_size": 32,
+  "steps_per_experience": 20,
+  "eval_every_steps": 4,
+  "early_examples": 256,
+  "eval_split": "validation",
+  "replay_capacity": 256,
+  "replay_batch_size": 32,
+  "probe_batch_size": 32,
+  "monitor_decay": 0.7,
+  "scratch_reference": false,
+  "checkpoint": true,
+  "threads": 2,
+  "retention_eval_every_experiences": 10,
+  "progress_every_experiences": 20,
+  "controller": {
+    "monitor_interval": 5
+  },
+  "plasticity": {
+    "lr": 0.03,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "maturity_steps": 30,
+    "consolidation_rate": 0.3,
+    "anchor_strength": 0.001
+  },
+  "allocation_v3": {
+    "feature_gain": 0.15,
+    "warmup_steps": 40,
+    "newborn_steps": 30,
+    "newborn_peak": 0.6,
+    "protection_steps": 60,
+    "reset_interval": 20,
+    "reset_count": 3,
+    "max_update_norm": 0.1
+  },
+  "stage": "v3 development: feature gain 0.15, recurring",
+  "study_phase": "development",
+  "study_spec_sha256": "cc65bec72c11ca97b096563d64a1167c3c6d6b3b27c151d1ea0824378653732b",
+  "seeds": [
+    411,
+    522
+  ],
+  "methods": [
+    "recycle_v3"
+  ],
+  "primary_method": "recycle_v3"
+}

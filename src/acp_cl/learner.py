@@ -14,6 +14,7 @@ from .controller_v2 import ReopeningController
 from .data import preprocess
 from .monitor import OnlineMonitor
 from .plasticity import PlasticityConfig, PlasticityEngine
+from .plasticity_v3 import ScheduledPlasticityEngine, V3Config, V3_METHODS
 from .replay import ReservoirBuffer
 from .sensor import FrozenInputSensor
 
@@ -26,7 +27,7 @@ METHODS = (
     "acp_random_recycling", "acp_no_reopening",
     "acp_v2", "acp_v2_no_newborn", "acp_v2_no_reopening",
     "acp_v2_learned_sensor", "acp_v2_oracle",
-) + YOKED_METHODS
+) + YOKED_METHODS + V3_METHODS
 
 
 class Learner:
@@ -38,6 +39,7 @@ class Learner:
         self.dataset = config["data"]["dataset"]
         acp = method.startswith("acp") or method == "fixed"
         self.v2 = method.startswith("acp_v2")
+        self.v3 = method in V3_METHODS
         self.oracle = method == "acp_v2_oracle"
         self.yoked = method in YOKED_METHODS
         self.use_replay = method not in ("finetune", "acp_no_replay")
@@ -58,12 +60,18 @@ class Learner:
         pc["newborn_steps"] = pc.get("newborn_steps", 50) if self.v2 and \
             method != "acp_v2_no_newborn" else 0
         pc["g_min"] = self.controller_config.g_min if acp else 0.0
-        self.engine = PlasticityEngine(
-            model, PlasticityConfig(**pc), consolidation=acp and method != "acp_no_consolidation",
-            recycling=(acp and method != "acp_no_recycling") or method == "er_recycle" or self.yoked,
-            relaxation=method != "acp_no_relaxation", random_recycling=method == "acp_random_recycling",
-            seed=seed + 4109,
-        )
+        if self.v3:
+            self.engine = ScheduledPlasticityEngine(
+                model, PlasticityConfig(**pc), V3Config(**config.get("allocation_v3", {})),
+                variant=method, seed=seed + 4109,
+            )
+        else:
+            self.engine = PlasticityEngine(
+                model, PlasticityConfig(**pc), consolidation=acp and method != "acp_no_consolidation",
+                recycling=(acp and method != "acp_no_recycling") or method == "er_recycle" or self.yoked,
+                relaxation=method != "acp_no_relaxation", random_recycling=method == "acp_random_recycling",
+                seed=seed + 4109,
+            )
         blocks = [name for name in model.plastic_blocks() if name != "head"]
         self.controller = CriticalPeriodController(blocks, self.controller_config) if acp else None
         if self.v2:
@@ -180,9 +188,15 @@ class Learner:
         gates = self.controller.gates() if self.controller else {b: 1.0 for b in self.model.plastic_blocks()}
         if self.yoked:
             gates = {b: self.yoked_gain for b in self.model.plastic_blocks() if b != "head"}
+        if self.v3:
+            # V3 allocation depends only on update count and current unit state.
+            # No domain boundary or completed-run allocation trace is supplied.
+            gates = {}
         reopened = self.controller.selected_blocks if self.controller and \
             self.controller.phase == Phase.REOPENED else ()
         update_log = self.engine.step(gradients, gates, reopened)
+        if self.v3:
+            gates = update_log.get("gates", {})
         self.engine.update_utilities(features)
         adult = self.controller is not None and self.controller.phase in (Phase.ADULT, Phase.REOPENED)
         forced = self.yoked_schedule[step-1]["recycled_by_population"] if self.yoked else None
@@ -191,6 +205,11 @@ class Learner:
                                       "effective_feature_gain": update_log["effective_feature_gain"],
                                       "feature_data_displacement": update_log["feature_data_displacement"],
                                       "recycled_by_population": recycle_log["recycled_by_population"]})
+        if self.v3:
+            self.allocation_trace[-1].update({key: update_log[key] for key in (
+                "nominal_feature_gain", "clip_scale", "proposed_update_norm", "update_norm",
+                "head_data_displacement",
+            )})
         # Probe uses the same unaugmented images and labels on both sides. It is
         # sampled separately from the update, but chance overlap is possible.
         if probe is not None:
@@ -202,7 +221,8 @@ class Learner:
             self.cost["probe_forward_examples"] += 2*len(probe.y)
         self.buffer.add(raw_x, y.cpu(), logits.detach().cpu() if self.method == "derpp" else None)
         event = {"step": step, "loss": float(loss.detach()), "replay_loss": replay_loss,
-                 "phase": self.controller.phase.value if self.controller else "uncontrolled",
+                 "phase": self.controller.phase.value if self.controller else
+                     ("scheduled" if self.v3 else "uncontrolled"),
                  "gates": gates, **update_log, **recycle_log}
         if monitoring or recycle_log["recycled"]:
             event.update({"monitor": monitor_log, "controller": controller_log,
@@ -232,6 +252,7 @@ class Learner:
                 "step_number": self.step_number, "log": self.log, "cost": self.cost,
                 "augmentation_rng": self.augmentation_rng.get_state(),
                 "replay_augmentation_rng": self.replay_augmentation_rng.get_state(),
+                "allocation_config_v3": asdict(self.engine.allocation_config) if self.v3 else None,
                 "method": self.method, "plasticity_config": asdict(self.engine.config)}
 
     def load_state_dict(self, state: dict) -> None:
@@ -239,6 +260,8 @@ class Learner:
             raise ValueError("checkpoint method does not match learner")
         if state["plasticity_config"] != asdict(self.engine.config):
             raise ValueError("checkpoint plasticity configuration does not match learner")
+        if self.v3 and state.get("allocation_config_v3") != asdict(self.engine.allocation_config):
+            raise ValueError("checkpoint v3 allocation configuration does not match learner")
         # Controller performs its own config/schema validation before tensors
         # are changed; the experiment runner additionally hashes the full config.
         if self.controller:

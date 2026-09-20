@@ -1,0 +1,25 @@
+{
+  "stage": "v3 engineering smoke only; not an accuracy study",
+  "data": {
+    "dataset": "procedural_shapes", "n_experiences": 4, "n_domains": 2,
+    "regime": "recurring", "color_policy": "independent",
+    "train_per_class": 32, "validation_per_class": 4, "test_per_class": 0,
+    "image_size": 32
+  },
+  "model": "cnn", "width": 16, "threads": 2,
+  "batch_size": 16, "steps_per_experience": 8,
+  "eval_every_steps": 4, "early_examples": 64,
+  "eval_split": "validation", "scratch_reference": false, "checkpoint": true,
+  "replay_capacity": 32, "replay_batch_size": 16, "probe_batch_size": 16,
+  "retention_eval_every_experiences": 2,
+  "seeds": [919],
+  "methods": ["er_v3", "recycle_v3", "newborn_v3", "newborn_matched_v3", "protection_v3", "consolidation_v3", "full_v3"],
+  "primary_method": "newborn_v3",
+  "controller": {"monitor_interval": 4},
+  "plasticity": {"lr": 0.03, "momentum": 0.9, "maturity_steps": 4, "consolidation_rate": 0.3},
+  "allocation_v3": {
+    "feature_gain": 0.15, "warmup_steps": 4, "newborn_steps": 4,
+    "newborn_peak": 0.6, "protection_steps": 8, "reset_interval": 4,
+    "reset_count": 1, "max_update_norm": 0.05
+  }
+}

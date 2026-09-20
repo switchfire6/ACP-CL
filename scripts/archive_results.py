@@ -33,7 +33,7 @@ def archive(source: Path, destination: Path) -> None:
               "cost", "wall_seconds", "replay_bytes", "model_parameters", "peak_cuda_bytes",
               "information_access", "evaluation_schedule", "allocation_summary", "allocation_source_sha256",
               "input_centroid_accuracy", "detector_audit", "sensor_state_bytes", "allocation_trace_sha256",
-              "runtime_fingerprint", "runtime_sha256")
+              "runtime_fingerprint", "runtime_sha256", "stream_fingerprints")
     results = []
     for file in sorted(source.glob("*/result.json")):
         result = json.loads(file.read_text(encoding="utf-8"))

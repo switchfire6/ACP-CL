@@ -1,27 +1,54 @@
 # Adaptive Critical-Period Continual Learning
 
-A runnable PyTorch research prototype, evidence review, and falsifiable experiment plan for the attached critical-period hypothesis. All work is local. **The hypothesis is unproven.** Early pilots are software/feasibility experiments, not a confirmatory study.
+A PyTorch research prototype, evidence review, and falsifiable experiment plan for a critical-period-inspired continual-learning hypothesis. **The hypothesis is unproven.** The repository preserves negative results and distinguishes software checks, exploratory studies, and proposed confirmatory work.
+
+The [completed v2 study](reports/v2_results.md) contains 102 comparative runs, 972 per-experience scratch fits, and an exact reproduction of one late-training failure. V2 did not establish an advantage over replay plus recycling. The [v3 study](docs/experiment_v3.md) is in progress, with separate development and locked evaluation seeds.
 
 Start with the [research review](docs/research_review.md), [implemented algorithm](docs/algorithm.md), and [experiment protocol](docs/experiment_protocol.md). The original report is preserved in [docs/deep-research-report.md](docs/deep-research-report.md).
 
 ## Setup
 
-Tested locally with Python 3.10, PyTorch 2.8.0, torchvision 0.23.0, and an RTX 4070 Ti. CUDA wheels below follow the [official PyTorch version instructions](https://pytorch.org/get-started/previous-versions/#v280). Python 3.10–3.12 is a practical choice for these pinned framework versions.
+Use Python 3.10 for the closest match to recorded experiments. Install from the repository root in a fresh virtual environment. These platform-specific commands follow the [official PyTorch 2.8.0 instructions](https://pytorch.org/get-started/previous-versions/#v280).
+
+Windows, CPU only:
 
 ```powershell
-uv venv .venv --python 3.10
-uv pip install --python .venv\Scripts\python.exe torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128
-uv pip install --python .venv\Scripts\python.exe -e ".[dev]"
-.venv\Scripts\python.exe -m pytest -q
+py -3.10 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
 ```
 
-For CPU-only installation, change the PyTorch index suffix from `cu128` to `cpu`. On Linux/macOS, replace `.venv\Scripts\python.exe` with `.venv/bin/python`; the experiment code is portable. Dataset and generated training files live in ignored `data/` and `runs/` directories.
+Linux, CPU only:
+
+```bash
+python3.10 -m venv .venv
+.venv/bin/python -m pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+.venv/bin/python -m pip install -e ".[dev]"
+```
+
+macOS on Apple Silicon uses PyPI wheels, without a CUDA or Linux/Windows CPU index:
+
+```bash
+python3.10 -m venv .venv
+.venv/bin/python -m pip install torch==2.8.0 torchvision==0.23.0
+.venv/bin/python -m pip install -e ".[dev]"
+```
+
+For CUDA 12.8 on Windows or Linux, replace the CPU index in that platform's command with `https://download.pytorch.org/whl/cu128`. CUDA requires a compatible NVIDIA driver. Use `--device cpu` on macOS; this runner does not select MPS. The archived image experiments used Windows, Python 3.10.11, PyTorch 2.8.0+cu128, NumPy 2.2.6, and an RTX 4070 Ti. These setup instructions do not claim bitwise numerical reproduction on other systems.
+
+[requirements-lock.txt](requirements-lock.txt) records that Windows/CUDA package environment, including `+cu128` versions. It is not a portable CPU or macOS lockfile. To install the recorded versions in a fresh Windows/CUDA environment, first install Torch/torchvision from the CUDA index as above, then run:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt -e ".[dev]"
+```
+
+Python itself, drivers, hardware, and source revision are separate requirements. Reproducing archived results requires their recorded source and runtime. Ordinary CPU setup and CI exercise the dependency ranges in `pyproject.toml`, not the archived CUDA environment. Dataset and generated training files live in ignored `data/` and `runs/` directories.
 
 ## Run
 
-The next mechanism study is specified in [docs/experiment_v2.md](docs/experiment_v2.md).
-It adds local critical periods for replaced units, a frozen input drift sensor,
-oracle and reset/gain controls, and fixed-label recurring shape domains.
+Commands below use the Windows interpreter. On Linux/macOS, substitute `.venv/bin/python` and use forward slashes in repository paths.
+
+The completed [v2 protocol](docs/experiment_v2.md) covers local critical periods for replaced units, a frozen input drift sensor, oracle and reset/gain controls, and fixed-label recurring shape domains. Running an archived configuration with current code creates a new experiment; the [v2 report](reports/v2_results.md) identifies the historical training revision.
 
 ```powershell
 .venv\Scripts\python.exe -m acp_cl run --config configs\v2_shapes_development.json --output runs\my_v2_development --device cuda
@@ -55,9 +82,57 @@ The CIFAR commands download the official dataset if absent. If the Toronto origi
 
 Override methods or seeds with `--methods er er_recycle acp --seeds 11 22 33`. Add `--resume` to the **same command/output** to continue completed-experience checkpoints or reuse completed results. Changed configurations, source versions, execution devices, or recorded runtimes require a fresh output directory. Only resume trusted local checkpoints. Analyze existing results with `.venv\Scripts\python.exe -m acp_cl analyze runs\my_cifar`.
 
-Each suite writes `manifest.json`, per-method/seed results, controller events, checkpoints, paired bootstrap summaries, CSV, and PNG/SVG plots. A separate fresh-model diagnostic is trained on each experience using its identical current-data sequence. All shipped configurations evaluate **validation** images; the test split remains excluded from development decisions.
+Each suite writes `manifest.json`, per-method/seed results, allocation traces, events, checkpoints, paired bootstrap summaries, CSV, and PNG/SVG plots. When `scratch_reference` is enabled, a separate fresh-model diagnostic trains on each experience's identical current-data sequence; v3 disables it. Reported studies evaluate **validation** images and keep test data outside development decisions.
 
-`configs/resnet_gpu_smoke.json` runs twenty updates per method with all 100 output labels to check GPU integration quickly. It is intentionally too short for an accuracy conclusion. The exact installed environment is recorded in `requirements-lock.txt`; CUDA package versions there require the matching PyTorch wheel index.
+`configs/resnet_gpu_smoke.json` runs twenty updates per method with all 100 output labels to check GPU integration quickly. It is intentionally too short for an accuracy conclusion.
+
+## V3 study in progress
+
+The [v3 protocol](docs/experiment_v3.md) and [machine-readable study plan](configs/v3_study.json) separate development from locked evaluation. `v3_study.json` is an orchestration plan, not an individual `acp_cl run --config` file.
+
+Check all seven v3 methods locally without downloading data:
+
+```powershell
+.venv\Scripts\python.exe -m acp_cl run --config configs/v3_smoke.json --output runs/my_v3_smoke --device cpu
+```
+
+To prepare the development grid:
+
+```powershell
+.venv\Scripts\python.exe scripts/prepare_v3_study.py prepare-development --spec configs/v3_study.json --configs configs/v3/development
+```
+
+Run all eight generated JSON configurations through the ordinary CLI, using `runs/v3_development/<configuration-stem>` for each output. For example:
+
+```powershell
+.venv\Scripts\python.exe -m acp_cl run --config configs/v3/development/gain_005_recurring.json --output runs/v3_development/gain_005_recurring --device cuda
+```
+
+After the complete development grid finishes, select using development results only:
+
+```powershell
+.venv\Scripts\python.exe scripts/prepare_v3_study.py select --spec configs/v3_study.json --results runs/v3_development --output configs/v3/locked
+```
+
+Selection records the attempted candidates and emits three locked configurations only if the prespecified screen passes. Freeze `selection.json` and those configurations in local git before evaluating the new seeds. Run each of `recurring.json`, `stationary.json`, and `early_biased.json` with its matching `runs/v3_evaluation/<condition>` output; for example:
+
+```powershell
+.venv\Scripts\python.exe -m acp_cl run --config configs/v3/locked/recurring.json --output runs/v3_evaluation/recurring --device cuda
+```
+
+The plan screens four gains for replay plus recycling on two fresh development seeds, then locks one shared gain before evaluating three different seeds. If the stability screen passes, the planned total is 67 comparative runs: 16 development, 42 recurrent/stationary, and nine early-color-bias runs. Colors are independent of labels during ordinary training and all evaluation; the biased curriculum changes an initial training segment.
+
+| Method | Intervention |
+|---|---|
+| `er_v3` | Replay and a fixed feature gain, without recycling |
+| `recycle_v3` | Add a fixed reset-count/time schedule |
+| `newborn_v3` | Add a local gain window after replacement |
+| `newborn_matched_v3` | Redistribute mature gain to match the baseline's nominal feature budget before clipping |
+| `protection_v3` | Extend replacement eligibility age |
+| `consolidation_v3` | Add local consolidation after maturation |
+| `full_v3` | Combine gain, protection, and consolidation |
+
+These are individual-component comparisons against a shared baseline plus a combined condition, not a full factorial or isolated leave-one-out study. All conditions share a warmup and optimizer-displacement cap. Keeping mature gain unchanged and matching total nominal gain are different comparisons; post-clipping gains and actual displacements need not match. The protocol defines selection, measurements, and failure reporting. No v3 efficacy conclusion is claimed while the study is in progress.
 
 ## Comparisons
 
@@ -79,7 +154,9 @@ Each suite writes `manifest.json`, per-method/seed results, controller events, c
 
 The head is always trainable; no task ID or per-task output mask is used. Image models include an explicit recyclable adapter so channel resetting does not break residual/GroupNorm dependencies. The optimizer gates momentum displacement and separately tracks consolidation anchors and importance-window origins. See the algorithm document for exact departures from the original proposal and cited methods.
 
-The important endpoints are final accuracy, forgetting, and late-stream early-learning AUC. Scratch-adjusted AUC helps separate changing experience difficulty from adaptation performance. AUC divided by the first experience's AUC is deliberately omitted. Five-seed bootstrap intervals are exploratory and do not replace the planned independent 20-pair confirmatory cohort.
+The important endpoints are final accuracy, forgetting, and late-stream early-learning AUC. AUC includes retained knowledge and transfer as well as adaptation. Where measured, scratch-adjusted AUC is a diagnostic rather than pure forward transfer. AUC divided by the first experience's AUC is deliberately omitted. Small-seed bootstrap intervals are exploratory; sparse forgetting can miss intervening damage, and equal data exposure is not equal compute.
+
+The ingredients have substantial predecessors: mature low-utility replacement in [continual backpropagation](https://www.nature.com/articles/s41586-024-07711-7), importance-based protection in [Synaptic Intelligence](https://proceedings.mlr.press/v70/zenke17a.html), combined protection and plasticity in [UPGD](https://arxiv.org/abs/2404.00781), and persistent early-experience effects in [critical learning periods](https://arxiv.org/abs/1711.08856). This repository studies particular combinations and controls. It does not claim discovery of those ideas, biological equivalence, or a validated solution to continual learning.
 
 ## Current scope
 
@@ -93,3 +170,7 @@ instability, all negative results, and the proposed next comparison.
 Correctness tests cover phase transitions, finite-update validation, momentum gating, maturity/protection, adjacent recycling resets, replay RNG isolation, metrics, all method variants, evaluation isolation, exact checkpoint continuation, and provenance rejection. The initial synthetic pilot stayed open throughout: its high accuracy therefore does **not** validate critical-period control. Subsequent calibration and real-image results are reported separately in [reports/development_results.md](reports/development_results.md).
 
 Not yet completed: publication-grade baseline reproductions (including UPGD), matched tuning/compute studies, a preregistered confirmatory cohort, CORe50/Infinite dSprites adapters, and independent long-horizon replication on established benchmarks. Current image-model recycling is limited to the final adapter. Replay-damage feedback is sampled and delayed, not an old-knowledge guarantee. These limitations define the next experiments rather than a successful scientific claim.
+
+## Contributing and public readiness
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local tests, Ruff, and experiment-preservation rules. The [CPU workflow](.github/workflows/ci.yml) defines those checks plus a synthetic smoke run; adding the workflow does not establish that it has passed on GitHub. [Public-readiness notes](docs/public_readiness.md) distinguish a transparent research work in progress from a validated algorithm and list remaining release decisions. A license, publication account/repository, and visibility still require the owner's choice. No license or author identity is inferred here.

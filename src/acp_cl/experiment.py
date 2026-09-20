@@ -55,6 +55,20 @@ def source_hash() -> str:
     return digest.hexdigest()
 
 
+def stream_fingerprints(stream: Stream) -> dict[str, str]:
+    """Hash actual ordered examples, independently of descriptive metadata."""
+    signatures = {}
+    for split in ("train", "validation", "test"):
+        digest = hashlib.sha256()
+        for experience in stream.experiences:
+            digest.update(str(experience.index).encode())
+            for tensor in getattr(experience, split).tensors:
+                digest.update(str((tuple(tensor.shape), tensor.dtype)).encode())
+                digest.update(tensor.detach().cpu().contiguous().numpy().tobytes())
+        signatures[split] = digest.hexdigest()
+    return signatures
+
+
 def runtime_identity(device: torch.device) -> dict:
     """Canonical execution runtime, independent of optional environment logging."""
     fingerprint = {"python": platform.python_version(),
@@ -327,6 +341,24 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
               "model_parameters": sum(p.numel() for p in learner.model.parameters()),
               "replay_bytes": learner.buffer.nbytes(), "replay_examples": len(learner.buffer),
               "peak_cuda_bytes": torch.cuda.max_memory_allocated() if device.type == "cuda" else None}
+    if learner.v3:
+        result["stream_fingerprints"] = stream_fingerprints(stream)
+        trace = learner.allocation_trace
+        warmup = config.get("allocation_v3", {}).get("warmup_steps", 40)
+        post_warmup = trace[warmup:]
+        result["allocation_summary"].update({
+            "mean_nominal_feature_gain": float(np.mean([e["nominal_feature_gain"] for e in trace])),
+            "post_warmup_nominal_feature_gain": float(np.mean([
+                e["nominal_feature_gain"] for e in post_warmup])) if post_warmup else None,
+            "post_warmup_effective_feature_gain": float(np.mean([
+                e["effective_feature_gain"] for e in post_warmup])) if post_warmup else None,
+            "clipped_updates": sum(e["clip_scale"] < 1 for e in trace),
+            "maximum_proposed_update_norm": max(e["proposed_update_norm"] for e in trace),
+            "maximum_applied_update_norm": max(e["update_norm"] for e in trace),
+            "summed_head_data_displacement": sum(e["head_data_displacement"] for e in trace),
+            "gain_interpretation": "nominal before global step clipping; effective after clipping; feature parameters only",
+            "norm_bound_scope": "complete optimizer displacement, including head, decay and anchors; excludes recycling resets",
+        })
     write_json(run_dir / "allocation.json", {"trace": learner.allocation_trace})
     result["allocation_trace_sha256"] = hashlib.sha256((run_dir / "allocation.json").read_bytes()).hexdigest()
     write_json(run_dir / "events.json", {"events": learner.log})
