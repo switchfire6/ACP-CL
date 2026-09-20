@@ -1,0 +1,1376 @@
+[
+  {
+    "method": "acp",
+    "seed": 11,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      1,
+      53,
+      9,
+      99,
+      37,
+      15,
+      73,
+      29,
+      77,
+      52,
+      54,
+      55,
+      96,
+      81,
+      69,
+      42,
+      32,
+      62,
+      23,
+      74
+    ],
+    "metrics": {
+      "final_accuracy": 0.242,
+      "average_incremental_accuracy": 0.37733333333333335,
+      "backward_transfer": -0.4346666666666667,
+      "forgetting": 0.4346666666666667,
+      "late_early_auc": 0.13488877717391304,
+      "mean_early_auc": 0.18607330442774933,
+      "late_plasticity_gap": -0.2230638307225064
+    },
+    "accuracy_matrix": [
+      [
+        0.612,
+        null,
+        null,
+        null
+      ],
+      [
+        0.288,
+        0.516,
+        null,
+        null
+      ],
+      [
+        0.22,
+        0.028,
+        0.512,
+        null
+      ],
+      [
+        0.084,
+        0.18,
+        0.072,
+        0.632
+      ]
+    ],
+    "early_auc": [
+      0.30362619005754476,
+      0.1708894733056266,
+      0.060335496323529414,
+      0.20944205802429666
+    ],
+    "scratch_early_auc": [
+      0.34272857097186704,
+      0.2979555986253197,
+      0.35784032368925833,
+      0.35806489210358056
+    ],
+    "plasticity_gap": [
+      -0.03910238091432228,
+      -0.12706612531969308,
+      -0.2975048273657289,
+      -0.1486228340792839
+    ],
+    "phase_monitor_counts": {
+      "open": 38,
+      "scaffold": 2
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 28,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 8.897480399988126,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 155340800,
+    "transitions": [
+      {
+        "step": 30,
+        "phase": "open",
+        "reason": "scaffold_complete"
+      }
+    ],
+    "risk_contractions": 2
+  },
+  {
+    "method": "acp",
+    "seed": 22,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      75,
+      47,
+      36,
+      48,
+      97,
+      23,
+      22,
+      80,
+      95,
+      53,
+      51,
+      44,
+      2,
+      10,
+      8,
+      13,
+      59,
+      21,
+      18,
+      0
+    ],
+    "metrics": {
+      "final_accuracy": 0.30300000000000005,
+      "average_incremental_accuracy": 0.41841666666666666,
+      "backward_transfer": -0.39199999999999996,
+      "forgetting": 0.39199999999999996,
+      "late_early_auc": 0.12885908727621484,
+      "mean_early_auc": 0.15536390265345268,
+      "late_plasticity_gap": -0.14096642463235293
+    },
+    "accuracy_matrix": [
+      [
+        0.572,
+        null,
+        null,
+        null
+      ],
+      [
+        0.2,
+        0.736,
+        null,
+        null
+      ],
+      [
+        0.196,
+        0.356,
+        0.44,
+        null
+      ],
+      [
+        0.136,
+        0.42,
+        0.016,
+        0.64
+      ]
+    ],
+    "early_auc": [
+      0.20685156409846547,
+      0.15688587196291562,
+      0.09118515345268542,
+      0.16653302109974427
+    ],
+    "scratch_early_auc": [
+      0.22227507992327367,
+      0.47867637228260873,
+      0.1768514921675192,
+      0.36279953164961637
+    ],
+    "plasticity_gap": [
+      -0.015423515824808193,
+      -0.32179050031969314,
+      -0.08566633871483377,
+      -0.1962665105498721
+    ],
+    "phase_monitor_counts": {
+      "open": 38,
+      "scaffold": 2
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 28,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 8.799314999996568,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 157625856,
+    "transitions": [
+      {
+        "step": 30,
+        "phase": "open",
+        "reason": "scaffold_complete"
+      }
+    ],
+    "risk_contractions": 3
+  },
+  {
+    "method": "acp",
+    "seed": 33,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      32,
+      92,
+      49,
+      34,
+      13,
+      2,
+      11,
+      98,
+      40,
+      48,
+      60,
+      66,
+      77,
+      15,
+      71,
+      87,
+      84,
+      96,
+      35,
+      54
+    ],
+    "metrics": {
+      "final_accuracy": 0.211,
+      "average_incremental_accuracy": 0.30941666666666673,
+      "backward_transfer": -0.36133333333333334,
+      "forgetting": 0.36133333333333334,
+      "late_early_auc": 0.14718608216112533,
+      "mean_early_auc": 0.16551464254315856,
+      "late_plasticity_gap": -0.06266509031329923
+    },
+    "accuracy_matrix": [
+      [
+        0.52,
+        null,
+        null,
+        null
+      ],
+      [
+        0.248,
+        0.328,
+        null,
+        null
+      ],
+      [
+        0.144,
+        0.0,
+        0.512,
+        null
+      ],
+      [
+        0.14,
+        0.0,
+        0.136,
+        0.568
+      ]
+    ],
+    "early_auc": [
+      0.24697391384271103,
+      0.12071249200767263,
+      0.1645847961956522,
+      0.12978736812659847
+    ],
+    "scratch_early_auc": [
+      0.2528904227941176,
+      0.20792411365089514,
+      0.22539288203324806,
+      0.19430946291560106
+    ],
+    "plasticity_gap": [
+      -0.005916508951406579,
+      -0.0872116216432225,
+      -0.060808085837595865,
+      -0.06452209478900259
+    ],
+    "phase_monitor_counts": {
+      "open": 38,
+      "scaffold": 2
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 28,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 10.33085199999914,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 159910912,
+    "transitions": [
+      {
+        "step": 30,
+        "phase": "open",
+        "reason": "scaffold_complete"
+      }
+    ],
+    "risk_contractions": 1
+  },
+  {
+    "method": "er_recycle",
+    "seed": 11,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      1,
+      53,
+      9,
+      99,
+      37,
+      15,
+      73,
+      29,
+      77,
+      52,
+      54,
+      55,
+      96,
+      81,
+      69,
+      42,
+      32,
+      62,
+      23,
+      74
+    ],
+    "metrics": {
+      "final_accuracy": 0.227,
+      "average_incremental_accuracy": 0.3790833333333334,
+      "backward_transfer": -0.4573333333333333,
+      "forgetting": 0.4573333333333333,
+      "late_early_auc": 0.11468014426150897,
+      "mean_early_auc": 0.18250654531649618,
+      "late_plasticity_gap": -0.24327246363491048
+    },
+    "accuracy_matrix": [
+      [
+        0.62,
+        null,
+        null,
+        null
+      ],
+      [
+        0.236,
+        0.532,
+        null,
+        null
+      ],
+      [
+        0.204,
+        0.172,
+        0.48,
+        null
+      ],
+      [
+        0.048,
+        0.156,
+        0.056,
+        0.648
+      ]
+    ],
+    "early_auc": [
+      0.30362619005754476,
+      0.197039702685422,
+      0.07554870684143222,
+      0.1538115816815857
+    ],
+    "scratch_early_auc": [
+      0.34272857097186704,
+      0.2979555986253197,
+      0.35784032368925833,
+      0.35806489210358056
+    ],
+    "plasticity_gap": [
+      -0.03910238091432228,
+      -0.10091589593989767,
+      -0.2822916168478261,
+      -0.20425331042199485
+    ],
+    "phase_monitor_counts": {
+      "uncontrolled": 40
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 28,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 8.697226200005389,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 155340800,
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle",
+    "seed": 22,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      75,
+      47,
+      36,
+      48,
+      97,
+      23,
+      22,
+      80,
+      95,
+      53,
+      51,
+      44,
+      2,
+      10,
+      8,
+      13,
+      59,
+      21,
+      18,
+      0
+    ],
+    "metrics": {
+      "final_accuracy": 0.273,
+      "average_incremental_accuracy": 0.39625,
+      "backward_transfer": -0.4266666666666667,
+      "forgetting": 0.4266666666666667,
+      "late_early_auc": 0.16309285286125322,
+      "mean_early_auc": 0.17186326786285167,
+      "late_plasticity_gap": -0.10673265904731456
+    },
+    "accuracy_matrix": [
+      [
+        0.552,
+        null,
+        null,
+        null
+      ],
+      [
+        0.2,
+        0.728,
+        null,
+        null
+      ],
+      [
+        0.108,
+        0.344,
+        0.436,
+        null
+      ],
+      [
+        0.084,
+        0.336,
+        0.016,
+        0.656
+      ]
+    ],
+    "early_auc": [
+      0.2078066935741688,
+      0.15346067215473147,
+      0.17265785645780052,
+      0.15352784926470592
+    ],
+    "scratch_early_auc": [
+      0.22227507992327367,
+      0.47867637228260873,
+      0.1768514921675192,
+      0.36279953164961637
+    ],
+    "plasticity_gap": [
+      -0.014468386349104856,
+      -0.32521570012787726,
+      -0.004193635709718674,
+      -0.20927168238491045
+    ],
+    "phase_monitor_counts": {
+      "uncontrolled": 40
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 28,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 8.971338899995317,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 159418880,
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er_recycle",
+    "seed": 33,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      32,
+      92,
+      49,
+      34,
+      13,
+      2,
+      11,
+      98,
+      40,
+      48,
+      60,
+      66,
+      77,
+      15,
+      71,
+      87,
+      84,
+      96,
+      35,
+      54
+    ],
+    "metrics": {
+      "final_accuracy": 0.195,
+      "average_incremental_accuracy": 0.29325,
+      "backward_transfer": -0.36133333333333334,
+      "forgetting": 0.36133333333333334,
+      "late_early_auc": 0.16438309063299233,
+      "mean_early_auc": 0.17411314677909207,
+      "late_plasticity_gap": -0.04546808184143224
+    },
+    "accuracy_matrix": [
+      [
+        0.52,
+        null,
+        null,
+        null
+      ],
+      [
+        0.204,
+        0.312,
+        null,
+        null
+      ],
+      [
+        0.116,
+        0.0,
+        0.484,
+        null
+      ],
+      [
+        0.136,
+        0.0,
+        0.096,
+        0.548
+      ]
+    ],
+    "early_auc": [
+      0.24697391384271103,
+      0.12071249200767263,
+      0.2035979963235294,
+      0.12516818494245524
+    ],
+    "scratch_early_auc": [
+      0.2528904227941176,
+      0.20792411365089514,
+      0.22539288203324806,
+      0.19430946291560106
+    ],
+    "plasticity_gap": [
+      -0.005916508951406579,
+      -0.0872116216432225,
+      -0.02179488570971866,
+      -0.06914127797314581
+    ],
+    "phase_monitor_counts": {
+      "uncontrolled": 40
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 28,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 10.006112600007327,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 155340800,
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er",
+    "seed": 11,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      1,
+      53,
+      9,
+      99,
+      37,
+      15,
+      73,
+      29,
+      77,
+      52,
+      54,
+      55,
+      96,
+      81,
+      69,
+      42,
+      32,
+      62,
+      23,
+      74
+    ],
+    "metrics": {
+      "final_accuracy": 0.22599999999999998,
+      "average_incremental_accuracy": 0.37916666666666665,
+      "backward_transfer": -0.4693333333333333,
+      "forgetting": 0.4693333333333333,
+      "late_early_auc": 0.13432452445652177,
+      "mean_early_auc": 0.184251592870844,
+      "late_plasticity_gap": -0.2236280834398977
+    },
+    "accuracy_matrix": [
+      [
+        0.632,
+        null,
+        null,
+        null
+      ],
+      [
+        0.24,
+        0.576,
+        null,
+        null
+      ],
+      [
+        0.212,
+        0.028,
+        0.512,
+        null
+      ],
+      [
+        0.084,
+        0.156,
+        0.072,
+        0.592
+      ]
+    ],
+    "early_auc": [
+      0.30362619005754476,
+      0.16473113251278773,
+      0.0780521307544757,
+      0.1905969181585678
+    ],
+    "scratch_early_auc": [
+      0.34272857097186704,
+      0.2979555986253197,
+      0.35784032368925833,
+      0.35806489210358056
+    ],
+    "plasticity_gap": [
+      -0.03910238091432228,
+      -0.13322446611253194,
+      -0.27978819293478263,
+      -0.16746797394501275
+    ],
+    "phase_monitor_counts": {
+      "uncontrolled": 40
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 0,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 8.404929500000435,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 153055744,
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er",
+    "seed": 22,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      75,
+      47,
+      36,
+      48,
+      97,
+      23,
+      22,
+      80,
+      95,
+      53,
+      51,
+      44,
+      2,
+      10,
+      8,
+      13,
+      59,
+      21,
+      18,
+      0
+    ],
+    "metrics": {
+      "final_accuracy": 0.274,
+      "average_incremental_accuracy": 0.4025,
+      "backward_transfer": -0.39466666666666667,
+      "forgetting": 0.39466666666666667,
+      "late_early_auc": 0.17532883751598466,
+      "mean_early_auc": 0.17685478180946293,
+      "late_plasticity_gap": -0.09449667439258314
+    },
+    "accuracy_matrix": [
+      [
+        0.544,
+        null,
+        null,
+        null
+      ],
+      [
+        0.204,
+        0.732,
+        null,
+        null
+      ],
+      [
+        0.164,
+        0.388,
+        0.42,
+        null
+      ],
+      [
+        0.096,
+        0.396,
+        0.02,
+        0.584
+      ]
+    ],
+    "early_auc": [
+      0.2078066935741688,
+      0.14895475863171356,
+      0.15337601582480817,
+      0.19728165920716112
+    ],
+    "scratch_early_auc": [
+      0.22227507992327367,
+      0.47867637228260873,
+      0.1768514921675192,
+      0.36279953164961637
+    ],
+    "plasticity_gap": [
+      -0.014468386349104856,
+      -0.32972161365089514,
+      -0.02347547634271102,
+      -0.16551787244245525
+    ],
+    "phase_monitor_counts": {
+      "uncontrolled": 40
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 0,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 8.735771699997713,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 157625856,
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "er",
+    "seed": 33,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      32,
+      92,
+      49,
+      34,
+      13,
+      2,
+      11,
+      98,
+      40,
+      48,
+      60,
+      66,
+      77,
+      15,
+      71,
+      87,
+      84,
+      96,
+      35,
+      54
+    ],
+    "metrics": {
+      "final_accuracy": 0.193,
+      "average_incremental_accuracy": 0.30391666666666667,
+      "backward_transfer": -0.38399999999999995,
+      "forgetting": 0.38399999999999995,
+      "late_early_auc": 0.13591513946611253,
+      "mean_early_auc": 0.15796203224904093,
+      "late_plasticity_gap": -0.07393603300831203
+    },
+    "accuracy_matrix": [
+      [
+        0.512,
+        null,
+        null,
+        null
+      ],
+      [
+        0.244,
+        0.316,
+        null,
+        null
+      ],
+      [
+        0.172,
+        0.0,
+        0.52,
+        null
+      ],
+      [
+        0.132,
+        0.0,
+        0.064,
+        0.576
+      ]
+    ],
+    "early_auc": [
+      0.24697391384271103,
+      0.11304393622122762,
+      0.16426136508951406,
+      0.107568913842711
+    ],
+    "scratch_early_auc": [
+      0.2528904227941176,
+      0.20792411365089514,
+      0.22539288203324806,
+      0.19430946291560106
+    ],
+    "plasticity_gap": [
+      -0.005916508951406579,
+      -0.09488017742966752,
+      -0.061131516943734004,
+      -0.08674054907289006
+    ],
+    "phase_monitor_counts": {
+      "uncontrolled": 40
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.0,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 0,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 8.947518699991633,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 159418880,
+    "transitions": [],
+    "risk_contractions": 0
+  },
+  {
+    "method": "fixed",
+    "seed": 11,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      1,
+      53,
+      9,
+      99,
+      37,
+      15,
+      73,
+      29,
+      77,
+      52,
+      54,
+      55,
+      96,
+      81,
+      69,
+      42,
+      32,
+      62,
+      23,
+      74
+    ],
+    "metrics": {
+      "final_accuracy": 0.21700000000000003,
+      "average_incremental_accuracy": 0.36158333333333337,
+      "backward_transfer": -0.43733333333333335,
+      "forgetting": 0.43733333333333335,
+      "late_early_auc": 0.05919938459079284,
+      "mean_early_auc": 0.15573668458280052,
+      "late_plasticity_gap": -0.2987532233056266
+    },
+    "accuracy_matrix": [
+      [
+        0.628,
+        null,
+        null,
+        null
+      ],
+      [
+        0.196,
+        0.508,
+        null,
+        null
+      ],
+      [
+        0.172,
+        0.056,
+        0.52,
+        null
+      ],
+      [
+        0.02,
+        0.264,
+        0.06,
+        0.524
+      ]
+    ],
+    "early_auc": [
+      0.30362619005754476,
+      0.20092177909207162,
+      0.05166226422634271,
+      0.06673650495524297
+    ],
+    "scratch_early_auc": [
+      0.34272857097186704,
+      0.2979555986253197,
+      0.35784032368925833,
+      0.35806489210358056
+    ],
+    "plasticity_gap": [
+      -0.03910238091432228,
+      -0.09703381953324805,
+      -0.30617805946291565,
+      -0.2913283871483376
+    ],
+    "phase_monitor_counts": {
+      "adult": 30,
+      "closing": 3,
+      "open": 5,
+      "scaffold": 2
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.1130678728222847,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 13,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 9.01465470000403,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 157133824,
+    "transitions": [
+      {
+        "step": 30,
+        "phase": "open",
+        "reason": "fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "closing",
+        "reason": "fixed_schedule"
+      },
+      {
+        "step": 110,
+        "phase": "adult",
+        "reason": "fixed_schedule"
+      }
+    ],
+    "risk_contractions": 0
+  },
+  {
+    "method": "fixed",
+    "seed": 22,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      75,
+      47,
+      36,
+      48,
+      97,
+      23,
+      22,
+      80,
+      95,
+      53,
+      51,
+      44,
+      2,
+      10,
+      8,
+      13,
+      59,
+      21,
+      18,
+      0
+    ],
+    "metrics": {
+      "final_accuracy": 0.275,
+      "average_incremental_accuracy": 0.3925833333333334,
+      "backward_transfer": -0.37333333333333335,
+      "forgetting": 0.37333333333333335,
+      "late_early_auc": 0.10585890385230179,
+      "mean_early_auc": 0.1490208633711637,
+      "late_plasticity_gap": -0.163966608056266
+    },
+    "accuracy_matrix": [
+      [
+        0.54,
+        null,
+        null,
+        null
+      ],
+      [
+        0.184,
+        0.676,
+        null,
+        null
+      ],
+      [
+        0.164,
+        0.388,
+        0.424,
+        null
+      ],
+      [
+        0.144,
+        0.356,
+        0.02,
+        0.58
+      ]
+    ],
+    "early_auc": [
+      0.2078066935741688,
+      0.17655895220588236,
+      0.11070403612531969,
+      0.10101377157928389
+    ],
+    "scratch_early_auc": [
+      0.22227507992327367,
+      0.47867637228260873,
+      0.1768514921675192,
+      0.36279953164961637
+    ],
+    "plasticity_gap": [
+      -0.014468386349104856,
+      -0.3021174200767264,
+      -0.0661474560421995,
+      -0.2617857600703325
+    ],
+    "phase_monitor_counts": {
+      "adult": 30,
+      "closing": 3,
+      "open": 5,
+      "scaffold": 2
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.10186341404914856,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 13,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 8.860905199995614,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 155340800,
+    "transitions": [
+      {
+        "step": 30,
+        "phase": "open",
+        "reason": "fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "closing",
+        "reason": "fixed_schedule"
+      },
+      {
+        "step": 110,
+        "phase": "adult",
+        "reason": "fixed_schedule"
+      }
+    ],
+    "risk_contractions": 0
+  },
+  {
+    "method": "fixed",
+    "seed": 33,
+    "config_sha256": "2e4f34324a5907de11ce920071abdcbe59ed869d9b63a8ce07cdc3a139525ace",
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+    "execution_device": "cuda",
+    "eval_split": "validation",
+    "class_order": [
+      32,
+      92,
+      49,
+      34,
+      13,
+      2,
+      11,
+      98,
+      40,
+      48,
+      60,
+      66,
+      77,
+      15,
+      71,
+      87,
+      84,
+      96,
+      35,
+      54
+    ],
+    "metrics": {
+      "final_accuracy": 0.176,
+      "average_incremental_accuracy": 0.2935,
+      "backward_transfer": -0.3666666666666667,
+      "forgetting": 0.3666666666666667,
+      "late_early_auc": 0.12674858695652175,
+      "mean_early_auc": 0.16907269141624043,
+      "late_plasticity_gap": -0.08310258551790282
+    },
+    "accuracy_matrix": [
+      [
+        0.528,
+        null,
+        null,
+        null
+      ],
+      [
+        0.224,
+        0.308,
+        null,
+        null
+      ],
+      [
+        0.14,
+        0.0,
+        0.472,
+        null
+      ],
+      [
+        0.092,
+        0.0,
+        0.116,
+        0.496
+      ]
+    ],
+    "early_auc": [
+      0.24697391384271103,
+      0.17581967790920716,
+      0.13992658407928388,
+      0.11357058983375959
+    ],
+    "scratch_early_auc": [
+      0.2528904227941176,
+      0.20792411365089514,
+      0.22539288203324806,
+      0.19430946291560106
+    ],
+    "plasticity_gap": [
+      -0.005916508951406579,
+      -0.032104435741687976,
+      -0.08546629795396418,
+      -0.08073887308184147
+    ],
+    "phase_monitor_counts": {
+      "adult": 30,
+      "closing": 3,
+      "open": 5,
+      "scaffold": 2
+    },
+    "reopening_events": 0,
+    "diagnostics": {
+      "mean_consolidation": 0.10533265024423599,
+      "consolidated_fraction": 0.0,
+      "total_recycled": 13,
+      "recyclable_units": 128,
+      "optimizer_state_bytes": 1816512
+    },
+    "cost": {
+      "current_examples": 25024,
+      "replay_examples": 12768,
+      "probe_forward_examples": 2560,
+      "train_forward_calls": 799,
+      "backward_calls": 799,
+      "evaluation_examples": 23500
+    },
+    "wall_seconds": 10.179473700001836,
+    "replay_bytes": 1232000,
+    "model_parameters": 112564,
+    "peak_cuda_bytes": 157625856,
+    "transitions": [
+      {
+        "step": 30,
+        "phase": "open",
+        "reason": "fixed_schedule"
+      },
+      {
+        "step": 80,
+        "phase": "closing",
+        "reason": "fixed_schedule"
+      },
+      {
+        "step": 110,
+        "phase": "adult",
+        "reason": "fixed_schedule"
+      }
+    ],
+    "risk_contractions": 0
+  }
+]

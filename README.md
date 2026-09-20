@@ -26,6 +26,9 @@ For CPU-only installation, change the PyTorch index suffix from `cu128` to `cpu`
 # Paired development pilot, eight synthetic experiences and five seeds
 .venv\Scripts\python.exe -m acp_cl run --config configs\synthetic_pilot.json --output runs\my_synthetic --device cpu
 
+# Documented calibration: activates closure/reopening on three development seeds
+.venv\Scripts\python.exe -m acp_cl run --config configs\synthetic_calibrated.json --output runs\my_calibrated --device cpu
+
 # Real images: twenty CIFAR-100 classes, small CNN, three development seeds
 .venv\Scripts\python.exe -m acp_cl run --config configs\cifar100_pilot.json --output runs\my_cifar --device cuda
 
@@ -38,6 +41,8 @@ The CIFAR commands download the official dataset if absent. If the Toronto origi
 Override methods or seeds with `--methods er er_recycle acp --seeds 11 22 33`. Add `--resume` to the **same command/output** to continue completed-experience checkpoints or reuse completed results. Changed configurations, source versions, or execution devices require a fresh output directory. Only resume trusted local checkpoints. Analyze existing results with `.venv\Scripts\python.exe -m acp_cl analyze runs\my_cifar`.
 
 Each suite writes `manifest.json`, per-method/seed results, controller events, checkpoints, paired bootstrap summaries, CSV, and PNG/SVG plots. A separate fresh-model diagnostic is trained on each experience using its identical current-data sequence. All shipped configurations evaluate **validation** images; the test split remains excluded from development decisions.
+
+`configs/resnet_gpu_smoke.json` runs twenty updates per method with all 100 output labels to check GPU integration quickly. It is intentionally too short for an accuracy conclusion. The exact installed environment is recorded in `requirements-lock.txt`; CUDA package versions there require the matching PyTorch wheel index.
 
 ## Comparisons
 

@@ -1,0 +1,11 @@
+{
+  "stage": "GPU integration smoke test only; too few updates for accuracy conclusions",
+  "data": {"dataset": "cifar100", "root": "data", "download": true, "n_experiences": 10, "classes_per_experience": 10, "train_per_class": 8, "validation_per_class": 2, "test_per_class": 0},
+  "model": "resnet18", "width": 64, "batch_size": 16, "steps_per_experience": 2,
+  "eval_every_steps": 1, "early_fraction": 0.5, "eval_split": "validation",
+  "replay_capacity": 64, "replay_batch_size": 8, "probe_batch_size": 8,
+  "scratch_reference": false, "checkpoint": false, "threads": 4,
+  "methods": ["er", "acp"], "seeds": [11],
+  "controller": {"monitor_interval": 2, "scaffold_steps": 4, "min_open_steps": 4, "stable_windows": 2, "closing_windows": 2, "novel_windows": 2, "reopen_max_windows": 3, "cooldown_windows": 1, "top_k": 1},
+  "plasticity": {"lr": 0.005, "maturity_steps": 4, "recycle_interval": 4, "recycle_fraction": 0.02}
+}

@@ -1,0 +1,84 @@
+{
+  "config_sha256": "10c16394622966b8efaec444273bc2534b02e99f821194c9d58cb408999c5344",
+  "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+  "execution_device": "cpu",
+  "config": {
+    "stage": "exploratory development controller calibration; not confirmatory",
+    "calibration_note": "Faster monitoring reference, longer within-experience dwell, and less frequent recycling than synthetic_pilot. Chosen only to exercise signal-driven controller transitions; evaluated on validation only.",
+    "data": {
+      "dataset": "synthetic",
+      "n_experiences": 8,
+      "classes_per_experience": 2,
+      "input_dim": 32,
+      "train_per_class": 256,
+      "validation_per_class": 128,
+      "test_per_class": 0,
+      "noise": 0.7
+    },
+    "model": "mlp",
+    "width": 64,
+    "batch_size": 64,
+    "steps_per_experience": 300,
+    "eval_every_steps": 5,
+    "early_fraction": 0.2,
+    "eval_split": "validation",
+    "replay_capacity": 256,
+    "replay_batch_size": 32,
+    "probe_batch_size": 32,
+    "monitor_decay": 0.5,
+    "scratch_reference": false,
+    "checkpoint": false,
+    "threads": 2,
+    "methods": [
+      "acp"
+    ],
+    "seeds": [
+      11
+    ],
+    "controller": {
+      "monitor_interval": 10,
+      "scaffold_steps": 30,
+      "min_open_steps": 40,
+      "stable_windows": 3,
+      "stability_loss_tol": 0.1,
+      "stability_drift_tol": 0.2,
+      "closing_windows": 3,
+      "novel_windows": 2,
+      "reopen_max_windows": 8,
+      "cooldown_windows": 2,
+      "top_k": 1,
+      "g_min": 0.1,
+      "novelty_bias": 1.5,
+      "open_threshold": 0.65
+    },
+    "plasticity": {
+      "lr": 0.03,
+      "momentum": 0.9,
+      "weight_decay": 0.0001,
+      "maturity_steps": 30,
+      "recycle_interval": 100,
+      "recycle_fraction": 0.015,
+      "adult_recycle_fraction": 0.005,
+      "consolidation_rate": 0.3
+    },
+    "calibration_probe": 1
+  },
+  "seeds": [
+    11
+  ],
+  "methods": [
+    "acp"
+  ],
+  "environment": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "git_commit": null,
+    "git_dirty": true,
+    "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd"
+  },
+  "device": "cpu"
+}

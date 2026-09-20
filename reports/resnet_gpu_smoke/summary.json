@@ -1,0 +1,128 @@
+{
+  "status": "exploratory; unadjusted paired percentile bootstrap intervals",
+  "eval_split": "validation",
+  "config": {
+    "stage": "GPU integration smoke test only; too few updates for accuracy conclusions",
+    "data": {
+      "dataset": "cifar100",
+      "root": "data",
+      "download": true,
+      "n_experiences": 10,
+      "classes_per_experience": 10,
+      "train_per_class": 8,
+      "validation_per_class": 2,
+      "test_per_class": 0
+    },
+    "model": "resnet18",
+    "width": 64,
+    "batch_size": 16,
+    "steps_per_experience": 2,
+    "eval_every_steps": 1,
+    "early_fraction": 0.5,
+    "eval_split": "validation",
+    "replay_capacity": 64,
+    "replay_batch_size": 8,
+    "probe_batch_size": 8,
+    "scratch_reference": false,
+    "checkpoint": false,
+    "threads": 4,
+    "methods": [
+      "er",
+      "acp"
+    ],
+    "seeds": [
+      11
+    ],
+    "controller": {
+      "monitor_interval": 2,
+      "scaffold_steps": 4,
+      "min_open_steps": 4,
+      "stable_windows": 2,
+      "closing_windows": 2,
+      "novel_windows": 2,
+      "reopen_max_windows": 3,
+      "cooldown_windows": 1,
+      "top_k": 1
+    },
+    "plasticity": {
+      "lr": 0.005,
+      "maturity_steps": 4,
+      "recycle_interval": 4,
+      "recycle_fraction": 0.02
+    }
+  },
+  "config_sha256": "4d9880ff4abcabff58fc7ae6e4db3ced57dc27a17f7842cdd92700784e266d22",
+  "source_sha256": "a5110b0bac6f5e0567c44e9212f65ed91f7b7e0aedd704bb5d3cea6608ce01dd",
+  "methods": [
+    {
+      "method": "acp",
+      "n_seeds": 1,
+      "final_accuracy": 0.01,
+      "final_accuracy_sd": null,
+      "forgetting": 0.06666666666666667,
+      "forgetting_sd": null,
+      "late_early_auc": 0.01,
+      "late_early_auc_sd": null,
+      "late_plasticity_gap": null,
+      "late_plasticity_gap_sd": null,
+      "wall_seconds": 3.12011450000864,
+      "replay_bytes": 197120.0,
+      "peak_cuda_bytes": 491255808.0,
+      "reopening_events": 0.0
+    },
+    {
+      "method": "er",
+      "n_seeds": 1,
+      "final_accuracy": 0.01,
+      "final_accuracy_sd": null,
+      "forgetting": 0.03333333333333334,
+      "forgetting_sd": null,
+      "late_early_auc": 0.0,
+      "late_early_auc_sd": null,
+      "late_plasticity_gap": null,
+      "late_plasticity_gap_sd": null,
+      "wall_seconds": 2.9252636000019265,
+      "replay_bytes": 197120.0,
+      "peak_cuda_bytes": 488896512.0,
+      "reopening_events": 0.0
+    }
+  ],
+  "paired": [
+    {
+      "contrast": "acp - er",
+      "endpoint": "final_accuracy",
+      "seeds": [
+        11
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_pairs": 1
+    },
+    {
+      "contrast": "acp - er",
+      "endpoint": "forgetting",
+      "seeds": [
+        11
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": 0.033333333333333326,
+      "ci_low": 0.033333333333333326,
+      "ci_high": 0.033333333333333326,
+      "n_pairs": 1
+    },
+    {
+      "contrast": "acp - er",
+      "endpoint": "late_early_auc",
+      "seeds": [
+        11
+      ],
+      "all_seeds_matched": true,
+      "mean_difference": 0.01,
+      "ci_low": 0.01,
+      "ci_high": 0.01,
+      "n_pairs": 1
+    }
+  ]
+}
