@@ -1,0 +1,1210 @@
+{
+  "schema_version": 1,
+  "status": "selected",
+  "study_spec_sha256": "cc65bec72c11ca97b096563d64a1167c3c6d6b3b27c151d1ea0824378653732b",
+  "specification": {
+    "stage": "v3 exploratory causal allocation; separate development and locked evaluation seeds",
+    "development_seeds": [
+      411,
+      522
+    ],
+    "evaluation_seeds": [
+      731,
+      842,
+      953
+    ],
+    "feature_gains": [
+      0.05,
+      0.15,
+      0.5,
+      1.0
+    ],
+    "newborn_peak_factor": 4.0,
+    "development_experiences": 60,
+    "evaluation_experiences": 100,
+    "development_regimes": [
+      "recurring",
+      "stationary"
+    ],
+    "maximum_stationary_drawdown": 0.1,
+    "stationary_final_tolerance": 0.02,
+    "selection_score_tie_tolerance": 0.005,
+    "base_config": {
+      "data": {
+        "dataset": "procedural_shapes",
+        "n_experiences": 60,
+        "n_domains": 8,
+        "regime": "recurring",
+        "color_policy": "independent",
+        "train_per_class": 160,
+        "validation_per_class": 32,
+        "test_per_class": 0,
+        "image_size": 32
+      },
+      "model": "cnn",
+      "width": 64,
+      "batch_size": 32,
+      "steps_per_experience": 20,
+      "eval_every_steps": 4,
+      "early_examples": 256,
+      "eval_split": "validation",
+      "replay_capacity": 256,
+      "replay_batch_size": 32,
+      "probe_batch_size": 32,
+      "monitor_decay": 0.7,
+      "scratch_reference": false,
+      "checkpoint": true,
+      "threads": 2,
+      "retention_eval_every_experiences": 10,
+      "progress_every_experiences": 20,
+      "controller": {
+        "monitor_interval": 5
+      },
+      "plasticity": {
+        "lr": 0.03,
+        "momentum": 0.9,
+        "weight_decay": 0.0001,
+        "maturity_steps": 30,
+        "consolidation_rate": 0.3,
+        "anchor_strength": 0.001
+      },
+      "allocation_v3": {
+        "feature_gain": 0.15,
+        "warmup_steps": 40,
+        "newborn_steps": 30,
+        "newborn_peak": 1.0,
+        "protection_steps": 60,
+        "reset_interval": 20,
+        "reset_count": 3,
+        "max_update_norm": 0.1
+      }
+    },
+    "evaluation_conditions": {
+      "recurring": {
+        "regime": "recurring",
+        "color_policy": "independent",
+        "methods": [
+          "er_v3",
+          "recycle_v3",
+          "newborn_v3",
+          "newborn_matched_v3",
+          "protection_v3",
+          "consolidation_v3",
+          "full_v3"
+        ]
+      },
+      "stationary": {
+        "regime": "stationary",
+        "color_policy": "independent",
+        "methods": [
+          "er_v3",
+          "recycle_v3",
+          "newborn_v3",
+          "newborn_matched_v3",
+          "protection_v3",
+          "consolidation_v3",
+          "full_v3"
+        ]
+      },
+      "early_biased": {
+        "regime": "recurring",
+        "color_policy": "early_biased",
+        "bias_experiences": 8,
+        "methods": [
+          "recycle_v3",
+          "newborn_v3",
+          "full_v3"
+        ]
+      }
+    }
+  },
+  "development_seeds": [
+    411,
+    522
+  ],
+  "evaluation_seeds": [
+    731,
+    842,
+    953
+  ],
+  "selection_rule": {
+    "stationary_checkpoint_experiences": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60
+    ],
+    "stationary_pool": "first-experience validation column at full-retention checkpoints only; acquisition diagonal at experience 1 excluded",
+    "maximum_stationary_drawdown": 0.1,
+    "stationary_screen": "every development seed must pass independently",
+    "stationary_final_tolerance": 0.02,
+    "score": "0.5 * (mean recurring final accuracy + mean recurring late acquisition AUC)",
+    "score_tie_tolerance": 0.005,
+    "tie_break": "smallest feature gain within tolerance of the maximum eligible score"
+  },
+  "common_identity": {
+    "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+    "execution_device": "cuda",
+    "runtime_fingerprint": {
+      "python": "3.10.11",
+      "torch": "2.8.0+cu128",
+      "numpy": "2.2.6",
+      "cuda_runtime": "12.8",
+      "gpu": "NVIDIA GeForce RTX 4070 Ti"
+    },
+    "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf"
+  },
+  "input_paths_relative_to": "the development results root passed to select",
+  "input_results": [
+    {
+      "candidate": "gain_005_recurring",
+      "feature_gain": 0.05,
+      "regime": "recurring",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "f3bbbefd4f2634122e0aef04d2097b58998bb1c04fbbdaf056f02b220e4c254a",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_005_recurring/manifest.json",
+      "manifest_sha256": "f272ba789d04368917eba6655dd0edd38b8b2bdf3c762ed5ca702f043d66240e",
+      "result_path": "gain_005_recurring/recycle_v3_seed411/result.json",
+      "result_sha256": "fdf0b677a63aad6d01c63622d77ba1d0a78b9ec9c6049c760170b9ddaa3413ba",
+      "allocation_path": "gain_005_recurring/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "98ca9e51bc8ea9f525e587f00e25671b679914502c94a546bad01cc350de0bb5",
+      "metrics": {
+        "final_accuracy": 0.512109375,
+        "average_incremental_accuracy": 0.31954799107142856,
+        "backward_transfer": 0.2076271186440678,
+        "forgetting": 0.00026483050847457627,
+        "late_early_auc": 0.3468098958333333,
+        "mean_early_auc": 0.30514322916666664
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null
+    },
+    {
+      "candidate": "gain_005_recurring",
+      "feature_gain": 0.05,
+      "regime": "recurring",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "f3bbbefd4f2634122e0aef04d2097b58998bb1c04fbbdaf056f02b220e4c254a",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_005_recurring/manifest.json",
+      "manifest_sha256": "f272ba789d04368917eba6655dd0edd38b8b2bdf3c762ed5ca702f043d66240e",
+      "result_path": "gain_005_recurring/recycle_v3_seed522/result.json",
+      "result_sha256": "09772aaf4f500d624e68246e1529f3ba207faf67b5541f05d9ee7fb5e39b8a86",
+      "allocation_path": "gain_005_recurring/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "8bbb9e05e23af6c2297fe6b4ba24e67a7bf77f4b6d3a6666de764a77aa77e3f7",
+      "metrics": {
+        "final_accuracy": 0.29127604166666665,
+        "average_incremental_accuracy": 0.28979538690476186,
+        "backward_transfer": -0.009798728813559322,
+        "forgetting": 0.1216896186440678,
+        "late_early_auc": 0.3350911458333333,
+        "mean_early_auc": 0.2977213541666667
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null
+    },
+    {
+      "candidate": "gain_005_stationary",
+      "feature_gain": 0.05,
+      "regime": "stationary",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "11039c1cf4808b6e41aa23e9dfe6092f7d975d035728132cdcb6627c8d0b84f7",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_005_stationary/manifest.json",
+      "manifest_sha256": "40615436f07dfc27eaa8ec3def03f318edcfe8c4356b11cae38b2f61701ee716",
+      "result_path": "gain_005_stationary/recycle_v3_seed411/result.json",
+      "result_sha256": "48078442686c5a4b0c3a9c86f6596506b3221b5f0ff437374c11634b29ced34d",
+      "allocation_path": "gain_005_stationary/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "a1400795ccd9872572ee8c10f484c6de8ab8737c8fe143a75393ffc816e4d4e5",
+      "metrics": {
+        "final_accuracy": 0.93984375,
+        "average_incremental_accuracy": 0.5264081101190476,
+        "backward_transfer": 0.4523305084745763,
+        "forgetting": 0.0,
+        "late_early_auc": 0.6873697916666667,
+        "mean_early_auc": 0.49990234375
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.2734375
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.3671875
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.4375
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.703125
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.8046875
+        },
+        {
+          "experience": 60,
+          "accuracy": 0.9375
+        }
+      ]
+    },
+    {
+      "candidate": "gain_005_stationary",
+      "feature_gain": 0.05,
+      "regime": "stationary",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "11039c1cf4808b6e41aa23e9dfe6092f7d975d035728132cdcb6627c8d0b84f7",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_005_stationary/manifest.json",
+      "manifest_sha256": "40615436f07dfc27eaa8ec3def03f318edcfe8c4356b11cae38b2f61701ee716",
+      "result_path": "gain_005_stationary/recycle_v3_seed522/result.json",
+      "result_sha256": "31cc2cb49599ca9860f8db7a9a00e178760263e8461c44f8f3990956807449af",
+      "allocation_path": "gain_005_stationary/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "b369b9bb3796d54699ed3da04bb2b3e63c3728abe31be0d79eb053f5efc030be",
+      "metrics": {
+        "final_accuracy": 0.8354166666666667,
+        "average_incremental_accuracy": 0.3858947172619048,
+        "backward_transfer": 0.486228813559322,
+        "forgetting": 0.0,
+        "late_early_auc": 0.441015625,
+        "mean_early_auc": 0.3553059895833333
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.2578125
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.2734375
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.359375
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.515625
+        },
+        {
+          "experience": 60,
+          "accuracy": 0.8828125
+        }
+      ]
+    },
+    {
+      "candidate": "gain_015_recurring",
+      "feature_gain": 0.15,
+      "regime": "recurring",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "a2879ff2b06cc2bdacbbedc33a4f6329b674c333c5a4ad18187c94e6ec298949",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_015_recurring/manifest.json",
+      "manifest_sha256": "76b05bc87b54db47472f43bbf9a769b958e11aad155858a561e5c67c2cc6bc12",
+      "result_path": "gain_015_recurring/recycle_v3_seed411/result.json",
+      "result_sha256": "7a61bee9032a3758c16f895c55318a595a445f7b8858daeb6a17cdb59e2c5b5c",
+      "allocation_path": "gain_015_recurring/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "c2f1ff327e9ca1b34e95f7f91268f6e15a4796cd6f5f1bf2fd3981f183e7460e",
+      "metrics": {
+        "final_accuracy": 0.8231770833333333,
+        "average_incremental_accuracy": 0.42949776785714283,
+        "backward_transfer": 0.4226694915254237,
+        "forgetting": 0.005958686440677966,
+        "late_early_auc": 0.5281901041666667,
+        "mean_early_auc": 0.39775390625
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null
+    },
+    {
+      "candidate": "gain_015_recurring",
+      "feature_gain": 0.15,
+      "regime": "recurring",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "a2879ff2b06cc2bdacbbedc33a4f6329b674c333c5a4ad18187c94e6ec298949",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_015_recurring/manifest.json",
+      "manifest_sha256": "76b05bc87b54db47472f43bbf9a769b958e11aad155858a561e5c67c2cc6bc12",
+      "result_path": "gain_015_recurring/recycle_v3_seed522/result.json",
+      "result_sha256": "38d3e52b39493fd154d015d471a094fb594cc0e83ff177afff6a4b92184b9eec",
+      "allocation_path": "gain_015_recurring/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "bdf8c8684f10bae3baefa994934814441d9751626b9db265790ca17b8ace7204",
+      "metrics": {
+        "final_accuracy": 0.29322916666666665,
+        "average_incremental_accuracy": 0.31318638392857145,
+        "backward_transfer": -0.06104343220338983,
+        "forgetting": 0.23702330508474576,
+        "late_early_auc": 0.4703125,
+        "mean_early_auc": 0.36741536458333335
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null
+    },
+    {
+      "candidate": "gain_015_stationary",
+      "feature_gain": 0.15,
+      "regime": "stationary",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "03da19df54221ae8da3ee5ecf8329691997e6b9dcae2008ea2d2a4e8ea10b90d",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_015_stationary/manifest.json",
+      "manifest_sha256": "c1ec08c7c121f1b7a44fb82a5c009745afe6ddf6766cc16d0a34b6a39b68a9ca",
+      "result_path": "gain_015_stationary/recycle_v3_seed411/result.json",
+      "result_sha256": "4f5509815cf1a56e66c66f59195dca5a88c5538cee7b83e7e5a6d047b6ed44da",
+      "allocation_path": "gain_015_stationary/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "2ce8f1d52f13827970bf072a7ebfe48ceb5e367728174a81f87543c7f15f52b5",
+      "metrics": {
+        "final_accuracy": 0.989453125,
+        "average_incremental_accuracy": 0.6300892857142857,
+        "backward_transfer": 0.321239406779661,
+        "forgetting": 0.00013241525423728814,
+        "late_early_auc": 0.9127604166666666,
+        "mean_early_auc": 0.65615234375
+      },
+      "stationary_drawdown": 0.1328125,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.4375
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.71875
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.9765625
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.84375
+        },
+        {
+          "experience": 60,
+          "accuracy": 0.9921875
+        }
+      ]
+    },
+    {
+      "candidate": "gain_015_stationary",
+      "feature_gain": 0.15,
+      "regime": "stationary",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "03da19df54221ae8da3ee5ecf8329691997e6b9dcae2008ea2d2a4e8ea10b90d",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_015_stationary/manifest.json",
+      "manifest_sha256": "c1ec08c7c121f1b7a44fb82a5c009745afe6ddf6766cc16d0a34b6a39b68a9ca",
+      "result_path": "gain_015_stationary/recycle_v3_seed522/result.json",
+      "result_sha256": "9d88f5eaa95621c4c5bef098aedbd6125a843bbeda308dc84d3cfea507439b4d",
+      "allocation_path": "gain_015_stationary/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "a53d9f0cb8ac5220d19d0fedade3eb3034858b9d644e00c83a629451c86fa646",
+      "metrics": {
+        "final_accuracy": 0.976171875,
+        "average_incremental_accuracy": 0.5395386904761904,
+        "backward_transfer": 0.4586864406779661,
+        "forgetting": 0.0,
+        "late_early_auc": 0.7602864583333333,
+        "mean_early_auc": 0.5195963541666667
+      },
+      "stationary_drawdown": 0.0703125,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.3203125
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.828125
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.8984375
+        },
+        {
+          "experience": 60,
+          "accuracy": 0.9453125
+        }
+      ]
+    },
+    {
+      "candidate": "gain_050_recurring",
+      "feature_gain": 0.5,
+      "regime": "recurring",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "3174da4dcc7b543882fa2e8aecc47bf957fefccca4c04aeadbd77c21dbca0123",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_050_recurring/manifest.json",
+      "manifest_sha256": "e7deec3254ba539090a603771d03b70904b7ad724202b9449d9bf2ec242b5647",
+      "result_path": "gain_050_recurring/recycle_v3_seed411/result.json",
+      "result_sha256": "8a3bfeb1cf9fe42ecda7f212886ef97dcd7881e20dddb28fd202f61a9f852fff",
+      "allocation_path": "gain_050_recurring/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "02f6707a8a94438b9b68d665defc12bcb01219c31e0f363a9e51270eeabc5318",
+      "metrics": {
+        "final_accuracy": 0.9919270833333333,
+        "average_incremental_accuracy": 0.5480933779761905,
+        "backward_transfer": 0.4463718220338983,
+        "forgetting": 0.0006620762711864406,
+        "late_early_auc": 0.7973307291666667,
+        "mean_early_auc": 0.5389322916666667
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null
+    },
+    {
+      "candidate": "gain_050_recurring",
+      "feature_gain": 0.5,
+      "regime": "recurring",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "3174da4dcc7b543882fa2e8aecc47bf957fefccca4c04aeadbd77c21dbca0123",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_050_recurring/manifest.json",
+      "manifest_sha256": "e7deec3254ba539090a603771d03b70904b7ad724202b9449d9bf2ec242b5647",
+      "result_path": "gain_050_recurring/recycle_v3_seed522/result.json",
+      "result_sha256": "eaeda2c8461efaf420ba25e3fdced89968a6303805308dd575135aaad480c534",
+      "allocation_path": "gain_050_recurring/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "006c3b3bcc1b6ff2d1fc1c883cb014c385ddf61d7968e97737371e63782ae1dd",
+      "metrics": {
+        "final_accuracy": 0.7955729166666666,
+        "average_incremental_accuracy": 0.4644084821428572,
+        "backward_transfer": 0.3252118644067797,
+        "forgetting": 0.1373146186440678,
+        "late_early_auc": 0.7031901041666667,
+        "mean_early_auc": 0.4837239583333333
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null
+    },
+    {
+      "candidate": "gain_050_stationary",
+      "feature_gain": 0.5,
+      "regime": "stationary",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "3c0c04147e0a745ecb04866084bcb2bf97d91d00e111d351c6a69553996dab7c",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_050_stationary/manifest.json",
+      "manifest_sha256": "671d2f1ab604b5dd17fdab07eee68ec61b6695676d72ce6e25b863d3ef5e1439",
+      "result_path": "gain_050_stationary/recycle_v3_seed411/result.json",
+      "result_sha256": "c21bd72b78e16e35926f6350f0efbb2bc3dd4f4d8803a47e5d874b5085f299cf",
+      "allocation_path": "gain_050_stationary/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "5deeaf7d393adc754041d82db3157aef8464ef107e917ee181da309c2fa0d48a",
+      "metrics": {
+        "final_accuracy": 0.9981770833333333,
+        "average_incremental_accuracy": 0.761514136904762,
+        "backward_transfer": 0.23940677966101695,
+        "forgetting": 0.0007944915254237289,
+        "late_early_auc": 0.97890625,
+        "mean_early_auc": 0.73984375
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.328125
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.8125
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.9453125
+        },
+        {
+          "experience": 40,
+          "accuracy": 1.0
+        },
+        {
+          "experience": 50,
+          "accuracy": 1.0
+        },
+        {
+          "experience": 60,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    {
+      "candidate": "gain_050_stationary",
+      "feature_gain": 0.5,
+      "regime": "stationary",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "3c0c04147e0a745ecb04866084bcb2bf97d91d00e111d351c6a69553996dab7c",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_050_stationary/manifest.json",
+      "manifest_sha256": "671d2f1ab604b5dd17fdab07eee68ec61b6695676d72ce6e25b863d3ef5e1439",
+      "result_path": "gain_050_stationary/recycle_v3_seed522/result.json",
+      "result_sha256": "6866a415310faa1c70d5bcdcd98b1c543d29f52532e025cf27d8cb5f2d1e3a3d",
+      "allocation_path": "gain_050_stationary/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "3cfabc9ff9f1f18cd91a07884744f4a835212273780f9dc1fbadded01ca3e19b",
+      "metrics": {
+        "final_accuracy": 0.988671875,
+        "average_incremental_accuracy": 0.6431026785714284,
+        "backward_transfer": 0.3359375,
+        "forgetting": 0.008606991525423728,
+        "late_early_auc": 0.9423828125,
+        "mean_early_auc": 0.65361328125
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.2734375
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.8125
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.90625
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.9765625
+        },
+        {
+          "experience": 60,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    {
+      "candidate": "gain_100_recurring",
+      "feature_gain": 1.0,
+      "regime": "recurring",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "8e909459568e2a927deb3b81e207c3f777e473d9e11dec760fc60248891eff87",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_100_recurring/manifest.json",
+      "manifest_sha256": "3a763daf741237069036af34b04093005da0393b823ce2b0c0cbc0439a1a85ba",
+      "result_path": "gain_100_recurring/recycle_v3_seed411/result.json",
+      "result_sha256": "55e1d4b44cc3656fee295329131beb4dcf5d1f8dca363d65f61344b8006cec44",
+      "allocation_path": "gain_100_recurring/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "bcbed333143eaf24bcf55ec9ae872e05fbaa317d9aff228770057ae887aecd97",
+      "metrics": {
+        "final_accuracy": 0.9803385416666667,
+        "average_incremental_accuracy": 0.6147302827380952,
+        "backward_transfer": 0.3930084745762712,
+        "forgetting": 0.002780720338983051,
+        "late_early_auc": 0.8725260416666667,
+        "mean_early_auc": 0.58828125
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null
+    },
+    {
+      "candidate": "gain_100_recurring",
+      "feature_gain": 1.0,
+      "regime": "recurring",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "8e909459568e2a927deb3b81e207c3f777e473d9e11dec760fc60248891eff87",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_100_recurring/manifest.json",
+      "manifest_sha256": "3a763daf741237069036af34b04093005da0393b823ce2b0c0cbc0439a1a85ba",
+      "result_path": "gain_100_recurring/recycle_v3_seed522/result.json",
+      "result_sha256": "acbc303e6367865d645ad7dd5f40e8e6dfadc8b2d336dfe5ca7127897d31cd73",
+      "allocation_path": "gain_100_recurring/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "92cc280a4caf420e7224b139b5a5c4c06f40d23c2f180135656d9aea3669f8eb",
+      "metrics": {
+        "final_accuracy": 0.73203125,
+        "average_incremental_accuracy": 0.3744029017857143,
+        "backward_transfer": 0.3783103813559322,
+        "forgetting": 0.025953389830508475,
+        "late_early_auc": 0.43359375,
+        "mean_early_auc": 0.3419270833333333
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null
+    },
+    {
+      "candidate": "gain_100_stationary",
+      "feature_gain": 1.0,
+      "regime": "stationary",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "9e7e46d5ea8b4cc511911b891e9e99b8cb3b7d87d94b1361e88b92eb7ab40c29",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_100_stationary/manifest.json",
+      "manifest_sha256": "f9b95da764bfcf26b5ae85240efa2941fd548a0bfaab6ac341280fb66e728a1d",
+      "result_path": "gain_100_stationary/recycle_v3_seed411/result.json",
+      "result_sha256": "0364bef415b839e729d1372d1e07002407a2d9a35df6e5c0ebfc117d07beb595",
+      "allocation_path": "gain_100_stationary/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "b79e2cbe1a5e5aa77ff17b8c09128cf0007e4144b2a4f1c556285ba37132712d",
+      "metrics": {
+        "final_accuracy": 0.9977864583333333,
+        "average_incremental_accuracy": 0.7544438244047621,
+        "backward_transfer": 0.23040254237288135,
+        "forgetting": 0.001986228813559322,
+        "late_early_auc": 0.9865234375,
+        "mean_early_auc": 0.7570963541666667
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.328125
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.7890625
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.953125
+        },
+        {
+          "experience": 40,
+          "accuracy": 1.0
+        },
+        {
+          "experience": 50,
+          "accuracy": 1.0
+        },
+        {
+          "experience": 60,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    {
+      "candidate": "gain_100_stationary",
+      "feature_gain": 1.0,
+      "regime": "stationary",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "9e7e46d5ea8b4cc511911b891e9e99b8cb3b7d87d94b1361e88b92eb7ab40c29",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_100_stationary/manifest.json",
+      "manifest_sha256": "f9b95da764bfcf26b5ae85240efa2941fd548a0bfaab6ac341280fb66e728a1d",
+      "result_path": "gain_100_stationary/recycle_v3_seed522/result.json",
+      "result_sha256": "d8863bfe5f06074ab13c1a7d937223b05bbaee632b3052ab076a37a421930566",
+      "allocation_path": "gain_100_stationary/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "f6a33a7c302a1ba6bf2558dc46ca417b00fc49b5a422e86adb3a0e4caca3422d",
+      "metrics": {
+        "final_accuracy": 0.9932291666666667,
+        "average_incremental_accuracy": 0.6014453125,
+        "backward_transfer": 0.3275953389830508,
+        "forgetting": 0.00423728813559322,
+        "late_early_auc": 0.9567708333333333,
+        "mean_early_auc": 0.6804361979166667
+      },
+      "stationary_drawdown": 0.015625,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.3515625
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.4296875
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.9921875
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.9765625
+        },
+        {
+          "experience": 60,
+          "accuracy": 1.0
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "feature_gain": 0.05,
+      "stationary_drawdowns": {
+        "411": 0.0,
+        "522": 0.0
+      },
+      "stationary_checkpoint_accuracies": {
+        "411": [
+          {
+            "experience": 10,
+            "accuracy": 0.2734375
+          },
+          {
+            "experience": 20,
+            "accuracy": 0.3671875
+          },
+          {
+            "experience": 30,
+            "accuracy": 0.4375
+          },
+          {
+            "experience": 40,
+            "accuracy": 0.703125
+          },
+          {
+            "experience": 50,
+            "accuracy": 0.8046875
+          },
+          {
+            "experience": 60,
+            "accuracy": 0.9375
+          }
+        ],
+        "522": [
+          {
+            "experience": 10,
+            "accuracy": 0.25
+          },
+          {
+            "experience": 20,
+            "accuracy": 0.2578125
+          },
+          {
+            "experience": 30,
+            "accuracy": 0.2734375
+          },
+          {
+            "experience": 40,
+            "accuracy": 0.359375
+          },
+          {
+            "experience": 50,
+            "accuracy": 0.515625
+          },
+          {
+            "experience": 60,
+            "accuracy": 0.8828125
+          }
+        ]
+      },
+      "mean_stationary_final_accuracy": 0.8876302083333334,
+      "mean_recurring_final_accuracy": 0.4016927083333333,
+      "mean_recurring_late_auc": 0.3409505208333333,
+      "selection_score": 0.37132161458333335,
+      "passes_stationary_screen": true,
+      "within_stationary_final_tolerance": false,
+      "in_score_tie_band": false,
+      "selected": false,
+      "input_result_paths": [
+        "gain_005_stationary/recycle_v3_seed411/result.json",
+        "gain_005_stationary/recycle_v3_seed522/result.json",
+        "gain_005_recurring/recycle_v3_seed411/result.json",
+        "gain_005_recurring/recycle_v3_seed522/result.json"
+      ]
+    },
+    {
+      "feature_gain": 0.15,
+      "stationary_drawdowns": {
+        "411": 0.1328125,
+        "522": 0.0703125
+      },
+      "stationary_checkpoint_accuracies": {
+        "411": [
+          {
+            "experience": 10,
+            "accuracy": 0.25
+          },
+          {
+            "experience": 20,
+            "accuracy": 0.4375
+          },
+          {
+            "experience": 30,
+            "accuracy": 0.71875
+          },
+          {
+            "experience": 40,
+            "accuracy": 0.9765625
+          },
+          {
+            "experience": 50,
+            "accuracy": 0.84375
+          },
+          {
+            "experience": 60,
+            "accuracy": 0.9921875
+          }
+        ],
+        "522": [
+          {
+            "experience": 10,
+            "accuracy": 0.25
+          },
+          {
+            "experience": 20,
+            "accuracy": 0.3203125
+          },
+          {
+            "experience": 30,
+            "accuracy": 0.25
+          },
+          {
+            "experience": 40,
+            "accuracy": 0.828125
+          },
+          {
+            "experience": 50,
+            "accuracy": 0.8984375
+          },
+          {
+            "experience": 60,
+            "accuracy": 0.9453125
+          }
+        ]
+      },
+      "mean_stationary_final_accuracy": 0.9828125000000001,
+      "mean_recurring_final_accuracy": 0.5582031249999999,
+      "mean_recurring_late_auc": 0.49925130208333335,
+      "selection_score": 0.5287272135416666,
+      "passes_stationary_screen": false,
+      "within_stationary_final_tolerance": false,
+      "in_score_tie_band": false,
+      "selected": false,
+      "input_result_paths": [
+        "gain_015_stationary/recycle_v3_seed411/result.json",
+        "gain_015_stationary/recycle_v3_seed522/result.json",
+        "gain_015_recurring/recycle_v3_seed411/result.json",
+        "gain_015_recurring/recycle_v3_seed522/result.json"
+      ]
+    },
+    {
+      "feature_gain": 0.5,
+      "stationary_drawdowns": {
+        "411": 0.0,
+        "522": 0.0
+      },
+      "stationary_checkpoint_accuracies": {
+        "411": [
+          {
+            "experience": 10,
+            "accuracy": 0.328125
+          },
+          {
+            "experience": 20,
+            "accuracy": 0.8125
+          },
+          {
+            "experience": 30,
+            "accuracy": 0.9453125
+          },
+          {
+            "experience": 40,
+            "accuracy": 1.0
+          },
+          {
+            "experience": 50,
+            "accuracy": 1.0
+          },
+          {
+            "experience": 60,
+            "accuracy": 1.0
+          }
+        ],
+        "522": [
+          {
+            "experience": 10,
+            "accuracy": 0.25
+          },
+          {
+            "experience": 20,
+            "accuracy": 0.2734375
+          },
+          {
+            "experience": 30,
+            "accuracy": 0.8125
+          },
+          {
+            "experience": 40,
+            "accuracy": 0.90625
+          },
+          {
+            "experience": 50,
+            "accuracy": 0.9765625
+          },
+          {
+            "experience": 60,
+            "accuracy": 1.0
+          }
+        ]
+      },
+      "mean_stationary_final_accuracy": 0.9934244791666667,
+      "mean_recurring_final_accuracy": 0.89375,
+      "mean_recurring_late_auc": 0.7502604166666667,
+      "selection_score": 0.8220052083333333,
+      "passes_stationary_screen": true,
+      "within_stationary_final_tolerance": true,
+      "in_score_tie_band": true,
+      "selected": true,
+      "input_result_paths": [
+        "gain_050_stationary/recycle_v3_seed411/result.json",
+        "gain_050_stationary/recycle_v3_seed522/result.json",
+        "gain_050_recurring/recycle_v3_seed411/result.json",
+        "gain_050_recurring/recycle_v3_seed522/result.json"
+      ]
+    },
+    {
+      "feature_gain": 1.0,
+      "stationary_drawdowns": {
+        "411": 0.0,
+        "522": 0.015625
+      },
+      "stationary_checkpoint_accuracies": {
+        "411": [
+          {
+            "experience": 10,
+            "accuracy": 0.328125
+          },
+          {
+            "experience": 20,
+            "accuracy": 0.7890625
+          },
+          {
+            "experience": 30,
+            "accuracy": 0.953125
+          },
+          {
+            "experience": 40,
+            "accuracy": 1.0
+          },
+          {
+            "experience": 50,
+            "accuracy": 1.0
+          },
+          {
+            "experience": 60,
+            "accuracy": 1.0
+          }
+        ],
+        "522": [
+          {
+            "experience": 10,
+            "accuracy": 0.25
+          },
+          {
+            "experience": 20,
+            "accuracy": 0.3515625
+          },
+          {
+            "experience": 30,
+            "accuracy": 0.4296875
+          },
+          {
+            "experience": 40,
+            "accuracy": 0.9921875
+          },
+          {
+            "experience": 50,
+            "accuracy": 0.9765625
+          },
+          {
+            "experience": 60,
+            "accuracy": 1.0
+          }
+        ]
+      },
+      "mean_stationary_final_accuracy": 0.9955078125000001,
+      "mean_recurring_final_accuracy": 0.8561848958333333,
+      "mean_recurring_late_auc": 0.6530598958333333,
+      "selection_score": 0.7546223958333333,
+      "passes_stationary_screen": true,
+      "within_stationary_final_tolerance": true,
+      "in_score_tie_band": false,
+      "selected": false,
+      "input_result_paths": [
+        "gain_100_stationary/recycle_v3_seed411/result.json",
+        "gain_100_stationary/recycle_v3_seed522/result.json",
+        "gain_100_recurring/recycle_v3_seed411/result.json",
+        "gain_100_recurring/recycle_v3_seed522/result.json"
+      ]
+    }
+  ],
+  "selected_feature_gain": 0.5,
+  "evaluation_outcomes_consumed": false
+}
