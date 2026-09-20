@@ -111,13 +111,13 @@ Run all eight generated JSON configurations through the ordinary CLI, using `run
 After the complete development grid finishes, select using development results only:
 
 ```powershell
-.venv\Scripts\python.exe scripts/prepare_v3_study.py select --spec configs/v3_study.json --results runs/v3_development --output configs/v3/locked
+.venv\Scripts\python.exe scripts/prepare_v3_study.py select --spec configs/v3_study.json --results runs/v3_development --output configs/v3/reproduction_lock
 ```
 
-Selection records the attempted candidates and emits three locked configurations only if the prespecified screen passes. Freeze `selection.json` and those configurations in local git before evaluating the new seeds. Run each of `recurring.json`, `stationary.json`, and `early_biased.json` with its matching `runs/v3_evaluation/<condition>` output; for example:
+Selection records the attempted candidates and emits three locked configurations only if the prespecified screen passes. The committed `configs/v3/locked` directory preserves the original selection; use a fresh lock directory for an independent reproduction because result-byte hashes include runtime and timing. Freeze the new `selection.json` and its configurations in local git before evaluating the new seeds. Run each of `recurring.json`, `stationary.json`, and `early_biased.json` with its matching `runs/v3_reproduction/<condition>` output; for example:
 
 ```powershell
-.venv\Scripts\python.exe -m acp_cl run --config configs/v3/locked/recurring.json --output runs/v3_evaluation/recurring --device cuda
+.venv\Scripts\python.exe -m acp_cl run --config configs/v3/reproduction_lock/recurring.json --output runs/v3_reproduction/recurring --device cuda
 ```
 
 The plan screens four gains for replay plus recycling on two fresh development seeds, then locks one shared gain before evaluating three different seeds. If the stability screen passes, the planned total is 67 comparative runs: 16 development, 42 recurrent/stationary, and nine early-color-bias runs. Colors are independent of labels during ordinary training and all evaluation; the biased curriculum changes an initial training segment.

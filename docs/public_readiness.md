@@ -25,7 +25,15 @@ Scientific success is not a condition for sharing. A claim of algorithmic benefi
 - Source/runtime identity checks protect resume; report analysis can read uniformly compatible historical artifacts.
 - [Contribution guidance](../CONTRIBUTING.md) describes preservation of scientific artifacts and the evidence expected for changes.
 
-These files are preparation, not a claim that a hosted workflow or the full v3 study has already passed. Record those outcomes when actually obtained. Local setup/smoke validation and scientific results should name the revision and environment checked; neither demonstrates cross-platform bitwise reproduction. Existing v2 numerical claims remain attached to their recorded training revision, not to this documentation change.
+The v3 implementation source was frozen at `bac05cf`, with SHA-256
+`cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe`.
+A fresh Windows CPU environment (Python 3.10.11, Torch 2.8.0+cpu, NumPy 2.2.6)
+completed all seven v3 smoke methods and the actual reset/gain/cap/replay audit.
+Its full suite passed 406 tests; one CUDA test and two Windows symlink-privilege
+tests were skipped. CUDA smoke and the same allocation audit also passed.
+These checks do not claim a successful hosted workflow or cross-platform
+bitwise reproduction. Existing v2 numerical claims remain attached to their
+recorded training revision, not to the current source.
 
 The CI action releases and full commit pins were checked against primary GitHub release/tag APIs on 2026-09-20:
 
@@ -52,7 +60,17 @@ The review found **399 absolute Windows path strings in nine archived v2 JSON fi
 | `reports/v2/shortcuts_development/shortcut_audit.json` | `run_directory`; `runs[*].{checkpoint_path,result_path}` | 19 |
 | `reports/v2/shortcuts_long/shortcut_audit.json` | Same fields | 49 |
 
-For a public artifact bundle, create separate export copies with repository-relative or bundle-relative locators. Retain untouched originals and their hashes, and record the mapping and export hashes. Explain whether each referenced raw artifact is included, locally retained, or reproducible from the recorded revision. Do not rewrite history or silently replace a historical file's identity. This review has not altered those report copies.
+The [portable exporter](../scripts/export_portable_reports.py) created separate
+copies in the ignored `runs/public_report_export_lf` directory. The committed
+[proof manifest](../reports/public_export_manifest.json) records original and
+export hashes, with the full pointer mapping in the local bundle. Raw original
+hashes and canonical LF hashes are recorded separately; all nine LF hashes
+were verified against Git's stored blobs. All nine
+original files, non-path values, types, and ordering remain unchanged. All 399
+targeted locators are portable. The exporter rejects paths outside the
+historical checkout rather than guessing a moved checkout's original root.
+It does not rewrite history. The bundle contains report JSON only; references
+to ignored runs and checkpoints are explicitly marked as omitted raw artifacts.
 
 Committed summary tables and diagnostic extracts are not a complete raw-run archive. The normal `analyze` command expects per-run `result.json` files; point readers to a suitable export or a reproduction command, not merely a summary JSON. Checkpoint distribution is optional for a source-based reproduction, but its omission must be stated.
 

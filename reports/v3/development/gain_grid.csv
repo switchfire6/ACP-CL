@@ -1,0 +1,5 @@
+feature_gain,stationary_screen,mean_recurring_final_accuracy,mean_recurring_late_auc,mean_stationary_final_accuracy,maximum_stationary_drawdown,stationary_drawdown_seed_411,stationary_drawdown_seed_522,selection_score,within_stationary_final_tolerance,in_score_tie_band,selected,decision
+0.05,pass,0.4016927083333333,0.3409505208333333,0.8876302083333334,0.0,0.0,0.0,0.37132161458333335,False,False,False,Stationary final below cutoff
+0.15,fail,0.5582031249999999,0.49925130208333335,0.9828125000000001,0.1328125,0.1328125,0.0703125,0.5287272135416666,False,False,False,Screen failed
+0.5,pass,0.89375,0.7502604166666667,0.9934244791666667,0.0,0.0,0.0,0.8220052083333333,True,True,True,Selected
+1.0,pass,0.8561848958333333,0.6530598958333333,0.9955078125000001,0.015625,0.0,0.015625,0.7546223958333333,True,False,False,Eligible; lower score

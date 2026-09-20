@@ -1,0 +1,2 @@
+method,n_seeds,information_access,final_accuracy,final_accuracy_sd,forgetting,forgetting_sd,late_early_auc,late_early_auc_sd,late_plasticity_gap,late_plasticity_gap_sd,wall_seconds,replay_bytes,peak_cuda_bytes,reopening_events
+recycle_v3,2,training stream only,0.9934244791666667,0.006721197269090892,0.004700741525423728,0.005524271728019902,0.96064453125,0.025825970328493028,,,64.08576734999951,788480.0,87944704.0,0.0

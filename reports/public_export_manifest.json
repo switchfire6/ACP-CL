@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "purpose": "Portable presentation copies of archived report JSON; original files retained.",
+  "locator_base": "repository_root",
+  "export_path_base": "export_bundle_root",
+  "hash_conventions": {
+    "original_sha256": "SHA-256 of untouched source bytes from the exporter's working copy.",
+    "original_lf_sha256": "SHA-256 after replacing CRLF byte pairs with LF; every other byte is retained. Use this to verify a Git text checkout normalized to LF.",
+    "export_sha256": "SHA-256 of the exported UTF-8 JSON bytes, serialized with LF line endings."
+  },
+  "raw_artifacts": {
+    "policy": "Referenced runs and checkpoints are omitted, not copied or uploaded.",
+    "raw_run_files_included": 0,
+    "checkpoint_files_included": 0,
+    "ignored_run_locator_prefix": "runs/",
+    "reproduction": "Use the source revision/configuration recorded in each report; these are not download links."
+  },
+  "report_count": 9,
+  "converted_path_count": 399,
+  "verification": {
+    "original_bytes_untouched": true,
+    "all_nonpath_values_unchanged": true,
+    "object_and_array_order_preserved": true,
+    "targeted_values_portable": true,
+    "inverse_path_roundtrip_verified": true
+  },
+  "files": [
+    {
+      "source": "reports/v2/diagnostics/v2_gaussian/diagnostics.json",
+      "original_sha256": "bf4ddfc6e63a5be79379d2ebbd1982c42c3a58c6edb8e199e605527e6d599433",
+      "original_lf_sha256": "a346effa995c4024a6457585015e03492cde6869999cea1464923d22df78a98e",
+      "export_path": "reports/v2/diagnostics/v2_gaussian/diagnostics.json",
+      "export_sha256": "7c13729f64c3ee91732c38e053f4a2f6e55f36e5de702c3f7ea3d1adb1a6b2c4",
+      "converted_path_count": 91
+    },
+    {
+      "source": "reports/v2/diagnostics/v2_shapes_development/diagnostics.json",
+      "original_sha256": "f76356734fe9bc4bc97a17cfd087199a7524157157f2d99595d932a94133add4",
+      "original_lf_sha256": "cd889a2cd2c6b529c147cf16e95b108472160280e0dc19c897179543e02d3bcc",
+      "export_path": "reports/v2/diagnostics/v2_shapes_development/diagnostics.json",
+      "export_sha256": "a9368b7a3f874f3cb9c0112f8df066cc8cee63ec07b2a3a5f6f38a07243ca31a",
+      "converted_path_count": 91
+    },
+    {
+      "source": "reports/v2/diagnostics/v2_shapes_long/diagnostics.json",
+      "original_sha256": "dd9c070f4bb2f99d73f902caadcb5d3dfd4e1240c801d5ceead28025488d71d0",
+      "original_lf_sha256": "3530b27f021256ca5c23d35b09d67e09f71568525df70b72d48f290b27ef55b2",
+      "export_path": "reports/v2/diagnostics/v2_shapes_long/diagnostics.json",
+      "export_sha256": "b8197db9adfed822c8179fa1287e8c9dc66bc03519a30426b49ddf3779108899",
+      "converted_path_count": 73
+    },
+    {
+      "source": "reports/v2/diagnostics/v2_shapes_noise_only/diagnostics.json",
+      "original_sha256": "c562463c27b77e8e7c688904ea7e023bea21bdcf286bb20b06e37305faa1b093",
+      "original_lf_sha256": "6937a30c002e3290d7bda007baa2ef025421435f82ec0568e90c698b70c25bd7",
+      "export_path": "reports/v2/diagnostics/v2_shapes_noise_only/diagnostics.json",
+      "export_sha256": "da422373730f9e549ab770ebd39fbaa9c1cce184fd4c22ca91be1d01464135b4",
+      "converted_path_count": 28
+    },
+    {
+      "source": "reports/v2/diagnostics/v2_shapes_stationary/diagnostics.json",
+      "original_sha256": "17ac5e606d4855549199e840d87406613879e68b6f98ba3c9b0b2d4166ea833c",
+      "original_lf_sha256": "e2c3cd3ff9e55f6776a2c4905d475b119052dba128ede2416e86023a0e0da927",
+      "export_path": "reports/v2/diagnostics/v2_shapes_stationary/diagnostics.json",
+      "export_sha256": "50ab10b784e58f02e6c42f29cdf74ee6d80a5a9af3974b6f89d12fe65de97f33",
+      "converted_path_count": 28
+    },
+    {
+      "source": "reports/v2/reset_damage/endpoint_audit.json",
+      "original_sha256": "cae428632668f0b3ca0c0a94a3a15f169ffa2b7dc38e6025d47248d297b6876f",
+      "original_lf_sha256": "ea26ef3852f190e66e0c7e675f1ff965872cdb40380aad4c731756ffad9ddf58",
+      "export_path": "reports/v2/reset_damage/endpoint_audit.json",
+      "export_sha256": "e10a7bf892888686bfaa71ebb39c05963dc49822f0d0584a667e8be0f1836aca",
+      "converted_path_count": 19
+    },
+    {
+      "source": "reports/v2/reset_damage/instrumented_audit.json",
+      "original_sha256": "40502a9ec66c3978c4117024165fee3c514028c667a23e056030a21857a7a59a",
+      "original_lf_sha256": "775fe4e77bac4006c85b46f4c76b9216fe3e51d0f3f9911c89002b971f4960de",
+      "export_path": "reports/v2/reset_damage/instrumented_audit.json",
+      "export_sha256": "ba330b933c4d217260c58ee09a47167a28965129ddac40d0648f8da420cadd62",
+      "converted_path_count": 1
+    },
+    {
+      "source": "reports/v2/shortcuts_development/shortcut_audit.json",
+      "original_sha256": "2580eb279716588d333ec05f940d62f3c6063945be15498ab4d73d33aec1f33a",
+      "original_lf_sha256": "1ee1f3711d07abff41f566a0a6610611a507d3dbe5c46b205353e572c6925ce9",
+      "export_path": "reports/v2/shortcuts_development/shortcut_audit.json",
+      "export_sha256": "a77f0bfbb6ca834a5092d8076b6f08d65666b8ea1b0dbbe8e50283e472ed27c4",
+      "converted_path_count": 19
+    },
+    {
+      "source": "reports/v2/shortcuts_long/shortcut_audit.json",
+      "original_sha256": "efc07683d61a4813418d49366a8e5a1b001675bafa1a82c542674c11a6d1ecaf",
+      "original_lf_sha256": "1590753c0cda3197af03dfc27af5106938f22c814285a5a6438aaa0bf6ceab60",
+      "export_path": "reports/v2/shortcuts_long/shortcut_audit.json",
+      "export_sha256": "6a81f506b9a9b4344f119c1db745471ab0ab2994880f31ceb454d5aec12bc2d7",
+      "converted_path_count": 49
+    }
+  ],
+  "export_directory": "runs/public_report_export_lf",
+  "full_mapping_manifest": "export_manifest.json",
+  "full_mapping_manifest_sha256": "fd3bb7e199e5fd810b2735303a7beeae10e1fa76cc481ec73374f248f97fb923"
+}

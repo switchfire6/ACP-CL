@@ -1,0 +1,1043 @@
+{
+  "schema_version": 1,
+  "status": "selected",
+  "selection_sha256": "7729363726009d08d76bad1c8c67b571657eb0a7bc615cdb9d1e470ca6d21a60",
+  "selected_feature_gain": 0.5,
+  "evaluation_outcomes_consumed": false,
+  "input_hashes_verified": true,
+  "input_paths_relative_to": "the development results root passed to this script",
+  "suite_archives": [
+    "gain_005_recurring",
+    "gain_005_stationary",
+    "gain_015_recurring",
+    "gain_015_stationary",
+    "gain_050_recurring",
+    "gain_050_stationary",
+    "gain_100_recurring",
+    "gain_100_stationary"
+  ],
+  "input_results": [
+    {
+      "candidate": "gain_005_recurring",
+      "feature_gain": 0.05,
+      "regime": "recurring",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "f3bbbefd4f2634122e0aef04d2097b58998bb1c04fbbdaf056f02b220e4c254a",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_005_recurring/manifest.json",
+      "manifest_sha256": "f272ba789d04368917eba6655dd0edd38b8b2bdf3c762ed5ca702f043d66240e",
+      "result_path": "gain_005_recurring/recycle_v3_seed411/result.json",
+      "result_sha256": "fdf0b677a63aad6d01c63622d77ba1d0a78b9ec9c6049c760170b9ddaa3413ba",
+      "allocation_path": "gain_005_recurring/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "98ca9e51bc8ea9f525e587f00e25671b679914502c94a546bad01cc350de0bb5",
+      "metrics": {
+        "final_accuracy": 0.512109375,
+        "average_incremental_accuracy": 0.31954799107142856,
+        "backward_transfer": 0.2076271186440678,
+        "forgetting": 0.00026483050847457627,
+        "late_early_auc": 0.3468098958333333,
+        "mean_early_auc": 0.30514322916666664
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null,
+      "events_path": "gain_005_recurring/recycle_v3_seed411/events.json",
+      "events_sha256": "1ebe79fd1d290ddc5afe34acc03151b4897d366b077f06e7775c7141c81fe94e"
+    },
+    {
+      "candidate": "gain_005_recurring",
+      "feature_gain": 0.05,
+      "regime": "recurring",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "f3bbbefd4f2634122e0aef04d2097b58998bb1c04fbbdaf056f02b220e4c254a",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_005_recurring/manifest.json",
+      "manifest_sha256": "f272ba789d04368917eba6655dd0edd38b8b2bdf3c762ed5ca702f043d66240e",
+      "result_path": "gain_005_recurring/recycle_v3_seed522/result.json",
+      "result_sha256": "09772aaf4f500d624e68246e1529f3ba207faf67b5541f05d9ee7fb5e39b8a86",
+      "allocation_path": "gain_005_recurring/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "8bbb9e05e23af6c2297fe6b4ba24e67a7bf77f4b6d3a6666de764a77aa77e3f7",
+      "metrics": {
+        "final_accuracy": 0.29127604166666665,
+        "average_incremental_accuracy": 0.28979538690476186,
+        "backward_transfer": -0.009798728813559322,
+        "forgetting": 0.1216896186440678,
+        "late_early_auc": 0.3350911458333333,
+        "mean_early_auc": 0.2977213541666667
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null,
+      "events_path": "gain_005_recurring/recycle_v3_seed522/events.json",
+      "events_sha256": "8e687356a153227061a8ed21f8cfd290b8d9dbd37f397b0cccb61604ca5a9125"
+    },
+    {
+      "candidate": "gain_005_stationary",
+      "feature_gain": 0.05,
+      "regime": "stationary",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "11039c1cf4808b6e41aa23e9dfe6092f7d975d035728132cdcb6627c8d0b84f7",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_005_stationary/manifest.json",
+      "manifest_sha256": "40615436f07dfc27eaa8ec3def03f318edcfe8c4356b11cae38b2f61701ee716",
+      "result_path": "gain_005_stationary/recycle_v3_seed411/result.json",
+      "result_sha256": "48078442686c5a4b0c3a9c86f6596506b3221b5f0ff437374c11634b29ced34d",
+      "allocation_path": "gain_005_stationary/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "a1400795ccd9872572ee8c10f484c6de8ab8737c8fe143a75393ffc816e4d4e5",
+      "metrics": {
+        "final_accuracy": 0.93984375,
+        "average_incremental_accuracy": 0.5264081101190476,
+        "backward_transfer": 0.4523305084745763,
+        "forgetting": 0.0,
+        "late_early_auc": 0.6873697916666667,
+        "mean_early_auc": 0.49990234375
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.2734375
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.3671875
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.4375
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.703125
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.8046875
+        },
+        {
+          "experience": 60,
+          "accuracy": 0.9375
+        }
+      ],
+      "events_path": "gain_005_stationary/recycle_v3_seed411/events.json",
+      "events_sha256": "f482c8dec4f4568a86f84552ede7009df6af8b70d8e3965c6e96f131aa2c2e9e"
+    },
+    {
+      "candidate": "gain_005_stationary",
+      "feature_gain": 0.05,
+      "regime": "stationary",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "11039c1cf4808b6e41aa23e9dfe6092f7d975d035728132cdcb6627c8d0b84f7",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_005_stationary/manifest.json",
+      "manifest_sha256": "40615436f07dfc27eaa8ec3def03f318edcfe8c4356b11cae38b2f61701ee716",
+      "result_path": "gain_005_stationary/recycle_v3_seed522/result.json",
+      "result_sha256": "31cc2cb49599ca9860f8db7a9a00e178760263e8461c44f8f3990956807449af",
+      "allocation_path": "gain_005_stationary/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "b369b9bb3796d54699ed3da04bb2b3e63c3728abe31be0d79eb053f5efc030be",
+      "metrics": {
+        "final_accuracy": 0.8354166666666667,
+        "average_incremental_accuracy": 0.3858947172619048,
+        "backward_transfer": 0.486228813559322,
+        "forgetting": 0.0,
+        "late_early_auc": 0.441015625,
+        "mean_early_auc": 0.3553059895833333
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.2578125
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.2734375
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.359375
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.515625
+        },
+        {
+          "experience": 60,
+          "accuracy": 0.8828125
+        }
+      ],
+      "events_path": "gain_005_stationary/recycle_v3_seed522/events.json",
+      "events_sha256": "dce7743927301f9f16160289a241148633f94cd049c47a84eadada138936c10b"
+    },
+    {
+      "candidate": "gain_015_recurring",
+      "feature_gain": 0.15,
+      "regime": "recurring",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "a2879ff2b06cc2bdacbbedc33a4f6329b674c333c5a4ad18187c94e6ec298949",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_015_recurring/manifest.json",
+      "manifest_sha256": "76b05bc87b54db47472f43bbf9a769b958e11aad155858a561e5c67c2cc6bc12",
+      "result_path": "gain_015_recurring/recycle_v3_seed411/result.json",
+      "result_sha256": "7a61bee9032a3758c16f895c55318a595a445f7b8858daeb6a17cdb59e2c5b5c",
+      "allocation_path": "gain_015_recurring/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "c2f1ff327e9ca1b34e95f7f91268f6e15a4796cd6f5f1bf2fd3981f183e7460e",
+      "metrics": {
+        "final_accuracy": 0.8231770833333333,
+        "average_incremental_accuracy": 0.42949776785714283,
+        "backward_transfer": 0.4226694915254237,
+        "forgetting": 0.005958686440677966,
+        "late_early_auc": 0.5281901041666667,
+        "mean_early_auc": 0.39775390625
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null,
+      "events_path": "gain_015_recurring/recycle_v3_seed411/events.json",
+      "events_sha256": "ad8851d07d0d9896139e7914e7e883b4eae192a519dd0350d917e9e2bafdd9eb"
+    },
+    {
+      "candidate": "gain_015_recurring",
+      "feature_gain": 0.15,
+      "regime": "recurring",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "a2879ff2b06cc2bdacbbedc33a4f6329b674c333c5a4ad18187c94e6ec298949",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_015_recurring/manifest.json",
+      "manifest_sha256": "76b05bc87b54db47472f43bbf9a769b958e11aad155858a561e5c67c2cc6bc12",
+      "result_path": "gain_015_recurring/recycle_v3_seed522/result.json",
+      "result_sha256": "38d3e52b39493fd154d015d471a094fb594cc0e83ff177afff6a4b92184b9eec",
+      "allocation_path": "gain_015_recurring/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "bdf8c8684f10bae3baefa994934814441d9751626b9db265790ca17b8ace7204",
+      "metrics": {
+        "final_accuracy": 0.29322916666666665,
+        "average_incremental_accuracy": 0.31318638392857145,
+        "backward_transfer": -0.06104343220338983,
+        "forgetting": 0.23702330508474576,
+        "late_early_auc": 0.4703125,
+        "mean_early_auc": 0.36741536458333335
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null,
+      "events_path": "gain_015_recurring/recycle_v3_seed522/events.json",
+      "events_sha256": "5bdc99872045593b736efe9d60dc1168f226bf5f8bd001f8271c54ec01c24c8e"
+    },
+    {
+      "candidate": "gain_015_stationary",
+      "feature_gain": 0.15,
+      "regime": "stationary",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "03da19df54221ae8da3ee5ecf8329691997e6b9dcae2008ea2d2a4e8ea10b90d",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_015_stationary/manifest.json",
+      "manifest_sha256": "c1ec08c7c121f1b7a44fb82a5c009745afe6ddf6766cc16d0a34b6a39b68a9ca",
+      "result_path": "gain_015_stationary/recycle_v3_seed411/result.json",
+      "result_sha256": "4f5509815cf1a56e66c66f59195dca5a88c5538cee7b83e7e5a6d047b6ed44da",
+      "allocation_path": "gain_015_stationary/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "2ce8f1d52f13827970bf072a7ebfe48ceb5e367728174a81f87543c7f15f52b5",
+      "metrics": {
+        "final_accuracy": 0.989453125,
+        "average_incremental_accuracy": 0.6300892857142857,
+        "backward_transfer": 0.321239406779661,
+        "forgetting": 0.00013241525423728814,
+        "late_early_auc": 0.9127604166666666,
+        "mean_early_auc": 0.65615234375
+      },
+      "stationary_drawdown": 0.1328125,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.4375
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.71875
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.9765625
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.84375
+        },
+        {
+          "experience": 60,
+          "accuracy": 0.9921875
+        }
+      ],
+      "events_path": "gain_015_stationary/recycle_v3_seed411/events.json",
+      "events_sha256": "9f637f2926d85b9b5b815afb9ddc6a254b33b4e2512c8a804e7f74d43ac78f89"
+    },
+    {
+      "candidate": "gain_015_stationary",
+      "feature_gain": 0.15,
+      "regime": "stationary",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "03da19df54221ae8da3ee5ecf8329691997e6b9dcae2008ea2d2a4e8ea10b90d",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_015_stationary/manifest.json",
+      "manifest_sha256": "c1ec08c7c121f1b7a44fb82a5c009745afe6ddf6766cc16d0a34b6a39b68a9ca",
+      "result_path": "gain_015_stationary/recycle_v3_seed522/result.json",
+      "result_sha256": "9d88f5eaa95621c4c5bef098aedbd6125a843bbeda308dc84d3cfea507439b4d",
+      "allocation_path": "gain_015_stationary/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "a53d9f0cb8ac5220d19d0fedade3eb3034858b9d644e00c83a629451c86fa646",
+      "metrics": {
+        "final_accuracy": 0.976171875,
+        "average_incremental_accuracy": 0.5395386904761904,
+        "backward_transfer": 0.4586864406779661,
+        "forgetting": 0.0,
+        "late_early_auc": 0.7602864583333333,
+        "mean_early_auc": 0.5195963541666667
+      },
+      "stationary_drawdown": 0.0703125,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.3203125
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.828125
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.8984375
+        },
+        {
+          "experience": 60,
+          "accuracy": 0.9453125
+        }
+      ],
+      "events_path": "gain_015_stationary/recycle_v3_seed522/events.json",
+      "events_sha256": "c07f0786c619efc10c0942f247f6007b6ae37191af514fee2fe2753b7a5fd663"
+    },
+    {
+      "candidate": "gain_050_recurring",
+      "feature_gain": 0.5,
+      "regime": "recurring",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "3174da4dcc7b543882fa2e8aecc47bf957fefccca4c04aeadbd77c21dbca0123",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_050_recurring/manifest.json",
+      "manifest_sha256": "e7deec3254ba539090a603771d03b70904b7ad724202b9449d9bf2ec242b5647",
+      "result_path": "gain_050_recurring/recycle_v3_seed411/result.json",
+      "result_sha256": "8a3bfeb1cf9fe42ecda7f212886ef97dcd7881e20dddb28fd202f61a9f852fff",
+      "allocation_path": "gain_050_recurring/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "02f6707a8a94438b9b68d665defc12bcb01219c31e0f363a9e51270eeabc5318",
+      "metrics": {
+        "final_accuracy": 0.9919270833333333,
+        "average_incremental_accuracy": 0.5480933779761905,
+        "backward_transfer": 0.4463718220338983,
+        "forgetting": 0.0006620762711864406,
+        "late_early_auc": 0.7973307291666667,
+        "mean_early_auc": 0.5389322916666667
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null,
+      "events_path": "gain_050_recurring/recycle_v3_seed411/events.json",
+      "events_sha256": "2974950a0be7a5862cde222458bfba7f2d2db2c8e74afa6edef8f7d5084310b3"
+    },
+    {
+      "candidate": "gain_050_recurring",
+      "feature_gain": 0.5,
+      "regime": "recurring",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "3174da4dcc7b543882fa2e8aecc47bf957fefccca4c04aeadbd77c21dbca0123",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_050_recurring/manifest.json",
+      "manifest_sha256": "e7deec3254ba539090a603771d03b70904b7ad724202b9449d9bf2ec242b5647",
+      "result_path": "gain_050_recurring/recycle_v3_seed522/result.json",
+      "result_sha256": "eaeda2c8461efaf420ba25e3fdced89968a6303805308dd575135aaad480c534",
+      "allocation_path": "gain_050_recurring/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "006c3b3bcc1b6ff2d1fc1c883cb014c385ddf61d7968e97737371e63782ae1dd",
+      "metrics": {
+        "final_accuracy": 0.7955729166666666,
+        "average_incremental_accuracy": 0.4644084821428572,
+        "backward_transfer": 0.3252118644067797,
+        "forgetting": 0.1373146186440678,
+        "late_early_auc": 0.7031901041666667,
+        "mean_early_auc": 0.4837239583333333
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null,
+      "events_path": "gain_050_recurring/recycle_v3_seed522/events.json",
+      "events_sha256": "c0075ae3c1f2b8634c0b8d47139a628b09fb0e2b5cc3ea7f425da4fcda8de6d2"
+    },
+    {
+      "candidate": "gain_050_stationary",
+      "feature_gain": 0.5,
+      "regime": "stationary",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "3c0c04147e0a745ecb04866084bcb2bf97d91d00e111d351c6a69553996dab7c",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_050_stationary/manifest.json",
+      "manifest_sha256": "671d2f1ab604b5dd17fdab07eee68ec61b6695676d72ce6e25b863d3ef5e1439",
+      "result_path": "gain_050_stationary/recycle_v3_seed411/result.json",
+      "result_sha256": "c21bd72b78e16e35926f6350f0efbb2bc3dd4f4d8803a47e5d874b5085f299cf",
+      "allocation_path": "gain_050_stationary/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "5deeaf7d393adc754041d82db3157aef8464ef107e917ee181da309c2fa0d48a",
+      "metrics": {
+        "final_accuracy": 0.9981770833333333,
+        "average_incremental_accuracy": 0.761514136904762,
+        "backward_transfer": 0.23940677966101695,
+        "forgetting": 0.0007944915254237289,
+        "late_early_auc": 0.97890625,
+        "mean_early_auc": 0.73984375
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.328125
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.8125
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.9453125
+        },
+        {
+          "experience": 40,
+          "accuracy": 1.0
+        },
+        {
+          "experience": 50,
+          "accuracy": 1.0
+        },
+        {
+          "experience": 60,
+          "accuracy": 1.0
+        }
+      ],
+      "events_path": "gain_050_stationary/recycle_v3_seed411/events.json",
+      "events_sha256": "6764df2d4bc204c08f5d0d846b11c8bff16c1fb032b18f1e1d53e7b7f9f83281"
+    },
+    {
+      "candidate": "gain_050_stationary",
+      "feature_gain": 0.5,
+      "regime": "stationary",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "3c0c04147e0a745ecb04866084bcb2bf97d91d00e111d351c6a69553996dab7c",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_050_stationary/manifest.json",
+      "manifest_sha256": "671d2f1ab604b5dd17fdab07eee68ec61b6695676d72ce6e25b863d3ef5e1439",
+      "result_path": "gain_050_stationary/recycle_v3_seed522/result.json",
+      "result_sha256": "6866a415310faa1c70d5bcdcd98b1c543d29f52532e025cf27d8cb5f2d1e3a3d",
+      "allocation_path": "gain_050_stationary/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "3cfabc9ff9f1f18cd91a07884744f4a835212273780f9dc1fbadded01ca3e19b",
+      "metrics": {
+        "final_accuracy": 0.988671875,
+        "average_incremental_accuracy": 0.6431026785714284,
+        "backward_transfer": 0.3359375,
+        "forgetting": 0.008606991525423728,
+        "late_early_auc": 0.9423828125,
+        "mean_early_auc": 0.65361328125
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.2734375
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.8125
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.90625
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.9765625
+        },
+        {
+          "experience": 60,
+          "accuracy": 1.0
+        }
+      ],
+      "events_path": "gain_050_stationary/recycle_v3_seed522/events.json",
+      "events_sha256": "a6781e944c18baf923f70003297ff2fdbd9b93d5a5f68430587fd8a2612d16df"
+    },
+    {
+      "candidate": "gain_100_recurring",
+      "feature_gain": 1.0,
+      "regime": "recurring",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "8e909459568e2a927deb3b81e207c3f777e473d9e11dec760fc60248891eff87",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_100_recurring/manifest.json",
+      "manifest_sha256": "3a763daf741237069036af34b04093005da0393b823ce2b0c0cbc0439a1a85ba",
+      "result_path": "gain_100_recurring/recycle_v3_seed411/result.json",
+      "result_sha256": "55e1d4b44cc3656fee295329131beb4dcf5d1f8dca363d65f61344b8006cec44",
+      "allocation_path": "gain_100_recurring/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "bcbed333143eaf24bcf55ec9ae872e05fbaa317d9aff228770057ae887aecd97",
+      "metrics": {
+        "final_accuracy": 0.9803385416666667,
+        "average_incremental_accuracy": 0.6147302827380952,
+        "backward_transfer": 0.3930084745762712,
+        "forgetting": 0.002780720338983051,
+        "late_early_auc": 0.8725260416666667,
+        "mean_early_auc": 0.58828125
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null,
+      "events_path": "gain_100_recurring/recycle_v3_seed411/events.json",
+      "events_sha256": "c4892a6543b3a87fcdfb4af181bfc65c1a86faeb9505c73f4ebc30c7633255cd"
+    },
+    {
+      "candidate": "gain_100_recurring",
+      "feature_gain": 1.0,
+      "regime": "recurring",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "8e909459568e2a927deb3b81e207c3f777e473d9e11dec760fc60248891eff87",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_100_recurring/manifest.json",
+      "manifest_sha256": "3a763daf741237069036af34b04093005da0393b823ce2b0c0cbc0439a1a85ba",
+      "result_path": "gain_100_recurring/recycle_v3_seed522/result.json",
+      "result_sha256": "acbc303e6367865d645ad7dd5f40e8e6dfadc8b2d336dfe5ca7127897d31cd73",
+      "allocation_path": "gain_100_recurring/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "92cc280a4caf420e7224b139b5a5c4c06f40d23c2f180135656d9aea3669f8eb",
+      "metrics": {
+        "final_accuracy": 0.73203125,
+        "average_incremental_accuracy": 0.3744029017857143,
+        "backward_transfer": 0.3783103813559322,
+        "forgetting": 0.025953389830508475,
+        "late_early_auc": 0.43359375,
+        "mean_early_auc": 0.3419270833333333
+      },
+      "stationary_drawdown": null,
+      "stationary_checkpoint_accuracies": null,
+      "events_path": "gain_100_recurring/recycle_v3_seed522/events.json",
+      "events_sha256": "b77d8722acef8926a156431ae8c07aa9592e3cd6fce50e9e49e134c094b0daf7"
+    },
+    {
+      "candidate": "gain_100_stationary",
+      "feature_gain": 1.0,
+      "regime": "stationary",
+      "seed": 411,
+      "method": "recycle_v3",
+      "config_sha256": "9e7e46d5ea8b4cc511911b891e9e99b8cb3b7d87d94b1361e88b92eb7ab40c29",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_100_stationary/manifest.json",
+      "manifest_sha256": "f9b95da764bfcf26b5ae85240efa2941fd548a0bfaab6ac341280fb66e728a1d",
+      "result_path": "gain_100_stationary/recycle_v3_seed411/result.json",
+      "result_sha256": "0364bef415b839e729d1372d1e07002407a2d9a35df6e5c0ebfc117d07beb595",
+      "allocation_path": "gain_100_stationary/recycle_v3_seed411/allocation.json",
+      "allocation_sha256": "b79e2cbe1a5e5aa77ff17b8c09128cf0007e4144b2a4f1c556285ba37132712d",
+      "metrics": {
+        "final_accuracy": 0.9977864583333333,
+        "average_incremental_accuracy": 0.7544438244047621,
+        "backward_transfer": 0.23040254237288135,
+        "forgetting": 0.001986228813559322,
+        "late_early_auc": 0.9865234375,
+        "mean_early_auc": 0.7570963541666667
+      },
+      "stationary_drawdown": 0.0,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.328125
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.7890625
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.953125
+        },
+        {
+          "experience": 40,
+          "accuracy": 1.0
+        },
+        {
+          "experience": 50,
+          "accuracy": 1.0
+        },
+        {
+          "experience": 60,
+          "accuracy": 1.0
+        }
+      ],
+      "events_path": "gain_100_stationary/recycle_v3_seed411/events.json",
+      "events_sha256": "a5caa16dda3a13e26cfda08cd0a56eceabca844019a0ba53cec116b4aa1940ed"
+    },
+    {
+      "candidate": "gain_100_stationary",
+      "feature_gain": 1.0,
+      "regime": "stationary",
+      "seed": 522,
+      "method": "recycle_v3",
+      "config_sha256": "9e7e46d5ea8b4cc511911b891e9e99b8cb3b7d87d94b1361e88b92eb7ab40c29",
+      "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+      "execution_device": "cuda",
+      "runtime_fingerprint": {
+        "python": "3.10.11",
+        "torch": "2.8.0+cu128",
+        "numpy": "2.2.6",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+      "manifest_path": "gain_100_stationary/manifest.json",
+      "manifest_sha256": "f9b95da764bfcf26b5ae85240efa2941fd548a0bfaab6ac341280fb66e728a1d",
+      "result_path": "gain_100_stationary/recycle_v3_seed522/result.json",
+      "result_sha256": "d8863bfe5f06074ab13c1a7d937223b05bbaee632b3052ab076a37a421930566",
+      "allocation_path": "gain_100_stationary/recycle_v3_seed522/allocation.json",
+      "allocation_sha256": "f6a33a7c302a1ba6bf2558dc46ca417b00fc49b5a422e86adb3a0e4caca3422d",
+      "metrics": {
+        "final_accuracy": 0.9932291666666667,
+        "average_incremental_accuracy": 0.6014453125,
+        "backward_transfer": 0.3275953389830508,
+        "forgetting": 0.00423728813559322,
+        "late_early_auc": 0.9567708333333333,
+        "mean_early_auc": 0.6804361979166667
+      },
+      "stationary_drawdown": 0.015625,
+      "stationary_checkpoint_accuracies": [
+        {
+          "experience": 10,
+          "accuracy": 0.25
+        },
+        {
+          "experience": 20,
+          "accuracy": 0.3515625
+        },
+        {
+          "experience": 30,
+          "accuracy": 0.4296875
+        },
+        {
+          "experience": 40,
+          "accuracy": 0.9921875
+        },
+        {
+          "experience": 50,
+          "accuracy": 0.9765625
+        },
+        {
+          "experience": 60,
+          "accuracy": 1.0
+        }
+      ],
+      "events_path": "gain_100_stationary/recycle_v3_seed522/events.json",
+      "events_sha256": "aeb1f3afa2534779a878d8aa33b9a54b6bc6816dd4bbea1f2e028b932a0f1dda"
+    }
+  ],
+  "archive_files": [
+    {
+      "path": "gain_005_recurring/individual_results.json",
+      "sha256": "9dded9defb7f185a97f29890305e405f7ae04705fb320f1c60b73357f6e24dfe"
+    },
+    {
+      "path": "gain_005_recurring/manifest.json",
+      "sha256": "0aabfcf5d9e3f4f0348dfeb77d7a1245c1643d230c6bc97c7e425299d654f6fc"
+    },
+    {
+      "path": "gain_005_recurring/overview.png",
+      "sha256": "f394df0b5a6a945bd3c0104c5a9aa2969b75c17386792d471dd1273c5ba987f4"
+    },
+    {
+      "path": "gain_005_recurring/overview.svg",
+      "sha256": "028325f1875a3d3e348adfc769f8d118f3d7b563c5b09d48193ee37e73d283f6"
+    },
+    {
+      "path": "gain_005_recurring/summary.csv",
+      "sha256": "872c00b2a45ab6dad42ce7e552e012ae723ddeac154c3c2ed5452cc8f9910f80"
+    },
+    {
+      "path": "gain_005_recurring/summary.json",
+      "sha256": "5ce0a36492be00d5138a537ed0c9d922acdbf6386bae3f89e9ad9a8a444a932e"
+    },
+    {
+      "path": "gain_005_recurring/summary.md",
+      "sha256": "95f248a57f9f7c4961e05fea4b7259fc51533a20d4d08521618962fd3212dfd6"
+    },
+    {
+      "path": "gain_005_stationary/individual_results.json",
+      "sha256": "7ce75719e9469363543041b612ff3b0a39a2e24e52c1d52e5b7fcc525ba92d2d"
+    },
+    {
+      "path": "gain_005_stationary/manifest.json",
+      "sha256": "1c737ef66f111bd722172f952acb9fa9c43123c2cfe50bc61f9f5d6c79f40902"
+    },
+    {
+      "path": "gain_005_stationary/overview.png",
+      "sha256": "e9bf6a2020777f21a97f6e2b65d63df72f27e5bc718515cf2974033e006dfb29"
+    },
+    {
+      "path": "gain_005_stationary/overview.svg",
+      "sha256": "1fdb5594d34757afd7bfa2446ba941b662a8824d504486100f04e01d3a310cc2"
+    },
+    {
+      "path": "gain_005_stationary/summary.csv",
+      "sha256": "e78791a688ef9b685d750e726db2e04a502d164b211dd6e564eca35afa80dcbc"
+    },
+    {
+      "path": "gain_005_stationary/summary.json",
+      "sha256": "7a82ae9f38a9208aa10cb28087af37b514c2eaf6234228449477bade04def80e"
+    },
+    {
+      "path": "gain_005_stationary/summary.md",
+      "sha256": "a9e908d2510a5bd953a28afe2122e21f741bf1a2978bbee24cda35859e1489d1"
+    },
+    {
+      "path": "gain_015_recurring/individual_results.json",
+      "sha256": "01fcf32ca77188710968757f87544567bf9319e3a9f34f7a180796e8278d3908"
+    },
+    {
+      "path": "gain_015_recurring/manifest.json",
+      "sha256": "b66574a2753f05fb6321bc1bb8ab1d94638997ace0c3477886976c2bae66f164"
+    },
+    {
+      "path": "gain_015_recurring/overview.png",
+      "sha256": "c418d181e952b68d6fef7a22778bdfe3cf215889d0e321f12bdc21c3e8d0625b"
+    },
+    {
+      "path": "gain_015_recurring/overview.svg",
+      "sha256": "d12a45669f353e880857927c214c2994114bda8a04f2d9becbf88a8c689646cb"
+    },
+    {
+      "path": "gain_015_recurring/summary.csv",
+      "sha256": "1ef472ef706ee72a20f0dd7c982970885034f5217b8a03e1f78e6d22f1aa6457"
+    },
+    {
+      "path": "gain_015_recurring/summary.json",
+      "sha256": "3d34f1239fd5a6661591057cc87c45937cf8d33fb43fdb6d108ccd0086e2e577"
+    },
+    {
+      "path": "gain_015_recurring/summary.md",
+      "sha256": "aa0968db609cf4e157f2052f99724698b434140dfb5820584d0aa2b2f39ea574"
+    },
+    {
+      "path": "gain_015_stationary/individual_results.json",
+      "sha256": "9937e0c724bfda5a3362b51d6c338755dc328706c631a66abb4feb776c42470a"
+    },
+    {
+      "path": "gain_015_stationary/manifest.json",
+      "sha256": "8e9f17c462f1b1f36e46d1dedfdb292e4615c2d57158698a176cfa0beb62f859"
+    },
+    {
+      "path": "gain_015_stationary/overview.png",
+      "sha256": "23eccd889a9adf1207c01af8249c7be249c5510fbcf9df36d947b06f68a2b8f4"
+    },
+    {
+      "path": "gain_015_stationary/overview.svg",
+      "sha256": "5c7a658de2d9b801942a352ebdfb93512332fa033d124f8eab8be8e6515da389"
+    },
+    {
+      "path": "gain_015_stationary/summary.csv",
+      "sha256": "62557c1dc29eba22aac3f749e58a680a656ec349bfd0d8839a2040623bc79416"
+    },
+    {
+      "path": "gain_015_stationary/summary.json",
+      "sha256": "816ede3bbe595160145d8dca735215cf0bdb6f110a3c9b24e8c8ffca35ae3ee7"
+    },
+    {
+      "path": "gain_015_stationary/summary.md",
+      "sha256": "7bd228e4c672109c3721673fe1df2774689e08853bc55e6d39fc9508fb288fe7"
+    },
+    {
+      "path": "gain_050_recurring/individual_results.json",
+      "sha256": "380a374c328e1ea0163d2b0f8235c97c3c2d01729b4d106e7133f2ab741300b9"
+    },
+    {
+      "path": "gain_050_recurring/manifest.json",
+      "sha256": "924309d41e5380c57ebea8b8110130c068e6c03abec5f8b1b69a242457d5eb98"
+    },
+    {
+      "path": "gain_050_recurring/overview.png",
+      "sha256": "f780d5024ffd109c653b89c6a1ae34962fc3b827acd5768762ae7ca12594d5b6"
+    },
+    {
+      "path": "gain_050_recurring/overview.svg",
+      "sha256": "5ddd356a20e754ec80a0258b923872d11e722ee20b5822b211b32f42579aa1e1"
+    },
+    {
+      "path": "gain_050_recurring/summary.csv",
+      "sha256": "ec7689823edd6181e5a735a32aee0358ab201a956f6e434fee6ae3193bfc0647"
+    },
+    {
+      "path": "gain_050_recurring/summary.json",
+      "sha256": "25c6df715da56c0fd59fdb463be40226d3794f3d170310c3a5b83fc592105f93"
+    },
+    {
+      "path": "gain_050_recurring/summary.md",
+      "sha256": "d47e259f24cd8465f78b06e0eb8d1f94ddf67eb331da2bea7ea79a353b4b4c2c"
+    },
+    {
+      "path": "gain_050_stationary/individual_results.json",
+      "sha256": "d02dc438e145eebb7ee43749172825b32d2ff975eb99ae6d8e746054ea9d3f49"
+    },
+    {
+      "path": "gain_050_stationary/manifest.json",
+      "sha256": "20e3db7859565ace6a59e72dffd666292a5395e94daed99cb057a4afe22b8cff"
+    },
+    {
+      "path": "gain_050_stationary/overview.png",
+      "sha256": "da8babfaaf3e7fd2359c958ff48cbcdccef82b727f775df989797cf7f9a8c3c1"
+    },
+    {
+      "path": "gain_050_stationary/overview.svg",
+      "sha256": "3e5ce407181e272d5969609dba684b738e4f3a911631470771445bf6f58a1afd"
+    },
+    {
+      "path": "gain_050_stationary/summary.csv",
+      "sha256": "0f2c434f230dd32a56e32b17ed60b2cbe5bfdbc2f6b7f653a0cb2e113c4a5cdc"
+    },
+    {
+      "path": "gain_050_stationary/summary.json",
+      "sha256": "047bc992ae6892c949368dd850173a9c3f1514cdfa86c9b7f25d6e3a88762c3f"
+    },
+    {
+      "path": "gain_050_stationary/summary.md",
+      "sha256": "9d5d236438136c0df3fc1e487bc752a87aa476bf9c9d98262af6ddfc85c1c441"
+    },
+    {
+      "path": "gain_100_recurring/individual_results.json",
+      "sha256": "ece8c9eb27a7701463c00396d9fa4c840dc6c005c9d1c3de167130a509be7e96"
+    },
+    {
+      "path": "gain_100_recurring/manifest.json",
+      "sha256": "183ab511b06ffc587d469d209ff371afca592d3e3de1a15188a99a3d72b162f1"
+    },
+    {
+      "path": "gain_100_recurring/overview.png",
+      "sha256": "0554a5ab528f49b61360dfbdac3d4d9c25d96be05a40671b9fbbba6e75c118ee"
+    },
+    {
+      "path": "gain_100_recurring/overview.svg",
+      "sha256": "3a0f761fe8a14e2ff66cc1def682c4babf35f875623ed8a5706f55cfcec99b4a"
+    },
+    {
+      "path": "gain_100_recurring/summary.csv",
+      "sha256": "a88ded7d3e64b3281764ccae32c6c0278fe2d5aa9fe2312c510df5ca9d0aa0df"
+    },
+    {
+      "path": "gain_100_recurring/summary.json",
+      "sha256": "839ea03073da21d18b69b48dc86ecfffb01ec285e92bf804621a6a520a10533a"
+    },
+    {
+      "path": "gain_100_recurring/summary.md",
+      "sha256": "eae8238df014629a34cd69e791e65e6391339115d254827740024e641c49d6e3"
+    },
+    {
+      "path": "gain_100_stationary/individual_results.json",
+      "sha256": "3b2b3f69c306234d6d48df0eca7f52f4a08290cedcbbaa796a05b86d847eba69"
+    },
+    {
+      "path": "gain_100_stationary/manifest.json",
+      "sha256": "07a154fd2f406d2b9ec631d51ca61d69f83607d50c3a210a2d347d2383ecc5c5"
+    },
+    {
+      "path": "gain_100_stationary/overview.png",
+      "sha256": "38e1e57544a1b8c7d59069f4a394405573995cf97e09e28b6cbfb5ff96cdd9f0"
+    },
+    {
+      "path": "gain_100_stationary/overview.svg",
+      "sha256": "fd1e1f7cb0ced569664230fb3d40daeadb60db1b63d04691bb20ff7a56b78631"
+    },
+    {
+      "path": "gain_100_stationary/summary.csv",
+      "sha256": "b60f6c3879d58b14b70c84f576e2c348044ddd10d704b9d7c742a681596f5e65"
+    },
+    {
+      "path": "gain_100_stationary/summary.json",
+      "sha256": "94128546a3db36ce0799407d7306ee6efa621adae353d190e0a630bc8278b173"
+    },
+    {
+      "path": "gain_100_stationary/summary.md",
+      "sha256": "a38c15dbf4bf9583f23efc938a12e57b1bbb883cb761efda94f5a864599ac356"
+    },
+    {
+      "path": "gain_grid.csv",
+      "sha256": "a7373896707f943cec190e36e788a09f417eea3acccde4cc4c2caeb7da5afdd7"
+    },
+    {
+      "path": "gain_grid.png",
+      "sha256": "2e75ddfa21ec3df23e95f574933200e6fcf4883a23ac97c66bd9a66e9c4776c4"
+    },
+    {
+      "path": "gain_grid.svg",
+      "sha256": "c4094e7ff112708a63b0fee46ad47dccfc902ffae74aba2acb476f5ca0be0410"
+    },
+    {
+      "path": "selection.json",
+      "sha256": "7729363726009d08d76bad1c8c67b571657eb0a7bc615cdb9d1e470ca6d21a60"
+    },
+    {
+      "path": "summary.md",
+      "sha256": "7f41f797ad609ad617d4b656bbf5e1837402c5ee2770d613a23e9c06c289b9f1"
+    }
+  ]
+}

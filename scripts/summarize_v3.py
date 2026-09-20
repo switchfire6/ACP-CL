@@ -193,7 +193,7 @@ def summarize(results_root: Path, locked: Path, output: Path):
               "but selects its own units. The optimizer cap excludes structural resets and is not a prediction-stability guarantee.",
               "Fixed-set drawdown is measured sparsely and can miss intermediate failures.", "",
               "![Acquisition trajectories](trajectories.png)", ""]
-    (output / "diagnostics.md").write_text("\n".join(lines), encoding="utf-8")
+    (output / "diagnostics.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
     plot(cohorts, output)
     return summary
 
@@ -219,7 +219,7 @@ def plot(cohorts, output):
     figure.savefig(output / "trajectories.png", dpi=170)
     figure.savefig(output / "trajectories.svg")
     path = output / "trajectories.svg"
-    path.write_text("\n".join(line.rstrip() for line in path.read_text(encoding="utf-8").splitlines()) + "\n", encoding="utf-8")
+    path.write_text("\n".join(line.rstrip() for line in path.read_text(encoding="utf-8").splitlines()) + "\n", encoding="utf-8", newline="\n")
     plt.close(figure)
 
 

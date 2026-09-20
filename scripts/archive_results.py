@@ -27,6 +27,12 @@ def archive(source: Path, destination: Path) -> None:
             path = destination / name
             lines = path.read_text(encoding="utf-8").splitlines()
             path.write_text("\n".join(line.rstrip() for line in lines)+"\n", encoding="utf-8", newline="\n")
+        elif name.endswith((".json", ".csv", ".md")):
+            # Match the repository's LF checkout policy before recording any
+            # archive byte hashes. Raw-run byte identities remain separate.
+            path = destination / name
+            contents = path.read_text(encoding="utf-8")
+            path.write_text(contents, encoding="utf-8", newline="\n")
     fields = ("method", "seed", "config_sha256", "source_sha256", "execution_device", "eval_split",
               "class_order", "metrics", "accuracy_matrix", "early_auc", "scratch_early_auc",
               "plasticity_gap", "phase_monitor_counts", "reopening_events", "diagnostics",
