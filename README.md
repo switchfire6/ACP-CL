@@ -19,6 +19,21 @@ For CPU-only installation, change the PyTorch index suffix from `cu128` to `cpu`
 
 ## Run
 
+The next mechanism study is specified in [docs/experiment_v2.md](docs/experiment_v2.md).
+It adds local critical periods for replaced units, a frozen input drift sensor,
+oracle and reset/gain controls, and fixed-label recurring shape domains.
+
+```powershell
+.venv\Scripts\python.exe -m acp_cl run --config configs\v2_shapes_development.json --output runs\my_v2_development --device cuda
+.venv\Scripts\python.exe -m acp_cl run --config configs\v2_shapes_long.json --output runs\my_v2_long --device cuda
+```
+
+The corresponding `v2_gaussian.json`, `v2_shapes_stationary.json`, and
+`v2_shapes_noise_only.json` configurations define the geometry audit and
+100-experience negative controls. These datasets require no downloads.
+Yoked controls must run after `acp_v2` for the same seed; the suite orders them
+automatically. Oracle and yoked results are labeled extra-information diagnostics.
+
 ```powershell
 # Small deterministic engineering check, no downloads or GPU required
 .venv\Scripts\python.exe -m acp_cl run --config configs\smoke.json --output runs\my_smoke --device cpu

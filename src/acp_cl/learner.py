@@ -10,18 +10,23 @@ from torch import nn
 from torch.nn import functional as F
 
 from .controller import ControllerConfig, CriticalPeriodController, Phase
+from .controller_v2 import ReopeningController
 from .data import preprocess
 from .monitor import OnlineMonitor
 from .plasticity import PlasticityConfig, PlasticityEngine
 from .replay import ReservoirBuffer
+from .sensor import FrozenInputSensor
 
 
+YOKED_METHODS = ("er_recycle_yoked", "er_recycle_yoked_gain")
 METHODS = (
     "finetune", "er", "er_recycle", "derpp", "fixed", "acp",
     "acp_no_consolidation", "acp_no_replay", "acp_no_recycling",
     "acp_global", "acp_no_relaxation", "acp_no_damage", "acp_no_health",
     "acp_random_recycling", "acp_no_reopening",
-)
+    "acp_v2", "acp_v2_no_newborn", "acp_v2_no_reopening",
+    "acp_v2_learned_sensor", "acp_v2_oracle",
+) + YOKED_METHODS
 
 
 class Learner:
@@ -32,6 +37,9 @@ class Learner:
         self.device = next(model.parameters()).device
         self.dataset = config["data"]["dataset"]
         acp = method.startswith("acp") or method == "fixed"
+        self.v2 = method.startswith("acp_v2")
+        self.oracle = method == "acp_v2_oracle"
+        self.yoked = method in YOKED_METHODS
         self.use_replay = method not in ("finetune", "acp_no_replay")
         self.replay_weight = float(config.get("replay_weight", 1.0))
         self.der_alpha = float(config.get("der_alpha", 0.5))
@@ -41,21 +49,27 @@ class Learner:
             raise ValueError("replay coefficients and batch sizes must be nonnegative")
         cc = dict(config.get("controller", {}))
         cc.update({"adaptive": method != "fixed",
-                   "allow_reopening": method != "acp_no_reopening",
+                   "allow_reopening": method not in ("acp_no_reopening", "acp_v2_no_reopening"),
                    "local_gating": method != "acp_global",
                    "use_replay_damage": method != "acp_no_damage",
                    "use_plasticity_signal": method != "acp_no_health"})
         self.controller_config = ControllerConfig(**cc)
         pc = dict(config.get("plasticity", {}))
+        pc["newborn_steps"] = pc.get("newborn_steps", 50) if self.v2 and \
+            method != "acp_v2_no_newborn" else 0
         pc["g_min"] = self.controller_config.g_min if acp else 0.0
         self.engine = PlasticityEngine(
             model, PlasticityConfig(**pc), consolidation=acp and method != "acp_no_consolidation",
-            recycling=(acp and method != "acp_no_recycling") or method == "er_recycle",
+            recycling=(acp and method != "acp_no_recycling") or method == "er_recycle" or self.yoked,
             relaxation=method != "acp_no_relaxation", random_recycling=method == "acp_random_recycling",
             seed=seed + 4109,
         )
         blocks = [name for name in model.plastic_blocks() if name != "head"]
         self.controller = CriticalPeriodController(blocks, self.controller_config) if acp else None
+        if self.v2:
+            self.controller = ReopeningController(blocks, self.controller_config, oracle=self.oracle)
+        self.sensor = FrozenInputSensor(seed=seed+18223) if self.v2 and \
+            method != "acp_v2_learned_sensor" else None
         self.monitor = OnlineMonitor(float(config.get("monitor_decay", 0.9)))
         self.buffer = ReservoirBuffer(int(config.get("replay_capacity", 2000)) if self.use_replay else 0,
                                       seed=seed+6151)
@@ -63,9 +77,28 @@ class Learner:
         self.replay_augmentation_rng = torch.Generator().manual_seed(seed+10103)
         self.step_number = 0
         self.log: list[dict] = []
+        self.allocation_trace: list[dict] = []
+        self.yoked_schedule: list[dict] | None = None
+        self.yoked_gain = 1.0
         self.cost = {"current_examples": 0, "replay_examples": 0,
                      "probe_forward_examples": 0, "train_forward_calls": 0,
-                     "backward_calls": 0, "evaluation_examples": 0}
+                     "backward_calls": 0, "evaluation_examples": 0,
+                     "sensor_forward_examples": 0}
+
+    def set_yoked_schedule(self, trace: list[dict]) -> None:
+        if not self.yoked or not trace:
+            raise ValueError("a nonempty allocation trace is required for a yoked diagnostic")
+        if any(row["step"] != i+1 or not 0 <= row["effective_feature_gain"] <= 1.000001
+               for i, row in enumerate(trace)):
+            raise ValueError("invalid allocation trace")
+        self.yoked_schedule = trace
+        self.yoked_gain = sum(row["effective_feature_gain"] for row in trace) / len(trace) \
+            if self.method == "er_recycle_yoked_gain" else 1.0
+
+    def notify_oracle_boundary(self) -> None:
+        if not self.oracle:
+            raise ValueError("only the explicitly labeled oracle may receive boundaries")
+        self.controller.notify_boundary()
 
     def _scores(self, current: dict[str, torch.Tensor], old: dict[str, torch.Tensor]) -> dict:
         scores = {}
@@ -87,6 +120,8 @@ class Learner:
                 for block, values in scores.items()}
 
     def train_batch(self, raw_x: torch.Tensor, y: torch.Tensor) -> dict:
+        if self.yoked and (self.yoked_schedule is None or self.step_number >= len(self.yoked_schedule)):
+            raise ValueError("yoked diagnostic requires a complete source allocation trace")
         self.model.train()
         self.step_number += 1
         step = self.step_number
@@ -129,7 +164,11 @@ class Learner:
             self.cost["train_forward_calls"] += 1
             self.cost["backward_calls"] += 1
         gradients = {n: g + old_grad[n] if old_grad else g for n, g in new_grad.items()}
-        self.monitor.add_loss(float(loss.detach()), features["representation"])
+        novelty_features = features["representation"]
+        if self.sensor is not None:
+            novelty_features = self.sensor.transform(preprocess(raw_x.to(self.device), self.dataset))
+            self.cost["sensor_forward_examples"] += len(y)
+        self.monitor.add_loss(float(loss.detach()), novelty_features)
         monitor_log = {}
         controller_log = {}
         if monitoring:
@@ -139,12 +178,19 @@ class Learner:
                 if self.controller.should_consolidate:
                     self.engine.consolidate(self.controller.consolidation_blocks)
         gates = self.controller.gates() if self.controller else {b: 1.0 for b in self.model.plastic_blocks()}
+        if self.yoked:
+            gates = {b: self.yoked_gain for b in self.model.plastic_blocks() if b != "head"}
         reopened = self.controller.selected_blocks if self.controller and \
             self.controller.phase == Phase.REOPENED else ()
         update_log = self.engine.step(gradients, gates, reopened)
         self.engine.update_utilities(features)
         adult = self.controller is not None and self.controller.phase in (Phase.ADULT, Phase.REOPENED)
-        recycle_log = self.engine.recycle(adult=adult)
+        forced = self.yoked_schedule[step-1]["recycled_by_population"] if self.yoked else None
+        recycle_log = self.engine.recycle(adult=adult, forced_counts=forced)
+        self.allocation_trace.append({"step": step,
+                                      "effective_feature_gain": update_log["effective_feature_gain"],
+                                      "feature_data_displacement": update_log["feature_data_displacement"],
+                                      "recycled_by_population": recycle_log["recycled_by_population"]})
         # Probe uses the same unaugmented images and labels on both sides. It is
         # sampled separately from the update, but chance overlap is possible.
         if probe is not None:
@@ -180,6 +226,9 @@ class Learner:
         return {"model": self.model.state_dict(), "engine": self.engine.state_dict(),
                 "controller": self.controller.state_dict() if self.controller else None,
                 "monitor": self.monitor.state_dict(), "buffer": self.buffer.state_dict(),
+                "sensor": self.sensor.state_dict() if self.sensor else None,
+                "allocation_trace": self.allocation_trace, "yoked_schedule": self.yoked_schedule,
+                "yoked_gain": self.yoked_gain,
                 "step_number": self.step_number, "log": self.log, "cost": self.cost,
                 "augmentation_rng": self.augmentation_rng.get_state(),
                 "replay_augmentation_rng": self.replay_augmentation_rng.get_state(),
@@ -197,6 +246,10 @@ class Learner:
         self.model.load_state_dict(state["model"])
         self.engine.load_state_dict(state["engine"])
         self.monitor.load_state_dict(state["monitor"])
+        if self.sensor:
+            self.sensor.load_state_dict(state["sensor"])
+        self.allocation_trace = state.get("allocation_trace", [])
+        self.yoked_schedule, self.yoked_gain = state.get("yoked_schedule"), state.get("yoked_gain", 1.0)
         self.buffer.load_state_dict(state["buffer"])
         self.step_number, self.log, self.cost = state["step_number"], state["log"], state["cost"]
         self.augmentation_rng.set_state(state["augmentation_rng"].cpu())

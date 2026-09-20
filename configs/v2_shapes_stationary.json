@@ -1,0 +1,67 @@
+{
+  "stage": "v2 exploratory 100-experience stationary control; validation only",
+  "data": {
+    "dataset": "procedural_shapes",
+    "n_experiences": 100,
+    "n_domains": 8,
+    "regime": "stationary",
+    "train_per_class": 160,
+    "validation_per_class": 32,
+    "test_per_class": 0,
+    "image_size": 32
+  },
+  "model": "cnn",
+  "width": 64,
+  "batch_size": 32,
+  "steps_per_experience": 20,
+  "eval_every_steps": 4,
+  "early_examples": 256,
+  "eval_split": "validation",
+  "replay_capacity": 256,
+  "replay_batch_size": 32,
+  "probe_batch_size": 32,
+  "monitor_decay": 0.7,
+  "scratch_reference": true,
+  "checkpoint": true,
+  "threads": 2,
+  "methods": [
+    "er_recycle",
+    "acp_v2",
+    "acp_v2_no_reopening"
+  ],
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "primary_method": "acp_v2",
+  "retention_eval_every_experiences": 10,
+  "progress_every_experiences": 10,
+  "controller": {
+    "monitor_interval": 5,
+    "scaffold_steps": 20,
+    "min_open_steps": 40,
+    "stable_windows": 2,
+    "stability_loss_tol": 0.1,
+    "stability_drift_tol": 0.2,
+    "closing_windows": 4,
+    "novel_windows": 2,
+    "reopen_max_windows": 3,
+    "cooldown_windows": 1,
+    "top_k": 1,
+    "g_min": 0.1,
+    "novelty_bias": 1.5,
+    "open_threshold": 0.5
+  },
+  "plasticity": {
+    "lr": 0.03,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "maturity_steps": 30,
+    "recycle_interval": 20,
+    "recycle_fraction": 0.05,
+    "adult_recycle_fraction": 0.05,
+    "consolidation_rate": 0.3,
+    "newborn_steps": 30
+  }
+}

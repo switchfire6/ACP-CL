@@ -40,7 +40,8 @@ def analyze(directory: Path) -> dict:
     rows = []
     for method, seed_results in by_method.items():
         runs = list(seed_results.values())
-        row = {"method": method, "n_seeds": len(runs)}
+        row = {"method": method, "n_seeds": len(runs),
+               "information_access": runs[0].get("information_access", "training stream only")}
         for endpoint in ENDPOINTS:
             values = [r["metrics"][endpoint] for r in runs if endpoint in r["metrics"]]
             row[endpoint] = float(np.mean(values)) if values else None
@@ -50,24 +51,27 @@ def analyze(directory: Path) -> dict:
             row[name] = float(np.mean(values)) if values else None
         rows.append(row)
     paired = []
-    if "acp" in by_method:
+    focal = results[0]["config"].get("primary_method", "acp_v2" if "acp_v2" in by_method else "acp")
+    if focal in by_method:
         for comparator, runs in by_method.items():
-            if comparator == "acp":
+            if comparator == focal:
                 continue
-            common = sorted(set(runs) & set(by_method["acp"]))
+            common = sorted(set(runs) & set(by_method[focal]))
             for endpoint in ENDPOINTS:
                 if not common or any(endpoint not in runs[s]["metrics"] or
-                                     endpoint not in by_method["acp"][s]["metrics"] for s in common):
+                                     endpoint not in by_method[focal][s]["metrics"] for s in common):
                     continue
                 # Pairing is valid only with exactly the same stream and config.
                 for seed in common:
-                    if runs[seed]["class_order"] != by_method["acp"][seed]["class_order"]:
+                    if runs[seed]["class_order"] != by_method[focal][seed]["class_order"]:
                         raise ValueError("paired class orders differ")
+                    if runs[seed].get("stream_metadata") != by_method[focal][seed].get("stream_metadata"):
+                        raise ValueError("paired stream metadata differ")
                 interval = paired_bootstrap(
-                    [by_method["acp"][s]["metrics"][endpoint] for s in common],
+                    [by_method[focal][s]["metrics"][endpoint] for s in common],
                     [runs[s]["metrics"][endpoint] for s in common], seed=27183)
-                paired.append({"contrast": f"acp - {comparator}", "endpoint": endpoint,
-                               "seeds": common, "all_seeds_matched": set(runs)==set(by_method["acp"]),
+                paired.append({"contrast": f"{focal} - {comparator}", "endpoint": endpoint,
+                               "seeds": common, "all_seeds_matched": set(runs)==set(by_method[focal]),
                                **interval})
     summary = {"status": "exploratory; unadjusted paired percentile bootstrap intervals",
                "eval_split": results[0]["eval_split"], "config": results[0]["config"],
@@ -90,7 +94,7 @@ def analyze(directory: Path) -> dict:
                      f"{percent(row['forgetting'])} | {percent(row['late_early_auc'])} | "
                      f"{percent(row['late_plasticity_gap'])} | {row['wall_seconds']:.1f} |")
     if paired:
-        lines.extend(["", "Paired ACP differences (95% unadjusted percentile bootstrap intervals; "
+        lines.extend(["", f"Paired {focal} differences (95% unadjusted percentile bootstrap intervals; "
                       "small-seed intervals are unstable):", "",
                       "| Comparator | Endpoint | Pairs | Difference [95% CI], pp |",
                       "|---|---|---:|---:|"])
@@ -99,6 +103,7 @@ def analyze(directory: Path) -> dict:
                          f"{100*pair['mean_difference']:+.2f} "
                          f"[{100*pair['ci_low']:+.2f}, {100*pair['ci_high']:+.2f}] |")
     lines.extend(["", "Lower forgetting is better; higher accuracy and acquisition AUC are better.",
+                  "Methods with oracle boundaries or offline yoked traces are extra-information diagnostics, not task-free competitors.",
                   "Scratch-adjusted AUC subtracts a fresh model's AUC on the identical experience; it is a diagnostic, not pure transfer.",
                   "Timing includes evaluation, diagnostics, and checkpoint writes. It is not a matched-compute comparison.",
                   "The recycling and DER++ comparators are explicitly documented implementation variants.",

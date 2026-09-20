@@ -28,8 +28,13 @@ class PlasticityConfig:
     adult_recycle_fraction: float = 0.001
     recycle_cutoff: float = 0.3
     utility_decay: float = 0.99
+    # Only replaced units receive this local developmental window. Zero keeps
+    # the original controller-only consolidation and block-gating behavior.
+    newborn_steps: int = 0
 
     def __post_init__(self):
+        if type(self.newborn_steps) is not int or self.newborn_steps < 0:
+            raise ValueError("newborn_steps must be a nonnegative integer")
         numeric = asdict(self)
         if any(not math.isfinite(v) for v in numeric.values()):
             raise ValueError("plasticity settings must be finite")
@@ -101,16 +106,37 @@ class PlasticityEngine:
                 "age": torch.zeros(p.shape[0], dtype=torch.long, device=p.device),
             }
         self.units = model.recyclable_units()
+        if len({unit.name for unit in self.units}) != len(self.units):
+            raise ValueError("recyclable population names must be unique")
+        self._unit_params = {}
+        self._newborn_links: dict[str, list[tuple[str, int]]] = {}
+        for unit in self.units:
+            incoming = owner[id(unit.incoming.weight)]
+            bias = owner[id(unit.incoming.bias)] if unit.incoming.bias is not None else None
+            outgoing = owner[id(unit.outgoing.weight)]
+            if unit.outgoing.weight.shape[1] != unit.incoming.weight.shape[0]:
+                raise ValueError(f"population {unit.name} has incompatible outgoing columns")
+            self._unit_params[unit.name] = (incoming, bias, outgoing)
+            for name in (incoming, bias):
+                if name is not None:
+                    self._newborn_links.setdefault(name, []).append((unit.name, 0))
+            self._newborn_links.setdefault(outgoing, []).append((unit.name, 1))
         self.unit_state = {
             u.name: {"utility": torch.zeros(u.incoming.weight.shape[0], device=u.incoming.weight.device),
                      "mean": torch.zeros(u.incoming.weight.shape[0], device=u.incoming.weight.device),
                      "age": torch.zeros(u.incoming.weight.shape[0], dtype=torch.long,
-                                        device=u.incoming.weight.device), "credit": 0.0}
+                                        device=u.incoming.weight.device), "credit": 0.0,
+                     # -1 means initial or already matured; 0 is an actual reset.
+                     # This clock advances in step(), independent of EMA updates.
+                     "newborn_age": torch.full((u.incoming.weight.shape[0],), -1,
+                                               dtype=torch.long, device=u.incoming.weight.device)}
             for u in self.units
         }
         self.generator = torch.Generator(device="cpu").manual_seed(seed)
         self.steps = 0
         self.total_recycled = 0
+        self.total_maturations = 0
+        self.total_local_consolidations = 0
 
     def block_consolidation(self) -> dict[str, float]:
         result = {}
@@ -136,9 +162,111 @@ class PlasticityEngine:
             relaxation[core] = 0
         return c * (1-relaxation)
 
+    def _newborn_scale(self, name: str, parameter: torch.Tensor,
+                       scale: torch.Tensor, gate: float) -> torch.Tensor:
+        """A final gain floor on reset incoming rows and outgoing columns.
+
+        At post-reset ages a=0,...,N-1 the floor is g+(1-g)*(1-a/N).
+        At age N it returns to the ordinary consolidated block multiplier.
+        Incident row/column floors combine by maximum. The head remains at one.
+        This is an explicit local exception even when replay risk contracts the
+        global block gate to g_min; paired replay probes measure its consequences.
+        """
+        if not self.config.newborn_steps:
+            return scale
+        for population, axis in self._newborn_links.get(name, ()):
+            age = self.unit_state[population]["newborn_age"]
+            active = (age >= 0) & (age < self.config.newborn_steps)
+            if not bool(active.any()):
+                continue
+            remaining = 1 - age.to(parameter.dtype) / self.config.newborn_steps
+            floor = torch.where(active, gate + (1-gate) * remaining, 0.0)
+            shape = [1] * parameter.ndim
+            shape[axis] = len(floor)
+            scale = torch.maximum(scale, floor.reshape(shape))
+        return scale
+
+    def _pending_rows(self, name: str) -> torch.Tensor:
+        """Incoming rows whose post-reset SI window must remain uninterrupted."""
+        pending = torch.zeros_like(self.state[name]["age"], dtype=torch.bool)
+        if self.config.newborn_steps:
+            for population, axis in self._newborn_links.get(name, ()):
+                if axis == 0:
+                    pending |= self.unit_state[population]["newborn_age"] >= 0
+        return pending
+
+    def _consolidate_rows(self, name: str, rows: torch.Tensor, *,
+                          useful_only: bool = False) -> torch.Tensor:
+        """Commit an SI window for selected rows; return useful matured rows."""
+        if not len(rows):
+            return rows
+        cfg, p, s = self.config, self.params[name], self.state[name]
+        utility = row_sum(s["path"][rows]).clamp_min(0) / (
+            row_sum((p[rows]-s["start"][rows]).square()) + cfg.importance_epsilon)
+        normalized = robust_unit_interval(utility)
+        mature = s["age"][rows] >= cfg.maturity_steps
+        useful = mature & (utility > 0)
+        normalized *= mature
+        s["importance"][rows] = utility
+        old_c = s["c"][rows]
+        s["c"][rows] = 1 - (1-old_c) * torch.exp(-cfg.consolidation_rate * normalized)
+        anchor_rows = useful if useful_only else mature
+        anchor_rate = anchor_rows.to(p.dtype) * cfg.anchor_rate
+        if useful_only:
+            # First local acquisition anchors the trained row, rather than
+            # retaining half of its random reset initialization. Global/v0
+            # consolidation keeps the configured EMA anchor rule unchanged.
+            anchor_rate[useful & (old_c == 0)] = 1.0
+        rate = row_view(anchor_rate, p[rows])
+        s["anchor"][rows] = s["anchor"][rows] + rate * (p[rows]-s["anchor"][rows])
+        s["start"][rows] = p[rows]
+        s["path"][rows] = 0
+        return rows[useful]
+
+    def _advance_newborns(self) -> tuple[int, int]:
+        """Graduate once at max(local window, maturity), independent of phase."""
+        matured, consolidated = 0, 0
+        if not self.config.newborn_steps:
+            return matured, consolidated
+        threshold = max(self.config.newborn_steps, self.config.maturity_steps)
+        for unit in self.units:
+            age = self.unit_state[unit.name]["newborn_age"]
+            pending = age >= 0
+            age[pending] += 1
+            rows = torch.where(pending & (age >= threshold))[0]
+            if not len(rows):
+                continue
+            useful = torch.zeros_like(age, dtype=torch.bool)
+            if self.consolidation:
+                incoming, bias, _ = self._unit_params[unit.name]
+                for name in (incoming, bias):
+                    if name is not None and self.block_for[name] != "head":
+                        useful[self._consolidate_rows(name, rows, useful_only=True)] = True
+            age[rows] = -1
+            matured += len(rows)
+            consolidated += int(useful.sum())
+        self.total_maturations += matured
+        self.total_local_consolidations += consolidated
+        return matured, consolidated
+
+    def _newborn_counts(self) -> dict[str, int]:
+        pending, active = 0, 0
+        for state in self.unit_state.values():
+            age = state["newborn_age"]
+            pending += int((age >= 0).sum())
+            active += int(((age >= 0) & (age < self.config.newborn_steps)).sum())
+        return {"newborn_units": active, "pending_maturation_units": pending}
+
     @torch.no_grad()
     def step(self, gradients: dict[str, torch.Tensor], gates: dict[str, float],
              reopened: tuple[str, ...] = ()) -> dict[str, float]:
+        """Update once and report final non-head gain and data displacement.
+
+        Gain is averaged over feature parameters, including incoming biases.
+        Data displacement is the L2 norm of the actual momentum/data update;
+        weight decay, anchor forces, and classifier parameters are excluded.
+        Newborn counts describe the state after this optimizer update.
+        """
         cfg = self.config
         # Validate the entire proposed update before mutating any parameter.
         if set(gradients) != set(self.params):
@@ -153,6 +281,9 @@ class PlasticityEngine:
             if not math.isfinite(gate) or not cfg.g_min <= gate <= 1:
                 raise ValueError(f"gate for {block} must be in [g_min, 1]")
         delta_sq = torch.zeros((), device=next(iter(self.params.values())).device)
+        feature_data_sq = torch.zeros_like(delta_sq)
+        feature_gain_sum = torch.zeros_like(delta_sq)
+        feature_parameters = 0
         for name, p in self.params.items():
             grad = gradients[name]
             s = self.state[name]
@@ -160,13 +291,19 @@ class PlasticityEngine:
             s["momentum"].mul_(cfg.momentum).add_(grad)
             if block == "head":
                 multiplier = torch.ones_like(s["c"])
+                gate = 1.0
             else:
                 gate = float(gates.get(block, 1.0))
                 c_eff = self._effective_c(name, set(reopened))
                 # This floor is on the final data-update multiplier, not just g.
                 multiplier = cfg.g_min + (gate-cfg.g_min) * (1-c_eff).pow(cfg.gamma)
-            scale = row_view(multiplier, p)
+            scale = self._newborn_scale(name, p, row_view(multiplier, p), gate)
             data_delta = -cfg.lr * scale * s["momentum"]
+            if block != "head":
+                feature_parameters += p.numel()
+                # scale broadcasts over remaining kernel/input dimensions.
+                feature_gain_sum += scale.sum() * (p.numel() // scale.numel())
+                feature_data_sq += data_delta.square().sum()
             if self.consolidation and block != "head":
                 s["path"].add_(-grad * data_delta)
             decay_delta = -cfg.lr * scale * cfg.weight_decay * p
@@ -176,28 +313,27 @@ class PlasticityEngine:
             delta_sq += delta.square().sum()
             s["age"].add_(1)
         self.steps += 1
-        return {"update_norm": math.sqrt(float(delta_sq))}
+        matured, consolidated = self._advance_newborns()
+        return {"update_norm": math.sqrt(float(delta_sq)),
+                "effective_feature_gain": float(feature_gain_sum) / max(1, feature_parameters),
+                "feature_data_displacement": math.sqrt(float(feature_data_sq)),
+                "feature_parameter_count": feature_parameters,
+                "matured_units": matured, "locally_consolidated_units": consolidated,
+                "total_maturations": self.total_maturations,
+                "total_local_consolidations": self.total_local_consolidations,
+                **self._newborn_counts()}
 
     @torch.no_grad()
     def consolidate(self, blocks: tuple[str, ...] | list[str]) -> None:
         if not self.consolidation:
             return
-        cfg = self.config
         for name, p in self.params.items():
             if self.block_for[name] not in blocks or self.block_for[name] == "head":
                 continue
-            s = self.state[name]
-            utility = row_sum(s["path"]).clamp_min(0) / (
-                row_sum((p-s["start"]).square()) + cfg.importance_epsilon)
-            normalized = robust_unit_interval(utility)
-            normalized *= (s["age"] >= cfg.maturity_steps)
-            s["importance"].copy_(utility)
-            s["c"].copy_(1 - (1-s["c"]) * torch.exp(-cfg.consolidation_rate * normalized))
-            # Only matured rows can acquire/update an anchor.
-            rate = row_view((s["age"] >= cfg.maturity_steps).to(p.dtype) * cfg.anchor_rate, p)
-            s["anchor"].add_(rate * (p-s["anchor"]))
-            s["start"].copy_(p)
-            s["path"].zero_()
+            # Controller events cannot truncate a newborn's accumulation window
+            # or anchor it before its local developmental/maturity requirement.
+            rows = torch.where(~self._pending_rows(name))[0]
+            self._consolidate_rows(name, rows)
 
     @torch.no_grad()
     def update_utilities(self, features: dict[str, torch.Tensor]) -> None:
@@ -218,57 +354,112 @@ class PlasticityEngine:
         return next(name for name, p in self.params.items() if p is parameter)
 
     @torch.no_grad()
-    def recycle(self, *, adult: bool = False) -> dict:
+    def recycle(self, *, adult: bool = False,
+                forced_counts: dict[str, int] | None = None) -> dict:
         """Reset only registered feedforward units, and every affected state slice.
 
         Zeroing outgoing weights removes their previous contribution; it is NOT
         exactly function preserving. Measured replay damage includes this reset.
         A consolidated downstream row vetoes upstream recycling because its
         incident weight column would otherwise be changed behind the protection.
+
+        ``forced_counts`` replays an explicit per-population replacement count,
+        overriding interval and fraction, but not maturity or protection. An
+        explicit empty mapping means no replacements. All requested counts are
+        checked before any weights, credits, or RNG state change; inability to
+        fulfill even one requested count raises ValueError. Forced checks leave
+        fractional credits unchanged. Unit selection still follows this engine's
+        utility/random policy; the matched control matches counts, not identities.
         """
         counts = {}
-        if not self.recycling or self.steps % self.config.recycle_interval:
+        forced = forced_counts is not None
+        if forced:
+            if not isinstance(forced_counts, dict):
+                raise ValueError("forced_counts must be a mapping of population names to counts")
+            for population, count in forced_counts.items():
+                if population not in self.unit_state:
+                    raise ValueError(f"unknown forced recycling population {population!r}")
+                if type(count) is not int or count < 0:
+                    raise ValueError(f"forced count for {population} must be a nonnegative integer")
+            if not any(forced_counts.values()):
+                return {"recycled": 0, "recycled_by_population": counts}
+            if not self.recycling:
+                raise ValueError("cannot fulfill forced recycling counts: recycling is disabled")
+        elif not self.recycling or self.steps % self.config.recycle_interval:
             return {"recycled": 0, "recycled_by_population": counts}
         cfg = self.config
         fraction = cfg.adult_recycle_fraction if adult else cfg.recycle_fraction
-        # Registered populations are in forward order. Reset downstream first,
-        # so a later incoming-row reinitialization cannot revive an upstream
-        # population's outgoing columns that were just zeroed.
+        eligible_by_population = {}
+        requested = {}
+        credits = {}
+        # Build and validate the entire request before selection draws or resets.
         for unit in reversed(self.units):
             us = self.unit_state[unit.name]
-            incoming_name = self._param_name(unit.incoming.weight)
-            outgoing_name = self._param_name(unit.outgoing.weight)
+            incoming_name, bias_name, outgoing_name = self._unit_params[unit.name]
             protection = self.state[incoming_name]["c"].clone()
-            if unit.incoming.bias is not None:
-                bias_state = self.state[self._param_name(unit.incoming.bias)]
-                protection = torch.maximum(protection, bias_state["c"])
-            outgoing_c = self.state[outgoing_name]["c"]
-            if bool((outgoing_c >= cfg.recycle_cutoff).any()):
+            if bias_name is not None:
+                protection = torch.maximum(protection, self.state[bias_name]["c"])
+            veto = bool((self.state[outgoing_name]["c"] >= cfg.recycle_cutoff).any())
+            mask = (us["age"] >= cfg.maturity_steps) & (protection < cfg.recycle_cutoff)
+            if cfg.newborn_steps:
+                mask &= us["newborn_age"] < 0
+            if veto:
+                mask.zero_()
+            eligible = torch.where(mask)[0]
+            eligible_by_population[unit.name] = eligible
+            if forced:
+                count = forced_counts.get(unit.name, 0)
+                if count > len(eligible):
+                    cause = "downstream protection veto" if veto else "maturity, protection, or newborn eligibility"
+                    raise ValueError(
+                        f"cannot fulfill forced recycling count for {unit.name}: requested {count}, "
+                        f"eligible {len(eligible)} ({cause})")
+            elif veto:
                 continue
-            eligible = torch.where((us["age"] >= cfg.maturity_steps) &
-                                   (protection < cfg.recycle_cutoff))[0]
-            if not len(eligible):
-                us["credit"] = 0.0
+            elif not len(eligible):
+                credits[unit.name] = 0.0
                 continue
-            us["credit"] += fraction * len(eligible)
-            count = min(math.floor(us["credit"] + 1e-9), len(eligible))
-            if count == 0:
-                continue
-            us["credit"] -= count
-            if self.random_recycling:
-                order = torch.randperm(len(eligible), generator=self.generator).to(eligible.device)
             else:
-                # Bias-correct the age-dependent EMA for fair newborn comparisons.
+                credit = us["credit"] + fraction * len(eligible)
+                count = min(math.floor(credit + 1e-9), len(eligible))
+                credits[unit.name] = credit - count
+            if count:
+                requested[unit.name] = count
+
+        # Prepare all draws against a private copy so a failed preparation also
+        # cannot advance the engine's RNG. Traversal/draw order matches v0.
+        plan = []
+        generator = torch.Generator(device="cpu")
+        generator.set_state(self.generator.get_state())
+        for unit in reversed(self.units):
+            count = requested.get(unit.name, 0)
+            if not count:
+                continue
+            eligible = eligible_by_population[unit.name]
+            us = self.unit_state[unit.name]
+            if self.random_recycling:
+                order = torch.randperm(len(eligible), generator=generator).to(eligible.device)
+            else:
                 correction = (1-cfg.utility_decay**us["age"][eligible].float()).clamp_min(1e-8)
                 corrected = us["utility"][eligible] / correction
                 order = torch.argsort(corrected, stable=True)
             indices = eligible[order[:count]]
             weight = unit.incoming.weight
-            fan_in = weight[0].numel()
-            bound = math.sqrt(6.0 / fan_in)
+            bound = math.sqrt(6.0 / weight[0].numel())
             values = torch.empty((count, *weight.shape[1:]), dtype=weight.dtype, device="cpu")
-            values.uniform_(-bound, bound, generator=self.generator)
-            weight[indices] = values.to(weight.device)
+            values.uniform_(-bound, bound, generator=generator)
+            plan.append((unit, indices, values.to(weight.device)))
+
+        for population, credit in credits.items():
+            self.unit_state[population]["credit"] = credit
+        # Registered populations are in forward order. Reset downstream first,
+        # so a later incoming-row reinitialization cannot revive an upstream
+        # population's outgoing columns that were just zeroed.
+        for unit, indices, values in plan:
+            us = self.unit_state[unit.name]
+            _, _, outgoing_name = self._unit_params[unit.name]
+            weight = unit.incoming.weight
+            weight[indices] = values
             if unit.incoming.bias is not None:
                 unit.incoming.bias[indices] = 0
             unit.outgoing.weight[:, indices] = 0
@@ -288,7 +479,10 @@ class PlasticityEngine:
             # and references are discarded. Downstream c is below cutoff here.
             for key in ("utility", "mean", "age"):
                 us[key][indices] = 0
-            counts[unit.name] = count
+            if cfg.newborn_steps:
+                us["newborn_age"][indices] = 0
+            counts[unit.name] = len(indices)
+        self.generator.set_state(generator.get_state())
         total = sum(counts.values())
         self.total_recycled += total
         return {"recycled": total, "recycled_by_population": counts}
@@ -299,19 +493,35 @@ class PlasticityEngine:
         return {"mean_consolidation": float(c.mean()),
                 "consolidated_fraction": float((c > 0.9).float().mean()),
                 "total_recycled": self.total_recycled,
+                "total_maturations": self.total_maturations,
+                "total_local_consolidations": self.total_local_consolidations,
+                **self._newborn_counts(),
                 "recyclable_units": sum(len(s["age"]) for s in self.unit_state.values()),
                 "optimizer_state_bytes": sum(t.numel()*t.element_size() for s in self.state.values()
-                                             for t in s.values())}
+                                             for t in s.values()),
+                "unit_state_bytes": sum(t.numel()*t.element_size() for s in self.unit_state.values()
+                                        for t in s.values() if isinstance(t, torch.Tensor))}
 
     def state_dict(self) -> dict:
         return {"state": self.state, "units": self.unit_state, "steps": self.steps,
-                "total_recycled": self.total_recycled, "rng": self.generator.get_state()}
+                "total_recycled": self.total_recycled,
+                "total_maturations": self.total_maturations,
+                "total_local_consolidations": self.total_local_consolidations,
+                "newborn_steps": self.config.newborn_steps,
+                "rng": self.generator.get_state()}
 
     def load_state_dict(self, state: dict) -> None:
+        if state.get("newborn_steps", 0) != self.config.newborn_steps:
+            raise ValueError("checkpoint newborn_steps does not match engine config")
         device = next(self.model.parameters()).device
         self.state = {name: {k: v.to(device) for k, v in s.items()}
                       for name, s in state["state"].items()}
         self.unit_state = {name: {k: v.to(device) if isinstance(v, torch.Tensor) else v
                                  for k, v in s.items()} for name, s in state["units"].items()}
         self.steps, self.total_recycled = state["steps"], state["total_recycled"]
+        self.total_maturations = state.get("total_maturations", 0)
+        self.total_local_consolidations = state.get("total_local_consolidations", 0)
+        # v0 checkpoints have no newborn tags and are valid when disabled.
+        for unit in self.unit_state.values():
+            unit.setdefault("newborn_age", torch.full_like(unit["age"], -1))
         self.generator.set_state(state["rng"].cpu())

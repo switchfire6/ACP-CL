@@ -66,6 +66,9 @@ def build_stream(config: dict, seed: int) -> Stream:
     labels.  The model receives only samples, never experience identifiers.
     """
     dataset = str(config.get("dataset", "synthetic")).lower()
+    if dataset == "procedural_shapes":
+        from .shapes import build_shapes_stream
+        return build_shapes_stream(config, seed)
     n_experiences = _integer(config, "n_experiences", 5, minimum=1)
     classes_per_experience = _integer(config, "classes_per_experience", 2, minimum=1)
     n_classes = n_experiences * classes_per_experience
@@ -75,7 +78,7 @@ def build_stream(config: dict, seed: int) -> Stream:
         if n_classes > 100:
             raise ValueError("CIFAR-100 has only 100 classes")
         return _cifar100(config, seed, n_experiences, classes_per_experience, n_classes)
-    raise ValueError(f"Unknown dataset {dataset!r}; choose synthetic or cifar100")
+    raise ValueError(f"Unknown dataset {dataset!r}; choose synthetic, cifar100, or procedural_shapes")
 
 
 def _synthetic(
@@ -240,6 +243,11 @@ def preprocess(
     dataset = dataset.lower()
     if dataset == "synthetic":
         return x.to(dtype=torch.float32)
+    if dataset == "procedural_shapes":
+        images = x.to(dtype=torch.float32)
+        if x.dtype == torch.uint8:
+            images = images / 255.0
+        return (images - 0.5) / 0.5
     if dataset != "cifar100":
         raise ValueError(f"Unknown dataset {dataset!r}")
     if x.ndim != 4 or x.shape[1] != 3:

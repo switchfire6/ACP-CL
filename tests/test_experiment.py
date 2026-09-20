@@ -11,7 +11,7 @@ from torch.utils.data import TensorDataset
 
 import acp_cl.experiment as experiment
 from acp_cl.data import build_stream
-from acp_cl.learner import METHODS
+from acp_cl.learner import METHODS, YOKED_METHODS
 
 
 @pytest.fixture
@@ -106,7 +106,7 @@ def make_learner(config, method, seed=19):
     return learner, stream
 
 
-@pytest.mark.parametrize("method", METHODS)
+@pytest.mark.parametrize("method", [m for m in METHODS if m not in YOKED_METHODS])
 def test_all_methods_complete_tiny_two_experience_run(tiny_config, tmp_path, method):
     stream = build_stream(tiny_config["data"], seed=19)
     result = experiment.run_one(

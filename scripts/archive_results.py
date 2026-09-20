@@ -19,7 +19,9 @@ def archive(source: Path, destination: Path) -> None:
     fields = ("method", "seed", "config_sha256", "source_sha256", "execution_device", "eval_split",
               "class_order", "metrics", "accuracy_matrix", "early_auc", "scratch_early_auc",
               "plasticity_gap", "phase_monitor_counts", "reopening_events", "diagnostics",
-              "cost", "wall_seconds", "replay_bytes", "model_parameters", "peak_cuda_bytes")
+              "cost", "wall_seconds", "replay_bytes", "model_parameters", "peak_cuda_bytes",
+              "information_access", "evaluation_schedule", "allocation_summary", "allocation_source_sha256",
+              "input_centroid_accuracy", "detector_audit", "sensor_state_bytes", "allocation_trace_sha256")
     results = []
     for file in sorted(source.glob("*/result.json")):
         result = json.loads(file.read_text(encoding="utf-8"))

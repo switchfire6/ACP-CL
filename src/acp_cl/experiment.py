@@ -16,9 +16,10 @@ import numpy as np
 import torch
 
 from .data import Stream, build_stream
-from .learner import Learner, METHODS
+from .learner import Learner, METHODS, YOKED_METHODS
 from .metrics import continual_metrics, normalized_auc
 from .models import make_model
+from .audit import controller_timing_audit, replay_centroid_accuracy
 
 
 def clean_json(value):
@@ -102,6 +103,9 @@ def validate_config(config: dict) -> None:
             raise ValueError("steps_per_experience must be a positive integer or omitted")
     if not 0 < config.get("early_fraction", 0.2) <= 1:
         raise ValueError("early_fraction must be in (0,1]")
+    for field in ("early_examples", "retention_eval_every_experiences", "progress_every_experiences"):
+        if field in config and (type(config[field]) is not int or config[field] < 1):
+            raise ValueError(f"{field} must be a positive integer")
     for method in config.get("methods", ["er", "acp"]):
         if method not in METHODS:
             raise ValueError(f"unknown method {method}")
@@ -148,6 +152,16 @@ def train_experience(learner: Learner, experience, config: dict, seed: int) -> l
     return curve
 
 
+def acquisition_auc(curve: list, config: dict) -> float:
+    """Fixed presentation horizon when configured; never silently shorten it."""
+    horizon = config.get("early_examples")
+    if horizon is None:
+        return normalized_auc(curve, config.get("early_fraction", 0.2))
+    if curve[-1][0] < horizon:
+        raise ValueError("early_examples exceeds an experience's actual presentation horizon")
+    return normalized_auc(curve, horizon / curve[-1][0])
+
+
 def scratch_reference(config: dict, stream: Stream, seed: int, device: torch.device,
                       output: Path, resume: bool = False) -> dict | None:
     if not config.get("scratch_reference", True):
@@ -166,7 +180,7 @@ def scratch_reference(config: dict, stream: Stream, seed: int, device: torch.dev
         learner = new_learner(config, stream, "finetune", seed, device)
         curve = train_experience(learner, experience, config, seed)
         curves.append(curve)
-        aucs.append(normalized_auc(curve, config.get("early_fraction", 0.2)))
+        aucs.append(acquisition_auc(curve, config))
         costs.append(learner.cost)
     if device.type == "cuda":
         torch.cuda.synchronize()
@@ -184,6 +198,20 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
     checkpoint_file = run_dir / "checkpoint.pt"
     identity = {"config_sha256": config_hash(config), "source_sha256": source_hash(),
                 "method": method, "seed": seed, "execution_device": str(device)}
+    allocation = None
+    if method in YOKED_METHODS:
+        source_dir = output / f"acp_v2_seed{seed}"
+        if not (source_dir / "allocation.json").exists():
+            raise ValueError("run acp_v2 for this seed before yoked diagnostics")
+        source_result = json.loads((source_dir / "result.json").read_text(encoding="utf-8"))
+        if source_result.get("method") != "acp_v2" or \
+                any(source_result.get(k) != identity[k] for k in identity if k != "method"):
+            raise ValueError("yoked source configuration/source/seed/device mismatch")
+        source_bytes = (source_dir / "allocation.json").read_bytes()
+        identity["allocation_source_sha256"] = hashlib.sha256(source_bytes).hexdigest()
+        if identity["allocation_source_sha256"] != source_result.get("allocation_trace_sha256"):
+            raise ValueError("yoked source allocation trace hash mismatch")
+        allocation = json.loads(source_bytes)["trace"]
     if result_file.exists():
         if not resume:
             raise FileExistsError(f"run already exists: {run_dir}; choose a new --output or --resume")
@@ -193,6 +221,8 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
         return result
     run_dir.mkdir(parents=True, exist_ok=True)
     learner = new_learner(config, stream, method, seed, device)
+    if allocation is not None:
+        learner.set_yoked_schedule(allocation)
     count = len(stream.experiences)
     matrix = np.full((count, count), np.nan)
     curves, experience_times = [], []
@@ -212,17 +242,25 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
     start = time.perf_counter()
     for i in range(completed, count):
         experience_start = time.perf_counter()
+        # This is the sole boundary-information path. Ordinary learners never
+        # receive this callback, a domain ID, or an evaluation measurement.
+        changes = stream.metadata.get("signal_change_flags", [False] + [True]*(count-1))
+        if learner.oracle and i > 0 and changes[i]:
+            learner.notify_oracle_boundary()
         curves.append(train_experience(learner, stream.experiences[i], config, seed))
-        for j in range(i+1):
+        matrix[i, i] = curves[-1][-1][1]
+        full_evaluation = (i+1) % config.get("retention_eval_every_experiences", 1) == 0 or i == count-1
+        for j in range(i if full_evaluation else 0):
             evaluation = getattr(stream.experiences[j], config.get("eval_split", "validation"))
             matrix[i, j] = learner.accuracy(evaluation)
         if device.type == "cuda":
             torch.cuda.synchronize()
         experience_times.append(time.perf_counter()-experience_start)
-        print(f"{method} seed={seed} experience={i+1}/{count} "
-              f"seen_accuracy={np.nanmean(matrix[i]):.3f} "
-              f"phase={learner.controller.phase.value if learner.controller else 'uncontrolled'}",
-              flush=True)
+        if (i+1) % config.get("progress_every_experiences", 1) == 0 or i == count-1:
+            print(f"{method} seed={seed} experience={i+1}/{count} "
+                  f"observed_accuracy={np.nanmean(matrix[i]):.3f} "
+                  f"phase={learner.controller.phase.value if learner.controller else 'uncontrolled'}",
+                  flush=True)
         if config.get("checkpoint", True):
             checkpoint = {**identity, "learner": learner.state_dict(), "matrix": matrix.tolist(),
                           "curves": curves, "experience_times": experience_times, "completed": i+1,
@@ -232,9 +270,14 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
             temporary.replace(checkpoint_file)
     if device.type == "cuda":
         torch.cuda.synchronize()
-    early_auc = [normalized_auc(c, config.get("early_fraction", 0.2)) for c in curves]
+    early_auc = [acquisition_auc(c, config) for c in curves]
     late_start = count // 2
     stats = continual_metrics(matrix)
+    # Sparse retention evaluation must not average single-domain diagonals as
+    # if they were complete seen-domain evaluations.
+    full_rows = [float(matrix[i, :i+1].mean()) for i in range(count)
+                 if np.isfinite(matrix[i, :i+1]).all()]
+    stats["average_incremental_accuracy"] = float(np.mean(full_rows))
     stats["late_early_auc"] = float(np.mean(early_auc[late_start:]))
     stats["mean_early_auc"] = float(np.mean(early_auc))
     plasticity_gap = None
@@ -255,11 +298,25 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
               "wall_seconds": previous_seconds+time.perf_counter()-start,
               "experience_seconds": experience_times, "phase_monitor_counts": phase_counts,
               "reopening_events": reopenings, "diagnostics": learner.engine.diagnostics(),
+              "sensor_state_bytes": learner.sensor.nbytes() if learner.sensor else 0,
+              "information_access": "true signal-domain change times; diagnostic only" if learner.oracle else
+                  "offline ACP-v2 allocation trace; diagnostic only" if learner.yoked else "training stream only",
+              "evaluation_schedule": {"retention_every": config.get("retention_eval_every_experiences", 1),
+                                      "early_examples": config.get("early_examples"),
+                                      "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"},
+              "allocation_summary": {
+                  "mean_feature_gain": float(np.mean([e["effective_feature_gain"] for e in learner.allocation_trace])),
+                  "summed_feature_data_displacement": sum(e["feature_data_displacement"] for e in learner.allocation_trace),
+                  "steps": len(learner.allocation_trace)},
+              "input_centroid_accuracy": replay_centroid_accuracy(learner, stream, config.get("eval_split", "validation")),
+              "detector_audit": controller_timing_audit(learner.log, stream, curves, config),
               "model_parameters": sum(p.numel() for p in learner.model.parameters()),
               "replay_bytes": learner.buffer.nbytes(), "replay_examples": len(learner.buffer),
               "peak_cuda_bytes": torch.cuda.max_memory_allocated() if device.type == "cuda" else None}
-    write_json(result_file, result)
+    write_json(run_dir / "allocation.json", {"trace": learner.allocation_trace})
+    result["allocation_trace_sha256"] = hashlib.sha256((run_dir / "allocation.json").read_bytes()).hexdigest()
     write_json(run_dir / "events.json", {"events": learner.log})
+    write_json(result_file, result)
     return clean_json(result)
 
 
@@ -290,6 +347,7 @@ def run_suite(config: dict, *, output: Path, seeds: list[int], methods: list[str
         print(f"Prepared {config['data']['dataset']} seed={seed}, "
               f"{stream.num_classes} classes, device={device}", flush=True)
         scratch = scratch_reference(config, stream, seed, device, output, resume=resume)
-        for method in methods:
+        ordered_methods = [m for m in methods if m not in YOKED_METHODS] + [m for m in methods if m in YOKED_METHODS]
+        for method in ordered_methods:
             results.append(run_one(config, stream, method, seed, device, output, scratch, resume))
     return results
