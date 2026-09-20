@@ -1,0 +1,605 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "Local clean-clone CPU engineering smoke; not hosted CI and not an effectiveness study",
+  "parent_commit_at_clone": "7fbb270cf0d107261d60577602001af605f67601",
+  "clone_commit": "7fbb270cf0d107261d60577602001af605f67601",
+  "clone_target_was_absent": true,
+  "fresh_environment": true,
+  "offline_install": true,
+  "package_install": "noneditable from local clone",
+  "parent_source_smoke_config_and_build_files_clean_at_clone": true,
+  "parent_uncommitted_documentation_files_at_clone": [
+    "README.md",
+    "docs/public_readiness.md"
+  ],
+  "clone_path": "runs/public_clone_check",
+  "clone_git_status_clean_after_run": true,
+  "expected_source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+  "installed_source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+  "source_matches_frozen_parent_and_clone": true,
+  "runtime": {
+    "python": "3.10.11",
+    "torch": "2.8.0+cpu",
+    "numpy": "2.2.6",
+    "torchvision": "0.23.0+cpu",
+    "matplotlib": "3.10.9",
+    "cuda_runtime": null
+  },
+  "package_file": "runs/public_clone_check/.venv/lib/site-packages/acp_cl/__init__.py",
+  "package_file_path_base": "parent repository root; exact absolute __file__ retained in raw provenance",
+  "executable": "runs/public_clone_check/.venv/Scripts/python.exe",
+  "python_isolated_mode": true,
+  "parent_editable_install_used": false,
+  "network_access_required": false,
+  "remote_publishing_performed": false,
+  "config_path": "configs/v3_smoke.json",
+  "config_sha256": "488e8c3de3b8f2d82c65ee6dced28eea6ab330711d45e95ee277e6283180b739",
+  "smoke_config_byte_sha256": "bb9bb387c505031d63aa3f9ed5ef8fd76ffd16d35b65f658ebac020c71ac185e",
+  "methods": [
+    "er_v3",
+    "recycle_v3",
+    "newborn_v3",
+    "newborn_matched_v3",
+    "protection_v3",
+    "consolidation_v3",
+    "full_v3"
+  ],
+  "seeds": [
+    919
+  ],
+  "cpu_threads": 2,
+  "n_completed_runs": 7,
+  "matched_actual_stream_fingerprints": true,
+  "identical_warmup_allocation_traces": true,
+  "update_cap_scope": "Optimizer displacement includes features, head, decay, and anchors; recycling resets are excluded",
+  "runs": [
+    {
+      "method": "consolidation_v3",
+      "seed": 919,
+      "completed_experiences": 4,
+      "optimizer_steps": 32,
+      "monitor_events": 8,
+      "scheduled_reset_steps": [
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "unit_resets": 7,
+      "maximum_applied_update_norm": 0.04428264420281011,
+      "configured_update_norm_cap": 0.05,
+      "complete_and_finite": true,
+      "schedule_check_passed": true,
+      "cap_check_passed": true,
+      "result_path": "runs/public_clone_check/runs/clean_clone_smoke/consolidation_v3_seed919/result.json",
+      "result_sha256": "fa930a445679be30ed32c9dabe8bd2964d400a50cd502f00ae2f4070fe00a849",
+      "allocation_path": "runs/public_clone_check/runs/clean_clone_smoke/consolidation_v3_seed919/allocation.json",
+      "allocation_sha256": "31197c24a2f796ef6b4dae069928733e6dd2bf3ab0c66af505670dfa58739a79",
+      "checkpoint_sha256": "c375ea860a5f39e8e1b7ca015286da7e1907ed92e2c0b97b69010b592a779796",
+      "events_sha256": "c32da6222ac0fc117dd6f61982136bf77fa0d0c566d3d08875c5b76f776cd9ed"
+    },
+    {
+      "method": "er_v3",
+      "seed": 919,
+      "completed_experiences": 4,
+      "optimizer_steps": 32,
+      "monitor_events": 8,
+      "scheduled_reset_steps": [],
+      "unit_resets": 0,
+      "maximum_applied_update_norm": 0.04390406289567567,
+      "configured_update_norm_cap": 0.05,
+      "complete_and_finite": true,
+      "schedule_check_passed": true,
+      "cap_check_passed": true,
+      "result_path": "runs/public_clone_check/runs/clean_clone_smoke/er_v3_seed919/result.json",
+      "result_sha256": "48e2e7f3b3aad02e2cbfa20f38434e8aa391deb8e2acd5de2b2329893dbeff61",
+      "allocation_path": "runs/public_clone_check/runs/clean_clone_smoke/er_v3_seed919/allocation.json",
+      "allocation_sha256": "2063186698f09b80db1e9efd25454e831bd23486c06010d1b5d795ecf495774c",
+      "checkpoint_sha256": "fd00a8837b27072dae3e9b49333814b8653facdd40cd2280f95a778766c0501c",
+      "events_sha256": "5d47a2edd2f810b0fcfde2b9e0f08914fd56487601e4a68c60925f5c12df5e95"
+    },
+    {
+      "method": "full_v3",
+      "seed": 919,
+      "completed_experiences": 4,
+      "optimizer_steps": 32,
+      "monitor_events": 8,
+      "scheduled_reset_steps": [
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "unit_resets": 7,
+      "maximum_applied_update_norm": 0.0442825553100435,
+      "configured_update_norm_cap": 0.05,
+      "complete_and_finite": true,
+      "schedule_check_passed": true,
+      "cap_check_passed": true,
+      "result_path": "runs/public_clone_check/runs/clean_clone_smoke/full_v3_seed919/result.json",
+      "result_sha256": "93843f59ee9fbe55b312d14f1ade93a29e98740f6c8fc6877d9ba1d8164d3e50",
+      "allocation_path": "runs/public_clone_check/runs/clean_clone_smoke/full_v3_seed919/allocation.json",
+      "allocation_sha256": "0fb7c17a73a0b58d2d321d705c23fee61dfdd55b6f96e2a1786b7c0de760ed2a",
+      "checkpoint_sha256": "2d415b6ffe4ab0df2b13631f6b5c444d0989a25c832da905d853c403f945bc5e",
+      "events_sha256": "87f0efca4a402cf9cb41359f5f2df1c8cd2e4e07f1c03ddc335545a8018a0c87"
+    },
+    {
+      "method": "newborn_matched_v3",
+      "seed": 919,
+      "completed_experiences": 4,
+      "optimizer_steps": 32,
+      "monitor_events": 8,
+      "scheduled_reset_steps": [
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "unit_resets": 7,
+      "maximum_applied_update_norm": 0.04419148201785443,
+      "configured_update_norm_cap": 0.05,
+      "complete_and_finite": true,
+      "schedule_check_passed": true,
+      "cap_check_passed": true,
+      "result_path": "runs/public_clone_check/runs/clean_clone_smoke/newborn_matched_v3_seed919/result.json",
+      "result_sha256": "bd3b496b14e8406c74af2e8b0e12aec790f051c6bbdbc990ee408837fbd66547",
+      "allocation_path": "runs/public_clone_check/runs/clean_clone_smoke/newborn_matched_v3_seed919/allocation.json",
+      "allocation_sha256": "4bcfb05e676d376307620964612b3f42b00fcbf2051259cd667b1f67ce841727",
+      "checkpoint_sha256": "47991eaf3890fbfb36ab086c996d4d054d48a2c0d7edbcd2de7a2a4fa4c2c69a",
+      "events_sha256": "73f08da56bcca463d804037425de34ded2082164cdcc1de60f52314e1eb8e16c"
+    },
+    {
+      "method": "newborn_v3",
+      "seed": 919,
+      "completed_experiences": 4,
+      "optimizer_steps": 32,
+      "monitor_events": 8,
+      "scheduled_reset_steps": [
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "unit_resets": 7,
+      "maximum_applied_update_norm": 0.04428255558881734,
+      "configured_update_norm_cap": 0.05,
+      "complete_and_finite": true,
+      "schedule_check_passed": true,
+      "cap_check_passed": true,
+      "result_path": "runs/public_clone_check/runs/clean_clone_smoke/newborn_v3_seed919/result.json",
+      "result_sha256": "a83c4461deae2e769a2e35c371f0c32f5974b14e8c3dde950b98f00f90aa5439",
+      "allocation_path": "runs/public_clone_check/runs/clean_clone_smoke/newborn_v3_seed919/allocation.json",
+      "allocation_sha256": "20671b0810421e819cff3a76629d84c2517ecc622a03e769f4a95798494a1588",
+      "checkpoint_sha256": "7b10d3cc60bac36b44e187f31fa7f68b36dea2fffe202ea9b74f55255b34aa97",
+      "events_sha256": "231981e3481869b17f224e245adccb31785330cc17fec1dd21371b131b83dde4"
+    },
+    {
+      "method": "protection_v3",
+      "seed": 919,
+      "completed_experiences": 4,
+      "optimizer_steps": 32,
+      "monitor_events": 8,
+      "scheduled_reset_steps": [
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "unit_resets": 7,
+      "maximum_applied_update_norm": 0.04428264446137958,
+      "configured_update_norm_cap": 0.05,
+      "complete_and_finite": true,
+      "schedule_check_passed": true,
+      "cap_check_passed": true,
+      "result_path": "runs/public_clone_check/runs/clean_clone_smoke/protection_v3_seed919/result.json",
+      "result_sha256": "33be7d774d010da10e1eca9db88365dc40720e4a3dfff9704e9ca7d6be39f0cb",
+      "allocation_path": "runs/public_clone_check/runs/clean_clone_smoke/protection_v3_seed919/allocation.json",
+      "allocation_sha256": "213c9c81fba7ef63a9bd158e83c4ff64869b91fa3a5ca9b8bdd7c9aafd1e1320",
+      "checkpoint_sha256": "f77cf0ce1c9d1e419971908e42e8b25747e30b01ff96c975b1354ff3f733b595",
+      "events_sha256": "a23756f7f087cdcf33368d88ffa838aa6334d381284ae65f1c04cc34f84435b4"
+    },
+    {
+      "method": "recycle_v3",
+      "seed": 919,
+      "completed_experiences": 4,
+      "optimizer_steps": 32,
+      "monitor_events": 8,
+      "scheduled_reset_steps": [
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "unit_resets": 7,
+      "maximum_applied_update_norm": 0.04428264446137958,
+      "configured_update_norm_cap": 0.05,
+      "complete_and_finite": true,
+      "schedule_check_passed": true,
+      "cap_check_passed": true,
+      "result_path": "runs/public_clone_check/runs/clean_clone_smoke/recycle_v3_seed919/result.json",
+      "result_sha256": "fb488dba69b024b3d698e5c13255520df41503b93df28fc5a370aaa64df41ed1",
+      "allocation_path": "runs/public_clone_check/runs/clean_clone_smoke/recycle_v3_seed919/allocation.json",
+      "allocation_sha256": "fc416c29f213e74a7c0d2ffd0434354f9966bc0e80bfcc9945befa5d45adeab9",
+      "checkpoint_sha256": "b0409f3a0acb1c51159f3f68f4596014412f59b0e920adcce9a043ca211bb0f9",
+      "events_sha256": "a095b6e096cf7c9c1dd4ef1f81c4eab4a33ec166447577371e3fc91eff36754d"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "src/acp_cl/__init__.py",
+      "sha256": "237a5e7ec88b7899b5734b5c3c1225b3ad5542697d2c86ea30263e9f7c4328eb"
+    },
+    {
+      "path": "src/acp_cl/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "src/acp_cl/analysis.py",
+      "sha256": "edc8f236401e5b38787e214f95a3c0d4c0505dd3206eb0c17751cd7b50a023ec"
+    },
+    {
+      "path": "src/acp_cl/audit.py",
+      "sha256": "7ee0ecda6327f1457c931389a302e6ca3a1020863ead38ab120b792cb1d8d246"
+    },
+    {
+      "path": "src/acp_cl/cli.py",
+      "sha256": "d17005fe47a212c314b888a7f420379036f0b8e76809dd31f5159a2f3f65f7e5"
+    },
+    {
+      "path": "src/acp_cl/controller.py",
+      "sha256": "f648a131256ac42f45bccc0d5a0c4be17e4693ae50aa666b7c002bed25d64433"
+    },
+    {
+      "path": "src/acp_cl/controller_v2.py",
+      "sha256": "cfa9d7715188b8756950e38a2622d04daf63a721f271d0a56647c19ea465b076"
+    },
+    {
+      "path": "src/acp_cl/data.py",
+      "sha256": "e8e54185a7ef724867a3624259dbf3f96a6ac2b8a002391659d3db8f9522e47d"
+    },
+    {
+      "path": "src/acp_cl/experiment.py",
+      "sha256": "03cb5cbd72e4146b6419d26d060d6ad0b6a4b6e63b7da9f92f89d60f55ec4d48"
+    },
+    {
+      "path": "src/acp_cl/learner.py",
+      "sha256": "864392157fa6581ec142ffcc94f043810998d8753ddb2d133684b373552d11a9"
+    },
+    {
+      "path": "src/acp_cl/metrics.py",
+      "sha256": "b5e3615ebedb3fde4baf26a172a74bd891e1431b38190f7894736abbfc00a01d"
+    },
+    {
+      "path": "src/acp_cl/models.py",
+      "sha256": "7edca2fa30c4fcc679d1d860f85b24d47c9c79f756a0ac656af1e2afcd02d165"
+    },
+    {
+      "path": "src/acp_cl/monitor.py",
+      "sha256": "998f9d99452213204ee46b68c843834455e8c1ab09f820dc08cc6c4da271e322"
+    },
+    {
+      "path": "src/acp_cl/plasticity.py",
+      "sha256": "60c13862b52da7e6f9c86bfc94aa71559895dfcae06472420672a22afbef751a"
+    },
+    {
+      "path": "src/acp_cl/plasticity_v3.py",
+      "sha256": "ff539c066e7b93a5fd9f3ea08b2fb1a603792579232ffa5582345b7ad18616f8"
+    },
+    {
+      "path": "src/acp_cl/replay.py",
+      "sha256": "3d7fceaca335fa8a218848f78b1fad6477b7cb70d0e6d56f0135c2d9670b2270"
+    },
+    {
+      "path": "src/acp_cl/sensor.py",
+      "sha256": "849097615356ab1f9f9d713be38dc482a1648c9041e99ff85ecfed49f89f5e64"
+    },
+    {
+      "path": "src/acp_cl/shapes.py",
+      "sha256": "5dffe294d0f2f688d16631e0cfbc3b6058ff8f21e1d1b13eb6c449aa79c65b56"
+    }
+  ],
+  "raw_proof_directory": "runs/public_clone_check/runs/clean_clone_check",
+  "raw_command_log": "runs/public_clone_check/runs/clean_clone_check/commands.json",
+  "raw_provenance_path": "runs/public_clone_check/runs/clean_clone_check/provenance.json",
+  "audit_script_path": "runs/public_clone_check/runs/clean_clone_check/audit_smoke.py",
+  "audit_script_sha256": "97f3eebd7102ebdebb915a99348e930ff5a4638c833f548362ddf266a33b053c",
+  "command_path_placeholder": "{WORKSPACE} denotes the parent repository's absolute local path; {USERPROFILE} denotes the local user profile. Exact unmodified outputs remain in the ignored raw command log.",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{WORKSPACE}",
+      "returncode": 0,
+      "seconds": 0.04144529999757651,
+      "stdout": "7fbb270cf0d107261d60577602001af605f67601\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "cwd": "{WORKSPACE}",
+      "returncode": 0,
+      "seconds": 0.04742940000141971,
+      "stdout": "README.md\ndocs/public_readiness.md\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "src",
+        "configs/v3_smoke.json",
+        "pyproject.toml",
+        ".gitattributes"
+      ],
+      "cwd": "{WORKSPACE}",
+      "returncode": 0,
+      "seconds": 0.027444099992862903,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--exit-code",
+        "--",
+        "src",
+        "configs/v3_smoke.json",
+        "pyproject.toml",
+        ".gitattributes"
+      ],
+      "cwd": "{WORKSPACE}",
+      "returncode": 0,
+      "seconds": 0.027259000009507872,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "clone",
+        "--local",
+        "--no-hardlinks",
+        "{WORKSPACE}",
+        "{WORKSPACE}\\runs\\public_clone_check"
+      ],
+      "cwd": "{WORKSPACE}",
+      "returncode": 0,
+      "seconds": 0.4178545999893686,
+      "stdout": "",
+      "stderr": "Cloning into '{WORKSPACE}\\runs\\public_clone_check'...\ndone.\n"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 0.02672819999861531,
+      "stdout": "7fbb270cf0d107261d60577602001af605f67601\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 0.1437142000067979,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "uv",
+        "pip",
+        "freeze",
+        "--python",
+        "{WORKSPACE}\\runs\\v3_cpu_env\\Scripts\\python.exe"
+      ],
+      "cwd": "{WORKSPACE}",
+      "returncode": 0,
+      "seconds": 0.026079600007506087,
+      "stdout": "-e file:///{WORKSPACE}\ncolorama==0.4.6\ncontourpy==1.3.2\ncycler==0.12.1\nexceptiongroup==1.3.1\nfilelock==3.32.3\nfonttools==4.65.0\nfsspec==2026.7.0\niniconfig==2.3.0\njinja2==3.1.6\nkiwisolver==1.5.1\nmarkupsafe==3.0.3\nmatplotlib==3.10.9\nmpmath==1.3.0\nnetworkx==3.4.2\nnumpy==2.2.6\npackaging==26.3\npillow==12.3.0\npluggy==1.6.0\npygments==2.21.0\npyparsing==3.3.3\npytest==8.4.2\npython-dateutil==2.9.0.post0\nruff==0.16.8\nsix==1.17.0\nsympy==1.14.0\ntomli==2.4.1\ntorch==2.8.0+cpu\ntorchvision==0.23.0+cpu\ntyping-extensions==4.16.0\n",
+      "stderr": "Using Python 3.10.11 environment at: runs\\v3_cpu_env\n"
+    },
+    {
+      "argv": [
+        "uv",
+        "venv",
+        "--python",
+        "{WORKSPACE}\\runs\\v3_cpu_env\\Scripts\\python.exe",
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv"
+      ],
+      "cwd": "{WORKSPACE}",
+      "returncode": 0,
+      "seconds": 0.06127140000171494,
+      "stdout": "",
+      "stderr": "Using CPython 3.10.11 interpreter at: runs\\v3_cpu_env\\Scripts\\python.exe\nCreating virtual environment at: runs\\public_clone_check\\.venv\nActivate with: runs\\public_clone_check\\.venv\\Scripts\\activate\n"
+    },
+    {
+      "argv": [
+        "uv",
+        "pip",
+        "install",
+        "--offline",
+        "--python",
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe",
+        "--index-url",
+        "https://download.pytorch.org/whl/cpu",
+        "--extra-index-url",
+        "https://pypi.org/simple",
+        "--index-strategy",
+        "unsafe-best-match",
+        "-r",
+        "{WORKSPACE}\\runs\\public_clone_check\\runs\\clean_clone_check\\cpu_requirements.txt"
+      ],
+      "cwd": "{WORKSPACE}",
+      "returncode": 1,
+      "seconds": 0.30993339999986347,
+      "stdout": "",
+      "stderr": "Using Python 3.10.11 environment at: runs\\public_clone_check\\.venv\n  \u00d7 No solution found when resolving dependencies:\n  \u2570\u2500\u25b6 Because markupsafe==3.0.3 needs to be downloaded from a registry and\n      you require markupsafe==3.0.3, we can conclude that your requirements\n      are unsatisfiable.\n\n      hint: Packages were unavailable because the network was disabled. When\n      the network is disabled, registry packages may only be read from the\n      cache.\n"
+    },
+    {
+      "argv": [
+        "uv",
+        "pip",
+        "install",
+        "--offline",
+        "--python",
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe",
+        "--extra-index-url",
+        "https://download.pytorch.org/whl/cpu",
+        "--index-strategy",
+        "unsafe-best-match",
+        "-r",
+        "{WORKSPACE}\\runs\\public_clone_check\\runs\\clean_clone_check\\cpu_requirements.txt"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 12.238386099998024,
+      "stdout": "",
+      "stderr": "Resolved 29 packages in 31ms\nInstalled 29 packages in 12.07s\n + colorama==0.4.6\n + contourpy==1.3.2\n + cycler==0.12.1\n + exceptiongroup==1.3.1\n + filelock==3.32.3\n + fonttools==4.65.0\n + fsspec==2026.7.0\n + iniconfig==2.3.0\n + jinja2==3.1.6\n + kiwisolver==1.5.1\n + markupsafe==3.0.3\n + matplotlib==3.10.9\n + mpmath==1.3.0\n + networkx==3.4.2\n + numpy==2.2.6\n + packaging==26.3\n + pillow==12.3.0\n + pluggy==1.6.0\n + pygments==2.21.0\n + pyparsing==3.3.3\n + pytest==8.4.2\n + python-dateutil==2.9.0.post0\n + ruff==0.16.8\n + six==1.17.0\n + sympy==1.14.0\n + tomli==2.4.1\n + torch==2.8.0+cpu\n + torchvision==0.23.0+cpu\n + typing-extensions==4.16.0\n"
+    },
+    {
+      "argv": [
+        "uv",
+        "pip",
+        "install",
+        "--offline",
+        "--python",
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe",
+        "--no-deps",
+        "{WORKSPACE}\\runs\\public_clone_check"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 1.9899288000015076,
+      "stdout": "",
+      "stderr": "Resolved 1 package in 2ms\n   Building acp-cl @ file:///{WORKSPACE}/runs/public_clone_check\n      Built acp-cl @ file:///{WORKSPACE}/runs/public_clone_check\nPrepared 1 package in 1.63s\nInstalled 1 package in 62ms\n + acp-cl==0.1.0 (from file:///{WORKSPACE}/runs/public_clone_check)\n"
+    },
+    {
+      "argv": [
+        "uv",
+        "pip",
+        "freeze",
+        "--python",
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 0.02588659999310039,
+      "stdout": "acp-cl @ file:///{WORKSPACE}/runs/public_clone_check\ncolorama==0.4.6\ncontourpy==1.3.2\ncycler==0.12.1\nexceptiongroup==1.3.1\nfilelock==3.32.3\nfonttools==4.65.0\nfsspec==2026.7.0\niniconfig==2.3.0\njinja2==3.1.6\nkiwisolver==1.5.1\nmarkupsafe==3.0.3\nmatplotlib==3.10.9\nmpmath==1.3.0\nnetworkx==3.4.2\nnumpy==2.2.6\npackaging==26.3\npillow==12.3.0\npluggy==1.6.0\npygments==2.21.0\npyparsing==3.3.3\npytest==8.4.2\npython-dateutil==2.9.0.post0\nruff==0.16.8\nsix==1.17.0\nsympy==1.14.0\ntomli==2.4.1\ntorch==2.8.0+cpu\ntorchvision==0.23.0+cpu\ntyping-extensions==4.16.0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-c",
+        "import importlib.metadata as metadata, json, platform, sys\nfrom pathlib import Path\nimport acp_cl, numpy, torch\nfrom acp_cl.experiment import source_hash\nprint(json.dumps({'python': platform.python_version(), 'torch': str(torch.__version__), 'numpy': numpy.__version__, 'torchvision': metadata.version('torchvision'), 'matplotlib': metadata.version('matplotlib'), 'executable': sys.executable, 'package_file': acp_cl.__file__, 'source_sha256': source_hash(), 'sys_path': sys.path, 'direct_url': json.loads(metadata.distribution('acp-cl').read_text('direct_url.json')), 'isolated_mode': bool(sys.flags.isolated), 'user_site_enabled': bool(sys.flags.no_user_site == 0), 'cuda_runtime': torch.version.cuda}))\n"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 4.095012300007511,
+      "stdout": "{\"python\": \"3.10.11\", \"torch\": \"2.8.0+cpu\", \"numpy\": \"2.2.6\", \"torchvision\": \"0.23.0+cpu\", \"matplotlib\": \"3.10.9\", \"executable\": \"{WORKSPACE}\\\\runs\\\\public_clone_check\\\\.venv\\\\Scripts\\\\python.exe\", \"package_file\": \"{WORKSPACE}\\\\runs\\\\public_clone_check\\\\.venv\\\\lib\\\\site-packages\\\\acp_cl\\\\__init__.py\", \"source_sha256\": \"cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe\", \"sys_path\": [\"{USERPROFILE}\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python310.zip\", \"{USERPROFILE}\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\DLLs\", \"{USERPROFILE}\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\lib\", \"{USERPROFILE}\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\", \"{WORKSPACE}\\\\runs\\\\public_clone_check\\\\.venv\", \"{WORKSPACE}\\\\runs\\\\public_clone_check\\\\.venv\\\\lib\\\\site-packages\"], \"direct_url\": {\"url\": \"file:///{WORKSPACE}/runs/public_clone_check\", \"dir_info\": {}}, \"isolated_mode\": true, \"user_site_enabled\": false, \"cuda_runtime\": null}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "acp_cl",
+        "run",
+        "--config",
+        "configs/v3_smoke.json",
+        "--output",
+        "runs/clean_clone_smoke",
+        "--device",
+        "cpu",
+        "--no-plots"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 7.089615899996716,
+      "stdout": "Prepared procedural_shapes seed=919, 4 classes, device=cpu\ner_v3 seed=919 experience=1/4 observed_accuracy=0.250 phase=uncontrolled\ner_v3 seed=919 experience=2/4 observed_accuracy=0.250 phase=uncontrolled\ner_v3 seed=919 experience=3/4 observed_accuracy=0.312 phase=uncontrolled\ner_v3 seed=919 experience=4/4 observed_accuracy=0.219 phase=uncontrolled\nrecycle_v3 seed=919 experience=1/4 observed_accuracy=0.250 phase=uncontrolled\nrecycle_v3 seed=919 experience=2/4 observed_accuracy=0.250 phase=uncontrolled\nrecycle_v3 seed=919 experience=3/4 observed_accuracy=0.312 phase=uncontrolled\nrecycle_v3 seed=919 experience=4/4 observed_accuracy=0.234 phase=uncontrolled\nnewborn_v3 seed=919 experience=1/4 observed_accuracy=0.250 phase=uncontrolled\nnewborn_v3 seed=919 experience=2/4 observed_accuracy=0.250 phase=uncontrolled\nnewborn_v3 seed=919 experience=3/4 observed_accuracy=0.312 phase=uncontrolled\nnewborn_v3 seed=919 experience=4/4 observed_accuracy=0.234 phase=uncontrolled\nnewborn_matched_v3 seed=919 experience=1/4 observed_accuracy=0.250 phase=uncontrolled\nnewborn_matched_v3 seed=919 experience=2/4 observed_accuracy=0.250 phase=uncontrolled\nnewborn_matched_v3 seed=919 experience=3/4 observed_accuracy=0.312 phase=uncontrolled\nnewborn_matched_v3 seed=919 experience=4/4 observed_accuracy=0.234 phase=uncontrolled\nprotection_v3 seed=919 experience=1/4 observed_accuracy=0.250 phase=uncontrolled\nprotection_v3 seed=919 experience=2/4 observed_accuracy=0.250 phase=uncontrolled\nprotection_v3 seed=919 experience=3/4 observed_accuracy=0.312 phase=uncontrolled\nprotection_v3 seed=919 experience=4/4 observed_accuracy=0.234 phase=uncontrolled\nconsolidation_v3 seed=919 experience=1/4 observed_accuracy=0.250 phase=uncontrolled\nconsolidation_v3 seed=919 experience=2/4 observed_accuracy=0.250 phase=uncontrolled\nconsolidation_v3 seed=919 experience=3/4 observed_accuracy=0.312 phase=uncontrolled\nconsolidation_v3 seed=919 experience=4/4 observed_accuracy=0.234 phase=uncontrolled\nfull_v3 seed=919 experience=1/4 observed_accuracy=0.250 phase=uncontrolled\nfull_v3 seed=919 experience=2/4 observed_accuracy=0.250 phase=uncontrolled\nfull_v3 seed=919 experience=3/4 observed_accuracy=0.312 phase=uncontrolled\nfull_v3 seed=919 experience=4/4 observed_accuracy=0.234 phase=uncontrolled\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe",
+        "-I",
+        "{WORKSPACE}\\runs\\public_clone_check\\runs\\clean_clone_check\\audit_smoke.py",
+        "{WORKSPACE}\\reports\\v3\\clean_clone_check.json"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 1,
+      "seconds": 2.035851599997841,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"{WORKSPACE}\\runs\\public_clone_check\\runs\\clean_clone_check\\audit_smoke.py\", line 204, in <module>\n    main()\n  File \"{WORKSPACE}\\runs\\public_clone_check\\runs\\clean_clone_check\\audit_smoke.py\", line 115, in main\n    assert len(read(events_path)[\"events\"]) == expected_steps\nAssertionError\n"
+    },
+    {
+      "argv": [
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe",
+        "-I",
+        "{WORKSPACE}\\runs\\public_clone_check\\runs\\clean_clone_check\\audit_smoke.py",
+        "{WORKSPACE}\\reports\\v3\\clean_clone_check.json"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 2.2079015000053914,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"clone_commit\": \"7fbb270cf0d107261d60577602001af605f67601\",\n  \"source_sha256\": \"cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe\",\n  \"completed_methods\": 7,\n  \"all_schedule_checks_passed\": true,\n  \"all_cap_checks_passed\": true,\n  \"report\": \"{WORKSPACE}\\\\reports\\\\v3\\\\clean_clone_check.json\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{WORKSPACE}\\runs\\public_clone_check\\.venv\\Scripts\\python.exe",
+        "-I",
+        "{WORKSPACE}\\runs\\public_clone_check\\runs\\clean_clone_check\\audit_smoke.py",
+        "{WORKSPACE}\\reports\\v3\\clean_clone_check.json"
+      ],
+      "cwd": "{WORKSPACE}\\runs\\public_clone_check",
+      "returncode": 0,
+      "seconds": 2.009961599993403,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"clone_commit\": \"7fbb270cf0d107261d60577602001af605f67601\",\n  \"source_sha256\": \"cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe\",\n  \"completed_methods\": 7,\n  \"all_schedule_checks_passed\": true,\n  \"all_cap_checks_passed\": true,\n  \"report\": \"{WORKSPACE}\\\\reports\\\\v3\\\\clean_clone_check.json\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "cache_note": "The first explicit-registry offline attempt lacked a cached index entry. The install succeeded offline with the existing default-registry cache and PyTorch CPU index; no download was required.",
+  "audit_note": "The first audit attempt incorrectly expected one monitor event per update. The assertion was corrected to the configured four-update monitor cadence. All 32 optimizer updates are audited separately through allocation.json; no experiment source or result changed.",
+  "raw_command_log_sha256": "19510fb5d589d5f6923f481a3210505ad42e38cc943a2f1efb7eff7469b03c26"
+}

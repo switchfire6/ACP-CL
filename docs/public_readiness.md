@@ -29,11 +29,19 @@ The v3 implementation source was frozen at `bac05cf`, with SHA-256
 `cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe`.
 A fresh Windows CPU environment (Python 3.10.11, Torch 2.8.0+cpu, NumPy 2.2.6)
 completed all seven v3 smoke methods and the actual reset/gain/cap/replay audit.
-Its full suite passed 406 tests; one CUDA test and two Windows symlink-privilege
+Its full suite passed 407 tests; one CUDA test and two Windows symlink-privilege
 tests were skipped. CUDA smoke and the same allocation audit also passed.
 These checks do not claim a successful hosted workflow or cross-platform
 bitwise reproduction. Existing v2 numerical claims remain attached to their
 recorded training revision, not to the current source.
+
+A separate [clean-clone check](../reports/v3/clean_clone_check.md) installed a
+local Git clone noneditably into another fresh CPU environment, using cached
+dependencies and isolated Python imports. All installed source bytes matched
+the frozen source. All seven v3 methods completed the engineering smoke;
+checkpoint completion, stream pairing, reset schedules, and optimizer caps
+passed. The clone remained Git-clean. The small smoke verifies installation
+and execution, not numerical reproduction of the long CUDA study.
 
 The CI action releases and full commit pins were checked against primary GitHub release/tag APIs on 2026-09-20:
 
