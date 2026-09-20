@@ -1,0 +1,11 @@
+{
+  "stage": "full-scale development template; tune and freeze before confirmation",
+  "data": {"dataset": "cifar100", "root": "data", "download": true, "n_experiences": 10, "classes_per_experience": 10, "train_per_class": 450, "validation_per_class": 50, "test_per_class": 100},
+  "model": "resnet18", "width": 256, "batch_size": 96, "epochs": 10,
+  "eval_every_steps": 20, "early_fraction": 0.2, "eval_split": "validation",
+  "replay_capacity": 2000, "replay_batch_size": 32, "probe_batch_size": 32,
+  "scratch_reference": true, "checkpoint": true, "threads": 4,
+  "methods": ["finetune", "er", "derpp", "er_recycle", "fixed", "acp"], "seeds": [101, 202, 303],
+  "controller": {"monitor_interval": 25, "scaffold_steps": 300, "min_open_steps": 300, "stable_windows": 3, "stability_loss_tol": 0.03, "stability_drift_tol": 0.05, "closing_windows": 6, "novel_windows": 3, "reopen_max_windows": 12, "cooldown_windows": 4, "top_k": 2, "g_min": 0.05, "novelty_bias": 2.0, "open_threshold": 0.7},
+  "plasticity": {"lr": 0.05, "momentum": 0.9, "weight_decay": 0.0001, "maturity_steps": 250, "recycle_interval": 250, "recycle_fraction": 0.005, "adult_recycle_fraction": 0.001, "consolidation_rate": 0.1}
+}

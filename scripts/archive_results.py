@@ -1,0 +1,35 @@
+"""Keep compact, reviewable pilot artifacts in git; leave weights/data in runs/."""
+
+import argparse
+import json
+from pathlib import Path
+import shutil
+
+
+def archive(source: Path, destination: Path) -> None:
+    destination.mkdir(parents=True, exist_ok=True)
+    for name in ("manifest.json", "summary.json", "summary.csv", "summary.md", "overview.png", "overview.svg"):
+        shutil.copy2(source / name, destination / name)
+    fields = ("method", "seed", "config_sha256", "source_sha256", "execution_device", "eval_split",
+              "class_order", "metrics", "accuracy_matrix", "early_auc", "scratch_early_auc",
+              "plasticity_gap", "phase_monitor_counts", "reopening_events", "diagnostics",
+              "cost", "wall_seconds", "replay_bytes", "model_parameters", "peak_cuda_bytes")
+    results = []
+    for file in sorted(source.glob("*/result.json")):
+        result = json.loads(file.read_text(encoding="utf-8"))
+        item = {key: result[key] for key in fields if key in result}
+        events = json.loads((file.parent / "events.json").read_text(encoding="utf-8"))["events"]
+        item["transitions"] = [{"step": e["step"], "phase": e["phase"],
+                                "reason": e["controller"].get("reason")}
+                               for e in events if e.get("controller", {}).get("transition")]
+        item["risk_contractions"] = sum(bool(e.get("controller", {}).get("safety_contracted")) for e in events)
+        results.append(item)
+    (destination / "individual_results.json").write_text(json.dumps(results, indent=2)+"\n", encoding="utf-8")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("source", type=Path)
+    parser.add_argument("destination", type=Path)
+    args = parser.parse_args()
+    archive(args.source, args.destination)
