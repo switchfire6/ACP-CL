@@ -10,6 +10,12 @@ def archive(source: Path, destination: Path) -> None:
     destination.mkdir(parents=True, exist_ok=True)
     for name in ("manifest.json", "summary.json", "summary.csv", "summary.md", "overview.png", "overview.svg"):
         shutil.copy2(source / name, destination / name)
+        if name.endswith(".svg"):
+            # Matplotlib's multiline path attributes include trailing spaces.
+            # Newlines preserve the separators while keeping git diffs clean.
+            path = destination / name
+            lines = path.read_text(encoding="utf-8").splitlines()
+            path.write_text("\n".join(line.rstrip() for line in lines)+"\n", encoding="utf-8", newline="\n")
     fields = ("method", "seed", "config_sha256", "source_sha256", "execution_device", "eval_split",
               "class_order", "metrics", "accuracy_matrix", "early_auc", "scratch_early_auc",
               "plasticity_gap", "phase_monitor_counts", "reopening_events", "diagnostics",
