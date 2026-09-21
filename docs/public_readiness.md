@@ -1,8 +1,14 @@
 # Public-readiness review
 
-**Ready to share as a transparent research work in progress, subject to the owner's publication choices.** The completed [v2 report](../reports/v2_results.md) preserves negative results. The completed [v3 report](../reports/v3_results.md) records all 67 comparative runs, with separate selection and evaluation seeds, a modest positive primary contrast, and mixed diagnostic outcomes. This does not establish a novel, generally effective continual-learning algorithm. A synthetic three-seed assessment is not established-benchmark or confirmatory evidence.
+**Shared as a transparent research work in progress.** The completed [v2 report](../reports/v2_results.md) preserves negative results. The completed [v3 report](../reports/v3_results.md) records all 67 comparative runs, with separate selection and evaluation seeds, a modest positive primary contrast, and mixed diagnostic outcomes. This does not establish a novel, generally effective continual-learning algorithm. A synthetic three-seed assessment is not established-benchmark or confirmatory evidence.
 
-This document records local preparation. It does not record a GitHub publication or a successful hosted CI run.
+The user authorized publishing the current project to the public repository
+[switchfire6/ACP-CL](https://github.com/switchfire6/ACP-CL). Its README summarizes
+the hypothesis and all three main studies, with paired-seed figures. The
+[Actions page](https://github.com/switchfire6/ACP-CL/actions/workflows/ci.yml)
+records hosted validation; historical local checks below should not be read as
+hosted runs or external scientific replication. No distribution license has
+been selected.
 
 The subsequent [CIFAR-10 transfer pilot](../reports/cifar10_transfer_results.md)
 completed all 16 fixed development runs and failed its predeclared continuation
@@ -20,7 +26,7 @@ A reviewable release should contain:
 3. Exact study plans, development-selection rules and outputs, seed identities, attempted-run inventories, and all negative or failed outcomes. Preserve the original source/runtime identities.
 4. Reproducible setup and commands, a clean-environment CPU smoke run, relevant tests and lint, and a clear account of which archived numerical results require their historical GPU environment.
 5. Portable artifact references, an explanation of omitted raw data/checkpoints, and enough per-seed evidence to check the reported comparisons.
-6. An owner-selected license and confirmed destination/visibility, with attribution for any redistributed third-party assets.
+6. A confirmed destination/visibility, accurate attribution, and an explicit licensing status. An open-source release also requires an owner-selected license; this public notebook currently has no distribution license.
 
 Scientific success is not a condition for sharing. A claim of algorithmic benefit requires additional evidence: meaningful gains against appropriately tuned baselines, active and interpretable component controls, independent seeds, established benchmarks, and reported retention/plasticity/resource tradeoffs. The [NeurIPS reproducibility guidance](https://neurips.cc/public/guides/PaperChecklist) similarly separates accurate claims, experimental details, uncertainty, compute disclosure, and access to reproduction materials.
 
@@ -39,6 +45,9 @@ The v3 seal in `reports/v3/archive_manifest.json` refers to the historical
 snapshot at commit `a038786`, including the root documentation as it then stood.
 Current root documentation evolves with later experiments; the old numerical
 artifacts and manifest remain unchanged.
+
+The CIFAR-10 seal similarly refers to `5985b77`. The publication README and new
+cross-study figure are later additions; they do not alter the sealed outcomes.
 
 The v3 implementation source was frozen at `bac05cf`, with SHA-256
 `cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe`.
@@ -100,9 +109,9 @@ Committed summary tables and diagnostic extracts are not a complete raw-run arch
 ## Remaining owner decisions and release checks
 
 - **License:** no project distribution license has been chosen. Confirm the owner's preferred code/documentation terms and any asset exceptions before adding a license. A public repository alone does not make code open source; see [GitHub's licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
-- **Destination:** confirm the GitHub account or organization, repository name, and visibility. No remote mutation or publication is part of this preparation.
+- **Destination:** `switchfire6/ACP-CL`, public, as authorized by the user. The source history and compact research evidence are published together; ignored local data and checkpoints are omitted.
 - **Attribution:** confirm real author/contributor names and citation metadata. Do not invent an owner for `CITATION.cff` or apply the repository's eventual license to third-party work by implication.
 - **Artifacts:** compact evidence and portable export copies are prepared; decide whether to distribute additional raw traces or weights. The source revision for each study and the omission of ignored raw artifacts are documented.
-- **Hosted validation:** local tests and clean-environment setup/smoke outcomes are recorded. Record the CPU workflow's actual result after hosting; distinguish it from numerical reproduction of archived CUDA studies.
+- **Hosted validation:** consult the linked Actions run for the published commit. Distinguish its CPU tests and smoke checks from numerical reproduction of archived CUDA studies.
 
 The v3 selection rule and locked-cohort interpretation remain defined by its protocol, regardless of release timing. A failed development stability screen or a null locked comparison should be released as such, not hidden by selecting another cohort or promoting a favorable diagnostic to the primary result.
