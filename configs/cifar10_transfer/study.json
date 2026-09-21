@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "stage": "capped exploratory transfer of v3 recipe; not confirmatory",
+  "seeds": [
+    1063,
+    1174
+  ],
+  "methods": [
+    "er_v3",
+    "recycle_v3",
+    "newborn_v3",
+    "newborn_matched_v3"
+  ],
+  "conditions": [
+    "recurring",
+    "stationary"
+  ],
+  "expected_runs": 16,
+  "expected_updates_per_run": 1410,
+  "expected_current_examples_per_run": 45000,
+  "expected_reset_units_per_recycling_run": 204,
+  "protocol": "docs/cifar10_transfer_protocol.md",
+  "protocol_sha256": "6a79dafec9103a4553784a6036151bdcfa280b26f06cd0a328868628793d732f",
+  "decision_rule": {
+    "stationary_baseline_final_min": 0.25,
+    "stationary_baseline_improvement_min": 0.1,
+    "recurring_recycling_final_min": 0.2,
+    "recurring_recycling_late_auc_max_exclusive": 0.95,
+    "newborn_late_auc_mean_gain_min": 0.01,
+    "newborn_late_auc_each_gain_positive": true,
+    "matched_late_auc_mean_gain_min": 0.005,
+    "matched_late_auc_each_gain_nonnegative": true,
+    "maximum_final_loss_against_er_or_recycling": 0.01,
+    "scope": "effort allocation only; not a significance test; no extra runs or tuning to reverse outcome"
+  }
+}

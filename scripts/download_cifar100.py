@@ -1,4 +1,4 @@
-"""Download canonical CIFAR-100 in ranges, then verify torchvision's checksum.
+"""Download canonical CIFAR-10/100 in ranges, then verify torchvision's checksum.
 
 Useful when the Toronto server limits throughput on a single connection. No
 mirror or transformed dataset is used. Run before starting an experiment.
@@ -13,7 +13,7 @@ from pathlib import Path
 import shutil
 import urllib.request
 
-from torchvision.datasets import CIFAR100
+from torchvision.datasets import CIFAR10, CIFAR100
 
 
 def digest(path: Path) -> str:
@@ -24,19 +24,21 @@ def digest(path: Path) -> str:
     return value.hexdigest()
 
 
-def download(root: Path, workers: int) -> Path:
+def download(root: Path, workers: int, dataset_type=CIFAR100) -> Path:
     if not 1 <= workers <= 8:
         raise ValueError("workers must be in [1, 8]")
     root.mkdir(parents=True, exist_ok=True)
-    destination = root / CIFAR100.filename
-    if destination.exists() and digest(destination) == CIFAR100.tgz_md5:
+    if dataset_type not in (CIFAR10, CIFAR100):
+        raise ValueError("dataset_type must be torchvision CIFAR10 or CIFAR100")
+    destination = root / dataset_type.filename
+    if destination.exists() and digest(destination) == dataset_type.tgz_md5:
         print(f"Already verified: {destination}", flush=True)
         return destination
-    request = urllib.request.Request(CIFAR100.url, method="HEAD")
+    request = urllib.request.Request(dataset_type.url, method="HEAD")
     with urllib.request.urlopen(request, timeout=30) as response:
         length = int(response.headers["Content-Length"])
         canonical_url = response.url
-    parts_dir = root / ".cifar100-download"
+    parts_dir = root / f".{dataset_type.__name__.lower()}-download"
     parts_dir.mkdir(exist_ok=True)
     chunk_size = (length+workers-1)//workers
     ranges = [(start, min(start+chunk_size, length)-1) for start in range(0, length, chunk_size)]
@@ -62,18 +64,18 @@ def download(root: Path, workers: int) -> Path:
             i, path = future.result()
             paths[i] = path
             print(f"Verified range length {i+1}/{len(ranges)}", flush=True)
-    temporary = root / (CIFAR100.filename+".verified-download")
+    temporary = root / (dataset_type.filename+".verified-download")
     with temporary.open("wb") as output:
         for i in sorted(paths):
             with paths[i].open("rb") as source:
                 shutil.copyfileobj(source, output)
-    if digest(temporary) != CIFAR100.tgz_md5:
+    if digest(temporary) != dataset_type.tgz_md5:
         raise RuntimeError("canonical CIFAR checksum mismatch; dataset was not installed")
     temporary.replace(destination)
     # Only remove the exact part files created by this download, never recurse.
     for path in paths.values():
         path.unlink()
-    print(f"Verified canonical MD5 {CIFAR100.tgz_md5}: {destination}", flush=True)
+    print(f"Verified canonical MD5 {dataset_type.tgz_md5}: {destination}", flush=True)
     return destination
 
 
@@ -81,5 +83,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("data"))
     parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--dataset", choices=("cifar10", "cifar100"), default="cifar100")
     options = parser.parse_args()
-    download(options.root, options.workers)
+    download(options.root, options.workers, CIFAR10 if options.dataset == "cifar10" else CIFAR100)

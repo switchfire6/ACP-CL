@@ -1,0 +1,64 @@
+{
+  "data": {
+    "dataset": "cifar10_domains",
+    "root": "data",
+    "download": false,
+    "regime": "recurring",
+    "n_experiences": 3,
+    "train_per_class": 32,
+    "validation_reserved_per_class": 500,
+    "validation_per_class": 4,
+    "test_per_class": 0
+  },
+  "model": "cnn",
+  "width": 64,
+  "batch_size": 32,
+  "eval_every_steps": 4,
+  "early_examples": 64,
+  "eval_split": "validation",
+  "replay_capacity": 256,
+  "replay_batch_size": 32,
+  "probe_batch_size": 32,
+  "monitor_decay": 0.7,
+  "scratch_reference": false,
+  "checkpoint": true,
+  "threads": 2,
+  "retention_eval_every_experiences": 1,
+  "progress_every_experiences": 3,
+  "controller": {
+    "monitor_interval": 5
+  },
+  "plasticity": {
+    "lr": 0.03,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "maturity_steps": 2,
+    "consolidation_rate": 0.3,
+    "anchor_strength": 0.001
+  },
+  "allocation_v3": {
+    "feature_gain": 0.5,
+    "warmup_steps": 4,
+    "newborn_steps": 4,
+    "newborn_peak": 2.0,
+    "protection_steps": 8,
+    "reset_interval": 4,
+    "reset_count": 1,
+    "max_update_norm": 0.1
+  },
+  "stage": "CIFAR-10 engineering smoke; no efficacy inference",
+  "methods": [
+    "er_v3",
+    "recycle_v3",
+    "newborn_v3",
+    "newborn_matched_v3"
+  ],
+  "seeds": [
+    919
+  ],
+  "primary_method": "newborn_v3",
+  "study_phase": "engineering_smoke",
+  "epochs": 1,
+  "single_pass": true,
+  "evaluation_cache_shared_pools": true
+}

@@ -133,22 +133,103 @@ def validate_config(config: dict) -> None:
     for method in config.get("methods", ["er", "acp"]):
         if method not in METHODS:
             raise ValueError(f"unknown method {method}")
+    _validate_runner_options(config)
 
 
-def batches(experience, config: dict, seed: int):
-    """Repeated epochs are explicit repeated exposure, not an online single pass."""
-    x, y = experience.train.tensors
+def _validate_runner_options(config: dict) -> None:
+    for field in ("single_pass", "evaluation_cache_shared_pools"):
+        if field in config and type(config[field]) is not bool:
+            raise ValueError(f"{field} must be a boolean")
+    if config.get("single_pass", False):
+        if type(config.get("epochs", 1)) is not int or config.get("epochs", 1) != 1:
+            raise ValueError("single_pass requires exactly one epoch")
+        if "steps_per_experience" in config:
+            raise ValueError("single_pass requires steps_per_experience to be omitted")
+
+
+def _batch_indices(experience, config: dict, seed: int):
+    """The sole index schedule, shared by training and the evaluator's ID audit."""
+    _validate_runner_options(config)
+    size = len(experience.train)
     generator = torch.Generator().manual_seed(seed + 12907 + 997*experience.index)
     batch_size = config["batch_size"]
     limit = config.get("steps_per_experience")
-    epochs = config.get("epochs", 1) if limit is None else int(np.ceil(limit*batch_size/len(y)))+1
+    epochs = config.get("epochs", 1) if limit is None else int(np.ceil(limit*batch_size/size))+1
     count = 0
     for _ in range(epochs):
-        for indices in torch.randperm(len(y), generator=generator).split(batch_size):
+        for indices in torch.randperm(size, generator=generator).split(batch_size):
             if limit is not None and count >= limit:
                 return
             count += 1
-            yield x[indices], y[indices]
+            yield indices
+
+
+def batches(experience, config: dict, seed: int, *, include_indices: bool = False):
+    """Repeated exposure is unchanged unless the explicit single_pass flag is set.
+
+    Optional indices are for the runner's provenance audit, never the learner.
+    """
+    x, y = experience.train.tensors
+    for indices in _batch_indices(experience, config, seed):
+        batch = (x[indices], y[indices])
+        yield (*batch, indices) if include_indices else batch
+
+
+def _arrival_digest(ids: list[int]) -> str:
+    """Method-independent SHA-256 of ordered little-endian signed int64 IDs."""
+    return hashlib.sha256(np.asarray(ids, dtype="<i8").tobytes()).hexdigest()
+
+
+def _arrival_record(index: int, ids: list[int], batch_sizes: list[int]) -> dict:
+    return {"experience": index, "current_examples": len(ids), "optimizer_steps": len(batch_sizes),
+            "batch_sizes": batch_sizes, "ordered_base_image_ids": ids,
+            "ordered_base_image_ids_sha256": _arrival_digest(ids)}
+
+
+def _single_pass_plan(stream: Stream, config: dict, seed: int) -> tuple[list[dict], str]:
+    """Validate unique base-image identities before constructing a learner."""
+    _validate_runner_options(config)
+    groups = stream.metadata.get("current_arrival_ids_by_experience")
+    if not isinstance(groups, list) or len(groups) != len(stream.experiences):
+        raise ValueError("single_pass requires current_arrival_ids_by_experience metadata")
+    recorded_hashes = stream.metadata.get("current_arrival_id_hashes_by_experience")
+    if recorded_hashes is not None and (not isinstance(recorded_hashes, list) or len(recorded_hashes) != len(groups)):
+        raise ValueError("single_pass source ID hashes must cover every experience")
+    original, planned = [], []
+    for index, (experience, ids) in enumerate(zip(stream.experiences, groups)):
+        if experience.index != index or not isinstance(ids, list) or len(ids) != len(experience.train) or not ids:
+            raise ValueError("single_pass IDs must match each nonempty train dataset in experience order")
+        if any(type(value) is not int or not 0 <= value < 2**63 for value in ids):
+            raise ValueError("single_pass base-image IDs must be nonnegative signed-int64 integers")
+        if recorded_hashes is not None and recorded_hashes[index] != _arrival_digest(ids):
+            raise ValueError("single_pass source ID metadata hash mismatch")
+        original.extend(ids)
+        batches_ = [indices.tolist() for indices in _batch_indices(experience, config, seed)]
+        ordered = [ids[position] for batch in batches_ for position in batch]
+        planned.append(_arrival_record(index, ordered, [len(batch) for batch in batches_]))
+    if len(set(original)) != len(original):
+        raise ValueError("single_pass requires globally unique current base-image IDs")
+    return planned, _arrival_digest(original)
+
+
+def _arrival_artifact(records: list[dict], source_ids_sha256: str) -> dict:
+    ordered = [value for record in records for value in record["ordered_base_image_ids"]]
+    return {
+        "schema_version": 1, "id_namespace": "source training-set positional base-image IDs",
+        "hash_encoding": "SHA-256 of ordered little-endian signed int64 IDs; no method or domain labels",
+        "source_ordered_ids_sha256": source_ids_sha256,
+        "ordered_arrival_ids_sha256": _arrival_digest(ordered),
+        "current_examples": len(ordered), "unique_current_base_images": len(set(ordered)),
+        "optimizer_steps": sum(record["optimizer_steps"] for record in records),
+        "completed_experiences": len(records), "experiences": records,
+    }
+
+
+def _verify_arrival_exposure(learner: Learner, artifact: dict) -> None:
+    expected = artifact["current_examples"]
+    if learner.cost["current_examples"] != expected or learner.buffer.num_seen != expected \
+            or learner.step_number != artifact["optimizer_steps"]:
+        raise ValueError("single_pass actual current exposure/replay arrivals/updates disagree with the ID audit")
 
 
 def new_learner(config: dict, stream: Stream, method: str, seed: int,
@@ -159,14 +240,20 @@ def new_learner(config: dict, stream: Stream, method: str, seed: int,
     return Learner(model, method, config, seed)
 
 
-def train_experience(learner: Learner, experience, config: dict, seed: int) -> list[tuple[int, float]]:
+def train_experience(learner: Learner, experience, config: dict, seed: int,
+                     *, arrival_callback=None) -> list[tuple[int, float]]:
     evaluation = getattr(experience, config.get("eval_split", "validation"))
     if len(evaluation) == 0:
         raise ValueError("selected evaluation split is empty")
     curve = [(0, learner.accuracy(evaluation))]
     examples, last_eval = 0, 0
-    for step, (x, y) in enumerate(batches(experience, config, seed), start=1):
+    iterator = (batches(experience, config, seed) if arrival_callback is None else
+                batches(experience, config, seed, include_indices=True))
+    for step, batch in enumerate(iterator, start=1):
+        x, y = batch[:2]
         learner.train_batch(x, y)
+        if arrival_callback is not None:
+            arrival_callback(batch[2])
         examples += len(y)
         if step % config.get("eval_every_steps", 10) == 0:
             curve.append((examples, learner.accuracy(evaluation)))
@@ -217,6 +304,10 @@ def scratch_reference(config: dict, stream: Stream, seed: int, device: torch.dev
 def run_one(config: dict, stream: Stream, method: str, seed: int,
             device: torch.device, output: Path, scratch: dict | None = None,
             resume: bool = False) -> dict:
+    _validate_runner_options(config)
+    single_pass = config.get("single_pass", False)
+    planned_arrivals, source_ids_sha256 = _single_pass_plan(stream, config, seed) if single_pass else ([], "")
+    cache_shared_pools = config.get("evaluation_cache_shared_pools", False)
     run_dir = output / f"{method}_seed{seed}"
     result_file = run_dir / "result.json"
     checkpoint_file = run_dir / "checkpoint.pt"
@@ -243,6 +334,13 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
         result = json.loads(result_file.read_text(encoding="utf-8"))
         if any(result.get(k) != v for k, v in identity.items()):
             raise ValueError(f"configuration/source/runtime mismatch: {result_file}")
+        if single_pass:
+            raw_arrivals = (run_dir / "current_arrivals.json").read_bytes()
+            expected = _arrival_artifact(planned_arrivals, source_ids_sha256)
+            if json.loads(raw_arrivals) != expected \
+                    or result.get("current_arrival_audit", {}).get("artifact_sha256") != hashlib.sha256(raw_arrivals).hexdigest() \
+                    or result.get("cost", {}).get("current_examples") != expected["current_examples"]:
+                raise ValueError("single_pass completed result/current-arrival audit mismatch")
         return result
     checkpoint = None
     if resume and checkpoint_file.exists():
@@ -251,6 +349,11 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
         checkpoint = torch.load(checkpoint_file, map_location="cpu", weights_only=False)
         if any(checkpoint.get(k) != v for k, v in identity.items()):
             raise ValueError(f"checkpoint configuration/source/runtime mismatch: {checkpoint_file}")
+        if single_pass:
+            completed = checkpoint.get("completed")
+            if type(completed) is not int or not 0 <= completed <= len(planned_arrivals) \
+                    or checkpoint.get("current_arrivals") != _arrival_artifact(planned_arrivals[:completed], source_ids_sha256):
+                raise ValueError("single_pass checkpoint/current-arrival audit mismatch")
     run_dir.mkdir(parents=True, exist_ok=True)
     learner = new_learner(config, stream, method, seed, device)
     if allocation is not None:
@@ -258,12 +361,23 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
     count = len(stream.experiences)
     matrix = np.full((count, count), np.nan)
     curves, experience_times = [], []
+    actual_arrivals = []
+    cache_counts = {"retention_cache_hits": 0, "retention_accuracy_calls": 0}
     completed, previous_seconds = 0, 0.0
     if checkpoint is not None:
         learner.load_state_dict(checkpoint["learner"])
         matrix = np.asarray(checkpoint["matrix"], dtype=float)
         curves, experience_times = checkpoint["curves"], checkpoint["experience_times"]
         completed, previous_seconds = checkpoint["completed"], checkpoint["wall_seconds"]
+        if single_pass:
+            actual_arrivals = copy.deepcopy(checkpoint["current_arrivals"]["experiences"])
+            _verify_arrival_exposure(learner, checkpoint["current_arrivals"])
+        if cache_shared_pools:
+            saved_cache = checkpoint.get("evaluation_cache_counts")
+            if not isinstance(saved_cache, dict) or set(saved_cache) != set(cache_counts) \
+                    or any(type(value) is not int or value < 0 for value in saved_cache.values()):
+                raise ValueError("invalid checkpoint evaluation-cache counters")
+            cache_counts = dict(saved_cache)
     if device.type == "cuda":
         torch.cuda.reset_peak_memory_stats()
         torch.cuda.synchronize()
@@ -275,12 +389,43 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
         changes = stream.metadata.get("signal_change_flags", [False] + [True]*(count-1))
         if learner.oracle and i > 0 and changes[i]:
             learner.notify_oracle_boundary()
-        curves.append(train_experience(learner, stream.experiences[i], config, seed))
+        if single_pass:
+            observed_ids, batch_sizes = [], []
+            ids = stream.metadata["current_arrival_ids_by_experience"][i]
+
+            def observe_arrivals(indices):
+                positions = indices.tolist()
+                observed_ids.extend(ids[position] for position in positions)
+                batch_sizes.append(len(positions))
+
+            curves.append(train_experience(learner, stream.experiences[i], config, seed,
+                                           arrival_callback=observe_arrivals))
+            observed = _arrival_record(i, observed_ids, batch_sizes)
+            if observed != planned_arrivals[i]:
+                raise ValueError("single_pass actual arrival order differs from its planned ID sequence")
+            actual_arrivals.append(observed)
+            _verify_arrival_exposure(learner, _arrival_artifact(actual_arrivals, source_ids_sha256))
+        else:
+            curves.append(train_experience(learner, stream.experiences[i], config, seed))
         matrix[i, i] = curves[-1][-1][1]
         full_evaluation = (i+1) % config.get("retention_eval_every_experiences", 1) == 0 or i == count-1
+        # This dictionary belongs only to the current post-training snapshot.
+        # Holding each object prevents identity reuse; no entry crosses an update.
+        snapshot_cache = {}
+        if cache_shared_pools:
+            current = getattr(stream.experiences[i], config.get("eval_split", "validation"))
+            snapshot_cache[id(current)] = (current, matrix[i, i])
         for j in range(i if full_evaluation else 0):
             evaluation = getattr(stream.experiences[j], config.get("eval_split", "validation"))
-            matrix[i, j] = learner.accuracy(evaluation)
+            if cache_shared_pools and id(evaluation) in snapshot_cache:
+                matrix[i, j] = snapshot_cache[id(evaluation)][1]
+                cache_counts["retention_cache_hits"] += 1
+            else:
+                matrix[i, j] = learner.accuracy(evaluation)
+                if cache_shared_pools:
+                    snapshot_cache[id(evaluation)] = (evaluation, matrix[i, j])
+                    cache_counts["retention_accuracy_calls"] += 1
+        del snapshot_cache
         if device.type == "cuda":
             torch.cuda.synchronize()
         experience_times.append(time.perf_counter()-experience_start)
@@ -293,6 +438,10 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
             checkpoint = {**identity, "learner": learner.state_dict(), "matrix": matrix.tolist(),
                           "curves": curves, "experience_times": experience_times, "completed": i+1,
                           "wall_seconds": previous_seconds + time.perf_counter()-start}
+            if single_pass:
+                checkpoint["current_arrivals"] = _arrival_artifact(actual_arrivals, source_ids_sha256)
+            if cache_shared_pools:
+                checkpoint["evaluation_cache_counts"] = dict(cache_counts)
             temporary = checkpoint_file.with_suffix(".tmp")
             torch.save(checkpoint, temporary)
             temporary.replace(checkpoint_file)
@@ -358,6 +507,24 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
             "summed_head_data_displacement": sum(e["head_data_displacement"] for e in trace),
             "gain_interpretation": "nominal before global step clipping; effective after clipping; feature parameters only",
             "norm_bound_scope": "complete optimizer displacement, including head, decay and anchors; excludes recycling resets",
+        })
+    if cache_shared_pools:
+        result["evaluation_schedule"]["shared_pool_cache"] = {
+            "enabled": True, "scope": "TensorDataset object identity within one post-training snapshot only",
+            "reuse_current_diagonal": True, **cache_counts,
+        }
+    if single_pass:
+        arrival_artifact = _arrival_artifact(actual_arrivals, source_ids_sha256)
+        _verify_arrival_exposure(learner, arrival_artifact)
+        arrival_path = run_dir / "current_arrivals.json"
+        write_json(arrival_path, arrival_artifact)
+        result["current_arrival_audit"] = {
+            key: value for key, value in arrival_artifact.items() if key != "experiences"
+        }
+        result["current_arrival_audit"].update({
+            "artifact": "current_arrivals.json", "artifact_sha256": hashlib.sha256(arrival_path.read_bytes()).hexdigest(),
+            "reservoir_current_arrivals": learner.buffer.num_seen,
+            "learner_receives_ids": False,
         })
     write_json(run_dir / "allocation.json", {"trace": learner.allocation_trace})
     result["allocation_trace_sha256"] = hashlib.sha256((run_dir / "allocation.json").read_bytes()).hexdigest()

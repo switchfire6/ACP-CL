@@ -59,7 +59,9 @@ def _integer(config: dict, key: str, default: int, minimum: int = 0) -> int:
 def build_stream(config: dict, seed: int) -> Stream:
     """Build disjoint development/test streams without touching global RNGs.
 
+    For class-incremental synthetic/CIFAR-100 streams,
     ``classes_per_experience * n_experiences`` defines the selected class count.
+    Fixed-label domain streams are dispatched to their own builders.
     CIFAR selection is a seeded permutation of the original 100 class IDs.  Its
     selected labels are remapped densely in sorted original-ID order; the
     ``class_order`` retains original IDs and ``Experience.classes`` uses remapped
@@ -69,6 +71,9 @@ def build_stream(config: dict, seed: int) -> Stream:
     if dataset == "procedural_shapes":
         from .shapes import build_shapes_stream
         return build_shapes_stream(config, seed)
+    if dataset == "cifar10_domains":
+        from .cifar_domains import build_cifar10_domains
+        return build_cifar10_domains(config, seed)
     n_experiences = _integer(config, "n_experiences", 5, minimum=1)
     classes_per_experience = _integer(config, "classes_per_experience", 2, minimum=1)
     n_classes = n_experiences * classes_per_experience
@@ -78,7 +83,7 @@ def build_stream(config: dict, seed: int) -> Stream:
         if n_classes > 100:
             raise ValueError("CIFAR-100 has only 100 classes")
         return _cifar100(config, seed, n_experiences, classes_per_experience, n_classes)
-    raise ValueError(f"Unknown dataset {dataset!r}; choose synthetic, cifar100, or procedural_shapes")
+    raise ValueError(f"Unknown dataset {dataset!r}; choose synthetic, cifar100, procedural_shapes, or cifar10_domains")
 
 
 def _synthetic(
@@ -232,18 +237,23 @@ def preprocess(
     training: bool = False,
     generator: torch.Generator | None = None,
 ) -> Tensor:
-    """Convert a batch for the model, with optional CIFAR crop/flip augmentation.
+    """Convert a batch, with optional crop/flip for legacy CIFAR-100 only.
 
     Float CIFAR inputs are assumed to be in [0,1]; uint8 inputs are divided by
     255.  Augmentation draws use the provided generator's device and are moved
     to the image device, so CPU generators work with CUDA images.  With no
     generator, each call uses a private, deterministic seed-0 generator; pass a
     persistent explicit generator to advance a reproducible augmentation stream.
+    The CIFAR-10 domain pilot instead uses fixed .5 mean/std and no augmentation.
     """
     dataset = dataset.lower()
     if dataset == "synthetic":
         return x.to(dtype=torch.float32)
-    if dataset == "procedural_shapes":
+    if dataset in ("procedural_shapes", "cifar10_domains"):
+        if dataset == "cifar10_domains" and (x.ndim != 4 or x.shape[1] != 3):
+            raise ValueError("CIFAR-10 domain preprocessing requires an NCHW batch with 3 channels")
+        # The natural-image transfer pilot carries the shape study's fixed
+        # normalization and uses no stochastic crop/flip augmentation.
         images = x.to(dtype=torch.float32)
         if x.dtype == torch.uint8:
             images = images / 255.0
