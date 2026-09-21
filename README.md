@@ -2,7 +2,7 @@
 
 A PyTorch research prototype, evidence review, and falsifiable experiment plan for a critical-period-inspired continual-learning hypothesis. **The hypothesis is unproven.** The repository preserves negative results and distinguishes software checks, exploratory studies, and proposed confirmatory work.
 
-The [completed v2 study](reports/v2_results.md) contains 102 comparative runs, 972 per-experience scratch fits, and an exact reproduction of one late-training failure. V2 did not establish an advantage over replay plus recycling. The [v3 study](docs/experiment_v3.md) is in progress, with separate development and locked evaluation seeds.
+The [completed v2 study](reports/v2_results.md) contains 102 comparative runs, 972 per-experience scratch fits, and an exact reproduction of one late-training failure. V2 did not establish an advantage over replay plus recycling. The [completed v3 study](reports/v3_results.md) adds 67 comparative runs with separate development and evaluation seeds. Its newborn-gain variant improves the primary late acquisition AUC by 1.15 percentage points on three new seeds; the nominal-budget-matched variant improves it by 0.92 points. Most of the improvement comes from one seed, and the combined policy has tradeoffs. This is an exploratory signal, not an established algorithmic advantage.
 
 Start with the [research review](docs/research_review.md), [implemented algorithm](docs/algorithm.md), and [experiment protocol](docs/experiment_protocol.md). The original report is preserved in [docs/deep-research-report.md](docs/deep-research-report.md).
 
@@ -86,9 +86,9 @@ Each suite writes `manifest.json`, per-method/seed results, allocation traces, e
 
 `configs/resnet_gpu_smoke.json` runs twenty updates per method with all 100 output labels to check GPU integration quickly. It is intentionally too short for an accuracy conclusion.
 
-## V3 study in progress
+## Completed v3 study
 
-The [v3 protocol](docs/experiment_v3.md) and [machine-readable study plan](configs/v3_study.json) separate development from locked evaluation. `v3_study.json` is an orchestration plan, not an individual `acp_cl run --config` file.
+The [v3 report](reports/v3_results.md), [protocol](docs/experiment_v3.md), [allocation rules](docs/algorithm_v3.md), and [machine-readable study plan](configs/v3_study.json) separate development from locked evaluation. `v3_study.json` is an orchestration plan, not an individual `acp_cl run --config` file.
 
 Check all seven v3 methods locally without downloading data:
 
@@ -120,7 +120,7 @@ Selection records the attempted candidates and emits three locked configurations
 .venv\Scripts\python.exe -m acp_cl run --config configs/v3/reproduction_lock/recurring.json --output runs/v3_reproduction/recurring --device cuda
 ```
 
-The plan screens four gains for replay plus recycling on two fresh development seeds, then locks one shared gain before evaluating three different seeds. If the stability screen passes, the planned total is 67 comparative runs: 16 development, 42 recurrent/stationary, and nine early-color-bias runs. Colors are independent of labels during ordinary training and all evaluation; the biased curriculum changes an initial training segment.
+The plan screens four gains for replay plus recycling on two development seeds, then locks one shared gain before evaluating three different seeds. The completed study selected 0.5 and contains 67 comparative runs: 16 development, 42 recurrent/stationary, and nine early-color-bias runs. Colors are independent of labels during ordinary training and all evaluation; the biased curriculum changes an initial training segment. All attempted development candidates, per-seed results, and the separate engineering smokes are recorded in the [inventory](reports/v3/run_inventory.json).
 
 | Method | Intervention |
 |---|---|
@@ -132,7 +132,7 @@ The plan screens four gains for replay plus recycling on two fresh development s
 | `consolidation_v3` | Add local consolidation after maturation |
 | `full_v3` | Combine gain, protection, and consolidation |
 
-These are individual-component comparisons against a shared baseline plus a combined condition, not a full factorial or isolated leave-one-out study. All conditions share a warmup and optimizer-displacement cap. Keeping mature gain unchanged and matching total nominal gain are different comparisons; post-clipping gains and actual displacements need not match. The protocol defines selection, measurements, and failure reporting. No v3 efficacy conclusion is claimed while the study is in progress.
+These are individual-component comparisons against a shared baseline plus a combined condition, not a full factorial or isolated leave-one-out study. All conditions share a warmup and optimizer-displacement cap. Keeping mature gain unchanged and matching total nominal gain are different comparisons; post-clipping gains and actual displacements need not match. The protocol defines selection, measurements, and failure reporting. The report preserves the modest positive primary result, negative final-accuracy contrasts, stationary ceiling, and seed-dependent early-bias interaction.
 
 ## Comparisons
 
@@ -158,6 +158,8 @@ The important endpoints are final accuracy, forgetting, and late-stream early-le
 
 The ingredients have substantial predecessors: mature low-utility replacement in [continual backpropagation](https://www.nature.com/articles/s41586-024-07711-7), importance-based protection in [Synaptic Intelligence](https://proceedings.mlr.press/v70/zenke17a.html), combined protection and plasticity in [UPGD](https://arxiv.org/abs/2404.00781), and persistent early-experience effects in [critical learning periods](https://arxiv.org/abs/1711.08856). This repository studies particular combinations and controls. It does not claim discovery of those ideas, biological equivalence, or a validated solution to continual learning.
 
+[Closer maturation and neurogenesis precedents](docs/algorithm_v3.md#close-computational-precedents) also include Neurogenesis Deep Learning, NICE, and a neuromorphic lifelong-learning preprint with preferential newborn plasticity and age-gated pruning.
+
 ## Current scope
 
 The [v2 results](reports/v2_results.md) cover 102 comparative runs, including
@@ -167,10 +169,15 @@ diagnostic is much stronger and retains its advantage when color shortcuts
 are removed. The report includes an exact reproduction of late update
 instability, all negative results, and the proposed next comparison.
 
+The [v3 results](reports/v3_results.md) complete that comparison. The proposed
+[natural-image follow-up](docs/next_experiment.md) keeps fixed labels and uses
+single-pass CIFAR-10 arrivals with paired recurring/stationary conditions.
+Its adapter and experiments are not yet implemented or run.
+
 Correctness tests cover phase transitions, finite-update validation, momentum gating, maturity/protection, adjacent recycling resets, replay RNG isolation, metrics, all method variants, evaluation isolation, exact checkpoint continuation, and provenance rejection. The initial synthetic pilot stayed open throughout: its high accuracy therefore does **not** validate critical-period control. Subsequent calibration and real-image results are reported separately in [reports/development_results.md](reports/development_results.md).
 
 Not yet completed: publication-grade baseline reproductions (including UPGD), matched tuning/compute studies, a preregistered confirmatory cohort, CORe50/Infinite dSprites adapters, and independent long-horizon replication on established benchmarks. Current image-model recycling is limited to the final adapter. Replay-damage feedback is sampled and delayed, not an old-knowledge guarantee. These limitations define the next experiments rather than a successful scientific claim.
 
 ## Contributing and public readiness
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for local tests, Ruff, and experiment-preservation rules. The [CPU workflow](.github/workflows/ci.yml) defines those checks plus a synthetic smoke run; adding the workflow does not establish that it has passed on GitHub. [Public-readiness notes](docs/public_readiness.md) distinguish a transparent research work in progress from a validated algorithm and list remaining release decisions. A license, publication account/repository, and visibility still require the owner's choice. No license or author identity is inferred here.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local tests, Ruff, and experiment-preservation rules. The current CPU suite passes 443 tests with three platform/device skips, and all seven v3 methods pass a [fresh noneditable clean-clone smoke](reports/v3/clean_clone_check.md). The [CPU workflow](.github/workflows/ci.yml) defines checks plus download-free smokes; it has not been run on GitHub. [Public-readiness notes](docs/public_readiness.md) record readiness to share research in progress and remaining release decisions. A license, publication account/repository, and visibility still require the owner's choice. No license or author identity is inferred here.

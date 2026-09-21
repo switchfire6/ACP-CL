@@ -1,6 +1,6 @@
 # Public-readiness review
 
-This repository can be prepared as a transparent research work in progress even if every new hypothesis is negative. That is different from establishing a novel, effective continual-learning algorithm. The completed [v2 report](../reports/v2_results.md) preserves negative results; [v3](experiment_v3.md) is an exploratory follow-up with separate selection and evaluation seeds. A synthetic three-seed assessment is not established-benchmark or confirmatory evidence.
+**Ready to share as a transparent research work in progress, subject to the owner's publication choices.** The completed [v2 report](../reports/v2_results.md) preserves negative results. The completed [v3 report](../reports/v3_results.md) records all 67 comparative runs, with separate selection and evaluation seeds, a modest positive primary contrast, and mixed diagnostic outcomes. This does not establish a novel, generally effective continual-learning algorithm. A synthetic three-seed assessment is not established-benchmark or confirmatory evidence.
 
 This document records local preparation. It does not record a GitHub publication or a successful hosted CI run.
 
@@ -24,6 +24,9 @@ Scientific success is not a condition for sharing. A claim of algorithmic benefi
 - The local [CPU CI definition](../.github/workflows/ci.yml) runs tests, Ruff, and legacy/v3 download-free smoke configurations. No scientific suite or publication step is included.
 - Source/runtime identity checks protect resume; report analysis can read uniformly compatible historical artifacts.
 - [Contribution guidance](../CONTRIBUTING.md) describes preservation of scientific artifacts and the evidence expected for changes.
+- The completed [v3 inventory](../reports/v3/run_inventory.json) records all 16 development and 51 locked runs, with 21 engineering smoke runs listed separately. Compact numerical archives preserve every method/seed, the selection inputs, allocation checks, and paired contrasts; raw traces and weights remain explicitly omitted from Git.
+- A separate [numerical audit](../reports/v3/independent_audit.md) recomputed 5,100 acquisition curves and checked all 102,000 locked-run optimizer updates without the project's metric/report helpers. No numerical or identity discrepancy was found; this was not a training rerun or external scientific replication.
+- [Close computational predecessors](algorithm_v3.md#close-computational-precedents) cover preferential newborn learning and maturation as well as recycling and consolidation. The proposed [natural-image follow-up](next_experiment.md) is clearly marked as unimplemented and unrun.
 
 The v3 implementation source was frozen at `bac05cf`, with SHA-256
 `cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe`.
@@ -87,7 +90,7 @@ Committed summary tables and diagnostic extracts are not a complete raw-run arch
 - **License:** no project distribution license has been chosen. Confirm the owner's preferred code/documentation terms and any asset exceptions before adding a license. A public repository alone does not make code open source; see [GitHub's licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
 - **Destination:** confirm the GitHub account or organization, repository name, and visibility. No remote mutation or publication is part of this preparation.
 - **Attribution:** confirm real author/contributor names and citation metadata. Do not invent an owner for `CITATION.cff` or apply the repository's eventual license to third-party work by implication.
-- **Artifacts:** decide what raw or compact evidence to distribute, prepare portable exports, and document the source revision needed for each study.
-- **Validation:** record clean-environment setup and smoke outcomes, and the CPU workflow's actual result when hosted. Distinguish these from numerical reproduction of archived CUDA studies.
+- **Artifacts:** compact evidence and portable export copies are prepared; decide whether to distribute additional raw traces or weights. The source revision for each study and the omission of ignored raw artifacts are documented.
+- **Hosted validation:** local tests and clean-environment setup/smoke outcomes are recorded. Record the CPU workflow's actual result after hosting; distinguish it from numerical reproduction of archived CUDA studies.
 
 The v3 selection rule and locked-cohort interpretation remain defined by its protocol, regardless of release timing. A failed development stability screen or a null locked comparison should be released as such, not hidden by selecting another cohort or promoting a favorable diagnostic to the primary result.

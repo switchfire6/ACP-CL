@@ -94,3 +94,36 @@ The shared clip scale preserves within-update data-multiplier ratios, but
 different models can have different clipping scales. Consequently nominal
 budget matching need not survive as equal achieved budgets across learners.
 Report both rather than interpreting nominal equality as equal learning.
+
+## Close computational precedents
+
+Preferential learning for new units and maturation-dependent protection have
+substantial precedents. [Neurogenesis Deep Learning, Draelos et al.](https://arxiv.org/pdf/1612.03770)
+trains newly added encoder units while freezing existing encoder weights and
+using a smaller decoder learning rate, followed by stabilization. It expands
+an autoencoder using reconstruction error and intrinsic replay. V3 instead
+replaces units within fixed capacity and measures a local gain window in
+optimizer updates.
+
+[NICE, Gurbuz et al., CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/papers/Gurbuz_NICE_Neurogenesis_Inspired_Contextual_Encoding_for_Replay-free_Class_Incremental_Learning_CVPR_2024_paper.pdf)
+organizes neurons into age cohorts, freezes mature incoming connections, and
+removes younger-to-older connections. Its ages advance at episode boundaries.
+That protects mature knowledge from updates; v3's protection-only ablation
+temporarily protects recently reset units from another replacement.
+
+The [Mia et al. neuromorphic lifelong-learning preprint](https://arxiv.org/html/2508.04610v2)
+combines high initial neuron-specific plasticity that decays with activity
+history and pruning gated by age and specialization. This is particularly
+close to the newborn-gain/protection motif. It uses spiking-network growth,
+pruning, and activity-dependent STDP; v3 uses fixed-capacity replacement and
+SGD. The paper describes a presynaptic factor, while the
+[author implementation](https://github.com/zesun33/neuromorphic-cybersecurity-for-lifelong-learning/blob/main/bindsnet/bindsnet/learning/learning.py#L556)
+applies its factor by target-neuron column. The broad mechanism correspondence
+does not imply identical update equations or an independent reproduction.
+
+Together with continual backpropagation, Synaptic Intelligence, and UPGD
+cited in the research review, these works preclude presenting the component
+ideas as inventions of this project. V3 contributes a particular implementation
+and controlled comparison of those ideas, with explicit allocation and reset
+budgets. Its experiments do not establish a priority claim or biological
+equivalence.

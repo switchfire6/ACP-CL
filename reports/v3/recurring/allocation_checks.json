@@ -1,0 +1,453 @@
+{
+  "checks_passed": true,
+  "runs": [
+    {
+      "method": "consolidation_v3",
+      "seed": 731,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "16beeed769774d5606c5262bd3b46d0e8da493ef90bc1c4aba0470f8e0db885b",
+      "events_sha256": "76b3d24b87a75df18fe77fc1508cdf2c603ce26844ea686f55abd36a5fa15475",
+      "mechanism_activation": {
+        "total_maturations": 288,
+        "total_local_consolidations": 219,
+        "final_mean_consolidation": 0.037218865007162094,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.019370590471959492,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.078125
+    },
+    {
+      "method": "consolidation_v3",
+      "seed": 842,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "c779f251e7da26dfe9142b330e522e12279f1abd63bb8c14734cd3f4e95a93e0",
+      "events_sha256": "888b9369accd8ca77f6bdd4476778df0a8ece0369039516a65d0862a7c7d92c3",
+      "mechanism_activation": {
+        "total_maturations": 288,
+        "total_local_consolidations": 226,
+        "final_mean_consolidation": 0.041337404400110245,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.020738556104862527,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0
+    },
+    {
+      "method": "consolidation_v3",
+      "seed": 953,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "1d9208601a536dfbba0227fd19341a0d3e6175a264c9aa5f98801ddcd6ddce1f",
+      "events_sha256": "84b48b80e5d1025e5a4d180e5d853a0ece4507662f269fe7e25c1268e93abb18",
+      "mechanism_activation": {
+        "total_maturations": 288,
+        "total_local_consolidations": 219,
+        "final_mean_consolidation": 0.04212162271142006,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.021393025423400658,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0078125
+    },
+    {
+      "method": "er_v3",
+      "seed": 731,
+      "steps": 2000,
+      "unit_resets": 0,
+      "result_sha256": "38fea0d55aa2eede6c75bb0457283166e245ceab048ac313370fe3fa10be341f",
+      "events_sha256": "128956ba47165d6d3dbe147d82ceebb7c1d7f53d1749e2f692cef3e11cb56a48",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.078125
+    },
+    {
+      "method": "er_v3",
+      "seed": 842,
+      "steps": 2000,
+      "unit_resets": 0,
+      "result_sha256": "070b5160d4905dc3ab13f409bbd4ad5b16cc498529f211d52757da0456ca4089",
+      "events_sha256": "7996d4057b6d535fd309baa0a097168079ca1b79ba692bb935280a5a9da5a505",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0234375
+    },
+    {
+      "method": "er_v3",
+      "seed": 953,
+      "steps": 2000,
+      "unit_resets": 0,
+      "result_sha256": "af08eb38dcd32a824c08841553b6f0349824b32812bfa51587c10c0f6b4dd46e",
+      "events_sha256": "6dec409345b9e4a7f126948636253689e6d729e5c781394c75201eb2a3833c05",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0390625
+    },
+    {
+      "method": "full_v3",
+      "seed": 731,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "dbf66273e7a116a42033924b9dbd0009bc1de9679880aca7e63301e05ab59361",
+      "events_sha256": "853974695c4b4f4777ca9dca37ab18b94201e5ae0373cd69709f850c0d931ab7",
+      "mechanism_activation": {
+        "total_maturations": 288,
+        "total_local_consolidations": 222,
+        "final_mean_consolidation": 0.03397421911358833,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 9.0,
+        "maximum_logged_consolidation_gain_reduction": 0.018237213530866103,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.011200458421182002,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.09375
+    },
+    {
+      "method": "full_v3",
+      "seed": 842,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "f611164038953b8a80a79debc8970fc50f2b565008066dda6312278f2b09617f",
+      "events_sha256": "1387d06715df3ad904dfa7fa423940b6983f058b6fd94651c5123bdc30a805d9",
+      "mechanism_activation": {
+        "total_maturations": 288,
+        "total_local_consolidations": 211,
+        "final_mean_consolidation": 0.03897896409034729,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 9.0,
+        "maximum_logged_consolidation_gain_reduction": 0.020521122702257866,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.011200458421182002,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.09375
+    },
+    {
+      "method": "full_v3",
+      "seed": 953,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "fb4c8a7e40287c24912bdeffedf135d82c4cd8dbb75432e2b1964ae5d73629c9",
+      "events_sha256": "3f8ef39e461fa2543954bdc97eec65b2a4689b192ed3fde0ce2d91a3eb0c3c2f",
+      "mechanism_activation": {
+        "total_maturations": 288,
+        "total_local_consolidations": 221,
+        "final_mean_consolidation": 0.04580671712756157,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 9.0,
+        "maximum_logged_consolidation_gain_reduction": 0.02328567125228448,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.011200458421182002,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0390625
+    },
+    {
+      "method": "newborn_matched_v3",
+      "seed": 731,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "9972127a9b08e7088769bf5f79f0c829789205b0927e00af6735976af5f3f627",
+      "events_sha256": "28ff951bbe98516101f1a86f7a39c24cee8c94319facee15c12f9f4b2f8bc3fe",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 6.871780477979428e-09,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.015625
+    },
+    {
+      "method": "newborn_matched_v3",
+      "seed": 842,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "c301edcb9c6e6550eb30f515077517efdcd3358da9498e4a20ac17829f33f73a",
+      "events_sha256": "a635eefb631d3f96eaba21c5652c50acf90fc8ddffd74d9d0f14daec4cc65ed3",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 6.871780477979428e-09,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.015625
+    },
+    {
+      "method": "newborn_matched_v3",
+      "seed": 953,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "4fa32701ac7590d31a6a236592a7dd1cd395270476fd893d2493709c87f53bcc",
+      "events_sha256": "b7a2a512dcbf6ee214698f9f7b7f407d12b7c1d635306b4e8e811a8703926155",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 6.871780477979428e-09,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0078125
+    },
+    {
+      "method": "newborn_v3",
+      "seed": 731,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "bf45384227469d0c15492dd6d091942756a5033daa7d0443cb356fdd7c67cc6a",
+      "events_sha256": "18ca9a1a02ab68701111b11e38b0143b7d6ae09afa6918b8d503273ed205fbba",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.011200458421182002,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0
+    },
+    {
+      "method": "newborn_v3",
+      "seed": 842,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "f328fe682b7b1e512f911c81c0b4e95ec70257427cb97693dd6074e83ef3e4f7",
+      "events_sha256": "955adb256b7086ecc343d1d0961bf354c68e1c8c30ef2ff31f6c162f2c2d49d5",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.011200458421182002,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0
+    },
+    {
+      "method": "newborn_v3",
+      "seed": 953,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "084668f7a57a799ced93155652ae7251127a36ad083fb7f648494b32e945e3ef",
+      "events_sha256": "30e9fb6fd740ac12e1682e3b3930f36fe70ad8c99eaec726baa83cf165a42e42",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 6.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.011200458421182002,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.03125
+    },
+    {
+      "method": "protection_v3",
+      "seed": 731,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "1de9c146b7e3b52e971165794c8593a860ec5bbc93daf181872be9cdc37a9419",
+      "events_sha256": "f279c52618754f76111f69a12909afca5f3de2be4a16b831f6f5be3825f6f27c",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 9.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0234375
+    },
+    {
+      "method": "protection_v3",
+      "seed": 842,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "c1b6a3e61b9dbd9018d49629592ef5d7ed0860cad2b47271e000d6ceac7b774e",
+      "events_sha256": "c65a7749720197580acd81eb2538f58298b93eda9bca053d45b2bf1739668648",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 9.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.03125
+    },
+    {
+      "method": "protection_v3",
+      "seed": 953,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "c5993be8eb8fc5079d744a17b1ce19154d320ac03d035ca13f831236e8a81aaf",
+      "events_sha256": "1a77936cea918b1249f97463af2b8a30ea553bf62962756809e517116314393a",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 9.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.078125
+    },
+    {
+      "method": "recycle_v3",
+      "seed": 731,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "dc870772384bfd816359eaf9e5cca6e7fab88840dfbf99e927c33d56b6dc7542",
+      "events_sha256": "a47bee165ad6713f82beef70428ce4aaed78ef9ab43173313a52bce6e40ba6ff",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.046875
+    },
+    {
+      "method": "recycle_v3",
+      "seed": 842,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "e90d7995448842e81576cc6676ab385ed45a3365dac339846758e86da7574be5",
+      "events_sha256": "c9a4d523e569ca316eb38b2df3b7d2fe03cead52e56fd5109fef5cc4e0cd4ad0",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.015625
+    },
+    {
+      "method": "recycle_v3",
+      "seed": 953,
+      "steps": 2000,
+      "unit_resets": 294,
+      "result_sha256": "f95cac836f991e096a530601c403f367c1658f6cee46a78d91df8760369ee78b",
+      "events_sha256": "d379700080bc3aa2f39c231bf47afec9af76744643b47291e5c0069eb8ffafc5",
+      "mechanism_activation": {
+        "total_maturations": 0,
+        "total_local_consolidations": 0,
+        "final_mean_consolidation": 0.0,
+        "maximum_logged_newborn_units": 0.0,
+        "maximum_logged_protected_units": 0.0,
+        "maximum_logged_consolidation_gain_reduction": 0.0,
+        "maximum_logged_mean_gain_increment_before_consolidation": 0.0,
+        "event_sampling_scope": "monitor/reset events; maxima need not cover unlogged updates"
+      },
+      "fixed_first_set_drawdown": 0.0703125
+    }
+  ],
+  "scope": "complete outcomes, runtime/checkpoint identities, actual tensor hashes, warmup traces, causal reset schedule, nominal budgets and optimizer cap",
+  "pairing": {
+    "suite": "recurring",
+    "config_sha256": "33295ec3113440760d2533249988b16c5a234c07108974bf72f7a5bf271d91c5",
+    "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+    "checks_passed": true,
+    "seeds": [
+      {
+        "seed": 731,
+        "methods": ["er_v3", "recycle_v3", "newborn_v3", "newborn_matched_v3", "protection_v3", "consolidation_v3", "full_v3"],
+        "buffer_and_sampling_rng_sha256": "3eb08b93f1a62a0c3b82f68c138ef86291e885b1959f6bcda7928449ecef207a",
+        "common_training_exposure": {
+          "current_examples": 64000,
+          "replay_examples": 63968,
+          "probe_forward_examples": 25600,
+          "train_forward_calls": 3999,
+          "backward_calls": 3999
+        },
+        "exact_prefix_updates_verified": {}
+      },
+      {
+        "seed": 842,
+        "methods": ["er_v3", "recycle_v3", "newborn_v3", "newborn_matched_v3", "protection_v3", "consolidation_v3", "full_v3"],
+        "buffer_and_sampling_rng_sha256": "9dcb5e11453d48a1096f7ded0454cd3f42f30193fdc1594b393b90183a190dc7",
+        "common_training_exposure": {
+          "current_examples": 64000,
+          "replay_examples": 63968,
+          "probe_forward_examples": 25600,
+          "train_forward_calls": 3999,
+          "backward_calls": 3999
+        },
+        "exact_prefix_updates_verified": {}
+      },
+      {
+        "seed": 953,
+        "methods": ["er_v3", "recycle_v3", "newborn_v3", "newborn_matched_v3", "protection_v3", "consolidation_v3", "full_v3"],
+        "buffer_and_sampling_rng_sha256": "5b59dc5b4df50ebd35fd5f775af997d90e62f9e1fa66598e25e119ddc4cccb58",
+        "common_training_exposure": {
+          "current_examples": 64000,
+          "replay_examples": 63968,
+          "probe_forward_examples": 25600,
+          "train_forward_calls": 3999,
+          "backward_calls": 3999
+        },
+        "exact_prefix_updates_verified": {}
+      }
+    ],
+    "scope": "actual replay tensors, membership/train/probe RNGs, exposure counts; optional exact curves/allocation prefixes"
+  }
+}

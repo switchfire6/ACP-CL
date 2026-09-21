@@ -1,0 +1,105 @@
+{
+  "config_sha256": "3917833e245016959f4592599e4c2ba894945af717690be98a98d936fa8aadcc",
+  "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe",
+  "execution_device": "cuda",
+  "runtime_fingerprint": {
+    "python": "3.10.11",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti"
+  },
+  "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+  "config": {
+    "data": {
+      "dataset": "procedural_shapes",
+      "n_experiences": 100,
+      "n_domains": 8,
+      "regime": "recurring",
+      "color_policy": "early_biased",
+      "train_per_class": 160,
+      "validation_per_class": 32,
+      "test_per_class": 0,
+      "image_size": 32,
+      "bias_experiences": 8
+    },
+    "model": "cnn",
+    "width": 64,
+    "batch_size": 32,
+    "steps_per_experience": 20,
+    "eval_every_steps": 4,
+    "early_examples": 256,
+    "eval_split": "validation",
+    "replay_capacity": 256,
+    "replay_batch_size": 32,
+    "probe_batch_size": 32,
+    "monitor_decay": 0.7,
+    "scratch_reference": false,
+    "checkpoint": true,
+    "threads": 2,
+    "retention_eval_every_experiences": 10,
+    "progress_every_experiences": 20,
+    "controller": {
+      "monitor_interval": 5
+    },
+    "plasticity": {
+      "lr": 0.03,
+      "momentum": 0.9,
+      "weight_decay": 0.0001,
+      "maturity_steps": 30,
+      "consolidation_rate": 0.3,
+      "anchor_strength": 0.001
+    },
+    "allocation_v3": {
+      "feature_gain": 0.5,
+      "warmup_steps": 40,
+      "newborn_steps": 30,
+      "newborn_peak": 2.0,
+      "protection_steps": 60,
+      "reset_interval": 20,
+      "reset_count": 3,
+      "max_update_norm": 0.1
+    },
+    "stage": "v3 locked evaluation: early_biased",
+    "study_phase": "locked_evaluation",
+    "study_spec_sha256": "cc65bec72c11ca97b096563d64a1167c3c6d6b3b27c151d1ea0824378653732b",
+    "methods": [
+      "recycle_v3",
+      "newborn_v3",
+      "full_v3"
+    ],
+    "seeds": [
+      731,
+      842,
+      953
+    ],
+    "primary_method": "newborn_v3",
+    "selection_provenance": {
+      "artifact": "selection.json",
+      "sha256": "7729363726009d08d76bad1c8c67b571657eb0a7bc615cdb9d1e470ca6d21a60",
+      "study_spec_sha256": "cc65bec72c11ca97b096563d64a1167c3c6d6b3b27c151d1ea0824378653732b"
+    }
+  },
+  "seeds": [
+    731,
+    842,
+    953
+  ],
+  "methods": [
+    "recycle_v3",
+    "newborn_v3",
+    "full_v3"
+  ],
+  "environment": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "git_commit": "7fbb270cf0d107261d60577602001af605f67601",
+    "git_dirty": true,
+    "source_sha256": "cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe"
+  },
+  "device": "cuda"
+}
