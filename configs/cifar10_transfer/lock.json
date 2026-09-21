@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "frozen before first comparative run",
+  "frozen_at_utc": "2026-09-21T00:30:49.076842+00:00",
+  "source_freeze_commit": "c250129b957d0fb930fa5b8a3a22ececef6ba1ae",
+  "source_sha256": "60aa03ca51a5d530ee58e5ed631b1fc7c702052f26de8f0be981c0731d984268",
+  "execution_device": "cuda",
+  "runtime_fingerprint": {
+    "python": "3.10.11",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti"
+  },
+  "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+  "study": {
+    "path": "configs/cifar10_transfer/study.json",
+    "sha256": "2b907451fc87ac7b44457f7d82b89341e7e8ea2a4df76ceed4675cf34d13345f"
+  },
+  "protocol": {
+    "path": "docs/cifar10_transfer_protocol.md",
+    "sha256": "6a79dafec9103a4553784a6036151bdcfa280b26f06cd0a328868628793d732f"
+  },
+  "configurations": {
+    "recurring": {
+      "path": "configs/cifar10_transfer/recurring.json",
+      "sha256": "0eb7351ff8d8745ea219af39e0a4ea1cfe0621f32716534bbd1ad173248c14e8",
+      "config_sha256": "3460c4ae28316745e69c9c7e173f982ad66ecc5346f94042f3c2f9f12463e435"
+    },
+    "stationary": {
+      "path": "configs/cifar10_transfer/stationary.json",
+      "sha256": "f430fd96f0072d4af7fd6a8750f1e4646613be78e05fcb11fe9347c3be7657d0",
+      "config_sha256": "c70e9e24676984519fb99c67d666736a65ecfcae6f509d69e93db8a18cda2e24"
+    }
+  },
+  "seeds": [
+    1063,
+    1174
+  ],
+  "methods": [
+    "er_v3",
+    "recycle_v3",
+    "newborn_v3",
+    "newborn_matched_v3"
+  ],
+  "conditions": [
+    "recurring",
+    "stationary"
+  ],
+  "expected_runs": 16,
+  "expected_updates_per_run": 1410,
+  "expected_current_examples_per_run": 45000,
+  "dataset_archive": {
+    "path": "data/cifar-10-python.tar.gz",
+    "bytes": 170498071,
+    "md5": "c58f30108f718f92721af3b95e74349a",
+    "sha256": "6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce"
+  },
+  "execution_plan": "Two concurrent condition suites on the same GPU; timing is not a dedicated hardware speed benchmark."
+}
