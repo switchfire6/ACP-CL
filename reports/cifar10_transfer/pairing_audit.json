@@ -1,0 +1,317 @@
+{
+  "checks_passed": true,
+  "runs": [
+    {
+      "condition": "recurring",
+      "method": "er_v3",
+      "seed": 1063,
+      "updates": 1410,
+      "unit_resets": 0,
+      "clipped_updates": 937,
+      "post_warmup_mean_nominal_feature_gain": 0.5,
+      "post_warmup_maximum_nominal_feature_gain": 0.5,
+      "maximum_optimizer_update_norm": 0.10000000507705081,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "result_sha256": "ffb5859d55077f1184295278d977322f7fb597a4010743e9c0e941f1e835596f"
+    },
+    {
+      "condition": "recurring",
+      "method": "er_v3",
+      "seed": 1174,
+      "updates": 1410,
+      "unit_resets": 0,
+      "clipped_updates": 943,
+      "post_warmup_mean_nominal_feature_gain": 0.5,
+      "post_warmup_maximum_nominal_feature_gain": 0.5,
+      "maximum_optimizer_update_norm": 0.10000000498498002,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "result_sha256": "ea05c9c35aa43ed70e8873aa2f01b80ffdf3fa6db455677b89d7046d0662b5c2"
+    },
+    {
+      "condition": "recurring",
+      "method": "recycle_v3",
+      "seed": 1063,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 991,
+      "post_warmup_mean_nominal_feature_gain": 0.5,
+      "post_warmup_maximum_nominal_feature_gain": 0.5,
+      "maximum_optimizer_update_norm": 0.10000000564258975,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "result_sha256": "2ae7e04e8b3e39b3150b14ecb585177016a832016506d62587fdf2292c3dcf4d"
+    },
+    {
+      "condition": "recurring",
+      "method": "recycle_v3",
+      "seed": 1174,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 986,
+      "post_warmup_mean_nominal_feature_gain": 0.5,
+      "post_warmup_maximum_nominal_feature_gain": 0.5,
+      "maximum_optimizer_update_norm": 0.10000000487040454,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "result_sha256": "d0f2381ff57851d706398be618b1e6d56f65b2360271b70a5ead766fa7bbabb0"
+    },
+    {
+      "condition": "recurring",
+      "method": "newborn_v3",
+      "seed": 1063,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 1007,
+      "post_warmup_mean_nominal_feature_gain": 0.5080247812849983,
+      "post_warmup_maximum_nominal_feature_gain": 0.5140005743825388,
+      "maximum_optimizer_update_norm": 0.10000000533946242,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "result_sha256": "1355201a865ad3fa2b1f68503654bac3154b89692167409bd7d19c9c69068460"
+    },
+    {
+      "condition": "recurring",
+      "method": "newborn_v3",
+      "seed": 1174,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 977,
+      "post_warmup_mean_nominal_feature_gain": 0.5080247812849983,
+      "post_warmup_maximum_nominal_feature_gain": 0.5140005743825388,
+      "maximum_optimizer_update_norm": 0.1000000049854726,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "result_sha256": "194d6ce279b77436bd2c0a278f886f161b5c1f30efa7d8dcd4ac1f71baca1d40"
+    },
+    {
+      "condition": "recurring",
+      "method": "newborn_matched_v3",
+      "seed": 1063,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 963,
+      "post_warmup_mean_nominal_feature_gain": 0.4999999968843065,
+      "post_warmup_maximum_nominal_feature_gain": 0.5000000144090206,
+      "maximum_optimizer_update_norm": 0.10000000544361272,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "result_sha256": "bbe92b8a0a7037bb2ec6b809a3491cb34fc54333e331c8b2fff971e237d67744"
+    },
+    {
+      "condition": "recurring",
+      "method": "newborn_matched_v3",
+      "seed": 1174,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 967,
+      "post_warmup_mean_nominal_feature_gain": 0.4999999968843065,
+      "post_warmup_maximum_nominal_feature_gain": 0.5000000144090206,
+      "maximum_optimizer_update_norm": 0.10000000497262201,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "result_sha256": "44aca57040d9394af1bd80df258d0286f2ad08d74b665ccccfe9eea342abefbe"
+    },
+    {
+      "condition": "stationary",
+      "method": "er_v3",
+      "seed": 1063,
+      "updates": 1410,
+      "unit_resets": 0,
+      "clipped_updates": 1055,
+      "post_warmup_mean_nominal_feature_gain": 0.5,
+      "post_warmup_maximum_nominal_feature_gain": 0.5,
+      "maximum_optimizer_update_norm": 0.1000000056096513,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "result_sha256": "80116f5784e19bc78c9bf27e372b81326829d2a4e277995be86cc36c809caba6"
+    },
+    {
+      "condition": "stationary",
+      "method": "er_v3",
+      "seed": 1174,
+      "updates": 1410,
+      "unit_resets": 0,
+      "clipped_updates": 970,
+      "post_warmup_mean_nominal_feature_gain": 0.5,
+      "post_warmup_maximum_nominal_feature_gain": 0.5,
+      "maximum_optimizer_update_norm": 0.10000000518811443,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "result_sha256": "adf6d0429b20111c407f7229929357f090e9e49adbf0c0923e29b56c9056673e"
+    },
+    {
+      "condition": "stationary",
+      "method": "recycle_v3",
+      "seed": 1063,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 1075,
+      "post_warmup_mean_nominal_feature_gain": 0.5,
+      "post_warmup_maximum_nominal_feature_gain": 0.5,
+      "maximum_optimizer_update_norm": 0.10000000484266873,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "result_sha256": "2f4567ee83dd99de1e4ac648f4565addfe69a93af5bb863e06684aa68e105de9"
+    },
+    {
+      "condition": "stationary",
+      "method": "recycle_v3",
+      "seed": 1174,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 1024,
+      "post_warmup_mean_nominal_feature_gain": 0.5,
+      "post_warmup_maximum_nominal_feature_gain": 0.5,
+      "maximum_optimizer_update_norm": 0.10000000519078707,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "result_sha256": "5aecdc3844da8a4f6fc1ce3c6de0b2bd73577a58eab29457f2590878d7a705c4"
+    },
+    {
+      "condition": "stationary",
+      "method": "newborn_v3",
+      "seed": 1063,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 1021,
+      "post_warmup_mean_nominal_feature_gain": 0.5080247812849983,
+      "post_warmup_maximum_nominal_feature_gain": 0.5140005743825388,
+      "maximum_optimizer_update_norm": 0.1000000054585971,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "result_sha256": "1f34f21bb87fd65254ccf8c8ab95e5526d3fdf131d23f5fcecc9da489c7496cb"
+    },
+    {
+      "condition": "stationary",
+      "method": "newborn_v3",
+      "seed": 1174,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 1014,
+      "post_warmup_mean_nominal_feature_gain": 0.5080247812849983,
+      "post_warmup_maximum_nominal_feature_gain": 0.5140005743825388,
+      "maximum_optimizer_update_norm": 0.10000000559225798,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "result_sha256": "6b3ebb3f904d84761749eaa31c774539a89177d88f645c85a5d49cfda5c57be1"
+    },
+    {
+      "condition": "stationary",
+      "method": "newborn_matched_v3",
+      "seed": 1063,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 1048,
+      "post_warmup_mean_nominal_feature_gain": 0.4999999968843065,
+      "post_warmup_maximum_nominal_feature_gain": 0.5000000144090206,
+      "maximum_optimizer_update_norm": 0.10000000533907259,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "result_sha256": "06dc2bd3d840f4e41383b451572458a1212d18b57340963b89cea318bd9a0432"
+    },
+    {
+      "condition": "stationary",
+      "method": "newborn_matched_v3",
+      "seed": 1174,
+      "updates": 1410,
+      "unit_resets": 204,
+      "clipped_updates": 989,
+      "post_warmup_mean_nominal_feature_gain": 0.4999999968843065,
+      "post_warmup_maximum_nominal_feature_gain": 0.5000000144090206,
+      "maximum_optimizer_update_norm": 0.10000000505021092,
+      "scope": "The complete optimizer cap excludes structural reset mutations.",
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "result_sha256": "240144b2643abefdb247454b4686b8e9507a4e34823366e7efffecb444ecc971"
+    }
+  ],
+  "within_condition": [
+    {
+      "condition": "recurring",
+      "seed": 1063,
+      "methods": ["er_v3", "recycle_v3", "newborn_v3", "newborn_matched_v3"],
+      "stream_fingerprints": {
+        "train": "813b6c88ec49555174a20097bb275e2a2abf1c60a2b23a5c756fadfd0673faf9",
+        "validation": "abd61167c9ee9b6c070ca651de5608b10bb15a0d7332472c79f36f215fa0b5cc",
+        "test": "95a117c8e7bad047ee043c1537456d9aae58cd84ff10288c931b613c00e704c2"
+      },
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "replay_and_sampling_rng_sha256": "bada24530b1a23296a5a17e8ba633fc193c313b3f6f7aa5d36141ce6b97cdcc8",
+      "common_training_cost": {
+        "current_examples": 45000,
+        "replay_examples": 45088,
+        "probe_forward_examples": 18048,
+        "train_forward_calls": 2819,
+        "backward_calls": 2819
+      },
+      "warmup_updates_exact": 40
+    },
+    {
+      "condition": "stationary",
+      "seed": 1063,
+      "methods": ["er_v3", "recycle_v3", "newborn_v3", "newborn_matched_v3"],
+      "stream_fingerprints": {
+        "train": "d79f0bd62870b3630856445d4c607cc447ed7b5f8029a7819a8618b88c49f4d8",
+        "validation": "72da553ec59c658d8813aa55fd6772b779a3c7a2b9d62e55d770b9926da6b601",
+        "test": "95a117c8e7bad047ee043c1537456d9aae58cd84ff10288c931b613c00e704c2"
+      },
+      "arrival_ids_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+      "replay_and_sampling_rng_sha256": "d30d2eb0ae8499503bccbfdb1ff203360b5549b51289e587dc36b519877d2618",
+      "common_training_cost": {
+        "current_examples": 45000,
+        "replay_examples": 45088,
+        "probe_forward_examples": 18048,
+        "train_forward_calls": 2819,
+        "backward_calls": 2819
+      },
+      "warmup_updates_exact": 40
+    },
+    {
+      "condition": "recurring",
+      "seed": 1174,
+      "methods": ["er_v3", "recycle_v3", "newborn_v3", "newborn_matched_v3"],
+      "stream_fingerprints": {
+        "train": "185625f67c5262ca430a3ba607de259166e14cd509c635718e6de96c6d5d2bb2",
+        "validation": "3b0ab6436e455908337e3da48b6c8330bd4e49490e8c34b969d8020a32d74198",
+        "test": "95a117c8e7bad047ee043c1537456d9aae58cd84ff10288c931b613c00e704c2"
+      },
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "replay_and_sampling_rng_sha256": "f935fbd143d7f0e135e652c59aa7050f71dbebc025f08a89985f70c71f657cd7",
+      "common_training_cost": {
+        "current_examples": 45000,
+        "replay_examples": 45088,
+        "probe_forward_examples": 18048,
+        "train_forward_calls": 2819,
+        "backward_calls": 2819
+      },
+      "warmup_updates_exact": 40
+    },
+    {
+      "condition": "stationary",
+      "seed": 1174,
+      "methods": ["er_v3", "recycle_v3", "newborn_v3", "newborn_matched_v3"],
+      "stream_fingerprints": {
+        "train": "42bb9ebd0e6a7be1272d98f2b0af21ad97b9c5505559da18a12556d08fa93d5c",
+        "validation": "8651e8358a99b3fe44fc4a7e86db57b8a4bba587f01ab2560f0800ef5fdc3009",
+        "test": "95a117c8e7bad047ee043c1537456d9aae58cd84ff10288c931b613c00e704c2"
+      },
+      "arrival_ids_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+      "replay_and_sampling_rng_sha256": "3b3b10e78a65b3f32c5ea90a572a2dcb5843170814c0209ec6d32d6b7b7090db",
+      "common_training_cost": {
+        "current_examples": 45000,
+        "replay_examples": 45088,
+        "probe_forward_examples": 18048,
+        "train_forward_calls": 2819,
+        "backward_calls": 2819
+      },
+      "warmup_updates_exact": 40
+    }
+  ],
+  "cross_condition": {
+    "paired_arrivals_and_split_ids": true,
+    "paired_replay_labels_and_rngs": true,
+    "common_original_first_40_updates": true,
+    "pixels": "Transformed replay pixels intentionally differ between curricula."
+  }
+}

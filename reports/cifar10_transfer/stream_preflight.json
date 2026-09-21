@@ -1,0 +1,261 @@
+{
+  "checks": {
+    "both_seeds_share_source_fingerprint": true,
+    "configs_unchanged_during_preflight": true,
+    "different_seeds_have_different_train_split_hashes": true,
+    "global_rngs_unchanged": true,
+    "no_full_source_id_lists_duplicated_in_this_artifact": true,
+    "no_learner_constructed": true,
+    "no_training_or_model_evaluation": true,
+    "source_unchanged_during_preflight": true
+  },
+  "config_identities": {
+    "recurring": {
+      "config_sha256": "3460c4ae28316745e69c9c7e173f982ad66ecc5346f94042f3c2f9f12463e435",
+      "file_sha256": "0eb7351ff8d8745ea219af39e0a4ea1cfe0621f32716534bbd1ad173248c14e8",
+      "path": "configs/cifar10_transfer/recurring.json"
+    },
+    "stationary": {
+      "config_sha256": "c70e9e24676984519fb99c67d666736a65ecfcae6f509d69e93db8a18cda2e24",
+      "file_sha256": "f430fd96f0072d4af7fd6a8750f1e4646613be78e05fcb11fe9347c3be7657d0",
+      "path": "configs/cifar10_transfer/stationary.json"
+    }
+  },
+  "dataset_manifest": {
+    "path": "runs/cifar10_transfer_preparation/dataset.json",
+    "sha256": "ae4bf664fba3653bd0295ea683d113a7689d631e280c4cf09a9d2ef3a817bb79"
+  },
+  "elapsed_seconds": 6.569,
+  "fingerprint_protocol": {
+    "batch_schedule": "acp_cl.experiment.batches(..., include_indices=True), no optimizer or learner",
+    "source_ids": "SHA256 of ordered little-endian int64 bytes",
+    "stream_tensors": "acp_cl.experiment.stream_fingerprints: ordered raw tensors including experience index, shape, and dtype for each split"
+  },
+  "git_commit": "3f72cd8740b5d36ce0730b97ecbbdf183e642083",
+  "purpose": "Read-only official CIFAR-10 stream preflight; no learner construction, training, or evaluation",
+  "raw_source_identities": {
+    "base_folder": "cifar-10-batches-py",
+    "loader": "torchvision.datasets.cifar.CIFAR10",
+    "partition": "train",
+    "training_and_label_metadata_files": [
+      {
+        "bytes": 31035704,
+        "declared_md5": "c99cafc152244af753f735de768cd75f",
+        "name": "data_batch_1",
+        "sha256": "54636561a3ce25bd3e19253c6b0d8538147b0ae398331ac4a2d86c6d987368cd"
+      },
+      {
+        "bytes": 31035320,
+        "declared_md5": "d4bba439e000b95fd0a9bffe97cbabec",
+        "name": "data_batch_2",
+        "sha256": "766b2cef9fbc745cf056b3152224f7cf77163b330ea9a15f9392beb8b89bc5a8"
+      },
+      {
+        "bytes": 31035999,
+        "declared_md5": "54ebc095f3ab1f0389bbae665268c751",
+        "name": "data_batch_3",
+        "sha256": "0f00d98ebfb30b3ec0ad19f9756dc2630b89003e10525f5e148445e82aa6a1f9"
+      },
+      {
+        "bytes": 31035696,
+        "declared_md5": "634d18415352ddfa80567beed471001a",
+        "name": "data_batch_4",
+        "sha256": "3f7bb240661948b8f4d53e36ec720d8306f5668bd0071dcb4e6c947f78e9682b"
+      },
+      {
+        "bytes": 31035623,
+        "declared_md5": "482c414d41f54cd18b22e5b47cb7c3cb",
+        "name": "data_batch_5",
+        "sha256": "d91802434d8376bbaeeadf58a737e3a1b12ac839077e931237e0dcd43adcb154"
+      },
+      {
+        "bytes": 158,
+        "declared_md5": "5ff9c542aee3614f3951f8cda6e48888",
+        "name": "batches.meta",
+        "sha256": "f962466ef690d46b226450fb9aadc74ba4bc64a76aa526b5827fe4bc5c7125cb"
+      }
+    ]
+  },
+  "runtime": {
+    "device": "cpu",
+    "numpy": "2.2.6",
+    "python": "3.10.11",
+    "threads": 2,
+    "torch": "2.8.0+cu128"
+  },
+  "schema_version": 1,
+  "seeds": {
+    "1063": {
+      "conditions": {
+        "recurring": {
+          "actual_stream_tensor_sha256": {
+            "test": "95a117c8e7bad047ee043c1537456d9aae58cd84ff10288c931b613c00e704c2",
+            "train": "813b6c88ec49555174a20097bb275e2a2abf1c60a2b23a5c756fadfd0673faf9",
+            "validation": "abd61167c9ee9b6c070ca651de5608b10bb15a0d7332472c79f36f215fa0b5cc"
+          },
+          "all_checks_passed": true,
+          "batches_per_experience": 47,
+          "current_images_consumed_by_batches": 45000,
+          "distinct_validation_pool_objects": 3,
+          "experiences": 30,
+          "final_batch_size_every_experience": 28,
+          "full_batch_size": 32,
+          "full_batches_per_experience": 46,
+          "ordered_shuffled_current_arrivals_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+          "ordered_shuffled_current_labels_sha256": "caa7dbd3ea2ea1d6da913e9d84ef0c29e1d43916727fcaeeacc9905efad10bf2",
+          "total_batches": 1410,
+          "train_images_per_experience": 1500,
+          "unique_current_images_consumed_by_batches": 45000,
+          "validation_images_per_pool": 500
+        },
+        "stationary": {
+          "actual_stream_tensor_sha256": {
+            "test": "95a117c8e7bad047ee043c1537456d9aae58cd84ff10288c931b613c00e704c2",
+            "train": "d79f0bd62870b3630856445d4c607cc447ed7b5f8029a7819a8618b88c49f4d8",
+            "validation": "72da553ec59c658d8813aa55fd6772b779a3c7a2b9d62e55d770b9926da6b601"
+          },
+          "all_checks_passed": true,
+          "batches_per_experience": 47,
+          "current_images_consumed_by_batches": 45000,
+          "distinct_validation_pool_objects": 1,
+          "experiences": 30,
+          "final_batch_size_every_experience": 28,
+          "full_batch_size": 32,
+          "full_batches_per_experience": 46,
+          "ordered_shuffled_current_arrivals_sha256": "cc5bab84999a4b2786d0b4d16425e91ff379d5d3931e383c8792eb2e36a96013",
+          "ordered_shuffled_current_labels_sha256": "caa7dbd3ea2ea1d6da913e9d84ef0c29e1d43916727fcaeeacc9905efad10bf2",
+          "total_batches": 1410,
+          "train_images_per_experience": 1500,
+          "unique_current_images_consumed_by_batches": 45000,
+          "validation_images_per_pool": 500
+        }
+      },
+      "counts": {
+        "active_validation_images": 500,
+        "official_test_images_materialized": 0,
+        "reserved_validation_images_including_active": 5000,
+        "source_training_images": 50000,
+        "unique_current_images": 45000,
+        "unused_reserved_validation_images": 4500,
+        "unused_training_images": 0
+      },
+      "pairing_checks": {
+        "active_validation_base_ids_and_labels_equal": true,
+        "actual_shuffled_current_ids_and_labels_equal": true,
+        "all_recurring_views_match_transform_of_paired_stationary_images": true,
+        "all_split_indices_equal": true,
+        "source_identities_equal": true,
+        "train_and_reserve_partition_all_official_training_ids": true,
+        "train_disjoint_from_entire_validation_reserve": true,
+        "train_labels_equal": true,
+        "train_tensor_ordered_ids_equal": true,
+        "validation_reuses_dataset_identity_per_domain": true
+      },
+      "source_fingerprint": "2a4f040d2ac0f75660a5d553c18e4e45f3c335d3a2807b16455e99a23c21bd99",
+      "split_index_hashes": {
+        "test": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "train": "0cbb5323f72c428d08754911aa4fb21591e218ae342a161e939282de35349b8a",
+        "unused_train": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "validation": "6c5018d2524728c644f1cdd8f02e304a670e13f05c52ab31ca18eeb6868ff37c",
+        "validation_reserved": "0918419df5661bc58b3ebd13ff77ded80a30979392b43a01f8cf5ef59411b3a5",
+        "validation_unused": "f339b5e7ae32029a86fb8dbd87fb2c1e8268811f76312ca38f9c91eb7535fe0e"
+      }
+    },
+    "1174": {
+      "conditions": {
+        "recurring": {
+          "actual_stream_tensor_sha256": {
+            "test": "95a117c8e7bad047ee043c1537456d9aae58cd84ff10288c931b613c00e704c2",
+            "train": "185625f67c5262ca430a3ba607de259166e14cd509c635718e6de96c6d5d2bb2",
+            "validation": "3b0ab6436e455908337e3da48b6c8330bd4e49490e8c34b969d8020a32d74198"
+          },
+          "all_checks_passed": true,
+          "batches_per_experience": 47,
+          "current_images_consumed_by_batches": 45000,
+          "distinct_validation_pool_objects": 3,
+          "experiences": 30,
+          "final_batch_size_every_experience": 28,
+          "full_batch_size": 32,
+          "full_batches_per_experience": 46,
+          "ordered_shuffled_current_arrivals_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+          "ordered_shuffled_current_labels_sha256": "0a88974c3c574870cfda64ccbc35dd64e564ec683f2030af949154b2d3826e26",
+          "total_batches": 1410,
+          "train_images_per_experience": 1500,
+          "unique_current_images_consumed_by_batches": 45000,
+          "validation_images_per_pool": 500
+        },
+        "stationary": {
+          "actual_stream_tensor_sha256": {
+            "test": "95a117c8e7bad047ee043c1537456d9aae58cd84ff10288c931b613c00e704c2",
+            "train": "42bb9ebd0e6a7be1272d98f2b0af21ad97b9c5505559da18a12556d08fa93d5c",
+            "validation": "8651e8358a99b3fe44fc4a7e86db57b8a4bba587f01ab2560f0800ef5fdc3009"
+          },
+          "all_checks_passed": true,
+          "batches_per_experience": 47,
+          "current_images_consumed_by_batches": 45000,
+          "distinct_validation_pool_objects": 1,
+          "experiences": 30,
+          "final_batch_size_every_experience": 28,
+          "full_batch_size": 32,
+          "full_batches_per_experience": 46,
+          "ordered_shuffled_current_arrivals_sha256": "3a70971b30fbce3b6d4426280ee1150b17161441d439e3b3a310c76c9ab4374c",
+          "ordered_shuffled_current_labels_sha256": "0a88974c3c574870cfda64ccbc35dd64e564ec683f2030af949154b2d3826e26",
+          "total_batches": 1410,
+          "train_images_per_experience": 1500,
+          "unique_current_images_consumed_by_batches": 45000,
+          "validation_images_per_pool": 500
+        }
+      },
+      "counts": {
+        "active_validation_images": 500,
+        "official_test_images_materialized": 0,
+        "reserved_validation_images_including_active": 5000,
+        "source_training_images": 50000,
+        "unique_current_images": 45000,
+        "unused_reserved_validation_images": 4500,
+        "unused_training_images": 0
+      },
+      "pairing_checks": {
+        "active_validation_base_ids_and_labels_equal": true,
+        "actual_shuffled_current_ids_and_labels_equal": true,
+        "all_recurring_views_match_transform_of_paired_stationary_images": true,
+        "all_split_indices_equal": true,
+        "source_identities_equal": true,
+        "train_and_reserve_partition_all_official_training_ids": true,
+        "train_disjoint_from_entire_validation_reserve": true,
+        "train_labels_equal": true,
+        "train_tensor_ordered_ids_equal": true,
+        "validation_reuses_dataset_identity_per_domain": true
+      },
+      "source_fingerprint": "2a4f040d2ac0f75660a5d553c18e4e45f3c335d3a2807b16455e99a23c21bd99",
+      "split_index_hashes": {
+        "test": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "train": "a7d24dbbabeaf2c0f9a7f38e9239a37e85a4a80f731639ebe8272d35f04966bc",
+        "unused_train": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "validation": "3d6d80bfa95d23fc8bad67647fc9f4dd655d603552034dfd472fa6c68d18c531",
+        "validation_reserved": "d27fa712fc2eb7e656aa53c747d69cc9782978c51c3e62566fbc301a6d6a7538",
+        "validation_unused": "2b11a0fbcd5de39f516420da82b968dce209b60c7464d22421ba0153e1c4cdc7"
+      }
+    }
+  },
+  "source_description": {
+    "dataset": "CIFAR10",
+    "image_dtype": "uint8",
+    "image_layout": "NHWC",
+    "image_shape": [
+      50000,
+      32,
+      32,
+      3
+    ],
+    "images_sha256": "47af8b02cfcfb6cdf3dbbd1969ad7f1b70f4413f6f80f437b020ee4e5bc8304a",
+    "label_dtype": "little-endian int64",
+    "label_shape": [
+      50000
+    ],
+    "labels_sha256": "f5cfe00b0f00968c0cc5ff3b1d2de51b10e33efa277c2986f4e0fa63e58c9f4f",
+    "partition": "train"
+  },
+  "source_sha256": "60aa03ca51a5d530ee58e5ed631b1fc7c702052f26de8f0be981c0731d984268",
+  "status": "passed"
+}

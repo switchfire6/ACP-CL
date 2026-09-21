@@ -1,0 +1,30 @@
+{
+  "scope": "Independent static review before comparative execution; not numerical replication",
+  "reviewer": "separate research_audit agent",
+  "source_sha256": "60aa03ca51a5d530ee58e5ed631b1fc7c702052f26de8f0be981c0731d984268",
+  "blocking_issues": [],
+  "checks": [
+    "Source split before transforms, no train-validation sibling leakage",
+    "Train-only materialization; official test labels/images unused",
+    "Globally unique current arrivals and paired current-ID schedule",
+    "Fixed ten-label head and evaluator-only domain metadata",
+    "Snapshot-local shared validation cache",
+    "Frozen protocol/config/study hash agreement; fresh development seeds",
+    "Unchanged v3 gain and reset implementation"
+  ],
+  "reporting_constraints": [
+    "Stationary drawdown from all 30 same-panel diagonals",
+    "Recurring endpoint equally weights three domains, not 30 independent tasks",
+    "Nominal budget matching does not imply achieved displacement or compute matching",
+    "Two-seed effort allocation only; no efficacy, novelty, or long-horizon loss-of-plasticity claim"
+  ],
+  "expected_per_run": {
+    "optimizer_updates": 1410,
+    "current_examples": 45000,
+    "replay_examples": 45088,
+    "probe_forward_examples": 18048,
+    "training_forward_calls": 2819,
+    "training_backward_calls": 2819,
+    "recycling_unit_resets": 204
+  }
+}

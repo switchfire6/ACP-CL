@@ -1,0 +1,11 @@
+{
+  "dataset": "CIFAR-10",
+  "archive_path": "data/cifar-10-python.tar.gz",
+  "archive_bytes": 170498071,
+  "archive_md5": "c58f30108f718f92721af3b95e74349a",
+  "archive_sha256": "6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce",
+  "url": "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz",
+  "loaded_split": "official training only",
+  "training_count": 50000,
+  "test_images_or_labels_loaded": false
+}

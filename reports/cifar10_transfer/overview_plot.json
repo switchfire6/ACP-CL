@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    "recurring",
+    "stationary"
+  ],
+  "contrast_definition": "candidate minus recycle_v3 within each condition and seed",
+  "contrast_units": "percentage points",
+  "curve_units": "percent",
+  "early_auc_horizon_current_examples": 256,
+  "execution_device": "cuda",
+  "files": {
+    "overview.png": "6344f53cbd4d956ed5fe995f0c4ee81fd92a91ea5acc3e825e35c9f8051f6b04",
+    "overview.svg": "73f2da61526deb56d7f5f1aa00ea62ad45fdec0d933eb4fe470122c534e7c7d4"
+  },
+  "input_archive": "individual_results.json",
+  "input_archive_sha256": "d933b42ada8b7a707829c93aa68e82e5aa372689ff26cb843c83094d9f6e08eb",
+  "late_auc_experiences_inclusive": [
+    16,
+    30
+  ],
+  "methods": [
+    "er_v3",
+    "recycle_v3",
+    "newborn_v3",
+    "newborn_matched_v3"
+  ],
+  "plot_script_sha256": "edb945e7a728617a8de9019195c6e632164a25ac0d075f0616353c4ab4ceed91",
+  "runs": 16,
+  "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf",
+  "schema_version": 1,
+  "seeds": [
+    1063,
+    1174
+  ],
+  "source_sha256": "60aa03ca51a5d530ee58e5ed631b1fc7c702052f26de8f0be981c0731d984268",
+  "uncertainty_intervals": "none; two-seed descriptive development pilot"
+}

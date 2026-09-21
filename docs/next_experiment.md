@@ -1,8 +1,16 @@
-# Proposed natural-image follow-up
+# Natural-image follow-up: original proposal
 
-**Proposal only: the stream adapter is not implemented and this study has not
-run.** Complete and preserve the v3 report before starting a new version. The
-next question is whether its local allocation rules help on natural images
+**Implemented as the [CIFAR-10 transfer pilot](cifar10_transfer_protocol.md).**
+The [completed 16-run report](../reports/cifar10_transfer_results.md) applies
+the predeclared rule: adequate baselines, failed signal/retention requirements,
+and a decision to stop scaling the frozen recipe.
+The text below preserves the original design rationale. The linked protocol
+and [run lock](../configs/cifar10_transfer/lock.json) specify the implemented
+counts, transformations, endpoints, seeds, and continuation rule. In particular,
+stationary final accuracy concerns only the original view; its drawdown uses
+all 30 end-of-experience measurements on that same panel.
+
+The question is whether the v3 local allocation rules help on natural images
 when labels remain fixed, current examples arrive once, and domains recur.
 
 ## Why CIFAR-10 with fixed labels

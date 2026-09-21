@@ -1,0 +1,45 @@
+{
+  "source_sha256": "60aa03ca51a5d530ee58e5ed631b1fc7c702052f26de8f0be981c0731d984268",
+  "full_cpu_suite": {
+    "passed": 546,
+    "skipped": 3,
+    "seconds": 29.5,
+    "command": "runs/v3_cpu_env/Scripts/python.exe -m pytest -q",
+    "skip_scope": [
+      "one CUDA-only test",
+      "two Windows symlink privilege tests"
+    ],
+    "runtime_fingerprint": {
+      "python": "3.10.11",
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6"
+    },
+    "runtime_sha256": "a7784d17029c7ba54ffa194126c05a8121dbda6e7f0b027464f5718154cbd4ff"
+  },
+  "ruff": {
+    "status": "passed",
+    "command": ".venv/Scripts/python.exe -m ruff check src tests scripts"
+  },
+  "comparative_suites": {
+    "recurring_exit_code": 0,
+    "stationary_exit_code": 0,
+    "planned": 16,
+    "completed": 16,
+    "comparative_retries": 0,
+    "excluded": 0,
+    "numerical_failures": 0
+  },
+  "engineering_runs": {
+    "completed": 8,
+    "separate_from_comparative": true,
+    "scope": "all four methods on CPU and GPU; real CIFAR images"
+  },
+  "primary_analysis": "passed after tuple/list serialization comparison fix; no source or outcome changes",
+  "independent_audit": "passed; all arithmetic agrees within stated tolerance",
+  "plot_visual_inspection": {
+    "file": "reports/cifar10_transfer/overview.png",
+    "status": "passed; legible labels, paired seeds, correct units, no intervals"
+  },
+  "historical_v3_numerical_artifacts": "unchanged from a038786; evolving root documentation is outside that historical snapshot",
+  "hosting_or_publication": "not performed; local Git only"
+}

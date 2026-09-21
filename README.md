@@ -4,6 +4,13 @@ A PyTorch research prototype, evidence review, and falsifiable experiment plan f
 
 The [completed v2 study](reports/v2_results.md) contains 102 comparative runs, 972 per-experience scratch fits, and an exact reproduction of one late-training failure. V2 did not establish an advantage over replay plus recycling. The [completed v3 study](reports/v3_results.md) adds 67 comparative runs with separate development and evaluation seeds. Its newborn-gain variant improves the primary late acquisition AUC by 1.15 percentage points on three new seeds; the nominal-budget-matched variant improves it by 0.92 points. Most of the improvement comes from one seed, and the combined policy has tradeoffs. This is an exploratory signal, not an established algorithmic advantage.
 
+The [completed CIFAR-10 transfer pilot](reports/cifar10_transfer_results.md)
+adds 16 fixed development runs on natural images. Newborn gain changes recurring
+late AUC by -0.12 pp and final accuracy by -3.60 pp versus recycling; nominal
+matching gives +0.18 pp AUC with mixed seed results. Adequate baselines learned,
+but the predeclared signal and retention requirements failed. **The decision is
+to stop scaling this frozen recipe.** No novelty or general efficacy is claimed.
+
 Start with the [research review](docs/research_review.md), [implemented algorithm](docs/algorithm.md), and [experiment protocol](docs/experiment_protocol.md). The original report is preserved in [docs/deep-research-report.md](docs/deep-research-report.md).
 
 ## Setup
@@ -134,6 +141,55 @@ The plan screens four gains for replay plus recycling on two development seeds, 
 
 These are individual-component comparisons against a shared baseline plus a combined condition, not a full factorial or isolated leave-one-out study. All conditions share a warmup and optimizer-displacement cap. Keeping mature gain unchanged and matching total nominal gain are different comparisons; post-clipping gains and actual displacements need not match. The protocol defines selection, measurements, and failure reporting. The report preserves the modest positive primary result, negative final-accuracy contrasts, stationary ceiling, and seed-dependent early-bias interaction.
 
+## CIFAR-10 transfer pilot
+
+The [transfer protocol](docs/cifar10_transfer_protocol.md) carries the v3 recipe
+to natural images with fixed labels and one current arrival per training image.
+It compares replay, recycling, newborn gain, and nominal-budget-matched newborn
+gain on recurring original/grayscale/blur domains and a stationary control.
+The [pre-run lock](configs/cifar10_transfer/lock.json) binds the source,
+configuration, runtime, two development seeds, and a 16-run budget. Its
+continuation rule is an effort-allocation decision, not a significance test.
+
+The [completed report](reports/cifar10_transfer_results.md),
+[all seed outcomes](reports/cifar10_transfer/summary.md), and
+[independent audit](reports/cifar10_transfer/independent_audit.md) preserve the
+negative result. Both seeds and every planned method are included.
+
+Prepare the official training archive once; the constructor below downloads and
+extracts it if needed. Official test images and labels are not evaluated.
+
+```powershell
+.venv/Scripts/python.exe -c "from torchvision.datasets import CIFAR10; CIFAR10(root='data', train=True, download=True)"
+.venv/Scripts/python.exe -m acp_cl run --config configs/cifar10_transfer/recurring.json --output runs/my_transfer/recurring --device cuda --no-plots
+.venv/Scripts/python.exe -m acp_cl run --config configs/cifar10_transfer/stationary.json --output runs/my_transfer/stationary --device cuda --no-plots
+```
+
+If the download is slow, `scripts/download_cifar100.py --dataset cifar10`
+provides the checksum-verified ranged download before the constructor extracts
+it. The separate `configs/cifar10_transfer_smoke.json` checks all four methods
+quickly on already downloaded data; its accuracy is not evidence of efficacy.
+Offline stream tests use fixtures and require no dataset download.
+
+Use the study-specific analysis instead of generic bootstrap summaries:
+
+```powershell
+.venv/Scripts/python.exe scripts/summarize_cifar10_transfer.py --runs runs/my_transfer --output runs/my_transfer_report
+.venv/Scripts/python.exe scripts/audit_cifar10_transfer.py --results runs/my_transfer --summary runs/my_transfer_report/summary.json --output runs/my_transfer_report
+.venv/Scripts/python.exe scripts/plot_cifar10_transfer.py --archive runs/my_transfer_report/individual_results.json --output runs/my_transfer_report
+```
+
+These commands use a fresh report directory. The committed archive preserves
+the original outcomes and raw-byte identities. Plotting alone can use that
+archive without downloading data or loading checkpoints. Numerical audits use
+trusted local raw runs and their recorded lock/source/runtime.
+
+Source was frozen at `c250129` and the run lock at `3f72cd8`. A new runtime or
+changed recipe requires a separate output and a newly declared study identity.
+The earlier v3 archive, including hashes of then-current root documentation,
+remains the historical snapshot at `a038786`; subsequent root documentation
+does not replace that sealed snapshot.
+
 ## Comparisons
 
 | Command method | Behavior |
@@ -169,10 +225,11 @@ diagnostic is much stronger and retains its advantage when color shortcuts
 are removed. The report includes an exact reproduction of late update
 instability, all negative results, and the proposed next comparison.
 
-The [v3 results](reports/v3_results.md) complete that comparison. The proposed
-[natural-image follow-up](docs/next_experiment.md) keeps fixed labels and uses
-single-pass CIFAR-10 arrivals with paired recurring/stationary conditions.
-Its adapter and experiments are not yet implemented or run.
+The [v3 results](reports/v3_results.md) complete that comparison. The completed
+[natural-image follow-up](reports/cifar10_transfer_results.md) uses fixed labels,
+single-pass CIFAR-10 arrivals and paired recurring/stationary conditions. Its
+16 development runs fail the predeclared signal and retention requirements;
+the decision is to stop scaling the frozen recipe.
 
 Correctness tests cover phase transitions, finite-update validation, momentum gating, maturity/protection, adjacent recycling resets, replay RNG isolation, metrics, all method variants, evaluation isolation, exact checkpoint continuation, and provenance rejection. The initial synthetic pilot stayed open throughout: its high accuracy therefore does **not** validate critical-period control. Subsequent calibration and real-image results are reported separately in [reports/development_results.md](reports/development_results.md).
 
@@ -180,4 +237,4 @@ Not yet completed: publication-grade baseline reproductions (including UPGD), ma
 
 ## Contributing and public readiness
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for local tests, Ruff, and experiment-preservation rules. The current CPU suite passes 443 tests with three platform/device skips, and all seven v3 methods pass a [fresh noneditable clean-clone smoke](reports/v3/clean_clone_check.md). The [CPU workflow](.github/workflows/ci.yml) defines checks plus download-free smokes; it has not been run on GitHub. [Public-readiness notes](docs/public_readiness.md) record readiness to share research in progress and remaining release decisions. A license, publication account/repository, and visibility still require the owner's choice. No license or author identity is inferred here.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local tests, Ruff, and experiment-preservation rules. The current CPU suite passes 546 tests with three platform/device skips, and the CIFAR-10 engineering check covers all four methods on CPU and GPU. The historical v3 revision also passed a [fresh noneditable clean-clone smoke](reports/v3/clean_clone_check.md) for all seven methods. The [CPU workflow](.github/workflows/ci.yml) defines checks plus download-free smokes; it has not been run on GitHub. [Public-readiness notes](docs/public_readiness.md) record readiness to share research in progress and remaining release decisions. A license, publication account/repository, and visibility still require the owner's choice. No license or author identity is inferred here.

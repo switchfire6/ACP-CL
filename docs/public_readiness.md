@@ -4,6 +4,13 @@
 
 This document records local preparation. It does not record a GitHub publication or a successful hosted CI run.
 
+The subsequent [CIFAR-10 transfer pilot](../reports/cifar10_transfer_results.md)
+completed all 16 fixed development runs and failed its predeclared continuation
+rule. Its independent local audit agrees with the negative result. The current
+CPU suite passes 546 tests with three documented skips; eight separate real-data
+CPU/GPU engineering runs also pass. Sharing this as a research notebook is
+appropriate; a new effective algorithm remains unestablished.
+
 ## Threshold for sharing research work in progress
 
 A reviewable release should contain:
@@ -26,7 +33,12 @@ Scientific success is not a condition for sharing. A claim of algorithmic benefi
 - [Contribution guidance](../CONTRIBUTING.md) describes preservation of scientific artifacts and the evidence expected for changes.
 - The completed [v3 inventory](../reports/v3/run_inventory.json) records all 16 development and 51 locked runs, with 21 engineering smoke runs listed separately. Compact numerical archives preserve every method/seed, the selection inputs, allocation checks, and paired contrasts; raw traces and weights remain explicitly omitted from Git.
 - A separate [numerical audit](../reports/v3/independent_audit.md) recomputed 5,100 acquisition curves and checked all 102,000 locked-run optimizer updates without the project's metric/report helpers. No numerical or identity discrepancy was found; this was not a training rerun or external scientific replication.
-- [Close computational predecessors](algorithm_v3.md#close-computational-precedents) cover preferential newborn learning and maturation as well as recycling and consolidation. The proposed [natural-image follow-up](next_experiment.md) is clearly marked as unimplemented and unrun.
+- [Close computational predecessors](algorithm_v3.md#close-computational-precedents) cover preferential newborn learning and maturation as well as recycling and consolidation. The [natural-image follow-up](cifar10_transfer_protocol.md) now has an implemented single-arrival stream and a completed, separately frozen 16-run development study. Its signal and retention criteria failed. It does not establish novelty or long-horizon plasticity preservation.
+
+The v3 seal in `reports/v3/archive_manifest.json` refers to the historical
+snapshot at commit `a038786`, including the root documentation as it then stood.
+Current root documentation evolves with later experiments; the old numerical
+artifacts and manifest remain unchanged.
 
 The v3 implementation source was frozen at `bac05cf`, with SHA-256
 `cccbb40b2fe578be511f49c31d9629abd823f89bf078ccc9781b1d38c17c5efe`.

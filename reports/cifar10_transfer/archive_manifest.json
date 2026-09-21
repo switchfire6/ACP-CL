@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "status": "complete negative transfer result; all planned comparisons preserved",
+  "created_utc": "2026-09-21T00:50:50.036555+00:00",
+  "paths_relative_to": "repository_root",
+  "snapshot_scope": "The listed bytes at this local Git snapshot, including root documentation; later documentation changes do not replace this historical seal.",
+  "comparative_runs": 16,
+  "seeds": [
+    1063,
+    1174
+  ],
+  "optimizer_updates": 22560,
+  "engineering_runs_separate": 8,
+  "source_freeze_commit": "c250129b957d0fb930fa5b8a3a22ececef6ba1ae",
+  "pre_run_lock_commit": "3f72cd8740b5d36ce0730b97ecbbdf183e642083",
+  "source_sha256": "60aa03ca51a5d530ee58e5ed631b1fc7c702052f26de8f0be981c0731d984268",
+  "decision": "stop scaling the frozen recipe; adequacy passes, signal and retention fail",
+  "raw_artifact_hash_index": "reports/cifar10_transfer/individual_results.json",
+  "raw_artifacts_omitted": [
+    "official dataset images/archive",
+    "model checkpoints",
+    "per-update allocation traces",
+    "full event logs",
+    "raw per-run result files"
+  ],
+  "retained_evidence": "All 16 outcomes, curves, matrices, endpoints, per-seed source/split/actual-arrival IDs, pairing and allocation summaries, independent audit and raw hashes.",
+  "file_count": 30,
+  "files": [
+    {
+      "path": "configs/cifar10_transfer/lock.json",
+      "bytes": 2065,
+      "sha256": "ac0cd6e9b3af15ad74e5bfe4cea84bb2a49cddea676413fa24aa2fbb91e43cac"
+    },
+    {
+      "path": "configs/cifar10_transfer/recurring.json",
+      "bytes": 1555,
+      "sha256": "0eb7351ff8d8745ea219af39e0a4ea1cfe0621f32716534bbd1ad173248c14e8"
+    },
+    {
+      "path": "configs/cifar10_transfer/stationary.json",
+      "bytes": 1556,
+      "sha256": "f430fd96f0072d4af7fd6a8750f1e4646613be78e05fcb11fe9347c3be7657d0"
+    },
+    {
+      "path": "configs/cifar10_transfer/study.json",
+      "bytes": 1149,
+      "sha256": "2b907451fc87ac7b44457f7d82b89341e7e8ea2a4df76ceed4675cf34d13345f"
+    },
+    {
+      "path": "configs/cifar10_transfer_smoke.json",
+      "bytes": 1432,
+      "sha256": "fb734cf8b5298f3826bbe78d5b15ec3a3c6c1211598b6c5202a43dec67b56889"
+    },
+    {
+      "path": "docs/cifar10_transfer_protocol.md",
+      "bytes": 8419,
+      "sha256": "6a79dafec9103a4553784a6036151bdcfa280b26f06cd0a328868628793d732f"
+    },
+    {
+      "path": "docs/next_experiment.md",
+      "bytes": 6008,
+      "sha256": "17a0371959b984f28d05626cf5593f42122ac9ebcfd9740c817216b529a5c1dd"
+    },
+    {
+      "path": "docs/public_readiness.md",
+      "bytes": 11009,
+      "sha256": "e9d70442419ec49b384df533d4fb5c9bf103fac0f6d10181948ff774a148b493"
+    },
+    {
+      "path": "README.md",
+      "bytes": 19630,
+      "sha256": "f51d139df8986a68ea9050c5846b0aac79d7620c91c7b380f3e998017c312f8f"
+    },
+    {
+      "path": "reports/cifar10_transfer/dataset.json",
+      "bytes": 428,
+      "sha256": "ae4bf664fba3653bd0295ea683d113a7689d631e280c4cf09a9d2ef3a817bb79"
+    },
+    {
+      "path": "reports/cifar10_transfer/engineering_verification.json",
+      "bytes": 16056,
+      "sha256": "638069d1f45111da2ac0a39c96aa1c57bfa9914db664f6db4886e805489c0049"
+    },
+    {
+      "path": "reports/cifar10_transfer/final_verification.json",
+      "bytes": 1570,
+      "sha256": "880db2671f691834fd09a40bf705b196a9c9f53e8ed43728c79fd1e9cc4a5a99"
+    },
+    {
+      "path": "reports/cifar10_transfer/independent_audit.json",
+      "bytes": 43288,
+      "sha256": "f9cd31644c682f767c82f60e3db0a5ac0946fd70ab207cbb74763e674c8701ff"
+    },
+    {
+      "path": "reports/cifar10_transfer/independent_audit.md",
+      "bytes": 2611,
+      "sha256": "d72bf6591d4ea4c3cd363ec120b162341c50b622bf350304a20f5fc7e1df6f60"
+    },
+    {
+      "path": "reports/cifar10_transfer/individual_results.json",
+      "bytes": 351024,
+      "sha256": "d933b42ada8b7a707829c93aa68e82e5aa372689ff26cb843c83094d9f6e08eb"
+    },
+    {
+      "path": "reports/cifar10_transfer/overview.png",
+      "bytes": 278564,
+      "sha256": "6344f53cbd4d956ed5fe995f0c4ee81fd92a91ea5acc3e825e35c9f8051f6b04"
+    },
+    {
+      "path": "reports/cifar10_transfer/overview.svg",
+      "bytes": 67544,
+      "sha256": "73f2da61526deb56d7f5f1aa00ea62ad45fdec0d933eb4fe470122c534e7c7d4"
+    },
+    {
+      "path": "reports/cifar10_transfer/overview_plot.json",
+      "bytes": 1191,
+      "sha256": "f2716793e37b0afcfb2ade000b755a996e05a46a1d6b7dc975e8f82caf82fd82"
+    },
+    {
+      "path": "reports/cifar10_transfer/pairing_audit.json",
+      "bytes": 13904,
+      "sha256": "67bcf6343c72b205ad91107e40730fdb198431c33eb59bae54d7b69e31ae4080"
+    },
+    {
+      "path": "reports/cifar10_transfer/pre_run_review.json",
+      "bytes": 1357,
+      "sha256": "3691c55bed6cd84eb88e3e7bbc7fc8aaf11de351b612d3d9fcf407adc9924959"
+    },
+    {
+      "path": "reports/cifar10_transfer/provenance/seed1063.json",
+      "bytes": 704502,
+      "sha256": "1fe8df97ee3dadb90fb9be1f5e8f65321c5b2fe25fa0c4ffc62ec4ae3db4f7c4"
+    },
+    {
+      "path": "reports/cifar10_transfer/provenance/seed1174.json",
+      "bytes": 704502,
+      "sha256": "4314d839405492fbb1e8747332ba283d8c83a2fea70e8818d06759433dfc235e"
+    },
+    {
+      "path": "reports/cifar10_transfer/stream_preflight.json",
+      "bytes": 11815,
+      "sha256": "159814495731b9aaf75503c7936cfb45768d133db8be1bb36e45fd34f8663935"
+    },
+    {
+      "path": "reports/cifar10_transfer/summary.json",
+      "bytes": 28886,
+      "sha256": "d48e36b492e1b64e17460cc4f364d7cb367b75ab4b7246f7a3387b77b4b2600b"
+    },
+    {
+      "path": "reports/cifar10_transfer/summary.md",
+      "bytes": 2558,
+      "sha256": "4ea3e8bccf0a44be3a2fe93a800d8960fb35f82093f2a7b0d3a2e2c438872aba"
+    },
+    {
+      "path": "reports/cifar10_transfer_results.md",
+      "bytes": 11219,
+      "sha256": "598a8143191b916a30d33593cdf712e71faae90ac156ac8297fab4556e0fb27d"
+    },
+    {
+      "path": "scripts/audit_cifar10_transfer.py",
+      "bytes": 24359,
+      "sha256": "b8f3768e84bc89e796a0a0e35344535f9ac17fe9afb3ac2520feafdec53826c9"
+    },
+    {
+      "path": "scripts/plot_cifar10_transfer.py",
+      "bytes": 14779,
+      "sha256": "edb945e7a728617a8de9019195c6e632164a25ac0d075f0616353c4ab4ceed91"
+    },
+    {
+      "path": "scripts/summarize_cifar10_transfer.py",
+      "bytes": 33499,
+      "sha256": "4415111cd90c9248f44417d86b218b784251296def846e5dd29ce4790ee8c1f4"
+    },
+    {
+      "path": "tests/test_cifar10_transfer_summary.py",
+      "bytes": 11585,
+      "sha256": "3575481cc3ffddaa397526ba49c62da4e2b664d3321bc135b40fc03064f7d6da"
+    }
+  ]
+}
