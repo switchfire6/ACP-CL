@@ -1,0 +1,38 @@
+{
+  "reports/acquisition/artifact_manifest.json": {
+    "files": 29,
+    "passed": true,
+    "failures": [],
+    "manifest_sha256": "52f405f1e6596a0b8a7979a97477ad90fdfab474593b15ea41d7d5f9723495bf"
+  },
+  "reports/conditional/artifact_manifest.json": {
+    "files": 21,
+    "passed": true,
+    "failures": [],
+    "manifest_sha256": "75cb27c9b909ba9fbe29c041d22dafea309b850cb57a5c48564d137c8d6cdb54"
+  },
+  "reports/contextual/artifact_manifest.json": {
+    "files": 67,
+    "passed": true,
+    "failures": [],
+    "manifest_sha256": "626b42b632ab5f175dda029215a8914bea34c74827f79ed6c852bcd3766e8ab7"
+  },
+  "reports/persistence/artifact_manifest.json": {
+    "files": 28,
+    "passed": true,
+    "failures": [],
+    "manifest_sha256": "d307ddc85785730b4cc59188fa10de71d926928dc65b8144019ba3c25b16cf21"
+  },
+  "reports/replay_renewal/artifact_manifest.json": {
+    "files": 75,
+    "passed": true,
+    "failures": [],
+    "manifest_sha256": "493dd77d1d5a1a7ca6786ecc96adb4d1a457cb88a267b8ad03fba84d07d0b814"
+  },
+  "reports/training_state/artifact_manifest.json": {
+    "files": 53,
+    "passed": true,
+    "failures": [],
+    "manifest_sha256": "50c3919d7002acd9ee33369bcc7cb29cef93334dcf4c2a8c29c906caba6e3729"
+  }
+}

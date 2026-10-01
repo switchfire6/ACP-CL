@@ -1,0 +1,154 @@
+{
+  "conditional_14991/result.json": {
+    "identity": {
+      "config_sha256": "ca42674d8f089d5c9b9fec31bafeb20020ed39a260c81f1499ba0eefb30c50f7",
+      "source_sha256": "6ffb02a9788a9d9745bbc73b2edf3817ec0b46ddf60d2295208de6baba5d5cb7",
+      "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf"
+    },
+    "seed": 14991,
+    "model": "conditional",
+    "affinity": 5,
+    "phase_names": [
+      "prefix_0",
+      "prefix_1",
+      "acquisition",
+      "score_0",
+      "near_0",
+      "gap_0",
+      "return_0",
+      "recovery",
+      "score_1",
+      "near_1",
+      "gap_1",
+      "return_1"
+    ],
+    "phase_hashes": {
+      "prefix_0": "3a6ccff4b9bd2fb0d91e27ba75c926747d58247256a155f161d13ef65512b04c",
+      "prefix_1": "63265174397c7c5e498388d62462f41924c8e5c7b470a20c0b4bf90e412e5f03",
+      "acquisition": "89bbba80ce32b60ef4a553694762ef783000f87585001f0a5fccaf6e5504c097",
+      "score_0": "225e7e0ba55a83614c4f70d7a58220f32d38a82de86aec08bc56c67e64700f1d",
+      "near_0": "ecec61881b4790d1cb62128ffdcfaefed5d270c48c207685fdda4ee27b1a5236",
+      "gap_0": "5958ac75b01f69ca3efa5a4d24381bea12c301d5c87884108a8f5afa0076a077",
+      "return_0": "8602035e5ce911314d95b27997e9042882d9eee76af709f30906ba49ea218ffd",
+      "recovery": "9c9314c717e07330fabaa31b511d7c673567cac593a001fdd55d45ca9f11f67c",
+      "score_1": "54eb58dab3828efa6eec1c01c1c30853c8ccd0d4a9492ac532901b2e0ab38fb0",
+      "near_1": "ffdca9c775e5222468aac5795972d7e03bcb1b7f5b837912821037a9e8b38cc7",
+      "gap_1": "6f3e7bc14ff8dc18be0bc16d83a786a8a24f13cd5c5d7aa9a5e90e71fafe0aa8",
+      "return_1": "09ff1b49a5d93d994caea4c16644dd27bc219164851d942731ad530f16ed80e1"
+    },
+    "assessment_hashes": {
+      "0": "41040830374e51d96afac11413ad7bb10b68cedcc882d1f0649d9e4c7f2e7b41",
+      "1": "c28559f111d327b14b6768c4117ad440057f2cb1371a873423e071d98623f176"
+    },
+    "diagnostics": {
+      "initial_hash": "9bba10e40e851496002b551b0b7c948b77cc7c9c7b227326cb953355705f3aea",
+      "final_hash": "c2962d0f47f53a52d1245b1fde463c9928212d61a1536d994d8a3da7b50c253c",
+      "parameters": 2804,
+      "model_bytes": 11216,
+      "optimizer_bytes": 22520,
+      "peak_replay_bytes": 43264,
+      "memory_ids": [
+        0,
+        23,
+        60,
+        47
+      ],
+      "packets_seen": 72,
+      "history_bytes": 6176,
+      "encoder_displacement": 1.4990944459573385,
+      "cost": {
+        "arrivals": 576,
+        "optimizer_steps": 72,
+        "query_presentations": 1152,
+        "support_presentations": 1152,
+        "replay_presentations": 568,
+        "duplicate_presentations": 8,
+        "training_seconds": 0.4191326999953162
+      },
+      "initial_encoder_hash": "edd9b16b71368d5b7741b462f8c6989b1b0ec479e3e0978563aa9b6345d54f4c",
+      "encoder_hash": "a528cd71f4f52dde9f6a19b3594641efbf42fb487da5ddc1741e23d6a01338b4"
+    },
+    "final_signature": "bf5d82462787d90ec5caa451035f7b6eaadae0107ac03ed65cfac27fcaee90bf",
+    "prequential_work": {
+      "forwards": 72,
+      "query_presentations": 576,
+      "support_presentations": 576
+    }
+  },
+  "recurrent_14991/result.json": {
+    "identity": {
+      "config_sha256": "ca42674d8f089d5c9b9fec31bafeb20020ed39a260c81f1499ba0eefb30c50f7",
+      "source_sha256": "6ffb02a9788a9d9745bbc73b2edf3817ec0b46ddf60d2295208de6baba5d5cb7",
+      "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf"
+    },
+    "seed": 14991,
+    "model": "recurrent",
+    "affinity": 5,
+    "phase_names": [
+      "prefix_0",
+      "prefix_1",
+      "acquisition",
+      "score_0",
+      "near_0",
+      "gap_0",
+      "return_0",
+      "recovery",
+      "score_1",
+      "near_1",
+      "gap_1",
+      "return_1"
+    ],
+    "phase_hashes": {
+      "prefix_0": "626cb6aaa5bad166e8412573a3af71d8d4f700ce6eced56e49f6a27cedcc3f5f",
+      "prefix_1": "5abe12ba9cb76d6b3d545e0770cbc487462b6f3fea33420b36de1ac45322f5b9",
+      "acquisition": "9ceca5c6a8502ae03a084773d43aae41080f9ae425e2a26248d82c8829cebcd9",
+      "score_0": "c5d7142a7b30e52c31f440f7c914ba20dc911fad9dee30f7eae4d5393098f7a8",
+      "near_0": "b09deda12db7ef969579f8b13edb7270bb6e39d89cb9713856c3611c7a71e994",
+      "gap_0": "85bdc8787b87dbda894ade5a0371d0960340896c48b0316c52ef67e38dfa3d8b",
+      "return_0": "b51b5dd746848c9ed41d1b1500200423618f25eb26bafd9ecd531ac36153ce89",
+      "recovery": "0e8d5610fa01dcf9154910f24431f2857401b4f291a1064037ca0ea490075450",
+      "score_1": "790ed1a01c2e2fa1ad2a4dfc59ddf50eb27797d8cd117c558e4c0886575fb3c9",
+      "near_1": "425ebe0f84d4f6da6ee7d72f5dd491b8edae4b55b8b886fd6ccadc894d0e8313",
+      "gap_1": "7473e537770c49ef6bbd26217b8fcd217e8d589d0b459c95b4bc4f405069ab95",
+      "return_1": "104f3aa26e817094bdcf07e4f51304e577ef33391964f669a4ee18f662316a7a"
+    },
+    "assessment_hashes": {
+      "0": "2d893f3510356a9e4d815a5cc7365d3fa69b3d50d8315fac199cf4194830aafc",
+      "1": "327c390fce3d5dbd13c5bd4f641de5bad75b7f6926b7d8ba542aa3bf6a0d5ee6"
+    },
+    "diagnostics": {
+      "initial_hash": "c25efdc296c71fc0fdd0e63bec0fe9d5ed6a81a1456a0b123104be2cb316172e",
+      "final_hash": "c96186e7686234a0bcfef505a86b262e4055f7c13a94a9dc2a96c582bbe7a84a",
+      "parameters": 2959,
+      "model_bytes": 11836,
+      "optimizer_bytes": 23728,
+      "peak_replay_bytes": 43264,
+      "memory_ids": [
+        0,
+        23,
+        60,
+        47
+      ],
+      "packets_seen": 72,
+      "history_bytes": 6176,
+      "encoder_displacement": 1.4341758383026897,
+      "cost": {
+        "arrivals": 576,
+        "optimizer_steps": 72,
+        "query_presentations": 1152,
+        "support_presentations": 1152,
+        "replay_presentations": 568,
+        "duplicate_presentations": 8,
+        "training_seconds": 0.5407297000001563
+      },
+      "initial_encoder_hash": "edd9b16b71368d5b7741b462f8c6989b1b0ec479e3e0978563aa9b6345d54f4c",
+      "encoder_hash": "0bbbb9b8b755e67c69b3617656e6c0ce6b50ee43e566af3d4fda3682ca205673"
+    },
+    "final_signature": "252929878948e8575532f7e88404a0cb99ed8e8dfc417784918c4cab854b4f39",
+    "prequential_work": {
+      "forwards": 72,
+      "query_presentations": 576,
+      "support_presentations": 576
+    }
+  }
+}

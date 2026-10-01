@@ -1,0 +1,22 @@
+{
+  "tests_passed": 667,
+  "tests_skipped": 2,
+  "skip_reason": "Windows symbolic-link checks",
+  "lint": "passed",
+  "tests_command": ".venv/Scripts/python.exe -m pytest -q",
+  "lint_command": ".venv/Scripts/python.exe -m ruff check src tests scripts",
+  "development_audit_prefixes": 36,
+  "development_audit_branches": 108,
+  "scientific_source_frozen_for_pilot": true,
+  "pilot_audit_prefixes": 96,
+  "pilot_audit_branches": 288,
+  "figure_visual_inspection": "PNG inspected; all three formats exported from the same figure",
+  "figure_formats_exported": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "figure_formats_visually_inspected": [
+    "png"
+  ]
+}

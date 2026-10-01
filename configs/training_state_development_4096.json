@@ -1,0 +1,35 @@
+{
+  "study": "training_state_development_4096",
+  "kind": "development",
+  "seeds": [
+    411,
+    412,
+    413,
+    414,
+    415,
+    416
+  ],
+  "models": [
+    "conditional",
+    "recurrent"
+  ],
+  "prefix_blocks": 4,
+  "prefix_size": 1024,
+  "episode_size": 4096,
+  "batch_size": 32,
+  "eval_size": 512,
+  "probe_every": 256,
+  "support_replicates": 2,
+  "width": 64,
+  "experts": 4,
+  "context_width": 12,
+  "decoder_width": 64,
+  "interaction_features": true,
+  "lr": 0.002,
+  "memory_packets": 16,
+  "updates_per_batch": 12,
+  "evidence_strength": 1.0,
+  "feedback_noise": 0.2,
+  "threads": 1,
+  "workers": 4
+}

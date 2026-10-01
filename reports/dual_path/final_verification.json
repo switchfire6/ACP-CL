@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "current_source_sha256": "f58919e3a30df429c136ff57dfdc87e5adb733c6e911e088138741d1038e5d0f",
+  "training_source_sha256": "f1517828a6b26be23809fecd16c0805f286bb0f78b4c37b32683701a339ce1b2",
+  "pytest": {
+    "passed": 580,
+    "skipped": 2,
+    "skip_scope": "Windows symlink tests"
+  },
+  "ruff": "passed",
+  "git_diff_check": "passed",
+  "post_training_guard_scope": [
+    "src/acp_cl/experiment.py",
+    "src/acp_cl/learner.py"
+  ],
+  "post_guard_cpu_smoke_methods": [
+    "er",
+    "derpp",
+    "dual_joint",
+    "dual_derpp",
+    "dual_frozen",
+    "dual_consolidate"
+  ],
+  "post_guard_cpu_smoke_state_and_curves_exactly_match_training_revision": true,
+  "training_source_archive_verified": true,
+  "comparative_runs": 12,
+  "comparative_checkpoints_re_evaluated": 12,
+  "late_acquisition_window_at_floor_all_runs": true,
+  "overview_png_visually_inspected": true
+}

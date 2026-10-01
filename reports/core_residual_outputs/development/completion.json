@@ -1,0 +1,105 @@
+{
+  "completed_utc": "2026-09-28T03:26:22.804618+00:00",
+  "jobs": [
+    {
+      "model": "conditional",
+      "seed": 16001,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "fdf455497c03a55118f1fc6c66a75f4312b4876c0af994ea2dc43c16e4f03865"
+    },
+    {
+      "model": "conditional",
+      "seed": 16002,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "473146042514c9c16a79348c0dbc8bc7e8cbb9e713c7c095c3d7ff861cecdbd5"
+    },
+    {
+      "model": "conditional",
+      "seed": 16003,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "ddd84f4517b8b3bddeada18995f66e872127d8a0d68573ccfa33f13531004414"
+    },
+    {
+      "model": "conditional",
+      "seed": 16004,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "ee40ee1230a1749cfdd1729bd6d9dd975380090742f8f21f20de3344d8281041"
+    },
+    {
+      "model": "conditional",
+      "seed": 16005,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "c50b78b96c188a72ca91f542ac2e0eeba373fc3045dea749cbc817c8a4ff58fd"
+    },
+    {
+      "model": "conditional",
+      "seed": 16006,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "fe5caeed6bdc6893e763f3ae7960596eb3737ff822f11ea98fee71c4067a6c9e"
+    },
+    {
+      "model": "recurrent",
+      "seed": 16001,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "85bbf77c099a59cfa48fbbe85df459120e75be06af53e142246ee1d536f5308c"
+    },
+    {
+      "model": "recurrent",
+      "seed": 16002,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "493471ee1c5d355d008287f83e4addcd5425ae3e7bb2445df2500a0d22102265"
+    },
+    {
+      "model": "recurrent",
+      "seed": 16003,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "97f81998b0609720775876558102cd21666fa779c3666fc67633f2f77c6a917f"
+    },
+    {
+      "model": "recurrent",
+      "seed": 16004,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "d5c67006f455f0b29738f99eb27c00218529bc02050be80073d62460ab17d7b0"
+    },
+    {
+      "model": "recurrent",
+      "seed": 16005,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "4647834e0f0bafdb329e33deced9d868b7a0a5bb506e79897c5667164b74b716"
+    },
+    {
+      "model": "recurrent",
+      "seed": 16006,
+      "rows": 32,
+      "checkpoints": 4,
+      "frozen_pairs": 8,
+      "json_sha256": "47f57bb51e749897bb0ea68ad1eaeb0578a8189fc2bbafdfd2251b5c8176d576"
+    }
+  ],
+  "rows": 384,
+  "checkpoints": 48,
+  "frozen_core_forecast_pairs_checked": 96,
+  "optimizer_updates": 0
+}

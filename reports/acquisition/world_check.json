@@ -1,0 +1,476 @@
+{
+  "passed": true,
+  "size_per_panel": 4096,
+  "largest_conservation_error": 2.842170943040401e-14,
+  "rows": [
+    {
+      "mode": 0,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "stage": 1,
+      "cue": 0,
+      "changed_action_outcomes": 0.16015625,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 0,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "stage": 2,
+      "cue": 1,
+      "changed_action_outcomes": 0.080810546875,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.181884765625
+    },
+    {
+      "mode": 0,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "stage": 3,
+      "cue": 2,
+      "changed_action_outcomes": 0.6533203125,
+      "clairvoyant_cue_value": 0.04833984375,
+      "action_opportunity": 0.19921875
+    },
+    {
+      "mode": 0,
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "stage": 1,
+      "cue": 0,
+      "changed_action_outcomes": 0.16015625,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 0,
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "stage": 2,
+      "cue": 2,
+      "changed_action_outcomes": 0.661376953125,
+      "clairvoyant_cue_value": 0.048583984375,
+      "action_opportunity": 0.203125
+    },
+    {
+      "mode": 0,
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "stage": 3,
+      "cue": 1,
+      "changed_action_outcomes": 0.0673828125,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.19921875
+    },
+    {
+      "mode": 0,
+      "order": [
+        1,
+        0,
+        2
+      ],
+      "stage": 1,
+      "cue": 1,
+      "changed_action_outcomes": 0.07958984375,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.164306640625
+    },
+    {
+      "mode": 0,
+      "order": [
+        1,
+        0,
+        2
+      ],
+      "stage": 2,
+      "cue": 0,
+      "changed_action_outcomes": 0.147705078125,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.181884765625
+    },
+    {
+      "mode": 0,
+      "order": [
+        1,
+        0,
+        2
+      ],
+      "stage": 3,
+      "cue": 2,
+      "changed_action_outcomes": 0.6533203125,
+      "clairvoyant_cue_value": 0.04833984375,
+      "action_opportunity": 0.19921875
+    },
+    {
+      "mode": 0,
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "stage": 1,
+      "cue": 1,
+      "changed_action_outcomes": 0.07958984375,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.164306640625
+    },
+    {
+      "mode": 0,
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "stage": 2,
+      "cue": 2,
+      "changed_action_outcomes": 0.6640625,
+      "clairvoyant_cue_value": 0.0440673828125,
+      "action_opportunity": 0.18115234375
+    },
+    {
+      "mode": 0,
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "stage": 3,
+      "cue": 0,
+      "changed_action_outcomes": 0.195556640625,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.19921875
+    },
+    {
+      "mode": 0,
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "stage": 1,
+      "cue": 2,
+      "changed_action_outcomes": 0.673095703125,
+      "clairvoyant_cue_value": 0.0443115234375,
+      "action_opportunity": 0.184814453125
+    },
+    {
+      "mode": 0,
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "stage": 2,
+      "cue": 0,
+      "changed_action_outcomes": 0.201904296875,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.203125
+    },
+    {
+      "mode": 0,
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "stage": 3,
+      "cue": 1,
+      "changed_action_outcomes": 0.0673828125,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.19921875
+    },
+    {
+      "mode": 0,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "stage": 1,
+      "cue": 2,
+      "changed_action_outcomes": 0.673095703125,
+      "clairvoyant_cue_value": 0.0443115234375,
+      "action_opportunity": 0.184814453125
+    },
+    {
+      "mode": 0,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "stage": 2,
+      "cue": 1,
+      "changed_action_outcomes": 0.0693359375,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.18115234375
+    },
+    {
+      "mode": 0,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "stage": 3,
+      "cue": 0,
+      "changed_action_outcomes": 0.195556640625,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.19921875
+    },
+    {
+      "mode": 1,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "stage": 1,
+      "cue": 0,
+      "changed_action_outcomes": 0.1669921875,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.195556640625
+    },
+    {
+      "mode": 1,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "stage": 2,
+      "cue": 1,
+      "changed_action_outcomes": 0.073486328125,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.182373046875
+    },
+    {
+      "mode": 1,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "stage": 3,
+      "cue": 2,
+      "changed_action_outcomes": 0.65966796875,
+      "clairvoyant_cue_value": 0.0494384765625,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 1,
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "stage": 1,
+      "cue": 0,
+      "changed_action_outcomes": 0.1669921875,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.195556640625
+    },
+    {
+      "mode": 1,
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "stage": 2,
+      "cue": 2,
+      "changed_action_outcomes": 0.658447265625,
+      "clairvoyant_cue_value": 0.0496826171875,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 1,
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "stage": 3,
+      "cue": 1,
+      "changed_action_outcomes": 0.060791015625,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 1,
+      "order": [
+        1,
+        0,
+        2
+      ],
+      "stage": 1,
+      "cue": 1,
+      "changed_action_outcomes": 0.072265625,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.171142578125
+    },
+    {
+      "mode": 1,
+      "order": [
+        1,
+        0,
+        2
+      ],
+      "stage": 2,
+      "cue": 0,
+      "changed_action_outcomes": 0.158935546875,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.182373046875
+    },
+    {
+      "mode": 1,
+      "order": [
+        1,
+        0,
+        2
+      ],
+      "stage": 3,
+      "cue": 2,
+      "changed_action_outcomes": 0.65966796875,
+      "clairvoyant_cue_value": 0.0494384765625,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 1,
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "stage": 1,
+      "cue": 1,
+      "changed_action_outcomes": 0.072265625,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.171142578125
+    },
+    {
+      "mode": 1,
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "stage": 2,
+      "cue": 2,
+      "changed_action_outcomes": 0.664306640625,
+      "clairvoyant_cue_value": 0.0423583984375,
+      "action_opportunity": 0.18017578125
+    },
+    {
+      "mode": 1,
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "stage": 3,
+      "cue": 0,
+      "changed_action_outcomes": 0.1923828125,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 1,
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "stage": 1,
+      "cue": 2,
+      "changed_action_outcomes": 0.66552734375,
+      "clairvoyant_cue_value": 0.04248046875,
+      "action_opportunity": 0.179931640625
+    },
+    {
+      "mode": 1,
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "stage": 2,
+      "cue": 0,
+      "changed_action_outcomes": 0.196533203125,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 1,
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "stage": 3,
+      "cue": 1,
+      "changed_action_outcomes": 0.060791015625,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.198486328125
+    },
+    {
+      "mode": 1,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "stage": 1,
+      "cue": 2,
+      "changed_action_outcomes": 0.66552734375,
+      "clairvoyant_cue_value": 0.04248046875,
+      "action_opportunity": 0.179931640625
+    },
+    {
+      "mode": 1,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "stage": 2,
+      "cue": 1,
+      "changed_action_outcomes": 0.064208984375,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.18017578125
+    },
+    {
+      "mode": 1,
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "stage": 3,
+      "cue": 0,
+      "changed_action_outcomes": 0.1923828125,
+      "clairvoyant_cue_value": 0.0,
+      "action_opportunity": 0.198486328125
+    }
+  ],
+  "scope": "Structural checks and clairvoyant action feasibility, not learned acquisition adequacy."
+}

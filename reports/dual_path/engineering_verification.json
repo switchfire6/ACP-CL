@@ -1,0 +1,258 @@
+{
+  "source_sha256": "f1517828a6b26be23809fecd16c0805f286bb0f78b4c37b32683701a339ce1b2",
+  "pytest_passed": 576,
+  "pytest_skipped": 2,
+  "skip_scope": "Windows symlink support",
+  "ruff": "passed",
+  "smoke_runs": [
+    {
+      "method": "derpp",
+      "execution_device": "cpu",
+      "model_parameters": 2348,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 32,
+        "train_forward_calls": 63,
+        "backward_calls": 63,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0
+      }
+    },
+    {
+      "method": "dual_consolidate",
+      "execution_device": "cpu",
+      "model_parameters": 3872,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 480,
+        "train_forward_calls": 63,
+        "backward_calls": 32,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0,
+        "online_branch_forward_examples": 2016,
+        "online_branch_backward_examples": 1008,
+        "online_optimizer_steps": 32,
+        "consolidation_examples": 192,
+        "consolidation_backward_calls": 12,
+        "consolidation_optimizer_steps": 12,
+        "teacher_forward_examples": 192,
+        "consolidation_branch_forward_examples": 576,
+        "probe_branch_forward_examples": 960,
+        "evaluation_branch_forward_examples": 1664
+      }
+    },
+    {
+      "method": "dual_derpp",
+      "execution_device": "cpu",
+      "model_parameters": 3872,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 256,
+        "train_forward_calls": 63,
+        "backward_calls": 32,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0,
+        "online_branch_forward_examples": 2016,
+        "online_branch_backward_examples": 2016,
+        "online_optimizer_steps": 32,
+        "consolidation_examples": 0,
+        "consolidation_backward_calls": 0,
+        "consolidation_optimizer_steps": 0,
+        "teacher_forward_examples": 0,
+        "consolidation_branch_forward_examples": 0,
+        "probe_branch_forward_examples": 512,
+        "evaluation_branch_forward_examples": 1664
+      }
+    },
+    {
+      "method": "dual_frozen",
+      "execution_device": "cpu",
+      "model_parameters": 3872,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 256,
+        "train_forward_calls": 63,
+        "backward_calls": 32,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0,
+        "online_branch_forward_examples": 2016,
+        "online_branch_backward_examples": 1008,
+        "online_optimizer_steps": 32,
+        "consolidation_examples": 0,
+        "consolidation_backward_calls": 0,
+        "consolidation_optimizer_steps": 0,
+        "teacher_forward_examples": 0,
+        "consolidation_branch_forward_examples": 0,
+        "probe_branch_forward_examples": 512,
+        "evaluation_branch_forward_examples": 1664
+      }
+    },
+    {
+      "method": "dual_joint",
+      "execution_device": "cpu",
+      "model_parameters": 3872,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 256,
+        "train_forward_calls": 63,
+        "backward_calls": 32,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0,
+        "online_branch_forward_examples": 2016,
+        "online_branch_backward_examples": 2016,
+        "online_optimizer_steps": 32,
+        "consolidation_examples": 0,
+        "consolidation_backward_calls": 0,
+        "consolidation_optimizer_steps": 0,
+        "teacher_forward_examples": 0,
+        "consolidation_branch_forward_examples": 0,
+        "probe_branch_forward_examples": 512,
+        "evaluation_branch_forward_examples": 1664
+      }
+    },
+    {
+      "method": "er",
+      "execution_device": "cpu",
+      "model_parameters": 2348,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 32,
+        "train_forward_calls": 63,
+        "backward_calls": 63,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0
+      }
+    },
+    {
+      "method": "derpp",
+      "execution_device": "cuda",
+      "model_parameters": 2348,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 32,
+        "train_forward_calls": 63,
+        "backward_calls": 63,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0
+      }
+    },
+    {
+      "method": "dual_consolidate",
+      "execution_device": "cuda",
+      "model_parameters": 3872,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 480,
+        "train_forward_calls": 63,
+        "backward_calls": 32,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0,
+        "online_branch_forward_examples": 2016,
+        "online_branch_backward_examples": 1008,
+        "online_optimizer_steps": 32,
+        "consolidation_examples": 192,
+        "consolidation_backward_calls": 12,
+        "consolidation_optimizer_steps": 12,
+        "teacher_forward_examples": 192,
+        "consolidation_branch_forward_examples": 576,
+        "probe_branch_forward_examples": 960,
+        "evaluation_branch_forward_examples": 1664
+      }
+    },
+    {
+      "method": "dual_derpp",
+      "execution_device": "cuda",
+      "model_parameters": 3872,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 256,
+        "train_forward_calls": 63,
+        "backward_calls": 32,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0,
+        "online_branch_forward_examples": 2016,
+        "online_branch_backward_examples": 2016,
+        "online_optimizer_steps": 32,
+        "consolidation_examples": 0,
+        "consolidation_backward_calls": 0,
+        "consolidation_optimizer_steps": 0,
+        "teacher_forward_examples": 0,
+        "consolidation_branch_forward_examples": 0,
+        "probe_branch_forward_examples": 512,
+        "evaluation_branch_forward_examples": 1664
+      }
+    },
+    {
+      "method": "dual_frozen",
+      "execution_device": "cuda",
+      "model_parameters": 3872,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 256,
+        "train_forward_calls": 63,
+        "backward_calls": 32,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0,
+        "online_branch_forward_examples": 2016,
+        "online_branch_backward_examples": 1008,
+        "online_optimizer_steps": 32,
+        "consolidation_examples": 0,
+        "consolidation_backward_calls": 0,
+        "consolidation_optimizer_steps": 0,
+        "teacher_forward_examples": 0,
+        "consolidation_branch_forward_examples": 0,
+        "probe_branch_forward_examples": 512,
+        "evaluation_branch_forward_examples": 1664
+      }
+    },
+    {
+      "method": "dual_joint",
+      "execution_device": "cuda",
+      "model_parameters": 3872,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 256,
+        "train_forward_calls": 63,
+        "backward_calls": 32,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0,
+        "online_branch_forward_examples": 2016,
+        "online_branch_backward_examples": 2016,
+        "online_optimizer_steps": 32,
+        "consolidation_examples": 0,
+        "consolidation_backward_calls": 0,
+        "consolidation_optimizer_steps": 0,
+        "teacher_forward_examples": 0,
+        "consolidation_branch_forward_examples": 0,
+        "probe_branch_forward_examples": 512,
+        "evaluation_branch_forward_examples": 1664
+      }
+    },
+    {
+      "method": "er",
+      "execution_device": "cuda",
+      "model_parameters": 2348,
+      "cost": {
+        "current_examples": 512,
+        "replay_examples": 496,
+        "probe_forward_examples": 32,
+        "train_forward_calls": 63,
+        "backward_calls": 63,
+        "evaluation_examples": 832,
+        "sensor_forward_examples": 0
+      }
+    }
+  ],
+  "scope": "engineering only; accuracy not scientific evidence"
+}

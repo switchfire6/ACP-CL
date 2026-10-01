@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "05df659afa6aecf3e511a87b345e796de58265bd77e2fd5a1b2fc55cffcf2849",
+    "source_sha256": "c5ac7b538363930c68c999b60f5d26244eaf5b5eb676c8cf562d1ca354109a3b",
+    "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf"
+  },
+  "standalone_verifier_sealed": true,
+  "artifact_files": 66,
+  "original_run_files": 152,
+  "numerical_arrays": 48,
+  "jobs": 2,
+  "prefix_fits": 2,
+  "prefix_phases": 4,
+  "learning_trajectories": 6,
+  "fresh_references": 2,
+  "post_prefix_episodes": 20,
+  "total_phases": 24,
+  "training_arrivals": 1856,
+  "training_packets": 232,
+  "optimizer_steps": 232,
+  "tensor_audit_coverage": {
+    "forks_verified": 6,
+    "fresh_initializations_verified": 2,
+    "before_checkpoints": 24,
+    "final_checkpoints": 24,
+    "ordinary_packets": 232,
+    "first_prequential_predictions_recomputed": 24,
+    "evaluation_calls": 416,
+    "evaluation_prediction_calls_recomputed": 382,
+    "intermediate_evaluation_calls_arithmetic_only": 34,
+    "query_presentations": 26624,
+    "support_presentations": 3308,
+    "observed_support_presentations": 3276
+  },
+  "primary_screen": {
+    "conditional": false,
+    "recurrent": false
+  },
+  "attribution_screen": {
+    "conditional": false,
+    "recurrent": false
+  },
+  "scope": "Portable file/source/protocol/analysis identity and coverage checks; original JSON/NPZ digests; uniform replay membership/draws and causal context chains; every raw all-action, performed-action, survival, mask and marginal score; held-out AUC, support-probe aggregation, seed bootstrap, fresh qualification, fixed primary/attribution gates and declared resource arithmetic. Saved model/optimizer and simulator checks are bound to the separately archived tensor audit and its exact coverage. No repository imports, pickle loading, ordinary retraining, independently reconstructed physical world or overwritten intermediate model states. File seals establish internal consistency, not an external signature."
+}

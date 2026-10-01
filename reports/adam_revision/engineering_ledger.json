@@ -1,0 +1,96 @@
+{
+  "recorded_utc": "2026-09-27T23:30:57.908502+00:00",
+  "entries": [
+    {
+      "check": "return-context initial lock preflight",
+      "outcome": "failed before lock",
+      "reason": "old integrity list excludes Markdown protocol; corrected to verify sealed protocol artifact"
+    },
+    {
+      "check": "return-context first scientific diagnostic",
+      "outcome": "stopped during conditional12002",
+      "reason": "strict probability bound; original lock/ZIP and failed_attempt.json preserved"
+    },
+    {
+      "check": "return-context numerical amendment",
+      "outcome": "25 tests and Ruff passed; complete1428evaluations",
+      "reason": "one-float32-epsilon maximum excursion verified without clipping"
+    },
+    {
+      "check": "selective learner",
+      "outcome": "47 focused tests and Ruff passed",
+      "reason": "geometry,baselinebitwiseequivalence,states,serialization"
+    },
+    {
+      "check": "selective summary",
+      "outcome": "28 pure tests and Ruff passed"
+    },
+    {
+      "check": "selective combined tests first pass",
+      "outcome": "79 passed,14 failed",
+      "reason": "all14auditfailures due reader expecting marginal_brier in flipped-cue probe; original evaluator intentionally omits it",
+      "scientific_cohort_fitted": false
+    },
+    {
+      "check": "selective combined tests corrected",
+      "outcome": "94 passed in19.08seconds",
+      "correction": "flipped probes validate actual existing schema; no scientific parameters changed"
+    },
+    {
+      "check": "selective engineering smoke",
+      "outcome": "12episodes/2prefixes complete; summaryandfullcheckpointauditpass",
+      "input": "runs/selective_updates_smoke",
+      "output": "reports/selective_updates/smoke",
+      "interpretation": "engineeringonly; reducedexposurequalificationsare notscientificscreens"
+    },
+    {
+      "check": "newsourceandanalysisRuff",
+      "outcome": "pass"
+    },
+    {
+      "check": "read-only mechanism review",
+      "outcome": "no concrete blocker; actualdisplacement,optimizerstate,causality,zero cases,andcontrolsemanticsagreewithprotocol"
+    },
+    {
+      "check": "scientificdevelopmentlock",
+      "outcome": "locked beforefitting",
+      "locked_utc": "2026-09-27T23:05:43.740166+00:00",
+      "source_sha256": "28c72eaf806a2059ef4df297668c1989db5dddebec88cd6a6432a189f827d38e",
+      "scientific_outcomes_inspected": false
+    },
+    {
+      "check": "portable selective archive verifier",
+      "outcome": "11 tests and Ruff passed; independent smoke metrics, bootstrap contrasts and both screens matched",
+      "scope": "new packaging files only, written after the scientific lock; no prospective decisions changed"
+    },
+    {
+      "check": "complete selective development cohort",
+      "outcome": "72 episodes and12prefixes completed; no training interruption",
+      "completed_utc": "2026-09-27T23:25:20.144747+00:00"
+    },
+    {
+      "check": "development integrity and checkpoint audit",
+      "outcome": "246stablefiles passed;12prefix,72initial,72final checkpoints audited",
+      "audit_seconds": 56.6389479999998
+    },
+    {
+      "check": "independent raw-score review",
+      "outcome": "72metric rows, qualification, both screens and120paired factorial/control statistics match",
+      "scope": "independent calculation of stored records; not scientific replication"
+    },
+    {
+      "check": "visual verification",
+      "outcome": "return-context and selective-update PNG figures inspected; labels and intervals legible"
+    },
+    {
+      "check": "preservation after work",
+      "outcome": "all338older artifacts,26old source files,39old analysis files, both diagnostic locks and292stopped training files unchanged"
+    },
+    {
+      "check": "final portable archive verification",
+      "outcome": "40sealedartifacts,84metricrows,60criticalpairedcontrasts and bothcohortscreens pass",
+      "attempts_record": "portable_verification_attempts.json",
+      "note": "First importlib harness generated an unlisted bytecode cache; exact file-set check rejected it. Only the cache was removed; Python -B verification passed without changing the original seal."
+    }
+  ]
+}

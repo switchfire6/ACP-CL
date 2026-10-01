@@ -1,0 +1,22 @@
+{
+  "design.md": {
+    "bytes": 3463,
+    "sha256": "b2d7494c729d5cb6364426dade9577448bc4e2b5103802a075faeb15c88919ba"
+  },
+  "results.json": {
+    "bytes": 111270,
+    "sha256": "9f5325171190dbdad137b3e50696465ab0b0c720eedd9ca356048342838edff8"
+  },
+  "results.md": {
+    "bytes": 4246,
+    "sha256": "014a155e768476250d87c7d861ff8a3f2720fe9237a2630db773eca8936bbdbc"
+  },
+  "source.zip": {
+    "bytes": 6835,
+    "sha256": "5d56b4233bb625cfc14f689739702c2525bc2e23c8eade3045da9a497044e0d2"
+  },
+  "source_lock.json": {
+    "bytes": 870,
+    "sha256": "fec8ac1b282b0bc6392e23cce96cdd4f634341632cf20d24d133bbe9e2aadfe9"
+  }
+}

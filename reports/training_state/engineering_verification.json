@@ -1,0 +1,77 @@
+{
+  "full_suite": {
+    "passed": 702,
+    "skipped": 2,
+    "skip_reason": "Windows symbolic-link checks",
+    "command": ".venv/Scripts/python.exe -m pytest -q"
+  },
+  "additional_recovery_tests": {
+    "passed": 5,
+    "command": ".venv/Scripts/python.exe -m pytest -q tests/test_training_state_integrity.py"
+  },
+  "distinct_tests_passed_across_full_and_targeted_runs": 707,
+  "lint": {
+    "passed": true,
+    "command": ".venv/Scripts/python.exe -m ruff check src tests scripts"
+  },
+  "main_audit": {
+    "passed": true,
+    "prefix_checkpoints": 12,
+    "before_checkpoints": 372,
+    "final_checkpoints": 372,
+    "matched_clean_noise_pairs": 48
+  },
+  "development_audited_pairs": 72,
+  "engineering_smoke_audited_pairs": 62,
+  "complete_run_file_integrity": {
+    "passed": true,
+    "files": 1145
+  },
+  "comparison_fresh_model_qualification_passed": true,
+  "scientific_source_sha256": "29585a815e04e8e455eb18426adab6770601eeb8449a734565f08969f20c28cb",
+  "source_config_protocol_unchanged": true,
+  "primary_contrasts_exactly_match_complete_acquisition_readout": true,
+  "prior_archives": {
+    "conditional": {
+      "sealed_artifacts_verified": 21,
+      "scientific_sources_unchanged": true
+    },
+    "contextual": {
+      "sealed_artifacts_verified": 67,
+      "scientific_sources_unchanged": true
+    },
+    "acquisition": {
+      "sealed_artifacts_verified": 29,
+      "scientific_sources_unchanged": true
+    }
+  },
+  "figures": {
+    "passed": true,
+    "checks": [
+      {
+        "figure": "development_qualification",
+        "outside_canvas": [],
+        "xlabel_footer_overlap": []
+      },
+      {
+        "figure": "overview",
+        "outside_canvas": [],
+        "xlabel_footer_overlap": []
+      },
+      {
+        "figure": "final_branches",
+        "outside_canvas": [],
+        "xlabel_footer_overlap": []
+      }
+    ],
+    "scope": "Rendered titles, labels, legends and in-range tick labels; unused automatic ticks outside axis limits are not drawn.",
+    "visual_inspection": "All three PNGs inspected; SVG and PDF exported, not separately rendered."
+  },
+  "figure_formats_exported": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "recovery": "See recovery_history.json and preserved damaged_checkpoint_files.zip; no completed episodes excluded or seeds replaced.",
+  "scope": "Local engineering and checkpoint verification, not evidence of efficacy by itself or independent replication."
+}

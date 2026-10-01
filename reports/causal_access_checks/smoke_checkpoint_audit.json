@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "study": "causal_access_smoke",
+  "identity": {
+    "config_sha256": "17b08820fc395f453c65a9402a0913b83a2e832b54b5bfe9c8c604aa79343ab6",
+    "source_sha256": "80e45794ef9d25b2af551df931f6fa0a99865e1a9bdda5760dc05ec22446ddfa",
+    "analysis_sha256": "edb11f7391f34719ed746eba03c62c4ed4d28771d5f933795ca8126dcf36354e",
+    "runtime_sha256": "f56af8011811f89daa0f3741785f498f396500eb7135214a2b4ddba9d0a2bdb7"
+  },
+  "run": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\runs\\causal_access_smoke_v2",
+  "audit_script_sha256": "b474592e7eede9d793dfc3f0be03a426573b06a2edcd48b0fc636a02d92c125b",
+  "completed_utc": "2026-09-28T21:48:35.024681+00:00",
+  "sampling_rule": "first and last packet of every block; every qualification replicate and cue flip",
+  "limitations": [
+    "ordinary training was not rerun",
+    "interior stream forecasts were not reconstructed",
+    "this audit adds no outcome metrics or promotion criteria"
+  ],
+  "jobs": 2,
+  "restored_checkpoints": 8,
+  "checks": {
+    "exact_array_checks": 322,
+    "exact_scalar_checks": 656512,
+    "component_calls": 66,
+    "native_forecast_arrays": 120,
+    "qualification_replicates": 4,
+    "sampled_stream_packets": 16
+  },
+  "affinity": 1365,
+  "threads": 1,
+  "learner_states_unchanged": true,
+  "global_rng_unchanged": true,
+  "job_records": [
+    {
+      "model": "conditional",
+      "seed": 17991,
+      "result_sha256": "e17b807c38ec4133519a09eb36a194016c391a4100fcec22fcbb1b8f53f956bc",
+      "forecast_sha256": "e53b63689a6cf2d4703333cacfab59d75d933b811e6d37eb0616e05737f38702",
+      "checkpoint_sha256": {
+        "fit/separate/novel/checkpoint.pt": "fec9173e12cc8ab72044d9fb6af89b68ed752f5fb53ce7c38bd7d083370abd42",
+        "fit/joint/novel/checkpoint.pt": "04fb75274660e176922b9cb920a061be4164877bddf15ec27fb88f280570e4b1",
+        "fit/reference_old/checkpoint.pt": "28261bcfa476a99da0d9f265e64034fd8f210aacd4fc6912d82c34417a65c72c",
+        "fit/reference_novel/checkpoint.pt": "a180e4bb97440809f29f76f127545762d3a4d409def3d07d11bb9fa6ec444253"
+      },
+      "sampled_packet_indices": [
+        0,
+        3,
+        4,
+        7,
+        8,
+        11,
+        12,
+        15
+      ],
+      "checks": {
+        "exact_array_checks": 161,
+        "exact_scalar_checks": 328256,
+        "component_calls": 33,
+        "native_forecast_arrays": 60,
+        "qualification_replicates": 2,
+        "sampled_stream_packets": 8
+      },
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "evaluation_work": {
+        "separate": {
+          "component_calls": 27,
+          "query_presentations": 384,
+          "support_presentations": 216,
+          "path_presentations": 1200
+        },
+        "joint": {
+          "component_calls": 27,
+          "query_presentations": 384,
+          "support_presentations": 216,
+          "path_presentations": 1200
+        },
+        "reference_old": {
+          "component_calls": 1,
+          "query_presentations": 64,
+          "support_presentations": 8,
+          "path_presentations": 144
+        },
+        "reference_novel": {
+          "component_calls": 2,
+          "query_presentations": 128,
+          "support_presentations": 16,
+          "path_presentations": 288
+        }
+      }
+    },
+    {
+      "model": "recurrent",
+      "seed": 17991,
+      "result_sha256": "76c7aa97795039118dc9ea219116a31764d720b9a2abdbb2007b08f155feb41b",
+      "forecast_sha256": "83b11814ce5baf219c6ed7860933ff111bb52b2fdf294e9baee9c740d657512c",
+      "checkpoint_sha256": {
+        "fit/separate/novel/checkpoint.pt": "1bc33844a776cc47726eedde6a6e106a2d920a1a5d6283122dd882bc159ac4d4",
+        "fit/joint/novel/checkpoint.pt": "4c8ea3008c98446751425ae461ba31f523c289fa4ada9c7922ba3d0fff17a728",
+        "fit/reference_old/checkpoint.pt": "f86ddfb9648384ca4932472f2aa328a04239222a41eda8dd3b6d557362c407de",
+        "fit/reference_novel/checkpoint.pt": "068785e878a9e342d333b8a352f0b8cffcac939889b3d1fa7c4b58b390596ec8"
+      },
+      "sampled_packet_indices": [
+        0,
+        3,
+        4,
+        7,
+        8,
+        11,
+        12,
+        15
+      ],
+      "checks": {
+        "exact_array_checks": 161,
+        "exact_scalar_checks": 328256,
+        "component_calls": 33,
+        "native_forecast_arrays": 60,
+        "qualification_replicates": 2,
+        "sampled_stream_packets": 8
+      },
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "evaluation_work": {
+        "separate": {
+          "component_calls": 27,
+          "query_presentations": 384,
+          "support_presentations": 216,
+          "path_presentations": 1200
+        },
+        "joint": {
+          "component_calls": 27,
+          "query_presentations": 384,
+          "support_presentations": 216,
+          "path_presentations": 1200
+        },
+        "reference_old": {
+          "component_calls": 1,
+          "query_presentations": 64,
+          "support_presentations": 8,
+          "path_presentations": 144
+        },
+        "reference_novel": {
+          "component_calls": 2,
+          "query_presentations": 128,
+          "support_presentations": 16,
+          "path_presentations": 288
+        }
+      }
+    }
+  ]
+}

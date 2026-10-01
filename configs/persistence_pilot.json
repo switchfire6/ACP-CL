@@ -1,0 +1,15 @@
+{
+  "study": "joint persistence: locked eight-seed first pilot",
+  "seeds": [1001, 1002, 1003, 1004, 1005, 1006, 1008, 1019],
+  "schedules": ["short", "long", "no_return", "reversal"],
+  "methods": ["none", "uniform", "recent", "coverage", "recurrence", "relevance", "joint", "frozen_encoder", "frozen_late"],
+  "block_size": 1024,
+  "batch_size": 32,
+  "eval_size": 384,
+  "probe_every": 256,
+  "width": 64,
+  "lr": 0.002,
+  "memory_capacity": 128,
+  "updates_per_batch": 3,
+  "threads": 1
+}

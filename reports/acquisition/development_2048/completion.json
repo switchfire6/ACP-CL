@@ -1,0 +1,11 @@
+{
+  "identity": {
+    "config_sha256": "9351bb1e95c40450728226e61b0530b17e32af0f9d73e2c59278626bf46650db",
+    "source_sha256": "343d1a5ce63c35a48e0c5e552c9480c863114614aaa08e407ad94eca07ed6c58",
+    "runtime_sha256": "86823054be75bc3dd98f10a91791df395bc8203ae2baa100568a8cc2125ee946"
+  },
+  "trajectories": 4,
+  "episodes": 12,
+  "prefix_fits": 0,
+  "completed_utc": "2026-09-27T15:13:41.940351+00:00"
+}

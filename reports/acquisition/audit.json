@@ -1,0 +1,1815 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "8ea8f25220e9602dce88a7c29efe1e68ac0125be71175519c38b4e8f281c4cd9",
+    "source_sha256": "343d1a5ce63c35a48e0c5e552c9480c863114614aaa08e407ad94eca07ed6c58",
+    "runtime_sha256": "86823054be75bc3dd98f10a91791df395bc8203ae2baa100568a8cc2125ee946"
+  },
+  "prefix_checkpoints": 12,
+  "before_checkpoints": 180,
+  "final_checkpoints": 180,
+  "checks": [
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7001,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7002,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7003,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7004,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7005,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "continue",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "frozen",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "state_reset",
+      "branch": "novel",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "noise",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "return",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 7006,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "continue",
+      "branch": "revision",
+      "exact_fork_verified": true,
+      "causal_data_replay_verified": true,
+      "initial_final_probes_recomputed": true
+    }
+  ],
+  "elapsed_seconds": 62.218860900000436,
+  "scope": "Local exact-source checkpoint, fork, causal-memory and probe audit; not independent replication."
+}

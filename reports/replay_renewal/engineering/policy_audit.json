@@ -1,0 +1,820 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "612bd661856797b238b47792f24783b9f8d671afdbbc761eb192eee498a6e360",
+    "source_sha256": "6f3561f485bf5dad9577be231b2542bba0c4682ac0b847e03f385b1c57271d39",
+    "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+  },
+  "prefix_checkpoints": 6,
+  "matched_clean_noise_pairs": 6,
+  "before_checkpoints": 48,
+  "final_checkpoints": 48,
+  "checks": [
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0
+      ],
+      "mean_final_packet_age": 0.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "recent",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "split",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        5,
+        4
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 1,
+      "arm": "uniform",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        5,
+        4,
+        3,
+        1
+      ],
+      "mean_final_packet_age": 3.25
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0
+      ],
+      "mean_final_packet_age": 0.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "recent",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "split",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        2,
+        6
+      ],
+      "mean_final_packet_age": 2.25
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 2,
+      "arm": "uniform",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        0,
+        6,
+        5,
+        3
+      ],
+      "mean_final_packet_age": 3.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0
+      ],
+      "mean_final_packet_age": 0.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "recent",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "split",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        4,
+        8
+      ],
+      "mean_final_packet_age": 3.25
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 3,
+      "arm": "uniform",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        2,
+        8,
+        1,
+        5
+      ],
+      "mean_final_packet_age": 4.0
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "recent",
+      "branch": "clean",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "recent",
+      "branch": "noise",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "recent",
+      "branch": "return",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "recent",
+      "branch": "revision",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "split",
+      "branch": "clean",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        6,
+        3
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "split",
+      "branch": "noise",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        6,
+        3
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "split",
+      "branch": "return",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        6,
+        3
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "split",
+      "branch": "revision",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        6,
+        3
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "uniform",
+      "branch": "clean",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        4,
+        1,
+        3,
+        7
+      ],
+      "mean_final_packet_age": 3.75
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "uniform",
+      "branch": "noise",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        4,
+        1,
+        3,
+        7
+      ],
+      "mean_final_packet_age": 3.75
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "uniform",
+      "branch": "return",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        4,
+        1,
+        3,
+        7
+      ],
+      "mean_final_packet_age": 3.75
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "stage": 4,
+      "arm": "uniform",
+      "branch": "revision",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        4,
+        1,
+        3,
+        7
+      ],
+      "mean_final_packet_age": 3.75
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0
+      ],
+      "mean_final_packet_age": 0.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "recent",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "split",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        5,
+        4
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 1,
+      "arm": "uniform",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        5,
+        4,
+        3,
+        1
+      ],
+      "mean_final_packet_age": 3.25
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0
+      ],
+      "mean_final_packet_age": 0.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "recent",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "split",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        2,
+        6
+      ],
+      "mean_final_packet_age": 2.25
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 2,
+      "arm": "uniform",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        0,
+        6,
+        5,
+        3
+      ],
+      "mean_final_packet_age": 3.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "fresh",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0
+      ],
+      "mean_final_packet_age": 0.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "recent",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "split",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        4,
+        8
+      ],
+      "mean_final_packet_age": 3.25
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 3,
+      "arm": "uniform",
+      "branch": "novel",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        2,
+        8,
+        1,
+        5
+      ],
+      "mean_final_packet_age": 4.0
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "recent",
+      "branch": "clean",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "recent",
+      "branch": "noise",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "recent",
+      "branch": "return",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "recent",
+      "branch": "revision",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "mean_final_packet_age": 1.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "split",
+      "branch": "clean",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        6,
+        3
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "split",
+      "branch": "noise",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        6,
+        3
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "split",
+      "branch": "return",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        6,
+        3
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "split",
+      "branch": "revision",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        1,
+        0,
+        6,
+        3
+      ],
+      "mean_final_packet_age": 2.5
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "uniform",
+      "branch": "clean",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        4,
+        1,
+        3,
+        7
+      ],
+      "mean_final_packet_age": 3.75
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "uniform",
+      "branch": "noise",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        4,
+        1,
+        3,
+        7
+      ],
+      "mean_final_packet_age": 3.75
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "uniform",
+      "branch": "return",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        4,
+        1,
+        3,
+        7
+      ],
+      "mean_final_packet_age": 3.75
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "stage": 4,
+      "arm": "uniform",
+      "branch": "revision",
+      "exact_initial_state_verified": true,
+      "causal_data_replay_verified": true,
+      "endpoint_probes_recomputed": true,
+      "final_packet_ages": [
+        4,
+        1,
+        3,
+        7
+      ],
+      "mean_final_packet_age": 3.75
+    }
+  ],
+  "elapsed_seconds": 4.442802200001097,
+  "scope": "Local exact-source state, data, memory and initial/final probe audit. Intermediate weights are not independently retrained."
+}

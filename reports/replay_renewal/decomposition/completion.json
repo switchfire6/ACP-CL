@@ -1,0 +1,85 @@
+{
+  "identity": {
+    "config_sha256": "8381506c92f4fce2ddd16628bacca46261f9d50627f5c8d6e420d1526ad95a23",
+    "source_sha256": "6f3561f485bf5dad9577be231b2542bba0c4682ac0b847e03f385b1c57271d39",
+    "runtime_sha256": "4ea3ea1f87cff2e70c31f788d2332c81583a711f4b402a26f9a1265dc448a77f"
+  },
+  "trajectories": 12,
+  "episodes": 84,
+  "prefix_fits": 12,
+  "jobs": [
+    {
+      "seed": 9001,
+      "model": "conditional",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9002,
+      "model": "conditional",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9003,
+      "model": "conditional",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9002,
+      "model": "recurrent",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9001,
+      "model": "recurrent",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9004,
+      "model": "conditional",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9005,
+      "model": "conditional",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9003,
+      "model": "recurrent",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9006,
+      "model": "conditional",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9004,
+      "model": "recurrent",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9005,
+      "model": "recurrent",
+      "policy": "base",
+      "affinity": 85
+    },
+    {
+      "seed": 9006,
+      "model": "recurrent",
+      "policy": "base",
+      "affinity": 85
+    }
+  ],
+  "completed_utc": "2026-09-27T19:06:22.518324+00:00"
+}

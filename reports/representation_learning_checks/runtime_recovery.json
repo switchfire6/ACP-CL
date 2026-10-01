@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-09-28T23:00:47.038804+00:00",
+  "error": "PermissionError WinError 5 at os.replace(checkpoint.pt.tmp, checkpoint.pt)",
+  "job": "outcome_18103/interleaved",
+  "source_identity": {
+    "config_sha256": "a02ff83198f72dfbf017dbc9bbae5c28cdf41bc81189a2a6c2fe99db9e4d9b0c",
+    "source_sha256": "b1ef5ee92454f16d7e58f13f4effbd020a170ae6069ea81c8142e0ed8b83861e",
+    "analysis_sha256": "9fcec96113a65d06800d3f1c4caef896105ed468d020901deafe8c4c841d9e17",
+    "protocol_sha256": "3eccb319858205bf1a3e4b25815f3dc1cab3ec6f62db83cf56b02c65488fb78e",
+    "runtime_sha256": "7a13a505bb56f094aa496e87f224391de508d702751ff318e585c002f3703737"
+  },
+  "last_committed_batches": 864,
+  "failed_write_batches": 896,
+  "reexecuted_optimizer_steps": 384,
+  "preserved_pending_file": "reports/representation_learning_checks/failed_checkpoint_18103.pt",
+  "preserved_pending_sha256": "177c0bc7371190962291b99098021d3a635dd2d02dbb6071a63affc198d46e7a",
+  "action": "resume unchanged run from committed checkpoint; five completed jobs are verified and skipped",
+  "cause": "file-access conflict; a progress reader overlapped active checkpoint access, but the operating-system lock holder was not independently identified"
+}

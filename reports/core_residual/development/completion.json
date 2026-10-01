@@ -1,0 +1,80 @@
+{
+  "identity": {
+    "config_sha256": "e0ab9198f29aadf138a589e589146644828fdb64e64b44adfc9db3689db2a1a2",
+    "source_sha256": "c5ac7b538363930c68c999b60f5d26244eaf5b5eb676c8cf562d1ca354109a3b",
+    "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+  },
+  "jobs": 12,
+  "prefix_fits": 12,
+  "prefix_phases": 48,
+  "learning_trajectories": 36,
+  "fresh_references": 12,
+  "post_prefix_episodes": 120,
+  "total_phases": 168,
+  "training_arrivals": 552960,
+  "training_packets": 17280,
+  "optimizer_steps": 207360,
+  "job_records": [
+    {
+      "seed": 16001,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 16002,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 16003,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 16004,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 16005,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 16006,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 16001,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 16002,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 16003,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 16004,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 16005,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 16006,
+      "model": "recurrent",
+      "affinity": 1365
+    }
+  ],
+  "completed_utc": "2026-09-28T02:39:04.593460+00:00"
+}

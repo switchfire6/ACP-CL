@@ -1,0 +1,7 @@
+{
+  "config_sha256": "ca42674d8f089d5c9b9fec31bafeb20020ed39a260c81f1499ba0eefb30c50f7",
+  "source_sha256": "6ffb02a9788a9d9745bbc73b2edf3817ec0b46ddf60d2295208de6baba5d5cb7",
+  "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf",
+  "locked_utc": "2026-09-28T00:10:34.953169+00:00",
+  "protocol_sha256": "2181312a66b4ac557c846b062c91b2b3d394d1b257505274af068c8da38c77f6"
+}

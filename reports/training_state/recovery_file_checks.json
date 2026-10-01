@@ -1,0 +1,410 @@
+[
+  {
+    "path": "conditional_8001\\prefix.pt",
+    "bytes": 1787301,
+    "sha256": "322a9d48831c0a68aab4811aeb3a87598cc2b2e52d69b3ae15d69c454467e4f5",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8001\\stage_1_continue\\before.pt",
+    "bytes": 1778213,
+    "sha256": "5d72dbb72cb5e94c62749b24930c9ed8aaefd32411d8d8ff94bed8cd2f6394ed",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8001\\stage_1_continue\\checkpoint.pt",
+    "bytes": 1794869,
+    "sha256": "e55d02e166bad4899be4dddfade3f629d029e11650834ee6338317974bfbdf43",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "conditional_8002\\prefix.pt",
+    "bytes": 1727141,
+    "sha256": "607e08a704041e73fa7b18c6e0baca38fcd06a3ba42931406e487b93c1541fde",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8002\\stage_1_continue\\before.pt",
+    "bytes": 1718053,
+    "sha256": "a02245e02df91df1749ad3f235e25b8efc0709208a57d968f69fd9e42b693ed8",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8002\\stage_1_continue\\checkpoint.pt",
+    "bytes": 1819701,
+    "sha256": "b31355971aada2b02ecdf5eb1ec2711a46775e584b656ada6509b4c8121490e4",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "conditional_8003\\prefix.pt",
+    "bytes": 1781605,
+    "sha256": "2ee3d22940afcc2d5d42a828f83c382b9ad14cd79ca5aab87a911b743a4c12ed",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8003\\stage_1_continue\\before.pt",
+    "bytes": 1772581,
+    "sha256": "fdb52fa30b934dd8eed20e624395cd0185e6532cbe40c56c73fd9f8db850745f",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8003\\stage_1_continue\\checkpoint.pt",
+    "bytes": 1823605,
+    "sha256": "072d683084d8a8635fe0192c6a6b7371ce252a27135d9c3ecf4b7636e5141258",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "conditional_8004\\prefix.pt",
+    "bytes": 1817445,
+    "sha256": "4079b92d454c47eff3af335588cbb2d0b27e1f8429b597d8eeb6a17aee7bf7db",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8004\\stage_1_continue\\before.pt",
+    "bytes": 1808421,
+    "sha256": "d8cea496ff53e3b56e26aed59a41b18f507f11e875a412ad5c3b7fe80d1b736b",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8004\\stage_1_continue\\checkpoint.pt",
+    "bytes": 1849461,
+    "sha256": "d62c2a97c4f7e450d083518565c765d72cad71b267d0a5a5934eb8f0bad334f3",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "conditional_8005\\prefix.pt",
+    "bytes": 1730021,
+    "sha256": "a95419de04f971c221e9d7796fcd87a2c56b86cb2228004da2b9b32715b0909e",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_continue\\before.pt",
+    "bytes": 1720997,
+    "sha256": "8107483392abf4c13f2f5958b99ee142c0170360704ecc55cf3fe7b874c75dd5",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_continue\\checkpoint.pt",
+    "bytes": 1830901,
+    "sha256": "95dc2ff392a97d83c73cbfc64e30061688f832e5e1f9708d5cc68c13df13cc00",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_fresh\\before.pt",
+    "bytes": 429677,
+    "sha256": "b9736e7f6dd8a11d31dd983b909babb0e92153d84bf6f19df2cd6b288bd65c72",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_fresh\\checkpoint.pt",
+    "bytes": 1799669,
+    "sha256": "28c4b413dacc2203c1558de430e38f56f630beb3e185c6ef2d4f28139d8ff149",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_optimizer_reset\\before.pt",
+    "bytes": 1243437,
+    "sha256": "fd43c6127d903dea3fc2b1e0c0af91e92e49051676986a32bd23bce4b7979a15",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_optimizer_reset\\checkpoint.pt",
+    "bytes": 1830901,
+    "sha256": "c02707d3c38a40456b404a4271cccf70ab8e67053926251820cf3d01b5be4f22",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_replay_reset\\before.pt",
+    "bytes": 907237,
+    "sha256": "a9966e8dee8d5df3b696764006db07ca27e32da07b57929470656aa05f7ab320",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_replay_reset\\checkpoint.pt",
+    "bytes": 1799605,
+    "sha256": "e539e9b9b4199ff1722bb302cc1521698ca56e21bea877f21f2da2654d5c2108",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_state_reset\\before.pt",
+    "bytes": 429613,
+    "sha256": "ab36a49798bfaf9c45edc155218a9c20db6b402220f83674ec2b6c6db8e2225c",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_1_state_reset\\checkpoint.pt",
+    "bytes": 1799541,
+    "sha256": "fea7a87a8ef8361a3c17ab45eaac66cf16e81c5e2b03ef17bcddb4d4dd084de6",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_2_continue\\before.pt",
+    "bytes": 1802661,
+    "sha256": "f03da16cfc66f3d01852a7ccca5b9689c623adc18aad414e83d4f92900a38ec4",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_2_continue\\checkpoint.pt",
+    "bytes": 1832117,
+    "sha256": "06fa22a2845e8e27b9729a64fb7f3400e011d972f57b2947bb88a5e3bb88a0e9",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_2_optimizer_reset\\before.pt",
+    "bytes": 1325101,
+    "sha256": "22d00818e83af41f0c3a0c901d612b03de9ce8dcec0ef0a35f460e01817ec91c",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8005\\stage_2_optimizer_reset\\checkpoint.pt",
+    "bytes": 1822325,
+    "sha256": "7c6e80a3a73e62bf6822d84f17360a4cbaabf5a2499627b89f099f8efb96ad12",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\prefix.pt",
+    "bytes": 1784485,
+    "sha256": "08f79f25394454c2e23ca7a73353a0d19517b44ddf520ccc783a5952db446209",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_continue\\before.pt",
+    "bytes": 1775461,
+    "sha256": "ae5b2d89ba149fb9cc51fbfdc4a04c151097e7823460dfee1d1a5100b6fbb7d0",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_continue\\checkpoint.pt",
+    "bytes": 1833397,
+    "sha256": "ded04d734a360d5af19cbea692eab3c886de58ee7e3f66878fef345da84a3085",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_fresh\\before.pt",
+    "bytes": 429421,
+    "sha256": "54feab88979ef00c2a249c94dad8a2449ff37c243906125001fadfb84809df96",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_fresh\\checkpoint.pt",
+    "bytes": 1834613,
+    "sha256": "d6f30cb70e656bbfaa967389a24b19efc53df1b91cbf930d9bf87be8c78eae0e",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_optimizer_reset\\before.pt",
+    "bytes": 1297901,
+    "sha256": "c3a51f2fdbe8d91e645f9e71760fb2330ee70d843746cb26ae272bfd4b14f6d7",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_optimizer_reset\\checkpoint.pt",
+    "bytes": 1833397,
+    "sha256": "8bbc17fd62962d8002cc0ca2dbafd27856d52501c88d8d91913c769eedf636a3",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_replay_reset\\before.pt",
+    "bytes": 906917,
+    "sha256": "8d3fa53624b884f1c378f70d0ca6dcd51f9c632da9fce4dcb1b62fb20349a9b9",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_replay_reset\\checkpoint.pt",
+    "bytes": 1834549,
+    "sha256": "f9c16feca3e2c815865ebc241978fe76ebc21e4c128cd237629f0dec80d81490",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_state_reset\\before.pt",
+    "bytes": 429357,
+    "sha256": "9d14b74ca9a6d80448340037d795d64d872ea96a161a59bde7e83388ea0e743b",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_1_state_reset\\checkpoint.pt",
+    "bytes": 1834549,
+    "sha256": "658f26b1e54e826f8370e6f9e6b2a98cab3afc87fca1e9509a469a29fd6e4413",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_2_continue\\before.pt",
+    "bytes": 1805157,
+    "sha256": "509cc6189927f4b6b17255dbecd5327c2156b51183da394e782bd17e5464e5f6",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_2_continue\\checkpoint.pt",
+    "bytes": 1864501,
+    "sha256": "4cf41c13d534182883e51ef44f3eaafe395d934185a97568f14fe1b59384db24",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_2_optimizer_reset\\before.pt",
+    "bytes": 1327597,
+    "sha256": "63ba6953127958e54edd201c85ac7394a4d5ed9e1118b6423e41c0ea49b43658",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "conditional_8006\\stage_2_optimizer_reset\\checkpoint.pt",
+    "bytes": 1852021,
+    "sha256": "225230a1a0ce97fc8979ed787d480f5df8e7fb54c67b6500dd26c732d2835ceb",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8001\\prefix.pt",
+    "bytes": 1777893,
+    "sha256": "56a9d91248867f0729569fc86b7d1e3b84c8e8e8c2f00738787cd9ff96cd24a4",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "recurrent_8001\\stage_1_continue\\before.pt",
+    "bytes": 1768869,
+    "sha256": "fc227909fb67f64c0505ca8a88d8a2282cd5aee0984ba835fbb4a98f8cf87562",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "recurrent_8002\\prefix.pt",
+    "bytes": 1717797,
+    "sha256": "5a429ac1c25c0b77dc20fc4dd274a2005d2325b7c98296a4fff2a5cfaa0c09bb",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "recurrent_8002\\stage_1_continue\\before.pt",
+    "bytes": 1708709,
+    "sha256": "7c634c478394ffa3f64042f72e107940b419e6ee8eb2d4754c9573f3789dec62",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "recurrent_8003\\prefix.pt",
+    "bytes": 1772261,
+    "sha256": "f1d49af1d46065dbab9d76ff75dbd7ddf517379e53d4ea147228d4a4c461471b",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "recurrent_8003\\stage_1_continue\\before.pt",
+    "bytes": 1763237,
+    "sha256": "7afd70d8eb08280be74053b1a4a7fe5c8b73a2bc2d58c3d956afe0ac27ef461e",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "recurrent_8004\\prefix.pt",
+    "bytes": 1808101,
+    "sha256": "211b0fe857268407999d90a59694dbf0bac8447bf6452b4b096c4e7a4cd18e93",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "recurrent_8004\\stage_1_continue\\before.pt",
+    "bytes": 1799013,
+    "sha256": "546875b098392ae9346398698dea8d1fbfb7b67d240011d83eae98346ad35eec",
+    "status": "BadZipFile: File is not a zip file"
+  },
+  {
+    "path": "recurrent_8005\\prefix.pt",
+    "bytes": 1720677,
+    "sha256": "60cd79223a47e146ee5765d453b081c714e453f9fa4e0c5d7f502aa16f147f9d",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8005\\stage_1_continue\\before.pt",
+    "bytes": 1711589,
+    "sha256": "a3cbe2f6c709c9c8029625422c2bee7c0f83cfd1fb17426ea6fa657584b09a1f",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8005\\stage_1_continue\\checkpoint.pt",
+    "bytes": 1820085,
+    "sha256": "95b01ae7d7dd2019a05028c589514558f710c11cf00d1cc51d846ab11b9ff308",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8005\\stage_1_optimizer_reset\\before.pt",
+    "bytes": 1239373,
+    "sha256": "73394f57c6721e3fc1e0aeae45bc87bf82948f090688647b95195f0b3746e84b",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8005\\stage_1_optimizer_reset\\checkpoint.pt",
+    "bytes": 1820085,
+    "sha256": "be2c178992a29a549df3801d42fdb2c706396125ba1a184290419ae00cba37b8",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8005\\stage_1_replay_reset\\before.pt",
+    "bytes": 897829,
+    "sha256": "581614b80c714d79eb99213d1a27da5e267186ec2d2e0d8b827bf8091fedd35a",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8005\\stage_1_replay_reset\\checkpoint.pt",
+    "bytes": 1757813,
+    "sha256": "4d6321f9bc72defa35a9902252f135aa4c713f7494b254f3fb0dd0ec5dbf8e09",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8006\\prefix.pt",
+    "bytes": 1775141,
+    "sha256": "dbe10436afc8ec2f2bc600f722b3336e4b294c4bf29e639234eb84c723744087",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8006\\stage_1_continue\\before.pt",
+    "bytes": 1766117,
+    "sha256": "19ad86c3fea2866f77e127b008a8a463676edc2f9804e3a95007a101dffa431a",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8006\\stage_1_continue\\checkpoint.pt",
+    "bytes": 1822581,
+    "sha256": "1b2f6e087c7c7c3f9f8aafb34e5dbcdf2e8fd28bb44f23b666e212a3b830be43",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8006\\stage_1_optimizer_reset\\before.pt",
+    "bytes": 1293901,
+    "sha256": "7cf9f9b6471b1ecf8d96f1d40e1ba31358a28a81c33cb68f819f540518bbd58e",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8006\\stage_1_optimizer_reset\\checkpoint.pt",
+    "bytes": 1822581,
+    "sha256": "bf7d538d6086d5247ef48ecbea3c954d7658e19fb72eef3c4708ab9c072b63bd",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8006\\stage_1_replay_reset\\before.pt",
+    "bytes": 897573,
+    "sha256": "0485afed7a311ec98dccc3a9c21ffcda36007931e5a90c5eeda8639bd8055c20",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8006\\stage_1_replay_reset\\checkpoint.pt",
+    "bytes": 1790389,
+    "sha256": "90622ae814bf39c8d495bbeb3ef702e1a2758e215c5a5c37ee27a93f4c2bb3ee",
+    "status": "zip_crc_ok"
+  },
+  {
+    "path": "recurrent_8001\\prefix.json",
+    "bytes": 17258,
+    "sha256": "d8b45f89cbe4186358ec8ecc1f641face3c548b78b48cb4beaecd6a71b2ac433",
+    "status": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "path": "recurrent_8002\\prefix.json",
+    "bytes": 17279,
+    "sha256": "db9e9f44ae670c7afd053d3746490eb0a2b05ae895fbf9bd7025cff7e08b276d",
+    "status": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "path": "recurrent_8003\\prefix.json",
+    "bytes": 17257,
+    "sha256": "ce58428b1f9b84a20ecac80db430d6b60420131ffe316dc0d82fde95fef51366",
+    "status": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "path": "recurrent_8004\\prefix.json",
+    "bytes": 17275,
+    "sha256": "9919d39dc605243ab1838e385e02aa3a5e69ab8376468d988acb90bffe676040",
+    "status": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  }
+]

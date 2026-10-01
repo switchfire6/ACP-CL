@@ -1,0 +1,25 @@
+{
+  "completed_utc": "2026-09-28T03:25:53.051067+00:00",
+  "jobs": [
+    {
+      "model": "conditional",
+      "seed": 16991,
+      "rows": 20,
+      "checkpoints": 4,
+      "frozen_pairs": 5,
+      "json_sha256": "b7f3a7476d76a00a83064c9560961c781ab043563654abe0eae8c021a8a409a3"
+    },
+    {
+      "model": "recurrent",
+      "seed": 16991,
+      "rows": 20,
+      "checkpoints": 4,
+      "frozen_pairs": 5,
+      "json_sha256": "a3ce08c526585116fb87ee1658e3f6d911f5e29570d2975912440ded5214c55d"
+    }
+  ],
+  "rows": 40,
+  "checkpoints": 8,
+  "frozen_core_forecast_pairs_checked": 10,
+  "optimizer_updates": 0
+}

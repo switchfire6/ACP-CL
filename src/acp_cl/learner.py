@@ -17,6 +17,7 @@ from .plasticity import PlasticityConfig, PlasticityEngine
 from .plasticity_v3 import ScheduledPlasticityEngine, V3Config, V3_METHODS
 from .replay import ReservoirBuffer
 from .sensor import FrozenInputSensor
+from .dual_path import DUAL_METHODS
 
 
 YOKED_METHODS = ("er_recycle_yoked", "er_recycle_yoked_gain")
@@ -27,11 +28,13 @@ METHODS = (
     "acp_random_recycling", "acp_no_reopening",
     "acp_v2", "acp_v2_no_newborn", "acp_v2_no_reopening",
     "acp_v2_learned_sensor", "acp_v2_oracle",
-) + YOKED_METHODS + V3_METHODS
+) + YOKED_METHODS + V3_METHODS + DUAL_METHODS
 
 
 class Learner:
     def __init__(self, model: nn.Module, method: str, config: dict, seed: int = 0):
+        if method in DUAL_METHODS:
+            raise ValueError("dual-path methods require experiment.new_learner or DualPathLearner")
         if method not in METHODS:
             raise ValueError(f"unknown method {method}; choose from {METHODS}")
         self.model, self.method, self.config = model, method, config

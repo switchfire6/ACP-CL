@@ -1,0 +1,29 @@
+{
+  "tests_passed": 686,
+  "tests_skipped": 2,
+  "skip_reason": "Windows symbolic-link checks",
+  "tests_command": ".venv/Scripts/python.exe -m pytest -q",
+  "analysis_tests_rechecked": 4,
+  "lint": "passed",
+  "lint_command": ".venv/Scripts/python.exe -m ruff check src tests scripts",
+  "diagnostic_audit_prefixes": 12,
+  "diagnostic_audit_before": 180,
+  "diagnostic_audit_final": 180,
+  "development_audit_before": 12,
+  "development_audit_final": 12,
+  "smoke_audit_before": 30,
+  "smoke_audit_final": 30,
+  "all_checkpoint_audits_passed": true,
+  "scientific_source_frozen_through_development_and_comparison": true,
+  "earlier_conditional_contextual_sources_unchanged": true,
+  "figure_formats_exported": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "figure_formats_visually_inspected": [
+    "png"
+  ],
+  "figure_text_bounds_check": "All titles, axis labels and tick labels inside the figure canvas.",
+  "scope": "Local engineering verification, not proof of efficacy or independent replication."
+}

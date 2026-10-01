@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "cd7296aad191bf16d4b90f76b4755d9a255422059561de39e6d23fcde57eaf7a",
+    "source_sha256": "6ffb02a9788a9d9745bbc73b2edf3817ec0b46ddf60d2295208de6baba5d5cb7",
+    "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+  },
+  "artifact_files": 25,
+  "original_records": 456,
+  "trajectories": 24,
+  "assessments": 48,
+  "ordinary_arrivals_per_trajectory": 20992,
+  "diagnostic_forks": 1296,
+  "tensor_audit_coverage": {
+    "trajectories": 24,
+    "before_checkpoints": 336,
+    "final_checkpoints": 336,
+    "assessments": 48,
+    "diagnostic_forks_reproduced": 1296,
+    "diagnostic_prediction_calls_recomputed": 34560
+  },
+  "allocation_screens": {
+    "conditional": {
+      "near": false,
+      "return": false
+    },
+    "recurrent": {
+      "near": false,
+      "return": false
+    }
+  },
+  "scope": "Portable file/lock/identity/coverage checks; original JSON hashes; causal record chains; performed-action Brier and reported greedy-action survival arithmetic; exact selector means, paired seed bootstrap and allocation criteria. Full all-action predictions and greedy argmax are covered by the separately archived tensor audit, whose hashes and coverage are checked. No model pickle, live source, ordinary retraining or independent physics replication.",
+  "archive_manifest_sha256": "814a053d4c50cdac343de66b019bd7a7fa635e3973d0e5b25c974b10bf6b0421",
+  "independent_copy_verified": true,
+  "verification_environment": "Copied sealed archive outside repository; standalone archived verifier; Python -I -B.",
+  "in_place_verification_passed": true
+}

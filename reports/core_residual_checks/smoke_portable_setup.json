@@ -1,0 +1,12 @@
+{
+  "archive": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\core_residual\\smoke",
+  "external_directory": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_smoke_portable_ofs42hrv",
+  "external_archive": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_smoke_portable_ofs42hrv\\smoke",
+  "python": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\.venv\\Scripts\\python.exe",
+  "files": {
+    "scripts/verify_core_residual_archive.py": "eca9a1622ab3ff555c6bc944b7db0e702a6c5f3bff8164336cdeca62e8507670",
+    "tests/test_core_residual_archive.py": "cf667223fb17d714f2ee2ca5933a230847264a9d18952c966a9e825da218cb16"
+  },
+  "artifact_manifest_sha256": "036ce384b48a8e74d1b9ea7e58da8368451f731a9506441e378347d9b9981a9a",
+  "created_utc": "2026-09-28T02:40:41.571033+00:00"
+}

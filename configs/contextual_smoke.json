@@ -1,0 +1,39 @@
+{
+  "study": "contextual_smoke",
+  "seeds": [
+    19
+  ],
+  "gaps": [
+    "short"
+  ],
+  "branches": [
+    "return",
+    "novel",
+    "noise"
+  ],
+  "methods": [
+    "pooled",
+    "conditional",
+    "recurrent",
+    "query_routed",
+    "recurrent_frozen",
+    "oracle"
+  ],
+  "block_size": 32,
+  "batch_size": 8,
+  "eval_size": 16,
+  "probe_every": 8,
+  "support_replicates": 1,
+  "width": 12,
+  "experts": 4,
+  "context_width": 8,
+  "decoder_width": 12,
+  "lr": 0.002,
+  "memory_packets": 3,
+  "updates_per_batch": 1,
+  "evidence_strength": 1.0,
+  "feedback_noise": 0.2,
+  "threads": 1,
+  "workers": 1,
+  "interaction_features": true
+}

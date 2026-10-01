@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "checked_utc": "2026-09-28T02:43:32.065841+00:00",
+  "copied_archive_manifest_sha256": "edd6c32d2b69722985b6548ff0af16d7e8c2bfb34d528e79e203cb88dbeb6759",
+  "source_files": {
+    "scripts/verify_core_residual_archive.py": "eca9a1622ab3ff555c6bc944b7db0e702a6c5f3bff8164336cdeca62e8507670",
+    "tests/test_core_residual_archive.py": "cf667223fb17d714f2ee2ca5933a230847264a9d18952c966a9e825da218cb16"
+  },
+  "outside_repository": true,
+  "exact_same_verification_result": true,
+  "in_place": {
+    "command": [
+      "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\.venv\\Scripts\\python.exe",
+      "-I",
+      "-B",
+      "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\core_residual\\development\\verify_archive.py",
+      "--input",
+      "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\core_residual\\development"
+    ],
+    "cwd": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL",
+    "exit_code": 0,
+    "output": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\core_residual_checks\\development_portable_in_place.json",
+    "output_sha256": "781818a49f7f0caa0ecf70f89f7a3b107982f05240790cf313ca48ff904e3c2b",
+    "stderr_bytes": 0,
+    "elapsed_seconds": 37.08611320000091,
+    "result": {
+      "passed": true,
+      "identity": {
+        "config_sha256": "e0ab9198f29aadf138a589e589146644828fdb64e64b44adfc9db3689db2a1a2",
+        "source_sha256": "c5ac7b538363930c68c999b60f5d26244eaf5b5eb676c8cf562d1ca354109a3b",
+        "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+      },
+      "standalone_verifier_sealed": true,
+      "artifact_files": 366,
+      "original_run_files": 1026,
+      "numerical_arrays": 336,
+      "jobs": 12,
+      "prefix_fits": 12,
+      "prefix_phases": 48,
+      "learning_trajectories": 36,
+      "fresh_references": 12,
+      "post_prefix_episodes": 120,
+      "total_phases": 168,
+      "training_arrivals": 552960,
+      "training_packets": 17280,
+      "optimizer_steps": 207360,
+      "tensor_audit_coverage": {
+        "forks_verified": 36,
+        "fresh_initializations_verified": 12,
+        "before_checkpoints": 168,
+        "final_checkpoints": 168,
+        "ordinary_packets": 17280,
+        "first_prequential_predictions_recomputed": 168,
+        "evaluation_calls": 6912,
+        "evaluation_prediction_calls_recomputed": 4920,
+        "intermediate_evaluation_calls_arithmetic_only": 1992,
+        "query_presentations": 3538944,
+        "support_presentations": 220224,
+        "observed_support_presentations": 219072
+      },
+      "primary_screen": {
+        "conditional": false,
+        "recurrent": false
+      },
+      "attribution_screen": {
+        "conditional": false,
+        "recurrent": true
+      },
+      "scope": "Portable file/source/protocol/analysis identity and coverage checks; original JSON/NPZ digests; uniform replay membership/draws and causal context chains; every raw all-action, performed-action, survival, mask and marginal score; held-out AUC, support-probe aggregation, seed bootstrap, fresh qualification, fixed primary/attribution gates and declared resource arithmetic. Saved model/optimizer and simulator checks are bound to the separately archived tensor audit and its exact coverage. No repository imports, pickle loading, ordinary retraining, independently reconstructed physical world or overwritten intermediate model states. File seals establish internal consistency, not an external signature."
+    }
+  },
+  "portable": {
+    "command": [
+      "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\.venv\\Scripts\\python.exe",
+      "-I",
+      "-B",
+      "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_development_portable_lwtrfv5o\\development\\verify_archive.py",
+      "--input",
+      "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_development_portable_lwtrfv5o\\development"
+    ],
+    "cwd": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_development_portable_lwtrfv5o",
+    "exit_code": 0,
+    "output": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\core_residual_checks\\development_portable_outside.json",
+    "output_sha256": "781818a49f7f0caa0ecf70f89f7a3b107982f05240790cf313ca48ff904e3c2b",
+    "stderr_bytes": 0,
+    "elapsed_seconds": 38.97334270000101,
+    "result": {
+      "passed": true,
+      "identity": {
+        "config_sha256": "e0ab9198f29aadf138a589e589146644828fdb64e64b44adfc9db3689db2a1a2",
+        "source_sha256": "c5ac7b538363930c68c999b60f5d26244eaf5b5eb676c8cf562d1ca354109a3b",
+        "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+      },
+      "standalone_verifier_sealed": true,
+      "artifact_files": 366,
+      "original_run_files": 1026,
+      "numerical_arrays": 336,
+      "jobs": 12,
+      "prefix_fits": 12,
+      "prefix_phases": 48,
+      "learning_trajectories": 36,
+      "fresh_references": 12,
+      "post_prefix_episodes": 120,
+      "total_phases": 168,
+      "training_arrivals": 552960,
+      "training_packets": 17280,
+      "optimizer_steps": 207360,
+      "tensor_audit_coverage": {
+        "forks_verified": 36,
+        "fresh_initializations_verified": 12,
+        "before_checkpoints": 168,
+        "final_checkpoints": 168,
+        "ordinary_packets": 17280,
+        "first_prequential_predictions_recomputed": 168,
+        "evaluation_calls": 6912,
+        "evaluation_prediction_calls_recomputed": 4920,
+        "intermediate_evaluation_calls_arithmetic_only": 1992,
+        "query_presentations": 3538944,
+        "support_presentations": 220224,
+        "observed_support_presentations": 219072
+      },
+      "primary_screen": {
+        "conditional": false,
+        "recurrent": false
+      },
+      "attribution_screen": {
+        "conditional": false,
+        "recurrent": true
+      },
+      "scope": "Portable file/source/protocol/analysis identity and coverage checks; original JSON/NPZ digests; uniform replay membership/draws and causal context chains; every raw all-action, performed-action, survival, mask and marginal score; held-out AUC, support-probe aggregation, seed bootstrap, fresh qualification, fixed primary/attribution gates and declared resource arithmetic. Saved model/optimizer and simulator checks are bound to the separately archived tensor audit and its exact coverage. No repository imports, pickle loading, ordinary retraining, independently reconstructed physical world or overwritten intermediate model states. File seals establish internal consistency, not an external signature."
+    }
+  },
+  "scope": "Archived script executed with -I -B, from a task-specific directory outside the repository. Python environment supplies NumPy only; verifier imports no live project or torch code and loads no pickles. No ordinary retraining."
+}

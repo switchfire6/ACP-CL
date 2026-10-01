@@ -1,0 +1,8 @@
+{
+  "utc": "2026-09-28T01:03:14.128799+00:00",
+  "passed": true,
+  "files_checked": 979,
+  "old_reports_checked": 720,
+  "changed": [],
+  "scope": "Interim byte-preservation check while main cohort is fitting; repeat after completion."
+}

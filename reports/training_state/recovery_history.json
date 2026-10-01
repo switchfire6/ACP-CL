@@ -1,0 +1,32 @@
+[
+  {
+    "recorded_utc": "2026-09-27T17:05:35.487314+00:00",
+    "reason": "User reported PC crash/restart; prior execution sessions unavailable and no study process found.",
+    "completed_episodes_at_resume": 0,
+    "prefix_checkpoints_at_resume": 8,
+    "episode_checkpoints_at_resume": 4,
+    "source_config_protocol_unchanged": true,
+    "workers": 8,
+    "torch_threads_per_worker": 1,
+    "cpu_affinity_mask": 85,
+    "logical_processor_indices": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "execution_note": "Resume original identity; eight worker processes share four permitted logical processors. This operational CPU-affinity restriction is supplemental to the original runtime manifest; crash cause is unknown."
+  },
+  {
+    "recorded_utc": "2026-09-27T17:09:43.331917+00:00",
+    "action": "Validated every remaining checkpoint archive CRC, deserialization, finite weights, and stored prefix/start model hashes after isolating corrupt files.",
+    "usable_checkpoints_verified": 52,
+    "damaged_checkpoint_files": 12,
+    "damaged_metadata_files": 4,
+    "recovery": "Restart stage 1 continuation for conditional seeds 8001--8004 from intact prefixes; rebuild recurrent prefixes 8001--8004 with identical seeds/data. Preserve all other valid partial and completed work.",
+    "completed_episode_files_preserved": 16,
+    "outcome_based_exclusions": 0,
+    "source_config_protocol_unchanged": true,
+    "cpu_affinity_mask": 85
+  }
+]

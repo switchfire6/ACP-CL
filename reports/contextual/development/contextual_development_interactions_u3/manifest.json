@@ -1,0 +1,71 @@
+{
+  "identity": {
+    "config_sha256": "cf0c5b7d7ebe41b0c3bb979ce7b3339473c886adf77f793599d392af509f94b2",
+    "source_sha256": "df7674c706d3371bdc8dd134f0ff6cc7116378d25cae99197dd16082b1174607",
+    "runtime_sha256": "dd7ef2968c4cb3d4ff91d4e3a8309f85476415d7b5207655e73be0f6101bea5a"
+  },
+  "config": {
+    "study": "contextual_development_interactions_u3",
+    "seeds": [
+      117,
+      118
+    ],
+    "gaps": [
+      "long"
+    ],
+    "branches": [
+      "return",
+      "novel",
+      "noise"
+    ],
+    "methods": [
+      "pooled",
+      "recurrent",
+      "oracle"
+    ],
+    "block_size": 1024,
+    "batch_size": 32,
+    "eval_size": 384,
+    "probe_every": 256,
+    "support_replicates": 4,
+    "width": 64,
+    "experts": 4,
+    "context_width": 12,
+    "decoder_width": 64,
+    "lr": 0.002,
+    "memory_packets": 16,
+    "updates_per_batch": 3,
+    "evidence_strength": 1.0,
+    "feedback_noise": 0.2,
+    "threads": 1,
+    "workers": 2,
+    "interaction_features": true
+  },
+  "runtime": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "workers": 2,
+    "deterministic": true
+  },
+  "source_files": {
+    "acp_cl/__init__.py": "237a5e7ec88b7899b5734b5c3c1225b3ad5542697d2c86ea30263e9f7c4328eb",
+    "acp_cl/contextual/__init__.py": "f69c2214122a727f47a138aace827188be54a453990707411708d170c994431c",
+    "acp_cl/contextual/learner.py": "a8789e0db44adb0f7215e9d4e4ff74dc063c3e55b8c87e1c13ac14f41dccfce1",
+    "acp_cl/contextual/study.py": "320d9bb36c6dfbdf37cf8a695599c06d87eaa6631f8fd36d1adcef65c4cb34f9",
+    "acp_cl/contextual/world.py": "1fdd8333266fb6d53bcf48acbf1ca489cbdfaeb85849c02a3922aa9589a4289b",
+    "acp_cl/conditional/__init__.py": "df6dc410782408dd558e15bf367d133de14b17062642c0bf2a687f75186dc693",
+    "acp_cl/conditional/learner.py": "f094a5e38cded7770048bff73cbab7a89dd681bf23e3b0dca592463c50a026ac",
+    "acp_cl/conditional/study.py": "a972839d14c26add6841abbca0fb0f78b701feead8f8819e143738b6cd58ba65",
+    "acp_cl/conditional/world.py": "d15f2c092d8bbee653817f27937b3fa6223a1709f2e0663a6ee45dc0173da0d8",
+    "acp_cl/persistence/__init__.py": "f286031bdbfec32620758cea371551a26c95b963c7896f363de2f0dab34dd176",
+    "acp_cl/persistence/learner.py": "82aca79cb86c6306d03583d5b62c921726bbf3067a0f9363eab9f853bbc31c85",
+    "acp_cl/persistence/memory.py": "60812315aa082e7a1b0f210b393e2aa0a7090ab6a7083667f8d5356e6469f322",
+    "acp_cl/persistence/study.py": "71d694b487ea12ca7c226d8db5db4e65708e656c0586102a01946518f4d4fb82",
+    "acp_cl/persistence/world.py": "a545aacde99158e19842c0df31774942e98d84ce72c0c38057f0485d7c855460"
+  },
+  "created_utc": "2026-09-27T04:37:28.371919+00:00"
+}

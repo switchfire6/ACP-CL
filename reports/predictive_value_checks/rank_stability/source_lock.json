@@ -1,0 +1,19 @@
+{
+  "locked_utc": "2026-09-28T00:26:31.308530+00:00",
+  "designation": "retrospective exploratory design after reviewing completed primary failures and secondary summaries",
+  "files": {
+    "scripts/diagnose_predictive_rank_stability.py": "d981cb13288a9cf45a25fd9d7015bc2f85e849c5ff366b969674db30a258046b",
+    "reports/predictive_value_checks/rank_stability/design.md": "b2d7494c729d5cb6364426dade9577448bc4e2b5103802a075faeb15c88919ba"
+  },
+  "input": {
+    "path": "reports/predictive_value/diagnostic/raw_results.jsonl.gz",
+    "sha256": "3a2f5a6d1d14f82d944c3c16f8413fe1c3a3550af2bcb3163c9fd1eed546f44f",
+    "bytes": 420824
+  },
+  "source_zip_sha256": "5d56b4233bb625cfc14f689739702c2525bc2e23c8eade3045da9a497044e0d2",
+  "python": "3.10.11",
+  "before_correlations": true,
+  "no_fitting": true,
+  "no_new_gates": true,
+  "no_retuning": true
+}

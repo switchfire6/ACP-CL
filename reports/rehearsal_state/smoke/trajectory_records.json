@@ -1,0 +1,138 @@
+{
+  "conditional_15991/result.json": {
+    "identity": {
+      "config_sha256": "7e45c4ffb7648432d2b353b6bcdbc70baccad51715b2cb07e4d55b5da33a5576",
+      "source_sha256": "80e0110241041c303e869b8f85c274a6262aaac4ecc8d399bb837a5c1ddf9a2d",
+      "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf"
+    },
+    "seed": 15991,
+    "model": "conditional",
+    "affinity": 5,
+    "phase_names": [
+      "prefix_0",
+      "prefix_1",
+      "acquisition",
+      "score_0",
+      "validation_0",
+      "inter_assessment",
+      "score_1",
+      "validation_1"
+    ],
+    "phase_hashes": {
+      "prefix_0": "61a9455005a95104aa5652127f5820ad81b3dce1c7dce31889c6422a906ae809",
+      "prefix_1": "25f876dd6546492fcfb136f56f2e0878a6a3926784882af4fcd065f7894188a0",
+      "acquisition": "5721ffd3eb6799f4d396b8fcd75a3876a6562fda702d7f9d02ebc2ed4574a303",
+      "score_0": "5947594ae00951e0aa18a4ac7dad6c0ffe292a23d8807ab233ce5986b94311ad",
+      "validation_0": "08187e0303fb76bdb78cee28cfae5d87972e0901bbdb8e9de2ba45d4340cd5e6",
+      "inter_assessment": "208f30a584ce4602b0cbfd4f8550f11b64fbc726ee8f998c51f9585a3d45c545",
+      "score_1": "a534ea87764197f2ff300fad9f4d7926cadf87afe002eda9d7315dad80556e8f",
+      "validation_1": "8c2c49f8c01d17bdbb6d06a22d4b620169210e1049d613e1850a53896059b259"
+    },
+    "assessment_hashes": {
+      "0": "7ac65f117a634dea197891e0813321f47aec3ce299dae4ef7bfb8e57b12ec8d0",
+      "1": "b5ba01c42e46e64b29bbe4b5094affafc8e3fbca494fcfd88806e138ac580062"
+    },
+    "diagnostics": {
+      "initial_hash": "23f4bcefe153ad591786d49c71a57ee3400d15ef2e88faade0e2a4d9434875e3",
+      "final_hash": "f9c35134c0f6f0f479251c27739eeb06861dae009dca099eaf9c7ed2000ad519",
+      "parameters": 2804,
+      "model_bytes": 11216,
+      "optimizer_bytes": 22520,
+      "peak_replay_bytes": 49440,
+      "memory_ids": [
+        14,
+        24,
+        21,
+        16
+      ],
+      "packets_seen": 52,
+      "history_bytes": 6176,
+      "encoder_displacement": 1.432578317268312,
+      "cost": {
+        "arrivals": 416,
+        "optimizer_steps": 52,
+        "query_presentations": 832,
+        "support_presentations": 832,
+        "replay_presentations": 408,
+        "duplicate_presentations": 8,
+        "training_seconds": 0.41759499999898253
+      },
+      "initial_encoder_hash": "e230cfffe57ba78008ea72445c6a2fb7dc26429451252f7330b2890056a6607b",
+      "encoder_hash": "ede60fb8049b4eff9b7d0e81fbc7804c87cd3c10e6c4c74001ad3b3d3863d99b"
+    },
+    "final_signature": "1306f4c27f1d5e81c86e7ec15c610e8ff6873bff383af8cd794844873bfb969d",
+    "prequential_work": {
+      "forwards": 52,
+      "query_presentations": 416,
+      "support_presentations": 416
+    }
+  },
+  "recurrent_15991/result.json": {
+    "identity": {
+      "config_sha256": "7e45c4ffb7648432d2b353b6bcdbc70baccad51715b2cb07e4d55b5da33a5576",
+      "source_sha256": "80e0110241041c303e869b8f85c274a6262aaac4ecc8d399bb837a5c1ddf9a2d",
+      "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf"
+    },
+    "seed": 15991,
+    "model": "recurrent",
+    "affinity": 5,
+    "phase_names": [
+      "prefix_0",
+      "prefix_1",
+      "acquisition",
+      "score_0",
+      "validation_0",
+      "inter_assessment",
+      "score_1",
+      "validation_1"
+    ],
+    "phase_hashes": {
+      "prefix_0": "0320d7b04b9d714b45f40ddf32b019f2dd421c2ae91c1661314e8ab54a31dd4c",
+      "prefix_1": "5bd5b3f434eca32ce0fae679882ec598f275725dd5de26af1b4df3c31341e2b8",
+      "acquisition": "cefd62720d771a7a9aaa0bcbcd15a1fa59f9f9ea091e7e4f39e8e047ab97c8a0",
+      "score_0": "074a38ba3efc849ddadf32ad86596d11a3e7e3aaa401f8d28e02f785da1a42c6",
+      "validation_0": "5c77589e8ca2dc08ae484910de79c5490aed987218d567ead31ca220c0b6589c",
+      "inter_assessment": "6e6ae6f60a4c7f73a4b2d5656d0da1556ab3928808960ef17c8c39034d91ed1c",
+      "score_1": "e3162b0170571fd60f0f904998ce112bfbf5017778c4286bb5d99d7fee650c4b",
+      "validation_1": "03b7c1577ef6e56dd5e5207132c34a7eed42eb495ade92506e5c3f847d31f117"
+    },
+    "assessment_hashes": {
+      "0": "3cc5afa9e2131cbda8e244f2fc32e8b5cd74868457c6b68a715beb174af1aa43",
+      "1": "ade98c431e735b51e5a4e557f5ddb7ac350896c3f14978e59a17da129c555cba"
+    },
+    "diagnostics": {
+      "initial_hash": "bb2b4d85ccdf30da3445c03f893d17d5d0ffa2ee2b64267dc86eab90c82f87c8",
+      "final_hash": "23a79724495c9f5ca9d6c29cef3afa664aefaeee9c3597490c9d84fd4a43de2f",
+      "parameters": 2959,
+      "model_bytes": 11836,
+      "optimizer_bytes": 23728,
+      "peak_replay_bytes": 49440,
+      "memory_ids": [
+        14,
+        24,
+        21,
+        16
+      ],
+      "packets_seen": 52,
+      "history_bytes": 6176,
+      "encoder_displacement": 1.1137843024425358,
+      "cost": {
+        "arrivals": 416,
+        "optimizer_steps": 52,
+        "query_presentations": 832,
+        "support_presentations": 832,
+        "replay_presentations": 408,
+        "duplicate_presentations": 8,
+        "training_seconds": 0.38331579999794485
+      },
+      "initial_encoder_hash": "e230cfffe57ba78008ea72445c6a2fb7dc26429451252f7330b2890056a6607b",
+      "encoder_hash": "47f62f4efb40cf0596947f46ec88d61a65fc7aea1ea922bbbdad3a7f77a9c71a"
+    },
+    "final_signature": "20353e7185b7d2e13197dd2f44885e57e65cb83210ce846b90106721addc071c",
+    "prequential_work": {
+      "forwards": 52,
+      "query_presentations": 416,
+      "support_presentations": 416
+    }
+  }
+}

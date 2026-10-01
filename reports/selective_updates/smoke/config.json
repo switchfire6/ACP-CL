@@ -1,0 +1,31 @@
+{
+  "study": "selective_updates_smoke",
+  "kind": "development",
+  "seeds": [
+    13991
+  ],
+  "models": [
+    "conditional",
+    "recurrent"
+  ],
+  "prefix_blocks": 2,
+  "prefix_size": 64,
+  "episode_size": 128,
+  "batch_size": 8,
+  "eval_size": 64,
+  "probe_every": 64,
+  "support_replicates": 1,
+  "width": 8,
+  "experts": 4,
+  "context_width": 4,
+  "decoder_width": 8,
+  "interaction_features": true,
+  "lr": 0.002,
+  "memory_packets": 4,
+  "updates_per_batch": 1,
+  "evidence_strength": 1.0,
+  "feedback_noise": 0.2,
+  "threads": 1,
+  "workers": 1,
+  "cpu_affinity": 0
+}

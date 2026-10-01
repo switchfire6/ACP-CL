@@ -1,0 +1,123 @@
+{
+  "identity": {
+    "config_sha256": "de1ab9b5a054b8e2820df8ed18f9957ca28306d0f275952a0d72a8189713948f",
+    "source_sha256": "e95a0b9823ed139a099a547f5b5c96196ba9266b09c1e3ddbe62b68186dff11d",
+    "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+  },
+  "trajectories": 2,
+  "blocks": 6,
+  "fresh_episodes": 6,
+  "prefix_fits": 2,
+  "policy_evaluations": 24,
+  "jobs": [
+    {
+      "seed": 29,
+      "model": "conditional",
+      "affinity": 16777215,
+      "final_state": {
+        "batches": 10,
+        "adoptions": {
+          "periodic": 5,
+          "single": 1,
+          "sustained": 0
+        },
+        "proposal_count": 5,
+        "committed": {
+          "periodic": "75fab70d2928fed27f7c912696ba9e21d6aebf6df08a40d94ea7ba28cc63fb98",
+          "single": "75fab70d2928fed27f7c912696ba9e21d6aebf6df08a40d94ea7ba28cc63fb98",
+          "sustained": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1"
+        },
+        "proposal": null,
+        "proposal_batch": null,
+        "gains": {
+          "periodic": [],
+          "single": [],
+          "sustained": []
+        },
+        "draft": {
+          "initial_hash": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1",
+          "final_hash": "b6acf9fdf68b3c0841eb0a64cc3a841f0e3e4ede3f35917a2215b8ff4676e316",
+          "parameters": 2804,
+          "model_bytes": 11216,
+          "optimizer_bytes": 22520,
+          "peak_replay_bytes": 43264,
+          "memory_ids": [
+            0,
+            1,
+            4,
+            7
+          ],
+          "packets_seen": 10,
+          "history_bytes": 6176,
+          "encoder_displacement": 0.4308726687814398,
+          "cost": {
+            "arrivals": 80,
+            "optimizer_steps": 10,
+            "query_presentations": 160,
+            "support_presentations": 160,
+            "replay_presentations": 72,
+            "duplicate_presentations": 8,
+            "training_seconds": 0.06618799999887415
+          },
+          "initial_encoder_hash": "1cbb7cb89d56186fa46395b2ea64fad9eeb80daec86dafe429a9e2dfd689c03e",
+          "encoder_hash": "7dd6073215c3f67af17dc540931b34360ae5c4f980c8215208ee9a1fed0e11df"
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "model": "recurrent",
+      "affinity": 16777215,
+      "final_state": {
+        "batches": 10,
+        "adoptions": {
+          "periodic": 5,
+          "single": 1,
+          "sustained": 0
+        },
+        "proposal_count": 5,
+        "committed": {
+          "periodic": "823f2f11cacaafc3e0a19ddb28a1acee6311444a7edda1cda7419e3fda33a9be",
+          "single": "d6dda07275cfe8f02970701174627a9bc9f656cdb4d4e29f4fc8d4cb83368626",
+          "sustained": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743"
+        },
+        "proposal": null,
+        "proposal_batch": null,
+        "gains": {
+          "periodic": [],
+          "single": [],
+          "sustained": []
+        },
+        "draft": {
+          "initial_hash": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743",
+          "final_hash": "0845257e919a308f24c3b1cab388c5a020558b25de4b42212687450afa1d7b91",
+          "parameters": 2959,
+          "model_bytes": 11836,
+          "optimizer_bytes": 23728,
+          "peak_replay_bytes": 43264,
+          "memory_ids": [
+            0,
+            1,
+            4,
+            7
+          ],
+          "packets_seen": 10,
+          "history_bytes": 6176,
+          "encoder_displacement": 0.4581025696349437,
+          "cost": {
+            "arrivals": 80,
+            "optimizer_steps": 10,
+            "query_presentations": 160,
+            "support_presentations": 160,
+            "replay_presentations": 72,
+            "duplicate_presentations": 8,
+            "training_seconds": 0.061269699999684235
+          },
+          "initial_encoder_hash": "1cbb7cb89d56186fa46395b2ea64fad9eeb80daec86dafe429a9e2dfd689c03e",
+          "encoder_hash": "48a1e04db8bf8c368d377bbe39b2e61345f20368d4b789b202143a07b42d4dce"
+        }
+      }
+    }
+  ],
+  "completed_utc": "2026-09-27T20:23:01.709866+00:00"
+}

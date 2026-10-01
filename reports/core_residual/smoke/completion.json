@@ -1,0 +1,30 @@
+{
+  "identity": {
+    "config_sha256": "05df659afa6aecf3e511a87b345e796de58265bd77e2fd5a1b2fc55cffcf2849",
+    "source_sha256": "c5ac7b538363930c68c999b60f5d26244eaf5b5eb676c8cf562d1ca354109a3b",
+    "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf"
+  },
+  "jobs": 2,
+  "prefix_fits": 2,
+  "prefix_phases": 4,
+  "learning_trajectories": 6,
+  "fresh_references": 2,
+  "post_prefix_episodes": 20,
+  "total_phases": 24,
+  "training_arrivals": 1856,
+  "training_packets": 232,
+  "optimizer_steps": 232,
+  "job_records": [
+    {
+      "seed": 16991,
+      "model": "conditional",
+      "affinity": 5
+    },
+    {
+      "seed": 16991,
+      "model": "recurrent",
+      "affinity": 5
+    }
+  ],
+  "completed_utc": "2026-09-28T02:27:23.691241+00:00"
+}

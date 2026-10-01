@@ -1,0 +1,69 @@
+{
+  "identity": {
+    "config_sha256": "48f962d406e84cb90087b8312ea62ae9f5996eac6c0609b51f95cf6ac27db53b",
+    "source_sha256": "7e152cf8e1589cb2629652327d8a4821b9a37048560e628fd160b48f3392322c",
+    "runtime_sha256": "86823054be75bc3dd98f10a91791df395bc8203ae2baa100568a8cc2125ee946"
+  },
+  "config": {
+    "study": "conditional_pilot",
+    "seeds": [
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008
+    ],
+    "schedules": [
+      "recurring",
+      "stable",
+      "unpredictable"
+    ],
+    "methods": [
+      "pooled",
+      "conditional",
+      "shuffled",
+      "current_only",
+      "frozen_features",
+      "oracle"
+    ],
+    "block_size": 1024,
+    "batch_size": 32,
+    "eval_size": 384,
+    "probe_every": 256,
+    "support_replicates": 4,
+    "width": 64,
+    "experts": 4,
+    "lr": 0.002,
+    "memory_packets": 16,
+    "updates_per_batch": 3,
+    "evidence_strength": 1.0,
+    "threads": 1,
+    "workers": 4
+  },
+  "source_files": {
+    "acp_cl/__init__.py": "237a5e7ec88b7899b5734b5c3c1225b3ad5542697d2c86ea30263e9f7c4328eb",
+    "acp_cl/conditional/__init__.py": "df6dc410782408dd558e15bf367d133de14b17062642c0bf2a687f75186dc693",
+    "acp_cl/conditional/learner.py": "f094a5e38cded7770048bff73cbab7a89dd681bf23e3b0dca592463c50a026ac",
+    "acp_cl/conditional/study.py": "a972839d14c26add6841abbca0fb0f78b701feead8f8819e143738b6cd58ba65",
+    "acp_cl/conditional/world.py": "d15f2c092d8bbee653817f27937b3fa6223a1709f2e0663a6ee45dc0173da0d8",
+    "acp_cl/persistence/__init__.py": "f286031bdbfec32620758cea371551a26c95b963c7896f363de2f0dab34dd176",
+    "acp_cl/persistence/learner.py": "82aca79cb86c6306d03583d5b62c921726bbf3067a0f9363eab9f853bbc31c85",
+    "acp_cl/persistence/memory.py": "60812315aa082e7a1b0f210b393e2aa0a7090ab6a7083667f8d5356e6469f322",
+    "acp_cl/persistence/study.py": "71d694b487ea12ca7c226d8db5db4e65708e656c0586102a01946518f4d4fb82",
+    "acp_cl/persistence/world.py": "a545aacde99158e19842c0df31774942e98d84ce72c0c38057f0485d7c855460"
+  },
+  "runtime": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "workers": 4,
+    "deterministic": true
+  },
+  "created_utc": "2026-09-27T03:05:58.153734+00:00"
+}

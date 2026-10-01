@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-09-28T03:25:48.397160+00:00",
+  "failed_lock": "reports/core_residual_outputs/smoke/manifest.json",
+  "failure": "Checkpoint law.active is a tuple; JSON phase record stores it as a list. Raw Python equality rejected equivalent metadata before any component forecast.",
+  "repair": "Normalize trusted checkpoint record through JSON before full record equality. No field is omitted.",
+  "new_smoke": "reports/core_residual_outputs/smoke_v2",
+  "criteria_changed": false,
+  "main_scores_seen": false,
+  "base_files_changed": false
+}

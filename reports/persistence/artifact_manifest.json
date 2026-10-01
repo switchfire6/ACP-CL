@@ -1,0 +1,33 @@
+{
+  "files": {
+    "reports/persistence/analysis_source.zip": "2e5a7c9455f63d29154c44745134a0c51beffb0d7dce97e8aacc3f1690c397c9",
+    "reports/persistence/analysis_source_manifest.json": "fd9c44606686a7ec724f8ca73e97466b4985dc52f4637abfced16a129b5d9e8c",
+    "reports/persistence/archive.json.gz": "923bf5ac5833b77b9c4c6f212d1485fd6d32f4474749f3e3e239c66c4a216034",
+    "reports/persistence/audit.json": "9606c687822a0453ceb8ad68ab3622f62f09137fcae2dd4a736b4d7c82bcacd8",
+    "reports/persistence/completion.json": "28ebeeac66173d78dd90c9978798a75753523b7524314ce662854dfb81fdb736",
+    "reports/persistence/development_artifacts.json": "a4d32cc14e40f5fa5e8188b4811806016232f542fe8d4acd9bb8a616e6fbf219",
+    "reports/persistence/development_ledger.md": "c36b1aadbadbcfcefee99167b30f1853bf76c7725b8ccbb8d6f8a9a6318a56e3",
+    "reports/persistence/development_v1/completion.json": "2c81c3599f6b4228c5abdcadca22c609dcebdbce313e17a5fc8454e77bd64f8e",
+    "reports/persistence/development_v1/long_scratch_117.json": "c276eda87fbc0567a5aa2a6c401562febe86e17f081608ae5a1868317b307dc2",
+    "reports/persistence/development_v1/manifest.json": "f4743657c474a33424d53b365293ffa231a7bf9a8756d99f2c25a1b1d8e48b22",
+    "reports/persistence/development_v1/result.json": "991c9c6d190e34ee1aa44bd946ef5c17f61e9ded4f5b931e3bd354c4d424ffda",
+    "reports/persistence/development_v1/training_source.zip": "af870850761e11ea34cdc617b5341bcd8dd08a37fc7a8bd5205f18a0cce40c9f",
+    "reports/persistence/development_v2/completion.json": "1b7999b1e72ce2da84811b98320d442a9c286cd01b5d06b78eb6692806b8bad1",
+    "reports/persistence/development_v2/long_scratch_117.json": "38acb8dfcafad785bbc4a3464b9fa1fdb6510f8077ed00af327f62994bfe2dce",
+    "reports/persistence/development_v2/manifest.json": "a0ebd66351f7a30ba22e92cffee0b586a379653910aa774a1b3dc43a92535aa6",
+    "reports/persistence/development_v2/result.json": "ded2d2676aba31a10ea86417c72fc8b21ea5d6f57bbd0a49fa0c9f61d6488051",
+    "reports/persistence/development_v2/training_source.zip": "f0cde8d1e91d3f0797c1cffefbadad805b45870fad63a59ccc668579b7e6378d",
+    "reports/persistence/engineering_verification.json": "e2a77587b4dfaf1392456f865083f90e1288364a2f6607f5a5b1bb1159fd757b",
+    "reports/persistence/manifest.json": "af0cf32f5414581c620bb8bde282435db7d00cf86b7580316e91fabefa8ad1d8",
+    "reports/persistence/overview.pdf": "09d56da097c0364458ee9d034ac836404257b821bd0b91c24dc8385dde88293e",
+    "reports/persistence/overview.png": "d2e7c6a9671c24219e453016dcc020c4dd01e4226e8d006a6a030b153d37761c",
+    "reports/persistence/overview.svg": "f7cc807413b072d5abe4257f50e7659d85edbd2439920c519a847b9487ce5bc0",
+    "reports/persistence/protocol_at_lock.md": "cf1c4b31ebcdded39ca1acb8f8d74ceab508d265472a985fb6051e5f1a55e369",
+    "reports/persistence/protocol_lock.json": "7d75fe96816d6effc3087925b269ae5da2f6b75c8e8e179055cce273c254139b",
+    "reports/persistence/summary.json": "d5c1b12677d7a7894f7802b24bc513842357b232368359ff1b2a648b4f924534",
+    "reports/persistence/summary.md": "8ae8211965b26d4bcdb52df8f7aa29c511d6d3317bc749295106087bbd727a62",
+    "reports/persistence/training_source.zip": "8a9a7be855b934270be1e35f1ca615f673d858183e4f60d3b9c45b76d326f17a",
+    "reports/persistence_results.md": "f854e349b96cd087fda87d450aaa8a8a53aaf8be4120af83d0ee24ed1c6e2dab"
+  },
+  "training_source_sha256": "dd9eb69a45f475326e20c101b0fb7ef500e9d59ca9c69f75a0afbae5968a32f3"
+}

@@ -1,0 +1,61 @@
+{
+  "identity": {
+    "config_sha256": "612bd661856797b238b47792f24783b9f8d671afdbbc761eb192eee498a6e360",
+    "source_sha256": "6f3561f485bf5dad9577be231b2542bba0c4682ac0b847e03f385b1c57271d39",
+    "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+  },
+  "trajectories": 8,
+  "episodes": 48,
+  "prefix_fits": 6,
+  "jobs": [
+    {
+      "seed": 19,
+      "model": "conditional",
+      "policy": "uniform",
+      "affinity": 16777215
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "policy": "recent",
+      "affinity": 16777215
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "policy": "split",
+      "affinity": 16777215
+    },
+    {
+      "seed": 19,
+      "model": "conditional",
+      "policy": "fresh",
+      "affinity": 16777215
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "policy": "uniform",
+      "affinity": 16777215
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "policy": "recent",
+      "affinity": 16777215
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "policy": "split",
+      "affinity": 16777215
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "policy": "fresh",
+      "affinity": 16777215
+    }
+  ],
+  "completed_utc": "2026-09-27T18:50:17.821731+00:00"
+}

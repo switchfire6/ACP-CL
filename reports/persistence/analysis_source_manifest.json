@@ -1,0 +1,18 @@
+{
+  "scripts/summarize_persistence.py": "3d956629d9c59e1f1552562cf782509af4cc30577536963ba87704fa06a31360",
+  "scripts/plot_persistence.py": "266621bc05135c370dc931135a1b91466b683c519ca451c41e6f2cfc40a1d486",
+  "scripts/audit_persistence.py": "da4eee3cdc5625ea4e6ca6a2fc7d9e1a4176368765a74f31cea88c20cbe2cd4b",
+  "tests/test_persistence.py": "af38c3b2935305be2f3fce13c3f3ef17e6c758f32e855b47c2bde7ae0cf7b55b",
+  "tests/test_persistence_summary.py": "bc83246842398d90a2db06450dd861771759576a5c73316b78796ddcb69ed6b6",
+  "docs/joint_persistence.md": "d6656531f68d269f6401815c24dceffb01ceb6c20ffa9abe5e0d5548cb01ba04",
+  "configs/persistence_pilot.json": "61dfbdfd8f5e29e4d93a7a37c3b76194d383ca31d8250ab4b3e9071054444532",
+  "configs/persistence_development.json": "d5d659005e9236881bc2104d146788cb724291613b7fd4206e260d077fef9a62",
+  "configs/persistence_smoke.json": "7bc64f9feaa7204b5f1184370d202b076f16c7acd084642ef500c09d61d0cb56",
+  "pyproject.toml": "af7718412da17635efb9b638e6e85f114e47ff544bc1f1f845173f0cd79db4ba",
+  "requirements-lock.txt": "445b4f198ed54c80a74fb42da3f11b19c646fd18e0887769f6b0bf02fa2c0691",
+  "reports/persistence_results.md": "f854e349b96cd087fda87d450aaa8a8a53aaf8be4120af83d0ee24ed1c6e2dab",
+  "reports/persistence/protocol_lock.json": "7d75fe96816d6effc3087925b269ae5da2f6b75c8e8e179055cce273c254139b",
+  "reports/persistence/protocol_at_lock.md": "cf1c4b31ebcdded39ca1acb8f8d74ceab508d265472a985fb6051e5f1a55e369",
+  "reports/persistence/development_ledger.md": "c36b1aadbadbcfcefee99167b30f1853bf76c7725b8ccbb8d6f8a9a6318a56e3",
+  "reports/persistence/engineering_verification.json": "e2a77587b4dfaf1392456f865083f90e1288364a2f6607f5a5b1bb1159fd757b"
+}

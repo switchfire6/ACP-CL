@@ -1,0 +1,64 @@
+{
+  "locked_utc": "2026-09-27T02:04:36Z",
+  "config": {
+    "study": "joint persistence: locked eight-seed first pilot",
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1008,
+      1019
+    ],
+    "schedules": [
+      "short",
+      "long",
+      "no_return",
+      "reversal"
+    ],
+    "methods": [
+      "none",
+      "uniform",
+      "recent",
+      "coverage",
+      "recurrence",
+      "relevance",
+      "joint",
+      "frozen_encoder",
+      "frozen_late"
+    ],
+    "block_size": 1024,
+    "batch_size": 32,
+    "eval_size": 384,
+    "probe_every": 256,
+    "width": 64,
+    "lr": 0.002,
+    "memory_capacity": 128,
+    "updates_per_batch": 3,
+    "threads": 1
+  },
+  "config_sha256": "97777ab6dd24ee752db2136bc1dcf129ab3dc29afa9858c5dc4f5dfa5df492fa",
+  "source_sha256": "dd9eb69a45f475326e20c101b0fb7ef500e9d59ca9c69f75a0afbae5968a32f3",
+  "source_files": {
+    "acp_cl/__init__.py": "237a5e7ec88b7899b5734b5c3c1225b3ad5542697d2c86ea30263e9f7c4328eb",
+    "acp_cl/persistence/__init__.py": "f286031bdbfec32620758cea371551a26c95b963c7896f363de2f0dab34dd176",
+    "acp_cl/persistence/learner.py": "82aca79cb86c6306d03583d5b62c921726bbf3067a0f9363eab9f853bbc31c85",
+    "acp_cl/persistence/memory.py": "60812315aa082e7a1b0f210b393e2aa0a7090ab6a7083667f8d5356e6469f322",
+    "acp_cl/persistence/study.py": "71d694b487ea12ca7c226d8db5db4e65708e656c0586102a01946518f4d4fb82",
+    "acp_cl/persistence/world.py": "a545aacde99158e19842c0df31774942e98d84ce72c0c38057f0485d7c855460"
+  },
+  "protocol_sha256": "cf1c4b31ebcdded39ca1acb8f8d74ceab508d265472a985fb6051e5f1a55e369",
+  "primary": "joint minus uniform, H=12 survival before terminal return, long schedule",
+  "continuation": {
+    "primary_mean_pp_at_least": 2,
+    "positive_seeds_at_least": 6,
+    "coverage_difference_positive": true,
+    "maximum_secondary_loss_pp": 2,
+    "uniform_acquisition_gain_pp_at_least": 5
+  },
+  "no_comparative_tuning": true,
+  "all_runs_required": 288,
+  "fresh_references_required": 32
+}

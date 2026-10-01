@@ -1,0 +1,279 @@
+{
+  "identity": {
+    "config_sha256": "701a4782ef8e26593e98bc924e13a3dd481070aab80f0c61c9b634337a540f99",
+    "source_sha256": "e95a0b9823ed139a099a547f5b5c96196ba9266b09c1e3ddbe62b68186dff11d",
+    "runtime_sha256": "4ea3ea1f87cff2e70c31f788d2332c81583a711f4b402a26f9a1265dc448a77f"
+  },
+  "trajectories": 4,
+  "blocks": 72,
+  "fresh_episodes": 12,
+  "prefix_fits": 4,
+  "policy_evaluations": 288,
+  "jobs": [
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "affinity": 85,
+      "final_state": {
+        "batches": 4736,
+        "adoptions": {
+          "periodic": 592,
+          "single": 300,
+          "sustained": 102
+        },
+        "proposal_count": 592,
+        "committed": {
+          "periodic": "21985d1a3da2f5b3efa3bf0ae9e439119d1dded6548a31cb646b3a86f1a39e50",
+          "single": "21985d1a3da2f5b3efa3bf0ae9e439119d1dded6548a31cb646b3a86f1a39e50",
+          "sustained": "21985d1a3da2f5b3efa3bf0ae9e439119d1dded6548a31cb646b3a86f1a39e50"
+        },
+        "proposal": null,
+        "proposal_batch": null,
+        "gains": {
+          "periodic": [],
+          "single": [],
+          "sustained": []
+        },
+        "draft": {
+          "initial_hash": "672f232c425bb9c39c4180e755a7b8297581b556ce97a30b572a628bf2d31efb",
+          "final_hash": "a09e1ae0aaa2a7e7af38d04c6f19cf41f696ce3420863c16f758fdaa427c0df5",
+          "parameters": 57852,
+          "model_bytes": 231408,
+          "optimizer_bytes": 462904,
+          "peak_replay_bytes": 790656,
+          "memory_ids": [
+            4298,
+            2577,
+            3687,
+            3918,
+            1064,
+            2316,
+            3309,
+            981,
+            3508,
+            858,
+            1505,
+            4722,
+            1324,
+            688,
+            3966,
+            4364
+          ],
+          "packets_seen": 4736,
+          "history_bytes": 24704,
+          "encoder_displacement": 139.85360216609945,
+          "cost": {
+            "arrivals": 151552,
+            "optimizer_steps": 56832,
+            "query_presentations": 3637248,
+            "support_presentations": 3637248,
+            "replay_presentations": 1818240,
+            "duplicate_presentations": 384,
+            "training_seconds": 415.60810719995425
+          },
+          "initial_encoder_hash": "65b80ea80cd0d7d8a97f9b4100b6a0d6ead8f357fc916a20f0641e5fcd318a93",
+          "encoder_hash": "f24453bf74fc1bdcbc5287857e383e58345e81eea6f7702ef31e421a567851df"
+        }
+      }
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "affinity": 85,
+      "final_state": {
+        "batches": 4736,
+        "adoptions": {
+          "periodic": 592,
+          "single": 299,
+          "sustained": 106
+        },
+        "proposal_count": 592,
+        "committed": {
+          "periodic": "5af8c5dbc65833bc08635de0c1328bb2215860eb0c6c9ce501a7527347652bc6",
+          "single": "6f692f8f34c9a919e62df4c35ee61aeb69e290a14905ea3a8869191483b8a402",
+          "sustained": "6f692f8f34c9a919e62df4c35ee61aeb69e290a14905ea3a8869191483b8a402"
+        },
+        "proposal": null,
+        "proposal_batch": null,
+        "gains": {
+          "periodic": [],
+          "single": [],
+          "sustained": []
+        },
+        "draft": {
+          "initial_hash": "aa5c921ad3045af26e23e89a9f7ff9f49671f8cacfe7f2642b8858b231a7b495",
+          "final_hash": "45e6bf31c06f9678275b7f58380e50aba9b1a7d0cee20866f1fb66a7700bb341",
+          "parameters": 57852,
+          "model_bytes": 231408,
+          "optimizer_bytes": 462904,
+          "peak_replay_bytes": 790656,
+          "memory_ids": [
+            264,
+            102,
+            3915,
+            1167,
+            2360,
+            2514,
+            2898,
+            4071,
+            3023,
+            738,
+            1481,
+            3430,
+            257,
+            4224,
+            966,
+            153
+          ],
+          "packets_seen": 4736,
+          "history_bytes": 24704,
+          "encoder_displacement": 141.6667685500882,
+          "cost": {
+            "arrivals": 151552,
+            "optimizer_steps": 56832,
+            "query_presentations": 3637248,
+            "support_presentations": 3637248,
+            "replay_presentations": 1818240,
+            "duplicate_presentations": 384,
+            "training_seconds": 417.8917439001052
+          },
+          "initial_encoder_hash": "74e5cfef6071e3fd8553ca1d3607e37963daa5c230b769451fb9d85fd21c6678",
+          "encoder_hash": "5eaa9b751267ee52063715bff37ff03268765ef80fa1323debf6215672c28e7f"
+        }
+      }
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "affinity": 85,
+      "final_state": {
+        "batches": 4736,
+        "adoptions": {
+          "periodic": 592,
+          "single": 280,
+          "sustained": 113
+        },
+        "proposal_count": 592,
+        "committed": {
+          "periodic": "4740f3ae70b19c7dfe66b3e688f390af0b5a3f39018f5467c401aa1a864ba4dd",
+          "single": "4740f3ae70b19c7dfe66b3e688f390af0b5a3f39018f5467c401aa1a864ba4dd",
+          "sustained": "ce79bcd86c0518f1f089c036f6c683ad291099d6ab440590b78801ce7d6e5f0f"
+        },
+        "proposal": null,
+        "proposal_batch": null,
+        "gains": {
+          "periodic": [],
+          "single": [],
+          "sustained": []
+        },
+        "draft": {
+          "initial_hash": "333922c8817b1a690936c0d74b9c244ffd6c56a76f4a48b0d38c1c0fe7fa7ad4",
+          "final_hash": "8a7f6d0e0a4e02ee7bb29edbf9574f255fad5a60b21e2dab478a4b3bab9103ea",
+          "parameters": 57831,
+          "model_bytes": 231324,
+          "optimizer_bytes": 462704,
+          "peak_replay_bytes": 790656,
+          "memory_ids": [
+            264,
+            102,
+            3915,
+            1167,
+            2360,
+            2514,
+            2898,
+            4071,
+            3023,
+            738,
+            1481,
+            3430,
+            257,
+            4224,
+            966,
+            153
+          ],
+          "packets_seen": 4736,
+          "history_bytes": 24704,
+          "encoder_displacement": 136.0164759031408,
+          "cost": {
+            "arrivals": 151552,
+            "optimizer_steps": 56832,
+            "query_presentations": 3637248,
+            "support_presentations": 3637248,
+            "replay_presentations": 1818240,
+            "duplicate_presentations": 384,
+            "training_seconds": 838.5148169000568
+          },
+          "initial_encoder_hash": "74e5cfef6071e3fd8553ca1d3607e37963daa5c230b769451fb9d85fd21c6678",
+          "encoder_hash": "cbd5e6d324841c4034aabd3e77a276fb640c5007b7999756f3a43aa38d50b3fd"
+        }
+      }
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "affinity": 85,
+      "final_state": {
+        "batches": 4736,
+        "adoptions": {
+          "periodic": 592,
+          "single": 285,
+          "sustained": 110
+        },
+        "proposal_count": 592,
+        "committed": {
+          "periodic": "2126d1b092cbd987957203c5727dba0ada1ddb9b7e8990a13a43cbf40cebc2ca",
+          "single": "000167d1f8cae0a42dd6a17cf2ecd061c89bbd97472a58513f872e976c2b3f1b",
+          "sustained": "000167d1f8cae0a42dd6a17cf2ecd061c89bbd97472a58513f872e976c2b3f1b"
+        },
+        "proposal": null,
+        "proposal_batch": null,
+        "gains": {
+          "periodic": [],
+          "single": [],
+          "sustained": []
+        },
+        "draft": {
+          "initial_hash": "0b7e2d506d485e79101ffe618c6f68a220cc1d10f8b8e060b94601542a2ed910",
+          "final_hash": "b5b377c0dc06954a3793ed7bab2e99839c6da83299184569955d7dc05a348be7",
+          "parameters": 57831,
+          "model_bytes": 231324,
+          "optimizer_bytes": 462704,
+          "peak_replay_bytes": 790656,
+          "memory_ids": [
+            4298,
+            2577,
+            3687,
+            3918,
+            1064,
+            2316,
+            3309,
+            981,
+            3508,
+            858,
+            1505,
+            4722,
+            1324,
+            688,
+            3966,
+            4364
+          ],
+          "packets_seen": 4736,
+          "history_bytes": 24704,
+          "encoder_displacement": 136.45913513219818,
+          "cost": {
+            "arrivals": 151552,
+            "optimizer_steps": 56832,
+            "query_presentations": 3637248,
+            "support_presentations": 3637248,
+            "replay_presentations": 1818240,
+            "duplicate_presentations": 384,
+            "training_seconds": 856.8079997999903
+          },
+          "initial_encoder_hash": "65b80ea80cd0d7d8a97f9b4100b6a0d6ead8f357fc916a20f0641e5fcd318a93",
+          "encoder_hash": "4366899c4773e9c47bb6df550ea1aeba43d4c05e515d6921b8dba7c401a9ca57"
+        }
+      }
+    }
+  ],
+  "completed_utc": "2026-09-27T20:45:57.524577+00:00"
+}

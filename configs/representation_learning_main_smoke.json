@@ -1,0 +1,36 @@
+{
+  "study": "representation_learning_main_smoke",
+  "kind": "main",
+  "seeds": [
+    18099
+  ],
+  "arms": [
+    "outcome",
+    "final_frame",
+    "sequence",
+    "compute"
+  ],
+  "batch_size": 8,
+  "eval_size": 64,
+  "probe_every": 32,
+  "support_replicates": 1,
+  "width": 8,
+  "experts": 4,
+  "context_width": 4,
+  "decoder_width": 8,
+  "interaction_features": true,
+  "lr": 0.002,
+  "memory_packets": 4,
+  "updates_per_batch": 1,
+  "compute_updates_per_batch": 2,
+  "auxiliary_weight": 1.0,
+  "evidence_strength": 1.0,
+  "threads": 1,
+  "workers": 1,
+  "cpu_affinity": 1365,
+  "episode_size": 64,
+  "prefix_size": 32,
+  "interleave_block": 32,
+  "interleave_cycles": 2,
+  "smoke": true
+}

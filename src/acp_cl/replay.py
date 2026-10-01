@@ -95,6 +95,8 @@ class ReservoirBuffer:
         size: int,
         device: str | torch.device = "cpu",
         stream: str = "train",
+        *,
+        generator: torch.Generator | None = None,
     ) -> ReplayBatch | None:
         if isinstance(size, bool) or int(size) != size or size < 0:
             raise ValueError("size must be a nonnegative integer")
@@ -102,7 +104,8 @@ class ReservoirBuffer:
             raise ValueError("stream must be 'train' or 'monitor'")
         if size == 0 or not len(self):
             return None
-        indices = torch.randperm(len(self), generator=self._sample_rngs[stream])[:size].tolist()
+        indices = torch.randperm(len(self), generator=generator if generator is not None
+                                 else self._sample_rngs[stream])[:size].tolist()
         x = torch.stack([self._x[i] for i in indices]).to(device)
         y = torch.stack([self._y[i] for i in indices]).to(device)
         logits = None

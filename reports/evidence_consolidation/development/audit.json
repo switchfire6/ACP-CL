@@ -1,0 +1,872 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "701a4782ef8e26593e98bc924e13a3dd481070aab80f0c61c9b634337a540f99",
+    "source_sha256": "e95a0b9823ed139a099a547f5b5c96196ba9266b09c1e3ddbe62b68186dff11d",
+    "runtime_sha256": "4ea3ea1f87cff2e70c31f788d2332c81583a711f4b402a26f9a1265dc448a77f"
+  },
+  "prefix_checkpoints": 4,
+  "block_before_checkpoints": 72,
+  "block_final_checkpoints": 72,
+  "fresh_before_checkpoints": 12,
+  "fresh_final_checkpoints": 12,
+  "decision_windows": 2368,
+  "block_checks": [
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 0,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 1,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 2,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 3,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 4,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 5,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 6,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 7,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 8,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 9,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 10,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 11,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 12,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 13,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 14,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 15,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 16,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "block": 17,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 0,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 1,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 2,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 3,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 4,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 5,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 6,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 7,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 8,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 9,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 10,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 11,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 12,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 13,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 14,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 15,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 16,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "block": 17,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 0,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 1,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 2,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 3,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 4,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 5,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 6,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 7,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 8,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 9,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 10,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 11,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 12,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 13,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 14,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 15,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 16,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "block": 17,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 0,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 1,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 2,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 3,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 4,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 5,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 6,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 7,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 8,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 9,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 10,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 11,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 12,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 13,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 14,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 15,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 16,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "block": 17,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    }
+  ],
+  "fresh_checks": [
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "stage": 1
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "stage": 2
+    },
+    {
+      "seed": 11001,
+      "model": "conditional",
+      "stage": 3
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "stage": 1
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "stage": 2
+    },
+    {
+      "seed": 11001,
+      "model": "recurrent",
+      "stage": 3
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "stage": 1
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "stage": 2
+    },
+    {
+      "seed": 11002,
+      "model": "conditional",
+      "stage": 3
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "stage": 1
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "stage": 2
+    },
+    {
+      "seed": 11002,
+      "model": "recurrent",
+      "stage": 3
+    }
+  ],
+  "elapsed_seconds": 84.3220962000014,
+  "scope": "Exact-source local checkpoint, stream, replay, budget, first-packet prequential, endpoint-probe and gate-arithmetic/lineage audit. Intermediate window weights are not saved: individual gate gains and every prequential loss are not independently rescored or retrained."
+}

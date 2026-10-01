@@ -1,0 +1,1745 @@
+{
+  "identity": {
+    "config_sha256": "97777ab6dd24ee752db2136bc1dcf129ab3dc29afa9858c5dc4f5dfa5df492fa",
+    "source_sha256": "dd9eb69a45f475326e20c101b0fb7ef500e9d59ca9c69f75a0afbae5968a32f3",
+    "runtime_sha256": "89c34cae6b1bd071a41051f9c6b720bb0e3c0612b41f82c13e371da49b8d864b"
+  },
+  "runs_checked": 288,
+  "max_conservation_error": 2.842170943040401e-14,
+  "final_probes_recomputed_per_run": 9,
+  "actual_memory_contents_verified": true,
+  "training_arrivals_regenerated": true,
+  "elapsed_seconds": 17.23559920000025,
+  "checkpoints": [
+    {
+      "schedule": "short",
+      "method": "none",
+      "seed": 1001,
+      "checkpoint_sha256": "fb9ff20e61187457a807460ac5957612ad234cc45e6b2918909c3b67f19b08dd"
+    },
+    {
+      "schedule": "short",
+      "method": "uniform",
+      "seed": 1001,
+      "checkpoint_sha256": "f2e7b3c61eb60524c21e19aadf8127ae2a353c29c9bfaef7bb112ac12e7815bd"
+    },
+    {
+      "schedule": "short",
+      "method": "recent",
+      "seed": 1001,
+      "checkpoint_sha256": "21462a5ab63b0a6f3cfaf31df73bc9516b919f41bf682eac1105cbba3000a251"
+    },
+    {
+      "schedule": "short",
+      "method": "coverage",
+      "seed": 1001,
+      "checkpoint_sha256": "e1160f4359020b232bd50c81818cf41169a14677d03815a7d7b9c37133aaaccf"
+    },
+    {
+      "schedule": "short",
+      "method": "recurrence",
+      "seed": 1001,
+      "checkpoint_sha256": "574d0108e291fee91041aef27a553031c84a950396f626c23f5f517ab1bc1507"
+    },
+    {
+      "schedule": "short",
+      "method": "relevance",
+      "seed": 1001,
+      "checkpoint_sha256": "2c871f791fd5159b65a1ddcec40470b5f3047253cded811a8e6832be3bd9dae3"
+    },
+    {
+      "schedule": "short",
+      "method": "joint",
+      "seed": 1001,
+      "checkpoint_sha256": "13c41edc49456e9b132ec969879a71ef39b133a5efd0fbb1bf9cd259fb8914cf"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_encoder",
+      "seed": 1001,
+      "checkpoint_sha256": "c6c28548a128ebd3723848f0e45a989dc330ba1ae313ee1a2edf335239efd907"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_late",
+      "seed": 1001,
+      "checkpoint_sha256": "bd36bf39c44237b7333d840d22dfac9c9094867b50cc2412d8ad6dc756088f4b"
+    },
+    {
+      "schedule": "long",
+      "method": "none",
+      "seed": 1001,
+      "checkpoint_sha256": "6c5fd38999c8664f6d6f0c34046ffefac797340484c286197f8ab844ed7c829e"
+    },
+    {
+      "schedule": "long",
+      "method": "uniform",
+      "seed": 1001,
+      "checkpoint_sha256": "4db1d3b9a9cfea3954a7e1e3ee56d1bbf9b6eaf9468bb2209accebb2be128245"
+    },
+    {
+      "schedule": "long",
+      "method": "recent",
+      "seed": 1001,
+      "checkpoint_sha256": "89eb265c56b73113f3386076e5485d9514a8b187bcd00744111686d2e6633c83"
+    },
+    {
+      "schedule": "long",
+      "method": "coverage",
+      "seed": 1001,
+      "checkpoint_sha256": "5d13a8df68fa07aa44d9ad5007e8769621d04c8f4ed85f4fcb9658358f392da0"
+    },
+    {
+      "schedule": "long",
+      "method": "recurrence",
+      "seed": 1001,
+      "checkpoint_sha256": "1b0c35e055c7e951412e8498534e560f82be95a4fae480eed2d816f940bb170a"
+    },
+    {
+      "schedule": "long",
+      "method": "relevance",
+      "seed": 1001,
+      "checkpoint_sha256": "3ba5afc62ee09da40d70b9ae17ca6f6f05af6ed1815745a18b284194fbd473fa"
+    },
+    {
+      "schedule": "long",
+      "method": "joint",
+      "seed": 1001,
+      "checkpoint_sha256": "b820d5d4587f4fc84c2cb30d07ad93ebe191a81753a94f4c50c68ae6af5eb42c"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_encoder",
+      "seed": 1001,
+      "checkpoint_sha256": "b76a906c55c95829857e1e0e5da11676195e28e206719c0d2b1c7f1fe7399c1b"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_late",
+      "seed": 1001,
+      "checkpoint_sha256": "dbfbc0b1001124ba125bc6659362702f36dcb4f0340a7f44a28897fa1c508578"
+    },
+    {
+      "schedule": "no_return",
+      "method": "none",
+      "seed": 1001,
+      "checkpoint_sha256": "b79bcd09458eca3c0277a6065cb96697b2a1d59c600ce0f95bccff598ae0c0aa"
+    },
+    {
+      "schedule": "no_return",
+      "method": "uniform",
+      "seed": 1001,
+      "checkpoint_sha256": "887dfb7d3a8e569f2d2588320b7ba0d2327766ad3976d393f21ceed425c275a0"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recent",
+      "seed": 1001,
+      "checkpoint_sha256": "3a9a0fc5eed3606a52c63aaa56a9d6c6490551825e703bd7b6e7765455b08381"
+    },
+    {
+      "schedule": "no_return",
+      "method": "coverage",
+      "seed": 1001,
+      "checkpoint_sha256": "b85880e804dadd7ed5f92202c41ca7b741db37eb73cb7f99cb3d4e4b4ecfea01"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recurrence",
+      "seed": 1001,
+      "checkpoint_sha256": "04a2bb8a4d44ded3d34899e7295a226bf562dff4e65684f2b853f04b5c6ef195"
+    },
+    {
+      "schedule": "no_return",
+      "method": "relevance",
+      "seed": 1001,
+      "checkpoint_sha256": "027e59cee535a9a2c34e86d1d6f7f8c723097824501c5b31dd340848f9998130"
+    },
+    {
+      "schedule": "no_return",
+      "method": "joint",
+      "seed": 1001,
+      "checkpoint_sha256": "d84e717e3cb4bf2b5c79de725238108f272a8f0511e2e70cba922131edd25766"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_encoder",
+      "seed": 1001,
+      "checkpoint_sha256": "83797bce51d15a39822381f8ee014550e250826b645c5f62831fed235894cfc6"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_late",
+      "seed": 1001,
+      "checkpoint_sha256": "a439bca9d6b889d798dffb54645420d3ab96c211afb86c616807e3fdcd10d3c9"
+    },
+    {
+      "schedule": "reversal",
+      "method": "none",
+      "seed": 1001,
+      "checkpoint_sha256": "a23d9409a5e033bd4d83238fe952e8d98a79e97dea0cdb73b0a0ddd9f9f9442d"
+    },
+    {
+      "schedule": "reversal",
+      "method": "uniform",
+      "seed": 1001,
+      "checkpoint_sha256": "5ab9c2e68710b57351c445ba7e1c2ed619625ab50d0690458e8f1c392fddd17d"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recent",
+      "seed": 1001,
+      "checkpoint_sha256": "73f94fbefc0644d7143ae7c02faad3ba77c87e776a2010ec5a10b105b9239c27"
+    },
+    {
+      "schedule": "reversal",
+      "method": "coverage",
+      "seed": 1001,
+      "checkpoint_sha256": "acdefbd30646abd161790a530a5d05ad63fd83c7dc6233641ae0ec5b3838ac7e"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recurrence",
+      "seed": 1001,
+      "checkpoint_sha256": "b4079d2a9e4e060d156f56c9a1f315985f7aace1c3ffd1fb14e2dbced68c7962"
+    },
+    {
+      "schedule": "reversal",
+      "method": "relevance",
+      "seed": 1001,
+      "checkpoint_sha256": "1b1c715e07760ede7614d8322eb058f4d156d75f6d92d27f9380894dbfdfb27f"
+    },
+    {
+      "schedule": "reversal",
+      "method": "joint",
+      "seed": 1001,
+      "checkpoint_sha256": "aca9bc5bee73159436c015fd56863533c69f5262b5fd40036e67ad7359792285"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_encoder",
+      "seed": 1001,
+      "checkpoint_sha256": "1221ec71ea17af63ed34570c77e0888228094e173506b6f481d3ebe4c44dace1"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_late",
+      "seed": 1001,
+      "checkpoint_sha256": "856fdc75018fbe074dd618911973dea174317e287e7edcb73d2715452bfe0bb7"
+    },
+    {
+      "schedule": "short",
+      "method": "none",
+      "seed": 1002,
+      "checkpoint_sha256": "be6bcb8fcdb84588c329bece41a21bc122c39787cee68457ae1ce88203f95a4b"
+    },
+    {
+      "schedule": "short",
+      "method": "uniform",
+      "seed": 1002,
+      "checkpoint_sha256": "cd9b27769f1e76fd57d0a3ace09b54288151e331176ab57d8e334c96dbd01a18"
+    },
+    {
+      "schedule": "short",
+      "method": "recent",
+      "seed": 1002,
+      "checkpoint_sha256": "84e566f393b8c8568749d5bc68b5db5fb474282df32fe09465c71bebcbec8e61"
+    },
+    {
+      "schedule": "short",
+      "method": "coverage",
+      "seed": 1002,
+      "checkpoint_sha256": "57aeb0a05dce5f4896a4d7d17241a1c65b8a8a8302ec2bd172eab0fd86918408"
+    },
+    {
+      "schedule": "short",
+      "method": "recurrence",
+      "seed": 1002,
+      "checkpoint_sha256": "90ba027f3f11d6fc4a457b6a264931ff8e04112b3abd82435b14bb9a5afc0db0"
+    },
+    {
+      "schedule": "short",
+      "method": "relevance",
+      "seed": 1002,
+      "checkpoint_sha256": "70674f6576ff07b847d9e6af366f0ca37f36a820531a538061b66f6d7fb8d433"
+    },
+    {
+      "schedule": "short",
+      "method": "joint",
+      "seed": 1002,
+      "checkpoint_sha256": "064065379891240cd1ca0cc11a96d65be7d144c074a3957f1505b892e54d406f"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_encoder",
+      "seed": 1002,
+      "checkpoint_sha256": "2fb53e64613d34ab244b8b725e8848f05d6a3cd3596567b3a7cbf7283d41659a"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_late",
+      "seed": 1002,
+      "checkpoint_sha256": "9733e275ee5bd2d29a1374ba59742a6dc2f3242e9cd59440e77b0c2026012f39"
+    },
+    {
+      "schedule": "long",
+      "method": "none",
+      "seed": 1002,
+      "checkpoint_sha256": "b9f4daa2a05e9c16e1cece7eaf31a8c53327fc3aeb17215443b2813d3a8fcc3e"
+    },
+    {
+      "schedule": "long",
+      "method": "uniform",
+      "seed": 1002,
+      "checkpoint_sha256": "910de9549f968b0216fd1a7fbe82ffa9500e1a80c0828ec15065523e1fc9d9f4"
+    },
+    {
+      "schedule": "long",
+      "method": "recent",
+      "seed": 1002,
+      "checkpoint_sha256": "5ec4643e92a61ffabd531f69ab27e82c72d0c9a3d808b6b3e3a836ecadba2cfd"
+    },
+    {
+      "schedule": "long",
+      "method": "coverage",
+      "seed": 1002,
+      "checkpoint_sha256": "367ce566a4075006b6e8b3c1dcf3f1757e303ea38388512795ae75121e6bbac5"
+    },
+    {
+      "schedule": "long",
+      "method": "recurrence",
+      "seed": 1002,
+      "checkpoint_sha256": "e90ed88343711a04235677c912c672e5f32fba85485ef98f5cf38762b5fb30c2"
+    },
+    {
+      "schedule": "long",
+      "method": "relevance",
+      "seed": 1002,
+      "checkpoint_sha256": "700e395220301d4a1fafd6935cb1015748de639a595ee0702b69df5c5ee551fc"
+    },
+    {
+      "schedule": "long",
+      "method": "joint",
+      "seed": 1002,
+      "checkpoint_sha256": "943ef089ce8eb21b97067f16c57e079f495e5ada4414d4ebb7d01d0bae13137f"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_encoder",
+      "seed": 1002,
+      "checkpoint_sha256": "57bdd4bd4feb1f659a05376901cc1707ac33fb4e5c246639e4fb2b936f363a4a"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_late",
+      "seed": 1002,
+      "checkpoint_sha256": "86b6788b33dcd247f9c61a1f3d6d24e9103fbcf4aab0a734ddae3ae7db78568d"
+    },
+    {
+      "schedule": "no_return",
+      "method": "none",
+      "seed": 1002,
+      "checkpoint_sha256": "d71583afd4283c2accc4131c537139d7434f230ca8f15ff9d9dda102ae121ea5"
+    },
+    {
+      "schedule": "no_return",
+      "method": "uniform",
+      "seed": 1002,
+      "checkpoint_sha256": "88ea1e8ebc1461ff1f95a87e21df502f3c47da02be812576740329f7b2ac5083"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recent",
+      "seed": 1002,
+      "checkpoint_sha256": "2692b4eb2212c3015f1d5938a94dabe9b403afd2d73fb61dc58ddcd4ce59186b"
+    },
+    {
+      "schedule": "no_return",
+      "method": "coverage",
+      "seed": 1002,
+      "checkpoint_sha256": "e7dc99db070ed91e0c3cd2d51ae355898a195f5d06056469d0837cd128ead711"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recurrence",
+      "seed": 1002,
+      "checkpoint_sha256": "8e8e7383c8778fafc6f23065a38fc6d82d9906ba44aabae82417380f02206ccb"
+    },
+    {
+      "schedule": "no_return",
+      "method": "relevance",
+      "seed": 1002,
+      "checkpoint_sha256": "978c995b9f3c88e72a7af46b3f764e3e5dc2906bd66ce218f93cdc9310432c3e"
+    },
+    {
+      "schedule": "no_return",
+      "method": "joint",
+      "seed": 1002,
+      "checkpoint_sha256": "570b85ec9276d296c3869988455571c09711eb9d1f3f2da7113412e10071eb5c"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_encoder",
+      "seed": 1002,
+      "checkpoint_sha256": "03079c3d174432a30578e46948bf4a13ac844437ca4c6bcf1105f18580be5a38"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_late",
+      "seed": 1002,
+      "checkpoint_sha256": "64adaa36464a0d4c48180e6bd71e1b8834a50c0942d437a3b2a45b0a74d055e0"
+    },
+    {
+      "schedule": "reversal",
+      "method": "none",
+      "seed": 1002,
+      "checkpoint_sha256": "0170e8e63cbf0d56cd38307f94d7a2e9815371f24390bdd58fc32966ed24d4e3"
+    },
+    {
+      "schedule": "reversal",
+      "method": "uniform",
+      "seed": 1002,
+      "checkpoint_sha256": "4e45573d1b6adf476aba05fbd195a7700238ac3d2e54531047e6a9ac7c4bee81"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recent",
+      "seed": 1002,
+      "checkpoint_sha256": "1b04f97e1735e90469e19127a8b9550fae0f45bb140b9267d9964f7cc9477480"
+    },
+    {
+      "schedule": "reversal",
+      "method": "coverage",
+      "seed": 1002,
+      "checkpoint_sha256": "f4b46d6fab24139d26103d5f0fd77877b44e95ade310f8b45d0f77857ecdc779"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recurrence",
+      "seed": 1002,
+      "checkpoint_sha256": "142c2faf7a4a21fb920ffa062ae73c52cad0f267909895b0f178db2a04ed270f"
+    },
+    {
+      "schedule": "reversal",
+      "method": "relevance",
+      "seed": 1002,
+      "checkpoint_sha256": "5e78fab6ccb047186010a8d4f5d2d8fbc1bbf2f112122b8e669f404ece79b2ab"
+    },
+    {
+      "schedule": "reversal",
+      "method": "joint",
+      "seed": 1002,
+      "checkpoint_sha256": "beed2a17cd43641a3abb9533215b235bf5f354bb56eb1563dbc94af2f6eecf0e"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_encoder",
+      "seed": 1002,
+      "checkpoint_sha256": "0859defdfbc88ca44549a0286674e116718e489914f643e1ff76dfc19e5b94cc"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_late",
+      "seed": 1002,
+      "checkpoint_sha256": "2eb22ecf04d0a0b6a5e9d9e757c9b3eadd3bbf47152feef201e11c6bdc481bc9"
+    },
+    {
+      "schedule": "short",
+      "method": "none",
+      "seed": 1003,
+      "checkpoint_sha256": "5fec060c157601876ccb7d99dc197584b54aa778fd547f63b51693b18b78acf3"
+    },
+    {
+      "schedule": "short",
+      "method": "uniform",
+      "seed": 1003,
+      "checkpoint_sha256": "efb7873882954722e3ae6cfc09e75827069d9c8dd0b85df48f8a49e8d23de8b4"
+    },
+    {
+      "schedule": "short",
+      "method": "recent",
+      "seed": 1003,
+      "checkpoint_sha256": "34f601a618cec885b8aeb2e5fc8ae663dbf9c005573a96066c1dbea8372ad133"
+    },
+    {
+      "schedule": "short",
+      "method": "coverage",
+      "seed": 1003,
+      "checkpoint_sha256": "dd1fe44eed29156be2af73b2116c631887dca454fcec3441c5cbdb84558f3788"
+    },
+    {
+      "schedule": "short",
+      "method": "recurrence",
+      "seed": 1003,
+      "checkpoint_sha256": "18a24294abb5c766131974a9133c3eb17eb50987530f5295d7182e82cc0e9ed7"
+    },
+    {
+      "schedule": "short",
+      "method": "relevance",
+      "seed": 1003,
+      "checkpoint_sha256": "baafd2a3e6dec2b4a0bc4c17b1d4a1053206dde29085d745da4186bdd40fa721"
+    },
+    {
+      "schedule": "short",
+      "method": "joint",
+      "seed": 1003,
+      "checkpoint_sha256": "ac690a9e7f3a0b5f2f438ffef7fbfcd3ed158a61c44b83f71b261377e386daca"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_encoder",
+      "seed": 1003,
+      "checkpoint_sha256": "d10221219ffa52a741e78100fb0816b77d4fe46f335fe63a799f36dde1c4a2da"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_late",
+      "seed": 1003,
+      "checkpoint_sha256": "d8f085cfc52b4f3d117294091d0872338dd0b4c3ea9e63a593530c3afd9ec8bd"
+    },
+    {
+      "schedule": "long",
+      "method": "none",
+      "seed": 1003,
+      "checkpoint_sha256": "6296bdd18ef86a7aafa7243cede806a054ebf2956f93a0ed6d19777b2667866e"
+    },
+    {
+      "schedule": "long",
+      "method": "uniform",
+      "seed": 1003,
+      "checkpoint_sha256": "3add7e9a92dc8c536befb8504204f71ecff4fcbcd54a03405d15bea6144fd764"
+    },
+    {
+      "schedule": "long",
+      "method": "recent",
+      "seed": 1003,
+      "checkpoint_sha256": "b732d44ef4b2c18976ace4dc337e1fe9809345c72afbc7f38a1a9b137a9891ca"
+    },
+    {
+      "schedule": "long",
+      "method": "coverage",
+      "seed": 1003,
+      "checkpoint_sha256": "60feca764f5c50848de0e8fbadbe7d209a3b09b19253b26763d5beec01938fb2"
+    },
+    {
+      "schedule": "long",
+      "method": "recurrence",
+      "seed": 1003,
+      "checkpoint_sha256": "7888c215dfac6001122adcbf6443096a1a430dd85dfae27fbd61d953413e6faa"
+    },
+    {
+      "schedule": "long",
+      "method": "relevance",
+      "seed": 1003,
+      "checkpoint_sha256": "8705dad90a9f3634c6e5f98a53c54ed9222c1196016199d5d7fff71fd6e312b0"
+    },
+    {
+      "schedule": "long",
+      "method": "joint",
+      "seed": 1003,
+      "checkpoint_sha256": "599a2d85e7c09951d4fd16a5190c4d376c103149e0989ccd53bb5ded33c30b21"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_encoder",
+      "seed": 1003,
+      "checkpoint_sha256": "97dfe034ab069029c9efc8af8355ddfdec8a2517a55fdd8e999ce0abb9a9e550"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_late",
+      "seed": 1003,
+      "checkpoint_sha256": "ddd6779516e07fdfe9e424cadd6f9900665b9e3c057ff7bcafd664495b29b1a0"
+    },
+    {
+      "schedule": "no_return",
+      "method": "none",
+      "seed": 1003,
+      "checkpoint_sha256": "b3bd21b0a19ce5c0bf841f8da935be9e87609d605159d3658fb85da17fe1d3d4"
+    },
+    {
+      "schedule": "no_return",
+      "method": "uniform",
+      "seed": 1003,
+      "checkpoint_sha256": "abbbb2631a56349c60a08f3574b324a5d21b49f71123bc32478dc574cb384687"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recent",
+      "seed": 1003,
+      "checkpoint_sha256": "9591a7e676ec9f4437c098fa22704804e1e6da01ad34f53a53fcd121fb58ad3f"
+    },
+    {
+      "schedule": "no_return",
+      "method": "coverage",
+      "seed": 1003,
+      "checkpoint_sha256": "c0163d2737036f9bf8852e7b639a8054053af11585802fb6853f3d5cbb50a0d2"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recurrence",
+      "seed": 1003,
+      "checkpoint_sha256": "d157d5c82c14cff5aa051c79d1ca7eedb51211459a425dae1b10f85ae53469d9"
+    },
+    {
+      "schedule": "no_return",
+      "method": "relevance",
+      "seed": 1003,
+      "checkpoint_sha256": "c5852c2d134ae8c6625ef485bab4e74351180e2b27c37d70a079243737f285d0"
+    },
+    {
+      "schedule": "no_return",
+      "method": "joint",
+      "seed": 1003,
+      "checkpoint_sha256": "2d33b554ebcc3219f21b153476824c81082e08a617364fc436227fc4d34ff436"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_encoder",
+      "seed": 1003,
+      "checkpoint_sha256": "9bb317afbecd4b1dcf402b0a2881a94ede61d7368344782ab1437e0835a4f02d"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_late",
+      "seed": 1003,
+      "checkpoint_sha256": "9300dcad17d76cfe141d853bcb8b9f3e2a8e9fb585a7edbaec11eee3dec3c5ab"
+    },
+    {
+      "schedule": "reversal",
+      "method": "none",
+      "seed": 1003,
+      "checkpoint_sha256": "22e2f0e084a1ca970c7bad1a7406cf53bdbbdef297726c6a78a96eb291c1f124"
+    },
+    {
+      "schedule": "reversal",
+      "method": "uniform",
+      "seed": 1003,
+      "checkpoint_sha256": "585feaebe54543a956d8aa0698f571bb8e66b81713c4f96db9ad4e55688b9263"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recent",
+      "seed": 1003,
+      "checkpoint_sha256": "5ae05edea396ffe4b9ea645f99199a2026b0fe8ca1984fe4ffa513486e3e30b9"
+    },
+    {
+      "schedule": "reversal",
+      "method": "coverage",
+      "seed": 1003,
+      "checkpoint_sha256": "49286f6016ca12d3da6ce656aa378092ca65cb2544e478c93ef8e47b9fb398da"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recurrence",
+      "seed": 1003,
+      "checkpoint_sha256": "2f9b5b13570eaf71492b8189b72e369f1ca89c5f1cc44e6884d5c3e697fe5fe7"
+    },
+    {
+      "schedule": "reversal",
+      "method": "relevance",
+      "seed": 1003,
+      "checkpoint_sha256": "8d1988938ffb99d7f66c8b0c46b4bd565da482e50c78e3eb5130672c8d88418a"
+    },
+    {
+      "schedule": "reversal",
+      "method": "joint",
+      "seed": 1003,
+      "checkpoint_sha256": "a5c656a26d631ad9d164ba159094d61acb5d226303f5dfeda6426ec0f2199b74"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_encoder",
+      "seed": 1003,
+      "checkpoint_sha256": "65c3f638150e73e381466f27f546944b1240e5f7ce585c9f4515fbf97e2caa93"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_late",
+      "seed": 1003,
+      "checkpoint_sha256": "855dd5652917f3fb741857f283587c40d2d10f8f00279c57ca6506bcc6939ef6"
+    },
+    {
+      "schedule": "short",
+      "method": "none",
+      "seed": 1004,
+      "checkpoint_sha256": "f25a0bde93e15364b655d5faeff01284b38b0e356a265a40625d882d7a5e833c"
+    },
+    {
+      "schedule": "short",
+      "method": "uniform",
+      "seed": 1004,
+      "checkpoint_sha256": "2f6247408e4b4419587400ab746b66984c872be53da8ffa06724731cd7c555db"
+    },
+    {
+      "schedule": "short",
+      "method": "recent",
+      "seed": 1004,
+      "checkpoint_sha256": "37dfc5231002306849cdd91cb1bbefd728b0a13fb3879864c89760015ea7da38"
+    },
+    {
+      "schedule": "short",
+      "method": "coverage",
+      "seed": 1004,
+      "checkpoint_sha256": "818f77e3c576975a654ce6d1295131ae12dcd55d066ebff2324afd81e67c8c61"
+    },
+    {
+      "schedule": "short",
+      "method": "recurrence",
+      "seed": 1004,
+      "checkpoint_sha256": "cb9f1ab16c925324b7ae3ede154357852e2e5a2716759c51e5b248ed00683a0d"
+    },
+    {
+      "schedule": "short",
+      "method": "relevance",
+      "seed": 1004,
+      "checkpoint_sha256": "344238e66ad1ed4468222fd39a84d02f126e3f575e4099d60a0bee13e16cbca2"
+    },
+    {
+      "schedule": "short",
+      "method": "joint",
+      "seed": 1004,
+      "checkpoint_sha256": "b4d1217f4772727ab266edffacb35445aae4f6cc5521245e784fe2b3751a3afe"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_encoder",
+      "seed": 1004,
+      "checkpoint_sha256": "fac5d543b8194b7e02e3e605069632c8dcc8fff916cdf2d2f1312cecb23b69f9"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_late",
+      "seed": 1004,
+      "checkpoint_sha256": "7cb3fa6febd74932cea630a668e3833cef02a24b404958754c55916b1f5afc7c"
+    },
+    {
+      "schedule": "long",
+      "method": "none",
+      "seed": 1004,
+      "checkpoint_sha256": "654900dcb2ec1f985d22f425cd099efa45ade40e312cd1e7dfebee61881dec92"
+    },
+    {
+      "schedule": "long",
+      "method": "uniform",
+      "seed": 1004,
+      "checkpoint_sha256": "3a66431b4d15d3f84b2e7e0a37ea055a941612fb70c17244e9eae16400af6059"
+    },
+    {
+      "schedule": "long",
+      "method": "recent",
+      "seed": 1004,
+      "checkpoint_sha256": "fbcc396443d71f503c5829fbca3b950eb978f9263e1bf2d814aae216a1f72f8a"
+    },
+    {
+      "schedule": "long",
+      "method": "coverage",
+      "seed": 1004,
+      "checkpoint_sha256": "3ee5cba16f10e3dc30b745e22dbc86e0f746007eae4df43913418ddbfa3f44ce"
+    },
+    {
+      "schedule": "long",
+      "method": "recurrence",
+      "seed": 1004,
+      "checkpoint_sha256": "8d84dee06fda98aac7320932ad8e2ad8820b6f3f83c8d14d37ebe59e0627ffd3"
+    },
+    {
+      "schedule": "long",
+      "method": "relevance",
+      "seed": 1004,
+      "checkpoint_sha256": "1296d856826a1505881f0788902a76652ceb6a0529eae261d302856394521cfa"
+    },
+    {
+      "schedule": "long",
+      "method": "joint",
+      "seed": 1004,
+      "checkpoint_sha256": "d8d685b88c558ed8dc3156ed263381b62f971f601c1ac300c6fe68acb1389e35"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_encoder",
+      "seed": 1004,
+      "checkpoint_sha256": "c355739bf5f9285958f8d0e28efc4c7440404b31803bc18823579bfc7b7422bb"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_late",
+      "seed": 1004,
+      "checkpoint_sha256": "8ea1a92ebb7d38d82b7223b2d535d49b4701c98b08eb5e08f2998798a9493d5b"
+    },
+    {
+      "schedule": "no_return",
+      "method": "none",
+      "seed": 1004,
+      "checkpoint_sha256": "4093b2d9002cb0e70a277ad761b9a65ef1bfd78090ba92713e6d3b5ec68007cc"
+    },
+    {
+      "schedule": "no_return",
+      "method": "uniform",
+      "seed": 1004,
+      "checkpoint_sha256": "c4047bb7d6e88bcc734128ceb49bf7c12c0f224977e7b50e4d408bb9d13531c3"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recent",
+      "seed": 1004,
+      "checkpoint_sha256": "ea4e0e8c126d191f92641c5e420b65a9eb8b0b045df1f5fc04c4d7be656f7c4b"
+    },
+    {
+      "schedule": "no_return",
+      "method": "coverage",
+      "seed": 1004,
+      "checkpoint_sha256": "9ec385f505993da3192ac455710c463608903b0d3a632213c75ceab465045b99"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recurrence",
+      "seed": 1004,
+      "checkpoint_sha256": "a7519bb3f6dac1df1541b5067b033cee60bc6cfe019240aae2089ebfe5220732"
+    },
+    {
+      "schedule": "no_return",
+      "method": "relevance",
+      "seed": 1004,
+      "checkpoint_sha256": "cff79926205fd0952778721ccbdeff6f395985d51d37fc584736e7c96fd1efd1"
+    },
+    {
+      "schedule": "no_return",
+      "method": "joint",
+      "seed": 1004,
+      "checkpoint_sha256": "f011a84f8be403c14cfb5836494114d974728ac1d19a618361dc58eed5183644"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_encoder",
+      "seed": 1004,
+      "checkpoint_sha256": "6e7d68fc994e69f6c6cfd5d83fd60deab562cb58de9565eff30b93a4981d9525"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_late",
+      "seed": 1004,
+      "checkpoint_sha256": "8e0ac38c82dd6e09e601c22d83678f55763bcbe33b65a22abdf501efcccaadb3"
+    },
+    {
+      "schedule": "reversal",
+      "method": "none",
+      "seed": 1004,
+      "checkpoint_sha256": "dc15a21a74a63d3a1df48903d9ac7d199a431507ff1cf67c53275fcff96aadb9"
+    },
+    {
+      "schedule": "reversal",
+      "method": "uniform",
+      "seed": 1004,
+      "checkpoint_sha256": "3a5990ac98bbf598d23553210d8fc53ceab26229d0ac16d0226a1248972de3ca"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recent",
+      "seed": 1004,
+      "checkpoint_sha256": "f3953fa77ceb65c3ec36468cea4ae2cba9671adc6bbcdbae6b6f67033ef8604b"
+    },
+    {
+      "schedule": "reversal",
+      "method": "coverage",
+      "seed": 1004,
+      "checkpoint_sha256": "aa8b74689a138313b7c4fcb6a3dc43d18bd7aecedeab6ba347a7a5fce70ad6c8"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recurrence",
+      "seed": 1004,
+      "checkpoint_sha256": "54dfbd1ca212c28ae7b1545aefef919096a680c6c5473352a262b7568306c599"
+    },
+    {
+      "schedule": "reversal",
+      "method": "relevance",
+      "seed": 1004,
+      "checkpoint_sha256": "26423ae9b1ed9ca891748b36d7a5f457ec459f2e273a0623c2fe62a062084f13"
+    },
+    {
+      "schedule": "reversal",
+      "method": "joint",
+      "seed": 1004,
+      "checkpoint_sha256": "ab352ba583d20df7ba0e156d93f395c1659a48804594aa1cb6632c567d268ac7"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_encoder",
+      "seed": 1004,
+      "checkpoint_sha256": "f96374c1f2d42f842ff8c381b166c586ba2f318ae4fc22ffa8adca571363c4fc"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_late",
+      "seed": 1004,
+      "checkpoint_sha256": "687890a9bc0c2cdd2d28a3fe9c448956c684bd44d27a0c716070c0fa88f7a31d"
+    },
+    {
+      "schedule": "short",
+      "method": "none",
+      "seed": 1005,
+      "checkpoint_sha256": "3cafe1ef1c373ffd2d3a960e158e72f950398f67ea96a469639d03611d3a881b"
+    },
+    {
+      "schedule": "short",
+      "method": "uniform",
+      "seed": 1005,
+      "checkpoint_sha256": "89b740e1f2389dbc54a6d304571df1fe5f6b8dacf51ebdb2aaea08d9f9cbc034"
+    },
+    {
+      "schedule": "short",
+      "method": "recent",
+      "seed": 1005,
+      "checkpoint_sha256": "72645afb43d03b29f575c9802dc5e54bcd3792517da47a2c2a831cf6e26f0838"
+    },
+    {
+      "schedule": "short",
+      "method": "coverage",
+      "seed": 1005,
+      "checkpoint_sha256": "75feae917294c80983cb8951f7752ae18cb083989a7f6d7a57da79f469b5fa67"
+    },
+    {
+      "schedule": "short",
+      "method": "recurrence",
+      "seed": 1005,
+      "checkpoint_sha256": "09ded2bd69fbb0a42e24180b0ffb1e75167421070afdebe2871a073394651f68"
+    },
+    {
+      "schedule": "short",
+      "method": "relevance",
+      "seed": 1005,
+      "checkpoint_sha256": "318630f05e26e52c8123857e3885e5098186a2d11b999594bbf5c9af271933e5"
+    },
+    {
+      "schedule": "short",
+      "method": "joint",
+      "seed": 1005,
+      "checkpoint_sha256": "1251265efce6e0b02c3d19eace68fbda7bcc79eb8747b75abda36e8d9211b68b"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_encoder",
+      "seed": 1005,
+      "checkpoint_sha256": "be65a72407baee4ab64c4b2d0991d48f13b0ca214340f78a94a7adb79cf28253"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_late",
+      "seed": 1005,
+      "checkpoint_sha256": "729d9bc2bace623469c3bf4a237dff9a7dc2550b17e365fc0211a332187441d2"
+    },
+    {
+      "schedule": "long",
+      "method": "none",
+      "seed": 1005,
+      "checkpoint_sha256": "2808f487bb6eac60befc6cf7b3b4344406f3a37bf780282ccb08523be8beee5a"
+    },
+    {
+      "schedule": "long",
+      "method": "uniform",
+      "seed": 1005,
+      "checkpoint_sha256": "62769a12225e9048a59994ac1bda9edab68ac80e132661993f71ad661145ae00"
+    },
+    {
+      "schedule": "long",
+      "method": "recent",
+      "seed": 1005,
+      "checkpoint_sha256": "f5e666c25999a46b8923d39ce9cc20726815ddb58144b33e7a17e6248a173cd9"
+    },
+    {
+      "schedule": "long",
+      "method": "coverage",
+      "seed": 1005,
+      "checkpoint_sha256": "a15fcb79f14001b01384d95a8252609fa903c818f2a424066fed0b481d240a0e"
+    },
+    {
+      "schedule": "long",
+      "method": "recurrence",
+      "seed": 1005,
+      "checkpoint_sha256": "2518011628aac99b604963d3384258ba43a70ae2794dd46da3535310a1999bd1"
+    },
+    {
+      "schedule": "long",
+      "method": "relevance",
+      "seed": 1005,
+      "checkpoint_sha256": "79367e4a49eac7ec6a30e6ae02371fdc154f5a36c69a2c1c0104fa1095f84bb4"
+    },
+    {
+      "schedule": "long",
+      "method": "joint",
+      "seed": 1005,
+      "checkpoint_sha256": "56b9646ed3b39b2d3e3c402fd26f4537e2bf1945c1fe41c4eefae8554ea9e564"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_encoder",
+      "seed": 1005,
+      "checkpoint_sha256": "0af96772be8930461105efc3e5e782e6912d8c529fa015e6c149dfcfe4eec0f1"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_late",
+      "seed": 1005,
+      "checkpoint_sha256": "132198a0a7c69f0d4734c65c4532e25232f9a15793275faf7d59803f7db1424a"
+    },
+    {
+      "schedule": "no_return",
+      "method": "none",
+      "seed": 1005,
+      "checkpoint_sha256": "a7d0b55b3faf14b95e9441a1ec16b9c8056eb85430c9b4437637b5c00ccbc980"
+    },
+    {
+      "schedule": "no_return",
+      "method": "uniform",
+      "seed": 1005,
+      "checkpoint_sha256": "eb32a47ab1641ec47736a038cf070c998839c91c49ac6ad17a4c4fe25c44e3b8"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recent",
+      "seed": 1005,
+      "checkpoint_sha256": "cb806e3451e2f5436581c3e44b7252f0fc918412d3f80af3cd8529975504ca20"
+    },
+    {
+      "schedule": "no_return",
+      "method": "coverage",
+      "seed": 1005,
+      "checkpoint_sha256": "4325e0f6ca9de5b433dff0ae7dd6150c8887640803fb4ebcc543a3e09f4ba8e9"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recurrence",
+      "seed": 1005,
+      "checkpoint_sha256": "e68d845d005efe736798380e8f534dd2b606183dcda00d4251e464f4670679ab"
+    },
+    {
+      "schedule": "no_return",
+      "method": "relevance",
+      "seed": 1005,
+      "checkpoint_sha256": "a4ea2799d1e9f3cde7c1e89eb3c8406806eb9c3bcee28f3af7caeb4ca5845356"
+    },
+    {
+      "schedule": "no_return",
+      "method": "joint",
+      "seed": 1005,
+      "checkpoint_sha256": "1664f7b2974646047292b3376e68e2328a680d795b0e95c06649b96882309507"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_encoder",
+      "seed": 1005,
+      "checkpoint_sha256": "56a434ab0ea2e33c422236d57f4afe22da303366c57bd10f438f1171075cb152"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_late",
+      "seed": 1005,
+      "checkpoint_sha256": "f798522cd81a7026827df509c0c9828401ea95e81a92e822fa9d28741254ea66"
+    },
+    {
+      "schedule": "reversal",
+      "method": "none",
+      "seed": 1005,
+      "checkpoint_sha256": "00ee4ba6e7bdbed20313e839e3e786d4fd9b6587c5778aa67902e6bfd2c5ec1d"
+    },
+    {
+      "schedule": "reversal",
+      "method": "uniform",
+      "seed": 1005,
+      "checkpoint_sha256": "d3a03837ba6dbc8f471bb88205c8a1f95a205a2e1ea86d8d8503aa26fd7d8ae6"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recent",
+      "seed": 1005,
+      "checkpoint_sha256": "f88126672ca9ed2fb3062a5b923c7eb43c92ae7378bcd5badcd7f117f7b1a61e"
+    },
+    {
+      "schedule": "reversal",
+      "method": "coverage",
+      "seed": 1005,
+      "checkpoint_sha256": "e1a521b09b2475225021880e675d3e0872d6ce80b344d526457568f122dd1244"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recurrence",
+      "seed": 1005,
+      "checkpoint_sha256": "ff47721bc1f6f6f15e8dbd012b45bc599390aed0410ba861278150541b6a26c3"
+    },
+    {
+      "schedule": "reversal",
+      "method": "relevance",
+      "seed": 1005,
+      "checkpoint_sha256": "ef267d1fcdf02c295fa38add99e9f1f53d063f85384d5f000af9e70258a1f7fb"
+    },
+    {
+      "schedule": "reversal",
+      "method": "joint",
+      "seed": 1005,
+      "checkpoint_sha256": "2bcd3ff2889fa5e147ca24f2bfa75a29dadb36580265b1144a63fa5af88a4e2b"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_encoder",
+      "seed": 1005,
+      "checkpoint_sha256": "8a719498f587ac1f222a48855270b6159b0801d866602a28e139f41bea7253bf"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_late",
+      "seed": 1005,
+      "checkpoint_sha256": "7bc3538a9e17b3b9a59ba5ae4d89c05b1081e96d642ab6305fddd5742e21aa87"
+    },
+    {
+      "schedule": "short",
+      "method": "none",
+      "seed": 1006,
+      "checkpoint_sha256": "5ff09d565c373cde6a35915b612433aaf129b53c71b6691bcdf69ccb7e2551ee"
+    },
+    {
+      "schedule": "short",
+      "method": "uniform",
+      "seed": 1006,
+      "checkpoint_sha256": "edf84f7d42b12a4584d507683ecbad1f3cc58420e8ec74cbb853815a1a75c239"
+    },
+    {
+      "schedule": "short",
+      "method": "recent",
+      "seed": 1006,
+      "checkpoint_sha256": "b063ed4ab46d7a47c7fecfb48cf5678e29f49ce0caa57d756ceec5ca3c3f4ce6"
+    },
+    {
+      "schedule": "short",
+      "method": "coverage",
+      "seed": 1006,
+      "checkpoint_sha256": "8d5c24570d0c4133d180db9ac589b15cf2a0ba15776096939635a3c52c21761d"
+    },
+    {
+      "schedule": "short",
+      "method": "recurrence",
+      "seed": 1006,
+      "checkpoint_sha256": "3a4db5af7a4310af3baec876b7a1bc6bcf1a647cd00c1798352ab34376be40d0"
+    },
+    {
+      "schedule": "short",
+      "method": "relevance",
+      "seed": 1006,
+      "checkpoint_sha256": "1db98ff7f359b13e3457872891fd5a8ef5fa4f90cce8e7dac9182d60ace1daeb"
+    },
+    {
+      "schedule": "short",
+      "method": "joint",
+      "seed": 1006,
+      "checkpoint_sha256": "eb9c2d6a4eece80692617273b3696c31649c03bd8cfb53c3f704704afa354ed9"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_encoder",
+      "seed": 1006,
+      "checkpoint_sha256": "a82375d11452a8a9e7e0840966e5b13d77c80ddb260b62a37bd74c0450be0bee"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_late",
+      "seed": 1006,
+      "checkpoint_sha256": "0da7f952af6ab508b757999d3546abe335b9130c10d952e24b6814297e3a2b3c"
+    },
+    {
+      "schedule": "long",
+      "method": "none",
+      "seed": 1006,
+      "checkpoint_sha256": "0091ee32673fe7557c7ec4d32aef773b8053cd1d9423d85480236c25ef5a3603"
+    },
+    {
+      "schedule": "long",
+      "method": "uniform",
+      "seed": 1006,
+      "checkpoint_sha256": "d775aaf4a1b025174ae476f2263aa3519dabf20cc462631bdee35670ec04d95a"
+    },
+    {
+      "schedule": "long",
+      "method": "recent",
+      "seed": 1006,
+      "checkpoint_sha256": "00d79813525867b8204800cdcc8f3c75040ec72e859189ff51609bede20c35ee"
+    },
+    {
+      "schedule": "long",
+      "method": "coverage",
+      "seed": 1006,
+      "checkpoint_sha256": "ac3703e8b72b6da7f2d6f3228cc90e051d05b9209bcd943be04cfb9149f47037"
+    },
+    {
+      "schedule": "long",
+      "method": "recurrence",
+      "seed": 1006,
+      "checkpoint_sha256": "629455d975da35a0cd433333a8195fc881b6e7045efcb40b921b38c61b036194"
+    },
+    {
+      "schedule": "long",
+      "method": "relevance",
+      "seed": 1006,
+      "checkpoint_sha256": "f94ae47e18787b02553f9c0e4d0befbdd0c4557cc9bfc256253c900962410a69"
+    },
+    {
+      "schedule": "long",
+      "method": "joint",
+      "seed": 1006,
+      "checkpoint_sha256": "99d816f52e6ead5032d1ae06fdf6f98c0adcd1941b43788cff361bac5a7411fb"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_encoder",
+      "seed": 1006,
+      "checkpoint_sha256": "e789cda68298d553e35ee90b59136468409c3ed197a5adf8fd2f41906b77dfbe"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_late",
+      "seed": 1006,
+      "checkpoint_sha256": "47f10e9e72f6d2cad39dc14821c1b6d15229a1cb633fee9b5116500129aaf815"
+    },
+    {
+      "schedule": "no_return",
+      "method": "none",
+      "seed": 1006,
+      "checkpoint_sha256": "53a6b8a7be9a1b6af7f0734086c9806b6e27aa8bc0e629c8e8ecda800dd8ad0e"
+    },
+    {
+      "schedule": "no_return",
+      "method": "uniform",
+      "seed": 1006,
+      "checkpoint_sha256": "ce83746802f3632b4f2e3c2fc1557e423586a5102c6ba5f8e68b4cda93a66627"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recent",
+      "seed": 1006,
+      "checkpoint_sha256": "0ce79372186ba94cf65fa54d5118a875a33460cfa615f4f97043f6a23f3af36b"
+    },
+    {
+      "schedule": "no_return",
+      "method": "coverage",
+      "seed": 1006,
+      "checkpoint_sha256": "ecfbbcdb0daae6e52ef2d8b6ee7ca76bf014e10659d44d8f7ccb35a892a4c398"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recurrence",
+      "seed": 1006,
+      "checkpoint_sha256": "9e4b4e39a6c66487887fd9b755057d94a785f6a1c1c270b5859b550be10d4941"
+    },
+    {
+      "schedule": "no_return",
+      "method": "relevance",
+      "seed": 1006,
+      "checkpoint_sha256": "50c9e8cea9a38922cd8fee5b28c0d35398c89d729a6fe1774d377a0ebfdec358"
+    },
+    {
+      "schedule": "no_return",
+      "method": "joint",
+      "seed": 1006,
+      "checkpoint_sha256": "3a9672efd2066a170e54c5414425fea200d673f2657e84ef25dc9711fc41210b"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_encoder",
+      "seed": 1006,
+      "checkpoint_sha256": "1b840e8accf3a13111b4c5f63191148a425960fcd2ce72a44eaf243460a8e50f"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_late",
+      "seed": 1006,
+      "checkpoint_sha256": "eab3b6e29850770e9803803dff7193c209c4bf6e060d3d23e9e6f4a20f99d319"
+    },
+    {
+      "schedule": "reversal",
+      "method": "none",
+      "seed": 1006,
+      "checkpoint_sha256": "fe19f375aef65af41e07710655753b379a914695c73a7e609e3fdc71ae85ba6f"
+    },
+    {
+      "schedule": "reversal",
+      "method": "uniform",
+      "seed": 1006,
+      "checkpoint_sha256": "492317a48b274028d90d6af95368b4efabed6ad7a49704c0ed24f4e7794ef6ea"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recent",
+      "seed": 1006,
+      "checkpoint_sha256": "c286952f5267ad9e9dc7ae6aa83b539ca03b451c59e338d40f987fcab56eebeb"
+    },
+    {
+      "schedule": "reversal",
+      "method": "coverage",
+      "seed": 1006,
+      "checkpoint_sha256": "7e2a5bc1cdd47ba0c9ad3e3297c7c701dd0f62bb79671652cb8c5cf206107d8f"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recurrence",
+      "seed": 1006,
+      "checkpoint_sha256": "dca95365625c3e4deca50fe18bdee6318fbd9ddc91192195569add1282688868"
+    },
+    {
+      "schedule": "reversal",
+      "method": "relevance",
+      "seed": 1006,
+      "checkpoint_sha256": "847e18fda25ff86f9e169f5ca7b30c1b4f6a4a2b059a0627cd1a3fb051e055fd"
+    },
+    {
+      "schedule": "reversal",
+      "method": "joint",
+      "seed": 1006,
+      "checkpoint_sha256": "1e41084795b8505fa5c835f642447851b4df70a375676e0053085b152991e252"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_encoder",
+      "seed": 1006,
+      "checkpoint_sha256": "e3cfa36880d354277f8c3c82db51ff1ca4e114c928227a56c86d1927e03f62c5"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_late",
+      "seed": 1006,
+      "checkpoint_sha256": "5b54b650915854f4033b0c524b21b00304946b3dddacd274e0306ce5953c5d63"
+    },
+    {
+      "schedule": "short",
+      "method": "none",
+      "seed": 1008,
+      "checkpoint_sha256": "94da7b003616bf288bfc86e91936f8d6ebad32e89598bb15c1ea54c02240da43"
+    },
+    {
+      "schedule": "short",
+      "method": "uniform",
+      "seed": 1008,
+      "checkpoint_sha256": "553ac50902d9fc0ec0add2426110f4f97cfaec8f347252688c15746a61555215"
+    },
+    {
+      "schedule": "short",
+      "method": "recent",
+      "seed": 1008,
+      "checkpoint_sha256": "d8d0b1228b46e82a9b425ec80890cd5b2c8c7f24542711740b20e4f19bbf533f"
+    },
+    {
+      "schedule": "short",
+      "method": "coverage",
+      "seed": 1008,
+      "checkpoint_sha256": "1c4e1296ce899e93b3670f4487c1399e6973906e2918f1b8fd035afac0e6733a"
+    },
+    {
+      "schedule": "short",
+      "method": "recurrence",
+      "seed": 1008,
+      "checkpoint_sha256": "11db4df4e0f82670f0109bc51ae2aea60cab089195433fef18f8d24fe1d3efd0"
+    },
+    {
+      "schedule": "short",
+      "method": "relevance",
+      "seed": 1008,
+      "checkpoint_sha256": "976e998b486779b5a589a7e0e6009a9ae79642d9c54a74f26111fc7dbc4cac1d"
+    },
+    {
+      "schedule": "short",
+      "method": "joint",
+      "seed": 1008,
+      "checkpoint_sha256": "50646bf17cdf5c84a6acc14413a461b9ffcf522b0491487d8561c62e2235b16b"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_encoder",
+      "seed": 1008,
+      "checkpoint_sha256": "eb3b52a8c93d547bde3954d9be99148791eec7e807cfa8b58b993435a33c8316"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_late",
+      "seed": 1008,
+      "checkpoint_sha256": "963ea5fc8d7b49010fdbe0822160b17bfcd49b30802f9546869655bb3b44c9e4"
+    },
+    {
+      "schedule": "long",
+      "method": "none",
+      "seed": 1008,
+      "checkpoint_sha256": "c333a3f561dca4480481f959cd0f73a7b78a508f47ddf8676581d927495dfc97"
+    },
+    {
+      "schedule": "long",
+      "method": "uniform",
+      "seed": 1008,
+      "checkpoint_sha256": "b996a8a0262556d453a5252f7edc97cb91bbc168f69ef8a3c4f928978c906ed8"
+    },
+    {
+      "schedule": "long",
+      "method": "recent",
+      "seed": 1008,
+      "checkpoint_sha256": "0643cfa731f5302b33893fb06709f02e489d9301fe4654bded101111c98d5dbe"
+    },
+    {
+      "schedule": "long",
+      "method": "coverage",
+      "seed": 1008,
+      "checkpoint_sha256": "52cd9a899cba8d6ca3104801c98294740128603cff2063d7ec43546a14054e15"
+    },
+    {
+      "schedule": "long",
+      "method": "recurrence",
+      "seed": 1008,
+      "checkpoint_sha256": "d1d56a974baa62bd17789bd7f1b008030fbbf732630d1f2a17c0e2d3b7b478ca"
+    },
+    {
+      "schedule": "long",
+      "method": "relevance",
+      "seed": 1008,
+      "checkpoint_sha256": "94fd5a5d0e4a234149a200c8c22eee769d3cc7b108edf82951a31fc62c8cc93f"
+    },
+    {
+      "schedule": "long",
+      "method": "joint",
+      "seed": 1008,
+      "checkpoint_sha256": "c46426112810bad711ce8ea9715cb74f21d840aeb981a7714a09a9b1b010ba65"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_encoder",
+      "seed": 1008,
+      "checkpoint_sha256": "a5279acc3f3b33e50a371851237148caf868bec1fe0ecec1efe8f3c654dfb3ad"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_late",
+      "seed": 1008,
+      "checkpoint_sha256": "11ec78d167d3c07bbe98ffff6b1c196350f28a4240267dda3c0f132558e954e2"
+    },
+    {
+      "schedule": "no_return",
+      "method": "none",
+      "seed": 1008,
+      "checkpoint_sha256": "8c5041ad59e458c54194869e206da47b5aada23438e9efd39faae451a785ffdc"
+    },
+    {
+      "schedule": "no_return",
+      "method": "uniform",
+      "seed": 1008,
+      "checkpoint_sha256": "f1a1129792177a19bc2c1b01db78f28ac8eec1da50ed29ea5dbb51d60c875756"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recent",
+      "seed": 1008,
+      "checkpoint_sha256": "e4fdfda0460c54a0cdb0b8096f02806ec59d76b1eaa42bae5c9c277674d5e664"
+    },
+    {
+      "schedule": "no_return",
+      "method": "coverage",
+      "seed": 1008,
+      "checkpoint_sha256": "77e6601ab7cfa87a8265c82563e7b458f04695d9ee82ddecd6e8917b6cb565e9"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recurrence",
+      "seed": 1008,
+      "checkpoint_sha256": "a490d88ee6efe77e3d4e058f46e7dda1ac8cd79502315510429aa5a61804e79c"
+    },
+    {
+      "schedule": "no_return",
+      "method": "relevance",
+      "seed": 1008,
+      "checkpoint_sha256": "38a1590fccc92a432a07d31b578165652edd0a998ed243e9d79194374ed521a0"
+    },
+    {
+      "schedule": "no_return",
+      "method": "joint",
+      "seed": 1008,
+      "checkpoint_sha256": "fa37e32828f38223e460de6ecaa27f7f2b4c7b059611c891dbe168389bf4a160"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_encoder",
+      "seed": 1008,
+      "checkpoint_sha256": "faaa03ce486173f6519387105328712118484e0235aaeecc7521b24cf548286b"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_late",
+      "seed": 1008,
+      "checkpoint_sha256": "e23a500ca0397a2189d57c68dc6f2ec34356f959b25f04938f56dea4418734fd"
+    },
+    {
+      "schedule": "reversal",
+      "method": "none",
+      "seed": 1008,
+      "checkpoint_sha256": "0313a8a80cce6b0b2e10c65e24168b1ef43935667e6b877c3b6d86d72ec5cdb7"
+    },
+    {
+      "schedule": "reversal",
+      "method": "uniform",
+      "seed": 1008,
+      "checkpoint_sha256": "fc29db977d6fd45107113e6120726f24266320e8ed2dd7cdc573457db586de9c"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recent",
+      "seed": 1008,
+      "checkpoint_sha256": "5b8c0c55c3c7f75478c91cdd24e61b82213e4395d36260e2e6f5ef7a5340de93"
+    },
+    {
+      "schedule": "reversal",
+      "method": "coverage",
+      "seed": 1008,
+      "checkpoint_sha256": "89687fc20670918ac85c6624a0c911c908dca589a50f927530345dcb9037d73d"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recurrence",
+      "seed": 1008,
+      "checkpoint_sha256": "8ec6525b57737dbe37e825967ebcd91729427bfe5180bff7bfc7faa6561baaeb"
+    },
+    {
+      "schedule": "reversal",
+      "method": "relevance",
+      "seed": 1008,
+      "checkpoint_sha256": "e9606c21b84dccb71aa6777e1f11bdd9bb51cfea4d3bbc0fe1e8cd38ad919586"
+    },
+    {
+      "schedule": "reversal",
+      "method": "joint",
+      "seed": 1008,
+      "checkpoint_sha256": "0af0ef2e9ca808ec1300936194418271601fbf5e0c285909d17d031dcdaf7329"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_encoder",
+      "seed": 1008,
+      "checkpoint_sha256": "4e17d1bd51ab37d4034c67f87ee9e7b325ac0e9edb652da47f1903c65bb07272"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_late",
+      "seed": 1008,
+      "checkpoint_sha256": "a0448cb48d18a773f9b0703742fa33de15b1e15bafc8fb578feab70ae927d332"
+    },
+    {
+      "schedule": "short",
+      "method": "none",
+      "seed": 1019,
+      "checkpoint_sha256": "3a75ab37b767d18e9f1033c46fbc180211a52dba0bb349f79f03849c25877994"
+    },
+    {
+      "schedule": "short",
+      "method": "uniform",
+      "seed": 1019,
+      "checkpoint_sha256": "1a012aefc11952e7fa25dc29e6705b1e390a739b5a90c0904b5cb7cb574601b9"
+    },
+    {
+      "schedule": "short",
+      "method": "recent",
+      "seed": 1019,
+      "checkpoint_sha256": "4701d106e4b54b3d66c472ad18ffdba7f4a786dd42769583ab46b47595a8378a"
+    },
+    {
+      "schedule": "short",
+      "method": "coverage",
+      "seed": 1019,
+      "checkpoint_sha256": "4e894ef8d78fe2cc6e7809cf299f1a8faf49a6b83cdd34e59892a5bcd94fae24"
+    },
+    {
+      "schedule": "short",
+      "method": "recurrence",
+      "seed": 1019,
+      "checkpoint_sha256": "6b46dc2ea596c473e53af45fc265610a1382f304ffc96611ffe7fd78e3790c61"
+    },
+    {
+      "schedule": "short",
+      "method": "relevance",
+      "seed": 1019,
+      "checkpoint_sha256": "5c830b232382108369694562d48d63f9dcec67f6cb15839c6cbe7c1c4c8de525"
+    },
+    {
+      "schedule": "short",
+      "method": "joint",
+      "seed": 1019,
+      "checkpoint_sha256": "a4173e1b1edcd6ac34c97ded32f5f9cf8fded138143823f3c0863e01ce150820"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_encoder",
+      "seed": 1019,
+      "checkpoint_sha256": "d26bdfa9d886487d9dd07b78a126ae089f72ea0411420e30874e9cb45ac3acee"
+    },
+    {
+      "schedule": "short",
+      "method": "frozen_late",
+      "seed": 1019,
+      "checkpoint_sha256": "5e4fcf97aeac96e9d350ffe56fe3aa901f66d088bac8cd49fc91a438205349bd"
+    },
+    {
+      "schedule": "long",
+      "method": "none",
+      "seed": 1019,
+      "checkpoint_sha256": "7c8fe742e0d1339685cc5a4dabe501de1e71397cc4bd3917877fa41ba9aac2f5"
+    },
+    {
+      "schedule": "long",
+      "method": "uniform",
+      "seed": 1019,
+      "checkpoint_sha256": "16417a99d91120461885c14d32778b85a567bd423f906143deeb1e66bd657cae"
+    },
+    {
+      "schedule": "long",
+      "method": "recent",
+      "seed": 1019,
+      "checkpoint_sha256": "9fc6df6b761e78d7aa925cbc0e8c280d7eda98d130d9f1428bee1ef797c3e1a8"
+    },
+    {
+      "schedule": "long",
+      "method": "coverage",
+      "seed": 1019,
+      "checkpoint_sha256": "786ea1963dd6980c2c872cfc3323ebe7ff23ab7624129c4ae3f8ab5dbb4494de"
+    },
+    {
+      "schedule": "long",
+      "method": "recurrence",
+      "seed": 1019,
+      "checkpoint_sha256": "e6e9e38205eb591bc2ded450dac654577aae03b727f95222df50a29973fd0a63"
+    },
+    {
+      "schedule": "long",
+      "method": "relevance",
+      "seed": 1019,
+      "checkpoint_sha256": "32e8349f83fba107c6fdb074d90dbaf5aa0813bb933c5a9cda7ccf23923dc858"
+    },
+    {
+      "schedule": "long",
+      "method": "joint",
+      "seed": 1019,
+      "checkpoint_sha256": "1ac8df0507d179f4ff0877a3bcdf9cc0cddabf96e838a1fbbf2fc43d57fa67d4"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_encoder",
+      "seed": 1019,
+      "checkpoint_sha256": "06f465bffb18c247d5e0cea6dbd19f9a759a7630795c4592da3fd22d32fd646b"
+    },
+    {
+      "schedule": "long",
+      "method": "frozen_late",
+      "seed": 1019,
+      "checkpoint_sha256": "0e6f6efbe2d02c8abeaeed6416ee734fbc1458d40a70f60d92ad57e3a11b72ce"
+    },
+    {
+      "schedule": "no_return",
+      "method": "none",
+      "seed": 1019,
+      "checkpoint_sha256": "6047009892b264b9a2a636c715dc6edf1f3d2957fed37f4845f63d667c63cb57"
+    },
+    {
+      "schedule": "no_return",
+      "method": "uniform",
+      "seed": 1019,
+      "checkpoint_sha256": "14dccf759f797873712418e4be63eda587f1fdf5aa55eb32e78d9731ca19bc85"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recent",
+      "seed": 1019,
+      "checkpoint_sha256": "434a010e559c32f25d4448d26f01303fd2a113ba8875366d4d417d8cf83b2c66"
+    },
+    {
+      "schedule": "no_return",
+      "method": "coverage",
+      "seed": 1019,
+      "checkpoint_sha256": "54d9fb70045ea98e450ed428ab730d31673140488bdc9f307c65646e0207e58d"
+    },
+    {
+      "schedule": "no_return",
+      "method": "recurrence",
+      "seed": 1019,
+      "checkpoint_sha256": "176f8962e102342399b8401ceaf1b362786b1df3e21fa020de456f6a1571ac7a"
+    },
+    {
+      "schedule": "no_return",
+      "method": "relevance",
+      "seed": 1019,
+      "checkpoint_sha256": "0b90f4bed837ae6e1f52461c7e9622cd6e28ecc978e44892ad510d7387c408f4"
+    },
+    {
+      "schedule": "no_return",
+      "method": "joint",
+      "seed": 1019,
+      "checkpoint_sha256": "ec801c561021128f6fcb5b66a27f84d372ce848fce0ad4ece0e7b86698a26b4d"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_encoder",
+      "seed": 1019,
+      "checkpoint_sha256": "3c291b137d16d4ab9cb2ea128c9b86cd56e9d14790ed69f03087f62ff3d71877"
+    },
+    {
+      "schedule": "no_return",
+      "method": "frozen_late",
+      "seed": 1019,
+      "checkpoint_sha256": "641b6eadee076eabe17050c5ffff2227fe445ef77178c6bd6259a2767cc18a5a"
+    },
+    {
+      "schedule": "reversal",
+      "method": "none",
+      "seed": 1019,
+      "checkpoint_sha256": "f7f85400aef372525d3a30eaa14e051ebc0e9dbfa4e88bfbf1a2f1a4df5443a5"
+    },
+    {
+      "schedule": "reversal",
+      "method": "uniform",
+      "seed": 1019,
+      "checkpoint_sha256": "dcc87d0dfcd8f2f8d0847bc2ff644b9beb99847d689fe268fb92618f83faa26f"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recent",
+      "seed": 1019,
+      "checkpoint_sha256": "a6172719618624def96a71007403d7338d3d9a120020e096fe7be55264b1d8ca"
+    },
+    {
+      "schedule": "reversal",
+      "method": "coverage",
+      "seed": 1019,
+      "checkpoint_sha256": "6910ee6c764ee673d3632fe465907d75223c4aea2ee9dfd03ee35261ecad7889"
+    },
+    {
+      "schedule": "reversal",
+      "method": "recurrence",
+      "seed": 1019,
+      "checkpoint_sha256": "3529660cdef903052c2ffe255f60eb6d1e0cf703d5f10f42627c3d48654583c9"
+    },
+    {
+      "schedule": "reversal",
+      "method": "relevance",
+      "seed": 1019,
+      "checkpoint_sha256": "105b81b4a6bbedaf4f269a0924fa8fe816f257e6b98946d3e0f47484043751ae"
+    },
+    {
+      "schedule": "reversal",
+      "method": "joint",
+      "seed": 1019,
+      "checkpoint_sha256": "b65186ca9bc8a61c3e62275c5cafeb6fe28e8329a419c1e14e853e9224107a72"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_encoder",
+      "seed": 1019,
+      "checkpoint_sha256": "306c555762ddf87b6d4f1dccdd0fe22a30d6ae2dd4a7fb2c70caed494dfd31a8"
+    },
+    {
+      "schedule": "reversal",
+      "method": "frozen_late",
+      "seed": 1019,
+      "checkpoint_sha256": "a3ca43dafcb8280f728199215f2fd6fc72b785287d3531148092294bce674f4a"
+    }
+  ],
+  "scope": "Local deterministic recomputation; not independent replication or complete trajectory replay",
+  "audit_script_sha256": "da4eee3cdc5625ea4e6ca6a2fc7d9e1a4176368765a74f31cea88c20cbe2cd4b"
+}

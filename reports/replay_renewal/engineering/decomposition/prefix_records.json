@@ -1,0 +1,326 @@
+{
+  "conditional_19_base": {
+    "identity": {
+      "config_sha256": "360c233fe718160a35d82308f1d47e5ead1882d43843d4f642fb8152110a5e4c",
+      "source_sha256": "6f3561f485bf5dad9577be231b2542bba0c4682ac0b847e03f385b1c57271d39",
+      "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+    },
+    "seed": 19,
+    "model": "conditional",
+    "blocks": [
+      {
+        "law": {
+          "mode": 1,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "batch_sha256": [
+          "2459dfaa9e24d4c7b4e939d00349f0bfbc9226eeb3eddbcd8f63dcc31cd6bc50",
+          "a241b0c0b5726a9da25a9268574af26a63dc4e07f059f6841e755c460f610e89"
+        ],
+        "endpoint": {
+          "brier": 0.2559134364128113,
+          "focus_brier": 0.2559134364128113,
+          "survival": 0.5625,
+          "focus_survival": 0.5625,
+          "valid_brier": 0.2493276596069336,
+          "valid_survival": 0.5,
+          "no_transfer": 0.671875,
+          "clairvoyant_upper": 0.8125
+        },
+        "diagnostics": {
+          "initial_hash": "abdfdcd4116e773b152d9b5f21867e704510bd3f5b9307d8ee158d3f0ce7e622",
+          "final_hash": "50cb93202159f3714a92dcc6f72a62b3fce22d580f5980a63023ff6dfb61652e",
+          "parameters": 4656,
+          "model_bytes": 18624,
+          "optimizer_bytes": 37336,
+          "peak_replay_bytes": 18544,
+          "memory_ids": [
+            0,
+            1
+          ],
+          "packets_seen": 2,
+          "history_bytes": 6176,
+          "encoder_displacement": 0.19715019962609284,
+          "cost": {
+            "arrivals": 16,
+            "optimizer_steps": 2,
+            "query_presentations": 32,
+            "support_presentations": 32,
+            "replay_presentations": 8,
+            "duplicate_presentations": 8,
+            "training_seconds": 0.027179800001249532
+          },
+          "initial_encoder_hash": "e8fbdf3d054f24de7543beab6fbceb41d513e975282b0e45fe079c1c685f5087",
+          "encoder_hash": "2eeddff37935d0717906a04d6dee625ff8c820a08218c2ce7b5f43eb897c3182"
+        }
+      },
+      {
+        "law": {
+          "mode": 0,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "batch_sha256": [
+          "c87ad024125fc01377a099f9436c2f501b6010de9d21576466d5f301d162144d",
+          "1ab36a2d3c926ce95469f11a0c74997279a799093de48d3d025e14d6b3b86d7a"
+        ],
+        "endpoint": {
+          "brier": 0.25325697660446167,
+          "focus_brier": 0.25325697660446167,
+          "survival": 0.640625,
+          "focus_survival": 0.640625,
+          "valid_brier": 0.24874967336654663,
+          "valid_survival": 0.625,
+          "no_transfer": 0.640625,
+          "clairvoyant_upper": 0.8125
+        },
+        "diagnostics": {
+          "initial_hash": "abdfdcd4116e773b152d9b5f21867e704510bd3f5b9307d8ee158d3f0ce7e622",
+          "final_hash": "c061e80c172c3e5daeb6f28fa308e791fd3d6fe89fd78b36f752d509bec46faf",
+          "parameters": 4656,
+          "model_bytes": 18624,
+          "optimizer_bytes": 37336,
+          "peak_replay_bytes": 43264,
+          "memory_ids": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "packets_seen": 4,
+          "history_bytes": 6176,
+          "encoder_displacement": 0.3476316898422529,
+          "cost": {
+            "arrivals": 32,
+            "optimizer_steps": 4,
+            "query_presentations": 64,
+            "support_presentations": 64,
+            "replay_presentations": 24,
+            "duplicate_presentations": 8,
+            "training_seconds": 0.037853500003620866
+          },
+          "initial_encoder_hash": "e8fbdf3d054f24de7543beab6fbceb41d513e975282b0e45fe079c1c685f5087",
+          "encoder_hash": "92ddd4a770891949f50838d7a10bebe04477e063dc98244c5ff0e39e2df83e95"
+        }
+      }
+    ],
+    "policy": "uniform",
+    "memory": {
+      "type": "ReservoirMemory",
+      "capacity": 4,
+      "seen": 4,
+      "ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "membership": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 256735735855648524303033792571546591371,
+          "inc": 179096567549543767910221597740554291393
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "sampling": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 140765862165308926515918653226973526123,
+          "inc": 126363130756118609132188395174630993603
+        },
+        "has_uint32": 0,
+        "uinteger": 1437409378
+      },
+      "age": 4,
+      "packets": [
+        {
+          "support": null,
+          "query": "2459dfaa9e24d4c7b4e939d00349f0bfbc9226eeb3eddbcd8f63dcc31cd6bc50",
+          "hidden": false
+        },
+        {
+          "support": "2459dfaa9e24d4c7b4e939d00349f0bfbc9226eeb3eddbcd8f63dcc31cd6bc50",
+          "query": "a241b0c0b5726a9da25a9268574af26a63dc4e07f059f6841e755c460f610e89",
+          "hidden": false
+        },
+        {
+          "support": "a241b0c0b5726a9da25a9268574af26a63dc4e07f059f6841e755c460f610e89",
+          "query": "c87ad024125fc01377a099f9436c2f501b6010de9d21576466d5f301d162144d",
+          "hidden": false
+        },
+        {
+          "support": "c87ad024125fc01377a099f9436c2f501b6010de9d21576466d5f301d162144d",
+          "query": "1ab36a2d3c926ce95469f11a0c74997279a799093de48d3d025e14d6b3b86d7a",
+          "hidden": false
+        }
+      ]
+    }
+  },
+  "recurrent_19_base": {
+    "identity": {
+      "config_sha256": "360c233fe718160a35d82308f1d47e5ead1882d43843d4f642fb8152110a5e4c",
+      "source_sha256": "6f3561f485bf5dad9577be231b2542bba0c4682ac0b847e03f385b1c57271d39",
+      "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+    },
+    "seed": 19,
+    "model": "recurrent",
+    "blocks": [
+      {
+        "law": {
+          "mode": 1,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "batch_sha256": [
+          "2459dfaa9e24d4c7b4e939d00349f0bfbc9226eeb3eddbcd8f63dcc31cd6bc50",
+          "a241b0c0b5726a9da25a9268574af26a63dc4e07f059f6841e755c460f610e89"
+        ],
+        "endpoint": {
+          "brier": 0.25635576248168945,
+          "focus_brier": 0.25635576248168945,
+          "survival": 0.5625,
+          "focus_survival": 0.5625,
+          "valid_brier": 0.25031769275665283,
+          "valid_survival": 0.5,
+          "no_transfer": 0.671875,
+          "clairvoyant_upper": 0.8125
+        },
+        "diagnostics": {
+          "initial_hash": "610dd378fe1b0201b14ff9468125a0be591d44c2ff79e71fd76929898a2e90a1",
+          "final_hash": "70eea3b842bed58ebe90e0a0292b2d7f0efcc4eade5dccf8114f93719b3d8e3a",
+          "parameters": 5859,
+          "model_bytes": 23436,
+          "optimizer_bytes": 46928,
+          "peak_replay_bytes": 18544,
+          "memory_ids": [
+            0,
+            1
+          ],
+          "packets_seen": 2,
+          "history_bytes": 6176,
+          "encoder_displacement": 0.19443487874974685,
+          "cost": {
+            "arrivals": 16,
+            "optimizer_steps": 2,
+            "query_presentations": 32,
+            "support_presentations": 32,
+            "replay_presentations": 8,
+            "duplicate_presentations": 8,
+            "training_seconds": 0.012870399999883375
+          },
+          "initial_encoder_hash": "e8fbdf3d054f24de7543beab6fbceb41d513e975282b0e45fe079c1c685f5087",
+          "encoder_hash": "6b9b62db20b132e007f443e1dd3a6204502c79514a36804fa98d29b4f8424e61"
+        }
+      },
+      {
+        "law": {
+          "mode": 0,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "batch_sha256": [
+          "c87ad024125fc01377a099f9436c2f501b6010de9d21576466d5f301d162144d",
+          "1ab36a2d3c926ce95469f11a0c74997279a799093de48d3d025e14d6b3b86d7a"
+        ],
+        "endpoint": {
+          "brier": 0.25430989265441895,
+          "focus_brier": 0.25430989265441895,
+          "survival": 0.671875,
+          "focus_survival": 0.671875,
+          "valid_brier": 0.2489960640668869,
+          "valid_survival": 0.625,
+          "no_transfer": 0.640625,
+          "clairvoyant_upper": 0.8125
+        },
+        "diagnostics": {
+          "initial_hash": "610dd378fe1b0201b14ff9468125a0be591d44c2ff79e71fd76929898a2e90a1",
+          "final_hash": "7f6f5ebd655ecff338c9d127d0fea274701925bebdd9092445dac06178489cac",
+          "parameters": 5859,
+          "model_bytes": 23436,
+          "optimizer_bytes": 46928,
+          "peak_replay_bytes": 43264,
+          "memory_ids": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "packets_seen": 4,
+          "history_bytes": 6176,
+          "encoder_displacement": 0.3202979119307313,
+          "cost": {
+            "arrivals": 32,
+            "optimizer_steps": 4,
+            "query_presentations": 64,
+            "support_presentations": 64,
+            "replay_presentations": 24,
+            "duplicate_presentations": 8,
+            "training_seconds": 0.025166499999613734
+          },
+          "initial_encoder_hash": "e8fbdf3d054f24de7543beab6fbceb41d513e975282b0e45fe079c1c685f5087",
+          "encoder_hash": "e9012d539c2070254412fcb7e63e902811c67c5259f89ae50bf01bdd6b8f4c51"
+        }
+      }
+    ],
+    "policy": "uniform",
+    "memory": {
+      "type": "ReservoirMemory",
+      "capacity": 4,
+      "seen": 4,
+      "ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "membership": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 256735735855648524303033792571546591371,
+          "inc": 179096567549543767910221597740554291393
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "sampling": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 140765862165308926515918653226973526123,
+          "inc": 126363130756118609132188395174630993603
+        },
+        "has_uint32": 0,
+        "uinteger": 1437409378
+      },
+      "age": 4,
+      "packets": [
+        {
+          "support": null,
+          "query": "2459dfaa9e24d4c7b4e939d00349f0bfbc9226eeb3eddbcd8f63dcc31cd6bc50",
+          "hidden": false
+        },
+        {
+          "support": "2459dfaa9e24d4c7b4e939d00349f0bfbc9226eeb3eddbcd8f63dcc31cd6bc50",
+          "query": "a241b0c0b5726a9da25a9268574af26a63dc4e07f059f6841e755c460f610e89",
+          "hidden": false
+        },
+        {
+          "support": "a241b0c0b5726a9da25a9268574af26a63dc4e07f059f6841e755c460f610e89",
+          "query": "c87ad024125fc01377a099f9436c2f501b6010de9d21576466d5f301d162144d",
+          "hidden": false
+        },
+        {
+          "support": "c87ad024125fc01377a099f9436c2f501b6010de9d21576466d5f301d162144d",
+          "query": "1ab36a2d3c926ce95469f11a0c74997279a799093de48d3d025e14d6b3b86d7a",
+          "hidden": false
+        }
+      ]
+    }
+  }
+}

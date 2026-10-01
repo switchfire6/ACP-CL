@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "7c123ef284f48f58345b12b0cade878a7bdb988e8207a0bc0203bcf6cc36f247",
+    "source_sha256": "80e0110241041c303e869b8f85c274a6262aaac4ecc8d399bb837a5c1ddf9a2d",
+    "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+  },
+  "artifact_files": 507,
+  "standalone_verifier_sealed": true,
+  "original_json_records": 840,
+  "original_run_files": 2334,
+  "numerical_arrays": 480,
+  "trajectories": 24,
+  "assessments": 48,
+  "ordinary_arrivals_per_trajectory": 18432,
+  "diagnostic_forks": 3456,
+  "instrumented_forks": 3024,
+  "zero_update_copies": 96,
+  "diagnostic_prediction_forwards": 120576,
+  "extra_loss_forwards": 12096,
+  "tensor_audit_coverage": {
+    "trajectories": 24,
+    "before_checkpoints": 240,
+    "final_checkpoints": 240,
+    "diagnostic_boundary_checkpoints": 48,
+    "assessments": 48,
+    "ordinary_packets": 13824,
+    "original_packet_errors_recomputed": 13824,
+    "original_predictions_recomputed": 240,
+    "diagnostic_forks_reproduced": 3456,
+    "zero_update_copies": 96,
+    "diagnostic_prediction_calls_recomputed": 120576,
+    "loss_instrumentation_forwards_recomputed": 12096
+  },
+  "replication_screen": {
+    "conditional": false,
+    "recurrent": false
+  },
+  "scope": "Independent portable file/lock/identity/coverage checks, original JSON and NPZ hashes, causal branch contexts, all-action Brier and greedy survival, early/late metrics, exact candidate selectors and matching zero baselines, all factorial/repair/environment effects, seed bootstrap and primary replication screen. Checkpoint hashes and complete reconstruction coverage are bound to the archived tensor audit. No live source imports, pickle loading, ordinary retraining or independent physics replication. Descriptive rank/cue/coverage summaries and plots are checksummed but not independently recalculated.",
+  "isolated_copy_verified": true,
+  "source_manifest_sha256": "9fe4334da8aedc9c69f54ecd83b6b5b448ac1f5f359d07aa3556851fc427f690",
+  "copy_manifest_sha256": "9fe4334da8aedc9c69f54ecd83b6b5b448ac1f5f359d07aa3556851fc427f690",
+  "source_manifest_unchanged": true,
+  "python_executable": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\.venv\\Scripts\\python.exe",
+  "subprocess_flags": [
+    "-I",
+    "-B"
+  ],
+  "source_archive": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\rehearsal_state\\diagnostic",
+  "copy_archive": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam-state-diagnostic-external-h4nn6dp2\\archive",
+  "unrelated_cwd": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam-state-diagnostic-external-h4nn6dp2\\unrelated-working-directory"
+}

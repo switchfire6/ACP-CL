@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "tests": 818,
+  "windows_skips": 2,
+  "breakdown": {
+    "full_suite_before_analysis": 777,
+    "recovery_audit": 5,
+    "prospective_analysis": 36
+  },
+  "ruff_passed": true,
+  "smoke_complete": true,
+  "smoke_qualified": false,
+  "scope": "777-test full run plus 5 new integration and 36 new analysis tests; two pre-existing Windows symlink skips. Smoke is engineering only."
+}

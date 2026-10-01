@@ -1,0 +1,149 @@
+{
+  "status": "passed",
+  "run": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\runs\\representation_learning_smoke",
+  "study": "representation_learning_smoke",
+  "identity": {
+    "config_sha256": "817a8d4903b4398d021a531b49cdd25d0fcae9c2293c234699c515a5da5cc858",
+    "source_sha256": "b1ef5ee92454f16d7e58f13f4effbd020a170ae6069ea81c8142e0ed8b83861e",
+    "analysis_sha256": "b68320ae2dfa3359ea0143c9506cf87db66af2631d9d055b1d500557d8880860",
+    "protocol_sha256": "3eccb319858205bf1a3e4b25815f3dc1cab3ec6f62db83cf56b02c65488fb78e",
+    "runtime_sha256": "d61072f91446f0bb2f3cdc0074e1c4fc8e87235f8a3b55f18941e7b4b9de2337"
+  },
+  "audit_script_sha256": "0dd1d5c08f4e4e41a6552b43bbd3d30d735b97c31fb48545d94444b88a8efcd2",
+  "completed_utc": "2026-09-28T22:53:42.860286+00:00",
+  "workers": 1,
+  "threads": 1,
+  "jobs": 1,
+  "checks": {
+    "restored_checkpoints": 8,
+    "phases": 4,
+    "array_checks": 812,
+    "scalar_checks": 2664864,
+    "ordinary_forecasts_reconstructed": 4,
+    "training_packets": 64,
+    "training_arrivals": 512,
+    "replay_choices": 64,
+    "ordinary_forecasts_not_reconstructed": 60,
+    "optimizer_steps_counted": 64,
+    "evaluation_forecasts_reconstructed": 28,
+    "evaluation_calls": 40,
+    "evaluation_forecasts_not_reconstructed": 12
+  },
+  "learner_states_unchanged": true,
+  "global_rng_unchanged": true,
+  "limitations": [
+    "No optimizer updates were rerun.",
+    "Ordinary interior and intermediate-model evaluation forecasts were not reconstructed.",
+    "The audit adds no outcome selection or promotion criteria."
+  ],
+  "job_records": [
+    {
+      "seed": 18099,
+      "arm": "outcome",
+      "result_sha256": "17287bdc72a6f352740e42816816941d30537b06bb816451c5a8260561ed4748",
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "checks": {
+        "restored_checkpoints": 8,
+        "phases": 4,
+        "array_checks": 812,
+        "scalar_checks": 2664864,
+        "ordinary_forecasts_reconstructed": 4,
+        "training_packets": 64,
+        "training_arrivals": 512,
+        "replay_choices": 64,
+        "ordinary_forecasts_not_reconstructed": 60,
+        "optimizer_steps_counted": 64,
+        "evaluation_forecasts_reconstructed": 28,
+        "evaluation_calls": 40,
+        "evaluation_forecasts_not_reconstructed": 12
+      },
+      "phases": [
+        {
+          "phase": "fresh_1",
+          "result_sha256": "41474b929748a6fe8c09179c5a7189f3030cd70107438ab5dace8a1ae2c09d64",
+          "before_sha256": "e21eb4b1a7a8054bcbd32bd651cb431636e17b20e809be05878f3723fe3e5843",
+          "checkpoint_sha256": "ea5d97608be81bac1bddd48cc3326259e40ece93dd03a63d673a08e758f6b952",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 101,
+            "scalar_checks": 330560,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 8,
+            "training_arrivals": 64,
+            "replay_choices": 8,
+            "ordinary_forecasts_not_reconstructed": 7,
+            "optimizer_steps_counted": 8,
+            "evaluation_forecasts_reconstructed": 4,
+            "evaluation_calls": 5,
+            "evaluation_forecasts_not_reconstructed": 1
+          }
+        },
+        {
+          "phase": "fresh_2",
+          "result_sha256": "c39b7383a878b864bdc36660489272274627a9efac82b5fb85d7703dee5d05c5",
+          "before_sha256": "2aa116dec98349971d9770af05b92ead580999611242ab17564d8b0a458673e4",
+          "checkpoint_sha256": "6ca3e30c3941b4a76c73a274ea047a04385bfa46507b0f2969a79bc61445a264",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 109,
+            "scalar_checks": 387936,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 8,
+            "training_arrivals": 64,
+            "replay_choices": 8,
+            "ordinary_forecasts_not_reconstructed": 7,
+            "optimizer_steps_counted": 8,
+            "evaluation_forecasts_reconstructed": 5,
+            "evaluation_calls": 6,
+            "evaluation_forecasts_not_reconstructed": 1
+          }
+        },
+        {
+          "phase": "fresh_3",
+          "result_sha256": "8e098ab4926de7e3c20ca40843492734c77225509c19d50c9647d713643a3218",
+          "before_sha256": "8d81534c3a2c26762ce59c0b21898b160b08dfb5adf56d3f928a91afef5b0559",
+          "checkpoint_sha256": "97e9b7c08d0bb4a43dade8737068ce475c71363aabd8f7595b94f309c711f988",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 117,
+            "scalar_checks": 445312,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 8,
+            "training_arrivals": 64,
+            "replay_choices": 8,
+            "ordinary_forecasts_not_reconstructed": 7,
+            "optimizer_steps_counted": 8,
+            "evaluation_forecasts_reconstructed": 6,
+            "evaluation_calls": 7,
+            "evaluation_forecasts_not_reconstructed": 1
+          }
+        },
+        {
+          "phase": "interleaved",
+          "result_sha256": "4d073ea4f16c8a8e9e9650fad528eca0654fad4e3ce599a1c07f592031fde4a1",
+          "before_sha256": "23176b743b27290298e41c30909a97ecfb064afffacd05d0c03d2fb40ebedcaa",
+          "checkpoint_sha256": "f6dadab47bd18862ce7518d6b535cb1d62c91dd4237713fccb55992e7b7db8b5",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 485,
+            "scalar_checks": 1501056,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 40,
+            "training_arrivals": 320,
+            "replay_choices": 40,
+            "ordinary_forecasts_not_reconstructed": 39,
+            "optimizer_steps_counted": 40,
+            "evaluation_forecasts_reconstructed": 13,
+            "evaluation_calls": 22,
+            "evaluation_forecasts_not_reconstructed": 9
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "pytest": {
+    "passed": 642,
+    "skipped": 2,
+    "seconds": 46.35,
+    "scope": "full repository suite",
+    "skip_reason": "existing host-dependent Windows directory-symlink tests"
+  },
+  "ruff": "passed: src tests scripts",
+  "cpu_smoke": "runs/conditional_smoke_locked",
+  "cuda_smoke": "runs/conditional_smoke_cuda",
+  "cuda_environment": {
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "scientific_cohort_device": "cpu",
+  "training_source_sha256": "7e152cf8e1589cb2629652327d8a4821b9a37048560e628fd160b48f3392322c",
+  "note": "Scientific source remained unchanged after lock. Checkpoint audit is recorded separately.",
+  "analysis_tests_after_reporting_change": {
+    "passed": 4,
+    "seconds": 1.54
+  },
+  "figure_inspection": "passed; PNG inspected for labels, layout, and plotted values",
+  "checkpoint_audit": "passed: 144 pre-return and 144 final checkpoints",
+  "git_diff_check": "passed for tracked changes"
+}

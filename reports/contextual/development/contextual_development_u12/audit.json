@@ -1,0 +1,176 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "f4964a731888f5ea1095b9e1692867ad3c5a587c13efb313199c4970b6914eb1",
+    "source_sha256": "eb986881ccc8bab09114db0f81edb2f42c2cb6b8ce6384690d3f7f65ff2653d7",
+    "runtime_sha256": "dd7ef2968c4cb3d4ff91d4e3a8309f85476415d7b5207655e73be0f6101bea5a"
+  },
+  "prefix_checkpoints": 6,
+  "final_checkpoints": 18,
+  "elapsed_seconds": 14.479823599998781,
+  "checks": [
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "pooled",
+      "branch": "return",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "pooled",
+      "branch": "novel",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "pooled",
+      "branch": "noise",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "recurrent",
+      "branch": "return",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "recurrent",
+      "branch": "novel",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "recurrent",
+      "branch": "noise",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "oracle",
+      "branch": "return",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "oracle",
+      "branch": "novel",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 117,
+      "gap": "long",
+      "method": "oracle",
+      "branch": "noise",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "pooled",
+      "branch": "return",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "pooled",
+      "branch": "novel",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "pooled",
+      "branch": "noise",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "recurrent",
+      "branch": "return",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "recurrent",
+      "branch": "novel",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "recurrent",
+      "branch": "noise",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "oracle",
+      "branch": "return",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "oracle",
+      "branch": "novel",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    },
+    {
+      "seed": 118,
+      "gap": "long",
+      "method": "oracle",
+      "branch": "noise",
+      "data_regenerated": true,
+      "replay_causality": true,
+      "initial_final_probes_recomputed": true
+    }
+  ],
+  "scope": "Local recomputation with exact archived training source; not independent replication."
+}

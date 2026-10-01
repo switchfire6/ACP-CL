@@ -1,0 +1,689 @@
+{
+  "status": "passed",
+  "run": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\runs\\representation_learning_qualification",
+  "study": "representation_learning_qualification",
+  "identity": {
+    "config_sha256": "a02ff83198f72dfbf017dbc9bbae5c28cdf41bc81189a2a6c2fe99db9e4d9b0c",
+    "source_sha256": "b1ef5ee92454f16d7e58f13f4effbd020a170ae6069ea81c8142e0ed8b83861e",
+    "analysis_sha256": "9fcec96113a65d06800d3f1c4caef896105ed468d020901deafe8c4c841d9e17",
+    "protocol_sha256": "3eccb319858205bf1a3e4b25815f3dc1cab3ec6f62db83cf56b02c65488fb78e",
+    "runtime_sha256": "7a13a505bb56f094aa496e87f224391de508d702751ff318e585c002f3703737"
+  },
+  "audit_script_sha256": "0dd1d5c08f4e4e41a6552b43bbd3d30d735b97c31fb48545d94444b88a8efcd2",
+  "completed_utc": "2026-09-28T23:03:21.333347+00:00",
+  "workers": 6,
+  "threads": 1,
+  "jobs": 6,
+  "checks": {
+    "restored_checkpoints": 48,
+    "phases": 24,
+    "array_checks": 103080,
+    "scalar_checks": 589522176,
+    "ordinary_forecasts_reconstructed": 24,
+    "training_packets": 12288,
+    "training_arrivals": 393216,
+    "replay_choices": 147456,
+    "ordinary_forecasts_not_reconstructed": 12264,
+    "optimizer_steps_counted": 147456,
+    "evaluation_forecasts_reconstructed": 288,
+    "evaluation_calls": 648,
+    "evaluation_forecasts_not_reconstructed": 360
+  },
+  "learner_states_unchanged": true,
+  "global_rng_unchanged": true,
+  "limitations": [
+    "No optimizer updates were rerun.",
+    "Ordinary interior and intermediate-model evaluation forecasts were not reconstructed.",
+    "The audit adds no outcome selection or promotion criteria."
+  ],
+  "job_records": [
+    {
+      "seed": 18101,
+      "arm": "outcome",
+      "result_sha256": "8d6fd4bf60f7e3c8a80ac56f466962c17e64a3c8b3cfdc4db94dba1d5504dba7",
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "checks": {
+        "restored_checkpoints": 8,
+        "phases": 4,
+        "array_checks": 17180,
+        "scalar_checks": 98253696,
+        "ordinary_forecasts_reconstructed": 4,
+        "training_packets": 2048,
+        "training_arrivals": 65536,
+        "replay_choices": 24576,
+        "ordinary_forecasts_not_reconstructed": 2044,
+        "optimizer_steps_counted": 24576,
+        "evaluation_forecasts_reconstructed": 48,
+        "evaluation_calls": 108,
+        "evaluation_forecasts_not_reconstructed": 60
+      },
+      "phases": [
+        {
+          "phase": "fresh_1",
+          "result_sha256": "f95339d3fd089fe2ac295658f6e712a38ff2fde711fd9a866ae6b186552b425f",
+          "before_sha256": "ddd65dc316c92ea0f922967f2917419a47f79c45fc24a939f7eb23b2deedb062",
+          "checkpoint_sha256": "4ffb6287ada473cfbd755b2accf346df1e41c8e1a808fd6d935857cda9dabce6",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2143,
+            "scalar_checks": 12056288,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 6,
+            "evaluation_calls": 13,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_2",
+          "result_sha256": "9ac995a7ad1894c2665deb275141876b6cd156b496f156507f71b67bc41e9c0f",
+          "before_sha256": "3bb001e1b995a6bc1265e795db9019278703b20d5230df698e637c087a00dcc8",
+          "checkpoint_sha256": "6136126072383a079c9d43b938a35c5ad15046b370f7900b21ccdb6abbaf9004",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2159,
+            "scalar_checks": 12924896,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 8,
+            "evaluation_calls": 15,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_3",
+          "result_sha256": "545ab7173a61bc0dc631fed68474d50db4b86f9fb48d08b840bd5404608f5e3b",
+          "before_sha256": "e02f742842a7043466659236376bb5caacc997dcc76c5c2e98b35354e4c27a3f",
+          "checkpoint_sha256": "63c87a4a4b804c9d03a3b75728e2d0a41abc42f8553437e99f90bf92bb7daf62",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2175,
+            "scalar_checks": 13793504,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 10,
+            "evaluation_calls": 17,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "interleaved",
+          "result_sha256": "e5b58ae1cb449dfb863027c16c59d71a3b6f4510ac3463ed9ae9ba8996b8a4cf",
+          "before_sha256": "a90f445e069e11a3ed0b4af0808299c13401e6ce61aab1f4074f0896daa6eb34",
+          "checkpoint_sha256": "aa20e01445faa794f8eac8714299d50901f39c9dcbe70acaa56d625db64135c7",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 10703,
+            "scalar_checks": 59479008,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 1280,
+            "training_arrivals": 40960,
+            "replay_choices": 15360,
+            "ordinary_forecasts_not_reconstructed": 1279,
+            "optimizer_steps_counted": 15360,
+            "evaluation_forecasts_reconstructed": 24,
+            "evaluation_calls": 63,
+            "evaluation_forecasts_not_reconstructed": 39
+          }
+        }
+      ]
+    },
+    {
+      "seed": 18102,
+      "arm": "outcome",
+      "result_sha256": "2b1a8cf2ffa4941586c1e615f55782e407753b2cfe3b0e6aa726cc9353dc6b4f",
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "checks": {
+        "restored_checkpoints": 8,
+        "phases": 4,
+        "array_checks": 17180,
+        "scalar_checks": 98253696,
+        "ordinary_forecasts_reconstructed": 4,
+        "training_packets": 2048,
+        "training_arrivals": 65536,
+        "replay_choices": 24576,
+        "ordinary_forecasts_not_reconstructed": 2044,
+        "optimizer_steps_counted": 24576,
+        "evaluation_forecasts_reconstructed": 48,
+        "evaluation_calls": 108,
+        "evaluation_forecasts_not_reconstructed": 60
+      },
+      "phases": [
+        {
+          "phase": "fresh_1",
+          "result_sha256": "fff75928274e761e41af619e7f9b70f22844531b587fbd99dac9b74a63ac3162",
+          "before_sha256": "fb1db7f7061298827e2aca0780e11962d28943109c9031979931510379d27fb2",
+          "checkpoint_sha256": "9f101a20398b4ef21fe9d48f770ae964b9b2f1a5390cd5b5ebb3104550acb10c",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2143,
+            "scalar_checks": 12056288,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 6,
+            "evaluation_calls": 13,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_2",
+          "result_sha256": "ee60135f57430dcf8f854a20a26692e49ef3ce3460c7231fffd99378e4942f76",
+          "before_sha256": "f3efc052838c40fffd74af4b36121e47f36747f3abc5f5b541eb7a28b9ab2cea",
+          "checkpoint_sha256": "233e44ebf0c423ba2245a4204d8b6f5639244a7f66bdfa34cc51cc6b4aa52880",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2159,
+            "scalar_checks": 12924896,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 8,
+            "evaluation_calls": 15,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_3",
+          "result_sha256": "487a557a8681e37f32c87de3f4d2903038587e913806e9e29cf313f9156aaf37",
+          "before_sha256": "cfd3cac3e2250f8b1a598a516499980dc68295343946ac8cc84ce5df77317972",
+          "checkpoint_sha256": "7f93c62b6571fe826e2aa8dfed3ab2094a5a49f52163154b56efecc37ab934ca",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2175,
+            "scalar_checks": 13793504,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 10,
+            "evaluation_calls": 17,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "interleaved",
+          "result_sha256": "6fa19ace41c9b55347487deceed591ca5e0d21184cdb575297014d561769bf31",
+          "before_sha256": "35de79624d5af4ed7ce191d23e42b8c56647383af62d145d4af3bcf46fc1c01d",
+          "checkpoint_sha256": "3ee8636f8dbe4e19ab6d156a4d8622401b1159966221fa57d88f0835601dd991",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 10703,
+            "scalar_checks": 59479008,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 1280,
+            "training_arrivals": 40960,
+            "replay_choices": 15360,
+            "ordinary_forecasts_not_reconstructed": 1279,
+            "optimizer_steps_counted": 15360,
+            "evaluation_forecasts_reconstructed": 24,
+            "evaluation_calls": 63,
+            "evaluation_forecasts_not_reconstructed": 39
+          }
+        }
+      ]
+    },
+    {
+      "seed": 18103,
+      "arm": "outcome",
+      "result_sha256": "db095d4589284380304fcc8af24b486b36d88ffdb86fc23130e36102f1252169",
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "checks": {
+        "restored_checkpoints": 8,
+        "phases": 4,
+        "array_checks": 17180,
+        "scalar_checks": 98253696,
+        "ordinary_forecasts_reconstructed": 4,
+        "training_packets": 2048,
+        "training_arrivals": 65536,
+        "replay_choices": 24576,
+        "ordinary_forecasts_not_reconstructed": 2044,
+        "optimizer_steps_counted": 24576,
+        "evaluation_forecasts_reconstructed": 48,
+        "evaluation_calls": 108,
+        "evaluation_forecasts_not_reconstructed": 60
+      },
+      "phases": [
+        {
+          "phase": "fresh_1",
+          "result_sha256": "fa4d9d97cc180f09062aa6ca472851d811488378c4c0f075a0d7a459f9618e54",
+          "before_sha256": "0f83a96bb3e3cd947e210ae1767ba56dc36b62729d92c0ef6935d1418b3d64b8",
+          "checkpoint_sha256": "3e7abce3e132f4d34c2f02c15388cc0a8d7e4f50fa4ac9818a84d22d45abee36",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2143,
+            "scalar_checks": 12056288,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 6,
+            "evaluation_calls": 13,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_2",
+          "result_sha256": "56bb6e3d1b91a7a005b261e54b8ad82d5e3074dfa30e0745cbe569c0dda95753",
+          "before_sha256": "4b59c1bca7672de8bfac7137c6cc04f353431b91e40bd4a649fc4f99934686a7",
+          "checkpoint_sha256": "fae799e086f5d6cef10fa40eb60e05c24c691b5d24ce9569ebf301cf1e7fe440",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2159,
+            "scalar_checks": 12924896,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 8,
+            "evaluation_calls": 15,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_3",
+          "result_sha256": "8966ed71a3634c0fde31d71b5e4842f38aa25007aff84918e0e70785f8b8c29f",
+          "before_sha256": "787397a854f3425a4e85b1cb6dfdabd33844f123efb84bc6114988b313240045",
+          "checkpoint_sha256": "1dd4e7e761a32ee15769cab34a5615d340fc993804a5275da40e70d5b3434480",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2175,
+            "scalar_checks": 13793504,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 10,
+            "evaluation_calls": 17,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "interleaved",
+          "result_sha256": "a786d3d57f7293c662706eb8561088a82c4e271f04aca216851dfde76c7a95e5",
+          "before_sha256": "7e181d9c9499d1e65a4be73273ab23a1e998513363c19304e955dd2c12bb852a",
+          "checkpoint_sha256": "c63eb15c6c2abf2e328a0efb7401e4b003f96376a6467c08059cc86cabe462ab",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 10703,
+            "scalar_checks": 59479008,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 1280,
+            "training_arrivals": 40960,
+            "replay_choices": 15360,
+            "ordinary_forecasts_not_reconstructed": 1279,
+            "optimizer_steps_counted": 15360,
+            "evaluation_forecasts_reconstructed": 24,
+            "evaluation_calls": 63,
+            "evaluation_forecasts_not_reconstructed": 39
+          }
+        }
+      ]
+    },
+    {
+      "seed": 18104,
+      "arm": "outcome",
+      "result_sha256": "223c3e46c17222c81767b6041736d0f5f91b1c0bc16d4e2b7ef8d6320c33abc8",
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "checks": {
+        "restored_checkpoints": 8,
+        "phases": 4,
+        "array_checks": 17180,
+        "scalar_checks": 98253696,
+        "ordinary_forecasts_reconstructed": 4,
+        "training_packets": 2048,
+        "training_arrivals": 65536,
+        "replay_choices": 24576,
+        "ordinary_forecasts_not_reconstructed": 2044,
+        "optimizer_steps_counted": 24576,
+        "evaluation_forecasts_reconstructed": 48,
+        "evaluation_calls": 108,
+        "evaluation_forecasts_not_reconstructed": 60
+      },
+      "phases": [
+        {
+          "phase": "fresh_1",
+          "result_sha256": "6136da43a51ce63bbaeb0c2ca84965647986380f107f5d8ce47319dfbfef0113",
+          "before_sha256": "879dbb3fe21c405159123d3278c3b16836ed9407bfc63b1d6e244c63d235c9e3",
+          "checkpoint_sha256": "52ae99323939f676ab7f9255b6ea76f7b65e4ddc35af22bdcac8ebb55a6ed9a5",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2143,
+            "scalar_checks": 12056288,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 6,
+            "evaluation_calls": 13,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_2",
+          "result_sha256": "ae76169a9c558b823b32656a0aa1569a4671c418f74bfe44da9c49edbc5bd9a4",
+          "before_sha256": "c41221f272e6f88fb13d5b1db1364e76eb14ecc1f0e71a401775e9d829fa3357",
+          "checkpoint_sha256": "9ee0c7cc658901ff741a7c398b71335af44cfab680070b990ebde5a48063a923",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2159,
+            "scalar_checks": 12924896,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 8,
+            "evaluation_calls": 15,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_3",
+          "result_sha256": "1867c25833684215fd115eacb2fb6d800f7af82ea64ebedcd94673263f9982dd",
+          "before_sha256": "9d518c2943180436180b9ed722721910b096277ded5801392612ce551178cdec",
+          "checkpoint_sha256": "5bfac277d10781609fa2e228b05f0719f41e48f1fb56863d489809e42b539a3a",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2175,
+            "scalar_checks": 13793504,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 10,
+            "evaluation_calls": 17,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "interleaved",
+          "result_sha256": "da473f607e80994ca58ffdc5c50508d98566375d28c84278adf2cf6875d22594",
+          "before_sha256": "380aed2dcf923ace1f25b15c92edc69b91f5fc4ec82d72eb8e7ee61845397efd",
+          "checkpoint_sha256": "bc8f96cdd84f06b5c2507353ef52ade2663e2a305ecc53ed40b212c898a70986",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 10703,
+            "scalar_checks": 59479008,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 1280,
+            "training_arrivals": 40960,
+            "replay_choices": 15360,
+            "ordinary_forecasts_not_reconstructed": 1279,
+            "optimizer_steps_counted": 15360,
+            "evaluation_forecasts_reconstructed": 24,
+            "evaluation_calls": 63,
+            "evaluation_forecasts_not_reconstructed": 39
+          }
+        }
+      ]
+    },
+    {
+      "seed": 18105,
+      "arm": "outcome",
+      "result_sha256": "eb2a999b6bb87112a9c05e9844f02fa05b4379c17bc6996aad5b99de2185edbc",
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "checks": {
+        "restored_checkpoints": 8,
+        "phases": 4,
+        "array_checks": 17180,
+        "scalar_checks": 98253696,
+        "ordinary_forecasts_reconstructed": 4,
+        "training_packets": 2048,
+        "training_arrivals": 65536,
+        "replay_choices": 24576,
+        "ordinary_forecasts_not_reconstructed": 2044,
+        "optimizer_steps_counted": 24576,
+        "evaluation_forecasts_reconstructed": 48,
+        "evaluation_calls": 108,
+        "evaluation_forecasts_not_reconstructed": 60
+      },
+      "phases": [
+        {
+          "phase": "fresh_1",
+          "result_sha256": "a64620241e92cde87bb4b4ecc0049483741d2fccfe7957841e9c2ad8f2bd5b91",
+          "before_sha256": "7411675f47280e6e4061bbfce86f91d4de148692606a6bcf383b31adbcab442a",
+          "checkpoint_sha256": "16240fd458cdb60ac2cd486e0cd98cd9c93f6a498004cf203063f2cf84fea292",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2143,
+            "scalar_checks": 12056288,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 6,
+            "evaluation_calls": 13,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_2",
+          "result_sha256": "c4e3dfad8ef23f39fcc2563dd40d29355e29233d099094a033a7605a8fdb9d7d",
+          "before_sha256": "752d5cd1b6c0e63da395f58141df7c7d20c1944fcfa37e7716b8af54ef060742",
+          "checkpoint_sha256": "1c50c4d93f8984213fd24ae19be1db2a7728e5d68aea2ad0c78ab986da4470ef",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2159,
+            "scalar_checks": 12924896,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 8,
+            "evaluation_calls": 15,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_3",
+          "result_sha256": "448a6ba4a69b49c890eb0ed8e13f8e957d20d484fc86f2b173cc0b2537c3729c",
+          "before_sha256": "55b9f1b32bd5ae032c09d73ecf8e01fe477809dec1d74305dcd3ba453320b234",
+          "checkpoint_sha256": "9086f58490ea5e4d885170bee8b9b771fb68b67cfa9550cb6e88e1b2a9b1abd6",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2175,
+            "scalar_checks": 13793504,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 10,
+            "evaluation_calls": 17,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "interleaved",
+          "result_sha256": "346e6d4ab04e2881591c1f2124c2867135c663da9065914606bf1b2c5f03186f",
+          "before_sha256": "4d85bf9242c59fdb80c295d8bcb84a82826b3c543f20efc5ac5ce02b8ad34887",
+          "checkpoint_sha256": "df35ac6de45ca758a246037a5a649d3bf9e5f3e5c2ba3213f9f9c22c73c390cd",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 10703,
+            "scalar_checks": 59479008,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 1280,
+            "training_arrivals": 40960,
+            "replay_choices": 15360,
+            "ordinary_forecasts_not_reconstructed": 1279,
+            "optimizer_steps_counted": 15360,
+            "evaluation_forecasts_reconstructed": 24,
+            "evaluation_calls": 63,
+            "evaluation_forecasts_not_reconstructed": 39
+          }
+        }
+      ]
+    },
+    {
+      "seed": 18106,
+      "arm": "outcome",
+      "result_sha256": "8854869a0b55015ba7fcb0f1606a363f020fb7dede5222429337ef246631ce9c",
+      "learner_states_unchanged": true,
+      "global_rng_unchanged": true,
+      "checks": {
+        "restored_checkpoints": 8,
+        "phases": 4,
+        "array_checks": 17180,
+        "scalar_checks": 98253696,
+        "ordinary_forecasts_reconstructed": 4,
+        "training_packets": 2048,
+        "training_arrivals": 65536,
+        "replay_choices": 24576,
+        "ordinary_forecasts_not_reconstructed": 2044,
+        "optimizer_steps_counted": 24576,
+        "evaluation_forecasts_reconstructed": 48,
+        "evaluation_calls": 108,
+        "evaluation_forecasts_not_reconstructed": 60
+      },
+      "phases": [
+        {
+          "phase": "fresh_1",
+          "result_sha256": "16aea567c1ab21ad57a44718f63de2a75a2741065660f3cc46e62352e6c50697",
+          "before_sha256": "fd3770f0f6bfd87ce02c4ae15bb15574701e48ca6280634e5bb0644e4e1f93e8",
+          "checkpoint_sha256": "d5430a3a5a683d951426e221312769806984a2031c61a8cf1fcd0fbd42b74123",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2143,
+            "scalar_checks": 12056288,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 6,
+            "evaluation_calls": 13,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_2",
+          "result_sha256": "cacd3e4c5edcd43ef1beaa77341d4b1c6182d67216f0a14cc208991a6a80fb06",
+          "before_sha256": "3d40395e7ba7f9c394a7b395b298a0b9725b0f63709174184b2ac52fc9c5780a",
+          "checkpoint_sha256": "418a324478b3826d8744d8d72c266cf5aea08723eb7f938b06d37d17d9018944",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2159,
+            "scalar_checks": 12924896,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 8,
+            "evaluation_calls": 15,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "fresh_3",
+          "result_sha256": "a14fb9518e956d80bb7ec059acbae34ecfcf5641b2e8bf28781a9c75c53ba472",
+          "before_sha256": "21633e472b61c1bc68351c92f3f9fd3b2b414ad824dbd9c02c46d683f4feb54d",
+          "checkpoint_sha256": "a6bc8de866b543f42959b641864289f3c63fb66886ab966ce9954b2fe0a863fc",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 2175,
+            "scalar_checks": 13793504,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 256,
+            "training_arrivals": 8192,
+            "replay_choices": 3072,
+            "ordinary_forecasts_not_reconstructed": 255,
+            "optimizer_steps_counted": 3072,
+            "evaluation_forecasts_reconstructed": 10,
+            "evaluation_calls": 17,
+            "evaluation_forecasts_not_reconstructed": 7
+          }
+        },
+        {
+          "phase": "interleaved",
+          "result_sha256": "633cec9baab7a83022b22d217e6f394f6a963f1e5861ccf1a3380e1ada042e29",
+          "before_sha256": "beb470fe3dd9426627de3697acf4d60c1545e1ca52a52f5e623665e5dd32b77b",
+          "checkpoint_sha256": "9d8d0dcca56ca7284a8f7cc39feb67251c81eec4f3456063ed8876bcc20119b1",
+          "checks": {
+            "restored_checkpoints": 2,
+            "phases": 1,
+            "array_checks": 10703,
+            "scalar_checks": 59479008,
+            "ordinary_forecasts_reconstructed": 1,
+            "training_packets": 1280,
+            "training_arrivals": 40960,
+            "replay_choices": 15360,
+            "ordinary_forecasts_not_reconstructed": 1279,
+            "optimizer_steps_counted": 15360,
+            "evaluation_forecasts_reconstructed": 24,
+            "evaluation_calls": 63,
+            "evaluation_forecasts_not_reconstructed": 39
+          }
+        }
+      ]
+    }
+  ]
+}

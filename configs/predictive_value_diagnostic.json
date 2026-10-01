@@ -1,0 +1,48 @@
+{
+  "study": "predictive_value_diagnostic",
+  "kind": "diagnostic",
+  "seeds": [
+    14001,
+    14002,
+    14003,
+    14004,
+    14005,
+    14006,
+    14007,
+    14008,
+    14009,
+    14010,
+    14011,
+    14012
+  ],
+  "models": [
+    "conditional",
+    "recurrent"
+  ],
+  "prefix_blocks": 4,
+  "prefix_size": 1024,
+  "acquisition_size": 8192,
+  "recovery_size": 1024,
+  "score_size": 512,
+  "validation_size": 512,
+  "gaps": [
+    512,
+    4096
+  ],
+  "batch_size": 32,
+  "checkpoint_every": 256,
+  "candidate_count": 8,
+  "rehearsal_updates": 12,
+  "width": 64,
+  "experts": 4,
+  "context_width": 12,
+  "decoder_width": 64,
+  "interaction_features": true,
+  "lr": 0.002,
+  "memory_packets": 16,
+  "updates_per_batch": 12,
+  "evidence_strength": 1.0,
+  "threads": 1,
+  "workers": 6,
+  "cpu_affinity": 1365
+}

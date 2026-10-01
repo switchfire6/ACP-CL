@@ -1,0 +1,25 @@
+{
+  "identity": {
+    "config_sha256": "360c233fe718160a35d82308f1d47e5ead1882d43843d4f642fb8152110a5e4c",
+    "source_sha256": "6f3561f485bf5dad9577be231b2542bba0c4682ac0b847e03f385b1c57271d39",
+    "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+  },
+  "trajectories": 2,
+  "episodes": 14,
+  "prefix_fits": 2,
+  "jobs": [
+    {
+      "seed": 19,
+      "model": "conditional",
+      "policy": "base",
+      "affinity": 16777215
+    },
+    {
+      "seed": 19,
+      "model": "recurrent",
+      "policy": "base",
+      "affinity": 16777215
+    }
+  ],
+  "completed_utc": "2026-09-27T18:49:46.337147+00:00"
+}

@@ -20,6 +20,7 @@ from .learner import Learner, METHODS, YOKED_METHODS
 from .metrics import continual_metrics, normalized_auc
 from .models import make_model
 from .audit import controller_timing_audit, replay_centroid_accuracy
+from .dual_path import DUAL_METHODS, DualPathLearner
 
 
 def clean_json(value):
@@ -233,8 +234,10 @@ def _verify_arrival_exposure(learner: Learner, artifact: dict) -> None:
 
 
 def new_learner(config: dict, stream: Stream, method: str, seed: int,
-                device: torch.device) -> Learner:
+                device: torch.device) -> Learner | DualPathLearner:
     seed_everything(seed + 16127, int(config.get("threads", 4)))
+    if method in (*DUAL_METHODS, "dual_scratch"):
+        return DualPathLearner(config, stream.input_shape, stream.num_classes, method, seed, device)
     model = make_model(config["model"], stream.input_shape, stream.num_classes,
                        width=int(config.get("width", 128))).to(device)
     return Learner(model, method, config, seed)
@@ -274,12 +277,17 @@ def acquisition_auc(curve: list, config: dict) -> float:
 
 
 def scratch_reference(config: dict, stream: Stream, seed: int, device: torch.device,
-                      output: Path, resume: bool = False) -> dict | None:
+                      output: Path, resume: bool = False,
+                      reference_method: str = "finetune") -> dict | None:
     if not config.get("scratch_reference", True):
         return None
-    file = output / f"scratch_seed{seed}.json"
+    if reference_method not in ("finetune", "dual_scratch"):
+        raise ValueError("scratch reference must be replay-free")
+    prefix = "scratch_dual" if reference_method == "dual_scratch" else "scratch"
+    file = output / f"{prefix}_seed{seed}.json"
     identity = {"config_sha256": config_hash(config), "source_sha256": source_hash(),
-                "seed": seed, "execution_device": str(device), **runtime_identity(device)}
+                "seed": seed, "reference_method": reference_method,
+                "execution_device": str(device), **runtime_identity(device)}
     if resume and file.exists():
         result = json.loads(file.read_text(encoding="utf-8"))
         if any(result.get(k) != v for k, v in identity.items()):
@@ -288,14 +296,15 @@ def scratch_reference(config: dict, stream: Stream, seed: int, device: torch.dev
     start = time.perf_counter()
     curves, aucs, costs = [], [], []
     for experience in stream.experiences:
-        learner = new_learner(config, stream, "finetune", seed, device)
+        learner = new_learner(config, stream, reference_method, seed, device)
         curve = train_experience(learner, experience, config, seed)
         curves.append(curve)
         aucs.append(acquisition_auc(curve, config))
         costs.append(learner.cost)
     if device.type == "cuda":
         torch.cuda.synchronize()
-    result = {**identity, "kind": "per-experience scratch diagnostic", "early_auc": aucs,
+    result = {**identity, "kind": "per-experience scratch diagnostic",
+              "reference_method": reference_method, "early_auc": aucs,
               "curves": curves, "costs": costs, "wall_seconds": time.perf_counter()-start}
     write_json(file, result)
     return result
@@ -305,6 +314,9 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
             device: torch.device, output: Path, scratch: dict | None = None,
             resume: bool = False) -> dict:
     _validate_runner_options(config)
+    expected_reference = "dual_scratch" if method in DUAL_METHODS else "finetune"
+    if scratch is not None and scratch.get("reference_method", "finetune") != expected_reference:
+        raise ValueError("scratch reference architecture does not match learner")
     single_pass = config.get("single_pass", False)
     planned_arrivals, source_ids_sha256 = _single_pass_plan(stream, config, seed) if single_pass else ([], "")
     cache_shared_pools = config.get("evaluation_cache_shared_pools", False)
@@ -457,6 +469,11 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
     stats["average_incremental_accuracy"] = float(np.mean(full_rows))
     stats["late_early_auc"] = float(np.mean(early_auc[late_start:]))
     stats["mean_early_auc"] = float(np.mean(early_auc))
+    if method in DUAL_METHODS or config.get("report_acquisition_change", False):
+        # Retained accuracy at arrival and subsequent improvement are distinct.
+        # Neither alone is a causal measure of plasticity.
+        stats["mean_arrival_accuracy"] = float(np.mean([c[0][1] for c in curves]))
+        stats["mean_within_experience_gain"] = float(np.mean([c[-1][1] - c[0][1] for c in curves]))
     plasticity_gap = None
     if scratch is not None:
         plasticity_gap = [a-b for a, b in zip(early_auc, scratch["early_auc"])]
@@ -474,7 +491,8 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
               "plasticity_gap": plasticity_gap, "cost": learner.cost,
               "wall_seconds": previous_seconds+time.perf_counter()-start,
               "experience_seconds": experience_times, "phase_monitor_counts": phase_counts,
-              "reopening_events": reopenings, "diagnostics": learner.engine.diagnostics(),
+              "reopening_events": reopenings, "diagnostics": learner.diagnostics()
+                  if method in DUAL_METHODS else learner.engine.diagnostics(),
               "sensor_state_bytes": learner.sensor.nbytes() if learner.sensor else 0,
               "information_access": "true signal-domain change times; diagnostic only" if learner.oracle else
                   "offline ACP-v2 allocation trace; diagnostic only" if learner.yoked else "training stream only",
@@ -482,7 +500,8 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
                                       "early_examples": config.get("early_examples"),
                                       "forgetting": "maximum over observed checkpoints; sparse estimates are lower bounds"},
               "allocation_summary": {
-                  "mean_feature_gain": float(np.mean([e["effective_feature_gain"] for e in learner.allocation_trace])),
+                  "mean_feature_gain": float(np.mean([e["effective_feature_gain"] for e in learner.allocation_trace]))
+                      if learner.allocation_trace else None,
                   "summed_feature_data_displacement": sum(e["feature_data_displacement"] for e in learner.allocation_trace),
                   "steps": len(learner.allocation_trace)},
               "input_centroid_accuracy": replay_centroid_accuracy(learner, stream, config.get("eval_split", "validation")),
@@ -490,6 +509,13 @@ def run_one(config: dict, stream: Stream, method: str, seed: int,
               "model_parameters": sum(p.numel() for p in learner.model.parameters()),
               "replay_bytes": learner.buffer.nbytes(), "replay_examples": len(learner.buffer),
               "peak_cuda_bytes": torch.cuda.max_memory_allocated() if device.type == "cuda" else None}
+    if method in DUAL_METHODS:
+        result["stream_fingerprints"] = stream_fingerprints(stream)
+        result["allocation_summary"] = None
+        result["scratch_reference_method"] = scratch.get("reference_method") if scratch else None
+        result["architecture"] = "independent raw-input stable and fast predictors; summed logits"
+        result["resource_comparison"] = "equal arrivals; report consolidation compute separately; not matched FLOPs"
+        result["consolidation_events"] = learner.consolidations
     if learner.v3:
         result["stream_fingerprints"] = stream_fingerprints(stream)
         trace = learner.allocation_trace
@@ -542,7 +568,11 @@ def _preflight_resume(output: Path, seeds: list[int], methods: list[str],
     for seed in seeds:
         candidates = []
         if scratch_required:
-            candidates.append((output / f"scratch_seed{seed}.json", {**identity, "seed": seed}))
+            candidates.append((output / f"scratch_seed{seed}.json",
+                               {**identity, "seed": seed, "reference_method": "finetune"}))
+            if any(method in DUAL_METHODS for method in methods):
+                candidates.append((output / f"scratch_dual_seed{seed}.json",
+                                   {**identity, "seed": seed, "reference_method": "dual_scratch"}))
         for method in required_methods:
             run_dir = output / f"{method}_seed{seed}"
             result_file = run_dir / "result.json"
@@ -588,8 +618,13 @@ def run_suite(config: dict, *, output: Path, seeds: list[int], methods: list[str
         stream = build_stream(config["data"], seed)
         print(f"Prepared {config['data']['dataset']} seed={seed}, "
               f"{stream.num_classes} classes, device={device}", flush=True)
-        scratch = scratch_reference(config, stream, seed, device, output, resume=resume)
+        scratch = scratch_reference(config, stream, seed, device, output, resume=resume) \
+            if any(m not in DUAL_METHODS for m in methods) else None
+        dual_scratch = scratch_reference(config, stream, seed, device, output, resume=resume,
+                                         reference_method="dual_scratch") \
+            if any(m in DUAL_METHODS for m in methods) else None
         ordered_methods = [m for m in methods if m not in YOKED_METHODS] + [m for m in methods if m in YOKED_METHODS]
         for method in ordered_methods:
-            results.append(run_one(config, stream, method, seed, device, output, scratch, resume))
+            reference = dual_scratch if method in DUAL_METHODS else scratch
+            results.append(run_one(config, stream, method, seed, device, output, reference, resume))
     return results

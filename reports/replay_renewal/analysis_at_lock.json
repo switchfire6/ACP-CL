@@ -1,0 +1,22 @@
+{
+  "locked_utc": "2026-09-27T18:51:24.396216+00:00",
+  "files": {
+    "scripts/audit_replay_renewal.py": "200139b28e0218e6a74779f593963c1c17839139f22cafabffe48fa49c2f3539",
+    "scripts/summarize_replay_renewal.py": "30ff419d3e1917d849d82385e8759909f38f611df19b5e31349dabdacdd3b8d9",
+    "tests/test_replay_renewal.py": "5eba9f3b577b69e375902d4ef991ee71bb48a612460ed404b0c8231500d78180",
+    "configs/replay_renewal_decomposition.json": "affb9d4cb61d268dea402545adf6f34c4ade5e715dcc38836aa716dd8157d5b4",
+    "configs/replay_renewal_decomposition_smoke.json": "cb21b0d77e8a01bdbbf1647157e5b41308d9561aa98b52d6f8004562971f445b",
+    "configs/replay_renewal_policy.json": "b84e36ca6e8b6b318f5100f337c3f6de3861eb0e7a1d1b6577d51eb44246d0f6",
+    "configs/replay_renewal_policy_smoke.json": "716f8b0dd23d2ed0aa396633a7d07dfb92b0261f9c184fefa6e383e36bb208ed",
+    "docs/replay_renewal_protocol.md": "7759c791804b6e317f4a7c152ee7b6bb952e1159dd605a7afc898a5363d844dc"
+  },
+  "validation": {
+    "tests_passed": 733,
+    "skipped": 2,
+    "ruff": "passed",
+    "engineering_audits": [
+      "decomposition_audit.json",
+      "policy_audit.json"
+    ]
+  }
+}

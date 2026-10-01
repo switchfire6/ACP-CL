@@ -1,0 +1,20 @@
+{
+  "path": "C:\\Users\\pounc\\Desktop\\Code\\adam-replay-visual\\adam-memory.html",
+  "sha256": "a3fe3ccabe1d8899206b8a2372f012be2ab7de8236111c90673d576248762d19",
+  "purpose": "Illustrative sampler sequence, not measured learning results",
+  "passed": true,
+  "checked_widths": [
+    320,
+    360,
+    736
+  ],
+  "checked_themes": [
+    "light",
+    "dark"
+  ],
+  "keyboard_end": 160,
+  "keyboard_home": 16,
+  "cells": 48,
+  "console_errors": [],
+  "horizontal_overflow": false
+}

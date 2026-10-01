@@ -1,0 +1,45 @@
+{
+  "scope": "Descriptive sums of archived work counters; wall duration includes lock/resume startup. Sum of per-fork explicit tensor bytes is not measured peak RAM. Timings across parallel jobs are not serial wall time or matched deployment cost.",
+  "trajectories": 24,
+  "arrivals": 503808,
+  "base_optimizer_steps": 188928,
+  "extra_optimizer_steps": 15552,
+  "extra_training_forwards": 31104,
+  "extra_training_query_presentations": 995328,
+  "extra_training_support_presentations": 995328,
+  "ordinary_prequential_forwards": 15744,
+  "diagnostic_prediction_forwards": 34560,
+  "base_training_seconds_summed": 2314.67331330004,
+  "extra_training_seconds_summed": 199.43077909997555,
+  "locked_to_completed_wall_seconds": 478.286347,
+  "candidate_bundle_bytes_range": [
+    444672,
+    444672
+  ],
+  "explicit_tensor_bytes_per_shadow_range": [
+    1889960,
+    1890328
+  ],
+  "runtime": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "workers": 6,
+    "deterministic": true,
+    "affinity": 1365
+  },
+  "tensor_audit": {
+    "passed": true,
+    "trajectories": 24,
+    "before_checkpoints": 336,
+    "final_checkpoints": 336,
+    "assessments": 48,
+    "diagnostic_forks_reproduced": 1296,
+    "diagnostic_prediction_calls_recomputed": 34560,
+    "elapsed_seconds": 87.02998300000036
+  },
+  "extra_step_fraction": 0.08231707317073171
+}

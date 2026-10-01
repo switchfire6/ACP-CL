@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "figure": "development_qualification",
+      "outside_canvas": [],
+      "xlabel_footer_overlap": []
+    },
+    {
+      "figure": "overview",
+      "outside_canvas": [],
+      "xlabel_footer_overlap": []
+    },
+    {
+      "figure": "final_branches",
+      "outside_canvas": [],
+      "xlabel_footer_overlap": []
+    }
+  ],
+  "scope": "Rendered titles, labels, legends and in-range tick labels; unused automatic ticks outside axis limits are not drawn.",
+  "visual_inspection": "All three PNGs inspected; SVG and PDF exported, not separately rendered."
+}
