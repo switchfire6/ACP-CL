@@ -11,3 +11,10 @@ runs/
 *.pt
 *.pth
 .DS_Store
+
+# Large raw study artefacts stay local (summaries, figures and tables are tracked).
+reports/**/*.npz
+reports/**/*.gz
+reports/**/*.pt
+reports/**/preservation_before.json
+reports/**/preservation_after.json
