@@ -18,3 +18,5 @@ reports/**/*.gz
 reports/**/*.pt
 reports/**/preservation_before.json
 reports/**/preservation_after.json
+# Small archive read by tests/test_core_residual_archive.py (52 KB).
+!reports/core_residual/smoke/raw_results.jsonl.gz
