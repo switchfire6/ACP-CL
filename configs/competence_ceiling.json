@@ -1,0 +1,70 @@
+{
+  "study": "competence_ceiling",
+  "protocol": "docs/competence_ceiling_protocol.md",
+  "smoke": false,
+  "seeds": [19301, 19302, 19303, 19304, 19305, 19306, 19307, 19308, 19309, 19310, 19311, 19312],
+  "stage": 3,
+  "batch_size": 32,
+  "eval_size": 512,
+  "support_replicates": 2,
+  "context_width": 12,
+  "experts": 4,
+  "interaction_features": true,
+  "lr": 0.002,
+  "evidence_strength": 1.0,
+  "auxiliary_weight": 1.0,
+  "online": {
+    "arrivals": 8192,
+    "chunk": 1024,
+    "checkpoint_every": 1024,
+    "ema_decay": 0.998,
+    "arms": {
+      "ON-ref": {"U": 12, "R": 16, "W": 64},
+      "ON-R256": {"U": 12, "R": 256, "W": 64}
+    }
+  },
+  "offline": {
+    "N": [2048, 8192, 32768],
+    "validation_fraction": 0.2,
+    "pixel": {
+      "max_epochs": 40,
+      "lr": 0.002,
+      "schedule": "cosine_per_step_to_zero",
+      "grad_clip": 5.0,
+      "shuffle_seed": 2026092911
+    },
+    "feature": {
+      "members": 5,
+      "hidden": 128,
+      "layers": 2,
+      "lr": 0.001,
+      "minibatch": 256,
+      "max_epochs": 400,
+      "patience": 30,
+      "weight_decays": [0.0, 0.0001, 0.001],
+      "weight_decay_form": "adam_l2",
+      "shuffle_seed": 2026092912
+    }
+  },
+  "oracle": {
+    "endpoint_kb": 512,
+    "endpoint_batches": 8,
+    "endpoint_channel": 31,
+    "online_samples": 1024,
+    "online_sub": 256,
+    "online_batches_per_task": 16
+  },
+  "analysis": {
+    "competent_excess": 0.010,
+    "dominant_fraction": 0.5,
+    "matter_fraction": 0.25,
+    "consistency_seeds": 10,
+    "readings_at": 8192,
+    "bootstrap_resamples": 20000,
+    "analysis_seed": 19392026
+  },
+  "device": "cpu",
+  "threads": 1,
+  "workers": 6,
+  "cpu_affinity": 1365
+}

@@ -1,0 +1,181 @@
+{
+  "study": "commons_d2",
+  "protocol": "docs/commons_d2_protocol.md",
+  "phase": "test",
+  "world": {
+    "separability": "reports/commons_d0b/separability.json",
+    "spec": "reports/commons_d0b/world_spec.json",
+    "key": "1586f04b8d3cc8c2"
+  },
+  "seeds": [
+    22201,
+    22202,
+    22203,
+    22204,
+    22205,
+    22206,
+    22207,
+    22208,
+    22209,
+    22210,
+    22211,
+    22212
+  ],
+  "episodes": 20000,
+  "core": {
+    "lr": 0.001,
+    "U": 2,
+    "ema_decay": 0.99,
+    "count_c": 0.05,
+    "members": 5,
+    "hidden": 128,
+    "minibatch": 64,
+    "grad_clip": 5.0,
+    "bootstrap_p": 0.5,
+    "plan_samples": 256,
+    "capacity": 1024
+  },
+  "fc": {
+    "max_codes": 6,
+    "h": 0.05,
+    "switch_posterior": 0.95,
+    "default_fraction": 0.2,
+    "spawn_run": 2,
+    "spawn_rule": "lrt",
+    "fit_steps": 20,
+    "fit_ridge": 1.0,
+    "code_decay": 1.0
+  },
+  "oc_code_lr": 0.03,
+  "grid": {
+    "AM": {
+      "k": [
+        1,
+        8,
+        32
+      ],
+      "enc_lr": [
+        0.001,
+        0.003
+      ]
+    },
+    "AM-factored": {
+      "k": [
+        1,
+        8,
+        32
+      ],
+      "enc_lr": [
+        0.001,
+        0.003
+      ]
+    },
+    "FC": {
+      "tau": [
+        5,
+        15
+      ],
+      "code_lr": [
+        0.01,
+        0.03
+      ]
+    },
+    "FC-single": {
+      "tau": [
+        5,
+        15
+      ],
+      "code_lr": [
+        0.01,
+        0.03
+      ]
+    }
+  },
+  "knobs": {
+    "AM": {
+      "k": 1,
+      "enc_lr": 0.001
+    },
+    "AM-factored": {
+      "k": 1,
+      "enc_lr": 0.001
+    },
+    "FC": {
+      "tau": 15,
+      "code_lr": 0.03
+    },
+    "FC-single": {
+      "tau": 15,
+      "code_lr": 0.01
+    },
+    "FC-K1": {
+      "code_lr": 0.03
+    },
+    "AM*": "AM",
+    "delta": {
+      "R_min": 0.019011614956157143,
+      "R_held": 0.015219656682364092
+    }
+  },
+  "arms": [
+    "G",
+    "W",
+    "AM",
+    "AM-factored",
+    "FC",
+    "FC-single",
+    "FC-K1",
+    "OC"
+  ],
+  "probe_positions": [
+    2,
+    5,
+    10,
+    20,
+    40
+  ],
+  "panel_size": 32,
+  "oracle": {
+    "draws": 16384,
+    "stream_chunk": 500
+  },
+  "checkpoint_every": 1000,
+  "parity": {
+    "contexts": [
+      "A0B0C0",
+      "A1B0C0",
+      "A0B1C0",
+      "A0B0C1",
+      "A1B1C1"
+    ],
+    "episodes": 4096,
+    "panel_size": 512,
+    "tolerance": 0.003,
+    "reference": {
+      "path": "reports/commons_d1b/results.json",
+      "sha256": "2270833f3acd9cc434a0cafff650b21a21946ebf029773f9838f7409c22819c0",
+      "value": 0.009568609817956443
+    },
+    "d1b_panels": "runs/commons_d1b/oracle"
+  },
+  "analysis": {
+    "v1_margin": 0.005,
+    "v2_fraction": 0.5,
+    "c1_margin": 0.002,
+    "relative_margin": 0.25,
+    "oc_gate_max": 0.01,
+    "oc_gate_positions": [
+      5,
+      10,
+      20,
+      40
+    ],
+    "power_target": 0.8
+  },
+  "workers": 6,
+  "threads": 1,
+  "device": "cpu",
+  "stall_seconds": 14400,
+  "stage_attempts": 3,
+  "notes": "DRAFT from development (reports/commons_d2/dev/dev_results.json), NOT LOCKED. Knobs by lowest dev S; AM* = AM; delta = dev per-seed SD of FC - AM* (R-min 0.01901, R-held 0.01522); seeds by the power rule (12). FC spawn rule 'lrt' is a PROPOSED REVISION of the protocol text and needs the lead's approval before any lock."
+}

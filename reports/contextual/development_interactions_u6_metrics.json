@@ -1,0 +1,50 @@
+[
+  {
+    "method": "pooled",
+    "seed": 117,
+    "return_survival": 0.6197916666666666,
+    "return_gain": 0.0026041666666666297,
+    "history_gain": 0.0,
+    "initial_gain": 0.07942708333333334
+  },
+  {
+    "method": "recurrent",
+    "seed": 117,
+    "return_survival": 0.5657552083333334,
+    "return_gain": -0.05143229166666663,
+    "history_gain": 0.02018229166666663,
+    "initial_gain": 0.08203125
+  },
+  {
+    "method": "oracle",
+    "seed": 117,
+    "return_survival": 0.7265625,
+    "return_gain": 0.109375,
+    "history_gain": 0.0,
+    "initial_gain": 0.11458333333333334
+  },
+  {
+    "method": "pooled",
+    "seed": 118,
+    "return_survival": 0.6302083333333334,
+    "return_gain": 0.04166666666666674,
+    "history_gain": 0.0,
+    "initial_gain": 0.10156250000000003
+  },
+  {
+    "method": "recurrent",
+    "seed": 118,
+    "return_survival": 0.6061197916666667,
+    "return_gain": 0.01757812500000011,
+    "history_gain": -0.010416666666666519,
+    "initial_gain": 0.09700520833333337
+  },
+  {
+    "method": "oracle",
+    "seed": 118,
+    "return_survival": 0.7265625,
+    "return_gain": 0.13802083333333337,
+    "history_gain": 0.0,
+    "initial_gain": 0.13411458333333337
+  }
+]

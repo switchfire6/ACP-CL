@@ -1,0 +1,46 @@
+{
+  "identity": {
+    "config_sha256": "fda14c8f8a4f3a08aba00958222ff0f856bc38bd538b255cd41700d39b12e3c6",
+    "source_sha256": "8b90091984ba7c1915223a6a06b2af84bbd6eeab1aeda00db7bc96780ad15baf",
+    "runtime_sha256": "89c34cae6b1bd071a41051f9c6b720bb0e3c0612b41f82c13e371da49b8d864b"
+  },
+  "config": {
+    "study": "joint persistence: baseline-only development",
+    "seeds": [
+      117
+    ],
+    "schedules": [
+      "long"
+    ],
+    "methods": [
+      "uniform"
+    ],
+    "block_size": 1024,
+    "batch_size": 32,
+    "eval_size": 384,
+    "probe_every": 256,
+    "width": 64,
+    "lr": 0.002,
+    "memory_capacity": 128,
+    "updates_per_batch": 3,
+    "threads": 1
+  },
+  "runtime": {
+    "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic": true
+  },
+  "source_files": {
+    "__init__.py": "f286031bdbfec32620758cea371551a26c95b963c7896f363de2f0dab34dd176",
+    "learner.py": "82aca79cb86c6306d03583d5b62c921726bbf3067a0f9363eab9f853bbc31c85",
+    "memory.py": "60812315aa082e7a1b0f210b393e2aa0a7090ab6a7083667f8d5356e6469f322",
+    "study.py": "52ef3870e152839c86fc8894eee06fa7c0df4fea9fe030091303841197194bd2",
+    "world.py": "e3b700c0c720b895e4378705c13c297dbedc1458e8ca3f1f9b14c08e85c73a42"
+  },
+  "started_utc": "2026-09-27T02:00:23Z",
+  "status": "fixed pilot configuration; no evaluation-driven tuning"
+}

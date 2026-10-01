@@ -11,3 +11,14 @@ runs/
 *.pt
 *.pth
 .DS_Store
+
+# Large raw study artefacts stay local (summaries, figures and tables are tracked).
+reports/**/*.npz
+reports/**/*.gz
+reports/**/*.pt
+reports/**/preservation_before.json
+reports/**/preservation_after.json
+# The complete locked core/residual smoke archive (~10 MB) is verified by
+# tests/test_core_residual_archive.py, so all of its files are tracked.
+!reports/core_residual/smoke/**/*.npz
+!reports/core_residual/smoke/**/*.gz

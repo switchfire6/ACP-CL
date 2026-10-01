@@ -1,0 +1,13 @@
+{
+  "recorded_utc": "2026-09-27T22:46:58.585834+00:00",
+  "status": "failed_numerical_validation",
+  "locked_analysis_preserved": true,
+  "phase": "conditional seed12002 after seed12001 completed",
+  "partial_scores_published": false,
+  "metrics_used_to_change_design": false,
+  "error": "ValueError: prediction or outcome is outside [0, 1]",
+  "location": "score_predictions",
+  "hypothesis_to_verify": "float32 mixture summation can exceed one by a few ULPs",
+  "planned_correction": "permit float32 roundoff in prediction validation only; preserve original prediction values and scoring; keep truth range strict; record actual ranges",
+  "replacement_output": "reports/return_context_v2"
+}

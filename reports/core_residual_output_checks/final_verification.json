@@ -1,0 +1,40 @@
+{
+  "checked_utc": "2026-09-28T03:36:34.567277+00:00",
+  "passed": true,
+  "unit_test_command": ".venv/Scripts/python.exe -m pytest tests/test_core_residual_outputs.py -q",
+  "unit_tests": 29,
+  "ruff_passed": true,
+  "smoke": {
+    "rows": 40,
+    "checkpoints": 8,
+    "scalar_metrics": 1280,
+    "allocation_eligible": false
+  },
+  "main": {
+    "rows": 384,
+    "checkpoints": 48,
+    "component_prediction_tensors": 1536,
+    "optimizer_updates": 0,
+    "full_forecasts_exact": 384,
+    "scalar_metrics": 12288,
+    "frozen_input_pairs": 96,
+    "cross_checkpoint_frozen_pairs": 72
+  },
+  "independent_review_sha256": "8c2ed4d4b3fc09333fd3100b603d5ce2245ba29ab7f5abfc0136d384c006abf3",
+  "portability_review_sha256": "f93e3203ee79dd3285a5238e558bce45184de5358931028efb2c1b317008c65f",
+  "old_science_files_unchanged": 3253,
+  "archives": [
+    {
+      "archive": "smoke_v2",
+      "files": 9,
+      "bytes": 3361288,
+      "manifest_sha256": "3469348adaa54b065170e8aee3c1993f5a5c212ca40ce4d4dfd664653350dc0f"
+    },
+    {
+      "archive": "development",
+      "files": 31,
+      "bytes": 112785061,
+      "manifest_sha256": "11ed07183f9e43572bfca41ceaa2ec94a07b7c25b62c4dfd6382af064ca9b7b5"
+    }
+  ]
+}

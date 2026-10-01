@@ -1,0 +1,55 @@
+{
+  "started_utc": "2026-09-28T00:49:00.055393+00:00",
+  "entries": [
+    {
+      "check": "host and preservation",
+      "outcome": "about18GB available RAM; no ongoing Python fit at start; six one-thread workers maintained;979pre-existing source/config/protocol/report files hashed,including720report files"
+    },
+    {
+      "check": "factor mechanism",
+      "outcome": "60tests and Ruff pass; all8cells/bothmodels,endpoint equivalence,deep optimizer tensor copies,causal packet preservation,finite/malformedstate guards"
+    },
+    {
+      "check": "unlocked engineering preflight",
+      "outcome": "both architectures complete two assessments with all8cells andpairedbranches; no scientific fits or parameter selection from outcomes",
+      "output": "runs/rehearsal_state_preflight"
+    },
+    {
+      "check": "combined scientific suite before locked smoke",
+      "utc": "2026-09-28T00:59:42.236306+00:00",
+      "outcome": "120 tests pass in 85.61 seconds: mechanism60, runner17, summary23, audit20; scoped Ruff passes. Both unlocked model preflights independently reconstructed48 forks and440 diagnostic forecasts each."
+    },
+    {
+      "check": "locked smoke",
+      "utc": "2026-09-28T01:00:24.114837+00:00",
+      "outcome": "Both trajectories/four assessments complete; 188 files pass integrity; strict reader and figures pass; independent audit reproduces96 rehearsal forks and880 diagnostic forecasts. Smoke is ineligible for scientific inference.",
+      "audit_passed": true
+    },
+    {
+      "check": "prospective main lock and fit start",
+      "utc": "2026-09-28T01:01:05.703500+00:00",
+      "created_utc": "2026-09-28T01:00:34.272082+00:00",
+      "identity": {
+        "config_sha256": "7c123ef284f48f58345b12b0cade878a7bdb988e8207a0bc0203bcf6cc36f247",
+        "source_sha256": "80e0110241041c303e869b8f85c274a6262aaac4ecc8d399bb837a5c1ddf9a2d",
+        "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+      },
+      "outcome": "All scientific source, scripts, scoped scientific tests, configuration and protocol locked before fitting. Twenty-four trajectories run with six one-thread CPU workers and affinity1365; no outcome comparisons until complete."
+    },
+    {
+      "check": "portable and independent smoke arithmetic",
+      "utc": "2026-09-28T01:07:00.096198+00:00",
+      "outcome": "52 portable tests and Ruff pass. Sealed67-file smoke archive verifies both in place and copied outside repository under isolated Python. Separate NumPy review reproduces3408 seed/bootstrap statistics and35137 scalar comparisons, maximum error4.16e-17. No main outcomes inspected."
+    },
+    {
+      "check": "full scientific cohort and verification",
+      "utc": "2026-09-28T01:16:11.760439+00:00",
+      "outcome": "All24 trajectories/48 assessments/3456 forks complete; no scientific restart or amendment. Both primary replication screens fail. All2334 run files pass integrity. Independent tensor audit passes240 before/240 final/48 diagnostic boundary checkpoints,3456 forks,96 zeros,120576 forecasts and12096 instrumentation forwards. Independent arithmetic reproduces3408 seed/bootstrap statistics across480 NPZs and54,558,720 probabilities, max error7.22e-16. No run bytes changed during read-only audits; figures visually inspected."
+    },
+    {
+      "check": "final packaging and preservation",
+      "utc": "2026-09-28T01:20:58.371531+00:00",
+      "outcome": "Both cohorts sealed (67 smoke/507 diagnostic artifacts), NumPy-only standalone verification passes in place and on external copies under isolated Python. Source/copy manifests match; independent narrative review found no numeric/sign errors. All979 prior scientific files including720 reports preserved. Both source/protocol/analysis locks unchanged; no run bytes changed. All new report/protocol/archive-index local links resolve."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "identity": {
+    "config_sha256": "cd7296aad191bf16d4b90f76b4755d9a255422059561de39e6d23fcde57eaf7a",
+    "source_sha256": "6ffb02a9788a9d9745bbc73b2edf3817ec0b46ddf60d2295208de6baba5d5cb7",
+    "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+  },
+  "trajectories": 24,
+  "assessments": 48,
+  "ordinary_arrivals_per_trajectory": 20992,
+  "diagnostic_forks": 1296,
+  "jobs": [
+    {
+      "seed": 14001,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14002,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14003,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14004,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14005,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14006,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14007,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14008,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14009,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14010,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14011,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14012,
+      "model": "conditional",
+      "affinity": 1365
+    },
+    {
+      "seed": 14001,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14002,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14003,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14004,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14005,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14006,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14007,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14008,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14009,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14010,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14011,
+      "model": "recurrent",
+      "affinity": 1365
+    },
+    {
+      "seed": 14012,
+      "model": "recurrent",
+      "affinity": 1365
+    }
+  ],
+  "completed_utc": "2026-09-28T00:19:04.310313+00:00"
+}

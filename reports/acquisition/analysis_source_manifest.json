@@ -1,0 +1,23 @@
+{
+  "scripts/archive_acquisition.py": "2b7cf2ff54e9cb2df14a557efe0a1c62d77e5aa3f8b4f47e80e5a67450b7b7ff",
+  "scripts/audit_acquisition.py": "648677a87caf9be82d08bf1291eb4225a55d61b6a140e6b397a5bb45f1cb5a94",
+  "scripts/check_acquisition_world.py": "79fac9f4f07de4a7e2054b48420672279f5205504e1af17f93c0e4f815ab84a8",
+  "scripts/plot_acquisition.py": "bd8dee73aac07f1dc6eb74918d7fe22923702431901d72d68b293ad634c9c4ec",
+  "scripts/summarize_acquisition.py": "95b445dfaba7ba693c23d6b1264dc4bc882fa1a5a5bb79ea3f44443a98fd6f38",
+  "scripts/audit_conditional.py": "3ff3bd0707a67c523995720e67278c34212b349e9c91bc0d0a51e5c880b90c41",
+  "tests/test_acquisition.py": "1dcb827b4f320f9e937c095b99c0e879a3c75fa7c2371b33af37557d91059c91",
+  "tests/test_acquisition_summary.py": "3f425ac2670a48684f72c70109dacf89b74064a7769efe5a6dfcd780b6ce2fff",
+  "configs/acquisition_development_2048.json": "694589f8c588299d1c319d4acb4740097124a2b2a994c1e58723982df08eb2b7",
+  "configs/acquisition_development_4096.json": "64a44b049a9a7c66d1d88103368c945999defe15aab15f0db97b9931acef8d5b",
+  "configs/acquisition_development_8192.json": "d34c45190045e4980428cee535d36e673a05e73e1babf77d94d60839f44e7d45",
+  "configs/acquisition_diagnostic.json": "7e68b52ae77468d1104510a2965baf4a328dc9c560b5a60f1a6a4fefaea9cf92",
+  "configs/acquisition_smoke.json": "9e75144f4c2a3a793b581cc4268c7ba572bef70d3fd2932122733fa3e72a64a8",
+  "docs/acquisition_diagnostic.md": "74e8366ddfcbf3ff50557a9dba5e8434d699dc31aa6f1cecad28012f208cb83d",
+  "docs/research_charter.md": "4f0d6f5c6e306638e9ec4d9389a531f511fea586e249cdc601d8b25a65e59a67",
+  "docs/reproduction.md": "88c0a8ef1623983972d1e76053c78b3717b46c5bd1029679b85e9c5873d26be1",
+  "reports/acquisition_results.md": "3597be99a206bb149e385cfa5ae31e343848f91a61f7fd866743f65b026a78eb",
+  "reports/acquisition/development_ledger.md": "41d0d698a228529f0efb366e8ebf963f04395338c5ea0baeb63cfa9b9664add4",
+  "README.md": "698f7dfaae7b646a055cc1869e911dc352e54a690aaa668e3e06b76bdedb1c1a",
+  "pyproject.toml": "490cbe21e23d6fdf3edca5eda7240d2bd0668d4e1ef1fe85b8dbbd1b31c36b09",
+  ".github/workflows/ci.yml": "1aa81eec669743fa500d90553580f2eb7633eea3b1b5262766eb591f01995595"
+}

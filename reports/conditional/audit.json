@@ -1,0 +1,1168 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "48f962d406e84cb90087b8312ea62ae9f5996eac6c0609b51f95cf6ac27db53b",
+    "source_sha256": "7e152cf8e1589cb2629652327d8a4821b9a37048560e628fd160b48f3392322c",
+    "runtime_sha256": "86823054be75bc3dd98f10a91791df395bc8203ae2baa100568a8cc2125ee946"
+  },
+  "runs": 144,
+  "primary_checkpoints": 144,
+  "final_checkpoints": 144,
+  "largest_conservation_residual": 2.842170943040401e-14,
+  "elapsed_seconds": 112.95816120000018,
+  "checks": [
+    {
+      "schedule": "recurring",
+      "method": "pooled",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "conditional",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "shuffled",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "current_only",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "frozen_features",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "oracle",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "pooled",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "conditional",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "shuffled",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "current_only",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "frozen_features",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "oracle",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "pooled",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "conditional",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "shuffled",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "current_only",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "frozen_features",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "oracle",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "pooled",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "conditional",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "shuffled",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "current_only",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "frozen_features",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "oracle",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "pooled",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "conditional",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "shuffled",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "current_only",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "frozen_features",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "oracle",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "pooled",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "conditional",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "shuffled",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "current_only",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "frozen_features",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "oracle",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "pooled",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "conditional",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "shuffled",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "current_only",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "frozen_features",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "oracle",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "pooled",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "conditional",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "shuffled",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "current_only",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "frozen_features",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "recurring",
+      "method": "oracle",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "pooled",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "conditional",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "shuffled",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "current_only",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "frozen_features",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "oracle",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "pooled",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "conditional",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "shuffled",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "current_only",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "frozen_features",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "oracle",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "pooled",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "conditional",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "shuffled",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "current_only",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "frozen_features",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "oracle",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "pooled",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "conditional",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "shuffled",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "current_only",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "frozen_features",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "oracle",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "pooled",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "conditional",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "shuffled",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "current_only",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "frozen_features",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "oracle",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "pooled",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "conditional",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "shuffled",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "current_only",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "frozen_features",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "oracle",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "pooled",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "conditional",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "shuffled",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "current_only",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "frozen_features",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "oracle",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "pooled",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "conditional",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "shuffled",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "current_only",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "frozen_features",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "stable",
+      "method": "oracle",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "pooled",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "conditional",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "shuffled",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "current_only",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "frozen_features",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "oracle",
+      "seed": 3001,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "pooled",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "conditional",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "shuffled",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "current_only",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "frozen_features",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "oracle",
+      "seed": 3002,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "pooled",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "conditional",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "shuffled",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "current_only",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "frozen_features",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "oracle",
+      "seed": 3003,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "pooled",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "conditional",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "shuffled",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "current_only",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "frozen_features",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "oracle",
+      "seed": 3004,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "pooled",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "conditional",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "shuffled",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "current_only",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "frozen_features",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "oracle",
+      "seed": 3005,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "pooled",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "conditional",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "shuffled",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "current_only",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "frozen_features",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "oracle",
+      "seed": 3006,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "pooled",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "conditional",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "shuffled",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "current_only",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "frozen_features",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "oracle",
+      "seed": 3007,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "pooled",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "conditional",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "shuffled",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "current_only",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "frozen_features",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    },
+    {
+      "schedule": "unpredictable",
+      "method": "oracle",
+      "seed": 3008,
+      "primary_recomputed": true,
+      "final_panels_recomputed": true,
+      "causal_replay_verified": true
+    }
+  ],
+  "scope": "Local checkpoint/data/probe recomputation; not an independent replication."
+}

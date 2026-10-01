@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-09-27T22:55:55.468372+00:00",
+  "summary_sha256": "5364bc0d4a0a11904ada74a1b719b29e0fdd28860ac8b0eba9eca63842bd5a8b",
+  "minimum": 4.273642637692143e-12,
+  "maximum": 1.0000001192092896,
+  "roundoff_rows": 5,
+  "maximum_excursion": 1.1920928955078125e-07,
+  "float32_epsilon": 1.1920928955078125e-07,
+  "prediction_values_clipped": false,
+  "interpretation": "The largest upper-bound excursion is exactly one float32 epsilon, confirming rounding rather than a substantive probability-range failure."
+}

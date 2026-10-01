@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "7e45c4ffb7648432d2b353b6bcdbc70baccad51715b2cb07e4d55b5da33a5576",
+    "source_sha256": "80e0110241041c303e869b8f85c274a6262aaac4ecc8d399bb837a5c1ddf9a2d",
+    "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf"
+  },
+  "artifact_files": 67,
+  "standalone_verifier_sealed": true,
+  "original_json_records": 66,
+  "original_run_files": 188,
+  "numerical_arrays": 40,
+  "trajectories": 2,
+  "assessments": 4,
+  "ordinary_arrivals_per_trajectory": 416,
+  "diagnostic_forks": 96,
+  "instrumented_forks": 84,
+  "zero_update_copies": 8,
+  "diagnostic_prediction_forwards": 880,
+  "extra_loss_forwards": 336,
+  "tensor_audit_coverage": {
+    "trajectories": 2,
+    "before_checkpoints": 16,
+    "final_checkpoints": 16,
+    "diagnostic_boundary_checkpoints": 4,
+    "assessments": 4,
+    "ordinary_packets": 104,
+    "original_packet_errors_recomputed": 104,
+    "original_predictions_recomputed": 16,
+    "diagnostic_forks_reproduced": 96,
+    "zero_update_copies": 8,
+    "diagnostic_prediction_calls_recomputed": 880,
+    "loss_instrumentation_forwards_recomputed": 336
+  },
+  "replication_screen": {
+    "conditional": false,
+    "recurrent": false
+  },
+  "scope": "Independent portable file/lock/identity/coverage checks, original JSON and NPZ hashes, causal branch contexts, all-action Brier and greedy survival, early/late metrics, exact candidate selectors and matching zero baselines, all factorial/repair/environment effects, seed bootstrap and primary replication screen. Checkpoint hashes and complete reconstruction coverage are bound to the archived tensor audit. No live source imports, pickle loading, ordinary retraining or independent physics replication. Descriptive rank/cue/coverage summaries and plots are checksummed but not independently recalculated.",
+  "isolated_copy_verified": true,
+  "source_manifest_sha256": "410997e88d35fdc5c01cb01f4e75fc17a526dd5a17ba556fdae61ef078536fe6",
+  "copy_manifest_sha256": "410997e88d35fdc5c01cb01f4e75fc17a526dd5a17ba556fdae61ef078536fe6",
+  "source_manifest_unchanged": true,
+  "python_executable": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\.venv\\Scripts\\python.exe",
+  "subprocess_flags": [
+    "-I",
+    "-B"
+  ],
+  "source_archive": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\rehearsal_state\\smoke",
+  "copy_archive": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam-state-smoke-external-77nw2k19\\archive",
+  "unrelated_cwd": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam-state-smoke-external-77nw2k19\\unrelated-working-directory"
+}

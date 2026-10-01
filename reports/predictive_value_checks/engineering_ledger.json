@@ -1,0 +1,94 @@
+{
+  "recorded_utc": "2026-09-28T00:03:19.457891+00:00",
+  "entries": [
+    {
+      "check": "host resources",
+      "outcome": "12 physical cores,24 logical processors, about21GB free memory and225GB disk; configured6one-thread workers, affinity1365, versus previous4/mask85"
+    },
+    {
+      "check": "isolated rehearsal mechanism",
+      "outcome": "37tests andRuff pass; exact unchanged Adam arithmetic, copied gradients, parent isolation, causal support and preserved prediction modes"
+    },
+    {
+      "check": "native PyTorch gradient serialization probe",
+      "outcome": "confirmed default Parameter pickle omits .grad; explicit save/load payload restores full signatures for both architectures"
+    },
+    {
+      "check": "initial unlocked engineering preflight",
+      "outcome": "conditional full small trajectory and completed resume pass",
+      "output": "runs/predictive_value_preflight",
+      "scope": "engineering only; predates richer raw-array export"
+    },
+    {
+      "check": "runner and mechanism suite",
+      "outcome": "49tests pass in10seconds, including mid-score durable interruption and tampered completed choice rejection"
+    },
+    {
+      "check": "raw-array engineering preflight",
+      "outcome": "both architectures complete with probabilities, performed outcomes and evaluator-only truth arrays",
+      "output": "runs/predictive_value_preflight_v2",
+      "scope": "engineering only; no scientific outcomes used to choose configuration"
+    },
+    {
+      "check": "combined predictive suite",
+      "outcome": "99 tests pass in20.78seconds; mechanism37, runner12, summary32, independent auditor18; scoped Ruff passes"
+    },
+    {
+      "check": "locked smoke",
+      "outcome": "both trajectories,4assessments,36forks complete;104files pass JSON/ZIP integrity; summary and independent audit pass;240diagnostic forwards recreated",
+      "output": "reports/predictive_value/smoke",
+      "scope": "engineering only; no parameter changes based on tiny-cohort outcomes"
+    },
+    {
+      "check": "main scientific lock before fitting",
+      "outcome": "24trajectories,48assessments,1296forks; no outcomes inspected before cohort completion",
+      "identity": {
+        "config_sha256": "cd7296aad191bf16d4b90f76b4755d9a255422059561de39e6d23fcde57eaf7a",
+        "source_sha256": "6ffb02a9788a9d9745bbc73b2edf3817ec0b46ddf60d2295208de6baba5d5cb7",
+        "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+      },
+      "output": "runs/predictive_value_diagnostic"
+    },
+    {
+      "check": "independent portable verifier",
+      "outcome": "41 tamper/arithmetic tests and Ruff pass; end-to-end locked smoke verifies18artifacts,34rawrecords,36fork and240prediction audit coverage",
+      "scope": "standalone NumPy arithmetic and archived audit coverage, not a second training run"
+    },
+    {
+      "check": "fixed scientific cohort",
+      "outcome": "24trajectories,48assessments,1296rehearsal forks and503808arrivals completed without scientific restart or parameter amendment; both near/return tiers fail for both architectures",
+      "output": "reports/predictive_value/diagnostic"
+    },
+    {
+      "check": "full tensor audit",
+      "outcome": "all1296rehearsal updates and34560diagnostic forwards independently reproduced;336before and336final checkpoint states checked; ordinary training trajectory not independently retrained"
+    },
+    {
+      "check": "independent statistical review",
+      "outcome": "48raw assessments,34560prediction rows and272paired metric summaries match; no decision-changing discrepancy",
+      "output": "reports/predictive_value_checks/statistical_review.json"
+    },
+    {
+      "check": "portable evidence",
+      "outcome": "smoke21sealed artifacts anddiagnostic25sealed artifacts verify; main standalone verifier also passes from copied archive outside repository",
+      "output": "reports/predictive_value_checks/diagnostic_portable_verification.json"
+    },
+    {
+      "check": "retrospective rank stability",
+      "outcome": "separate post-outcome design;48assessments/288correlations, no constant or tied cohort vectors; no fitting,tuning or new criteria; known-example arithmetic checks and Ruff pass",
+      "output": "reports/predictive_value_checks/rank_stability"
+    },
+    {
+      "check": "final preservation",
+      "outcome": "all655pre-existing report files unchanged;all104smoke and1326scientific runfiles unchanged after readonly analysis/audit;68locked analysis and33sourcefiles percohort match; all reviewed local documentation links resolve",
+      "output": "reports/predictive_value_checks/preservation_final.json"
+    },
+    {
+      "check": "figure and deliverables",
+      "outcome": "standalone PNG/SVG/PDF generated; PNG visually inspected; report,README,charter,synthesis,predictive-retention note,handoff and reproduction guide updated; git diff --check passes"
+    }
+  ],
+  "updated_utc": "2026-09-28T00:29:41.363904+00:00",
+  "completed": true,
+  "scoped_test_count": 140
+}

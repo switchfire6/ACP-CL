@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-09-28T02:44:24.894496+00:00",
+  "passed": true,
+  "cohorts": [
+    {
+      "cohort": "smoke",
+      "files": 153,
+      "byte_identical": true
+    },
+    {
+      "cohort": "development",
+      "files": 1027,
+      "byte_identical": true
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "checked_utc": "2026-09-28T03:29:02.305370+00:00",
+  "source": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\core_residual_outputs\\development",
+  "outside_directory": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_outputs_portable_9uwzgscr",
+  "copied_archive": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_outputs_portable_9uwzgscr\\development",
+  "copied_script": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_outputs_portable_9uwzgscr\\summarize_core_residual_outputs.py",
+  "script_sha256": "a2a6ac2b95c565d1fbd0d7a4d8312132d1d89d9ea1011ce84eec4ac13c3eef73",
+  "command": [
+    "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\.venv\\Scripts\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_outputs_portable_9uwzgscr\\summarize_core_residual_outputs.py",
+    "--input",
+    "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_outputs_portable_9uwzgscr\\development",
+    "--output",
+    "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_outputs_portable_9uwzgscr\\recomputed\\summary.json",
+    "--development"
+  ],
+  "cwd": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_outputs_portable_9uwzgscr",
+  "exit_code": 0,
+  "stderr_bytes": 0,
+  "elapsed_seconds": 8.360904799999844,
+  "exact_recomputation": {
+    "summary.json": {
+      "exact_bytes_equal": true,
+      "original_sha256": "26e72312298ebb331e4028ed38a69b21d14e18b7639ab575b09d1e83d17efeab",
+      "recomputed_sha256": "26e72312298ebb331e4028ed38a69b21d14e18b7639ab575b09d1e83d17efeab",
+      "bytes": 3226212
+    },
+    "summary.md": {
+      "exact_bytes_equal": true,
+      "original_sha256": "b41d0344552f18596fc033f70c31fd0e99e52be76312c44cf33a89db8f50ec7b",
+      "recomputed_sha256": "b41d0344552f18596fc033f70c31fd0e99e52be76312c44cf33a89db8f50ec7b",
+      "bytes": 2921
+    }
+  },
+  "rejection_checks": [
+    {
+      "case": "missing_architecture_seed_job",
+      "rejected": true,
+      "error": "both architectures required for every seed"
+    },
+    {
+      "case": "missing_refreshed_replicate",
+      "rejected": true,
+      "error": "incomplete or duplicate intervention/context coverage"
+    },
+    {
+      "case": "changed_loaded_learner_signature",
+      "rejected": true,
+      "error": "reported predictor or RNG state changed during interventions"
+    },
+    {
+      "case": "changed_npz_bytes",
+      "rejected": true,
+      "error": "output NPZ digest differs"
+    },
+    {
+      "case": "changed_forecast_with_updated_file_and_array_hashes",
+      "rejected": true,
+      "error": "recorded component score differs from raw arrays"
+    }
+  ],
+  "source_existing_files_unchanged": true,
+  "original_source_file_hashes": {
+    "allocation.png": "0097f739409a53d48d1238da365773edbc8abd92ff5e51a73d077ccd63cbe9ba",
+    "allocation.svg": "cfff0b31d945a01e44d4aca21918dd56d3b3e7bae769321425685cfe910e2cf2",
+    "completion.json": "31730c252dcbae7abcff9d274272c170743ea98b64dec4acb543bfe5aca04d2e",
+    "manifest.json": "b6ba54e8e01ad71158fc268953224feb58f345578e5dd82f00b5bbcdbb3cf424",
+    "source_at_lock.zip": "d9bde94887de1e71d6ac008ca61a20b5853ba9fc14df90bff68d31019676ce42",
+    "summary.json": "26e72312298ebb331e4028ed38a69b21d14e18b7639ab575b09d1e83d17efeab",
+    "summary.md": "b41d0344552f18596fc033f70c31fd0e99e52be76312c44cf33a89db8f50ec7b",
+    "jobs/conditional_16001.json": "fdf455497c03a55118f1fc6c66a75f4312b4876c0af994ea2dc43c16e4f03865",
+    "jobs/conditional_16001.npz": "baf83fc6ffccf2744692a6d666760bf89fcb2f1c624c81bee6781b7728f449fa",
+    "jobs/conditional_16002.json": "473146042514c9c16a79348c0dbc8bc7e8cbb9e713c7c095c3d7ff861cecdbd5",
+    "jobs/conditional_16002.npz": "f7110cf289a4aa5c20878cc3c391b69b042256bbe4867c3ca3905cab3e32224d",
+    "jobs/conditional_16003.json": "ddd84f4517b8b3bddeada18995f66e872127d8a0d68573ccfa33f13531004414",
+    "jobs/conditional_16003.npz": "c40ebf8c47cff53f3754423d0e4b1860b54f37b0d4110c904f9c59ff54615ac4",
+    "jobs/conditional_16004.json": "ee40ee1230a1749cfdd1729bd6d9dd975380090742f8f21f20de3344d8281041",
+    "jobs/conditional_16004.npz": "bbb2e7abff5f235cb507b7e6b03321bd65a8a363b90f4c6d87a61a01d9a06ff2",
+    "jobs/conditional_16005.json": "c50b78b96c188a72ca91f542ac2e0eeba373fc3045dea749cbc817c8a4ff58fd",
+    "jobs/conditional_16005.npz": "732f7c56ddbc83a7f44487f46795d486a8fdb56ccbf2a1125df59126d4369f8b",
+    "jobs/conditional_16006.json": "fe5caeed6bdc6893e763f3ae7960596eb3737ff822f11ea98fee71c4067a6c9e",
+    "jobs/conditional_16006.npz": "3d78c48c8efc482f6e6f7b40625b454a6de08615dc2ebbf95e7906e64c60dfa6",
+    "jobs/recurrent_16001.json": "85bbf77c099a59cfa48fbbe85df459120e75be06af53e142246ee1d536f5308c",
+    "jobs/recurrent_16001.npz": "1247a79f9054d9f4a81919fc74d6b42b0f2aaef016cf42e4f687083ed90e6021",
+    "jobs/recurrent_16002.json": "493471ee1c5d355d008287f83e4addcd5425ae3e7bb2445df2500a0d22102265",
+    "jobs/recurrent_16002.npz": "c2abe82801a586bd170b6a9b70efecbb3fc2aa080180745d17e8ae127c3df3e3",
+    "jobs/recurrent_16003.json": "97f81998b0609720775876558102cd21666fa779c3666fc67633f2f77c6a917f",
+    "jobs/recurrent_16003.npz": "d33991ca8c1f45e181d5740bb03040f86fbf3e994df71618694d8f7461cf75bd",
+    "jobs/recurrent_16004.json": "d5c67006f455f0b29738f99eb27c00218529bc02050be80073d62460ab17d7b0",
+    "jobs/recurrent_16004.npz": "bd56a1e837105ac8fde42452f245e0dccc3f6419e7fb3e1c72a74ad703016f0a",
+    "jobs/recurrent_16005.json": "4647834e0f0bafdb329e33deced9d868b7a0a5bb506e79897c5667164b74b716",
+    "jobs/recurrent_16005.npz": "9c407d059760cd5c89f6ec901cf1372e29ac9caf24d5f1b4d7cb1e194d90f864",
+    "jobs/recurrent_16006.json": "47f57bb51e749897bb0ea68ad1eaeb0578a8189fc2bbafdfd2251b5c8176d576",
+    "jobs/recurrent_16006.npz": "1eaa978fbbce092ed9df3c7e1255958f6b7283d1ff34d9d80e1232a344c33111"
+  },
+  "original_source_files_verified": 31,
+  "record_counts": {
+    "jobs": 12,
+    "checkpoints": 48,
+    "intervention_rows": 384,
+    "independently_recomputed_scalars": 12288,
+    "original_full_byte_equal": 384
+  },
+  "decisions": {
+    "conditional": "GO",
+    "recurrent": "GO"
+  },
+  "scope": "Copied standalone NumPy summary executed with -I -B outside the repository; exact JSON and Markdown reproduction. Five adversarial checks alter only the disposable copy and restore its bytes. No model unpickling, new training, live scientific imports, or independent reconstruction of saved neural forecasts. Input hashes, forecasts, score arithmetic, seed aggregation and declared allocation checks are reviewed."
+}

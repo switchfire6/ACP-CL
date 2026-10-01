@@ -1,0 +1,1466 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "purpose": "engineering compute allocation only",
+  "started_at_utc": "2026-09-28T22:50:01.285936+00:00",
+  "completed_at_utc": "2026-09-28T22:51:04.212262+00:00",
+  "elapsed_seconds": 62.92981149999832,
+  "seed": 18091,
+  "source_files": {
+    "scripts/calibrate_representation_compute.py": "d91ddf5f8c04512a2595a63870ab64d0c7b17c55afbd3a4742e8441bf8469dc5",
+    "src/acp_cl/__init__.py": "237a5e7ec88b7899b5734b5c3c1225b3ad5542697d2c86ea30263e9f7c4328eb",
+    "src/acp_cl/acquisition/__init__.py": "88bf07e5175801c18ba0f5a4716e37f39e8370508523d2973efa01f394d4b60c",
+    "src/acp_cl/acquisition/study.py": "d72af3f2c20e62f1f117279d67d31432fc0690382d9f010c4a179b1f3a703e40",
+    "src/acp_cl/acquisition/world.py": "1840731d517e930b48107e7cdc85eb3158254591d004c5c62f459a6f32be451d",
+    "src/acp_cl/conditional/__init__.py": "df6dc410782408dd558e15bf367d133de14b17062642c0bf2a687f75186dc693",
+    "src/acp_cl/conditional/learner.py": "f094a5e38cded7770048bff73cbab7a89dd681bf23e3b0dca592463c50a026ac",
+    "src/acp_cl/conditional/study.py": "a972839d14c26add6841abbca0fb0f78b701feead8f8819e143738b6cd58ba65",
+    "src/acp_cl/conditional/world.py": "d15f2c092d8bbee653817f27937b3fa6223a1709f2e0663a6ee45dc0173da0d8",
+    "src/acp_cl/contextual/__init__.py": "f69c2214122a727f47a138aace827188be54a453990707411708d170c994431c",
+    "src/acp_cl/contextual/learner.py": "a8789e0db44adb0f7215e9d4e4ff74dc063c3e55b8c87e1c13ac14f41dccfce1",
+    "src/acp_cl/contextual/study.py": "5153fb85ba8c2fe3f723ecbda028e4ad7876d08ab7201d9949a88bd59ecbd2da",
+    "src/acp_cl/contextual/world.py": "1fdd8333266fb6d53bcf48acbf1ca489cbdfaeb85849c02a3922aa9589a4289b",
+    "src/acp_cl/persistence/__init__.py": "f286031bdbfec32620758cea371551a26c95b963c7896f363de2f0dab34dd176",
+    "src/acp_cl/persistence/learner.py": "82aca79cb86c6306d03583d5b62c921726bbf3067a0f9363eab9f853bbc31c85",
+    "src/acp_cl/persistence/memory.py": "60812315aa082e7a1b0f210b393e2aa0a7090ab6a7083667f8d5356e6469f322",
+    "src/acp_cl/persistence/study.py": "71d694b487ea12ca7c226d8db5db4e65708e656c0586102a01946518f4d4fb82",
+    "src/acp_cl/persistence/world.py": "a545aacde99158e19842c0df31774942e98d84ce72c0c38057f0485d7c855460",
+    "src/acp_cl/predictive_value/__init__.py": "2315f773d7881bb80fd9261fa21bee4f99f48305296babc85fb9e97349ee250b",
+    "src/acp_cl/predictive_value/mechanism.py": "37c126261671b96c9f9b2735cf7abe5e52d591e21d6388ec67d6c222b5724946",
+    "src/acp_cl/replay_renewal/__init__.py": "ab3a853ac261cbb9f5377fb1f7d684796dcbd825d3c4b9359119b44296988d81",
+    "src/acp_cl/replay_renewal/memory.py": "c3a02d69c9b4328872836c087b0305f94ef861921279d352f4f994ff4bd129bb",
+    "src/acp_cl/replay_renewal/study.py": "62dccb7c4e02bc513791b40a255a07961d49718c067d8db7733c805e67137d43",
+    "src/acp_cl/representation_learning/__init__.py": "aa484c746f794c61dd7b94842b102d6dcdd1507c1145e3726efec7b0c8b8ab13",
+    "src/acp_cl/representation_learning/design.py": "59226094d5d10ad22aa5b380c281c342e47c57dfcadd4ad13f56a7dd6280f093",
+    "src/acp_cl/representation_learning/learner.py": "985a0e6e9445a6a91c79d582cc1bc3add528752d46d91520e2365cf9e46f04b8",
+    "src/acp_cl/training_state/__init__.py": "afbcd1549ae64fe244efc91bfbc45bb51669367255b089ec173126684db76012",
+    "src/acp_cl/training_state/study.py": "fa75f366cd06c540a4f25d3e87c886900a43588c9a071aa295263407f1827ede"
+  },
+  "source_files_sha256": "cb449205b47858ee0a1e2b0246f174674b43ed5e97e7f004f17f43ee78b45d4e",
+  "config_path": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\configs\\representation_learning_qualification.json",
+  "config_sha256": "4cf43f2157269a5eb1bbdf448a282368c9c4a740c949c7abdd786e2ddda9c30d",
+  "config": {
+    "study": "representation_learning_qualification",
+    "kind": "qualification",
+    "seeds": [
+      18101,
+      18102,
+      18103,
+      18104,
+      18105,
+      18106
+    ],
+    "arms": [
+      "outcome"
+    ],
+    "batch_size": 32,
+    "eval_size": 512,
+    "probe_every": 1024,
+    "support_replicates": 2,
+    "width": 64,
+    "experts": 4,
+    "context_width": 12,
+    "decoder_width": 64,
+    "interaction_features": true,
+    "lr": 0.002,
+    "memory_packets": 16,
+    "updates_per_batch": 12,
+    "compute_updates_per_batch": 12,
+    "auxiliary_weight": 1.0,
+    "evidence_strength": 1.0,
+    "threads": 1,
+    "workers": 6,
+    "cpu_affinity": 1365,
+    "episode_size": 8192,
+    "prefix_size": 1024,
+    "interleave_block": 1024,
+    "interleave_cycles": 8,
+    "smoke": false
+  },
+  "protocol_sha256": "3eccb319858205bf1a3e4b25815f3dc1cab3ec6f62db83cf56b02c65488fb78e",
+  "warmup_batches": 16,
+  "measured_batches": 8,
+  "timing_rounds": 5,
+  "initial_state": "fresh same predictor and auxiliary initializations for each round",
+  "input_schedule": [
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 665863659847214292,
+      "query_sha256": "76dedcd8ff326c66f32cfa6b85166131862a30dd32063b6b16cf55106ec1ed43"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 698556832000313671,
+      "query_sha256": "aa4bc81931a9b4e8b7357fe4256f74be3a4b11f9803de4abba2ae4fbc2b35583"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 619893484144279526,
+      "query_sha256": "eb94be3d738a0a07f52a2b1eadb3acd260fd862b8aa54bb6c3352535b9684cd4"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 266285627673612728,
+      "query_sha256": "a4f2ebda2a68d423699212ef669e2640b689c6b12e89a3dfa1934a39b3d2b5a7"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 942560143659915339,
+      "query_sha256": "a960b10d982363edaef2278cef7cdf65db91d73c0d70eff4c380d78caf65f935"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 458134814717329852,
+      "query_sha256": "056aaa579cebcc89475ee9c53bd3037b417beb4c0d9a070e6fb969c16695f3ac"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 17905840447842630,
+      "query_sha256": "e204665b3316bc979733b770f3a66dde12c7511f6107afb5595063130b55e183"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 208587658340674997,
+      "query_sha256": "0b705736c6f17155cdbbdd766774cda395440be357d396694bdfe1d1026fe228"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 609082395740490906,
+      "query_sha256": "22db9b6f6c050156815412035d216a0d6599568eb93938c919e86711442a6425"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 988049330131985591,
+      "query_sha256": "dfe4e42e5770e5a5906ec37a1d4e0816f7ce985e28c4d83ac2018512f93e302f"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 292171946926469677,
+      "query_sha256": "6999f734f46fe7a25188ff2271729e1260f184bac60868e7aaa963b9104c73e8"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 952047591124992576,
+      "query_sha256": "55880dbbe71f083737f1f837bdf9ae9e352adc0e6e3c26fb2998bf2e100468ec"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 979298872449934039,
+      "query_sha256": "6fa0dac894cfac2624a770ff5fa6ecef6edeee6c23fa809d9a967ea81d978319"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 215665991416069194,
+      "query_sha256": "5a5981a4cf35760588e4e9e85fe35bf39732b218d8f5dc4b6637d3e9d6dfd5c1"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 963953655377872827,
+      "query_sha256": "dbe028e5e6234da8f993890f9832f9d7e39dfd4b249b46d91b0525d06f67f0db"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 588308422848824788,
+      "query_sha256": "e5bd642f1049ceb0695eed4d5b88a6a210a11c52621b6bd68adb62e307a4a27a"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 770897496793253172,
+      "query_sha256": "74796b52a6af103098d6b1c473c5418cbca9d7a0c1ef8933f6620f16602b1ef8"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 80713542859372560,
+      "query_sha256": "3577221c646f900fee17df9f4687c6797d931c03fdbbfca268cbd06fc25a2113"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 699585702902430955,
+      "query_sha256": "bc23e38ea8709fc7f04b0c5ebf6b9910c318d5531a65eb127fba36ddb5a5e370"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 1008309402359785707,
+      "query_sha256": "ea6452e0ca39621653d85435103ba407d2262fd90fabc79452d7cac6e370ef31"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 197677422669450394,
+      "query_sha256": "8d5347b1612c8ac35bf7134a791dbb9a8d203bc7a5d038624324b51e1c04503e"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 557782789617355811,
+      "query_sha256": "ac45b5bc7cfbcf96c9500a78c84ac9ec36a8466ab8fa8460e641e535fecedc43"
+    },
+    {
+      "law": {
+        "mode": 0,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 1122945323389719072,
+      "query_sha256": "bfb4c1cdf6d0eddeb490b1aaced8c3ab98ea8453e3c42c30df7f06b3b5be0d1c"
+    },
+    {
+      "law": {
+        "mode": 1,
+        "active": [
+          0,
+          1,
+          2
+        ],
+        "revised": false,
+        "noise": 0.0
+      },
+      "seed": 1107907342540190247,
+      "query_sha256": "b007c89680ad28a25bebb62b538b8d7918765b30476de5d8d730ec799c3cf7c2"
+    }
+  ],
+  "paired_input_sha256": "267b75341c8825834487164e3fe6b6abee89cb5269060aa91f9fcb5c549880a2",
+  "rounds": [
+    {
+      "index": 0,
+      "arm_order": [
+        "outcome",
+        "final_frame",
+        "sequence"
+      ],
+      "arms": {
+        "outcome": {
+          "measured_batch_seconds": [
+            0.15806729999894742,
+            0.15881730000546668,
+            0.1591259999986505,
+            0.15930229998775758,
+            0.15935240000544582,
+            0.1588266000035219,
+            0.15902239999559242,
+            0.15874720001011156
+          ],
+          "training_seconds": 1.2712615000054939,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": null,
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 0
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 0
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 0,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 0,
+            "gradient_bytes": 231324,
+            "optimizer_tensor_bytes": 462704,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "final_frame": {
+          "measured_batch_seconds": [
+            0.17314459999033716,
+            0.17467590000887867,
+            0.17527170000539627,
+            0.17291429999750108,
+            0.17265839999890886,
+            0.18527099999482743,
+            0.17755769999348558,
+            0.17878380000183824
+          ],
+          "training_seconds": 1.4102773999911733,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "sequence": {
+          "measured_batch_seconds": [
+            0.17275559999688994,
+            0.17305620000115596,
+            0.17202529999485705,
+            0.17499090000637807,
+            0.1738393000123324,
+            0.17383780000091065,
+            0.174296700002742,
+            0.17319810000481084
+          ],
+          "training_seconds": 1.387999900020077,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "arm_order": [
+        "sequence",
+        "final_frame",
+        "outcome"
+      ],
+      "arms": {
+        "sequence": {
+          "measured_batch_seconds": [
+            0.17287070000020321,
+            0.17271980000077747,
+            0.1742244000051869,
+            0.17306439999083523,
+            0.17361579999851529,
+            0.17420369999308605,
+            0.17299439999624155,
+            0.17302200000267476
+          ],
+          "training_seconds": 1.3867151999875205,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "final_frame": {
+          "measured_batch_seconds": [
+            0.17268630000762641,
+            0.1761347999999998,
+            0.17182680001133122,
+            0.17205580000882037,
+            0.17128309998952318,
+            0.17231190000893548,
+            0.17163240000081714,
+            0.1727392000029795
+          ],
+          "training_seconds": 1.380670300030033,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "outcome": {
+          "measured_batch_seconds": [
+            0.16040680000151042,
+            0.16037640000286046,
+            0.16099779999058228,
+            0.15996350000204984,
+            0.1593224999960512,
+            0.15991610000492074,
+            0.1595612999954028,
+            0.16000969999004155
+          ],
+          "training_seconds": 1.2805540999834193,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": null,
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 0
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 0
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 0,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 0,
+            "gradient_bytes": 231324,
+            "optimizer_tensor_bytes": 462704,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        }
+      }
+    },
+    {
+      "index": 2,
+      "arm_order": [
+        "outcome",
+        "final_frame",
+        "sequence"
+      ],
+      "arms": {
+        "outcome": {
+          "measured_batch_seconds": [
+            0.15925519999291282,
+            0.16024990000005346,
+            0.1593404000013834,
+            0.1610517999943113,
+            0.16074880000087433,
+            0.1598671999963699,
+            0.1592357999907108,
+            0.15884670001105405
+          ],
+          "training_seconds": 1.27859579998767,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": null,
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 0
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 0
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 0,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 0,
+            "gradient_bytes": 231324,
+            "optimizer_tensor_bytes": 462704,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "final_frame": {
+          "measured_batch_seconds": [
+            0.17731329999514855,
+            0.17263899999670684,
+            0.18390920000092592,
+            0.1735969000001205,
+            0.17328570000245236,
+            0.17328380000253674,
+            0.17441259999759495,
+            0.17307150000124238
+          ],
+          "training_seconds": 1.4015119999967283,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "sequence": {
+          "measured_batch_seconds": [
+            0.19778689999657217,
+            0.20873110000684392,
+            0.17318389999854844,
+            0.1767962999874726,
+            0.17247830000997055,
+            0.17224690000875853,
+            0.1755169000098249,
+            0.1725144999945769
+          ],
+          "training_seconds": 1.449254800012568,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        }
+      }
+    },
+    {
+      "index": 3,
+      "arm_order": [
+        "sequence",
+        "final_frame",
+        "outcome"
+      ],
+      "arms": {
+        "sequence": {
+          "measured_batch_seconds": [
+            0.17230420000851154,
+            0.17134200000145938,
+            0.1708955999929458,
+            0.17169889999786392,
+            0.17273330000170972,
+            0.1717666000040481,
+            0.17238870001165196,
+            0.1719574000017019
+          ],
+          "training_seconds": 1.3750867000198923,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "final_frame": {
+          "measured_batch_seconds": [
+            0.17650890001095831,
+            0.17098280000209343,
+            0.17158070000004955,
+            0.19258410000475124,
+            0.19267249999393243,
+            0.17299619999539573,
+            0.1722598000051221,
+            0.17630910000298172
+          ],
+          "training_seconds": 1.4258941000152845,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "outcome": {
+          "measured_batch_seconds": [
+            0.15947159999632277,
+            0.16028779999760445,
+            0.1595893000048818,
+            0.15869879999081604,
+            0.1788864999980433,
+            0.15955910000775475,
+            0.15955760001088493,
+            0.16719789999478962
+          ],
+          "training_seconds": 1.3032486000010977,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": null,
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 0
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 0
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 0,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 0,
+            "gradient_bytes": 231324,
+            "optimizer_tensor_bytes": 462704,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        }
+      }
+    },
+    {
+      "index": 4,
+      "arm_order": [
+        "outcome",
+        "final_frame",
+        "sequence"
+      ],
+      "arms": {
+        "outcome": {
+          "measured_batch_seconds": [
+            0.16733949999616016,
+            0.16063199999916833,
+            0.1599380999978166,
+            0.15998509999189992,
+            0.16092930000741035,
+            0.15960569999879226,
+            0.16139290000137407,
+            0.1607302000047639
+          ],
+          "training_seconds": 1.2905527999973856,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": null,
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 0
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 0,
+            "auxiliary_reconstructions": 0,
+            "reconstruction_pixels": 0,
+            "auxiliary_backward_steps": 0,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 0
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 0,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 0,
+            "gradient_bytes": 231324,
+            "optimizer_tensor_bytes": 462704,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "final_frame": {
+          "measured_batch_seconds": [
+            0.1725709000020288,
+            0.1742561000137357,
+            0.17255680001107976,
+            0.1727009000023827,
+            0.17240640000090934,
+            0.17292559999623336,
+            0.17313860000285786,
+            0.17452449999109376
+          ],
+          "training_seconds": 1.3850798000203213,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        },
+        "sequence": {
+          "measured_batch_seconds": [
+            0.1734749000024749,
+            0.17261679998773616,
+            0.17191770000499673,
+            0.1717309999949066,
+            0.17174199999135453,
+            0.17311659999541007,
+            0.17263980000279844,
+            0.1725458000000799
+          ],
+          "training_seconds": 1.3797845999797573,
+          "initial_predictor_hash": "85994e7d84243d0dc59fda9de6b9d7de15f25bf2149c500acf5f37ca8c8a47cf",
+          "initial_auxiliary_hash": "bf85b2eadf53ec255a1da0a67f5894cd08831e9c07886defdc77de3962fb462d",
+          "warmup_replay_sha256": "54801a4c9326f132f4571567f9b1bfd04539d7e0dd6870e59db7d784b9ea417d",
+          "final_replay_sha256": "92cb1469356e76acce5c0daf9bd258c0e3cce47a8979630f20f4cb0b7bc89a2b",
+          "measured_work": {
+            "arrivals": 256,
+            "optimizer_steps": 96,
+            "query_presentations": 6144,
+            "support_presentations": 6144,
+            "replay_presentations": 3072,
+            "duplicate_presentations": 0,
+            "encoder_forward_calls": 192,
+            "encoder_presentations": 12288,
+            "auxiliary_forward_calls": 192,
+            "auxiliary_reconstructions": 6144,
+            "reconstruction_pixels": 4718592,
+            "auxiliary_backward_steps": 96,
+            "predictive_parameter_updates": 5551776,
+            "auxiliary_parameter_updates": 5191680
+          },
+          "total_work": {
+            "arrivals": 768,
+            "optimizer_steps": 288,
+            "query_presentations": 18432,
+            "support_presentations": 18432,
+            "replay_presentations": 8832,
+            "duplicate_presentations": 384,
+            "encoder_forward_calls": 576,
+            "encoder_presentations": 36864,
+            "auxiliary_forward_calls": 576,
+            "auxiliary_reconstructions": 18432,
+            "reconstruction_pixels": 14155776,
+            "auxiliary_backward_steps": 288,
+            "predictive_parameter_updates": 16655328,
+            "auxiliary_parameter_updates": 15575040
+          },
+          "final_resources": {
+            "predictive_parameters": 57831,
+            "auxiliary_parameters": 54080,
+            "predictive_parameter_bytes": 231324,
+            "auxiliary_parameter_bytes": 216320,
+            "gradient_bytes": 447644,
+            "optimizer_tensor_bytes": 895360,
+            "replay_payload_bytes": 790656,
+            "peak_replay_payload_bytes": 790656,
+            "history_payload_bytes": 24704,
+            "replay_packets": 16,
+            "replay_capacity": 16,
+            "accounting": "tensor and packet payload bytes, not Python overhead or peak process RSS"
+          }
+        }
+      }
+    }
+  ],
+  "median_training_seconds": {
+    "outcome": 1.2805540999834193,
+    "final_frame": 1.4015119999967283,
+    "sequence": 1.3867151999875205
+  },
+  "mac_proxy": {
+    "units": "dense multiply-accumulates; one multiply plus accumulate counted as one",
+    "packet_forward_components": {
+      "frame_linear": 3145728,
+      "temporal_gru": 6291456,
+      "context_gru": 465408,
+      "outcome_decoder": 186368
+    },
+    "auxiliary_query_forward": 1703936,
+    "packets_per_update": 2,
+    "forward_backward_multiplier": 3,
+    "outcome_training_per_update": 60533760,
+    "auxiliary_training_per_update": 70757376,
+    "auxiliary_base_ratio": 1.168891144379599,
+    "excluded": "biases, nonlinearities, interactions, loss elementwise work, clipping, Adam"
+  },
+  "compute_updates_per_batch": 15,
+  "base_updates_per_batch": 12,
+  "timing_ratios": {
+    "final_frame": 1.0944574696335556,
+    "sequence": 1.0829024716765
+  },
+  "maximum_auxiliary_timing_ratio": 1.0944574696335556,
+  "matrix_work_ratio": 1.168891144379599,
+  "unrounded_multiplier": 1.168891144379599,
+  "rule": "ceil(base_updates * max(1, both auxiliary/base ratios of medians, MAC ratio))",
+  "runtime": {
+    "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "cpu_affinity": 1365,
+    "threads": 1,
+    "interop_threads": 1,
+    "deterministic_algorithms": true
+  },
+  "limitations": "Engineering timing and a dense-matrix proxy allocate updates; actual scientific-run work and time must still be reported. No evaluation, prediction quality or training-loss values are recorded.",
+  "allocation_sha256": "0d14ea29f73b3e3c019659cdf0e34646842997b15bbbc4b3769218a8c872970f"
+}

@@ -1,0 +1,21 @@
+{
+  "locked_utc": "2026-09-28T01:00:34.272082+00:00",
+  "completed_utc": "2026-09-28T01:10:26.893699+00:00",
+  "elapsed_seconds_including_lock_launch": 592.621617,
+  "identity": {
+    "config_sha256": "7c123ef284f48f58345b12b0cade878a7bdb988e8207a0bc0203bcf6cc36f247",
+    "source_sha256": "80e0110241041c303e869b8f85c274a6262aaac4ecc8d399bb837a5c1ddf9a2d",
+    "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+  },
+  "counts": {
+    "trajectories": 24,
+    "assessments": 48,
+    "ordinary_arrivals_per_trajectory": 18432,
+    "diagnostic_forks": 3456,
+    "instrumented_forks": 3024,
+    "zero_update_copies": 96,
+    "diagnostic_prediction_forwards": 120576,
+    "extra_loss_forwards": 12096
+  },
+  "outcomes_accessed_only_after_complete": true
+}

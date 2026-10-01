@@ -1,0 +1,152 @@
+{
+  "study": "commons_d1b",
+  "protocol": "docs/commons_d1b_protocol.md",
+  "phase": "test",
+  "world": {
+    "separability": "reports/commons_d0b/separability.json",
+    "spec": "reports/commons_d0b/world_spec.json",
+    "key": "1586f04b8d3cc8c2"
+  },
+  "contexts": [
+    "A0B0C0",
+    "A1B0C0",
+    "A0B1C0",
+    "A0B0C1",
+    "A1B1C1"
+  ],
+  "trap_context_seeds": [
+    21301,
+    21302,
+    21303,
+    21304,
+    21305,
+    21306,
+    21307,
+    21308,
+    21309,
+    21310,
+    21311,
+    21312,
+    21313,
+    21314,
+    21315,
+    21316,
+    21317,
+    21318,
+    21319,
+    21320,
+    21321,
+    21322,
+    21323,
+    21324
+  ],
+  "other_context_seeds": [
+    21301,
+    21302,
+    21303,
+    21304,
+    21305,
+    21306,
+    21307,
+    21308,
+    21309,
+    21310,
+    21311,
+    21312
+  ],
+  "episodes": 4096,
+  "checkpoint_every": 256,
+  "probe_episodes": [
+    256,
+    512,
+    1024,
+    2048,
+    3072,
+    4096
+  ],
+  "disagreement_episodes": [
+    1024,
+    4096
+  ],
+  "panel_size": 512,
+  "oracle": {
+    "draws": 16384,
+    "stream_chunk": 512,
+    "floor_draws": 256
+  },
+  "learner": {
+    "members": 5,
+    "hidden": 128,
+    "minibatch": 64,
+    "grad_clip": 5.0,
+    "bootstrap_p": 0.5,
+    "aux_weight": 1.0,
+    "plan_samples": 256,
+    "capacity": 1024
+  },
+  "base_knobs": {
+    "lr": 0.001,
+    "U": 2,
+    "ema_decay": 0.99
+  },
+  "d1_selection": {
+    "path": "reports/commons_d1/dev/dev_results.json",
+    "sha256": "8bb7f6bf935b19b4c784711f6f5bd61e174f1d698e8bcbb9ac9a4641b988da7d"
+  },
+  "d1b_dev1": {
+    "path": "reports/commons_d1b/dev/dev_results.json",
+    "sha256": "9f5add70031ff5862c6c8b19849b5dd80de592d6b37dfc94e40575f802b0dff1"
+  },
+  "grid": {
+    "MB-prior": {
+      "beta": [
+        1,
+        3
+      ]
+    },
+    "MB-count": {
+      "c": [
+        0.05,
+        0.15
+      ]
+    }
+  },
+  "knobs": {
+    "MB-prior": 3,
+    "MB-count": 0.05
+  },
+  "arms": [
+    "MB",
+    "MB-prior",
+    "MB-count"
+  ],
+  "disagreement_states": 128,
+  "analysis": {
+    "competent_mean": 0.015,
+    "competent_worst": 0.025,
+    "r1_seeds_required": 10,
+    "r2_seeds_required": 20,
+    "endpoint": 4096,
+    "trap": {
+      "context": "A1B1C1",
+      "regret_max": 0.025,
+      "actions": [
+        6,
+        9,
+        12
+      ],
+      "ratio_min": 0.5,
+      "critical_loss": 0.015,
+      "definition": "Ratified (Amendment 1). Critical actions: the non-null actions whose removal from O's action set costs >= .015 expected survival on the A1B1C1 panel (O's choice by the selection table, values by the scoring table) = {6: 1->3x3, 9: 2->3x6, 12: 1->3x6}. f_O(a) = fraction of the 512 A1B1C1 panel states in which a is O's selected action. Usage condition (one-sided), per seed: for every critical a, training usage u(a) = (A1B1C1 training episodes with action a) / 4,096 >= 0.5 f_O(a). A seed is clean if its A1B1C1 greedy-probe regret at 4,096 is <= .025 AND the usage condition holds; otherwise it is trapped."
+    },
+    "payback_reference": "MB",
+    "bootstrap_resamples": 20000,
+    "analysis_seed": 21392026
+  },
+  "workers": 6,
+  "threads": 1,
+  "device": "cpu",
+  "stall_seconds": 3600,
+  "stage_attempts": 3,
+  "notes": "DRAFT (Amendment 1), not locked. R2 (primary): A1B1C1 x seeds 21301-21324 x {MB, MB-prior, MB-count}; clean seed = A1B1C1 regret <= .025 AND one-sided usage condition (analysis.trap); escape = >= 20/24 clean seeds; paired trap-rate comparison with MB (2x2 counts, exact McNemar p, bootstrap CI of the rate difference). R1: the other 4 contexts x seeds 21301-21312 combined with the first 12 A1B1C1 seeds, exactly as declared (>= 10/12). R3: payback on the R1 seeds (5-context cumulative online regret <= MB's in >= 10/12). Disagreement probe at 1,024 and 4,096 only. Replicate: seeds 21301, 21306, 21311 x 3 arms x {A1B1C1, A0B0C1}. Knobs filled from the development-2 selection (reports/commons_d1b/dev2/dev2_results.json, sha256 5d868cc18508593f4d83d37e61842d228829da9a1553677a016f1319dbe844d4): MB-prior beta 3, MB-count c 0.05. NOT LOCKED (awaiting review). Bootstrap: 20,000 paired seed resamples, analysis seed 21392026."
+}

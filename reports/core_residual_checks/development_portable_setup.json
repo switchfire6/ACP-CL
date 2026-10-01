@@ -1,0 +1,12 @@
+{
+  "archive": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\reports\\core_residual\\development",
+  "external_directory": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_development_portable_lwtrfv5o",
+  "external_archive": "C:\\Users\\pounc\\AppData\\Local\\Temp\\adam_core_residual_development_portable_lwtrfv5o\\development",
+  "python": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\.venv\\Scripts\\python.exe",
+  "files": {
+    "scripts/verify_core_residual_archive.py": "eca9a1622ab3ff555c6bc944b7db0e702a6c5f3bff8164336cdeca62e8507670",
+    "tests/test_core_residual_archive.py": "cf667223fb17d714f2ee2ca5933a230847264a9d18952c966a9e825da218cb16"
+  },
+  "artifact_manifest_sha256": "edd6c32d2b69722985b6548ff0af16d7e8c2bfb34d528e79e203cb88dbeb6759",
+  "created_utc": "2026-09-28T02:42:30.205484+00:00"
+}

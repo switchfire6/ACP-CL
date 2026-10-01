@@ -1,0 +1,7 @@
+seed,baseA_mode,order,delay_stage,baseA_endpoint,baseA_online_cycle8,baseA_online_cycles_5_8,gap_cycle8,baseA_lambda_positions_2_32,replay_baseA_share_outside_baseA,replay_baseA_share_inside_baseA,replay_cross_law_support_share,memory_baseA_at_block_start
+18101,1,"supply_timing delay efficiency",2,0.266547,0.110394,0.119747,0.014529,0.792347,0.211344,0.302409,0.105404,"0 1 4 2 3 2 3 3"
+18102,0,"efficiency delay supply_timing",2,0.214542,0.117184,0.113702,0.020428,0.850745,0.313721,0.395182,0.054948,"0 6 4 5 4 4 4 3"
+18103,1,"efficiency supply_timing delay",3,0.114626,0.110713,0.106877,0.011481,0.829328,0.257406,0.337565,0.007357,"0 4 4 4 3 4 3 4"
+18104,0,"delay efficiency supply_timing",1,0.286557,0.107187,0.113812,0.005053,0.826279,0.217122,0.301107,0.040169,"0 4 1 2 3 4 3 3"
+18105,1,"delay supply_timing efficiency",1,0.100806,0.109055,0.102130,0.004922,0.869279,0.316732,0.380534,0.006771,"0 6 5 5 5 4 2 4"
+18106,0,"supply_timing efficiency delay",3,0.190504,0.110409,0.122450,0.010211,0.800815,0.168213,0.232747,0.094596,"0 1 0 0 0 1 2 5"

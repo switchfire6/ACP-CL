@@ -1,0 +1,15 @@
+{
+  "study": "joint persistence: engineering smoke, not scientific evidence",
+  "seeds": [19],
+  "schedules": ["short"],
+  "methods": ["uniform", "joint", "frozen_late"],
+  "block_size": 32,
+  "batch_size": 16,
+  "eval_size": 16,
+  "probe_every": 32,
+  "width": 16,
+  "lr": 0.002,
+  "memory_capacity": 16,
+  "updates_per_batch": 1,
+  "threads": 1
+}

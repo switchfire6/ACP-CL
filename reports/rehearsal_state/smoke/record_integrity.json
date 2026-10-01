@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "assessments": 4,
+  "source_lock": true,
+  "analysis_lock": true,
+  "protocol_lock": true,
+  "scope": "Structural/array/metric/provenance audit; independent tensor reconstruction is separate."
+}

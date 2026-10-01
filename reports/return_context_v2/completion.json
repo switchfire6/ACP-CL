@@ -1,0 +1,84 @@
+{
+  "retrospective": true,
+  "input_identity": {
+    "config_sha256": "70c9c1aced4a26c6360620838f9ca6fadfdac9483518fcc4aabccbc93a28ef66",
+    "source_sha256": "e95a0b9823ed139a099a547f5b5c96196ba9266b09c1e3ddbe62b68186dff11d",
+    "runtime_sha256": "4ea3ea1f87cff2e70c31f788d2332c81583a711f4b402a26f9a1265dc448a77f"
+  },
+  "completed_utc": "2026-09-27T22:48:32.120278+00:00",
+  "rows": 1428,
+  "return_states": 36,
+  "command": {
+    "executable": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\.venv\\Scripts\\python.exe",
+    "argv": [
+      "scripts\\diagnose_return_context.py",
+      "--input",
+      "runs\\evidence_consolidation_pilot",
+      "--archive",
+      "reports\\evidence_consolidation",
+      "--output",
+      "reports\\return_context_v2",
+      "--protocol",
+      "docs\\return_context_protocol.md"
+    ]
+  },
+  "prediction_passes": 1428,
+  "optimizer_updates": 0,
+  "artifacts": {
+    "analysis_at_lock.zip": {
+      "bytes": 74051,
+      "sha256": "be657deb6363c1614e1b574fbab19a5271a2a125a2e489c38db4dae06363a9da"
+    },
+    "analysis_lock.json": {
+      "bytes": 30333,
+      "sha256": "7165998b80ac53bf15141463250a25a69426d6b0e3134bfd631afafc8ea2046b"
+    },
+    "provenance.json": {
+      "bytes": 80025,
+      "sha256": "26e68a42348e9fbff50b36d8e7f50b773a186b4df61337aeab155b14a9aacd41"
+    },
+    "rows.jsonl": {
+      "bytes": 1338717,
+      "sha256": "a4b2e138e68015a046351d5ce1bbfe57c861d1c51d4cb8d52df055d82c954ece"
+    },
+    "summary.json": {
+      "bytes": 3130018,
+      "sha256": "5364bc0d4a0a11904ada74a1b719b29e0fdd28860ac8b0eba9eca63842bd5a8b"
+    },
+    "summary.md": {
+      "bytes": 3656,
+      "sha256": "ebbe99caaa5615ef49a890a914c8e5574249d6497bbb50078d17073b6f00b500"
+    }
+  },
+  "verification": {
+    "input_files_unchanged": 137,
+    "loaded_states_unchanged": true,
+    "source_unchanged": true,
+    "code_protocol_lock_unchanged": true,
+    "archive": {
+      "passed": true,
+      "artifacts": 65,
+      "prospective_analysis_unchanged": true,
+      "cohorts": {
+        "development": {
+          "trajectories": 4,
+          "blocks": 72,
+          "fresh_episodes": 12,
+          "prefix_fits": 4,
+          "policy_evaluations": 288,
+          "decision_windows": 2368,
+          "inspected_files": 264
+        },
+        "pilot": {
+          "trajectories": 12,
+          "blocks": 216,
+          "fresh_episodes": 36,
+          "prefix_fits": 12,
+          "policy_evaluations": 864,
+          "decision_windows": 7104,
+          "inspected_files": 784
+        }
+      }
+    }
+  }
+}

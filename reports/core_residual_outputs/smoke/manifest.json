@@ -1,0 +1,51 @@
+{
+  "locked_utc": "2026-09-28T03:25:03.994529+00:00",
+  "specification": {
+    "base": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\runs\\core_residual_smoke",
+    "identity": {
+      "config_sha256": "05df659afa6aecf3e511a87b345e796de58265bd77e2fd5a1b2fc55cffcf2849",
+      "source_sha256": "c5ac7b538363930c68c999b60f5d26244eaf5b5eb676c8cf562d1ca354109a3b",
+      "runtime_sha256": "0cde364cfa24d85c31e68b4b093df2383e2bca0f91b6f2cc9fbc5e88614de6bf"
+    },
+    "base_files": {
+      "manifest.json": "ececf8aee6d15f437ea9678daa2ed6ec238b74594b717de7f31e45fd8cd92c86",
+      "analysis_lock.json": "0702371cb34164f307ff1334fc63340692bfd7644b9a7694693c7e7ce1bc1b86",
+      "protocol_lock.json": "e9957af305b4e7fb6b909d864ff75d25bf91157a9664b7aac9c49486c83bc3d2",
+      "completion.json": "83fdd7a4161eb33b5c409cf8d9ed3983f480342d62f1606fb3a58f77a3cc75b9",
+      "training_source.zip": "e373549fd1781211b4915f101d4c2b0597fdc40c7a481ee86f0e62056304712e",
+      "analysis_at_lock.zip": "bff624c3dc759151b5bdaf68476c105b106d687a2d1f4fb648ce3dd8bd45e164",
+      "conditional_16991/result.json": "0d11355533a2b91bf7b1ec84638fa227ac8c3bfe217e4d8679eee85a9583e73a",
+      "recurrent_16991/result.json": "04a75e0f83ed8f9b540c0e170546b613a7a2fc94a3d6b351b7521847b58ab592"
+    },
+    "seeds": [
+      16991
+    ],
+    "models": [
+      "conditional",
+      "recurrent"
+    ],
+    "arms": [
+      "joint",
+      "separate"
+    ],
+    "support_replicates": 1,
+    "source_files": {
+      "src/acp_cl/core_residual_outputs.py": "b071db4ff44b6782f22b6290d9a5dbc0e5574bc5f971b62e3465adbcd34092d6",
+      "scripts/diagnose_core_residual_outputs.py": "55da969cee647aad5201ae10a42ba4e1e10de3347f492123e290a5c5f82d37a4",
+      "scripts/summarize_core_residual_outputs.py": "a2a6ac2b95c565d1fbd0d7a4d8312132d1d89d9ea1011ce84eec4ac13c3eef73",
+      "tests/test_core_residual_outputs.py": "106b308e68f2436a8d21c5e796e4cdccbf8a0c66e24e641d861f6feeb18bf255",
+      "docs/core_residual_output_review.md": "a64a27b248fcf6952a02d684adb9c09c4baf9c47425bb71f25b48d9e34fc9819",
+      "scripts/plot_core_residual_outputs.py": "0465cb082bc24183fd3320145383414ab279460bf992fac7d6c2721d31744df8"
+    },
+    "runtime": {
+      "python": "3.10.11",
+      "numpy": "2.2.6",
+      "torch": "2.8.0+cu128",
+      "workers": 2,
+      "threads": 1,
+      "affinity": 1365
+    },
+    "interpretation": "exploratory saved-endpoint diagnostic; no fitting or deployable policy"
+  },
+  "source_archive_sha256": "6dd032f8529f3557e515ed83a9d3cf3ac6df1d7e610e6d8265a1e27b113540af"
+}

@@ -1,0 +1,9 @@
+{
+  "sealed_utc": "2026-09-28T00:14:43.688725+00:00",
+  "scope": "Independent portable packaging verification; explicitly excluded from the prospective scientific lock. Cannot change science, metrics or allocation rules.",
+  "files": {
+    "scripts/verify_predictive_value_archive.py": "ee27bf79d494b9cc2d939f18eb967a73a6db5fea0c130ffa4d1e6a996dca7b4b",
+    "tests/test_predictive_value_archive.py": "8728178fdde4daf15bf9ea94f6ac7f4ed2a3b6e03f30e6ba44306ce861861bf2"
+  },
+  "verification": "41 tamper/arithmetic tests and Ruff passed; locked smoke passed in place and isolated from repository."
+}

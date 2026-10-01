@@ -38,3 +38,15 @@ jobs:
         run: python -m acp_cl run --config configs/smoke.json --output runs/ci_smoke --device cpu --no-plots
       - name: Run v3 smoke experiment
         run: python -m acp_cl run --config configs/v3_smoke.json --output runs/ci_v3_smoke --device cpu --no-plots
+      - name: Run dual-path smoke experiment
+        run: python -m acp_cl run --config configs/dual_path_smoke.json --output runs/ci_dual_path_smoke --device cpu --no-plots
+      - name: Run joint-persistence smoke experiment
+        run: python -m acp_cl.persistence.study --config configs/persistence_smoke.json --output runs/ci_persistence_smoke --device cpu
+      - name: Run conditional-relationship smoke experiment
+        run: python -m acp_cl.conditional.study --config configs/conditional_smoke.json --output runs/ci_conditional_smoke --device cpu
+      - name: Run matched-history smoke experiment
+        run: python -m acp_cl.contextual.study --config configs/contextual_smoke.json --output runs/ci_contextual_smoke --device cpu
+      - name: Run continued-acquisition smoke diagnostic
+        run: python -m acp_cl.acquisition.study --config configs/acquisition_smoke.json --output runs/ci_acquisition_smoke --device cpu
+      - name: Run optimizer-by-replay smoke diagnostic
+        run: python -m acp_cl.training_state.study --config configs/training_state_smoke.json --output runs/ci_training_state_smoke --device cpu

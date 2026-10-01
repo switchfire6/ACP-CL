@@ -1,0 +1,18 @@
+{
+  "conditional": {
+    "passed": true,
+    "source_sha256": "7e152cf8e1589cb2629652327d8a4821b9a37048560e628fd160b48f3392322c"
+  },
+  "contextual": {
+    "passed": true,
+    "source_sha256": "2956cc96e111228bd45ed4a67e6e37ccf7f5b8190a71344a0dd33295a637515a"
+  },
+  "acquisition": {
+    "passed": true,
+    "source_sha256": "343d1a5ce63c35a48e0c5e552c9480c863114614aaa08e407ad94eca07ed6c58"
+  },
+  "training_state": {
+    "passed": true,
+    "source_sha256": "29585a815e04e8e455eb18426adab6770601eeb8449a734565f08969f20c28cb"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "1822b189f388675a1fc16bd207758691fe17e10416234fd1beea556876a09ce7",
+    "source_sha256": "28c72eaf806a2059ef4df297668c1989db5dddebec88cd6a6432a189f827d38e",
+    "runtime_sha256": "4ea3ea1f87cff2e70c31f788d2332c81583a711f4b402a26f9a1265dc448a77f"
+  },
+  "source_unchanged": true,
+  "configuration_identity": true,
+  "protocol_lock": true,
+  "analysis_lock": true,
+  "analysis_files": 64,
+  "all_expected_episodes": 72,
+  "identical_recorded_forks": true,
+  "matched_data_and_work": true,
+  "scope": "Portable record/source/lock/budget validation; no tensor checkpoint re-evaluation in this summary."
+}

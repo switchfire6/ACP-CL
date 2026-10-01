@@ -1,0 +1,54 @@
+﻿{
+    "timestamp_utc":  "2026-09-28T00:17:31.0371482Z",
+    "scope":  "One process snapshot during fitting, not peak RAM or total host utilization",
+    "processes":  [
+                      {
+                          "Id":  4644,
+                          "CPU":  375.359375,
+                          "working_set_bytes":  559656960,
+                          "affinity":  1365
+                      },
+                      {
+                          "Id":  26168,
+                          "CPU":  375.34375,
+                          "working_set_bytes":  562188288,
+                          "affinity":  1365
+                      },
+                      {
+                          "Id":  27224,
+                          "CPU":  0,
+                          "working_set_bytes":  4349952,
+                          "affinity":  16777215
+                      },
+                      {
+                          "Id":  28720,
+                          "CPU":  1.4375,
+                          "working_set_bytes":  419618816,
+                          "affinity":  1365
+                      },
+                      {
+                          "Id":  28912,
+                          "CPU":  375.75,
+                          "working_set_bytes":  553713664,
+                          "affinity":  1365
+                      },
+                      {
+                          "Id":  30508,
+                          "CPU":  374.53125,
+                          "working_set_bytes":  555655168,
+                          "affinity":  1365
+                      },
+                      {
+                          "Id":  30736,
+                          "CPU":  375.34375,
+                          "working_set_bytes":  558084096,
+                          "affinity":  1365
+                      },
+                      {
+                          "Id":  31312,
+                          "CPU":  375.46875,
+                          "working_set_bytes":  558624768,
+                          "affinity":  1365
+                      }
+                  ]
+}

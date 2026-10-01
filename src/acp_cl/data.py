@@ -145,6 +145,9 @@ def _cifar100(
 ) -> Stream:
     from torchvision.datasets import CIFAR100
 
+    if type(config.get("record_arrival_ids", False)) is not bool:
+        raise ValueError("record_arrival_ids must be a boolean")
+
     root = str(Path(config.get("root", "data")).expanduser())
     download = bool(config.get("download", False))
     training_source = CIFAR100(root=root, train=True, download=download)
@@ -223,6 +226,12 @@ def _cifar100(
             "label_mapping": {str(label): mapped for label, mapped in label_mapping.items()},
             "raw_dtype": "uint8",
             "normalization": {"mean": list(CIFAR100_MEAN), "std": list(CIFAR100_STD)},
+            **({"current_arrival_ids_by_experience": [
+                np.concatenate([indices["train"][label] for label in
+                                class_order[i * classes_per_experience:
+                                            (i + 1) * classes_per_experience]]).tolist()
+                for i in range(n_experiences)]}
+               if config.get("record_arrival_ids", False) else {}),
         },
     )
 

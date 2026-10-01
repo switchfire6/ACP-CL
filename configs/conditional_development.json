@@ -1,0 +1,19 @@
+{
+  "study": "conditional_development",
+  "seeds": [117],
+  "schedules": ["recurring"],
+  "methods": ["pooled", "oracle"],
+  "block_size": 1024,
+  "batch_size": 32,
+  "eval_size": 384,
+  "probe_every": 256,
+  "support_replicates": 4,
+  "width": 64,
+  "experts": 4,
+  "lr": 0.002,
+  "memory_packets": 16,
+  "updates_per_batch": 3,
+  "evidence_strength": 1.0,
+  "threads": 1,
+  "workers": 1
+}

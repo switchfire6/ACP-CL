@@ -1,0 +1,126 @@
+{
+  "study": "consolidated_recall_smoke",
+  "protocol": "docs/consolidated_recall_protocol.md",
+  "phase": "smoke",
+  "seeds": [
+    20199
+  ],
+  "stream": {
+    "cycles": 2,
+    "block_arrivals": 128,
+    "channel": "consolidated_recall_stream"
+  },
+  "batch_size": 32,
+  "eval_size": 512,
+  "support_replicates": 2,
+  "context_width": 12,
+  "experts": 4,
+  "interaction_features": true,
+  "lr": 0.002,
+  "evidence_strength": 1.0,
+  "auxiliary_weight": 1.0,
+  "reference": {
+    "W": 64,
+    "U": 12,
+    "R": 256,
+    "R_ref": 16
+  },
+  "cond4": {
+    "method": "conditional",
+    "width": 64,
+    "experts": 4,
+    "U": 12,
+    "R": 256,
+    "lr": 0.002,
+    "evidence_strength": 1.0
+  },
+  "mechanism": {
+    "h": 0.05,
+    "K_max": 8,
+    "pattern_floor": 0.01,
+    "recall_posterior": 0.95,
+    "spawn_run": 2,
+    "adam_first_moment_at_recall": "reset",
+    "adam_second_moment_at_recall": "keep"
+  },
+  "decay_grid": [
+    0.99,
+    0.995,
+    0.998
+  ],
+  "calibration": {
+    "cycles": [
+      1,
+      2
+    ],
+    "positions": [
+      2,
+      4
+    ],
+    "percentile": 99,
+    "method": "numpy_percentile_linear",
+    "statistic": "l_theta - l_EMA(d) from the EMA-global development fit with the same d"
+  },
+  "selected": {
+    "CR": {
+      "d": 0.99,
+      "tau": 3.0
+    },
+    "CR-K1": {
+      "d": 0.99,
+      "tau": 3.0
+    },
+    "EMA-global": {
+      "d": 0.99
+    }
+  },
+  "development": {
+    "results": null,
+    "results_sha256": null,
+    "note": "SMOKE ONLY: d and tau are fixed engineering values, not development results"
+  },
+  "oracle": {
+    "samples": 512,
+    "sub": 128,
+    "batches_per_task": 4,
+    "laws": "all",
+    "channel": 41,
+    "io_h": 0.05,
+    "io_floor": 0.001,
+    "reserves": "exact"
+  },
+  "analysis": {
+    "excess_cycles": [
+      2,
+      2
+    ],
+    "recovery_positions": [
+      2,
+      4
+    ],
+    "plateau_positions": [
+      3,
+      4
+    ],
+    "thresholds": {
+      "C1": 0.75,
+      "C2": 0.85,
+      "C3": 0.6
+    },
+    "consistency_seeds": 10,
+    "bootstrap_resamples": 20000,
+    "analysis_seed": 20292029
+  },
+  "pathology": {
+    "pending_fraction": 0.3,
+    "kstar_changes_per_mode_switch": 3,
+    "max_snapshots_end": 5
+  },
+  "checkpoint_every_batches": 8,
+  "stall_seconds": 1800,
+  "stage_attempts": 2,
+  "device": "cpu",
+  "threads": 1,
+  "workers": 6,
+  "cpu_affinity": 1365
+}

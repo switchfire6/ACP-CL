@@ -1,0 +1,76 @@
+{
+  "identity": {
+    "config_sha256": "612bd661856797b238b47792f24783b9f8d671afdbbc761eb192eee498a6e360",
+    "source_sha256": "6f3561f485bf5dad9577be231b2542bba0c4682ac0b847e03f385b1c57271d39",
+    "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+  },
+  "config": {
+    "study": "replay_renewal_policy_smoke",
+    "kind": "diagnostic",
+    "seeds": [
+      19
+    ],
+    "models": [
+      "conditional",
+      "recurrent"
+    ],
+    "prefix_blocks": 2,
+    "prefix_size": 16,
+    "episode_size": 16,
+    "batch_size": 8,
+    "eval_size": 64,
+    "probe_every": 8,
+    "support_replicates": 1,
+    "width": 12,
+    "experts": 4,
+    "context_width": 8,
+    "decoder_width": 12,
+    "interaction_features": true,
+    "lr": 0.002,
+    "memory_packets": 4,
+    "updates_per_batch": 1,
+    "evidence_strength": 1.0,
+    "feedback_noise": 0.2,
+    "threads": 1,
+    "workers": 1,
+    "experiment": "policy",
+    "recent_packets": 2,
+    "cpu_affinity": 0
+  },
+  "runtime": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "workers": 1,
+    "deterministic": true,
+    "affinity": 16777215
+  },
+  "source_files": {
+    "acp_cl/__init__.py": "237a5e7ec88b7899b5734b5c3c1225b3ad5542697d2c86ea30263e9f7c4328eb",
+    "acp_cl/contextual/__init__.py": "f69c2214122a727f47a138aace827188be54a453990707411708d170c994431c",
+    "acp_cl/contextual/learner.py": "a8789e0db44adb0f7215e9d4e4ff74dc063c3e55b8c87e1c13ac14f41dccfce1",
+    "acp_cl/contextual/study.py": "5153fb85ba8c2fe3f723ecbda028e4ad7876d08ab7201d9949a88bd59ecbd2da",
+    "acp_cl/contextual/world.py": "1fdd8333266fb6d53bcf48acbf1ca489cbdfaeb85849c02a3922aa9589a4289b",
+    "acp_cl/conditional/__init__.py": "df6dc410782408dd558e15bf367d133de14b17062642c0bf2a687f75186dc693",
+    "acp_cl/conditional/learner.py": "f094a5e38cded7770048bff73cbab7a89dd681bf23e3b0dca592463c50a026ac",
+    "acp_cl/conditional/study.py": "a972839d14c26add6841abbca0fb0f78b701feead8f8819e143738b6cd58ba65",
+    "acp_cl/conditional/world.py": "d15f2c092d8bbee653817f27937b3fa6223a1709f2e0663a6ee45dc0173da0d8",
+    "acp_cl/persistence/__init__.py": "f286031bdbfec32620758cea371551a26c95b963c7896f363de2f0dab34dd176",
+    "acp_cl/persistence/learner.py": "82aca79cb86c6306d03583d5b62c921726bbf3067a0f9363eab9f853bbc31c85",
+    "acp_cl/persistence/memory.py": "60812315aa082e7a1b0f210b393e2aa0a7090ab6a7083667f8d5356e6469f322",
+    "acp_cl/persistence/study.py": "71d694b487ea12ca7c226d8db5db4e65708e656c0586102a01946518f4d4fb82",
+    "acp_cl/persistence/world.py": "a545aacde99158e19842c0df31774942e98d84ce72c0c38057f0485d7c855460",
+    "acp_cl/acquisition/__init__.py": "88bf07e5175801c18ba0f5a4716e37f39e8370508523d2973efa01f394d4b60c",
+    "acp_cl/acquisition/study.py": "d72af3f2c20e62f1f117279d67d31432fc0690382d9f010c4a179b1f3a703e40",
+    "acp_cl/acquisition/world.py": "1840731d517e930b48107e7cdc85eb3158254591d004c5c62f459a6f32be451d",
+    "acp_cl/training_state/__init__.py": "afbcd1549ae64fe244efc91bfbc45bb51669367255b089ec173126684db76012",
+    "acp_cl/training_state/study.py": "fa75f366cd06c540a4f25d3e87c886900a43588c9a071aa295263407f1827ede",
+    "acp_cl/replay_renewal/__init__.py": "ab3a853ac261cbb9f5377fb1f7d684796dcbd825d3c4b9359119b44296988d81",
+    "acp_cl/replay_renewal/memory.py": "c3a02d69c9b4328872836c087b0305f94ef861921279d352f4f994ff4bd129bb",
+    "acp_cl/replay_renewal/study.py": "62dccb7c4e02bc513791b40a255a07961d49718c067d8db7733c805e67137d43"
+  },
+  "created_utc": "2026-09-27T18:50:12.351724+00:00"
+}

@@ -1,0 +1,2998 @@
+{
+  "identity": {
+    "config_sha256": "fda14c8f8a4f3a08aba00958222ff0f856bc38bd538b255cd41700d39b12e3c6",
+    "source_sha256": "c63a834199bcf52cb1ea38d38f4edd7210feee9e43c8eb2d38ef41043716dfbe",
+    "runtime_sha256": "89c34cae6b1bd071a41051f9c6b720bb0e3c0612b41f82c13e371da49b8d864b"
+  },
+  "method": "uniform",
+  "seed": 117,
+  "schedule": "long",
+  "schedule_info": {
+    "order": [
+      0,
+      2,
+      3,
+      1
+    ],
+    "return_block": 10,
+    "late_block": 11,
+    "target": "a_clean_now",
+    "gap_blocks": 5,
+    "target_returns": true
+  },
+  "blocks": [
+    {
+      "block": 0,
+      "regime": {
+        "name": "a_clean_now",
+        "source": 1,
+        "lossy": 0,
+        "delayed": 0,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "0c95b935e961e4cae537ccc65827dcac2aa5d9da5dc19028b68f9f56ac7afcd6",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.8333333333333334,
+              "8": 0.5885416666666666,
+              "12": 0.3697916666666667
+            },
+            "restricted_lifetime": 8.9140625,
+            "brier": 0.25143107771873474,
+            "consequential_brier": 0.2558386027812958,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              384,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9713541666666666,
+              "8": 0.7630208333333334,
+              "12": 0.5182291666666666
+            },
+            "restricted_lifetime": 10.234375,
+            "brier": 0.17537569999694824,
+            "consequential_brier": 0.13963867723941803,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              384,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6640625
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.1692752242088318,
+            "consequential_brier": 0.15664874017238617,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              0,
+              0,
+              384
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6640625
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.08930229395627975,
+            "consequential_brier": 0.08304345607757568,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              0,
+              0,
+              384
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9401041666666666,
+              "8": 0.8671875,
+              "12": 0.6640625
+            },
+            "restricted_lifetime": 10.703125,
+            "brier": 0.05535402148962021,
+            "consequential_brier": 0.0535711795091629,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              22,
+              0,
+              0,
+              362
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "regime": {
+        "name": "a_lossy_later",
+        "source": 1,
+        "lossy": 1,
+        "delayed": 1,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "1bcd51c316814ee8f0fa96306a4587cd053d786567292459f251dc251e3dd39c",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.8828125,
+              "8": 0.7005208333333334,
+              "12": 0.4427083333333333
+            },
+            "restricted_lifetime": 9.354166666666666,
+            "brier": 0.07065912336111069,
+            "consequential_brier": 0.06841818243265152,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              43,
+              0,
+              0,
+              341
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4375
+            },
+            "restricted_lifetime": 9.674479166666666,
+            "brier": 0.0564664825797081,
+            "consequential_brier": 0.04745832830667496,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              135,
+              0,
+              249
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4375
+            },
+            "restricted_lifetime": 9.677083333333334,
+            "brier": 0.0519452765583992,
+            "consequential_brier": 0.04207930341362953,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              125,
+              0,
+              259
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4140625
+            },
+            "restricted_lifetime": 9.658854166666666,
+            "brier": 0.04868194833397865,
+            "consequential_brier": 0.045238349586725235,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              165,
+              0,
+              219
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4427083333333333
+            },
+            "restricted_lifetime": 9.6796875,
+            "brier": 0.06385161727666855,
+            "consequential_brier": 0.08909937739372253,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              92,
+              0,
+              292
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "regime": {
+        "name": "b_lossy_now",
+        "source": -1,
+        "lossy": 1,
+        "delayed": 0,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "9cfdf6e6e00b1292eaeb58d2a33faf31582d292b9d8c603849e7de46afdf2731",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.5494791666666666,
+              "8": 0.3020833333333333,
+              "12": 0.07291666666666667
+            },
+            "restricted_lifetime": 5.609375,
+            "brier": 0.39459922909736633,
+            "consequential_brier": 0.4329240024089813,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              0,
+              0,
+              90,
+              0,
+              294
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.859375,
+              "8": 0.6171875,
+              "12": 0.3463541666666667
+            },
+            "restricted_lifetime": 8.997395833333334,
+            "brier": 0.2481239140033722,
+            "consequential_brier": 0.22141586244106293,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              267,
+              117,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.8984375,
+              "8": 0.6380208333333334,
+              "12": 0.3489583333333333
+            },
+            "restricted_lifetime": 9.229166666666666,
+            "brier": 0.1849088817834854,
+            "consequential_brier": 0.18970969319343567,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              226,
+              14,
+              0,
+              144,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9140625,
+              "8": 0.6588541666666666,
+              "12": 0.359375
+            },
+            "restricted_lifetime": 9.341145833333334,
+            "brier": 0.13194213807582855,
+            "consequential_brier": 0.12996073067188263,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              129,
+              219,
+              0,
+              36,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.8958333333333334,
+              "8": 0.6458333333333334,
+              "12": 0.3567708333333333
+            },
+            "restricted_lifetime": 9.25,
+            "brier": 0.11052989959716797,
+            "consequential_brier": 0.10007034987211227,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              204,
+              153,
+              0,
+              27,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 3,
+      "regime": {
+        "name": "b_clean_later",
+        "source": -1,
+        "lossy": 0,
+        "delayed": 1,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "475ac3d93bd0b6099b0e5bb9c56907d4f3c596420931fc49abeaaaace71ecd4f",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.9192708333333334,
+              "8": 0.703125,
+              "12": 0.3984375
+            },
+            "restricted_lifetime": 9.5625,
+            "brier": 0.12906862795352936,
+            "consequential_brier": 0.129068523645401,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              222,
+              123,
+              0,
+              39,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.8619791666666666,
+              "12": 0.6067708333333334
+            },
+            "restricted_lifetime": 10.635416666666666,
+            "brier": 0.0933789387345314,
+            "consequential_brier": 0.10211994498968124,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              0,
+              18,
+              0,
+              366,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.9296875,
+              "8": 0.8619791666666666,
+              "12": 0.6067708333333334
+            },
+            "restricted_lifetime": 10.575520833333334,
+            "brier": 0.07821354269981384,
+            "consequential_brier": 0.08590035140514374,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              16,
+              0,
+              0,
+              356,
+              12
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.859375,
+              "12": 0.6067708333333334
+            },
+            "restricted_lifetime": 10.609375,
+            "brier": 0.05982688441872597,
+            "consequential_brier": 0.06360431760549545,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              41,
+              0,
+              0,
+              337,
+              6
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9375,
+              "8": 0.8619791666666666,
+              "12": 0.6067708333333334
+            },
+            "restricted_lifetime": 10.6328125,
+            "brier": 0.0578814297914505,
+            "consequential_brier": 0.05669008195400238,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              19,
+              0,
+              0,
+              360,
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 4,
+      "regime": {
+        "name": "a_clean_now",
+        "source": 1,
+        "lossy": 0,
+        "delayed": 0,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "abfe349684d844992542ae46b8bf9ba6e7d48b9baf92cbddf24ec3b43e6becfa",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.9947916666666666,
+              "8": 0.8828125,
+              "12": 0.6354166666666666
+            },
+            "restricted_lifetime": 11.078125,
+            "brier": 0.09414539486169815,
+            "consequential_brier": 0.09602613747119904,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              132,
+              0,
+              0,
+              0,
+              252
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6640625
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.05655733868479729,
+            "consequential_brier": 0.05873246118426323,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              61,
+              0,
+              22,
+              0,
+              301
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6640625
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.06333792954683304,
+            "consequential_brier": 0.06320212781429291,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              15,
+              0,
+              369
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6640625
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.05666959658265114,
+            "consequential_brier": 0.04686230421066284,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              115,
+              0,
+              269
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6614583333333334
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.048039987683296204,
+            "consequential_brier": 0.0490276962518692,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              141,
+              0,
+              243
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 5,
+      "regime": {
+        "name": "a_lossy_later",
+        "source": 1,
+        "lossy": 1,
+        "delayed": 1,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "b981d51c5dd93ddf31468e0c31da61ec61fc6027513738f39c26dba301abfc36",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4427083333333333
+            },
+            "restricted_lifetime": 9.677083333333334,
+            "brier": 0.06126857176423073,
+            "consequential_brier": 0.04341520369052887,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              109,
+              0,
+              275
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4348958333333333
+            },
+            "restricted_lifetime": 9.677083333333334,
+            "brier": 0.04832291975617409,
+            "consequential_brier": 0.044077374041080475,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              17,
+              0,
+              113,
+              0,
+              254
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.9140625,
+              "8": 0.7005208333333334,
+              "12": 0.4375
+            },
+            "restricted_lifetime": 9.526041666666666,
+            "brier": 0.055235013365745544,
+            "consequential_brier": 0.05378025397658348,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              123,
+              21,
+              240
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9322916666666666,
+              "8": 0.7005208333333334,
+              "12": 0.4348958333333333
+            },
+            "restricted_lifetime": 9.666666666666666,
+            "brier": 0.047780390828847885,
+            "consequential_brier": 0.04046626016497612,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              128,
+              1,
+              255
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9296875,
+              "8": 0.7005208333333334,
+              "12": 0.4375
+            },
+            "restricted_lifetime": 9.643229166666666,
+            "brier": 0.051035668700933456,
+            "consequential_brier": 0.05113263800740242,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              126,
+              6,
+              252
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 6,
+      "regime": {
+        "name": "b_lossy_now",
+        "source": -1,
+        "lossy": 1,
+        "delayed": 0,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "d8453f66c21ecea113b8675b1b47945e49edd565074e940305f0711bc7d59689",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.9479166666666666,
+              "8": 0.6796875,
+              "12": 0.421875
+            },
+            "restricted_lifetime": 9.721354166666666,
+            "brier": 0.0632382407784462,
+            "consequential_brier": 0.04729602485895157,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              47,
+              0,
+              0,
+              337,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9401041666666666,
+              "8": 0.6796875,
+              "12": 0.421875
+            },
+            "restricted_lifetime": 9.65625,
+            "brier": 0.053352221846580505,
+            "consequential_brier": 0.04770688712596893,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              58,
+              0,
+              0,
+              318,
+              8
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.8515625,
+              "8": 0.6796875,
+              "12": 0.40625
+            },
+            "restricted_lifetime": 9.1640625,
+            "brier": 0.05221160128712654,
+            "consequential_brier": 0.045871831476688385,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              99,
+              0,
+              0,
+              231,
+              54
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.84375,
+              "8": 0.6796875,
+              "12": 0.4166666666666667
+            },
+            "restricted_lifetime": 9.109375,
+            "brier": 0.06005578115582466,
+            "consequential_brier": 0.05140867829322815,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              60,
+              31,
+              0,
+              236,
+              57
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.90625,
+              "8": 0.6770833333333334,
+              "12": 0.4166666666666667
+            },
+            "restricted_lifetime": 9.4765625,
+            "brier": 0.05935673043131828,
+            "consequential_brier": 0.05186796933412552,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              92,
+              2,
+              0,
+              266,
+              24
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 7,
+      "regime": {
+        "name": "b_clean_later",
+        "source": -1,
+        "lossy": 0,
+        "delayed": 1,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "f21ee3558709faccaea10852fd1b1c87588dbcb2100e8728a55ecdc6dccb56cb",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.9166666666666666,
+              "8": 0.8489583333333334,
+              "12": 0.5833333333333334
+            },
+            "restricted_lifetime": 10.424479166666666,
+            "brier": 0.07362443208694458,
+            "consequential_brier": 0.08674110472202301,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              112,
+              4,
+              0,
+              249,
+              19
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9375,
+              "8": 0.8619791666666666,
+              "12": 0.6067708333333334
+            },
+            "restricted_lifetime": 10.651041666666666,
+            "brier": 0.052669160068035126,
+            "consequential_brier": 0.05008900165557861,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              24,
+              0,
+              0,
+              360,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.9375,
+              "8": 0.8619791666666666,
+              "12": 0.6067708333333334
+            },
+            "restricted_lifetime": 10.651041666666666,
+            "brier": 0.055053237825632095,
+            "consequential_brier": 0.04980768635869026,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              0,
+              0,
+              0,
+              384,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9375,
+              "8": 0.8619791666666666,
+              "12": 0.6067708333333334
+            },
+            "restricted_lifetime": 10.651041666666666,
+            "brier": 0.059194114059209824,
+            "consequential_brier": 0.05685180425643921,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              13,
+              0,
+              0,
+              371,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9375,
+              "8": 0.8619791666666666,
+              "12": 0.6041666666666666
+            },
+            "restricted_lifetime": 10.651041666666666,
+            "brier": 0.05056304857134819,
+            "consequential_brier": 0.05186547711491585,
+            "no_transfer": 0.3229166666666667,
+            "best_fixed_action": 0.6067708333333334,
+            "clairvoyant_upper": 0.6067708333333334,
+            "consequential_fraction": 0.5651041666666666,
+            "action_counts": [
+              56,
+              0,
+              0,
+              328,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 8,
+      "regime": {
+        "name": "a_lossy_later",
+        "source": 1,
+        "lossy": 1,
+        "delayed": 1,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "3055cf2aec86e89f5e469f0fbff3b0745b0bc4fbf93538eb847d010cfe7fae87",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.9114583333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4427083333333333
+            },
+            "restricted_lifetime": 9.4765625,
+            "brier": 0.06673842668533325,
+            "consequential_brier": 0.06556176394224167,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              84,
+              30,
+              270
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4427083333333333
+            },
+            "restricted_lifetime": 9.677083333333334,
+            "brier": 0.051421869546175,
+            "consequential_brier": 0.05658480152487755,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              1,
+              0,
+              107,
+              0,
+              276
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4192708333333333
+            },
+            "restricted_lifetime": 9.6640625,
+            "brier": 0.053778745234012604,
+            "consequential_brier": 0.05072151869535446,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              155,
+              0,
+              229
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4192708333333333
+            },
+            "restricted_lifetime": 9.658854166666666,
+            "brier": 0.0555792897939682,
+            "consequential_brier": 0.04253493249416351,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              0,
+              0,
+              160,
+              0,
+              224
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.7005208333333334,
+              "12": 0.4166666666666667
+            },
+            "restricted_lifetime": 9.651041666666666,
+            "brier": 0.0509040392935276,
+            "consequential_brier": 0.04331393167376518,
+            "no_transfer": 0.3307291666666667,
+            "best_fixed_action": 0.4427083333333333,
+            "clairvoyant_upper": 0.4427083333333333,
+            "consequential_fraction": 0.390625,
+            "action_counts": [
+              1,
+              0,
+              167,
+              0,
+              216
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 9,
+      "regime": {
+        "name": "b_lossy_now",
+        "source": -1,
+        "lossy": 1,
+        "delayed": 0,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "6f2a6133029cd16e614a57fa793c290fa9f1d5a3164a701277e670ef392badd6",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.9427083333333334,
+              "8": 0.6796875,
+              "12": 0.421875
+            },
+            "restricted_lifetime": 9.692708333333334,
+            "brier": 0.08312880247831345,
+            "consequential_brier": 0.04200979694724083,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              57,
+              10,
+              0,
+              317,
+              0
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9348958333333334,
+              "8": 0.6796875,
+              "12": 0.421875
+            },
+            "restricted_lifetime": 9.625,
+            "brier": 0.057195160537958145,
+            "consequential_brier": 0.043860506266355515,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              46,
+              0,
+              0,
+              327,
+              11
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.8645833333333334,
+              "8": 0.6796875,
+              "12": 0.421875
+            },
+            "restricted_lifetime": 9.2421875,
+            "brier": 0.05553488805890083,
+            "consequential_brier": 0.051821019500494,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              64,
+              0,
+              0,
+              274,
+              46
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9088541666666666,
+              "8": 0.6796875,
+              "12": 0.421875
+            },
+            "restricted_lifetime": 9.486979166666666,
+            "brier": 0.05377146229147911,
+            "consequential_brier": 0.045741140842437744,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              19,
+              33,
+              0,
+              308,
+              24
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9427083333333334,
+              "8": 0.6796875,
+              "12": 0.421875
+            },
+            "restricted_lifetime": 9.677083333333334,
+            "brier": 0.055823590606451035,
+            "consequential_brier": 0.04579358547925949,
+            "no_transfer": 0.3385416666666667,
+            "best_fixed_action": 0.421875,
+            "clairvoyant_upper": 0.4244791666666667,
+            "consequential_fraction": 0.3854166666666667,
+            "action_counts": [
+              55,
+              0,
+              0,
+              324,
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 10,
+      "regime": {
+        "name": "a_clean_now",
+        "source": 1,
+        "lossy": 0,
+        "delayed": 0,
+        "gated": false,
+        "reversed": false
+      },
+      "data_sha256": "5ae80ee61a336619096e1c99e72bf16efb819574848c659fa34840b216dfed94",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6588541666666666
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.05783792957663536,
+            "consequential_brier": 0.059036679565906525,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              162,
+              0,
+              222
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6588541666666666
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.052921973168849945,
+            "consequential_brier": 0.05980806425213814,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              171,
+              0,
+              213
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6614583333333334
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.04543638229370117,
+            "consequential_brier": 0.04672449827194214,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              149,
+              0,
+              235
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6588541666666666
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.04790480434894562,
+            "consequential_brier": 0.05251185968518257,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              168,
+              0,
+              216
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9921875,
+              "8": 0.8802083333333334,
+              "12": 0.6614583333333334
+            },
+            "restricted_lifetime": 11.065104166666666,
+            "brier": 0.04615833982825279,
+            "consequential_brier": 0.044168345630168915,
+            "no_transfer": 0.3697916666666667,
+            "best_fixed_action": 0.6640625,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6119791666666666,
+            "action_counts": [
+              0,
+              0,
+              157,
+              0,
+              227
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "block": 11,
+      "regime": {
+        "name": "late_gate",
+        "source": 1,
+        "lossy": 0,
+        "delayed": 0,
+        "gated": true,
+        "reversed": false
+      },
+      "data_sha256": "543cee3c289f3c63ab1d96911506f91f2fa1840dce97d98a2f5cf1b018142fd0",
+      "curve": [
+        {
+          "arrivals": 0,
+          "metrics": {
+            "survival": {
+              "4": 0.7708333333333334,
+              "8": 0.6067708333333334,
+              "12": 0.3463541666666667
+            },
+            "restricted_lifetime": 8.3671875,
+            "brier": 0.2669622600078583,
+            "consequential_brier": 0.2716887593269348,
+            "no_transfer": 0.3567708333333333,
+            "best_fixed_action": 0.359375,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6328125,
+            "action_counts": [
+              0,
+              0,
+              125,
+              0,
+              259
+            ]
+          }
+        },
+        {
+          "arrivals": 256,
+          "metrics": {
+            "survival": {
+              "4": 0.8203125,
+              "8": 0.6770833333333334,
+              "12": 0.3984375
+            },
+            "restricted_lifetime": 8.994791666666666,
+            "brier": 0.19608211517333984,
+            "consequential_brier": 0.22508807480335236,
+            "no_transfer": 0.3567708333333333,
+            "best_fixed_action": 0.359375,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6328125,
+            "action_counts": [
+              4,
+              0,
+              0,
+              87,
+              293
+            ]
+          }
+        },
+        {
+          "arrivals": 512,
+          "metrics": {
+            "survival": {
+              "4": 0.8385416666666666,
+              "8": 0.6770833333333334,
+              "12": 0.4479166666666667
+            },
+            "restricted_lifetime": 9.200520833333334,
+            "brier": 0.14174111187458038,
+            "consequential_brier": 0.17103588581085205,
+            "no_transfer": 0.3567708333333333,
+            "best_fixed_action": 0.359375,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6328125,
+            "action_counts": [
+              0,
+              22,
+              49,
+              98,
+              215
+            ]
+          }
+        },
+        {
+          "arrivals": 768,
+          "metrics": {
+            "survival": {
+              "4": 0.9479166666666666,
+              "8": 0.8151041666666666,
+              "12": 0.5677083333333334
+            },
+            "restricted_lifetime": 10.447916666666666,
+            "brier": 0.09442497044801712,
+            "consequential_brier": 0.10650358349084854,
+            "no_transfer": 0.3567708333333333,
+            "best_fixed_action": 0.359375,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6328125,
+            "action_counts": [
+              15,
+              149,
+              68,
+              42,
+              110
+            ]
+          }
+        },
+        {
+          "arrivals": 1024,
+          "metrics": {
+            "survival": {
+              "4": 0.9583333333333334,
+              "8": 0.859375,
+              "12": 0.6223958333333334
+            },
+            "restricted_lifetime": 10.744791666666666,
+            "brier": 0.06288156658411026,
+            "consequential_brier": 0.06479781121015549,
+            "no_transfer": 0.3567708333333333,
+            "best_fixed_action": 0.359375,
+            "clairvoyant_upper": 0.6666666666666666,
+            "consequential_fraction": 0.6328125,
+            "action_counts": [
+              0,
+              35,
+              107,
+              176,
+              66
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "after_block": -1,
+      "metrics": {
+        "a_clean_now": {
+          "survival": {
+            "4": 0.8333333333333334,
+            "8": 0.5885416666666666,
+            "12": 0.3697916666666667
+          },
+          "restricted_lifetime": 8.9140625,
+          "brier": 0.25143107771873474,
+          "consequential_brier": 0.2558386027812958,
+          "no_transfer": 0.3697916666666667,
+          "best_fixed_action": 0.6640625,
+          "clairvoyant_upper": 0.6666666666666666,
+          "consequential_fraction": 0.6119791666666666,
+          "action_counts": [
+            384,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "b_clean_later": {
+          "survival": {
+            "4": 0.828125,
+            "8": 0.5625,
+            "12": 0.3229166666666667
+          },
+          "restricted_lifetime": 8.65625,
+          "brier": 0.24865104258060455,
+          "consequential_brier": 0.25479656457901,
+          "no_transfer": 0.3229166666666667,
+          "best_fixed_action": 0.6067708333333334,
+          "clairvoyant_upper": 0.6067708333333334,
+          "consequential_fraction": 0.5651041666666666,
+          "action_counts": [
+            384,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "a_lossy_later": {
+          "survival": {
+            "4": 0.8098958333333334,
+            "8": 0.5911458333333334,
+            "12": 0.3307291666666667
+          },
+          "restricted_lifetime": 8.739583333333334,
+          "brier": 0.24833016097545624,
+          "consequential_brier": 0.2590206265449524,
+          "no_transfer": 0.3307291666666667,
+          "best_fixed_action": 0.4427083333333333,
+          "clairvoyant_upper": 0.4427083333333333,
+          "consequential_fraction": 0.390625,
+          "action_counts": [
+            384,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "b_lossy_now": {
+          "survival": {
+            "4": 0.8411458333333334,
+            "8": 0.5885416666666666,
+            "12": 0.3385416666666667
+          },
+          "restricted_lifetime": 8.799479166666666,
+          "brier": 0.24699588119983673,
+          "consequential_brier": 0.2584536373615265,
+          "no_transfer": 0.3385416666666667,
+          "best_fixed_action": 0.421875,
+          "clairvoyant_upper": 0.4244791666666667,
+          "consequential_fraction": 0.3854166666666667,
+          "action_counts": [
+            384,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "a_clean_later": {
+          "survival": {
+            "4": 0.8177083333333334,
+            "8": 0.6067708333333334,
+            "12": 0.3567708333333333
+          },
+          "restricted_lifetime": 8.796875,
+          "brier": 0.2504088878631592,
+          "consequential_brier": 0.2553544044494629,
+          "no_transfer": 0.3567708333333333,
+          "best_fixed_action": 0.6458333333333334,
+          "clairvoyant_upper": 0.6458333333333334,
+          "consequential_fraction": 0.5989583333333334,
+          "action_counts": [
+            384,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "b_clean_now": {
+          "survival": {
+            "4": 0.859375,
+            "8": 0.6015625,
+            "12": 0.359375
+          },
+          "restricted_lifetime": 8.916666666666666,
+          "brier": 0.24936264753341675,
+          "consequential_brier": 0.2547055780887604,
+          "no_transfer": 0.359375,
+          "best_fixed_action": 0.6354166666666666,
+          "clairvoyant_upper": 0.6354166666666666,
+          "consequential_fraction": 0.5833333333333334,
+          "action_counts": [
+            384,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "a_lossy_now": {
+          "survival": {
+            "4": 0.8307291666666666,
+            "8": 0.59375,
+            "12": 0.3411458333333333
+          },
+          "restricted_lifetime": 8.833333333333334,
+          "brier": 0.2487688660621643,
+          "consequential_brier": 0.25914493203163147,
+          "no_transfer": 0.3411458333333333,
+          "best_fixed_action": 0.4505208333333333,
+          "clairvoyant_upper": 0.453125,
+          "consequential_fraction": 0.4192708333333333,
+          "action_counts": [
+            384,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "b_lossy_later": {
+          "survival": {
+            "4": 0.8333333333333334,
+            "8": 0.5364583333333334,
+            "12": 0.2838541666666667
+          },
+          "restricted_lifetime": 8.440104166666666,
+          "brier": 0.2454429268836975,
+          "consequential_brier": 0.25751379132270813,
+          "no_transfer": 0.2838541666666667,
+          "best_fixed_action": 0.3932291666666667,
+          "clairvoyant_upper": 0.3932291666666667,
+          "consequential_fraction": 0.3463541666666667,
+          "action_counts": [
+            384,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "after_block": 3,
+      "metrics": {
+        "a_clean_now": {
+          "survival": {
+            "4": 0.9947916666666666,
+            "8": 0.8828125,
+            "12": 0.6354166666666666
+          },
+          "restricted_lifetime": 11.078125,
+          "brier": 0.09414539486169815,
+          "consequential_brier": 0.09602613747119904,
+          "no_transfer": 0.3697916666666667,
+          "best_fixed_action": 0.6640625,
+          "clairvoyant_upper": 0.6666666666666666,
+          "consequential_fraction": 0.6119791666666666,
+          "action_counts": [
+            132,
+            0,
+            0,
+            0,
+            252
+          ]
+        },
+        "b_clean_later": {
+          "survival": {
+            "4": 0.9375,
+            "8": 0.8619791666666666,
+            "12": 0.6067708333333334
+          },
+          "restricted_lifetime": 10.6328125,
+          "brier": 0.0578814297914505,
+          "consequential_brier": 0.05669008195400238,
+          "no_transfer": 0.3229166666666667,
+          "best_fixed_action": 0.6067708333333334,
+          "clairvoyant_upper": 0.6067708333333334,
+          "consequential_fraction": 0.5651041666666666,
+          "action_counts": [
+            19,
+            0,
+            0,
+            360,
+            5
+          ]
+        },
+        "a_lossy_later": {
+          "survival": {
+            "4": 0.9348958333333334,
+            "8": 0.7005208333333334,
+            "12": 0.421875
+          },
+          "restricted_lifetime": 9.674479166666666,
+          "brier": 0.07668126374483109,
+          "consequential_brier": 0.06954453140497208,
+          "no_transfer": 0.3307291666666667,
+          "best_fixed_action": 0.4427083333333333,
+          "clairvoyant_upper": 0.4427083333333333,
+          "consequential_fraction": 0.390625,
+          "action_counts": [
+            128,
+            0,
+            0,
+            0,
+            256
+          ]
+        },
+        "b_lossy_now": {
+          "survival": {
+            "4": 0.9479166666666666,
+            "8": 0.6796875,
+            "12": 0.421875
+          },
+          "restricted_lifetime": 9.716145833333334,
+          "brier": 0.06883025169372559,
+          "consequential_brier": 0.04641474783420563,
+          "no_transfer": 0.3385416666666667,
+          "best_fixed_action": 0.421875,
+          "clairvoyant_upper": 0.4244791666666667,
+          "consequential_fraction": 0.3854166666666667,
+          "action_counts": [
+            27,
+            0,
+            0,
+            356,
+            1
+          ]
+        },
+        "a_clean_later": {
+          "survival": {
+            "4": 0.9557291666666666,
+            "8": 0.8645833333333334,
+            "12": 0.6197916666666666
+          },
+          "restricted_lifetime": 10.736979166666666,
+          "brier": 0.09423616528511047,
+          "consequential_brier": 0.094110406935215,
+          "no_transfer": 0.3567708333333333,
+          "best_fixed_action": 0.6458333333333334,
+          "clairvoyant_upper": 0.6458333333333334,
+          "consequential_fraction": 0.5989583333333334,
+          "action_counts": [
+            131,
+            0,
+            0,
+            0,
+            253
+          ]
+        },
+        "b_clean_now": {
+          "survival": {
+            "4": 0.9869791666666666,
+            "8": 0.8776041666666666,
+            "12": 0.6354166666666666
+          },
+          "restricted_lifetime": 10.981770833333334,
+          "brier": 0.05553189292550087,
+          "consequential_brier": 0.055504076182842255,
+          "no_transfer": 0.359375,
+          "best_fixed_action": 0.6354166666666666,
+          "clairvoyant_upper": 0.6354166666666666,
+          "consequential_fraction": 0.5833333333333334,
+          "action_counts": [
+            17,
+            0,
+            0,
+            363,
+            4
+          ]
+        },
+        "a_lossy_now": {
+          "survival": {
+            "4": 0.9322916666666666,
+            "8": 0.6744791666666666,
+            "12": 0.4088541666666667
+          },
+          "restricted_lifetime": 9.661458333333334,
+          "brier": 0.07372602820396423,
+          "consequential_brier": 0.07274315506219864,
+          "no_transfer": 0.3411458333333333,
+          "best_fixed_action": 0.4505208333333333,
+          "clairvoyant_upper": 0.453125,
+          "consequential_fraction": 0.4192708333333333,
+          "action_counts": [
+            145,
+            0,
+            0,
+            0,
+            239
+          ]
+        },
+        "b_lossy_later": {
+          "survival": {
+            "4": 0.9140625,
+            "8": 0.6432291666666666,
+            "12": 0.3932291666666667
+          },
+          "restricted_lifetime": 9.3828125,
+          "brier": 0.07345493882894516,
+          "consequential_brier": 0.049931567162275314,
+          "no_transfer": 0.2838541666666667,
+          "best_fixed_action": 0.3932291666666667,
+          "clairvoyant_upper": 0.3932291666666667,
+          "consequential_fraction": 0.3463541666666667,
+          "action_counts": [
+            17,
+            0,
+            0,
+            366,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "after_block": 9,
+      "metrics": {
+        "a_clean_now": {
+          "survival": {
+            "4": 0.9921875,
+            "8": 0.8802083333333334,
+            "12": 0.6588541666666666
+          },
+          "restricted_lifetime": 11.065104166666666,
+          "brier": 0.05783792957663536,
+          "consequential_brier": 0.059036679565906525,
+          "no_transfer": 0.3697916666666667,
+          "best_fixed_action": 0.6640625,
+          "clairvoyant_upper": 0.6666666666666666,
+          "consequential_fraction": 0.6119791666666666,
+          "action_counts": [
+            0,
+            0,
+            162,
+            0,
+            222
+          ]
+        },
+        "b_clean_later": {
+          "survival": {
+            "4": 0.9375,
+            "8": 0.8619791666666666,
+            "12": 0.5989583333333334
+          },
+          "restricted_lifetime": 10.6484375,
+          "brier": 0.07337628304958344,
+          "consequential_brier": 0.07831017673015594,
+          "no_transfer": 0.3229166666666667,
+          "best_fixed_action": 0.6067708333333334,
+          "clairvoyant_upper": 0.6067708333333334,
+          "consequential_fraction": 0.5651041666666666,
+          "action_counts": [
+            83,
+            0,
+            0,
+            301,
+            0
+          ]
+        },
+        "a_lossy_later": {
+          "survival": {
+            "4": 0.9348958333333334,
+            "8": 0.7005208333333334,
+            "12": 0.4270833333333333
+          },
+          "restricted_lifetime": 9.669270833333334,
+          "brier": 0.05569968745112419,
+          "consequential_brier": 0.04854254052042961,
+          "no_transfer": 0.3307291666666667,
+          "best_fixed_action": 0.4427083333333333,
+          "clairvoyant_upper": 0.4427083333333333,
+          "consequential_fraction": 0.390625,
+          "action_counts": [
+            0,
+            0,
+            141,
+            0,
+            243
+          ]
+        },
+        "b_lossy_now": {
+          "survival": {
+            "4": 0.9427083333333334,
+            "8": 0.6796875,
+            "12": 0.421875
+          },
+          "restricted_lifetime": 9.677083333333334,
+          "brier": 0.055823590606451035,
+          "consequential_brier": 0.04579358547925949,
+          "no_transfer": 0.3385416666666667,
+          "best_fixed_action": 0.421875,
+          "clairvoyant_upper": 0.4244791666666667,
+          "consequential_fraction": 0.3854166666666667,
+          "action_counts": [
+            55,
+            0,
+            0,
+            324,
+            5
+          ]
+        },
+        "a_clean_later": {
+          "survival": {
+            "4": 0.9557291666666666,
+            "8": 0.8645833333333334,
+            "12": 0.6354166666666666
+          },
+          "restricted_lifetime": 10.75,
+          "brier": 0.060744624584913254,
+          "consequential_brier": 0.05783583223819733,
+          "no_transfer": 0.3567708333333333,
+          "best_fixed_action": 0.6458333333333334,
+          "clairvoyant_upper": 0.6458333333333334,
+          "consequential_fraction": 0.5989583333333334,
+          "action_counts": [
+            0,
+            0,
+            155,
+            0,
+            229
+          ]
+        },
+        "b_clean_now": {
+          "survival": {
+            "4": 0.9869791666666666,
+            "8": 0.8776041666666666,
+            "12": 0.6276041666666666
+          },
+          "restricted_lifetime": 10.9765625,
+          "brier": 0.06979232281446457,
+          "consequential_brier": 0.06508485972881317,
+          "no_transfer": 0.359375,
+          "best_fixed_action": 0.6354166666666666,
+          "clairvoyant_upper": 0.6354166666666666,
+          "consequential_fraction": 0.5833333333333334,
+          "action_counts": [
+            83,
+            0,
+            0,
+            298,
+            3
+          ]
+        },
+        "a_lossy_now": {
+          "survival": {
+            "4": 0.9322916666666666,
+            "8": 0.6770833333333334,
+            "12": 0.4322916666666667
+          },
+          "restricted_lifetime": 9.6796875,
+          "brier": 0.06088811904191971,
+          "consequential_brier": 0.05433351546525955,
+          "no_transfer": 0.3411458333333333,
+          "best_fixed_action": 0.4505208333333333,
+          "clairvoyant_upper": 0.453125,
+          "consequential_fraction": 0.4192708333333333,
+          "action_counts": [
+            0,
+            0,
+            157,
+            0,
+            227
+          ]
+        },
+        "b_lossy_later": {
+          "survival": {
+            "4": 0.9140625,
+            "8": 0.6432291666666666,
+            "12": 0.3932291666666667
+          },
+          "restricted_lifetime": 9.3828125,
+          "brier": 0.06183703616261482,
+          "consequential_brier": 0.0483957976102829,
+          "no_transfer": 0.2838541666666667,
+          "best_fixed_action": 0.3932291666666667,
+          "clairvoyant_upper": 0.3932291666666667,
+          "consequential_fraction": 0.3463541666666667,
+          "action_counts": [
+            42,
+            0,
+            0,
+            342,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "after_block": 10,
+      "metrics": {
+        "a_clean_now": {
+          "survival": {
+            "4": 0.9921875,
+            "8": 0.8802083333333334,
+            "12": 0.6614583333333334
+          },
+          "restricted_lifetime": 11.065104166666666,
+          "brier": 0.04615833982825279,
+          "consequential_brier": 0.044168345630168915,
+          "no_transfer": 0.3697916666666667,
+          "best_fixed_action": 0.6640625,
+          "clairvoyant_upper": 0.6666666666666666,
+          "consequential_fraction": 0.6119791666666666,
+          "action_counts": [
+            0,
+            0,
+            157,
+            0,
+            227
+          ]
+        },
+        "b_clean_later": {
+          "survival": {
+            "4": 0.9296875,
+            "8": 0.8541666666666666,
+            "12": 0.6067708333333334
+          },
+          "restricted_lifetime": 10.549479166666666,
+          "brier": 0.06682991236448288,
+          "consequential_brier": 0.06899617612361908,
+          "no_transfer": 0.3229166666666667,
+          "best_fixed_action": 0.6067708333333334,
+          "clairvoyant_upper": 0.6067708333333334,
+          "consequential_fraction": 0.5651041666666666,
+          "action_counts": [
+            27,
+            6,
+            0,
+            342,
+            9
+          ]
+        },
+        "a_lossy_later": {
+          "survival": {
+            "4": 0.9348958333333334,
+            "8": 0.7005208333333334,
+            "12": 0.4375
+          },
+          "restricted_lifetime": 9.674479166666666,
+          "brier": 0.05381420999765396,
+          "consequential_brier": 0.04030049592256546,
+          "no_transfer": 0.3307291666666667,
+          "best_fixed_action": 0.4427083333333333,
+          "clairvoyant_upper": 0.4427083333333333,
+          "consequential_fraction": 0.390625,
+          "action_counts": [
+            0,
+            0,
+            134,
+            0,
+            250
+          ]
+        },
+        "b_lossy_now": {
+          "survival": {
+            "4": 0.9244791666666666,
+            "8": 0.6796875,
+            "12": 0.421875
+          },
+          "restricted_lifetime": 9.575520833333334,
+          "brier": 0.06632408499717712,
+          "consequential_brier": 0.044747497886419296,
+          "no_transfer": 0.3385416666666667,
+          "best_fixed_action": 0.421875,
+          "clairvoyant_upper": 0.4244791666666667,
+          "consequential_fraction": 0.3854166666666667,
+          "action_counts": [
+            1,
+            6,
+            0,
+            363,
+            14
+          ]
+        },
+        "a_clean_later": {
+          "survival": {
+            "4": 0.9557291666666666,
+            "8": 0.8645833333333334,
+            "12": 0.6380208333333334
+          },
+          "restricted_lifetime": 10.75,
+          "brier": 0.04573072865605354,
+          "consequential_brier": 0.044559869915246964,
+          "no_transfer": 0.3567708333333333,
+          "best_fixed_action": 0.6458333333333334,
+          "clairvoyant_upper": 0.6458333333333334,
+          "consequential_fraction": 0.5989583333333334,
+          "action_counts": [
+            0,
+            0,
+            147,
+            0,
+            237
+          ]
+        },
+        "b_clean_now": {
+          "survival": {
+            "4": 0.9348958333333334,
+            "8": 0.84375,
+            "12": 0.6354166666666666
+          },
+          "restricted_lifetime": 10.609375,
+          "brier": 0.06785902380943298,
+          "consequential_brier": 0.059277135878801346,
+          "no_transfer": 0.359375,
+          "best_fixed_action": 0.6354166666666666,
+          "clairvoyant_upper": 0.6354166666666666,
+          "consequential_fraction": 0.5833333333333334,
+          "action_counts": [
+            29,
+            9,
+            0,
+            325,
+            21
+          ]
+        },
+        "a_lossy_now": {
+          "survival": {
+            "4": 0.9322916666666666,
+            "8": 0.6770833333333334,
+            "12": 0.4348958333333333
+          },
+          "restricted_lifetime": 9.682291666666666,
+          "brier": 0.06822122633457184,
+          "consequential_brier": 0.044459931552410126,
+          "no_transfer": 0.3411458333333333,
+          "best_fixed_action": 0.4505208333333333,
+          "clairvoyant_upper": 0.453125,
+          "consequential_fraction": 0.4192708333333333,
+          "action_counts": [
+            0,
+            0,
+            150,
+            0,
+            234
+          ]
+        },
+        "b_lossy_later": {
+          "survival": {
+            "4": 0.9140625,
+            "8": 0.6432291666666666,
+            "12": 0.3932291666666667
+          },
+          "restricted_lifetime": 9.369791666666666,
+          "brier": 0.0687394067645073,
+          "consequential_brier": 0.046437229961156845,
+          "no_transfer": 0.2838541666666667,
+          "best_fixed_action": 0.3932291666666667,
+          "clairvoyant_upper": 0.3932291666666667,
+          "consequential_fraction": 0.3463541666666667,
+          "action_counts": [
+            2,
+            2,
+            0,
+            375,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "after_block": 11,
+      "metrics": {
+        "a_clean_now": {
+          "survival": {
+            "4": 0.90625,
+            "8": 0.8567708333333334,
+            "12": 0.5963541666666666
+          },
+          "restricted_lifetime": 10.424479166666666,
+          "brier": 0.05623549222946167,
+          "consequential_brier": 0.06105409190058708,
+          "no_transfer": 0.3697916666666667,
+          "best_fixed_action": 0.6640625,
+          "clairvoyant_upper": 0.6666666666666666,
+          "consequential_fraction": 0.6119791666666666,
+          "action_counts": [
+            0,
+            15,
+            223,
+            20,
+            126
+          ]
+        },
+        "b_clean_later": {
+          "survival": {
+            "4": 0.9375,
+            "8": 0.8619791666666666,
+            "12": 0.6067708333333334
+          },
+          "restricted_lifetime": 10.651041666666666,
+          "brier": 0.06273502111434937,
+          "consequential_brier": 0.05983016639947891,
+          "no_transfer": 0.3229166666666667,
+          "best_fixed_action": 0.6067708333333334,
+          "clairvoyant_upper": 0.6067708333333334,
+          "consequential_fraction": 0.5651041666666666,
+          "action_counts": [
+            13,
+            0,
+            0,
+            371,
+            0
+          ]
+        },
+        "a_lossy_later": {
+          "survival": {
+            "4": 0.7213541666666666,
+            "8": 0.6432291666666666,
+            "12": 0.3958333333333333
+          },
+          "restricted_lifetime": 8.3203125,
+          "brier": 0.06413767486810684,
+          "consequential_brier": 0.05198300629854202,
+          "no_transfer": 0.3307291666666667,
+          "best_fixed_action": 0.4427083333333333,
+          "clairvoyant_upper": 0.4427083333333333,
+          "consequential_fraction": 0.390625,
+          "action_counts": [
+            0,
+            77,
+            215,
+            42,
+            50
+          ]
+        },
+        "b_lossy_now": {
+          "survival": {
+            "4": 0.9479166666666666,
+            "8": 0.6796875,
+            "12": 0.421875
+          },
+          "restricted_lifetime": 9.721354166666666,
+          "brier": 0.06874512881040573,
+          "consequential_brier": 0.04420902952551842,
+          "no_transfer": 0.3385416666666667,
+          "best_fixed_action": 0.421875,
+          "clairvoyant_upper": 0.4244791666666667,
+          "consequential_fraction": 0.3854166666666667,
+          "action_counts": [
+            0,
+            0,
+            0,
+            384,
+            0
+          ]
+        },
+        "a_clean_later": {
+          "survival": {
+            "4": 0.8229166666666666,
+            "8": 0.8072916666666666,
+            "12": 0.5885416666666666
+          },
+          "restricted_lifetime": 9.807291666666666,
+          "brier": 0.05896737426519394,
+          "consequential_brier": 0.060438212007284164,
+          "no_transfer": 0.3567708333333333,
+          "best_fixed_action": 0.6458333333333334,
+          "clairvoyant_upper": 0.6458333333333334,
+          "consequential_fraction": 0.5989583333333334,
+          "action_counts": [
+            0,
+            25,
+            199,
+            39,
+            121
+          ]
+        },
+        "b_clean_now": {
+          "survival": {
+            "4": 0.9947916666666666,
+            "8": 0.8776041666666666,
+            "12": 0.6354166666666666
+          },
+          "restricted_lifetime": 11.028645833333334,
+          "brier": 0.060641463845968246,
+          "consequential_brier": 0.052717313170433044,
+          "no_transfer": 0.359375,
+          "best_fixed_action": 0.6354166666666666,
+          "clairvoyant_upper": 0.6354166666666666,
+          "consequential_fraction": 0.5833333333333334,
+          "action_counts": [
+            0,
+            0,
+            0,
+            384,
+            0
+          ]
+        },
+        "a_lossy_now": {
+          "survival": {
+            "4": 0.7161458333333334,
+            "8": 0.640625,
+            "12": 0.40625
+          },
+          "restricted_lifetime": 8.408854166666666,
+          "brier": 0.07820940762758255,
+          "consequential_brier": 0.054368823766708374,
+          "no_transfer": 0.3411458333333333,
+          "best_fixed_action": 0.4505208333333333,
+          "clairvoyant_upper": 0.453125,
+          "consequential_fraction": 0.4192708333333333,
+          "action_counts": [
+            0,
+            98,
+            225,
+            18,
+            43
+          ]
+        },
+        "b_lossy_later": {
+          "survival": {
+            "4": 0.9140625,
+            "8": 0.6432291666666666,
+            "12": 0.3932291666666667
+          },
+          "restricted_lifetime": 9.3828125,
+          "brier": 0.07417698949575424,
+          "consequential_brier": 0.0545266717672348,
+          "no_transfer": 0.2838541666666667,
+          "best_fixed_action": 0.3932291666666667,
+          "clairvoyant_upper": 0.3932291666666667,
+          "consequential_fraction": 0.3463541666666667,
+          "action_counts": [
+            4,
+            0,
+            0,
+            380,
+            0
+          ]
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 5.129317400000218,
+  "final_temporal_control": {
+    "a_clean_now": {
+      "survival": {
+        "4": 0.546875,
+        "8": 0.3125,
+        "12": 0.09635416666666667
+      },
+      "restricted_lifetime": 5.895833333333333,
+      "brier": 0.38132455945014954,
+      "consequential_brier": 0.3808045983314514,
+      "no_transfer": 0.3697916666666667,
+      "best_fixed_action": 0.6640625,
+      "clairvoyant_upper": 0.6666666666666666,
+      "consequential_fraction": 0.6119791666666666,
+      "action_counts": [
+        30,
+        48,
+        0,
+        306,
+        0
+      ]
+    },
+    "b_clean_later": {
+      "survival": {
+        "4": 0.9375,
+        "8": 0.8463541666666666,
+        "12": 0.6015625
+      },
+      "restricted_lifetime": 10.59375,
+      "brier": 0.11252719163894653,
+      "consequential_brier": 0.12457580864429474,
+      "no_transfer": 0.3229166666666667,
+      "best_fixed_action": 0.6067708333333334,
+      "clairvoyant_upper": 0.6067708333333334,
+      "consequential_fraction": 0.5651041666666666,
+      "action_counts": [
+        69,
+        41,
+        1,
+        273,
+        0
+      ]
+    },
+    "a_lossy_later": {
+      "survival": {
+        "4": 0.5390625,
+        "8": 0.28125,
+        "12": 0.06510416666666667
+      },
+      "restricted_lifetime": 5.552083333333333,
+      "brier": 0.4000481367111206,
+      "consequential_brier": 0.3379295766353607,
+      "no_transfer": 0.3307291666666667,
+      "best_fixed_action": 0.4427083333333333,
+      "clairvoyant_upper": 0.4427083333333333,
+      "consequential_fraction": 0.390625,
+      "action_counts": [
+        20,
+        45,
+        0,
+        319,
+        0
+      ]
+    },
+    "b_lossy_now": {
+      "survival": {
+        "4": 0.9296875,
+        "8": 0.6796875,
+        "12": 0.4192708333333333
+      },
+      "restricted_lifetime": 9.6640625,
+      "brier": 0.09760261327028275,
+      "consequential_brier": 0.06689479202032089,
+      "no_transfer": 0.3385416666666667,
+      "best_fixed_action": 0.421875,
+      "clairvoyant_upper": 0.4244791666666667,
+      "consequential_fraction": 0.3854166666666667,
+      "action_counts": [
+        8,
+        56,
+        0,
+        320,
+        0
+      ]
+    }
+  },
+  "diagnostics": {
+    "initial_hash": "5c7711e134e49e3b81e1c223cbb63cfd1362240eb6892c4dee22a680ffb6c508",
+    "final_hash": "2aa3b0ab8ccaf08c4ac8a3823cc596d1167bc80ca6b396f9ef1f120ad6e9d3f4",
+    "parameters": 42447,
+    "encoder_displacement_l2": 23.98006022780008,
+    "model_payload_bytes": 169788,
+    "optimizer_payload_bytes": 339616,
+    "peak_memory_payload_bytes": 126464,
+    "peak_candidate_payload_bytes": 133760,
+    "occupied_sketch_bins": 15,
+    "final_memory_ids": [
+      463,
+      3590,
+      4760,
+      11013,
+      3375,
+      11938,
+      9098,
+      1276,
+      6676,
+      6474,
+      10552,
+      2357,
+      5781,
+      4259,
+      6473,
+      7223,
+      151,
+      6571,
+      3688,
+      4918,
+      7366,
+      2170,
+      4486,
+      9487,
+      8921,
+      8076,
+      1134,
+      2683,
+      6107,
+      3410,
+      1209,
+      10215,
+      3954,
+      1694,
+      3032,
+      4651,
+      302,
+      2830,
+      3260,
+      7567,
+      1203,
+      1169,
+      4331,
+      225,
+      6227,
+      5704,
+      10941,
+      9920,
+      3481,
+      11941,
+      2107,
+      10235,
+      12021,
+      2252,
+      11882,
+      11275,
+      11228,
+      321,
+      8066,
+      2623,
+      2654,
+      10596,
+      1033,
+      11007,
+      548,
+      11242,
+      10233,
+      6922,
+      1012,
+      8764,
+      10248,
+      3800,
+      1683,
+      7853,
+      10754,
+      12012,
+      12251,
+      3449,
+      8567,
+      7709,
+      8348,
+      7106,
+      3309,
+      3860,
+      8071,
+      7065,
+      10019,
+      1153,
+      566,
+      7107,
+      10005,
+      2706,
+      10302,
+      9525,
+      8786,
+      8022,
+      10796,
+      4319,
+      752,
+      1212,
+      11514,
+      4758,
+      8270,
+      5390,
+      9114,
+      2632,
+      1083,
+      3215,
+      8951,
+      10122,
+      2980,
+      4499,
+      2958,
+      4230,
+      7459,
+      5178,
+      1110,
+      1302,
+      10376,
+      807,
+      9036,
+      8493,
+      5727,
+      5988,
+      737,
+      7991,
+      6220,
+      4171
+    ],
+    "history_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      19,
+      0,
+      3122,
+      0,
+      0,
+      0,
+      23,
+      0,
+      0,
+      0,
+      4498,
+      0,
+      0,
+      0,
+      79,
+      0,
+      0,
+      0,
+      21,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      543,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      776,
+      0,
+      3002,
+      0,
+      39,
+      0,
+      96,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      51,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cost": {
+      "arrivals": 12288,
+      "optimizer_steps": 1152,
+      "current_presentations": 36864,
+      "replay_presentations": 36768,
+      "duplicate_current_presentations": 96,
+      "training_forwards": 73728,
+      "scoring_forwards": 61120,
+      "evaluation_forwards": 39936,
+      "training_seconds": 3.663531599995622,
+      "selection_seconds": 0.10597150000330657
+    }
+  }
+}

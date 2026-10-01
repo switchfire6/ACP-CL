@@ -1,0 +1,15 @@
+{
+  "study": "joint persistence: baseline-only development",
+  "seeds": [117],
+  "schedules": ["long"],
+  "methods": ["uniform"],
+  "block_size": 1024,
+  "batch_size": 32,
+  "eval_size": 384,
+  "probe_every": 256,
+  "width": 64,
+  "lr": 0.002,
+  "memory_capacity": 128,
+  "updates_per_batch": 3,
+  "threads": 1
+}

@@ -5,8 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "acp-cl"
 version = "0.1.0"
-description = "A falsifiable reference experiment for adaptive critical-period continual learning"
+description = "Continual Relational Learning: falsifiable experiments in learning, reuse, and revision"
 requires-python = ">=3.10"
+license = { text = "MIT" }
 dependencies = [
   "torch>=2.8,<2.9",
   "torchvision>=0.23,<0.24",
@@ -33,3 +34,17 @@ target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+# Research scripts and modules whose exact bytes are hash-locked by completed
+# studies (manifests record their sha256). Editing them for style would break
+# the recorded source identities, so cosmetic findings are exempted instead.
+"scripts/competence_gap.py" = ["F401", "F841", "E741", "E702", "E402", "F541"]
+"scripts/competence_ceiling.py" = ["F401", "F841", "E741", "E702", "E402", "F541"]
+"scripts/consolidated_recall.py" = ["F401", "F841", "E741", "E702", "E402", "F541"]
+"scripts/retrieval_capacity.py" = ["F401", "F841", "E741", "E702", "E402", "F541"]
+"scripts/ideal_observer_*.py" = ["F401", "F841", "E741", "E702", "E402", "F541"]
+"scripts/commons_d0*.py" = ["F401", "F841", "E741", "E702", "E402", "F541"]
+"scripts/commons_d1*.py" = ["F401", "F841", "E741", "E702", "E402", "F541"]
+"src/acp_cl/commons/calibration.py" = ["F841"]
+"src/acp_cl/commons/verification.py" = ["F841"]

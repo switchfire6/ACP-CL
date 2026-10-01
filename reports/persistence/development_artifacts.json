@@ -1,0 +1,52 @@
+[
+  {
+    "original": "runs/persistence_development_v1/manifest.json",
+    "portable": "reports/persistence/development_v1/manifest.json",
+    "sha256": "f4743657c474a33424d53b365293ffa231a7bf9a8756d99f2c25a1b1d8e48b22"
+  },
+  {
+    "original": "runs/persistence_development_v1/completion.json",
+    "portable": "reports/persistence/development_v1/completion.json",
+    "sha256": "2c81c3599f6b4228c5abdcadca22c609dcebdbce313e17a5fc8454e77bd64f8e"
+  },
+  {
+    "original": "runs/persistence_development_v1/training_source.zip",
+    "portable": "reports/persistence/development_v1/training_source.zip",
+    "sha256": "af870850761e11ea34cdc617b5341bcd8dd08a37fc7a8bd5205f18a0cce40c9f"
+  },
+  {
+    "original": "runs/persistence_development_v1/long_scratch_117.json",
+    "portable": "reports/persistence/development_v1/long_scratch_117.json",
+    "sha256": "c276eda87fbc0567a5aa2a6c401562febe86e17f081608ae5a1868317b307dc2"
+  },
+  {
+    "original": "runs/persistence_development_v1/long_uniform_117/result.json",
+    "portable": "reports/persistence/development_v1/result.json",
+    "sha256": "991c9c6d190e34ee1aa44bd946ef5c17f61e9ded4f5b931e3bd354c4d424ffda"
+  },
+  {
+    "original": "runs/persistence_development_v2/manifest.json",
+    "portable": "reports/persistence/development_v2/manifest.json",
+    "sha256": "a0ebd66351f7a30ba22e92cffee0b586a379653910aa774a1b3dc43a92535aa6"
+  },
+  {
+    "original": "runs/persistence_development_v2/completion.json",
+    "portable": "reports/persistence/development_v2/completion.json",
+    "sha256": "1b7999b1e72ce2da84811b98320d442a9c286cd01b5d06b78eb6692806b8bad1"
+  },
+  {
+    "original": "runs/persistence_development_v2/training_source.zip",
+    "portable": "reports/persistence/development_v2/training_source.zip",
+    "sha256": "f0cde8d1e91d3f0797c1cffefbadad805b45870fad63a59ccc668579b7e6378d"
+  },
+  {
+    "original": "runs/persistence_development_v2/long_scratch_117.json",
+    "portable": "reports/persistence/development_v2/long_scratch_117.json",
+    "sha256": "38acb8dfcafad785bbc4a3464b9fa1fdb6510f8077ed00af327f62994bfe2dce"
+  },
+  {
+    "original": "runs/persistence_development_v2/long_uniform_117/result.json",
+    "portable": "reports/persistence/development_v2/result.json",
+    "sha256": "ded2d2676aba31a10ea86417c72fc8b21ea5d6f57bbd0a49fa0c9f61d6488051"
+  }
+]

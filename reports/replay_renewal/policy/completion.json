@@ -1,0 +1,301 @@
+{
+  "identity": {
+    "config_sha256": "0b6026d29f35ae43d71d2003e28299df34ef8ecadfd4008c292483f5e4930699",
+    "source_sha256": "6f3561f485bf5dad9577be231b2542bba0c4682ac0b847e03f385b1c57271d39",
+    "runtime_sha256": "4ea3ea1f87cff2e70c31f788d2332c81583a711f4b402a26f9a1265dc448a77f"
+  },
+  "trajectories": 48,
+  "episodes": 288,
+  "prefix_fits": 36,
+  "jobs": [
+    {
+      "seed": 10001,
+      "model": "conditional",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10001,
+      "model": "conditional",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10001,
+      "model": "conditional",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10001,
+      "model": "conditional",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10001,
+      "model": "recurrent",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10001,
+      "model": "recurrent",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10002,
+      "model": "conditional",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10001,
+      "model": "recurrent",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10001,
+      "model": "recurrent",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10002,
+      "model": "conditional",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10002,
+      "model": "conditional",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10002,
+      "model": "conditional",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10002,
+      "model": "recurrent",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10002,
+      "model": "recurrent",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10002,
+      "model": "recurrent",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10002,
+      "model": "recurrent",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10003,
+      "model": "conditional",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10003,
+      "model": "conditional",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10003,
+      "model": "conditional",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10003,
+      "model": "conditional",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10003,
+      "model": "recurrent",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10003,
+      "model": "recurrent",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10003,
+      "model": "recurrent",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10003,
+      "model": "recurrent",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10004,
+      "model": "conditional",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10004,
+      "model": "conditional",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10004,
+      "model": "conditional",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10004,
+      "model": "conditional",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10004,
+      "model": "recurrent",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10004,
+      "model": "recurrent",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10004,
+      "model": "recurrent",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10004,
+      "model": "recurrent",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10005,
+      "model": "conditional",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10005,
+      "model": "conditional",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10005,
+      "model": "conditional",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10005,
+      "model": "conditional",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10005,
+      "model": "recurrent",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10005,
+      "model": "recurrent",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10005,
+      "model": "recurrent",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10005,
+      "model": "recurrent",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10006,
+      "model": "conditional",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10006,
+      "model": "conditional",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10006,
+      "model": "conditional",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10006,
+      "model": "conditional",
+      "policy": "split",
+      "affinity": 85
+    },
+    {
+      "seed": 10006,
+      "model": "recurrent",
+      "policy": "fresh",
+      "affinity": 85
+    },
+    {
+      "seed": 10006,
+      "model": "recurrent",
+      "policy": "uniform",
+      "affinity": 85
+    },
+    {
+      "seed": 10006,
+      "model": "recurrent",
+      "policy": "recent",
+      "affinity": 85
+    },
+    {
+      "seed": 10006,
+      "model": "recurrent",
+      "policy": "split",
+      "affinity": 85
+    }
+  ],
+  "completed_utc": "2026-09-27T19:52:28.273114+00:00"
+}

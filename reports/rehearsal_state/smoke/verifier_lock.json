@@ -1,0 +1,8 @@
+{
+  "sealed_utc": "2026-09-28T01:05:51.069132+00:00",
+  "files": {
+    "scripts/verify_rehearsal_state_archive.py": "1c027ae056b11228a0b0a82409dd3f02c80a070d2c51451f17727ac4d617f7a9",
+    "tests/test_rehearsal_state_archive.py": "c0658403bbbf5deb53f3c6517064610c6ad097173b8be865589676028b2c4ae1"
+  },
+  "scope": "Independent packaging verifier and tests, excluded prospectively from the scientific lock."
+}

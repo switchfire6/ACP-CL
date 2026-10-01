@@ -1,0 +1,394 @@
+{
+  "conditional_29": {
+    "identity": {
+      "config_sha256": "de1ab9b5a054b8e2820df8ed18f9957ca28306d0f275952a0d72a8189713948f",
+      "source_sha256": "e95a0b9823ed139a099a547f5b5c96196ba9266b09c1e3ddbe62b68186dff11d",
+      "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+    },
+    "seed": 29,
+    "model": "conditional",
+    "blocks": [
+      {
+        "law": {
+          "mode": 1,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "batch_sha256": [
+          "878ae76dea6bc7db0004e5aac48b6438cdd973c65eff1645cc5a86a5abd6ff45",
+          "6bf04af425d50b9cba150140b36184f35838ed8fa27a86c0fa7dfa1c20b56aec"
+        ]
+      },
+      {
+        "law": {
+          "mode": 0,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "batch_sha256": [
+          "14400e00133ec52d4041652638031f00d7879fb06db928becd5f48f88d4661fa",
+          "4ef012ef8dac30ed049cbcc8ba39ffa3798a75fd9992c2f864c5368083e7bba0"
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "start_batch": 0,
+        "end_batch": 2,
+        "proposal_hash": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1",
+        "committed_before": {
+          "periodic": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1",
+          "single": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1",
+          "sustained": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1"
+        },
+        "gains": {
+          "periodic": [
+            0.0,
+            0.0
+          ],
+          "single": [
+            0.0,
+            0.0
+          ],
+          "sustained": [
+            0.0,
+            0.0
+          ]
+        },
+        "accepted": {
+          "periodic": true,
+          "single": false,
+          "sustained": false
+        }
+      },
+      {
+        "start_batch": 2,
+        "end_batch": 4,
+        "proposal_hash": "04701105c59e07b80832fa11d03ed6eaefe858c6ab8c26f03bfa5edcf33cbb1d",
+        "committed_before": {
+          "periodic": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1",
+          "single": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1",
+          "sustained": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1"
+        },
+        "gains": {
+          "periodic": [
+            0.0013248831902443747,
+            -0.00011448625521837119
+          ],
+          "single": [
+            0.0013248831902443747,
+            -0.00011448625521837119
+          ],
+          "sustained": [
+            0.0013248831902443747,
+            -0.00011448625521837119
+          ]
+        },
+        "accepted": {
+          "periodic": true,
+          "single": false,
+          "sustained": false
+        }
+      }
+    ],
+    "end_state": {
+      "batches": 4,
+      "adoptions": {
+        "periodic": 2,
+        "single": 0,
+        "sustained": 0
+      },
+      "proposal_count": 2,
+      "committed": {
+        "periodic": "04701105c59e07b80832fa11d03ed6eaefe858c6ab8c26f03bfa5edcf33cbb1d",
+        "single": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1",
+        "sustained": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1"
+      },
+      "proposal": null,
+      "proposal_batch": null,
+      "gains": {
+        "periodic": [],
+        "single": [],
+        "sustained": []
+      },
+      "draft": {
+        "initial_hash": "ed325e0d9946556a2830f7649446e2e5f99592f1c098a4cfb2f4c4480cc0ebe1",
+        "final_hash": "b5ea688ff9830f54d46c67761bead3944712080c6dad9164a4051d7aa65af980",
+        "parameters": 2804,
+        "model_bytes": 11216,
+        "optimizer_bytes": 22520,
+        "peak_replay_bytes": 43264,
+        "memory_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "packets_seen": 4,
+        "history_bytes": 6176,
+        "encoder_displacement": 0.22850918658878056,
+        "cost": {
+          "arrivals": 32,
+          "optimizer_steps": 4,
+          "query_presentations": 64,
+          "support_presentations": 64,
+          "replay_presentations": 24,
+          "duplicate_presentations": 8,
+          "training_seconds": 0.036777799998162664
+        },
+        "initial_encoder_hash": "1cbb7cb89d56186fa46395b2ea64fad9eeb80daec86dafe429a9e2dfd689c03e",
+        "encoder_hash": "7a5b8773cdf547ab0f336f7cef7fabf0208c035777f77bbe38f03500c24843c2"
+      }
+    },
+    "end_memory": {
+      "type": "ReservoirMemory",
+      "capacity": 4,
+      "seen": 4,
+      "ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "membership": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 296155425105650439769652936991102099165,
+          "inc": 216565563768590199179774300985311343513
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "sampling": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 69383462259419686746036886119629309755,
+          "inc": 201937228765316966547887845421741111239
+        },
+        "has_uint32": 0,
+        "uinteger": 39384723
+      },
+      "age": 4,
+      "packets": [
+        {
+          "support": null,
+          "query": "878ae76dea6bc7db0004e5aac48b6438cdd973c65eff1645cc5a86a5abd6ff45",
+          "hidden": false
+        },
+        {
+          "support": "878ae76dea6bc7db0004e5aac48b6438cdd973c65eff1645cc5a86a5abd6ff45",
+          "query": "6bf04af425d50b9cba150140b36184f35838ed8fa27a86c0fa7dfa1c20b56aec",
+          "hidden": false
+        },
+        {
+          "support": "6bf04af425d50b9cba150140b36184f35838ed8fa27a86c0fa7dfa1c20b56aec",
+          "query": "14400e00133ec52d4041652638031f00d7879fb06db928becd5f48f88d4661fa",
+          "hidden": false
+        },
+        {
+          "support": "14400e00133ec52d4041652638031f00d7879fb06db928becd5f48f88d4661fa",
+          "query": "4ef012ef8dac30ed049cbcc8ba39ffa3798a75fd9992c2f864c5368083e7bba0",
+          "hidden": false
+        }
+      ]
+    }
+  },
+  "recurrent_29": {
+    "identity": {
+      "config_sha256": "de1ab9b5a054b8e2820df8ed18f9957ca28306d0f275952a0d72a8189713948f",
+      "source_sha256": "e95a0b9823ed139a099a547f5b5c96196ba9266b09c1e3ddbe62b68186dff11d",
+      "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+    },
+    "seed": 29,
+    "model": "recurrent",
+    "blocks": [
+      {
+        "law": {
+          "mode": 1,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "batch_sha256": [
+          "878ae76dea6bc7db0004e5aac48b6438cdd973c65eff1645cc5a86a5abd6ff45",
+          "6bf04af425d50b9cba150140b36184f35838ed8fa27a86c0fa7dfa1c20b56aec"
+        ]
+      },
+      {
+        "law": {
+          "mode": 0,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "batch_sha256": [
+          "14400e00133ec52d4041652638031f00d7879fb06db928becd5f48f88d4661fa",
+          "4ef012ef8dac30ed049cbcc8ba39ffa3798a75fd9992c2f864c5368083e7bba0"
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "start_batch": 0,
+        "end_batch": 2,
+        "proposal_hash": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743",
+        "committed_before": {
+          "periodic": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743",
+          "single": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743",
+          "sustained": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743"
+        },
+        "gains": {
+          "periodic": [
+            0.0,
+            0.0
+          ],
+          "single": [
+            0.0,
+            0.0
+          ],
+          "sustained": [
+            0.0,
+            0.0
+          ]
+        },
+        "accepted": {
+          "periodic": true,
+          "single": false,
+          "sustained": false
+        }
+      },
+      {
+        "start_batch": 2,
+        "end_batch": 4,
+        "proposal_hash": "8bfd841bc0ca9e6f45e3659f3ed469a4e7fec9ec9115d9be33b62ed6a3f531a5",
+        "committed_before": {
+          "periodic": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743",
+          "single": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743",
+          "sustained": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743"
+        },
+        "gains": {
+          "periodic": [
+            0.001380394306169097,
+            -0.003349600044177725
+          ],
+          "single": [
+            0.001380394306169097,
+            -0.003349600044177725
+          ],
+          "sustained": [
+            0.001380394306169097,
+            -0.003349600044177725
+          ]
+        },
+        "accepted": {
+          "periodic": true,
+          "single": false,
+          "sustained": false
+        }
+      }
+    ],
+    "end_state": {
+      "batches": 4,
+      "adoptions": {
+        "periodic": 2,
+        "single": 0,
+        "sustained": 0
+      },
+      "proposal_count": 2,
+      "committed": {
+        "periodic": "8bfd841bc0ca9e6f45e3659f3ed469a4e7fec9ec9115d9be33b62ed6a3f531a5",
+        "single": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743",
+        "sustained": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743"
+      },
+      "proposal": null,
+      "proposal_batch": null,
+      "gains": {
+        "periodic": [],
+        "single": [],
+        "sustained": []
+      },
+      "draft": {
+        "initial_hash": "669e1b07e95fb8aa8c3758292692c6c28d5c24aeb934df1acb8b4117ba611743",
+        "final_hash": "d6dda07275cfe8f02970701174627a9bc9f656cdb4d4e29f4fc8d4cb83368626",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 23728,
+        "peak_replay_bytes": 43264,
+        "memory_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "packets_seen": 4,
+        "history_bytes": 6176,
+        "encoder_displacement": 0.24624172471826727,
+        "cost": {
+          "arrivals": 32,
+          "optimizer_steps": 4,
+          "query_presentations": 64,
+          "support_presentations": 64,
+          "replay_presentations": 24,
+          "duplicate_presentations": 8,
+          "training_seconds": 0.023844599998483318
+        },
+        "initial_encoder_hash": "1cbb7cb89d56186fa46395b2ea64fad9eeb80daec86dafe429a9e2dfd689c03e",
+        "encoder_hash": "389655ed44e21545ecd777dd334a5d95045f49b8bc2a70e7859cf3b2e548934a"
+      }
+    },
+    "end_memory": {
+      "type": "ReservoirMemory",
+      "capacity": 4,
+      "seen": 4,
+      "ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "membership": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 296155425105650439769652936991102099165,
+          "inc": 216565563768590199179774300985311343513
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "sampling": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 69383462259419686746036886119629309755,
+          "inc": 201937228765316966547887845421741111239
+        },
+        "has_uint32": 0,
+        "uinteger": 39384723
+      },
+      "age": 4,
+      "packets": [
+        {
+          "support": null,
+          "query": "878ae76dea6bc7db0004e5aac48b6438cdd973c65eff1645cc5a86a5abd6ff45",
+          "hidden": false
+        },
+        {
+          "support": "878ae76dea6bc7db0004e5aac48b6438cdd973c65eff1645cc5a86a5abd6ff45",
+          "query": "6bf04af425d50b9cba150140b36184f35838ed8fa27a86c0fa7dfa1c20b56aec",
+          "hidden": false
+        },
+        {
+          "support": "6bf04af425d50b9cba150140b36184f35838ed8fa27a86c0fa7dfa1c20b56aec",
+          "query": "14400e00133ec52d4041652638031f00d7879fb06db928becd5f48f88d4661fa",
+          "hidden": false
+        },
+        {
+          "support": "14400e00133ec52d4041652638031f00d7879fb06db928becd5f48f88d4661fa",
+          "query": "4ef012ef8dac30ed049cbcc8ba39ffa3798a75fd9992c2f864c5368083e7bba0",
+          "hidden": false
+        }
+      ]
+    }
+  }
+}

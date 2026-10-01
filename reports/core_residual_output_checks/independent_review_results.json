@@ -1,0 +1,2167 @@
+{
+  "passed": true,
+  "created_utc": "2026-09-28T03:34:53.777869+00:00",
+  "input_directory": "C:/Users/pounc/Desktop/Code/ACP-CL/reports/core_residual_outputs/development",
+  "reviewer_source_sha256": "6910f2a25e7f4ca9aedcdde8aa834e97636a52235942c8db329b8d1ea2df6891",
+  "input_hashes": {
+    "summary.json": "26e72312298ebb331e4028ed38a69b21d14e18b7639ab575b09d1e83d17efeab",
+    "manifest.json": "b6ba54e8e01ad71158fc268953224feb58f345578e5dd82f00b5bbcdbb3cf424",
+    "completion.json": "31730c252dcbae7abcff9d274272c170743ea98b64dec4acb543bfe5aca04d2e",
+    "source_at_lock.zip": "d9bde94887de1e71d6ac008ca61a20b5853ba9fc14df90bff68d31019676ce42",
+    "jobs/conditional_16001.json": "fdf455497c03a55118f1fc6c66a75f4312b4876c0af994ea2dc43c16e4f03865",
+    "jobs/conditional_16001.npz": "baf83fc6ffccf2744692a6d666760bf89fcb2f1c624c81bee6781b7728f449fa",
+    "jobs/conditional_16002.json": "473146042514c9c16a79348c0dbc8bc7e8cbb9e713c7c095c3d7ff861cecdbd5",
+    "jobs/conditional_16002.npz": "f7110cf289a4aa5c20878cc3c391b69b042256bbe4867c3ca3905cab3e32224d",
+    "jobs/conditional_16003.json": "ddd84f4517b8b3bddeada18995f66e872127d8a0d68573ccfa33f13531004414",
+    "jobs/conditional_16003.npz": "c40ebf8c47cff53f3754423d0e4b1860b54f37b0d4110c904f9c59ff54615ac4",
+    "jobs/conditional_16004.json": "ee40ee1230a1749cfdd1729bd6d9dd975380090742f8f21f20de3344d8281041",
+    "jobs/conditional_16004.npz": "bbb2e7abff5f235cb507b7e6b03321bd65a8a363b90f4c6d87a61a01d9a06ff2",
+    "jobs/conditional_16005.json": "c50b78b96c188a72ca91f542ac2e0eeba373fc3045dea749cbc817c8a4ff58fd",
+    "jobs/conditional_16005.npz": "732f7c56ddbc83a7f44487f46795d486a8fdb56ccbf2a1125df59126d4369f8b",
+    "jobs/conditional_16006.json": "fe5caeed6bdc6893e763f3ae7960596eb3737ff822f11ea98fee71c4067a6c9e",
+    "jobs/conditional_16006.npz": "3d78c48c8efc482f6e6f7b40625b454a6de08615dc2ebbf95e7906e64c60dfa6",
+    "jobs/recurrent_16001.json": "85bbf77c099a59cfa48fbbe85df459120e75be06af53e142246ee1d536f5308c",
+    "jobs/recurrent_16001.npz": "1247a79f9054d9f4a81919fc74d6b42b0f2aaef016cf42e4f687083ed90e6021",
+    "jobs/recurrent_16002.json": "493471ee1c5d355d008287f83e4addcd5425ae3e7bb2445df2500a0d22102265",
+    "jobs/recurrent_16002.npz": "c2abe82801a586bd170b6a9b70efecbb3fc2aa080180745d17e8ae127c3df3e3",
+    "jobs/recurrent_16003.json": "97f81998b0609720775876558102cd21666fa779c3666fc67633f2f77c6a917f",
+    "jobs/recurrent_16003.npz": "d33991ca8c1f45e181d5740bb03040f86fbf3e994df71618694d8f7461cf75bd",
+    "jobs/recurrent_16004.json": "d5c67006f455f0b29738f99eb27c00218529bc02050be80073d62460ab17d7b0",
+    "jobs/recurrent_16004.npz": "bd56a1e837105ac8fde42452f245e0dccc3f6419e7fb3e1c72a74ad703016f0a",
+    "jobs/recurrent_16005.json": "4647834e0f0bafdb329e33deced9d868b7a0a5bb506e79897c5667164b74b716",
+    "jobs/recurrent_16005.npz": "9c407d059760cd5c89f6ec901cf1372e29ac9caf24d5f1b4d7cb1e194d90f864",
+    "jobs/recurrent_16006.json": "47f57bb51e749897bb0ea68ad1eaeb0578a8189fc2bbafdfd2251b5c8176d576",
+    "jobs/recurrent_16006.npz": "1eaa978fbbce092ed9df3c7e1255958f6b7283d1ff34d9d80e1232a344c33111"
+  },
+  "historical_files_checked": 162,
+  "historical_hashes": {
+    "manifest.json": "1a6f4148d1bdfe692b034ed437cd5e4df132968d9802f13982551e1e2b73c4e1",
+    "analysis_lock.json": "6c8515450805cf2556fc99e2652b88eff26fd9d99fd74b9242b3ccb3331e88c0",
+    "protocol_lock.json": "ba4481ba0c3db25ab88f2e16c7a47885916011c9e2a7e0a4c4def5f38584d310",
+    "completion.json": "6ed301f7c6e1f86caf736f14c05088675cfcf0988b4086db3d23dfd3e965b27d",
+    "training_source.zip": "e373549fd1781211b4915f101d4c2b0597fdc40c7a481ee86f0e62056304712e",
+    "analysis_at_lock.zip": "b0f5d24b831683694d7c81b6424e0a64d23dd962de614c3003a1bca34549f069",
+    "conditional_16001/result.json": "ee3875e258cbfdeb52b722a8f0f5cd591b1db9800b729c83720c9774764795c8",
+    "conditional_16002/result.json": "271645f64a37eea28823bf88921ee0183a90b6701affdf1a6b0029a1f7c4e137",
+    "conditional_16003/result.json": "71b4cda2d8217cfce989aa9d6faf1a98d9514ef5124656d2087af9aadf33965e",
+    "conditional_16004/result.json": "7c459454f0a005bb46ac69d1e4bbe2686cd532eeb04cc979c456f664e924facd",
+    "conditional_16005/result.json": "b8e8dc915cbea1cbda4b254f3eed2381cce5055df1cc6d40acd61bd209849f5d",
+    "conditional_16006/result.json": "25347c5afe86d62502fc0e1fab67f8e97b53bcf84f1ab68327096b68aaf44534",
+    "recurrent_16001/result.json": "4ace1602d19d1006fd386e6dc7bb91e059ce053ff13de72cd0b9506c9427da69",
+    "recurrent_16002/result.json": "7d1780f6e8caf356dcffe713bf2284821a8d19319230005a72319d0ccb6740aa",
+    "recurrent_16003/result.json": "4bbb5711a9d8a6a41e6c855d9634b7f148bd82e861a9f9c76c8f0b9a502215a6",
+    "recurrent_16004/result.json": "64265d9683238b94f1d5395d9d9f44983f48810f98ce3f280331b1c22d5dfb67",
+    "recurrent_16005/result.json": "4b646cd48ba4f2a4761b6eb2d43c3b9c3423086495c7b946fa66af8362125d90",
+    "recurrent_16006/result.json": "028adb06e4890a6b0697e8925eecfa9da834df570a0b8bdd633ddc8f88f243af",
+    "conditional_16001/joint/novel/checkpoint.pt": "cd5c7985eec2c56cf7ba41db652cea3515b377db18e7bfa4fa3cafe3e5cb62ba",
+    "conditional_16001/joint/return/checkpoint.pt": "fe105bc85e03bb8bd41c4f07dda9d11169884e53cb28f1bad74a854b47b81116",
+    "conditional_16001/separate/novel/checkpoint.pt": "7baa530f0c582f519efbe06cad0cb3f5cbb77dea78319c4e4c379a7af7e13bd1",
+    "conditional_16001/separate/return/checkpoint.pt": "4df06ac0cf538f8ad3d3393285214ecc1a2283c0354bf19595bef8e4d8333a14",
+    "conditional_16001/joint/novel/evaluations.json": "b410bf7e024435a1122babc779b39ee418971b9001c70ccde172de4b6d59c487",
+    "conditional_16001/joint/novel/evaluations.npz": "23ea84db15d458f9012975cafab5284f2168022ab7aaf1a9a0aa8f939596f045",
+    "conditional_16001/joint/return/evaluations.json": "d49a545a57cdfeb99013d8cb8faa3b89d08c4a2cf95a833a94b8fd079e2d116c",
+    "conditional_16001/joint/return/evaluations.npz": "b086bd43091ffb65b3223e59f8dfd9621cddc1c299546996d4047b98a3a4389b",
+    "conditional_16001/separate/novel/evaluations.json": "0e33b9cd47c9da459cc231f9a7f692cd6175fc7b9a06afc4aa8e22f8908d718c",
+    "conditional_16001/separate/novel/evaluations.npz": "72a84bf57552cb4ff6d92f03d3b357d1261b9f0c93c6dbbee9535b74dbb8015d",
+    "conditional_16001/separate/return/evaluations.json": "f027431de0e703c5ebb782092e05735a7d412aa2d110ecb698d687a977fcf4a6",
+    "conditional_16001/separate/return/evaluations.npz": "329bb527464a4781a4523c7bb7354cbe55999704f6634a58573831d1c200b021",
+    "conditional_16002/joint/novel/checkpoint.pt": "4b68cf08b10d44cf66d237918a524e638e1ce838efb312a5d8b8b8a9379870e9",
+    "conditional_16002/joint/return/checkpoint.pt": "ceaae6399b34508e9eb53520d27adde6cd10be9991065c43af39e60a2b0ab32a",
+    "conditional_16002/separate/novel/checkpoint.pt": "84434f45c92809144c87990324417cb465f115fd85eb68a9f898361c10632013",
+    "conditional_16002/separate/return/checkpoint.pt": "d27e02c20a1fb0ce5c0a085452453348295b767f974360a380bbee0d91e260d7",
+    "conditional_16002/joint/novel/evaluations.json": "1d8f649f582a819cf6a16615e194246058525da4107733d42144e0030e9b1e99",
+    "conditional_16002/joint/novel/evaluations.npz": "b8c7cdd7ebd2cbda2d2eb84c384585d15313fe17f93d1cc3ac76fc2e80951b05",
+    "conditional_16002/joint/return/evaluations.json": "6ade5c000ae515530da80adc5faba56d3635a3bbc76dac5d3be7c22517d2c12a",
+    "conditional_16002/joint/return/evaluations.npz": "142f4b1cb84465f48561b38346d903bdb4e5f6ebad7b2b7f088a3411a7ddd8f4",
+    "conditional_16002/separate/novel/evaluations.json": "03c35930cfe43497c71e0c9c62f93e62e7505b00964b7d06b705be64832db79c",
+    "conditional_16002/separate/novel/evaluations.npz": "22d135e1bbe1a1f380f2e6a6a3a3d1bf8cd597feb8e187a928ba1daf585ce64c",
+    "conditional_16002/separate/return/evaluations.json": "f139cac8f8eeda8465a44f88d3dce29701e0e2316e355552ea9ee348e7307836",
+    "conditional_16002/separate/return/evaluations.npz": "595470f609858e43825dd2d0e95d2bbdc37705818586fafd6e6744327500dd1d",
+    "conditional_16003/joint/novel/checkpoint.pt": "a8e0f1d6303344f7e22dc6f3943aa9844c0ce62e8d2ea1c49913d35a7c52de16",
+    "conditional_16003/joint/return/checkpoint.pt": "e90810e5bc2a5af4766b6cc646d332a2d08d2124595a68e039adece86e2a24a3",
+    "conditional_16003/separate/novel/checkpoint.pt": "ac0b2e9541a4d87234ba5f3e45e3907d3106ee1b1cdaf5b5e851ae6c97403d2b",
+    "conditional_16003/separate/return/checkpoint.pt": "dd39d3cbadd18c22b29761d8f19c47dafef570f89f9d2c3534484af9cdd092b4",
+    "conditional_16003/joint/novel/evaluations.json": "4f5c8409965617216116559160141bf94d133f91d49d8c5a0efa818e714b8e80",
+    "conditional_16003/joint/novel/evaluations.npz": "e8142c2613e71628afd9f7fd304e2afef3418d1ea9de2d0a6b847e1be582685f",
+    "conditional_16003/joint/return/evaluations.json": "ffe4a4b64dbc7723bc0d6b69a458bf74a4f61bb50ad6716debc246370b8ade75",
+    "conditional_16003/joint/return/evaluations.npz": "5339bfa6b25c8ac52df43f9f3a6d8245be68ce4983ca3fca00382b1dd8322679",
+    "conditional_16003/separate/novel/evaluations.json": "7df24c81c4d980b04dd70d8c4737b50ba639a9833dbedfe3a1b8a2ebe8e8a4f9",
+    "conditional_16003/separate/novel/evaluations.npz": "4d33aca88362311d2a8e72f895a8c904f70572cc627395d8d48060dbbb913707",
+    "conditional_16003/separate/return/evaluations.json": "06d0cdab00edb6fe383f75666df91c21d645998fed8bdbf7ce14fb66f4eeaa39",
+    "conditional_16003/separate/return/evaluations.npz": "bc0667cb2b45d7e6fdca96165a15b1738840ce5134d48bedea05dc2fc5d22616",
+    "conditional_16004/joint/novel/checkpoint.pt": "3dbaac5b88b1cfff4dff68a18d81856670a1681e9fc58013f17754e83c5e7740",
+    "conditional_16004/joint/return/checkpoint.pt": "334329d4ad0293c78240552ed47d0825b48b139d202149fcd0425b4b6fc2084e",
+    "conditional_16004/separate/novel/checkpoint.pt": "093a4414715a29fbb76ee845f508a498fcffc05b6c6adb76e7eb07ddfd336b15",
+    "conditional_16004/separate/return/checkpoint.pt": "6fa49b9e83818469c98b0ddc57052429870f68bf5312054ed2e4f0e286fc4786",
+    "conditional_16004/joint/novel/evaluations.json": "07a9f839c4de26d924534946672b61f4d8785c3fe9215f80c3e41a6ff6bbc19e",
+    "conditional_16004/joint/novel/evaluations.npz": "204e5ac5d297736d281aba54b0ca5ecf4cf082b53016e77fe5aa0509e4a24689",
+    "conditional_16004/joint/return/evaluations.json": "10742734e19c3334b9f292ed5fbe7f88f781773dd8f37bc54ef8bf09f5793d4e",
+    "conditional_16004/joint/return/evaluations.npz": "229de51c31f5de58cccce680ca08241cd0f8363890942079dab5c7b1072080bd",
+    "conditional_16004/separate/novel/evaluations.json": "2c3a5fc3431587632afbb8815d83451996a026d34464c6e873c4fc96b8cb24a3",
+    "conditional_16004/separate/novel/evaluations.npz": "1f05c4b800248c7494a636b66cf0656ec27d65db41651ba8057a016447a2bd12",
+    "conditional_16004/separate/return/evaluations.json": "52ff1573ea9d945172a883e59166678975491e9d5ac6e0d16361d7e018866a7a",
+    "conditional_16004/separate/return/evaluations.npz": "f2006fc2744b9228fdb76825aaaa29ef2d11236194f5a1f0e42f652414b984e6",
+    "conditional_16005/joint/novel/checkpoint.pt": "e9173abdcc8c2391d43ba6d336c79d9553629718a747f52a42294692992e78c9",
+    "conditional_16005/joint/return/checkpoint.pt": "632f05e26e57c05e6a115d826fa27a5302ded0312d2d2dd76c037ded5a1e2e30",
+    "conditional_16005/separate/novel/checkpoint.pt": "f3ec938e4e71c8f86009f5e5f01f32a52a9f90b5bcb5ad0f9e6f0c2422912237",
+    "conditional_16005/separate/return/checkpoint.pt": "596c3106616f76ade38b398d8362b904a3090cc0aff46ebfe242c073d0d8a759",
+    "conditional_16005/joint/novel/evaluations.json": "71e7958d269c319f10c353381e3e8e43be208c74ac368118a21c1b83708a41b9",
+    "conditional_16005/joint/novel/evaluations.npz": "5ef90694465888a279b56466986201c63251650c3646691200bd994f824e6c0c",
+    "conditional_16005/joint/return/evaluations.json": "43f5b0ae9eb4fa97d013af7e2765ef1a078b77925cc5211d234d2729b3a5959d",
+    "conditional_16005/joint/return/evaluations.npz": "97102295e9727fb8abbee29c62459ef2ff2ce091fae44337e9c786269b88ac1a",
+    "conditional_16005/separate/novel/evaluations.json": "5daeb50502fdad51290fee97f467923f6c940dc4b73654094de4500fa114a721",
+    "conditional_16005/separate/novel/evaluations.npz": "072b9a84f2797836a8d3c08b5f69468bb83863838bc9f55901434ac0ee3d9bed",
+    "conditional_16005/separate/return/evaluations.json": "c39e2a1771ac4cb2979de6f563a9e959b8c5dcda7c214615081910d91eefa1f6",
+    "conditional_16005/separate/return/evaluations.npz": "61343731598315a0f279748662f2e0888fd610c5ef0c5ab770717127e7124e0c",
+    "conditional_16006/joint/novel/checkpoint.pt": "5c5e9bf78f9655ae4cbac71af17115a23a717603dfd9b1db44ff3d2e2e7f4dd0",
+    "conditional_16006/joint/return/checkpoint.pt": "6b03336b349baa5d72c9741d8b7317e8d298e7c1848117c6cab59f4fa52e9a32",
+    "conditional_16006/separate/novel/checkpoint.pt": "2f747bb0602af7b5c6319819727d7e80523a556332ffe2bf45ef7285ef7567c4",
+    "conditional_16006/separate/return/checkpoint.pt": "6a30908bea4673abab5152d7c78889efe018ac3b3137209d84fcd45c1a8ff6aa",
+    "conditional_16006/joint/novel/evaluations.json": "6e14f2623fa1139c8125293a1431ecf47f03b8410dd9dd8889bf8f59b20b12da",
+    "conditional_16006/joint/novel/evaluations.npz": "01db42cc4beb921d13913399d505b64a7f7910fe88fb4c839fbb29c7dcc70f76",
+    "conditional_16006/joint/return/evaluations.json": "682e9eb657eb0755e66e7981f3472c6c84d1b3ff7b8650ebb81bb7c1c0696421",
+    "conditional_16006/joint/return/evaluations.npz": "8c0b5d9b86b19793d5068dedce866812cd39d061cd827a3839ceadae64127268",
+    "conditional_16006/separate/novel/evaluations.json": "967fc72fe4a0a51a11d38b0ccf76443fdce206ebd07591ac7725809f66c60f15",
+    "conditional_16006/separate/novel/evaluations.npz": "d40f7310a4a69676915ed4cc3bca447a6b017f894db4b08892f2dfb33cd14d18",
+    "conditional_16006/separate/return/evaluations.json": "12b9ee0f303843091b8d5abdb5616f5040e17163160b7e932a0f3e92b9572d05",
+    "conditional_16006/separate/return/evaluations.npz": "dca162dbb45e6653639ffe6df65a21c9bac9be985fcc92413c75df8e1ba7ee43",
+    "recurrent_16001/joint/novel/checkpoint.pt": "0ab9d7130cc04fd7bccde358933192067a9c35c57451c2ebf6855e11aa29a075",
+    "recurrent_16001/joint/return/checkpoint.pt": "beb173335de1c424324c04e16406ac02e943094d5d5cd97372ddf2f75487b649",
+    "recurrent_16001/separate/novel/checkpoint.pt": "b201c808ba79f60dbdb202b68ca5def4e426f8a90f39bf80c3c2077d9c5d50d6",
+    "recurrent_16001/separate/return/checkpoint.pt": "061ff6325a8f52d3a6d9dc29e433e02e7cd8815056b27d0cd9aa271084063cfb",
+    "recurrent_16001/joint/novel/evaluations.json": "60b4f62240b54b0388f9198bca3dcdaa2a3a6835068eb2a926cbead71da420d7",
+    "recurrent_16001/joint/novel/evaluations.npz": "fe9d5d18612853d88c404e8a93c037305b88e0869fb94a46aa30cf2e255a5a11",
+    "recurrent_16001/joint/return/evaluations.json": "f5514fee6808ad2df894511b5fcedfba703a4c1594e4270a4185272845a14dc2",
+    "recurrent_16001/joint/return/evaluations.npz": "3f7525998c52eb502eb3aedc32895d4faf2bd25acddcfbe755f027fb8ddbe9ab",
+    "recurrent_16001/separate/novel/evaluations.json": "83dd5bad5526872c473a69425edefbf39444861fee0bbdd4d715c58d7252da7f",
+    "recurrent_16001/separate/novel/evaluations.npz": "13fc80acf1bb5435e8f2bb23a30199c9061ef521f9bfbda83b18939a24d398a0",
+    "recurrent_16001/separate/return/evaluations.json": "979a4d9f857d77cf22f4f3220ca0061cfc8c8cb2a828f414ef34fcfdfffb7878",
+    "recurrent_16001/separate/return/evaluations.npz": "6ecd9df5028c1c8a91e798db0600a99c81cd4b2f863d4a5b44f76bb4b42680fc",
+    "recurrent_16002/joint/novel/checkpoint.pt": "16714fae59f2583093307e073ac15d5177801c19758abf6c30fdd5cd2e135b37",
+    "recurrent_16002/joint/return/checkpoint.pt": "b174c7c457b089fe82ef66a21c843fb05fa7f75be12a24d7cbe19385d68d4581",
+    "recurrent_16002/separate/novel/checkpoint.pt": "4a6040c2309a2f4a86ccd84bbdd8f6483fb794247f36dd00a90875b8b7c5930c",
+    "recurrent_16002/separate/return/checkpoint.pt": "4da836d9d5817de3038fe6850d4a017d86eb35c7fb4ef2a1f625da4e916fd604",
+    "recurrent_16002/joint/novel/evaluations.json": "7adc880306059b3080c926c06ecfb0c935e814a8ef2fb9303b94329a085f5ac3",
+    "recurrent_16002/joint/novel/evaluations.npz": "73660cc671eda80fd0fc3f70fd30a6ac130631adee9a4b0515ffbe66ab08b658",
+    "recurrent_16002/joint/return/evaluations.json": "923de784e50caafb1f738806e3204f1c3a23ac15cdda28a8e2016420589eb706",
+    "recurrent_16002/joint/return/evaluations.npz": "accdde93c83a9ee5f8325ae5e26b4c6b0e6dc96d8789d08e27a22017bdf9b39b",
+    "recurrent_16002/separate/novel/evaluations.json": "693f8ba35e8f5d2bddf82624391d05a958ab82dcd018f3452618b270b2828571",
+    "recurrent_16002/separate/novel/evaluations.npz": "91fac8e98b76bc86a1289056c7cb67738aafb4263bd23da19a38b53328c6be89",
+    "recurrent_16002/separate/return/evaluations.json": "1ece8e32db9308ba604025ff5a79e73a525c8efd1ec898d016040f98ca3bdd85",
+    "recurrent_16002/separate/return/evaluations.npz": "4f038af62471611bfc390a2b3d6b228da6669fd689bcdf9b7b49861023d490f1",
+    "recurrent_16003/joint/novel/checkpoint.pt": "fc2b78be56e6fc7d82384a244de246eecbd4c9c4691ad9ee9996c29a7064315d",
+    "recurrent_16003/joint/return/checkpoint.pt": "3780fae88379f10c31d48b5a8b940d5cad8c38785f49afe0da5bf4e3d4b57f06",
+    "recurrent_16003/separate/novel/checkpoint.pt": "8e85ad3429454aacb1f387cad7d3726c751f0cc44ba12978f454bdf8001a20e1",
+    "recurrent_16003/separate/return/checkpoint.pt": "31fc3ed9d83a19d2df1158d88180b4422746699453e61c69c8d6e9ff66b0f451",
+    "recurrent_16003/joint/novel/evaluations.json": "b4c76a2debdf216ec5b00c47575ff9c187baa7a0b34e5999d488b2c037465a4f",
+    "recurrent_16003/joint/novel/evaluations.npz": "b87f95a2e4428fac8aa8f68e0ebada445243becdddf191098bd959b2a561c5e6",
+    "recurrent_16003/joint/return/evaluations.json": "d4d0ed91aad1c6d98b6dd4f9cdaad2b1178252d58ddd29b82ff135e586331431",
+    "recurrent_16003/joint/return/evaluations.npz": "6e6e0d5d88c09f5a17e7e016a3235e15520ace91cbb8a9562ba0850e3498dca8",
+    "recurrent_16003/separate/novel/evaluations.json": "23c3cd497772c66e207dc9e8bdc9a2142c5c4c482b35fea23dd9fe47d3ad8c3e",
+    "recurrent_16003/separate/novel/evaluations.npz": "3b4a363f4f38f75ab11f25284e5a042dd13e1bf8cfd43eae2b2aeaa792cf5ca5",
+    "recurrent_16003/separate/return/evaluations.json": "e5e1ff32034c6605058bdbf3ddcdd09cc6c18b5daa38ff1d7cf1c2284261e01e",
+    "recurrent_16003/separate/return/evaluations.npz": "66d25a72e32653ff36163b7f95b9775c5a6d0cbd40bff3c55a418858b06302dc",
+    "recurrent_16004/joint/novel/checkpoint.pt": "5ffaa21f3901bf13051d600c3569b589e5e9d90d9b18c00797d6143a17d5bdfb",
+    "recurrent_16004/joint/return/checkpoint.pt": "3d99b07114c09b2e536384b8d5da71374d83ffff91bcd66927abde5892b1d620",
+    "recurrent_16004/separate/novel/checkpoint.pt": "f4e19653542d2357555530f7b2169f0cfdef2b78646126031f336b41bad33b5a",
+    "recurrent_16004/separate/return/checkpoint.pt": "36aced24428b8df4bf90003496be3e528e2e854a4288859cd254d89f983c0588",
+    "recurrent_16004/joint/novel/evaluations.json": "c7c6845e2898f430d916d14827f95625e9d13cd978996588d6a97747dd6cdd25",
+    "recurrent_16004/joint/novel/evaluations.npz": "8cb04a0b9c869b958bf14903a2918d5129b8782fc6b3cf45db477832c3e2aa0d",
+    "recurrent_16004/joint/return/evaluations.json": "e1d228c6a194aa3913ae696b7687a44c31a7db3b30ab6353604a79feed1d3569",
+    "recurrent_16004/joint/return/evaluations.npz": "a5b72be71c87b30ee453418d891bd8221a66de272acc9c56d8275906cba02cf2",
+    "recurrent_16004/separate/novel/evaluations.json": "1521ed96d3ac3431cf322b5b623b56562c731ef1364db63f3f4f27b429bc076b",
+    "recurrent_16004/separate/novel/evaluations.npz": "bfbc3419a866d684a0a8c35f1aab4f5283fdfbe9448c45e5ea59cb56c80e0bb2",
+    "recurrent_16004/separate/return/evaluations.json": "9e202257b0bf6540ed70d9c24a8f89ab1e750f0ead3013e8afef4c45cd9fe8d7",
+    "recurrent_16004/separate/return/evaluations.npz": "e3355179503876f1b1a7d1cab6df597cc8ba0aaffde87309c87d5c489d68c775",
+    "recurrent_16005/joint/novel/checkpoint.pt": "8bd36648f7c5bdb5fe3f90e59db11931eeb5c7e20f986b494eff78265209bfeb",
+    "recurrent_16005/joint/return/checkpoint.pt": "e97a1c55e3a076863b51dea3eebee8e609120fe3be360de409c017debf166f32",
+    "recurrent_16005/separate/novel/checkpoint.pt": "a3bfd484ef1711eea2243ba9a938eaf55a7124b458f9df5c5a654bde1562ec82",
+    "recurrent_16005/separate/return/checkpoint.pt": "3e216f1b6783fb1751a65c155fa85faaaef8b6f0bb312a64c03ffe56b99c559d",
+    "recurrent_16005/joint/novel/evaluations.json": "81e5926921a974d70bab6d57b7052663e0985a7dcd1781b158b0371912404505",
+    "recurrent_16005/joint/novel/evaluations.npz": "32c778e1121bd59b22b5d1731db31248ff18923575bfb9303b169e7b46e5b003",
+    "recurrent_16005/joint/return/evaluations.json": "6552f57253ad1207daa879b340cdb76be56e2546ce9e63ce9743102368d1faed",
+    "recurrent_16005/joint/return/evaluations.npz": "c1cae21ac27ac4f4866e379eba4fe77dfdf5a55978446d5c244e5cb4832fdb17",
+    "recurrent_16005/separate/novel/evaluations.json": "3765a8c248ed71d17c277ab725115abb7c8ff98ee2559f9e0c81d7753a5d75c7",
+    "recurrent_16005/separate/novel/evaluations.npz": "e61ff1d09ec9d7822eeba6fc7bbe1ae080a0f269288c0a83e303aa294b4e86e9",
+    "recurrent_16005/separate/return/evaluations.json": "690f6a78fc029158efe5501a343c24067bbffdc32701d48a08e500ab71d82eb9",
+    "recurrent_16005/separate/return/evaluations.npz": "bbb8416219cfd90c47bda57b0dde1ece9ceb71e743d91d4e5034947869b368b8",
+    "recurrent_16006/joint/novel/checkpoint.pt": "4136f1291ff2b05acf9e95bbcb214a2bab99fe9c5e215f802e79bbb334a7d124",
+    "recurrent_16006/joint/return/checkpoint.pt": "ed851940a7a9ec129159c8866d52007f0431557d39693a0ce53ae2333cdfd06a",
+    "recurrent_16006/separate/novel/checkpoint.pt": "de16c34a112a8f6227dd93423c663173210018b516244017fff413e02185dd8e",
+    "recurrent_16006/separate/return/checkpoint.pt": "760efe74bf6f92b970bc055c509184e1d2a3ce10cb2daa33abaecf7f673d2de8",
+    "recurrent_16006/joint/novel/evaluations.json": "38a5e321f7d9cab81b661315982c0c9f85a5b18291db8b0e73e78027285acc3c",
+    "recurrent_16006/joint/novel/evaluations.npz": "b57c592a956990d19342e20eb68e68ded6a9c54b5889d50fa3531e48b8ad0938",
+    "recurrent_16006/joint/return/evaluations.json": "360e3525d2bf247b998f88d4edd2d6eb4253a01648c24f688bd4512bac752d97",
+    "recurrent_16006/joint/return/evaluations.npz": "0cbb967a3504ebb728d7a783bf59c1426af414e17c21750bc43af828072edaea",
+    "recurrent_16006/separate/novel/evaluations.json": "99da874be551cf609b74fb93d26edb02f85eec1bc33d7ee310067328641a4c47",
+    "recurrent_16006/separate/novel/evaluations.npz": "8f69de8d50f1c0f34a706be727e3037ee1ba7be48e22e997dd197526ea1191d7",
+    "recurrent_16006/separate/return/evaluations.json": "858691df1f8638e015df9666ab4310cad3e26b0d0c944950d754964168032f1a",
+    "recurrent_16006/separate/return/evaluations.npz": "d8ce540e28d7739f61b2f6f825c14a01d41b5f80ad71182dea1f2941994430c2"
+  },
+  "coverage": {
+    "jobs": 12,
+    "saved_states": 48,
+    "rows": 384,
+    "raw_metric_scalars": 12288,
+    "per_seed_groups": 240,
+    "original_full_byte_matches": 384,
+    "historical_trace_fields_byte_matched": 3072,
+    "frozen_input_pairs": 96,
+    "cross_checkpoint_frozen_input_pairs": 72,
+    "allocation_statistics": 10,
+    "conditional_decomposition_statistics": 640
+  },
+  "numeric_comparisons": 25818,
+  "maximum_absolute_discrepancy": 0.0,
+  "decomposition_maximum_closure_error": 2.7755575615628914e-17,
+  "decisions": {
+    "conditional": {
+      "metrics": {
+        "old_harm": {
+          "mean": 0.012873367783472167,
+          "lower": 0.004704532116006179,
+          "upper": 0.01925987729687032,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            0.010980007832201322,
+            -0.005684150774341673,
+            0.01588193567300998,
+            0.01841770151385079,
+            0.024258420989528615,
+            0.013386291466583974
+          ],
+          "positive": 5,
+          "negative": 1
+        },
+        "novel_benefit": {
+          "mean": 0.018926726006557214,
+          "lower": 0.006828112657499383,
+          "upper": 0.0331300259294843,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            0.020768624819403336,
+            0.013991170205324588,
+            0.021144103959229263,
+            0.01026854258744267,
+            -0.003737531807026323,
+            0.05112544627496976
+          ],
+          "positive": 5,
+          "negative": 1
+        },
+        "actual_separate_minus_joint": {
+          "mean": -0.048635178947198286,
+          "lower": -0.08703452591119747,
+          "upper": -0.013963810739155064,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            -0.12561738686513452,
+            -0.011654424156883558,
+            -0.019817662087444676,
+            -0.009184267789390355,
+            -0.02009185834428573,
+            -0.10544547444005087
+          ],
+          "positive": 0,
+          "negative": 6
+        },
+        "refreshed_support_gain": {
+          "mean": 0.2596029100484942,
+          "lower": 0.20871873276073347,
+          "upper": 0.3062933037297521,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            0.16178265987461432,
+            0.27052646329457275,
+            0.3283375768578599,
+            0.3141431933949606,
+            0.2889804917559441,
+            0.19384707511301336
+          ],
+          "positive": 6,
+          "negative": 0
+        },
+        "refreshed_separate_minus_joint": {
+          "mean": -0.038583709180618535,
+          "lower": -0.08813044862517434,
+          "upper": -0.006974646026227524,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            -0.15806445754744963,
+            0.005195115114412549,
+            -0.013644637538128418,
+            -0.009346034416648885,
+            -0.03159864715391986,
+            -0.02404359354197695
+          ],
+          "positive": 1,
+          "negative": 5
+        }
+      },
+      "split_gates": {
+        "old_harm_mean": true,
+        "old_harm_consistency": true,
+        "novel_benefit_mean": true,
+        "novel_benefit_consistency": true
+      },
+      "context_gates": {
+        "actual_return_disadvantage": false,
+        "refresh_gain_mean": true,
+        "refresh_gain_consistency": true,
+        "refreshed_gap_tolerance": true
+      },
+      "allocation": "GO",
+      "context_evaluated_for_allocation": false,
+      "seeds_with_refresh_gain_at_least_005": 6
+    },
+    "recurrent": {
+      "metrics": {
+        "old_harm": {
+          "mean": 0.08472690759816,
+          "lower": 0.07437987697618773,
+          "upper": 0.09620105155348639,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            0.07338324692802234,
+            0.08922448535279312,
+            0.06737612774358892,
+            0.093741314477232,
+            0.10760995386621841,
+            0.07702631722110526
+          ],
+          "positive": 6,
+          "negative": 0
+        },
+        "novel_benefit": {
+          "mean": 0.029783651170770625,
+          "lower": 0.015567736927030262,
+          "upper": 0.045098003540668424,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            0.050518748284062234,
+            0.026519966020378663,
+            0.02366530543465231,
+            0.013223976077133395,
+            0.006518614890832761,
+            0.058255296317564376
+          ],
+          "positive": 6,
+          "negative": 0
+        },
+        "actual_separate_minus_joint": {
+          "mean": -0.029917669230575022,
+          "lower": -0.054522137698708034,
+          "upper": -0.012621645657431494,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            -0.033251606502116116,
+            -0.013174155193834192,
+            -0.08620813298137103,
+            -0.02884093157193457,
+            -0.0064158891740844215,
+            -0.011615299960109793
+          ],
+          "positive": 0,
+          "negative": 6
+        },
+        "refreshed_support_gain": {
+          "mean": 0.04577649489495907,
+          "lower": 0.0026845170137572336,
+          "upper": 0.1030161637469612,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            -0.0006640425467593913,
+            0.0627685173046747,
+            0.17910126197777293,
+            0.018688721790533047,
+            0.03404272470177766,
+            -0.01927821385824452
+          ],
+          "positive": 4,
+          "negative": 2
+        },
+        "refreshed_separate_minus_joint": {
+          "mean": -0.04269104549999898,
+          "lower": -0.10398412473755092,
+          "upper": -0.0017420987218017454,
+          "n": 6,
+          "seeds": [
+            16001,
+            16002,
+            16003,
+            16004,
+            16005,
+            16006
+          ],
+          "values": [
+            -0.012205490472101566,
+            0.008325220937279443,
+            -0.1858193724800669,
+            -0.03726136072824593,
+            -0.039414949567611435,
+            0.010229679310752526
+          ],
+          "positive": 2,
+          "negative": 4
+        }
+      },
+      "split_gates": {
+        "old_harm_mean": true,
+        "old_harm_consistency": true,
+        "novel_benefit_mean": true,
+        "novel_benefit_consistency": true
+      },
+      "context_gates": {
+        "actual_return_disadvantage": false,
+        "refresh_gain_mean": true,
+        "refresh_gain_consistency": false,
+        "refreshed_gap_tolerance": true
+      },
+      "allocation": "GO",
+      "context_evaluated_for_allocation": false,
+      "seeds_with_refresh_gain_at_least_005": 4
+    }
+  },
+  "conditional_return_entry_separate": [
+    {
+      "arm": "separate",
+      "target": "return_entry",
+      "context": "actual",
+      "flipped": false,
+      "terms": {
+        "content_at_core_route": {
+          "brier": {
+            "mean": 0.028302160435920407,
+            "lower": -0.0004247019704291625,
+            "upper": 0.06749377185930595,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.0005065656119281892,
+              0.046339898660098466,
+              0.0019276638922957057,
+              0.010995909020446448,
+              -0.008011154750513227,
+              0.11906721140512325
+            ],
+            "positive": 4,
+            "negative": 2
+          },
+          "focus_brier": {
+            "mean": 0.028302160435920407,
+            "lower": -0.0004247019704291625,
+            "upper": 0.06749377185930595,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.0005065656119281892,
+              0.046339898660098466,
+              0.0019276638922957057,
+              0.010995909020446448,
+              -0.008011154750513227,
+              0.11906721140512325
+            ],
+            "positive": 4,
+            "negative": 2
+          },
+          "survival": {
+            "mean": -0.019205729166666668,
+            "lower": -0.048828125,
+            "upper": 0.0013020833333333333,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.021484375,
+              -0.01171875,
+              -0.005859375,
+              0.013671875,
+              -0.001953125,
+              -0.087890625
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "focus_survival": {
+            "mean": -0.019205729166666668,
+            "lower": -0.048828125,
+            "upper": 0.0013020833333333333,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.021484375,
+              -0.01171875,
+              -0.005859375,
+              0.013671875,
+              -0.001953125,
+              -0.087890625
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "valid_brier": {
+            "mean": 0.028302160435920407,
+            "lower": -0.0004247019704291625,
+            "upper": 0.06749377185930595,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.0005065656119281892,
+              0.046339898660098466,
+              0.0019276638922957057,
+              0.010995909020446448,
+              -0.008011154750513227,
+              0.11906721140512325
+            ],
+            "positive": 4,
+            "negative": 2
+          },
+          "valid_survival": {
+            "mean": -0.019205729166666668,
+            "lower": -0.048828125,
+            "upper": 0.0013020833333333333,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.021484375,
+              -0.01171875,
+              -0.005859375,
+              0.013671875,
+              -0.001953125,
+              -0.087890625
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "no_transfer": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          },
+          "clairvoyant_upper": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          }
+        },
+        "route_on_core_content": {
+          "brier": {
+            "mean": -0.008734419556539358,
+            "lower": -0.02622100060393989,
+            "upper": 6.888111156868233e-05,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.052364407082026776,
+              0.000190672120349622,
+              9.888496910193112e-09,
+              1.5966270107969915e-05,
+              0.0,
+              -0.0002487585361638789
+            ],
+            "positive": 3,
+            "negative": 2
+          },
+          "focus_brier": {
+            "mean": -0.008734419556539358,
+            "lower": -0.02622100060393989,
+            "upper": 6.888111156868233e-05,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.052364407082026776,
+              0.000190672120349622,
+              9.888496910193112e-09,
+              1.5966270107969915e-05,
+              0.0,
+              -0.0002487585361638789
+            ],
+            "positive": 3,
+            "negative": 2
+          },
+          "survival": {
+            "mean": 0.013671875,
+            "lower": 0.0,
+            "upper": 0.041015625,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.08203125,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 1,
+            "negative": 0
+          },
+          "focus_survival": {
+            "mean": 0.013671875,
+            "lower": 0.0,
+            "upper": 0.041015625,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.08203125,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 1,
+            "negative": 0
+          },
+          "valid_brier": {
+            "mean": -0.008734419556539358,
+            "lower": -0.02622100060393989,
+            "upper": 6.888111156868233e-05,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.052364407082026776,
+              0.000190672120349622,
+              9.888496910193112e-09,
+              1.5966270107969915e-05,
+              0.0,
+              -0.0002487585361638789
+            ],
+            "positive": 3,
+            "negative": 2
+          },
+          "valid_survival": {
+            "mean": 0.013671875,
+            "lower": 0.0,
+            "upper": 0.041015625,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.08203125,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 1,
+            "negative": 0
+          },
+          "no_transfer": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          },
+          "clairvoyant_upper": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          }
+        },
+        "interaction": {
+          "brier": {
+            "mean": 0.000631833668340275,
+            "lower": 1.3481123082489018e-05,
+            "upper": 0.0018254170112651374,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.003580750240540831,
+              8.279407961581109e-05,
+              4.235324868595569e-10,
+              -9.538823266819207e-07,
+              0.0,
+              0.00012841114867920278
+            ],
+            "positive": 4,
+            "negative": 1
+          },
+          "focus_brier": {
+            "mean": 0.000631833668340275,
+            "lower": 1.3481123082489018e-05,
+            "upper": 0.0018254170112651374,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.003580750240540831,
+              8.279407961581109e-05,
+              4.235324868595569e-10,
+              -9.538823266819207e-07,
+              0.0,
+              0.00012841114867920278
+            ],
+            "positive": 4,
+            "negative": 1
+          },
+          "survival": {
+            "mean": -0.007486979166666667,
+            "lower": -0.021809895833333332,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.04296875,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.001953125
+            ],
+            "positive": 0,
+            "negative": 2
+          },
+          "focus_survival": {
+            "mean": -0.007486979166666667,
+            "lower": -0.021809895833333332,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.04296875,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.001953125
+            ],
+            "positive": 0,
+            "negative": 2
+          },
+          "valid_brier": {
+            "mean": 0.000631833668340275,
+            "lower": 1.3481123082489018e-05,
+            "upper": 0.0018254170112651374,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.003580750240540831,
+              8.279407961581109e-05,
+              4.235324868595569e-10,
+              -9.538823266819207e-07,
+              0.0,
+              0.00012841114867920278
+            ],
+            "positive": 4,
+            "negative": 1
+          },
+          "valid_survival": {
+            "mean": -0.007486979166666667,
+            "lower": -0.021809895833333332,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.04296875,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.001953125
+            ],
+            "positive": 0,
+            "negative": 2
+          },
+          "no_transfer": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          },
+          "clairvoyant_upper": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          }
+        },
+        "total_full_minus_core": {
+          "brier": {
+            "mean": 0.020199574547721325,
+            "lower": -0.01789013050772777,
+            "upper": 0.06479079067061609,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.049290222453414134,
+              0.0466133648600639,
+              0.0019276742043251027,
+              0.011010921408227736,
+              -0.008011154750513227,
+              0.11894686401763857
+            ],
+            "positive": 4,
+            "negative": 2
+          },
+          "focus_brier": {
+            "mean": 0.020199574547721325,
+            "lower": -0.01789013050772777,
+            "upper": 0.06479079067061609,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.049290222453414134,
+              0.0466133648600639,
+              0.0019276742043251027,
+              0.011010921408227736,
+              -0.008011154750513227,
+              0.11894686401763857
+            ],
+            "positive": 4,
+            "negative": 2
+          },
+          "survival": {
+            "mean": -0.013020833333333334,
+            "lower": -0.044921875,
+            "upper": 0.009114583333333334,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.017578125,
+              -0.01171875,
+              -0.005859375,
+              0.013671875,
+              -0.001953125,
+              -0.08984375
+            ],
+            "positive": 2,
+            "negative": 4
+          },
+          "focus_survival": {
+            "mean": -0.013020833333333334,
+            "lower": -0.044921875,
+            "upper": 0.009114583333333334,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.017578125,
+              -0.01171875,
+              -0.005859375,
+              0.013671875,
+              -0.001953125,
+              -0.08984375
+            ],
+            "positive": 2,
+            "negative": 4
+          },
+          "valid_brier": {
+            "mean": 0.020199574547721325,
+            "lower": -0.01789013050772777,
+            "upper": 0.06479079067061609,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.049290222453414134,
+              0.0466133648600639,
+              0.0019276742043251027,
+              0.011010921408227736,
+              -0.008011154750513227,
+              0.11894686401763857
+            ],
+            "positive": 4,
+            "negative": 2
+          },
+          "valid_survival": {
+            "mean": -0.013020833333333334,
+            "lower": -0.044921875,
+            "upper": 0.009114583333333334,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.017578125,
+              -0.01171875,
+              -0.005859375,
+              0.013671875,
+              -0.001953125,
+              -0.08984375
+            ],
+            "positive": 2,
+            "negative": 4
+          },
+          "no_transfer": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          },
+          "clairvoyant_upper": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          }
+        }
+      }
+    },
+    {
+      "arm": "separate",
+      "target": "return_entry",
+      "context": "refreshed",
+      "flipped": false,
+      "terms": {
+        "content_at_core_route": {
+          "brier": {
+            "mean": 0.010797116773857932,
+            "lower": 0.0021938820634408835,
+            "upper": 0.018425443194401606,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.008403547837958589,
+              -0.007108790830180026,
+              0.01588074067174547,
+              0.018233187829051103,
+              0.02425836539795953,
+              0.005115649736612923
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "focus_brier": {
+            "mean": 0.010797116773857932,
+            "lower": 0.0021938820634408835,
+            "upper": 0.018425443194401606,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.008403547837958589,
+              -0.007108790830180026,
+              0.01588074067174547,
+              0.018233187829051103,
+              0.02425836539795953,
+              0.005115649736612923
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "survival": {
+            "mean": -0.018717447916666668,
+            "lower": -0.044921875,
+            "upper": 0.009928385416666666,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.037109375,
+              0.04296875,
+              -0.01953125,
+              -0.072265625,
+              -0.013671875,
+              -0.0126953125
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "focus_survival": {
+            "mean": -0.018717447916666668,
+            "lower": -0.044921875,
+            "upper": 0.009928385416666666,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.037109375,
+              0.04296875,
+              -0.01953125,
+              -0.072265625,
+              -0.013671875,
+              -0.0126953125
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "valid_brier": {
+            "mean": 0.010797116773857932,
+            "lower": 0.0021938820634408835,
+            "upper": 0.018425443194401606,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.008403547837958589,
+              -0.007108790830180026,
+              0.01588074067174547,
+              0.018233187829051103,
+              0.02425836539795953,
+              0.005115649736612923
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "valid_survival": {
+            "mean": -0.018717447916666668,
+            "lower": -0.044921875,
+            "upper": 0.009928385416666666,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.037109375,
+              0.04296875,
+              -0.01953125,
+              -0.072265625,
+              -0.013671875,
+              -0.0126953125
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "no_transfer": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          },
+          "clairvoyant_upper": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          }
+        },
+        "route_on_core_content": {
+          "brier": {
+            "mean": 0.0007309936499238154,
+            "lower": -0.0006107045836996802,
+            "upper": 0.0026600554038237584,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.005080771547792448,
+              -0.001484698646322058,
+              9.344294017582522e-07,
+              7.095735040994755e-05,
+              2.0561304409083547e-08,
+              0.0007179766569563872
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "focus_brier": {
+            "mean": 0.0007309936499238154,
+            "lower": -0.0006107045836996802,
+            "upper": 0.0026600554038237584,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.005080771547792448,
+              -0.001484698646322058,
+              9.344294017582522e-07,
+              7.095735040994755e-05,
+              2.0561304409083547e-08,
+              0.0007179766569563872
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "survival": {
+            "mean": -0.007649739583333333,
+            "lower": -0.017740885416666668,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.0302734375,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.015625
+            ],
+            "positive": 0,
+            "negative": 2
+          },
+          "focus_survival": {
+            "mean": -0.007649739583333333,
+            "lower": -0.017740885416666668,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.0302734375,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.015625
+            ],
+            "positive": 0,
+            "negative": 2
+          },
+          "valid_brier": {
+            "mean": 0.0007309936499238154,
+            "lower": -0.0006107045836996802,
+            "upper": 0.0026600554038237584,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.005080771547792448,
+              -0.001484698646322058,
+              9.344294017582522e-07,
+              7.095735040994755e-05,
+              2.0561304409083547e-08,
+              0.0007179766569563872
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "valid_survival": {
+            "mean": -0.007649739583333333,
+            "lower": -0.017740885416666668,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.0302734375,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              -0.015625
+            ],
+            "positive": 0,
+            "negative": 2
+          },
+          "no_transfer": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          },
+          "clairvoyant_upper": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          }
+        },
+        "interaction": {
+          "brier": {
+            "mean": 0.0013452573596904234,
+            "lower": -0.0008157893567195979,
+            "upper": 0.004261233996955628,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.002504311553549715,
+              0.0029093387021604245,
+              2.605718627535225e-07,
+              0.00011355633438973889,
+              3.5030264675106615e-08,
+              0.007552665073014664
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "focus_brier": {
+            "mean": 0.0013452573596904234,
+            "lower": -0.0008157893567195979,
+            "upper": 0.004261233996955628,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.002504311553549715,
+              0.0029093387021604245,
+              2.605718627535225e-07,
+              0.00011355633438973889,
+              3.5030264675106615e-08,
+              0.007552665073014664
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "survival": {
+            "mean": 0.004557291666666667,
+            "lower": 0.0011393229166666667,
+            "upper": 0.008138020833333334,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0107421875,
+              0.009765625,
+              0.0,
+              0.001953125,
+              0.0,
+              0.0048828125
+            ],
+            "positive": 4,
+            "negative": 0
+          },
+          "focus_survival": {
+            "mean": 0.004557291666666667,
+            "lower": 0.0011393229166666667,
+            "upper": 0.008138020833333334,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0107421875,
+              0.009765625,
+              0.0,
+              0.001953125,
+              0.0,
+              0.0048828125
+            ],
+            "positive": 4,
+            "negative": 0
+          },
+          "valid_brier": {
+            "mean": 0.0013452573596904234,
+            "lower": -0.0008157893567195979,
+            "upper": 0.004261233996955628,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.002504311553549715,
+              0.0029093387021604245,
+              2.605718627535225e-07,
+              0.00011355633438973889,
+              3.5030264675106615e-08,
+              0.007552665073014664
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "valid_survival": {
+            "mean": 0.004557291666666667,
+            "lower": 0.0011393229166666667,
+            "upper": 0.008138020833333334,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0107421875,
+              0.009765625,
+              0.0,
+              0.001953125,
+              0.0,
+              0.0048828125
+            ],
+            "positive": 4,
+            "negative": 0
+          },
+          "no_transfer": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          },
+          "clairvoyant_upper": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          }
+        },
+        "total_full_minus_core": {
+          "brier": {
+            "mean": 0.012873367783472167,
+            "lower": 0.004704532116006179,
+            "upper": 0.01925987729687032,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.010980007832201322,
+              -0.005684150774341673,
+              0.01588193567300998,
+              0.01841770151385079,
+              0.024258420989528615,
+              0.013386291466583974
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "focus_brier": {
+            "mean": 0.012873367783472167,
+            "lower": 0.004704532116006179,
+            "upper": 0.01925987729687032,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.010980007832201322,
+              -0.005684150774341673,
+              0.01588193567300998,
+              0.01841770151385079,
+              0.024258420989528615,
+              0.013386291466583974
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "survival": {
+            "mean": -0.021809895833333332,
+            "lower": -0.05078125,
+            "upper": 0.0107421875,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.056640625,
+              0.052734375,
+              -0.01953125,
+              -0.0703125,
+              -0.013671875,
+              -0.0234375
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "focus_survival": {
+            "mean": -0.021809895833333332,
+            "lower": -0.05078125,
+            "upper": 0.0107421875,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.056640625,
+              0.052734375,
+              -0.01953125,
+              -0.0703125,
+              -0.013671875,
+              -0.0234375
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "valid_brier": {
+            "mean": 0.012873367783472167,
+            "lower": 0.004704532116006179,
+            "upper": 0.01925987729687032,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.010980007832201322,
+              -0.005684150774341673,
+              0.01588193567300998,
+              0.01841770151385079,
+              0.024258420989528615,
+              0.013386291466583974
+            ],
+            "positive": 5,
+            "negative": 1
+          },
+          "valid_survival": {
+            "mean": -0.021809895833333332,
+            "lower": -0.05078125,
+            "upper": 0.0107421875,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              -0.056640625,
+              0.052734375,
+              -0.01953125,
+              -0.0703125,
+              -0.013671875,
+              -0.0234375
+            ],
+            "positive": 1,
+            "negative": 5
+          },
+          "no_transfer": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          },
+          "clairvoyant_upper": {
+            "mean": 0.0,
+            "lower": 0.0,
+            "upper": 0.0,
+            "n": 6,
+            "seeds": [
+              16001,
+              16002,
+              16003,
+              16004,
+              16005,
+              16006
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "positive": 0,
+            "negative": 0
+          }
+        }
+      }
+    }
+  ],
+  "job_checks": [
+    {
+      "model": "conditional",
+      "seed": 16001,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "conditional",
+      "seed": 16002,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "conditional",
+      "seed": 16003,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "conditional",
+      "seed": 16004,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "conditional",
+      "seed": 16005,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "conditional",
+      "seed": 16006,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "recurrent",
+      "seed": 16001,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "recurrent",
+      "seed": 16002,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "recurrent",
+      "seed": 16003,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "recurrent",
+      "seed": 16004,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "recurrent",
+      "seed": 16005,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    },
+    {
+      "model": "recurrent",
+      "seed": 16006,
+      "rows": 32,
+      "checkpoint_states": 4,
+      "frozen_pairs": 8,
+      "cross_checkpoint_frozen_pairs": 6
+    }
+  ],
+  "elapsed_seconds": 4.9805840000008175,
+  "claim_limits": "GO is a retrospective effort-allocation heuristic, not a new acquisition/retention pass or deployable policy. Actual return-entry separate-minus-joint Brier is favorable in all six seeds of both architectures; this does not reverse the earlier return-trajectory AUC failure. Refreshed contexts are evaluator supplied. Crossover decomposition includes interaction and does not identify a unique learning cause. Frozen-input invariance here checks raw core forecast hashes; unchanged checkpoint bytes and reported state/RNG signatures are bound, but this NumPy script does not inspect tensor contents, reconstruct forecasts, rerun physics, unpickle models, retrain, or prove historical wall-clock file creation order."
+}

@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-09-28T00:27:16.758686+00:00",
+  "passed": true,
+  "old_report_files_checked": 655,
+  "changed_old_reports": [],
+  "run_files_after_readonly_analysis": {
+    "smoke": {
+      "files_checked": 104,
+      "unchanged": true,
+      "changed": []
+    },
+    "diagnostic": {
+      "files_checked": 1326,
+      "unchanged": true,
+      "changed": []
+    }
+  }
+}

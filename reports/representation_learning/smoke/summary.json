@@ -1,0 +1,1321 @@
+{
+  "eligible": false,
+  "raw_passed": false,
+  "decision": "INELIGIBLE",
+  "groups": [
+    {
+      "name": "fresh/stage_1/marginal_gain",
+      "metric": {
+        "mean": 0.005960843228248358,
+        "lower": 0.005960843228248358,
+        "upper": 0.005960843228248358,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.005960843228248358
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/stage_1/cue_benefit",
+      "metric": {
+        "mean": 6.072341709795204e-06,
+        "lower": 6.072341709795204e-06,
+        "upper": 6.072341709795204e-06,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          6.072341709795204e-06
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/stage_2/marginal_gain",
+      "metric": {
+        "mean": -0.011983330992375224,
+        "lower": -0.011983330992375224,
+        "upper": -0.011983330992375224,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          -0.011983330992375224
+        ],
+        "n": 1,
+        "negative": 1
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/stage_2/cue_benefit",
+      "metric": {
+        "mean": -2.2947874551981773e-06,
+        "lower": -2.2947874551981773e-06,
+        "upper": -2.2947874551981773e-06,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          -2.2947874551981773e-06
+        ],
+        "n": 1,
+        "negative": 1
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/stage_3/marginal_gain",
+      "metric": {
+        "mean": -0.017573094129369887,
+        "lower": -0.017573094129369887,
+        "upper": -0.017573094129369887,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          -0.017573094129369887
+        ],
+        "n": 1,
+        "negative": 1
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/stage_3/cue_benefit",
+      "metric": {
+        "mean": -9.92320551951309e-07,
+        "lower": -9.92320551951309e-07,
+        "upper": -9.92320551951309e-07,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          -9.92320551951309e-07
+        ],
+        "n": 1,
+        "negative": 1
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/cue_0/marginal_gain",
+      "metric": {
+        "mean": -0.017573094129369887,
+        "lower": -0.017573094129369887,
+        "upper": -0.017573094129369887,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          -0.017573094129369887
+        ],
+        "n": 1,
+        "negative": 1
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/cue_0/cue_benefit",
+      "metric": {
+        "mean": -9.92320551951309e-07,
+        "lower": -9.92320551951309e-07,
+        "upper": -9.92320551951309e-07,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          -9.92320551951309e-07
+        ],
+        "n": 1,
+        "negative": 1
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/cue_1/marginal_gain",
+      "metric": {
+        "mean": 0.005960843228248358,
+        "lower": 0.005960843228248358,
+        "upper": 0.005960843228248358,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.005960843228248358
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/cue_1/cue_benefit",
+      "metric": {
+        "mean": 6.072341709795204e-06,
+        "lower": 6.072341709795204e-06,
+        "upper": 6.072341709795204e-06,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          6.072341709795204e-06
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/cue_2/marginal_gain",
+      "metric": {
+        "mean": -0.011983330992375224,
+        "lower": -0.011983330992375224,
+        "upper": -0.011983330992375224,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          -0.011983330992375224
+        ],
+        "n": 1,
+        "negative": 1
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "fresh/cue_2/cue_benefit",
+      "metric": {
+        "mean": -2.2947874551981773e-06,
+        "lower": -2.2947874551981773e-06,
+        "upper": -2.2947874551981773e-06,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          -2.2947874551981773e-06
+        ],
+        "n": 1,
+        "negative": 1
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_0/marginal_gain",
+      "metric": {
+        "mean": 0.021597236049592183,
+        "lower": 0.021597236049592183,
+        "upper": 0.021597236049592183,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.021597236049592183
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_0/absolute_brier",
+      "metric": {
+        "mean": 0.2380278577865268,
+        "lower": 0.2380278577865268,
+        "upper": 0.2380278577865268,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.2380278577865268
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_1/marginal_gain",
+      "metric": {
+        "mean": 0.007726470636469612,
+        "lower": 0.007726470636469612,
+        "upper": 0.007726470636469612,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.007726470636469612
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_1/absolute_brier",
+      "metric": {
+        "mean": 0.2369862029746415,
+        "lower": 0.2369862029746415,
+        "upper": 0.2369862029746415,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.2369862029746415
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_2/marginal_gain",
+      "metric": {
+        "mean": 0.001973612083354531,
+        "lower": 0.001973612083354531,
+        "upper": 0.001973612083354531,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.001973612083354531
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_2/absolute_brier",
+      "metric": {
+        "mean": 0.23654966333709576,
+        "lower": 0.23654966333709576,
+        "upper": 0.23654966333709576,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.23654966333709576
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_1/cue_1/cue_benefit",
+      "metric": {
+        "mean": 6.18070965074935e-06,
+        "lower": 6.18070965074935e-06,
+        "upper": 6.18070965074935e-06,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          6.18070965074935e-06
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_3/marginal_gain",
+      "metric": {
+        "mean": 0.012252048699975926,
+        "lower": 0.012252048699975926,
+        "upper": 0.012252048699975926,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.012252048699975926
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_3/absolute_brier",
+      "metric": {
+        "mean": 0.23253990178288564,
+        "lower": 0.23253990178288564,
+        "upper": 0.23253990178288564,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.23253990178288564
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_2/cue_1/cue_benefit",
+      "metric": {
+        "mean": 1.0792012474281076e-05,
+        "lower": 1.0792012474281076e-05,
+        "upper": 1.0792012474281076e-05,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          1.0792012474281076e-05
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_2/cue_2/cue_benefit",
+      "metric": {
+        "mean": 6.403070546501244e-06,
+        "lower": 6.403070546501244e-06,
+        "upper": 6.403070546501244e-06,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          6.403070546501244e-06
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_4/marginal_gain",
+      "metric": {
+        "mean": 0.0030864596489154905,
+        "lower": 0.0030864596489154905,
+        "upper": 0.0030864596489154905,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.0030864596489154905
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_4/absolute_brier",
+      "metric": {
+        "mean": 0.23300012979638124,
+        "lower": 0.23300012979638124,
+        "upper": 0.23300012979638124,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          0.23300012979638124
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_3/cue_0/cue_benefit",
+      "metric": {
+        "mean": 1.8739027074499148e-06,
+        "lower": 1.8739027074499148e-06,
+        "upper": 1.8739027074499148e-06,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          1.8739027074499148e-06
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_3/cue_1/cue_benefit",
+      "metric": {
+        "mean": 1.1392901799384125e-05,
+        "lower": 1.1392901799384125e-05,
+        "upper": 1.1392901799384125e-05,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          1.1392901799384125e-05
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_3/cue_2/cue_benefit",
+      "metric": {
+        "mean": 6.727336370915271e-06,
+        "lower": 6.727336370915271e-06,
+        "upper": 6.727336370915271e-06,
+        "seeds": [
+          18099
+        ],
+        "values": [
+          6.727336370915271e-06
+        ],
+        "n": 1,
+        "negative": 0
+      },
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    }
+  ],
+  "per_phase": [
+    {
+      "seed": 18099,
+      "arm": "outcome",
+      "phase": "fresh_1",
+      "introduced_cue": 1,
+      "size": 64,
+      "stream": {
+        "brier": 0.2493636116428206,
+        "focus_brier": 0.25195166351636455,
+        "survival": 0.453125,
+        "focus_survival": 0.53125,
+        "valid_brier": 0.2442786842983822,
+        "valid_survival": 0.4375,
+        "no_transfer": 0.578125,
+        "clairvoyant_upper": 0.703125
+      },
+      "end_targets": [
+        {
+          "law": {
+            "mode": 0,
+            "active": [
+              1
+            ],
+            "revised": false,
+            "noise": 0.0
+          },
+          "metrics": {
+            "brier": 0.24897759260733338,
+            "focus_brier": 0.24897759260733338,
+            "survival": 0.609375,
+            "focus_survival": 0.609375,
+            "valid_brier": 0.24562605042206456,
+            "valid_survival": 0.625,
+            "no_transfer": 0.609375,
+            "clairvoyant_upper": 0.78125,
+            "marginal_brier": 0.25493843583558173
+          },
+          "marginal_gain": 0.005960843228248358,
+          "cue_benefits": {
+            "1": 6.072341709795204e-06
+          }
+        }
+      ],
+      "valid_after": null,
+      "diagnostics": {
+        "initial_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "final_hash": "b8e907d71d300156ebf839d286b89aa0f55e1f461070ffeacd9a8770b1eb7211",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 23728,
+        "peak_replay_bytes": 43264,
+        "memory_ids": [
+          0,
+          6,
+          4,
+          7
+        ],
+        "packets_seen": 8,
+        "history_bytes": 6176,
+        "encoder_displacement": 0.36276113646763153,
+        "cost": {
+          "arrivals": 64,
+          "optimizer_steps": 8,
+          "query_presentations": 128,
+          "support_presentations": 128,
+          "replay_presentations": 56,
+          "duplicate_presentations": 8,
+          "training_seconds": 0.08720059999905061,
+          "outcome_loss_sum": 5.578192710876465,
+          "reconstruction_loss_sum": 0.0,
+          "objective_loss_sum": 5.578192710876465,
+          "encoder_forward_calls": 16,
+          "encoder_presentations": 256,
+          "auxiliary_forward_calls": 0,
+          "auxiliary_reconstructions": 0,
+          "reconstruction_pixels": 0,
+          "auxiliary_backward_steps": 0,
+          "predictive_parameter_updates": 23672,
+          "auxiliary_parameter_updates": 0
+        },
+        "initial_encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "encoder_hash": "251d1aea2f16173254774affe2adf7f4e85d39254e80099cd00a59dd0d25a851",
+        "arm": "outcome",
+        "initial_predictor_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "initial_auxiliary_hash": null,
+        "predictive_parameters": 2959,
+        "auxiliary_parameters": 0,
+        "replay_capacity": 4,
+        "effective_updates_per_batch": 1,
+        "mean_outcome_loss": 0.6972740888595581,
+        "mean_reconstruction_loss": null,
+        "mean_objective_loss": 0.6972740888595581
+      },
+      "start_diagnostics": {
+        "initial_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "final_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 0,
+        "peak_replay_bytes": 0,
+        "memory_ids": [],
+        "packets_seen": 0,
+        "history_bytes": 0,
+        "encoder_displacement": 0.0,
+        "cost": {
+          "arrivals": 0,
+          "optimizer_steps": 0,
+          "query_presentations": 0,
+          "support_presentations": 0,
+          "replay_presentations": 0,
+          "duplicate_presentations": 0,
+          "training_seconds": 0.0,
+          "outcome_loss_sum": 0.0,
+          "reconstruction_loss_sum": 0.0,
+          "objective_loss_sum": 0.0,
+          "encoder_forward_calls": 0,
+          "encoder_presentations": 0,
+          "auxiliary_forward_calls": 0,
+          "auxiliary_reconstructions": 0,
+          "reconstruction_pixels": 0,
+          "auxiliary_backward_steps": 0,
+          "predictive_parameter_updates": 0,
+          "auxiliary_parameter_updates": 0
+        },
+        "initial_encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "arm": "outcome",
+        "initial_predictor_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "initial_auxiliary_hash": null,
+        "predictive_parameters": 2959,
+        "auxiliary_parameters": 0,
+        "replay_capacity": 4,
+        "effective_updates_per_batch": 1,
+        "mean_outcome_loss": null,
+        "mean_reconstruction_loss": null,
+        "mean_objective_loss": null
+      },
+      "elapsed_seconds": 0.20219930000894237
+    },
+    {
+      "seed": 18099,
+      "arm": "outcome",
+      "phase": "fresh_2",
+      "introduced_cue": 2,
+      "size": 64,
+      "stream": {
+        "brier": 0.2483803849393504,
+        "focus_brier": 0.24747476500080245,
+        "survival": 0.421875,
+        "focus_survival": 0.3958333333333333,
+        "valid_brier": 0.2510972447549942,
+        "valid_survival": 0.5,
+        "no_transfer": 0.5,
+        "clairvoyant_upper": 0.6875
+      },
+      "end_targets": [
+        {
+          "law": {
+            "mode": 0,
+            "active": [
+              1,
+              2
+            ],
+            "revised": false,
+            "noise": 0.0
+          },
+          "metrics": {
+            "brier": 0.24482590885312933,
+            "focus_brier": 0.24482590885312933,
+            "survival": 0.546875,
+            "focus_survival": 0.546875,
+            "valid_brier": 0.24343288028589646,
+            "valid_survival": 0.625,
+            "no_transfer": 0.484375,
+            "clairvoyant_upper": 0.765625,
+            "marginal_brier": 0.2328425778607541
+          },
+          "marginal_gain": -0.011983330992375224,
+          "cue_benefits": {
+            "1": -2.413999318934268e-05,
+            "2": -2.2947874551981773e-06
+          }
+        }
+      ],
+      "valid_after": null,
+      "diagnostics": {
+        "initial_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "final_hash": "6fbc4f75c5e866cda42b4035dc0b20e2bb356ba86d4cc7d2ab86deb5a4a863a7",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 23728,
+        "peak_replay_bytes": 43264,
+        "memory_ids": [
+          0,
+          6,
+          4,
+          7
+        ],
+        "packets_seen": 8,
+        "history_bytes": 6176,
+        "encoder_displacement": 0.5054109441322668,
+        "cost": {
+          "arrivals": 64,
+          "optimizer_steps": 8,
+          "query_presentations": 128,
+          "support_presentations": 128,
+          "replay_presentations": 56,
+          "duplicate_presentations": 8,
+          "training_seconds": 0.051252999997814186,
+          "outcome_loss_sum": 5.464230239391327,
+          "reconstruction_loss_sum": 0.0,
+          "objective_loss_sum": 5.464230239391327,
+          "encoder_forward_calls": 16,
+          "encoder_presentations": 256,
+          "auxiliary_forward_calls": 0,
+          "auxiliary_reconstructions": 0,
+          "reconstruction_pixels": 0,
+          "auxiliary_backward_steps": 0,
+          "predictive_parameter_updates": 23672,
+          "auxiliary_parameter_updates": 0
+        },
+        "initial_encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "encoder_hash": "95bfe409f1ade70bb2d31f78163bbfd5585e595015a4a16e1e2f2e3ce259cc20",
+        "arm": "outcome",
+        "initial_predictor_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "initial_auxiliary_hash": null,
+        "predictive_parameters": 2959,
+        "auxiliary_parameters": 0,
+        "replay_capacity": 4,
+        "effective_updates_per_batch": 1,
+        "mean_outcome_loss": 0.6830287799239159,
+        "mean_reconstruction_loss": null,
+        "mean_objective_loss": 0.6830287799239159
+      },
+      "start_diagnostics": {
+        "initial_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "final_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 0,
+        "peak_replay_bytes": 0,
+        "memory_ids": [],
+        "packets_seen": 0,
+        "history_bytes": 0,
+        "encoder_displacement": 0.0,
+        "cost": {
+          "arrivals": 0,
+          "optimizer_steps": 0,
+          "query_presentations": 0,
+          "support_presentations": 0,
+          "replay_presentations": 0,
+          "duplicate_presentations": 0,
+          "training_seconds": 0.0,
+          "outcome_loss_sum": 0.0,
+          "reconstruction_loss_sum": 0.0,
+          "objective_loss_sum": 0.0,
+          "encoder_forward_calls": 0,
+          "encoder_presentations": 0,
+          "auxiliary_forward_calls": 0,
+          "auxiliary_reconstructions": 0,
+          "reconstruction_pixels": 0,
+          "auxiliary_backward_steps": 0,
+          "predictive_parameter_updates": 0,
+          "auxiliary_parameter_updates": 0
+        },
+        "initial_encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "arm": "outcome",
+        "initial_predictor_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "initial_auxiliary_hash": null,
+        "predictive_parameters": 2959,
+        "auxiliary_parameters": 0,
+        "replay_capacity": 4,
+        "effective_updates_per_batch": 1,
+        "mean_outcome_loss": null,
+        "mean_reconstruction_loss": null,
+        "mean_objective_loss": null
+      },
+      "elapsed_seconds": 0.1670664000121178
+    },
+    {
+      "seed": 18099,
+      "arm": "outcome",
+      "phase": "fresh_3",
+      "introduced_cue": 0,
+      "size": 64,
+      "stream": {
+        "brier": 0.2495758004357824,
+        "focus_brier": 0.24530105007322578,
+        "survival": 0.421875,
+        "focus_survival": 0.34375,
+        "valid_brier": 0.2551623638396823,
+        "valid_survival": 0.625,
+        "no_transfer": 0.4375,
+        "clairvoyant_upper": 0.640625
+      },
+      "end_targets": [
+        {
+          "law": {
+            "mode": 0,
+            "active": [
+              0,
+              1,
+              2
+            ],
+            "revised": false,
+            "noise": 0.0
+          },
+          "metrics": {
+            "brier": 0.24753851541410637,
+            "focus_brier": 0.24753851541410637,
+            "survival": 0.515625,
+            "focus_survival": 0.515625,
+            "valid_brier": 0.24550009379547472,
+            "valid_survival": 0.625,
+            "no_transfer": 0.484375,
+            "clairvoyant_upper": 0.75,
+            "marginal_brier": 0.2299654212847365
+          },
+          "marginal_gain": -0.017573094129369887,
+          "cue_benefits": {
+            "0": -9.92320551951309e-07,
+            "1": -6.445664325782641e-06,
+            "2": 1.3977655542368739e-05
+          }
+        }
+      ],
+      "valid_after": null,
+      "diagnostics": {
+        "initial_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "final_hash": "6167c1ee4a5842fa5d793200aacc0cd1bfa8a3097b66eccefcf650f1497ea33a",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 23728,
+        "peak_replay_bytes": 43264,
+        "memory_ids": [
+          0,
+          6,
+          4,
+          7
+        ],
+        "packets_seen": 8,
+        "history_bytes": 6176,
+        "encoder_displacement": 0.3721964944741859,
+        "cost": {
+          "arrivals": 64,
+          "optimizer_steps": 8,
+          "query_presentations": 128,
+          "support_presentations": 128,
+          "replay_presentations": 56,
+          "duplicate_presentations": 8,
+          "training_seconds": 0.05272099997091573,
+          "outcome_loss_sum": 5.531785011291504,
+          "reconstruction_loss_sum": 0.0,
+          "objective_loss_sum": 5.531785011291504,
+          "encoder_forward_calls": 16,
+          "encoder_presentations": 256,
+          "auxiliary_forward_calls": 0,
+          "auxiliary_reconstructions": 0,
+          "reconstruction_pixels": 0,
+          "auxiliary_backward_steps": 0,
+          "predictive_parameter_updates": 23672,
+          "auxiliary_parameter_updates": 0
+        },
+        "initial_encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "encoder_hash": "cd99a27d2df7bac1e070cc22c4d7ba173a4a6fd0af07018246021eae83b3c6ad",
+        "arm": "outcome",
+        "initial_predictor_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "initial_auxiliary_hash": null,
+        "predictive_parameters": 2959,
+        "auxiliary_parameters": 0,
+        "replay_capacity": 4,
+        "effective_updates_per_batch": 1,
+        "mean_outcome_loss": 0.691473126411438,
+        "mean_reconstruction_loss": null,
+        "mean_objective_loss": 0.691473126411438
+      },
+      "start_diagnostics": {
+        "initial_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "final_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 0,
+        "peak_replay_bytes": 0,
+        "memory_ids": [],
+        "packets_seen": 0,
+        "history_bytes": 0,
+        "encoder_displacement": 0.0,
+        "cost": {
+          "arrivals": 0,
+          "optimizer_steps": 0,
+          "query_presentations": 0,
+          "support_presentations": 0,
+          "replay_presentations": 0,
+          "duplicate_presentations": 0,
+          "training_seconds": 0.0,
+          "outcome_loss_sum": 0.0,
+          "reconstruction_loss_sum": 0.0,
+          "objective_loss_sum": 0.0,
+          "encoder_forward_calls": 0,
+          "encoder_presentations": 0,
+          "auxiliary_forward_calls": 0,
+          "auxiliary_reconstructions": 0,
+          "reconstruction_pixels": 0,
+          "auxiliary_backward_steps": 0,
+          "predictive_parameter_updates": 0,
+          "auxiliary_parameter_updates": 0
+        },
+        "initial_encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "arm": "outcome",
+        "initial_predictor_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "initial_auxiliary_hash": null,
+        "predictive_parameters": 2959,
+        "auxiliary_parameters": 0,
+        "replay_capacity": 4,
+        "effective_updates_per_batch": 1,
+        "mean_outcome_loss": null,
+        "mean_reconstruction_loss": null,
+        "mean_objective_loss": null
+      },
+      "elapsed_seconds": 0.17290399999183137
+    },
+    {
+      "seed": 18099,
+      "arm": "outcome",
+      "phase": "interleaved",
+      "introduced_cue": null,
+      "size": 320,
+      "stream": {
+        "brier": 0.24427684923511409,
+        "focus_brier": 0.24427684923511409,
+        "survival": 0.490625,
+        "focus_survival": 0.490625,
+        "valid_brier": 0.2438912342806044,
+        "valid_survival": 0.5625,
+        "no_transfer": 0.525,
+        "clairvoyant_upper": 0.740625
+      },
+      "end_targets": [
+        {
+          "law": {
+            "mode": 1,
+            "active": [],
+            "revised": false,
+            "noise": 0.0
+          },
+          "metrics": {
+            "brier": 0.2380278577865268,
+            "focus_brier": 0.2380278577865268,
+            "survival": 0.5625,
+            "focus_survival": 0.5625,
+            "valid_brier": 0.24061955896810894,
+            "valid_survival": 0.5,
+            "no_transfer": 0.640625,
+            "clairvoyant_upper": 0.78125,
+            "marginal_brier": 0.259625093836119
+          },
+          "marginal_gain": 0.021597236049592183,
+          "cue_benefits": {}
+        },
+        {
+          "law": {
+            "mode": 0,
+            "active": [],
+            "revised": false,
+            "noise": 0.0
+          },
+          "metrics": {
+            "brier": 0.2369862029746415,
+            "focus_brier": 0.2369862029746415,
+            "survival": 0.609375,
+            "focus_survival": 0.609375,
+            "valid_brier": 0.23534599103332043,
+            "valid_survival": 0.625,
+            "no_transfer": 0.609375,
+            "clairvoyant_upper": 0.796875,
+            "marginal_brier": 0.24471267361111113
+          },
+          "marginal_gain": 0.007726470636469612,
+          "cue_benefits": {}
+        },
+        {
+          "law": {
+            "mode": 0,
+            "active": [
+              1
+            ],
+            "revised": false,
+            "noise": 0.0
+          },
+          "metrics": {
+            "brier": 0.23654966333709576,
+            "focus_brier": 0.23654966333709576,
+            "survival": 0.609375,
+            "focus_survival": 0.609375,
+            "valid_brier": 0.23534599103332043,
+            "valid_survival": 0.625,
+            "no_transfer": 0.609375,
+            "clairvoyant_upper": 0.78125,
+            "marginal_brier": 0.2385232754204503
+          },
+          "marginal_gain": 0.001973612083354531,
+          "cue_benefits": {
+            "1": 6.18070965074935e-06
+          }
+        },
+        {
+          "law": {
+            "mode": 0,
+            "active": [
+              1,
+              2
+            ],
+            "revised": false,
+            "noise": 0.0
+          },
+          "metrics": {
+            "brier": 0.23253990178288564,
+            "focus_brier": 0.23253990178288564,
+            "survival": 0.546875,
+            "focus_survival": 0.546875,
+            "valid_brier": 0.23528787553167452,
+            "valid_survival": 0.625,
+            "no_transfer": 0.484375,
+            "clairvoyant_upper": 0.765625,
+            "marginal_brier": 0.24479195048286156
+          },
+          "marginal_gain": 0.012252048699975926,
+          "cue_benefits": {
+            "1": 1.0792012474281076e-05,
+            "2": 6.403070546501244e-06
+          }
+        },
+        {
+          "law": {
+            "mode": 0,
+            "active": [
+              0,
+              1,
+              2
+            ],
+            "revised": false,
+            "noise": 0.0
+          },
+          "metrics": {
+            "brier": 0.23300012979638124,
+            "focus_brier": 0.23300012979638124,
+            "survival": 0.53125,
+            "focus_survival": 0.53125,
+            "valid_brier": 0.23528787553167452,
+            "valid_survival": 0.625,
+            "no_transfer": 0.484375,
+            "clairvoyant_upper": 0.75,
+            "marginal_brier": 0.23608658944529673
+          },
+          "marginal_gain": 0.0030864596489154905,
+          "cue_benefits": {
+            "0": 1.8739027074499148e-06,
+            "1": 1.1392901799384125e-05,
+            "2": 6.727336370915271e-06
+          }
+        }
+      ],
+      "valid_after": null,
+      "diagnostics": {
+        "initial_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "final_hash": "cc245f25b404183fb5e138bcc3aaedd01f3219f18283090a9c3cf6d92827d524",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 23728,
+        "peak_replay_bytes": 49440,
+        "memory_ids": [
+          15,
+          38,
+          30,
+          7
+        ],
+        "packets_seen": 40,
+        "history_bytes": 6176,
+        "encoder_displacement": 1.3369340543318018,
+        "cost": {
+          "arrivals": 320,
+          "optimizer_steps": 40,
+          "query_presentations": 640,
+          "support_presentations": 640,
+          "replay_presentations": 312,
+          "duplicate_presentations": 8,
+          "training_seconds": 0.2404941000713734,
+          "outcome_loss_sum": 27.06934416294098,
+          "reconstruction_loss_sum": 0.0,
+          "objective_loss_sum": 27.06934416294098,
+          "encoder_forward_calls": 80,
+          "encoder_presentations": 1280,
+          "auxiliary_forward_calls": 0,
+          "auxiliary_reconstructions": 0,
+          "reconstruction_pixels": 0,
+          "auxiliary_backward_steps": 0,
+          "predictive_parameter_updates": 118360,
+          "auxiliary_parameter_updates": 0
+        },
+        "initial_encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "encoder_hash": "772d75bc5997e9cdf42e8a82f55b8295f9f8e3bdb9f2bff0fb838da39ca6a24b",
+        "arm": "outcome",
+        "initial_predictor_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "initial_auxiliary_hash": null,
+        "predictive_parameters": 2959,
+        "auxiliary_parameters": 0,
+        "replay_capacity": 4,
+        "effective_updates_per_batch": 1,
+        "mean_outcome_loss": 0.6767336040735245,
+        "mean_reconstruction_loss": null,
+        "mean_objective_loss": 0.6767336040735245
+      },
+      "start_diagnostics": {
+        "initial_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "final_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "parameters": 2959,
+        "model_bytes": 11836,
+        "optimizer_bytes": 0,
+        "peak_replay_bytes": 0,
+        "memory_ids": [],
+        "packets_seen": 0,
+        "history_bytes": 0,
+        "encoder_displacement": 0.0,
+        "cost": {
+          "arrivals": 0,
+          "optimizer_steps": 0,
+          "query_presentations": 0,
+          "support_presentations": 0,
+          "replay_presentations": 0,
+          "duplicate_presentations": 0,
+          "training_seconds": 0.0,
+          "outcome_loss_sum": 0.0,
+          "reconstruction_loss_sum": 0.0,
+          "objective_loss_sum": 0.0,
+          "encoder_forward_calls": 0,
+          "encoder_presentations": 0,
+          "auxiliary_forward_calls": 0,
+          "auxiliary_reconstructions": 0,
+          "reconstruction_pixels": 0,
+          "auxiliary_backward_steps": 0,
+          "predictive_parameter_updates": 0,
+          "auxiliary_parameter_updates": 0
+        },
+        "initial_encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "encoder_hash": "5015a99d9acf9a99381952b0e8d7e7934ff98f0f709ba069b25374b5d22799a0",
+        "arm": "outcome",
+        "initial_predictor_hash": "28f999eba410dcc4b134b3dcad8fa906e6a133853362abf388359e758b27f782",
+        "initial_auxiliary_hash": null,
+        "predictive_parameters": 2959,
+        "auxiliary_parameters": 0,
+        "replay_capacity": 4,
+        "effective_updates_per_batch": 1,
+        "mean_outcome_loss": null,
+        "mean_reconstruction_loss": null,
+        "mean_objective_loss": null
+      },
+      "elapsed_seconds": 0.6459184999985155
+    }
+  ],
+  "kind": "qualification",
+  "qualified": false,
+  "integrity": {
+    "counts": {
+      "jobs": 1,
+      "phases": 4,
+      "training_arrivals": 512,
+      "optimizer_steps": 64
+    },
+    "manifest_sha256": "babd02e3c34d420dc9415f249961e7d89fb36e00eeb3d76cae67b7e144797a00",
+    "completion_sha256": "5084074d0ae5615412f1db95b3141e6f49ae011a99a6cc0f420928ba3ed5b281",
+    "files": [
+      {
+        "path": "jobs/outcome_18099/result.json",
+        "sha256": "17287bdc72a6f352740e42816816941d30537b06bb816451c5a8260561ed4748"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_1/result.json",
+        "sha256": "41474b929748a6fe8c09179c5a7189f3030cd70107438ab5dace8a1ae2c09d64"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_1/checkpoint.pt",
+        "sha256": "ea5d97608be81bac1bddd48cc3326259e40ece93dd03a63d673a08e758f6b952"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_1/before.pt",
+        "sha256": "e21eb4b1a7a8054bcbd32bd651cb431636e17b20e809be05878f3723fe3e5843"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_1/evaluations.json",
+        "sha256": "5579c57058df868374f10e3a0ebe6af93facbf5ff75a26f57db8b36de401092f"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_1/evaluations.npz",
+        "sha256": "d8af308c154f69b62f5f11f7c2e1b1c22362b35c0ed1f83e916067eb549483af"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_1/training.npz",
+        "sha256": "7815fdd1da4595b3a29e5bf4c1fff0b29134ea485aa640684d0cce5d63d129b2"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_2/result.json",
+        "sha256": "c39b7383a878b864bdc36660489272274627a9efac82b5fb85d7703dee5d05c5"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_2/checkpoint.pt",
+        "sha256": "6ca3e30c3941b4a76c73a274ea047a04385bfa46507b0f2969a79bc61445a264"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_2/before.pt",
+        "sha256": "2aa116dec98349971d9770af05b92ead580999611242ab17564d8b0a458673e4"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_2/evaluations.json",
+        "sha256": "52db22233ee74d86f0c63e498b7b4ff17664a39e7eecda9159945a5aeecc8eb9"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_2/evaluations.npz",
+        "sha256": "bd3e50909363b547d2fa369364ce0ef9fdb8187ab99d24c24d5bc24371ab2e4e"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_2/training.npz",
+        "sha256": "76ae9e3bb9c34958c56c6a2a4b5e313849e852341b300d09f0024ea0526ee4fe"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_3/result.json",
+        "sha256": "8e098ab4926de7e3c20ca40843492734c77225509c19d50c9647d713643a3218"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_3/checkpoint.pt",
+        "sha256": "97e9b7c08d0bb4a43dade8737068ce475c71363aabd8f7595b94f309c711f988"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_3/before.pt",
+        "sha256": "8d81534c3a2c26762ce59c0b21898b160b08dfb5adf56d3f928a91afef5b0559"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_3/evaluations.json",
+        "sha256": "07620eb202d38c7f728c8f68ddfbee573738d074da8dffee52c76202b7389000"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_3/evaluations.npz",
+        "sha256": "f3280e25052002396ebae25c7337edf78a31e04b932c6ba7e7be76dd8fbfcdc8"
+      },
+      {
+        "path": "jobs/outcome_18099/fresh_3/training.npz",
+        "sha256": "eb4d0bce654f9d923d8e74d68f0b3494315be72bbba39ac74ae8f7953d69bdb1"
+      },
+      {
+        "path": "jobs/outcome_18099/interleaved/result.json",
+        "sha256": "4d073ea4f16c8a8e9e9650fad528eca0654fad4e3ce599a1c07f592031fde4a1"
+      },
+      {
+        "path": "jobs/outcome_18099/interleaved/checkpoint.pt",
+        "sha256": "f6dadab47bd18862ce7518d6b535cb1d62c91dd4237713fccb55992e7b7db8b5"
+      },
+      {
+        "path": "jobs/outcome_18099/interleaved/before.pt",
+        "sha256": "23176b743b27290298e41c30909a97ecfb064afffacd05d0c03d2fb40ebedcaa"
+      },
+      {
+        "path": "jobs/outcome_18099/interleaved/evaluations.json",
+        "sha256": "c0442011cbb200724f046f0357f9835b1a14cd925f81893f594b336be246cbba"
+      },
+      {
+        "path": "jobs/outcome_18099/interleaved/evaluations.npz",
+        "sha256": "b068c1695f99cb02701b167a4c5a61c277c7d9d28e7bd96d10a5d8dc5e6262a1"
+      },
+      {
+        "path": "jobs/outcome_18099/interleaved/training.npz",
+        "sha256": "b5dafb25372a1882b370f1b6876c1678f03c68afd08e1f3b75ab8037bb9d15a6"
+      }
+    ]
+  },
+  "bootstrap": {
+    "seed": 28192026,
+    "resamples": 20000,
+    "unit": "independent seed",
+    "interval": "descriptive percentile 95%"
+  }
+}

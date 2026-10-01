@@ -1,0 +1,3096 @@
+{
+  "world_spec": {
+    "entities": 3,
+    "T": 12,
+    "horizons_reported": [
+      4,
+      8,
+      12
+    ],
+    "objective": "joint survival of all three entities after step 12",
+    "capacity": 18.0,
+    "maintenance_per_step": 2.0,
+    "initial_reserves": "iid U(1.0, 13.0) per entity per episode; episodes independent",
+    "supply": "s_i(t) ~ N(mu_i(A, t), 0.35^2), NOT clipped; negative supply allowed and audited",
+    "supply_mean": "mu_i(A,t) = mean_supply + imbalance * season(t) * sign_i(A) (+ entity3_mean_offset for i=3); season(t) = +1 for steps 1..6, -1 for steps 7..12; sign(A=0) = base_signs; A=1 multiplies the signs of entities 1 and 2 by (1 - 2*flip_amplitude) (amplitude 1 = full flip)",
+    "supply_mean_table_A0": [
+      [
+        2.7,
+        1.1,
+        1.5
+      ],
+      [
+        2.7,
+        1.1,
+        1.5
+      ],
+      [
+        2.7,
+        1.1,
+        1.5
+      ],
+      [
+        2.7,
+        1.1,
+        1.5
+      ],
+      [
+        2.7,
+        1.1,
+        1.5
+      ],
+      [
+        2.7,
+        1.1,
+        1.5
+      ],
+      [
+        1.1,
+        2.7,
+        2.3
+      ],
+      [
+        1.1,
+        2.7,
+        2.3
+      ],
+      [
+        1.1,
+        2.7,
+        2.3
+      ],
+      [
+        1.1,
+        2.7,
+        2.3
+      ],
+      [
+        1.1,
+        2.7,
+        2.3
+      ],
+      [
+        1.1,
+        2.7,
+        2.3
+      ]
+    ],
+    "supply_mean_table_A1": [
+      [
+        1.1,
+        2.7,
+        1.5
+      ],
+      [
+        1.1,
+        2.7,
+        1.5
+      ],
+      [
+        1.1,
+        2.7,
+        1.5
+      ],
+      [
+        1.1,
+        2.7,
+        1.5
+      ],
+      [
+        1.1,
+        2.7,
+        1.5
+      ],
+      [
+        1.1,
+        2.7,
+        1.5
+      ],
+      [
+        2.7,
+        1.1,
+        2.3
+      ],
+      [
+        2.7,
+        1.1,
+        2.3
+      ],
+      [
+        2.7,
+        1.1,
+        2.3
+      ],
+      [
+        2.7,
+        1.1,
+        2.3
+      ],
+      [
+        2.7,
+        1.1,
+        2.3
+      ],
+      [
+        2.7,
+        1.1,
+        2.3
+      ]
+    ],
+    "channels": {
+      "1->2": {
+        "efficiency": "0.9 (B=0) / 0.3000 (B=1)",
+        "delay": 1.0
+      },
+      "2->3": {
+        "efficiency": 0.9,
+        "delay": "C=0: 6.0 always; C=1: 0.0 if cue1 = 1 (aligned, fast) else 6.0"
+      },
+      "3->1": {
+        "efficiency": 0.8,
+        "delay": 2.0
+      }
+    },
+    "reverse_transfers": "use the same channel (efficiency, delay) as the forward direction: one physical pipe per pair",
+    "actions": {
+      "0": "none",
+      "1": "1->2",
+      "2": "2->1",
+      "3": "2->3",
+      "4": "3->2",
+      "5": "3->1",
+      "6": "1->3"
+    },
+    "transfer_amount": "sent = min(3.0, donor reserve); loss (1-e)*sent booked at departure",
+    "timing": "transfer departs before step 1; a delay d = k + f delivers (1-f) of the delivered amount before the supply of step k+1 and f one step later (integer delays reproduce the persistence convention; d >= 12 never arrives)",
+    "step_order": "arrivals -> supply -> clip at capacity (overflow booked) -> maintenance min(max(stock,0), 2) -> failure check (reserve <= 1e-10)",
+    "failure": "irreversible; physics continues after failure for accounting only (a failed entity still receives supply/arrivals)",
+    "probe": "external 0.3 units per channel per step injected at the channel entry, loss (1-e) at injection, travels with the channel's delay (split rule as transfers), measured at the outlet and discharged to an external sink: it NEVER enters a reserve, so probe level does not change survival or optimal actions",
+    "probe_start": {
+      "value": "steady",
+      "episode": "channel empty at t=0: probe arrivals start after the delay (onset reveals delay)",
+      "steady": "probe flow already running before the episode: arrivals are .3e every step (delay invisible to the probe)"
+    },
+    "probe_levels": {
+      "passive": "probes on",
+      "active": "probes off (channel sensors read pure noise)"
+    },
+    "observations_decision_time": "exact reserves (3) + 3-bit cue (iid uniform); cue bit 1 matters only when C=1; bits 2,3 are distractors",
+    "observations_post_episode": "supply sensors y = s + N(0,0.1^2) per entity per step; probe sensors y = probe arrivals + N(0,0.1^2) per channel per step (the agent's own transfer is NOT sensed); failure step (1..12) or survival per entity; mid-episode reserves are not observed",
+    "contexts": "c = 4A + 2B + C; A: seasonality of entities 1,2 flipped; B: channel 1->2 efficiency lowered by b_gap; C: channel 2<->3 delay fast (d23_fast) only when C=1 and cue1 = 1, otherwise d23_fast + c_delta",
+    "params": {
+      "mean_supply": 1.9,
+      "imbalance": 0.8,
+      "season_flip_step": 6,
+      "base_signs": [
+        1.0,
+        -1.0,
+        -0.5
+      ],
+      "entity3_mean_offset": 0.0,
+      "e12": 0.9,
+      "d12": 1.0,
+      "e23": 0.9,
+      "d23_fast": 0.0,
+      "e31": 0.8,
+      "d31": 2.0,
+      "flip_amplitude": 1.0,
+      "b_gap": 0.6,
+      "c_delta": 6.0,
+      "probe_start": "steady"
+    },
+    "params_sha256": "c0dea6a8dbadc5946f36fc585024b741208b479475906b713fe659b91223cb09"
+  },
+  "settings": {
+    "pool_episodes": 2048,
+    "mc_draws_select": 4096,
+    "mc_draws_score": 4096,
+    "identification_sequences": 2000,
+    "identification_cap": 4000,
+    "pattern_likelihood": {
+      "k": 2048,
+      "k_refine": 32768,
+      "min_count": 16,
+      "floor_hits": 0.5
+    },
+    "anchor_dials_during_scan": {
+      "flip_amplitude": 1.0,
+      "b_gap": 0.3,
+      "c_delta": 6.0
+    },
+    "grid": {
+      "A": [
+        0.02,
+        0.05,
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "B": [
+        0.02,
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.3,
+        0.45,
+        0.6,
+        0.8
+      ],
+      "C": [
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        6.0,
+        8.0,
+        11.0
+      ]
+    },
+    "levels": [
+      "passive_episode",
+      "passive_steady",
+      "active"
+    ],
+    "behaviour_policy": "myopic I with 50/50 belief over the pair (argmax of the mean of the two selection tables)",
+    "separability_metric_for_grading": "pair-averaged mean episodes for a pair-restricted myopic I to reach posterior .95 from 50/50",
+    "relevance_metric_for_grading": "pair-averaged cross-context policy regret (both directions averaged), selection/scoring on independent draws",
+    "thresholds": {
+      "separability_high_max_id_episodes": 5.0,
+      "separability_low_min_id_episodes": 25.0,
+      "relevance_high_min": 0.015,
+      "relevance_low_max": 0.005
+    },
+    "target_cells": {
+      "B": [
+        "high",
+        "high"
+      ],
+      "C": [
+        "low",
+        "high"
+      ]
+    },
+    "proposal_rule": "per passive probe-start variant: smallest dial whose pair-averaged grade equals the target cell; prefer 'episode' if both targets reached there, else 'steady'"
+  },
+  "grid_summary": [
+    {
+      "factor": "A",
+      "dial": 0.02,
+      "level": "active",
+      "id_mean_pairavg": 35.43675,
+      "id_p90_max": 98.0,
+      "chernoff_pairavg": 0.023238621619721792,
+      "sym_kl_pairavg": 0.18561567509170676,
+      "relevance_pairavg": 0.0002689855015187703,
+      "relevance_se_pairavg": 2.956730401502026e-05,
+      "relevance_min_pair": 0.00017274907895981073,
+      "relevance_max_pair": 0.00045126510934423436,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.02,
+      "level": "passive_episode",
+      "id_mean_pairavg": 35.318312500000005,
+      "id_p90_max": 101.10000000000014,
+      "chernoff_pairavg": 0.023238621619721848,
+      "sym_kl_pairavg": 0.18561567509170676,
+      "relevance_pairavg": 0.0002689855015187703,
+      "relevance_se_pairavg": 2.7752692453798648e-05,
+      "relevance_min_pair": 0.00017274907895981073,
+      "relevance_max_pair": 0.00045126510934423436,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.02,
+      "level": "passive_steady",
+      "id_mean_pairavg": 35.4274375,
+      "id_p90_max": 98.0,
+      "chernoff_pairavg": 0.02323862161972182,
+      "sym_kl_pairavg": 0.18561567509170676,
+      "relevance_pairavg": 0.0002689855015187703,
+      "relevance_se_pairavg": 2.9439399810639078e-05,
+      "relevance_min_pair": 0.00017274907895981073,
+      "relevance_max_pair": 0.00045126510934423436,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.05,
+      "level": "active",
+      "id_mean_pairavg": 6.462,
+      "id_p90_max": 14.0,
+      "chernoff_pairavg": 0.1433384950634624,
+      "sym_kl_pairavg": 1.161864561015836,
+      "relevance_pairavg": 0.0016867058144898195,
+      "relevance_se_pairavg": 0.0001128921549651486,
+      "relevance_min_pair": 0.0014902091322817057,
+      "relevance_max_pair": 0.0020551458817514856,
+      "separability": "mid",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.05,
+      "level": "passive_episode",
+      "id_mean_pairavg": 6.4011875,
+      "id_p90_max": 14.0,
+      "chernoff_pairavg": 0.14333849506346247,
+      "sym_kl_pairavg": 1.161864561015836,
+      "relevance_pairavg": 0.0016867058144898195,
+      "relevance_se_pairavg": 0.00011892666714979783,
+      "relevance_min_pair": 0.0014902091322817057,
+      "relevance_max_pair": 0.0020551458817514856,
+      "separability": "mid",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.05,
+      "level": "passive_steady",
+      "id_mean_pairavg": 6.4729375000000005,
+      "id_p90_max": 13.0,
+      "chernoff_pairavg": 0.1433384950634624,
+      "sym_kl_pairavg": 1.161864561015836,
+      "relevance_pairavg": 0.0016867058144898195,
+      "relevance_se_pairavg": 0.00011744839220752541,
+      "relevance_min_pair": 0.0014902091322817057,
+      "relevance_max_pair": 0.0020551458817514856,
+      "separability": "mid",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.1,
+      "level": "active",
+      "id_mean_pairavg": 2.0954375,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.5732322958938532,
+      "sym_kl_pairavg": 4.645772054558694,
+      "relevance_pairavg": 0.006494418455408102,
+      "relevance_se_pairavg": 0.00032064802290712095,
+      "relevance_min_pair": 0.0051229929004037444,
+      "relevance_max_pair": 0.007426532667761165,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.1,
+      "level": "passive_episode",
+      "id_mean_pairavg": 2.1014375000000003,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.5732322958938532,
+      "sym_kl_pairavg": 4.645772054558693,
+      "relevance_pairavg": 0.006494418455408102,
+      "relevance_se_pairavg": 0.00031328434510760264,
+      "relevance_min_pair": 0.0051229929004037444,
+      "relevance_max_pair": 0.007426532667761165,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.1,
+      "level": "passive_steady",
+      "id_mean_pairavg": 2.104625,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.5732322958938532,
+      "sym_kl_pairavg": 4.645772054558693,
+      "relevance_pairavg": 0.006494418455408102,
+      "relevance_se_pairavg": 0.00031723116353677875,
+      "relevance_min_pair": 0.0051229929004037444,
+      "relevance_max_pair": 0.007426532667761165,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.25,
+      "level": "active",
+      "id_mean_pairavg": 1.01775,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 3.723803712634955,
+      "sym_kl_pairavg": 29.02020510847875,
+      "relevance_pairavg": 0.03874076968092499,
+      "relevance_se_pairavg": 0.0010375114781870306,
+      "relevance_min_pair": 0.03596440111019206,
+      "relevance_max_pair": 0.04226697632373444,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.25,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.0171875,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 3.723803712634955,
+      "sym_kl_pairavg": 29.02020510847875,
+      "relevance_pairavg": 0.03874076968092499,
+      "relevance_se_pairavg": 0.0010662815196226852,
+      "relevance_min_pair": 0.03596440111019206,
+      "relevance_max_pair": 0.04226697632373444,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.25,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.0178125,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 3.723803712634955,
+      "sym_kl_pairavg": 29.02020510847875,
+      "relevance_pairavg": 0.03874076968092499,
+      "relevance_se_pairavg": 0.001059505421010718,
+      "relevance_min_pair": 0.03596440111019206,
+      "relevance_max_pair": 0.04226697632373444,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.5,
+      "level": "active",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 17.493842205257028,
+      "sym_kl_pairavg": 116.0541914669854,
+      "relevance_pairavg": 0.0865493773592716,
+      "relevance_se_pairavg": 0.0016175402499333967,
+      "relevance_min_pair": 0.07665206882707665,
+      "relevance_max_pair": 0.09770330305100572,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.5,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 17.493842205257028,
+      "sym_kl_pairavg": 116.0541914669854,
+      "relevance_pairavg": 0.0865493773592716,
+      "relevance_se_pairavg": 0.0015607871412925101,
+      "relevance_min_pair": 0.07665206882707665,
+      "relevance_max_pair": 0.09770330305100572,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 0.5,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 17.493842205257028,
+      "sym_kl_pairavg": 116.0541914669854,
+      "relevance_pairavg": 0.0865493773592716,
+      "relevance_se_pairavg": 0.0016017198207345861,
+      "relevance_min_pair": 0.07665206882707665,
+      "relevance_max_pair": 0.09770330305100572,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 1.0,
+      "level": "active",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 86.40574819161696,
+      "sym_kl_pairavg": 464.54914994016355,
+      "relevance_pairavg": 0.19662324472278403,
+      "relevance_se_pairavg": 0.0027365939743042495,
+      "relevance_min_pair": 0.17052870634864448,
+      "relevance_max_pair": 0.2224292921090516,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 1.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 86.40574819161696,
+      "sym_kl_pairavg": 464.54914994016355,
+      "relevance_pairavg": 0.19662324472278403,
+      "relevance_se_pairavg": 0.0026429717526554796,
+      "relevance_min_pair": 0.17052870634864448,
+      "relevance_max_pair": 0.2224292921090516,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 1.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 86.40574819161696,
+      "sym_kl_pairavg": 464.54914994016355,
+      "relevance_pairavg": 0.19662324472278403,
+      "relevance_se_pairavg": 0.002594614469747977,
+      "relevance_min_pair": 0.17052870634864448,
+      "relevance_max_pair": 0.2224292921090516,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.02,
+      "level": "active",
+      "id_mean_pairavg": 1410.6514375,
+      "id_p90_max": 4000.0,
+      "chernoff_pairavg": 0.0007021676896984341,
+      "sym_kl_pairavg": 0.004754853065525169,
+      "relevance_pairavg": 5.7258857811604e-05,
+      "relevance_se_pairavg": 7.891172444493451e-06,
+      "relevance_min_pair": 1.7833372112363577e-07,
+      "relevance_max_pair": 0.00019651719776447862,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.02,
+      "level": "passive_episode",
+      "id_mean_pairavg": 146.164625,
+      "id_p90_max": 499.3000000000004,
+      "chernoff_pairavg": 0.005745360814212688,
+      "sym_kl_pairavg": 0.04435485306552525,
+      "relevance_pairavg": 5.7258857811604e-05,
+      "relevance_se_pairavg": 8.635653694710483e-06,
+      "relevance_min_pair": 1.7833372112363577e-07,
+      "relevance_max_pair": 0.00019651719776447862,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.02,
+      "level": "passive_steady",
+      "id_mean_pairavg": 133.4189375,
+      "id_p90_max": 391.10000000000014,
+      "chernoff_pairavg": 0.00607435001275241,
+      "sym_kl_pairavg": 0.04795485306552523,
+      "relevance_pairavg": 5.7258857811604e-05,
+      "relevance_se_pairavg": 8.73562374165735e-06,
+      "relevance_min_pair": 1.7833372112363577e-07,
+      "relevance_max_pair": 0.00019651719776447862,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.05,
+      "level": "active",
+      "id_mean_pairavg": 212.45300000000003,
+      "id_p90_max": 601.0,
+      "chernoff_pairavg": 0.00458042681550995,
+      "sym_kl_pairavg": 0.033349339235699896,
+      "relevance_pairavg": 0.00021608871953127107,
+      "relevance_se_pairavg": 2.723995086880385e-05,
+      "relevance_min_pair": 2.8107751859351993e-06,
+      "relevance_max_pair": 0.0006155345909064636,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.05,
+      "level": "passive_episode",
+      "id_mean_pairavg": 23.6380625,
+      "id_p90_max": 56.100000000000136,
+      "chernoff_pairavg": 0.03550507024458847,
+      "sym_kl_pairavg": 0.2808493392357003,
+      "relevance_pairavg": 0.00021608871953127107,
+      "relevance_se_pairavg": 2.4827710278846645e-05,
+      "relevance_min_pair": 2.8107751859351993e-06,
+      "relevance_max_pair": 0.0006155345909064636,
+      "separability": "mid",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.05,
+      "level": "passive_steady",
+      "id_mean_pairavg": 21.9001875,
+      "id_p90_max": 51.0,
+      "chernoff_pairavg": 0.03794502177088357,
+      "sym_kl_pairavg": 0.3033493392357004,
+      "relevance_pairavg": 0.00021608871953127107,
+      "relevance_se_pairavg": 2.6864659197550013e-05,
+      "relevance_min_pair": 2.8107751859351993e-06,
+      "relevance_max_pair": 0.0006155345909064636,
+      "separability": "mid",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.1,
+      "level": "active",
+      "id_mean_pairavg": 63.08175,
+      "id_p90_max": 153.0,
+      "chernoff_pairavg": 0.013452543323609433,
+      "sym_kl_pairavg": 0.12026776078917226,
+      "relevance_pairavg": 0.000897159976048556,
+      "relevance_se_pairavg": 7.194069304267337e-05,
+      "relevance_min_pair": 1.0954134040730423e-05,
+      "relevance_max_pair": 0.0013705365766298883,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.1,
+      "level": "passive_episode",
+      "id_mean_pairavg": 6.777749999999999,
+      "id_p90_max": 14.0,
+      "chernoff_pairavg": 0.13649855112926312,
+      "sym_kl_pairavg": 1.1102677607891738,
+      "relevance_pairavg": 0.000897159976048556,
+      "relevance_se_pairavg": 7.227162047206723e-05,
+      "relevance_min_pair": 1.0954134040730423e-05,
+      "relevance_max_pair": 0.0013705365766298883,
+      "separability": "mid",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.1,
+      "level": "passive_steady",
+      "id_mean_pairavg": 6.376625000000001,
+      "id_p90_max": 13.0,
+      "chernoff_pairavg": 0.14628441088646005,
+      "sym_kl_pairavg": 1.200267760789174,
+      "relevance_pairavg": 0.000897159976048556,
+      "relevance_se_pairavg": 7.818418668090513e-05,
+      "relevance_min_pair": 1.0954134040730423e-05,
+      "relevance_max_pair": 0.0013705365766298883,
+      "separability": "mid",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.15,
+      "level": "active",
+      "id_mean_pairavg": 32.2029375,
+      "id_p90_max": 87.0,
+      "chernoff_pairavg": 0.029626623713854515,
+      "sym_kl_pairavg": 0.2889967408744138,
+      "relevance_pairavg": 0.0035921692700213725,
+      "relevance_se_pairavg": 0.00018165135687043147,
+      "relevance_min_pair": 6.666816612721504e-05,
+      "relevance_max_pair": 0.00621205502274691,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "low",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.15,
+      "level": "passive_episode",
+      "id_mean_pairavg": 3.4288125,
+      "id_p90_max": 7.0,
+      "chernoff_pairavg": 0.30473312650571266,
+      "sym_kl_pairavg": 2.5164967408744174,
+      "relevance_pairavg": 0.0035921692700213725,
+      "relevance_se_pairavg": 0.00017333866186092312,
+      "relevance_min_pair": 6.666816612721504e-05,
+      "relevance_max_pair": 0.00621205502274691,
+      "separability": "high",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.15,
+      "level": "passive_steady",
+      "id_mean_pairavg": 3.2071250000000004,
+      "id_p90_max": 6.0,
+      "chernoff_pairavg": 0.32659852756600005,
+      "sym_kl_pairavg": 2.7189967408744176,
+      "relevance_pairavg": 0.0035921692700213725,
+      "relevance_se_pairavg": 0.00018428775122491565,
+      "relevance_min_pair": 6.666816612721504e-05,
+      "relevance_max_pair": 0.00621205502274691,
+      "separability": "high",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.2,
+      "level": "active",
+      "id_mean_pairavg": 21.493187499999998,
+      "id_p90_max": 67.0,
+      "chernoff_pairavg": 0.04696963551177409,
+      "sym_kl_pairavg": 0.5163682586908154,
+      "relevance_pairavg": 0.005217994863253139,
+      "relevance_se_pairavg": 0.00023327886716103697,
+      "relevance_min_pair": 0.00010815077761350267,
+      "relevance_max_pair": 0.009179552432456717,
+      "separability": "mid",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "mid"
+        ],
+        [
+          "low",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.2,
+      "level": "passive_episode",
+      "id_mean_pairavg": 2.206875,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.5379467352242484,
+      "sym_kl_pairavg": 4.476368258690817,
+      "relevance_pairavg": 0.005217994863253139,
+      "relevance_se_pairavg": 0.00022270294804181792,
+      "relevance_min_pair": 0.00010815077761350267,
+      "relevance_max_pair": 0.009179552432456717,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.2,
+      "level": "passive_steady",
+      "id_mean_pairavg": 2.0924375,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.5750799495031385,
+      "sym_kl_pairavg": 4.836368258690818,
+      "relevance_pairavg": 0.005217994863253139,
+      "relevance_se_pairavg": 0.00022973955845361413,
+      "relevance_min_pair": 0.00010815077761350267,
+      "relevance_max_pair": 0.009179552432456717,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.3,
+      "level": "active",
+      "id_mean_pairavg": 12.205437499999999,
+      "id_p90_max": 34.0,
+      "chernoff_pairavg": 0.08688365429797726,
+      "sym_kl_pairavg": 1.1988717280122831,
+      "relevance_pairavg": 0.008553264064747879,
+      "relevance_se_pairavg": 0.00037630505714956027,
+      "relevance_min_pair": 0.00024409285971316308,
+      "relevance_max_pair": 0.014757094574100904,
+      "separability": "mid",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "mid"
+        ],
+        [
+          "mid",
+          "mid"
+        ],
+        [
+          "mid",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.3,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.3434374999999998,
+      "id_p90_max": 2.0,
+      "chernoff_pairavg": 1.1889388751041963,
+      "sym_kl_pairavg": 10.108871728012279,
+      "relevance_pairavg": 0.008553264064747879,
+      "relevance_se_pairavg": 0.00035655731333514236,
+      "relevance_min_pair": 0.00024409285971316308,
+      "relevance_max_pair": 0.014757094574100904,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.3,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.296125,
+      "id_p90_max": 2.0,
+      "chernoff_pairavg": 1.2704721792010014,
+      "sym_kl_pairavg": 10.918871728012281,
+      "relevance_pairavg": 0.008553264064747879,
+      "relevance_se_pairavg": 0.0003589891159656144,
+      "relevance_min_pair": 0.00024409285971316308,
+      "relevance_max_pair": 0.014757094574100904,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.45,
+      "level": "active",
+      "id_mean_pairavg": 7.4590625,
+      "id_p90_max": 22.0,
+      "chernoff_pairavg": 0.1520747008033805,
+      "sym_kl_pairavg": 2.513833045386685,
+      "relevance_pairavg": 0.014043619609781288,
+      "relevance_se_pairavg": 0.000537395882819165,
+      "relevance_min_pair": 0.0006935605117170951,
+      "relevance_max_pair": 0.02364239505357446,
+      "separability": "mid",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "mid"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.45,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.05325,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 2.6348406540951306,
+      "sym_kl_pairavg": 22.561333045386682,
+      "relevance_pairavg": 0.014043619609781288,
+      "relevance_se_pairavg": 0.0005371659269915198,
+      "relevance_min_pair": 0.0006935605117170951,
+      "relevance_max_pair": 0.02364239505357446,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.45,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.0425625,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 2.8067689460385643,
+      "sym_kl_pairavg": 24.38383304538668,
+      "relevance_pairavg": 0.014043619609781288,
+      "relevance_se_pairavg": 0.0005739776620193947,
+      "relevance_min_pair": 0.0006935605117170951,
+      "relevance_max_pair": 0.02364239505357446,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.6,
+      "level": "active",
+      "id_mean_pairavg": 6.1133125,
+      "id_p90_max": 18.0,
+      "chernoff_pairavg": 0.19634811081869796,
+      "sym_kl_pairavg": 3.48195007542779,
+      "relevance_pairavg": 0.019942416851824518,
+      "relevance_se_pairavg": 0.0007253069114378856,
+      "relevance_min_pair": 0.0022835269145531356,
+      "relevance_max_pair": 0.03273850045111004,
+      "separability": "mid",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "mid",
+          "mid"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.6,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.0049375,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 4.719181964711806,
+      "sym_kl_pairavg": 39.12195007542778,
+      "relevance_pairavg": 0.019942416851824518,
+      "relevance_se_pairavg": 0.0006780264179580646,
+      "relevance_min_pair": 0.0022835269145531356,
+      "relevance_max_pair": 0.03273850045111004,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.6,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.0026249999999999,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 4.988547517105986,
+      "sym_kl_pairavg": 42.361950075427785,
+      "relevance_pairavg": 0.019942416851824518,
+      "relevance_se_pairavg": 0.0007153670162589961,
+      "relevance_min_pair": 0.0022835269145531356,
+      "relevance_max_pair": 0.03273850045111004,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.8,
+      "level": "active",
+      "id_mean_pairavg": 5.254125,
+      "id_p90_max": 16.0,
+      "chernoff_pairavg": 0.2333037835253095,
+      "sym_kl_pairavg": 4.267790618014787,
+      "relevance_pairavg": 0.030952028016401734,
+      "relevance_se_pairavg": 0.0009762378176330966,
+      "relevance_min_pair": 0.009444108743654311,
+      "relevance_max_pair": 0.04629465504663344,
+      "separability": "mid",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.8,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.0001875,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 8.459707720682152,
+      "sym_kl_pairavg": 67.62779061801479,
+      "relevance_pairavg": 0.030952028016401734,
+      "relevance_se_pairavg": 0.0008856484158787675,
+      "relevance_min_pair": 0.009444108743654311,
+      "relevance_max_pair": 0.04629465504663344,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.8,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.000125,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 8.90614444816007,
+      "sym_kl_pairavg": 73.38779061801479,
+      "relevance_pairavg": 0.030952028016401734,
+      "relevance_se_pairavg": 0.0009162273642782496,
+      "relevance_min_pair": 0.009444108743654311,
+      "relevance_max_pair": 0.04629465504663344,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 0.25,
+      "level": "active",
+      "id_mean_pairavg": 4000.0,
+      "id_p90_max": 4000.0,
+      "chernoff_pairavg": 0.0,
+      "sym_kl_pairavg": 0.0,
+      "relevance_pairavg": 0.0,
+      "relevance_se_pairavg": 0.0,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 0.0,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 0.25,
+      "level": "passive_episode",
+      "id_mean_pairavg": 29.9624375,
+      "id_p90_max": 76.0,
+      "chernoff_pairavg": 0.028969839053744152,
+      "sym_kl_pairavg": 0.22998161315917964,
+      "relevance_pairavg": 0.0,
+      "relevance_se_pairavg": 0.0,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 0.0,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 0.25,
+      "level": "passive_steady",
+      "id_mean_pairavg": 4000.0,
+      "id_p90_max": 4000.0,
+      "chernoff_pairavg": 0.0,
+      "sym_kl_pairavg": 0.0,
+      "relevance_pairavg": 0.0,
+      "relevance_se_pairavg": 0.0,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 0.0,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 0.5,
+      "level": "active",
+      "id_mean_pairavg": 4000.0,
+      "id_p90_max": 4000.0,
+      "chernoff_pairavg": 0.0,
+      "sym_kl_pairavg": 0.0,
+      "relevance_pairavg": 0.0,
+      "relevance_se_pairavg": 0.0,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 0.0,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 0.5,
+      "level": "passive_episode",
+      "id_mean_pairavg": 8.631812499999999,
+      "id_p90_max": 18.0,
+      "chernoff_pairavg": 0.11012369075680689,
+      "sym_kl_pairavg": 0.9199264526367187,
+      "relevance_pairavg": 0.0,
+      "relevance_se_pairavg": 0.0,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 0.0,
+      "separability": "mid",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 0.5,
+      "level": "passive_steady",
+      "id_mean_pairavg": 4000.0,
+      "id_p90_max": 4000.0,
+      "chernoff_pairavg": 0.0,
+      "sym_kl_pairavg": 0.0,
+      "relevance_pairavg": 0.0,
+      "relevance_se_pairavg": 0.0,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 0.0,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 1.0,
+      "level": "active",
+      "id_mean_pairavg": 1721.8370625000002,
+      "id_p90_max": 4000.0,
+      "chernoff_pairavg": 0.0017608202508724664,
+      "sym_kl_pairavg": 0.027676463739718816,
+      "relevance_pairavg": 3.561654011718929e-07,
+      "relevance_se_pairavg": 1.5852634949391076e-07,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 1.4246616046875715e-06,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 1.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 3.0496875,
+      "id_p90_max": 6.0,
+      "chernoff_pairavg": 0.364935192221326,
+      "sym_kl_pairavg": 3.7073822742865934,
+      "relevance_pairavg": 3.561654011718929e-07,
+      "relevance_se_pairavg": 1.596084308475665e-07,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 1.4246616046875715e-06,
+      "separability": "high",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 1.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1728.804625,
+      "id_p90_max": 4000.0,
+      "chernoff_pairavg": 0.0017608202508724664,
+      "sym_kl_pairavg": 0.027676463739718816,
+      "relevance_pairavg": 3.561654011718929e-07,
+      "relevance_se_pairavg": 1.6966378259280644e-07,
+      "relevance_min_pair": 0.0,
+      "relevance_max_pair": 1.4246616046875715e-06,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 2.0,
+      "level": "active",
+      "id_mean_pairavg": 164.95975,
+      "id_p90_max": 704.2000000000003,
+      "chernoff_pairavg": 0.011819080003430373,
+      "sym_kl_pairavg": 0.21924550345283733,
+      "relevance_pairavg": 0.0001234117396364809,
+      "relevance_se_pairavg": 3.247313186217534e-05,
+      "relevance_min_pair": 6.682716775685549e-05,
+      "relevance_max_pair": 0.00015104714513825002,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 2.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 2.2374375,
+      "id_p90_max": 5.0,
+      "chernoff_pairavg": 0.5625877470220384,
+      "sym_kl_pairavg": 7.578657124546587,
+      "relevance_pairavg": 0.0001234117396364809,
+      "relevance_se_pairavg": 3.232332188886809e-05,
+      "relevance_min_pair": 6.682716775685549e-05,
+      "relevance_max_pair": 0.00015104714513825002,
+      "separability": "high",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 2.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 166.9634375,
+      "id_p90_max": 728.1000000000001,
+      "chernoff_pairavg": 0.011819080003430373,
+      "sym_kl_pairavg": 0.21924550345283733,
+      "relevance_pairavg": 0.0001234117396364809,
+      "relevance_se_pairavg": 3.160722606500404e-05,
+      "relevance_min_pair": 6.682716775685549e-05,
+      "relevance_max_pair": 0.00015104714513825002,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 3.0,
+      "level": "active",
+      "id_mean_pairavg": 60.81493749999999,
+      "id_p90_max": 239.10000000000014,
+      "chernoff_pairavg": 0.025647261618251878,
+      "sym_kl_pairavg": 0.48631158695387927,
+      "relevance_pairavg": 0.0026492979778653947,
+      "relevance_se_pairavg": 0.0002473721212475211,
+      "relevance_min_pair": 0.0022257919328296794,
+      "relevance_max_pair": 0.0030904035973371435,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 3.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 2.0774999999999997,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.6397428928534399,
+      "sym_kl_pairavg": 11.525429018594505,
+      "relevance_pairavg": 0.0026492979778653947,
+      "relevance_se_pairavg": 0.0002487934367646103,
+      "relevance_min_pair": 0.0022257919328296794,
+      "relevance_max_pair": 0.0030904035973371435,
+      "separability": "high",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 3.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 61.164500000000004,
+      "id_p90_max": 250.0,
+      "chernoff_pairavg": 0.025647261618251878,
+      "sym_kl_pairavg": 0.48631158695387927,
+      "relevance_pairavg": 0.0026492979778653947,
+      "relevance_se_pairavg": 0.00023970615072111559,
+      "relevance_min_pair": 0.0022257919328296794,
+      "relevance_max_pair": 0.0030904035973371435,
+      "separability": "low",
+      "relevance_grade": "low",
+      "pair_grades": [
+        [
+          "low",
+          "low"
+        ],
+        [
+          "mid",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ],
+        [
+          "low",
+          "low"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 4.0,
+      "level": "active",
+      "id_mean_pairavg": 43.1653125,
+      "id_p90_max": 162.0,
+      "chernoff_pairavg": 0.03575545607094131,
+      "sym_kl_pairavg": 0.6964754717005966,
+      "relevance_pairavg": 0.007843044450980052,
+      "relevance_se_pairavg": 0.00047573289754268176,
+      "relevance_min_pair": 0.0052708397747522895,
+      "relevance_max_pair": 0.012199502150636476,
+      "separability": "low",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "mid",
+          "mid"
+        ],
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "low",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 4.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 2.021875,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.6740893551609284,
+      "sym_kl_pairavg": 15.415298713888095,
+      "relevance_pairavg": 0.007843044450980052,
+      "relevance_se_pairavg": 0.0004503748511464684,
+      "relevance_min_pair": 0.0052708397747522895,
+      "relevance_max_pair": 0.012199502150636476,
+      "separability": "high",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 4.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 43.3950625,
+      "id_p90_max": 160.0,
+      "chernoff_pairavg": 0.03575545607094131,
+      "sym_kl_pairavg": 0.6964754717005966,
+      "relevance_pairavg": 0.007843044450980052,
+      "relevance_se_pairavg": 0.00047361340479843653,
+      "relevance_min_pair": 0.0052708397747522895,
+      "relevance_max_pair": 0.012199502150636476,
+      "separability": "low",
+      "relevance_grade": "mid",
+      "pair_grades": [
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "mid",
+          "mid"
+        ],
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "low",
+          "mid"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 6.0,
+      "level": "active",
+      "id_mean_pairavg": 29.7790625,
+      "id_p90_max": 101.0,
+      "chernoff_pairavg": 0.04786247900731644,
+      "sym_kl_pairavg": 0.9625124336695228,
+      "relevance_pairavg": 0.024276474490269706,
+      "relevance_se_pairavg": 0.0009388454694274125,
+      "relevance_min_pair": 0.014657042688739352,
+      "relevance_max_pair": 0.03918905551648777,
+      "separability": "low",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "low",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "low",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 6.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.972125,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.7001691354471428,
+      "sym_kl_pairavg": 23.040747296950773,
+      "relevance_pairavg": 0.024276474490269706,
+      "relevance_se_pairavg": 0.0009111900930218444,
+      "relevance_min_pair": 0.014657042688739352,
+      "relevance_max_pair": 0.03918905551648777,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 6.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 29.6188125,
+      "id_p90_max": 99.0,
+      "chernoff_pairavg": 0.04786247900731644,
+      "sym_kl_pairavg": 0.9625124336695228,
+      "relevance_pairavg": 0.024276474490269706,
+      "relevance_se_pairavg": 0.000906726765842432,
+      "relevance_min_pair": 0.014657042688739352,
+      "relevance_max_pair": 0.03918905551648777,
+      "separability": "low",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "low",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "low",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 8.0,
+      "level": "active",
+      "id_mean_pairavg": 30.021,
+      "id_p90_max": 98.0,
+      "chernoff_pairavg": 0.04777733036361323,
+      "sym_kl_pairavg": 0.9597023799632974,
+      "relevance_pairavg": 0.025513924980010927,
+      "relevance_se_pairavg": 0.0009589232507578785,
+      "relevance_min_pair": 0.01633571186270899,
+      "relevance_max_pair": 0.03953349620515212,
+      "separability": "low",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "low",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "low",
+          "high"
+        ],
+        [
+          "low",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 8.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.9664375000000003,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.7026958161649455,
+      "sym_kl_pairavg": 30.397348864338298,
+      "relevance_pairavg": 0.025513924980010927,
+      "relevance_se_pairavg": 0.0009080993821369932,
+      "relevance_min_pair": 0.01633571186270899,
+      "relevance_max_pair": 0.03953349620515212,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 8.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 30.281187499999998,
+      "id_p90_max": 100.10000000000014,
+      "chernoff_pairavg": 0.04777733036361323,
+      "sym_kl_pairavg": 0.9597023799632974,
+      "relevance_pairavg": 0.025513924980010927,
+      "relevance_se_pairavg": 0.000961376114326193,
+      "relevance_min_pair": 0.01633571186270899,
+      "relevance_max_pair": 0.03953349620515212,
+      "separability": "low",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "low",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "low",
+          "high"
+        ],
+        [
+          "low",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 11.0,
+      "level": "active",
+      "id_mean_pairavg": 28.8516875,
+      "id_p90_max": 97.0,
+      "chernoff_pairavg": 0.04809028102983558,
+      "sym_kl_pairavg": 0.9650889685031832,
+      "relevance_pairavg": 0.026055737694583136,
+      "relevance_se_pairavg": 0.0009646825019960085,
+      "relevance_min_pair": 0.01714477231270095,
+      "relevance_max_pair": 0.039651953168569065,
+      "separability": "low",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "low",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "low",
+          "high"
+        ],
+        [
+          "low",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 11.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.9953749999999997,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.7029142723019819,
+      "sym_kl_pairavg": 41.44185288451881,
+      "relevance_pairavg": 0.026055737694583136,
+      "relevance_se_pairavg": 0.0009348206393253877,
+      "relevance_min_pair": 0.01714477231270095,
+      "relevance_max_pair": 0.039651953168569065,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 11.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 28.947625000000002,
+      "id_p90_max": 96.0,
+      "chernoff_pairavg": 0.04809028102983558,
+      "sym_kl_pairavg": 0.9650889685031832,
+      "relevance_pairavg": 0.026055737694583136,
+      "relevance_se_pairavg": 0.0009704434583603521,
+      "relevance_min_pair": 0.01714477231270095,
+      "relevance_max_pair": 0.039651953168569065,
+      "separability": "low",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "low",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "low",
+          "high"
+        ],
+        [
+          "low",
+          "high"
+        ]
+      ]
+    }
+  ],
+  "proposals": {
+    "passive_episode": {
+      "choice": {
+        "B": {
+          "dial": 0.6,
+          "achieved": true,
+          "cell": [
+            "high",
+            "high"
+          ]
+        },
+        "C": {
+          "dial": 0.25,
+          "achieved": false,
+          "cell": [
+            "low",
+            "low"
+          ]
+        }
+      },
+      "reachable_cells": {
+        "B": [
+          [
+            "high",
+            "high"
+          ],
+          [
+            "high",
+            "low"
+          ],
+          [
+            "high",
+            "mid"
+          ],
+          [
+            "low",
+            "low"
+          ],
+          [
+            "mid",
+            "low"
+          ]
+        ],
+        "C": [
+          [
+            "high",
+            "high"
+          ],
+          [
+            "high",
+            "low"
+          ],
+          [
+            "high",
+            "mid"
+          ],
+          [
+            "low",
+            "low"
+          ],
+          [
+            "mid",
+            "low"
+          ]
+        ]
+      },
+      "both_achieved": false
+    },
+    "passive_steady": {
+      "choice": {
+        "B": {
+          "dial": 0.6,
+          "achieved": true,
+          "cell": [
+            "high",
+            "high"
+          ]
+        },
+        "C": {
+          "dial": 6.0,
+          "achieved": true,
+          "cell": [
+            "low",
+            "high"
+          ]
+        }
+      },
+      "reachable_cells": {
+        "B": [
+          [
+            "high",
+            "high"
+          ],
+          [
+            "high",
+            "low"
+          ],
+          [
+            "high",
+            "mid"
+          ],
+          [
+            "low",
+            "low"
+          ],
+          [
+            "mid",
+            "low"
+          ]
+        ],
+        "C": [
+          [
+            "low",
+            "high"
+          ],
+          [
+            "low",
+            "low"
+          ],
+          [
+            "low",
+            "mid"
+          ]
+        ]
+      },
+      "both_achieved": true
+    }
+  },
+  "preferred_level": "passive_steady",
+  "proposed_dials": {
+    "flip_amplitude": 1.0,
+    "b_gap": 0.6,
+    "c_delta": 6.0,
+    "probe_start": "steady"
+  },
+  "final_summary_fresh_draws": [
+    {
+      "factor": "A",
+      "dial": 1.0,
+      "level": "active",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 87.536155631973,
+      "sym_kl_pairavg": 464.5761087511303,
+      "relevance_pairavg": 0.1847235352362242,
+      "relevance_se_pairavg": 0.0025234695716432882,
+      "relevance_min_pair": 0.1552635617385505,
+      "relevance_max_pair": 0.21653885440431253,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 1.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 87.536155631973,
+      "sym_kl_pairavg": 464.5761087511303,
+      "relevance_pairavg": 0.1847235352362242,
+      "relevance_se_pairavg": 0.002523897099083196,
+      "relevance_min_pair": 0.1552635617385505,
+      "relevance_max_pair": 0.21653885440431253,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "A",
+      "dial": 1.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.0,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 87.536155631973,
+      "sym_kl_pairavg": 464.5761087511303,
+      "relevance_pairavg": 0.1847235352362242,
+      "relevance_se_pairavg": 0.002433201753549231,
+      "relevance_min_pair": 0.1552635617385505,
+      "relevance_max_pair": 0.21653885440431253,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.6,
+      "level": "active",
+      "id_mean_pairavg": 6.23825,
+      "id_p90_max": 18.0,
+      "chernoff_pairavg": 0.1913947003949109,
+      "sym_kl_pairavg": 3.433856309460595,
+      "relevance_pairavg": 0.019491225722579664,
+      "relevance_se_pairavg": 0.0007094815258821204,
+      "relevance_min_pair": 0.002326849478340165,
+      "relevance_max_pair": 0.03117130649473765,
+      "separability": "mid",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "mid",
+          "mid"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.6,
+      "level": "passive_episode",
+      "id_mean_pairavg": 1.0049375,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 4.819394893990056,
+      "sym_kl_pairavg": 39.07385630946059,
+      "relevance_pairavg": 0.019491225722579664,
+      "relevance_se_pairavg": 0.0006922135422451314,
+      "relevance_min_pair": 0.002326849478340165,
+      "relevance_max_pair": 0.03117130649473765,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "B",
+      "dial": 0.6,
+      "level": "passive_steady",
+      "id_mean_pairavg": 1.0041875,
+      "id_p90_max": 1.0,
+      "chernoff_pairavg": 5.249434467970172,
+      "sym_kl_pairavg": 42.31385630946059,
+      "relevance_pairavg": 0.019491225722579664,
+      "relevance_se_pairavg": 0.000684836343401033,
+      "relevance_min_pair": 0.002326849478340165,
+      "relevance_max_pair": 0.03117130649473765,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "low"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 6.0,
+      "level": "active",
+      "id_mean_pairavg": 27.611874999999998,
+      "id_p90_max": 91.0,
+      "chernoff_pairavg": 0.05236407107659338,
+      "sym_kl_pairavg": 1.0485331062430825,
+      "relevance_pairavg": 0.02337148583688009,
+      "relevance_se_pairavg": 0.0009039799337780934,
+      "relevance_min_pair": 0.013719755718437199,
+      "relevance_max_pair": 0.038973575652029524,
+      "separability": "low",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "low",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "low",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 6.0,
+      "level": "passive_episode",
+      "id_mean_pairavg": 2.00075,
+      "id_p90_max": 4.0,
+      "chernoff_pairavg": 0.6858167302720097,
+      "sym_kl_pairavg": 22.833103418743082,
+      "relevance_pairavg": 0.02337148583688009,
+      "relevance_se_pairavg": 0.0009383264527969089,
+      "relevance_min_pair": 0.013719755718437199,
+      "relevance_max_pair": 0.038973575652029524,
+      "separability": "high",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "high"
+        ],
+        [
+          "high",
+          "mid"
+        ],
+        [
+          "high",
+          "high"
+        ]
+      ]
+    },
+    {
+      "factor": "C",
+      "dial": 6.0,
+      "level": "passive_steady",
+      "id_mean_pairavg": 27.457250000000002,
+      "id_p90_max": 92.10000000000014,
+      "chernoff_pairavg": 0.05236407107659338,
+      "sym_kl_pairavg": 1.0485331062430827,
+      "relevance_pairavg": 0.02337148583688009,
+      "relevance_se_pairavg": 0.0009352951129317953,
+      "relevance_min_pair": 0.013719755718437199,
+      "relevance_max_pair": 0.038973575652029524,
+      "separability": "low",
+      "relevance_grade": "high",
+      "pair_grades": [
+        [
+          "low",
+          "high"
+        ],
+        [
+          "mid",
+          "high"
+        ],
+        [
+          "low",
+          "mid"
+        ],
+        [
+          "low",
+          "high"
+        ]
+      ]
+    }
+  ],
+  "pool_reuse": {
+    "reused": 0,
+    "computed": 96
+  },
+  "seconds": 1540.4862208366394
+}

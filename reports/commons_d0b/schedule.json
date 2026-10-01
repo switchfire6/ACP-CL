@@ -1,0 +1,342 @@
+{
+  "spec": {
+    "length": 20000,
+    "heldout_start_fraction": 0.75,
+    "minority_share": 0.06,
+    "heldout_share_late": 0.3,
+    "run_min": 8,
+    "run_max": 800,
+    "min_minority_runs": 5,
+    "min_absence_ratio": 4.0,
+    "filter_epsilon": 0.02
+  },
+  "training": [
+    "A0B0C0",
+    "A1B0C0",
+    "A0B1C0",
+    "A0B0C1",
+    "A1B1C1"
+  ],
+  "held_out": [
+    "A1B1C0",
+    "A1B0C1",
+    "A0B1C1"
+  ],
+  "minority": "A1B1C1",
+  "low_separability_contrast": {
+    "factor": "C",
+    "level": "passive_steady",
+    "id_mean_episodes": 10.008,
+    "id_p90_max": 34.0
+  },
+  "note": "the schedule generator is unchanged from D0 (it does not depend on the world)",
+  "seeds": {
+    "1": {
+      "episodes": 20000,
+      "runs": 117,
+      "run_length": {
+        "min": 8,
+        "median": 86.0,
+        "mean": 170.94017094017093,
+        "max": 776
+      },
+      "per_context": {
+        "0": {
+          "share": 0.2174,
+          "runs": 26,
+          "first_episode": 0,
+          "median_run": 38.0
+        },
+        "1": {
+          "share": 0.21735,
+          "runs": 20,
+          "first_episode": 1845,
+          "median_run": 133.0
+        },
+        "2": {
+          "share": 0.21735,
+          "runs": 27,
+          "first_episode": 210,
+          "median_run": 46.0
+        },
+        "3": {
+          "share": 0.025,
+          "runs": 4,
+          "first_episode": 15305,
+          "median_run": 123.0
+        },
+        "4": {
+          "share": 0.2174,
+          "runs": 22,
+          "first_episode": 33,
+          "median_run": 124.0
+        },
+        "5": {
+          "share": 0.025,
+          "runs": 2,
+          "first_episode": 15000,
+          "median_run": 250.0
+        },
+        "6": {
+          "share": 0.025,
+          "runs": 4,
+          "first_episode": 15013,
+          "median_run": 51.0
+        },
+        "7": {
+          "share": 0.0555,
+          "runs": 12,
+          "first_episode": 832,
+          "median_run": 66.0
+        }
+      },
+      "minority": {
+        "context": 7,
+        "runs": 12,
+        "recurrences": 11,
+        "absences": [
+          755,
+          448,
+          999,
+          479,
+          108,
+          518,
+          5886,
+          179,
+          4508,
+          507,
+          654
+        ]
+      },
+      "heldout_first_episode": 15000,
+      "heldout_only_in_last_quarter": true,
+      "runs_shorter_than_2x_low_sep_id_time": 0.23931623931623933,
+      "runs_shorter_than_low_sep_id_time": 0.08547008547008547,
+      "runs_between_0.5x_and_2x_low_sep_id_time": 0.23931623931623933,
+      "c_only_switches": 12,
+      "c_only_switch_run_lengths": [
+        12,
+        25,
+        79,
+        19,
+        13,
+        451,
+        207,
+        209,
+        356,
+        776,
+        691,
+        8
+      ],
+      "sha256": "8534830526b752129e3764dd51dd26a4d263dda051fa0edf2120b29c13328cb9"
+    },
+    "2": {
+      "episodes": 20000,
+      "runs": 127,
+      "run_length": {
+        "min": 6,
+        "median": 84.0,
+        "mean": 157.48031496062993,
+        "max": 754
+      },
+      "per_context": {
+        "0": {
+          "share": 0.2174,
+          "runs": 24,
+          "first_episode": 646,
+          "median_run": 73.5
+        },
+        "1": {
+          "share": 0.21735,
+          "runs": 24,
+          "first_episode": 176,
+          "median_run": 96.5
+        },
+        "2": {
+          "share": 0.21735,
+          "runs": 32,
+          "first_episode": 0,
+          "median_run": 82.5
+        },
+        "3": {
+          "share": 0.025,
+          "runs": 3,
+          "first_episode": 15000,
+          "median_run": 14.0
+        },
+        "4": {
+          "share": 0.2174,
+          "runs": 25,
+          "first_episode": 90,
+          "median_run": 114.0
+        },
+        "5": {
+          "share": 0.025,
+          "runs": 6,
+          "first_episode": 16050,
+          "median_run": 75.0
+        },
+        "6": {
+          "share": 0.025,
+          "runs": 3,
+          "first_episode": 17556,
+          "median_run": 97.0
+        },
+        "7": {
+          "share": 0.0555,
+          "runs": 10,
+          "first_episode": 40,
+          "median_run": 47.5
+        }
+      },
+      "minority": {
+        "context": 7,
+        "runs": 10,
+        "recurrences": 9,
+        "absences": [
+          3284,
+          3534,
+          476,
+          2602,
+          544,
+          5389,
+          2316,
+          397,
+          157
+        ]
+      },
+      "heldout_first_episode": 15000,
+      "heldout_only_in_last_quarter": true,
+      "runs_shorter_than_2x_low_sep_id_time": 0.2204724409448819,
+      "runs_shorter_than_low_sep_id_time": 0.06299212598425197,
+      "runs_between_0.5x_and_2x_low_sep_id_time": 0.2204724409448819,
+      "c_only_switches": 15,
+      "c_only_switch_run_lengths": [
+        6,
+        117,
+        21,
+        13,
+        754,
+        378,
+        101,
+        78,
+        146,
+        742,
+        466,
+        80,
+        9,
+        191,
+        94
+      ],
+      "sha256": "79c70d1c9abefe87872809cdeb34350511fa8ac3b4dc747ffffd6f468757d804"
+    },
+    "3": {
+      "episodes": 20000,
+      "runs": 134,
+      "run_length": {
+        "min": 8,
+        "median": 64.0,
+        "mean": 149.2537313432836,
+        "max": 754
+      },
+      "per_context": {
+        "0": {
+          "share": 0.2174,
+          "runs": 28,
+          "first_episode": 99,
+          "median_run": 92.5
+        },
+        "1": {
+          "share": 0.21735,
+          "runs": 36,
+          "first_episode": 0,
+          "median_run": 48.0
+        },
+        "2": {
+          "share": 0.21735,
+          "runs": 23,
+          "first_episode": 215,
+          "median_run": 83.0
+        },
+        "3": {
+          "share": 0.025,
+          "runs": 3,
+          "first_episode": 15320,
+          "median_run": 96.0
+        },
+        "4": {
+          "share": 0.2174,
+          "runs": 21,
+          "first_episode": 130,
+          "median_run": 146.0
+        },
+        "5": {
+          "share": 0.025,
+          "runs": 7,
+          "first_episode": 15425,
+          "median_run": 63.0
+        },
+        "6": {
+          "share": 0.025,
+          "runs": 6,
+          "first_episode": 15048,
+          "median_run": 50.0
+        },
+        "7": {
+          "share": 0.0555,
+          "runs": 10,
+          "first_episode": 1311,
+          "median_run": 94.5
+        }
+      },
+      "minority": {
+        "context": 7,
+        "runs": 10,
+        "recurrences": 9,
+        "absences": [
+          1128,
+          775,
+          4000,
+          1947,
+          2687,
+          592,
+          5003,
+          414,
+          438
+        ]
+      },
+      "heldout_first_episode": 15048,
+      "heldout_only_in_last_quarter": true,
+      "runs_shorter_than_2x_low_sep_id_time": 0.26119402985074625,
+      "runs_shorter_than_low_sep_id_time": 0.08955223880597014,
+      "runs_between_0.5x_and_2x_low_sep_id_time": 0.26119402985074625,
+      "c_only_switches": 23,
+      "c_only_switch_run_lengths": [
+        31,
+        185,
+        265,
+        351,
+        703,
+        8,
+        196,
+        444,
+        48,
+        14,
+        58,
+        9,
+        178,
+        21,
+        44,
+        47,
+        12,
+        27,
+        249,
+        53,
+        132,
+        258,
+        42
+      ],
+      "sha256": "5a62606489fa506fbbb79080829fc8dba6296969434b47be56513880b53a0d2c"
+    }
+  }
+}

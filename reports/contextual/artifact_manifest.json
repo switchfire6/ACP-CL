@@ -1,0 +1,270 @@
+{
+  "analysis_source.zip": {
+    "bytes": 56568,
+    "sha256": "e301166a1ca3bd2a377e66fd53f36ee2fddbcc6c1e111abcd1cfca385a04a5a2"
+  },
+  "analysis_source_manifest.json": {
+    "bytes": 2546,
+    "sha256": "6558ea2011b6521705122654e52834a331277d86a37d3c14de71b1388525ff0e"
+  },
+  "archive.json.gz": {
+    "bytes": 5600524,
+    "sha256": "0ea53936d41698ecf1b8f0224f36d0a5cd2f9d23870496d35e4f35c4175e218b"
+  },
+  "audit.json": {
+    "bytes": 66441,
+    "sha256": "2a278b1c82d0a19b34d7e1bad4d76de057fe27c720d01905afd8eb72c3edc949"
+  },
+  "completion.json": {
+    "bytes": 393,
+    "sha256": "eb9e4ed70ff76011b2f6883447d94064425ea7c65203e7d6cbd7ae4ab2802a03"
+  },
+  "development/contextual_development_interactions_u12/audit.json": {
+    "bytes": 4573,
+    "sha256": "79b2df9e1b2bc136d99d669bda7fe306045898c6e2fb8bde7a5c95fd69139550"
+  },
+  "development/contextual_development_interactions_u12/completion.json": {
+    "bytes": 391,
+    "sha256": "47a7228adc5d634e3fbfb61dc311708d3a3d58de9dfd015464881ad01b725b04"
+  },
+  "development/contextual_development_interactions_u12/config.json": {
+    "bytes": 652,
+    "sha256": "3b651c1af058774acf323e3464481d88ed72456e2e08a646f541ec7f222dfd05"
+  },
+  "development/contextual_development_interactions_u12/manifest.json": {
+    "bytes": 2807,
+    "sha256": "44022c79802cb1dce31adb729f776f9ad263f31d6fe5a39f2d58172ab42c8af0"
+  },
+  "development/contextual_development_interactions_u12/records.json.gz": {
+    "bytes": 286486,
+    "sha256": "8c9677f962dd85f798e6573455e68b4b95981de646dfb29657031c46afede3fc"
+  },
+  "development/contextual_development_interactions_u12/summary.json": {
+    "bytes": 17404,
+    "sha256": "1967bca5c28ea0af906369384d2c05ab7f98b61393ec4bc3ff88928e41f9ac5e"
+  },
+  "development/contextual_development_interactions_u12/training_source.zip": {
+    "bytes": 29727,
+    "sha256": "6a9604d5f93e78e6547dd5588a01310e90e8fdde9a345ab76971a0e71f6c9bb7"
+  },
+  "development/contextual_development_interactions_u3/audit.json": {
+    "bytes": 4574,
+    "sha256": "b7345b3ed5616fc14ab3e83c7e20e07e9d984d54f1d7de757986af951d6b8eeb"
+  },
+  "development/contextual_development_interactions_u3/completion.json": {
+    "bytes": 391,
+    "sha256": "b7e1ee532b987b48a515f20ac96e25e79341b0c7b02534a4204a449ddec549f7"
+  },
+  "development/contextual_development_interactions_u3/config.json": {
+    "bytes": 650,
+    "sha256": "366d49f9b9fc195e1cbe7c6fd71cf0ee97f3648b1049e0f60b7e5785c5c02ff1"
+  },
+  "development/contextual_development_interactions_u3/manifest.json": {
+    "bytes": 2805,
+    "sha256": "2382638c853737a8b7e37f2edb1c8c20f446729d6a79785c4e7d28dc2e5945ca"
+  },
+  "development/contextual_development_interactions_u3/records.json.gz": {
+    "bytes": 284017,
+    "sha256": "fabc70940b97fb63d5ec31c673628467929e4ca89dda779c4bbcb02357982255"
+  },
+  "development/contextual_development_interactions_u3/summary.json": {
+    "bytes": 17438,
+    "sha256": "e0a0859da6ec7a11720e7dbeb6022a5e74d4b7543dc6610ba1d2e91c1f500a40"
+  },
+  "development/contextual_development_interactions_u3/training_source.zip": {
+    "bytes": 29727,
+    "sha256": "6a9604d5f93e78e6547dd5588a01310e90e8fdde9a345ab76971a0e71f6c9bb7"
+  },
+  "development/contextual_development_interactions_u6/audit.json": {
+    "bytes": 4573,
+    "sha256": "19cbea3fc7b16a512c03f2f51c4b3ed4670962cb167437a57aa0c2858479e522"
+  },
+  "development/contextual_development_interactions_u6/completion.json": {
+    "bytes": 391,
+    "sha256": "63a65b8745a5c9e14a408028a8a495dbfe0a185c39c8d8370f2b5fd575163722"
+  },
+  "development/contextual_development_interactions_u6/config.json": {
+    "bytes": 650,
+    "sha256": "bb0844a030fe9a9da2b7fb4cd9b7a03546390c34bf2d2712db78cf45afd0f298"
+  },
+  "development/contextual_development_interactions_u6/manifest.json": {
+    "bytes": 2805,
+    "sha256": "f565fdd76694fe2bcad4a1f35c9e7ee6a4d715ea48812bc8ff9d3fefb7e6af32"
+  },
+  "development/contextual_development_interactions_u6/records.json.gz": {
+    "bytes": 285516,
+    "sha256": "2969e5f384c77dc57447672359c8287f30e49f83b4a6c2d493549042fee8d875"
+  },
+  "development/contextual_development_interactions_u6/summary.json": {
+    "bytes": 17440,
+    "sha256": "d034f01fcc4140e252fd6f318f22c99193aa3f25b0c7f71e6efc631d1cbefbc7"
+  },
+  "development/contextual_development_interactions_u6/training_source.zip": {
+    "bytes": 29727,
+    "sha256": "6a9604d5f93e78e6547dd5588a01310e90e8fdde9a345ab76971a0e71f6c9bb7"
+  },
+  "development/contextual_development_u12/audit.json": {
+    "bytes": 4574,
+    "sha256": "86c7f16c11334e6fc3e5af5b7a0c71448d390405861f2ee9693de0179967026b"
+  },
+  "development/contextual_development_u12/completion.json": {
+    "bytes": 391,
+    "sha256": "4259bbab2be91c6b6c99041560acd70354f03b0c65251adb39b2ef33410c6209"
+  },
+  "development/contextual_development_u12/config.json": {
+    "bytes": 606,
+    "sha256": "a4dfdd79ae99284b02acf847e982e2b4b90c5cc4e802e762ad7406f365856801"
+  },
+  "development/contextual_development_u12/manifest.json": {
+    "bytes": 2759,
+    "sha256": "cf7bee663afe3a25c1c0f81b8277561cad7e20f4902c61bb8ff0f790eee0bfb3"
+  },
+  "development/contextual_development_u12/records.json.gz": {
+    "bytes": 286938,
+    "sha256": "b93bab6d8c2573eaf21d2a99a52176d3e747fd37d11305702daef03dc5a4fa67"
+  },
+  "development/contextual_development_u12/summary.json": {
+    "bytes": 17415,
+    "sha256": "bfa2a4127e4fb5a0deef7eff76fa93613108acb1146153c371526f0f23600dbf"
+  },
+  "development/contextual_development_u12/training_source.zip": {
+    "bytes": 29467,
+    "sha256": "e6671ee8d72584553ca45d026f6d4fdc5a8f61a30252c8d0f2139e1a6af1585c"
+  },
+  "development/contextual_development_u3/audit.json": {
+    "bytes": 4573,
+    "sha256": "c79b0959095f82cbf4956bc62ba40f82a6c6f1aaeb9160076df308e08402f48f"
+  },
+  "development/contextual_development_u3/completion.json": {
+    "bytes": 391,
+    "sha256": "6505b9cfe34262a25dfa4653ca53677914681d3282ea0a5af8639f4a6f5d13e3"
+  },
+  "development/contextual_development_u3/config.json": {
+    "bytes": 601,
+    "sha256": "bb05fa79fd415a36d2e252fee7dadb2922fb2091412cbfb79aa32432de1abfa2"
+  },
+  "development/contextual_development_u3/manifest.json": {
+    "bytes": 2754,
+    "sha256": "052ae9209982a6a7a49c912df7f01ce4381733b4f6c76d8015fa11d1c24532f8"
+  },
+  "development/contextual_development_u3/records.json.gz": {
+    "bytes": 284648,
+    "sha256": "566e2ff0daa3b567c38567e062cf1b81c33d9d66b92211107df9dfe106d694c6"
+  },
+  "development/contextual_development_u3/summary.json": {
+    "bytes": 17432,
+    "sha256": "422e8ff2ec777b69f6a1b976f5bd5d9dd8daba6a0ad12f47a6f186db8c42e230"
+  },
+  "development/contextual_development_u3/training_source.zip": {
+    "bytes": 29467,
+    "sha256": "e6671ee8d72584553ca45d026f6d4fdc5a8f61a30252c8d0f2139e1a6af1585c"
+  },
+  "development/contextual_development_u6/audit.json": {
+    "bytes": 4574,
+    "sha256": "74713fc2c6fe7a3cbcc54f234e59589f9ceab6901c3880236d30b64d689297ae"
+  },
+  "development/contextual_development_u6/completion.json": {
+    "bytes": 391,
+    "sha256": "528f8d7fb2d8aafe4b4468e8979aef61eaef990ab7226d42c0891322b870a203"
+  },
+  "development/contextual_development_u6/config.json": {
+    "bytes": 604,
+    "sha256": "9b99fd0d13da6c35605b08ae29583d4e3b3ad5050be9fb896e7a7002794044c4"
+  },
+  "development/contextual_development_u6/manifest.json": {
+    "bytes": 2757,
+    "sha256": "7d66dbaefbe3b623c94b9fe7eb4c0554afd487fb4f62b18eb39137d8f59bcd6c"
+  },
+  "development/contextual_development_u6/records.json.gz": {
+    "bytes": 285937,
+    "sha256": "2000bface73cff4081dd1baa7f4ab3989493d26e58c6fe680713f92acaf93e7d"
+  },
+  "development/contextual_development_u6/summary.json": {
+    "bytes": 17434,
+    "sha256": "38c2c606888a4d1ed708c7104f8ddd9e62ae49b1be0f91c73b90d254c445d33a"
+  },
+  "development/contextual_development_u6/training_source.zip": {
+    "bytes": 29467,
+    "sha256": "e6671ee8d72584553ca45d026f6d4fdc5a8f61a30252c8d0f2139e1a6af1585c"
+  },
+  "development_interactions_u12_metrics.json": {
+    "bytes": 1252,
+    "sha256": "9422e464a6ef4385ec89adb682f5e70d5944f910c126d47e121f4c42736e34ae"
+  },
+  "development_interactions_u3_metrics.json": {
+    "bytes": 1269,
+    "sha256": "e98eb7e26d22916e319c0d3b0221fdc0ae991d9f7a3320417e80b8b6b0a841c8"
+  },
+  "development_interactions_u6_metrics.json": {
+    "bytes": 1246,
+    "sha256": "c269b220afae6d091083215a50b5246c1499f7f1c49155d6c1fc9ce6286f7590"
+  },
+  "development_ledger.md": {
+    "bytes": 6158,
+    "sha256": "bddebf70812c03413d5d1761c2c653e56fc98eedbf76672647cbd9dc4c914b6e"
+  },
+  "development_summary.json": {
+    "bytes": 116994,
+    "sha256": "21b24847f55542442fea1aa06b08de41ddea30903783036c31a5abc4e0a27b5e"
+  },
+  "development_summary.md": {
+    "bytes": 1126,
+    "sha256": "b0b323464e0af30820630ce347a043d137e0ca40d5b62a46dfd98ba456a9fad9"
+  },
+  "development_u12_metrics.json": {
+    "bytes": 1250,
+    "sha256": "8f685fb7dc0c970c37ac4beb1c86091becfcb53c885dc4a66866aeac15df04b7"
+  },
+  "development_u3_metrics.json": {
+    "bytes": 1013,
+    "sha256": "d033a1b596b8a6702dab6f8213a3f2a173aeffbd1d32b5cec4e611d95dc0c985"
+  },
+  "development_u6_metrics.json": {
+    "bytes": 1248,
+    "sha256": "a792b2bd43c71b656088a63c863454ab5a206b030f4924ffcc839e7f5412652c"
+  },
+  "engineering_verification.json": {
+    "bytes": 677,
+    "sha256": "ba3ab6478b84f7cb752c0b88e4417ec33044909c7f6c6ce2125d0bf962b95ebf"
+  },
+  "manifest.json": {
+    "bytes": 2952,
+    "sha256": "d41d7e2cadf7630e92a41920ec0db49e97341dad83c9d9c2128588fe41144ebc"
+  },
+  "overview.pdf": {
+    "bytes": 38219,
+    "sha256": "9bab93f2cc80d43c70cbaa07f153a7f2bc5f67649da28621d5e003c3444399c9"
+  },
+  "overview.png": {
+    "bytes": 374720,
+    "sha256": "bbf13c9bca1faa5c22d5560983abd8ef22a9bbcc44441d5c97f96ab0b022dafa"
+  },
+  "overview.svg": {
+    "bytes": 169478,
+    "sha256": "f1aba2d87f5cf5d42b082f9410839815c1bb83db1540cc73a7c779e5cc6e2af8"
+  },
+  "protocol_at_lock.md": {
+    "bytes": 11417,
+    "sha256": "39a0aaa5d93d641de5c1fff3329346e48caadcc85600974043cce2b87f89e713"
+  },
+  "protocol_lock.json": {
+    "bytes": 413,
+    "sha256": "733ce2355494b2aa0e92f8fa83d50b7502f418c0382939b39d74fa9c87c32919"
+  },
+  "routing_diagnosis.json": {
+    "bytes": 16719,
+    "sha256": "7bc705b2e47f484ab7b8fa4311785045cbecf8941ccccd141addbb70a52ea653"
+  },
+  "summary.json": {
+    "bytes": 157226,
+    "sha256": "66adbd5fc8a3db9ed7c82f9f7665176c5b9a269cc85cb2f2ebb4442fab1ab19c"
+  },
+  "summary.md": {
+    "bytes": 2509,
+    "sha256": "78e86a5fd52e420c8a659b0e02c91282a8e39376d56ae0990d348a8b7864f373"
+  },
+  "training_source.zip": {
+    "bytes": 29739,
+    "sha256": "2013149c11be93e6949de3a1572440aa46095b5d2f1ec6701151f25981c2c891"
+  }
+}

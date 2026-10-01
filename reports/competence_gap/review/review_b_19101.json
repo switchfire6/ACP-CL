@@ -1,0 +1,19 @@
+{
+ "19101": {
+  "mode": 0,
+  "queries": 512,
+  "K_mine": 8192,
+  "K_saved": 4096,
+  "reconstructed_realised_supplies_exact": true,
+  "realised_supplies_reproduce_truth": true,
+  "brier_saved": 0.04253512454063942,
+  "brier_mine": 0.04249005005888951,
+  "brier_diff": 4.507448174990991e-05,
+  "mean_z2": 1.0308626316250649,
+  "max_abs_z": 4.047944795053481,
+  "cells_abs_z_gt4": 1,
+  "live_cells": 4384,
+  "deterministic_cells_disagree": 0,
+  "max_abs_prob_diff": 0.0296630859375
+ }
+}

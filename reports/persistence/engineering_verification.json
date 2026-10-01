@@ -1,0 +1,23 @@
+{
+  "verified_utc": "2026-09-27T02:33:43Z",
+  "training_source_sha256": "dd9eb69a45f475326e20c101b0fb7ef500e9d59ca9c69f75a0afbae5968a32f3",
+  "pytest": {
+    "passed": 615,
+    "skipped": 2,
+    "seconds": 30.77,
+    "skip_reason": "Host does not permit test directory symlinks; existing portable-report tests."
+  },
+  "ruff": "passed: src tests scripts",
+  "smokes": {
+    "persistence_cpu": "runs/persistence_smoke_locked",
+    "persistence_cuda": "runs/persistence_smoke_cuda",
+    "legacy_cpu": "runs/persistence_integration_legacy",
+    "v3_cpu": "runs/persistence_integration_v3"
+  },
+  "cuda_smoke_environment": {
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "checkpoint_contracts": "Unit tests verify interrupted learner continuation and completed-suite resume without result changes.",
+  "scientific_audit": "All 288 checkpoints and nine final probes per run verified; see audit.json.",
+  "figure_review": "overview.png visually inspected; labels, intervals, curves and footer are legible."
+}

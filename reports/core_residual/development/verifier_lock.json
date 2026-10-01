@@ -1,0 +1,8 @@
+{
+  "locked_utc": "2026-09-28T02:42:28.360806+00:00",
+  "files": {
+    "scripts/verify_core_residual_archive.py": "eca9a1622ab3ff555c6bc944b7db0e702a6c5f3bff8164336cdeca62e8507670",
+    "tests/test_core_residual_archive.py": "cf667223fb17d714f2ee2ca5933a230847264a9d18952c966a9e825da218cb16"
+  },
+  "scope": "Standalone portable packaging verifier and tests, separately sealed after scientific locking; no fitting or scientific analysis changes."
+}

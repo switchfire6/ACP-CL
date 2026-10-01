@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "identity": {
+    "config_sha256": "de1ab9b5a054b8e2820df8ed18f9957ca28306d0f275952a0d72a8189713948f",
+    "source_sha256": "e95a0b9823ed139a099a547f5b5c96196ba9266b09c1e3ddbe62b68186dff11d",
+    "runtime_sha256": "32177ec7a5531b8194a932c955d69d79f52c63832da301819c1de4caf331f226"
+  },
+  "prefix_checkpoints": 2,
+  "block_before_checkpoints": 6,
+  "block_final_checkpoints": 6,
+  "fresh_before_checkpoints": 6,
+  "fresh_final_checkpoints": 6,
+  "decision_windows": 10,
+  "block_checks": [
+    {
+      "seed": 29,
+      "model": "conditional",
+      "block": 0,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 29,
+      "model": "conditional",
+      "block": 1,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 29,
+      "model": "conditional",
+      "block": 2,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 29,
+      "model": "recurrent",
+      "block": 0,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 29,
+      "model": "recurrent",
+      "block": 1,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    },
+    {
+      "seed": 29,
+      "model": "recurrent",
+      "block": 2,
+      "raw_and_clean_regenerated": true,
+      "causal_memory_verified": true,
+      "endpoint_probes_recomputed": true,
+      "first_packet_prequential_recomputed": true,
+      "first_packet_gate_gain_recomputed": true,
+      "gate_lineage_verified": true
+    }
+  ],
+  "fresh_checks": [
+    {
+      "seed": 29,
+      "model": "conditional",
+      "stage": 1
+    },
+    {
+      "seed": 29,
+      "model": "conditional",
+      "stage": 2
+    },
+    {
+      "seed": 29,
+      "model": "conditional",
+      "stage": 3
+    },
+    {
+      "seed": 29,
+      "model": "recurrent",
+      "stage": 1
+    },
+    {
+      "seed": 29,
+      "model": "recurrent",
+      "stage": 2
+    },
+    {
+      "seed": 29,
+      "model": "recurrent",
+      "stage": 3
+    }
+  ],
+  "elapsed_seconds": 2.7902995999993436,
+  "scope": "Exact-source local checkpoint, stream, replay, budget, first-packet prequential, endpoint-probe and gate-arithmetic/lineage audit. Intermediate window weights are not saved: individual gate gains and every prequential loss are not independently rescored or retrained."
+}

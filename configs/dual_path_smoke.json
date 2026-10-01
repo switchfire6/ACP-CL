@@ -1,0 +1,25 @@
+{
+  "stage": "dual-path engineering smoke; not scientific evidence",
+  "data": {
+    "dataset": "procedural_shapes", "n_experiences": 4, "n_domains": 2,
+    "regime": "recurring", "color_policy": "independent",
+    "train_per_class": 32, "validation_per_class": 8, "test_per_class": 0,
+    "image_size": 32
+  },
+  "model": "cnn", "width": 16, "threads": 2,
+  "batch_size": 16, "steps_per_experience": 8,
+  "eval_every_steps": 2, "early_examples": 64,
+  "eval_split": "validation", "scratch_reference": true, "checkpoint": true,
+  "replay_capacity": 64, "replay_batch_size": 16, "probe_batch_size": 16,
+  "seeds": [2027],
+  "methods": ["er", "derpp", "dual_joint", "dual_derpp", "dual_frozen", "dual_consolidate"],
+  "primary_method": "dual_consolidate",
+  "report_acquisition_change": true,
+  "plasticity": {"lr": 0.03, "momentum": 0.9, "weight_decay": 0.0001},
+  "dual_path": {
+    "fast_width": 8, "consolidation_interval": 7, "consolidation_steps": 3,
+    "consolidation_batch_size": 16, "consolidation_pool_size": 32,
+    "consolidation_lr": 0.03, "distillation_weight": 1.0,
+    "temperature": 2.0, "max_grad_norm": 10.0, "probe_interval": 4
+  }
+}

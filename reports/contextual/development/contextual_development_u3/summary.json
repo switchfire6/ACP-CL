@@ -1,0 +1,508 @@
+{
+  "study": "contextual_development",
+  "identity": {
+    "config_sha256": "79f363e9fd34e24b738fb69bcd5117a0aefd3885cdf2525dd8e532b4b54da3df",
+    "source_sha256": "eb986881ccc8bab09114db0f81edb2f42c2cb6b8ce6384690d3f7f65ff2653d7",
+    "runtime_sha256": "dd7ef2968c4cb3d4ff91d4e3a8309f85476415d7b5207655e73be0f6101bea5a"
+  },
+  "recipe": "plain",
+  "updates": 3,
+  "aggregate": {
+    "return": {
+      "pooled": {
+        "before": 0.6744791666666667,
+        "entry": 0.6744791666666667,
+        "before_no_transfer": 0.6028645833333333,
+        "before_history_effect": 0.0,
+        "acquisition_auc": 0.6630859375,
+        "endpoint": 0.6614583333333333,
+        "after": 0.6614583333333333,
+        "known_after": 0.66796875,
+        "after_brier": 0.14281686395406723,
+        "initial_gain": 0.06477864583333334,
+        "training_seconds": 7.064287150002201
+      },
+      "recurrent": {
+        "before": 0.65625,
+        "entry": 0.6549479166666667,
+        "before_no_transfer": 0.6028645833333333,
+        "before_history_effect": -0.00032552083333337034,
+        "acquisition_auc": 0.6637369791666667,
+        "endpoint": 0.6809895833333333,
+        "after": 0.6845703125,
+        "known_after": 0.6515299479166667,
+        "after_brier": 0.13179408945143223,
+        "initial_gain": 0.07389322916666669,
+        "training_seconds": 16.266784200003713
+      },
+      "oracle": {
+        "before": 0.7239583333333334,
+        "entry": 0.7239583333333334,
+        "before_no_transfer": 0.6028645833333333,
+        "before_history_effect": 0.0,
+        "acquisition_auc": 0.73486328125,
+        "endpoint": 0.7408854166666666,
+        "after": 0.7408854166666666,
+        "known_after": 0.75,
+        "after_brier": 0.061031993478536606,
+        "initial_gain": 0.12141927083333333,
+        "training_seconds": 7.379769799996211
+      }
+    },
+    "novel": {
+      "pooled": {
+        "before": 0.6692708333333333,
+        "entry": 0.6692708333333333,
+        "before_no_transfer": 0.609375,
+        "before_history_effect": 0.0,
+        "acquisition_auc": 0.6707356770833333,
+        "endpoint": 0.6731770833333333,
+        "after": 0.6731770833333333,
+        "known_after": 0.67578125,
+        "after_brier": 0.1466645449399948,
+        "initial_gain": 0.06477864583333334,
+        "training_seconds": 7.063689200005683
+      },
+      "recurrent": {
+        "before": 0.6761067708333334,
+        "entry": 0.67578125,
+        "before_no_transfer": 0.609375,
+        "before_history_effect": -0.00032552083333331483,
+        "acquisition_auc": 0.6769205729166666,
+        "endpoint": 0.6692708333333334,
+        "after": 0.6767578125,
+        "known_after": 0.6632486979166667,
+        "after_brier": 0.14891717210412025,
+        "initial_gain": 0.07389322916666669,
+        "training_seconds": 16.239744550007345
+      },
+      "oracle": {
+        "before": 0.6419270833333333,
+        "entry": 0.6419270833333333,
+        "before_no_transfer": 0.609375,
+        "before_history_effect": 0.0,
+        "acquisition_auc": 0.67431640625,
+        "endpoint": 0.7135416666666667,
+        "after": 0.7135416666666667,
+        "known_after": 0.7278645833333333,
+        "after_brier": 0.11521950364112854,
+        "initial_gain": 0.12141927083333333,
+        "training_seconds": 7.374022499998318
+      }
+    },
+    "noise": {
+      "pooled": {
+        "before": 0.6783854166666666,
+        "entry": 0.6783854166666666,
+        "before_no_transfer": 0.6145833333333333,
+        "before_history_effect": 0.0,
+        "acquisition_auc": 0.677734375,
+        "endpoint": 0.6888020833333333,
+        "after": 0.6888020833333333,
+        "known_after": 0.673828125,
+        "after_brier": 0.15711795538663864,
+        "initial_gain": 0.06477864583333334,
+        "training_seconds": 7.053184200000032
+      },
+      "recurrent": {
+        "before": 0.6702473958333334,
+        "entry": 0.6692708333333334,
+        "before_no_transfer": 0.6145833333333333,
+        "before_history_effect": 0.0006510416666666852,
+        "acquisition_auc": 0.6809895833333334,
+        "endpoint": 0.6927083333333333,
+        "after": 0.69140625,
+        "known_after": 0.6534830729166667,
+        "after_brier": 0.12649952992796898,
+        "initial_gain": 0.07389322916666669,
+        "training_seconds": 16.215379350010153
+      },
+      "oracle": {
+        "before": 0.76171875,
+        "entry": 0.76171875,
+        "before_no_transfer": 0.6145833333333333,
+        "before_history_effect": 0.0,
+        "acquisition_auc": 0.7535807291666666,
+        "endpoint": 0.7434895833333333,
+        "after": 0.7434895833333333,
+        "known_after": 0.7298177083333333,
+        "after_brier": 0.08237221091985703,
+        "initial_gain": 0.12141927083333333,
+        "training_seconds": 7.361606849995951
+      }
+    }
+  },
+  "adequacy": {
+    "oracle_acquisition": true,
+    "recurrent_acquisition": true,
+    "recurrent_return": true,
+    "recurrent_uses_history": false
+  },
+  "qualifies": false,
+  "prefixes": 6,
+  "branches": 18,
+  "result_hashes": [
+    {
+      "path": "long_noise_oracle_117/result.json",
+      "sha256": "ed272db70aaa4f995edd841bcdc3a31db4093e5e5b534fbd5bdc52d9c4aef4ab"
+    },
+    {
+      "path": "long_noise_oracle_118/result.json",
+      "sha256": "1f3f2fc7a3b49c2a5758b1b099e2fbca56ea15ca97e1fe352937f6651d1408cb"
+    },
+    {
+      "path": "long_noise_pooled_117/result.json",
+      "sha256": "5bcb17719d941c868053df0df6f98d99306df8c4f17d01fdd2ba80a672ca6f04"
+    },
+    {
+      "path": "long_noise_pooled_118/result.json",
+      "sha256": "1072db76d84d7bdb5fa4386ad4fa9fac7a337d27f1c33f69787bdbc2e37bbc2d"
+    },
+    {
+      "path": "long_noise_recurrent_117/result.json",
+      "sha256": "28fd654205d0bb92c1ef5d77ec6a6ac2b561f8771bedc62bd09227fd2f80b72e"
+    },
+    {
+      "path": "long_noise_recurrent_118/result.json",
+      "sha256": "8ad62ec774353d2cb803d71730e412e37651de399ada6d0a4573b06259cbf295"
+    },
+    {
+      "path": "long_novel_oracle_117/result.json",
+      "sha256": "56a0bd16633eccea2de82c258485bee2628ba0367889c3ead279eebe0fa59a83"
+    },
+    {
+      "path": "long_novel_oracle_118/result.json",
+      "sha256": "a527c03e28fd31c67635ef9e9459ba0c3057110817490d4a6fe8b8872e6a1cf1"
+    },
+    {
+      "path": "long_novel_pooled_117/result.json",
+      "sha256": "97447f6625fde71b6a3a4557efb1fb7ad6b3e7931e9c1cb436ed9322f57e3533"
+    },
+    {
+      "path": "long_novel_pooled_118/result.json",
+      "sha256": "006c2dabba757fa7610138892535fad3d028346fe36a1af7947c06da53c35825"
+    },
+    {
+      "path": "long_novel_recurrent_117/result.json",
+      "sha256": "5a08bfd27efe41f07d07e5f144e12de46b259c395b368d823c0cb6ff8f175bb3"
+    },
+    {
+      "path": "long_novel_recurrent_118/result.json",
+      "sha256": "4bfb1f371937e111711ec14ef2b402ac7e48b8c7bf7817aa34afc322176afed4"
+    },
+    {
+      "path": "long_return_oracle_117/result.json",
+      "sha256": "203ed55e2ed4da6d1849b1e97b960e5e8417a3437b0237036eb20e316411a624"
+    },
+    {
+      "path": "long_return_oracle_118/result.json",
+      "sha256": "5a6c67be0961d02cefba57ccf0b8bb21eae0cd6e83f3555f704766a2563bcd19"
+    },
+    {
+      "path": "long_return_pooled_117/result.json",
+      "sha256": "133b11a4d38f29670439904f42b39db5fbb2e20b544935fd0c7925c14ce38ac7"
+    },
+    {
+      "path": "long_return_pooled_118/result.json",
+      "sha256": "75cc95cec97ab47dbdfe0f3957a628f9a147957474fbad76f26d3a8f1212a10c"
+    },
+    {
+      "path": "long_return_recurrent_117/result.json",
+      "sha256": "daf3f3fc17768b64dcaf9a099d697425385af354d4564fb0ef0e50e99c2f56c7"
+    },
+    {
+      "path": "long_return_recurrent_118/result.json",
+      "sha256": "1262f191c9211be0f7e20963c278b36821530505c58e6ec122ea13abdc3f594e"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": 117,
+      "method": "pooled",
+      "branch": "return",
+      "before": 0.6692708333333334,
+      "entry": 0.6692708333333334,
+      "before_no_transfer": 0.6171875,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.6614583333333334,
+      "endpoint": 0.6640625,
+      "after": 0.6640625,
+      "known_after": 0.6888020833333333,
+      "after_brier": 0.14618541300296783,
+      "initial_gain": 0.064453125,
+      "training_seconds": 7.232644800002163
+    },
+    {
+      "seed": 117,
+      "method": "pooled",
+      "branch": "novel",
+      "before": 0.6484375,
+      "entry": 0.6484375,
+      "before_no_transfer": 0.5885416666666666,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.6497395833333333,
+      "endpoint": 0.6432291666666666,
+      "after": 0.6432291666666666,
+      "known_after": 0.6940104166666667,
+      "after_brier": 0.14572757482528687,
+      "initial_gain": 0.064453125,
+      "training_seconds": 7.308024800000567
+    },
+    {
+      "seed": 117,
+      "method": "pooled",
+      "branch": "noise",
+      "before": 0.7135416666666666,
+      "entry": 0.7135416666666666,
+      "before_no_transfer": 0.671875,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.708984375,
+      "endpoint": 0.7135416666666666,
+      "after": 0.7135416666666666,
+      "known_after": 0.6927083333333333,
+      "after_brier": 0.14740590751171112,
+      "initial_gain": 0.064453125,
+      "training_seconds": 7.289520999989691
+    },
+    {
+      "seed": 117,
+      "method": "recurrent",
+      "branch": "return",
+      "before": 0.6542968750000001,
+      "entry": 0.65625,
+      "before_no_transfer": 0.6171875,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.6608072916666667,
+      "endpoint": 0.671875,
+      "after": 0.6809895833333333,
+      "known_after": 0.6822916666666667,
+      "after_brier": 0.1423627957701683,
+      "initial_gain": 0.07291666666666666,
+      "training_seconds": 16.905652300005386
+    },
+    {
+      "seed": 117,
+      "method": "recurrent",
+      "branch": "novel",
+      "before": 0.6608072916666667,
+      "entry": 0.6614583333333334,
+      "before_no_transfer": 0.5885416666666666,
+      "before_history_effect": -0.0006510416666666297,
+      "acquisition_auc": 0.65625,
+      "endpoint": 0.6302083333333334,
+      "after": 0.6432291666666667,
+      "known_after": 0.6748046875,
+      "after_brier": 0.14636512473225594,
+      "initial_gain": 0.07291666666666666,
+      "training_seconds": 16.964203900010034
+    },
+    {
+      "seed": 117,
+      "method": "recurrent",
+      "branch": "noise",
+      "before": 0.7161458333333334,
+      "entry": 0.7161458333333334,
+      "before_no_transfer": 0.671875,
+      "before_history_effect": -0.0006510416666666297,
+      "acquisition_auc": 0.7203776041666667,
+      "endpoint": 0.7291666666666666,
+      "after": 0.7291666666666666,
+      "known_after": 0.6578776041666667,
+      "after_brier": 0.09783706068992615,
+      "initial_gain": 0.07291666666666666,
+      "training_seconds": 16.85294470002009
+    },
+    {
+      "seed": 117,
+      "method": "oracle",
+      "branch": "return",
+      "before": 0.7239583333333334,
+      "entry": 0.7239583333333334,
+      "before_no_transfer": 0.6171875,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.7506510416666666,
+      "endpoint": 0.7604166666666666,
+      "after": 0.7604166666666666,
+      "known_after": 0.7734375,
+      "after_brier": 0.06315697729587555,
+      "initial_gain": 0.11653645833333331,
+      "training_seconds": 7.753260899991801
+    },
+    {
+      "seed": 117,
+      "method": "oracle",
+      "branch": "novel",
+      "before": 0.625,
+      "entry": 0.625,
+      "before_no_transfer": 0.5885416666666666,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.6435546875,
+      "endpoint": 0.6796875,
+      "after": 0.6796875,
+      "known_after": 0.7356770833333333,
+      "after_brier": 0.11704642325639725,
+      "initial_gain": 0.11653645833333331,
+      "training_seconds": 7.722665099994629
+    },
+    {
+      "seed": 117,
+      "method": "oracle",
+      "branch": "noise",
+      "before": 0.7864583333333334,
+      "entry": 0.7864583333333334,
+      "before_no_transfer": 0.671875,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.7734375,
+      "endpoint": 0.7760416666666666,
+      "after": 0.7760416666666666,
+      "known_after": 0.7434895833333333,
+      "after_brier": 0.06696590781211853,
+      "initial_gain": 0.11653645833333331,
+      "training_seconds": 7.731481499991787
+    },
+    {
+      "seed": 118,
+      "method": "pooled",
+      "branch": "return",
+      "before": 0.6796875,
+      "entry": 0.6796875,
+      "before_no_transfer": 0.5885416666666666,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.6647135416666666,
+      "endpoint": 0.6588541666666666,
+      "after": 0.6588541666666666,
+      "known_after": 0.6471354166666666,
+      "after_brier": 0.13944831490516663,
+      "initial_gain": 0.06510416666666669,
+      "training_seconds": 6.895929500002239
+    },
+    {
+      "seed": 118,
+      "method": "pooled",
+      "branch": "novel",
+      "before": 0.6901041666666666,
+      "entry": 0.6901041666666666,
+      "before_no_transfer": 0.6302083333333334,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.6917317708333333,
+      "endpoint": 0.703125,
+      "after": 0.703125,
+      "known_after": 0.6575520833333334,
+      "after_brier": 0.14760151505470276,
+      "initial_gain": 0.06510416666666669,
+      "training_seconds": 6.8193536000108
+    },
+    {
+      "seed": 118,
+      "method": "pooled",
+      "branch": "noise",
+      "before": 0.6432291666666666,
+      "entry": 0.6432291666666666,
+      "before_no_transfer": 0.5572916666666666,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.646484375,
+      "endpoint": 0.6640625,
+      "after": 0.6640625,
+      "known_after": 0.6549479166666667,
+      "after_brier": 0.16683000326156616,
+      "initial_gain": 0.06510416666666669,
+      "training_seconds": 6.816847400010374
+    },
+    {
+      "seed": 118,
+      "method": "recurrent",
+      "branch": "return",
+      "before": 0.658203125,
+      "entry": 0.6536458333333334,
+      "before_no_transfer": 0.5885416666666666,
+      "before_history_effect": -0.0006510416666667407,
+      "acquisition_auc": 0.6666666666666666,
+      "endpoint": 0.6901041666666666,
+      "after": 0.6881510416666667,
+      "known_after": 0.6207682291666667,
+      "after_brier": 0.12122538313269615,
+      "initial_gain": 0.07486979166666671,
+      "training_seconds": 15.62791610000204
+    },
+    {
+      "seed": 118,
+      "method": "recurrent",
+      "branch": "novel",
+      "before": 0.69140625,
+      "entry": 0.6901041666666666,
+      "before_no_transfer": 0.6302083333333334,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.6975911458333333,
+      "endpoint": 0.7083333333333334,
+      "after": 0.7102864583333334,
+      "known_after": 0.6516927083333334,
+      "after_brier": 0.15146921947598457,
+      "initial_gain": 0.07486979166666671,
+      "training_seconds": 15.515285200004655
+    },
+    {
+      "seed": 118,
+      "method": "recurrent",
+      "branch": "noise",
+      "before": 0.6243489583333334,
+      "entry": 0.6223958333333334,
+      "before_no_transfer": 0.5572916666666666,
+      "before_history_effect": 0.001953125,
+      "acquisition_auc": 0.6416015625,
+      "endpoint": 0.65625,
+      "after": 0.6536458333333334,
+      "known_after": 0.6490885416666666,
+      "after_brier": 0.1551619991660118,
+      "initial_gain": 0.07486979166666671,
+      "training_seconds": 15.577814000000217
+    },
+    {
+      "seed": 118,
+      "method": "oracle",
+      "branch": "return",
+      "before": 0.7239583333333334,
+      "entry": 0.7239583333333334,
+      "before_no_transfer": 0.5885416666666666,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.7190755208333334,
+      "endpoint": 0.7213541666666666,
+      "after": 0.7213541666666666,
+      "known_after": 0.7265625,
+      "after_brier": 0.05890700966119766,
+      "initial_gain": 0.12630208333333334,
+      "training_seconds": 7.006278700000621
+    },
+    {
+      "seed": 118,
+      "method": "oracle",
+      "branch": "novel",
+      "before": 0.6588541666666666,
+      "entry": 0.6588541666666666,
+      "before_no_transfer": 0.6302083333333334,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.705078125,
+      "endpoint": 0.7473958333333334,
+      "after": 0.7473958333333334,
+      "known_after": 0.7200520833333334,
+      "after_brier": 0.11339258402585983,
+      "initial_gain": 0.12630208333333334,
+      "training_seconds": 7.025379900002008
+    },
+    {
+      "seed": 118,
+      "method": "oracle",
+      "branch": "noise",
+      "before": 0.7369791666666666,
+      "entry": 0.7369791666666666,
+      "before_no_transfer": 0.5572916666666666,
+      "before_history_effect": 0.0,
+      "acquisition_auc": 0.7337239583333333,
+      "endpoint": 0.7109375,
+      "after": 0.7109375,
+      "known_after": 0.7161458333333333,
+      "after_brier": 0.09777851402759552,
+      "initial_gain": 0.12630208333333334,
+      "training_seconds": 6.991732200000115
+    }
+  ]
+}

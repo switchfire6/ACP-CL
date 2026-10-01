@@ -1,0 +1,115 @@
+{
+  "study": "commons_d1b_dev",
+  "protocol": "docs/commons_d1b_protocol.md",
+  "phase": "dev",
+  "world": {
+    "separability": "reports/commons_d0b/separability.json",
+    "spec": "reports/commons_d0b/world_spec.json",
+    "key": "1586f04b8d3cc8c2"
+  },
+  "contexts": [
+    "A0B0C0",
+    "A1B0C0",
+    "A0B1C0",
+    "A0B0C1",
+    "A1B1C1"
+  ],
+  "seeds": [
+    21201,
+    21202,
+    21203
+  ],
+  "episodes": 4096,
+  "checkpoint_every": 256,
+  "probe_episodes": [
+    256,
+    512,
+    1024,
+    2048,
+    3072,
+    4096
+  ],
+  "panel_size": 512,
+  "oracle": {
+    "draws": 16384,
+    "stream_chunk": 512,
+    "floor_draws": 256
+  },
+  "learner": {
+    "members": 5,
+    "hidden": 128,
+    "minibatch": 64,
+    "grad_clip": 5.0,
+    "bootstrap_p": 0.5,
+    "aux_weight": 1.0,
+    "plan_samples": 256,
+    "capacity": 1024
+  },
+  "base_knobs": {
+    "lr": 0.001,
+    "U": 2,
+    "ema_decay": 0.99
+  },
+  "d1_selection": {
+    "path": "reports/commons_d1/dev/dev_results.json",
+    "sha256": "8bb7f6bf935b19b4c784711f6f5bd61e174f1d698e8bcbb9ac9a4641b988da7d"
+  },
+  "grid": {
+    "MB-prior": {
+      "beta": [
+        1,
+        3
+      ]
+    },
+    "MB-UCB": {
+      "kappa": [
+        1,
+        2
+      ]
+    },
+    "MB-eps": {
+      "epsilon": [
+        0.03,
+        0.1
+      ]
+    },
+    "MB-wide": {
+      "hidden": 256
+    }
+  },
+  "knobs": null,
+  "arms": [
+    "MB",
+    "MB-prior",
+    "MB-UCB",
+    "MB-eps",
+    "MB-wide"
+  ],
+  "disagreement_states": 128,
+  "analysis": {
+    "competent_mean": 0.015,
+    "competent_worst": 0.025,
+    "consistency_seeds": 10,
+    "endpoint": 4096,
+    "trap": {
+      "context": "A1B1C1",
+      "regret_max": 0.025,
+      "actions": [
+        6,
+        9,
+        12
+      ],
+      "ratio_min": 0.5,
+      "ratio_max": 2.0,
+      "critical_loss": 0.015,
+      "definition": "Decision-critical non-null actions in the trap context A1B1C1: the non-null actions whose removal from O's action set costs >= .015 expected survival on the A1B1C1 panel (O's choice by the selection table, values by the scoring table): {6: 1->3x3, 9: 2->3x6, 12: 1->3x6}. f_O(a) = fraction of the 512 A1B1C1 panel states in which a is O's selected action. A seed meets the usage condition if, for every a in the set, its training usage u(a) = (episodes of the 4,096 in A1B1C1 in which it took a) / 4,096 satisfies 0.5 f_O(a) <= u(a) <= 2 f_O(a). A remedy escapes the trap if >= 10/12 seeds have A1B1C1 regret <= .025 AND meet the usage condition (both in the same seed)."
+    },
+    "payback_reference": "MB"
+  },
+  "workers": 6,
+  "threads": 1,
+  "device": "cpu",
+  "stall_seconds": 3600,
+  "stage_attempts": 3,
+  "notes": "Development: seeds 21201-21203 x 5 contexts; MB, MB-wide and both settings of MB-prior (beta), MB-UCB (kappa) and MB-eps (epsilon). Selection per remedy: within one paired SE (seed x context cells) of the remedy's best greedy regret at 4,096, the lowest mean cumulative online regret. Trap definition: analysis.trap (declared before any D1b fit; calibrated on D1 test data only)."
+}

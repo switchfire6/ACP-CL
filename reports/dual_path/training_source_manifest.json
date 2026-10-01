@@ -1,0 +1,30 @@
+{
+  "source_sha256": "f1517828a6b26be23809fecd16c0805f286bb0f78b4c37b32683701a339ce1b2",
+  "archive": "training_source.zip",
+  "archive_sha256": "c94ec14aa44566bea21eed19715026b7acd5a3601cfff5b5aee76ddbd6605728",
+  "files": {
+    "src/acp_cl/__init__.py": "237a5e7ec88b7899b5734b5c3c1225b3ad5542697d2c86ea30263e9f7c4328eb",
+    "src/acp_cl/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/acp_cl/analysis.py": "edc8f236401e5b38787e214f95a3c0d4c0505dd3206eb0c17751cd7b50a023ec",
+    "src/acp_cl/audit.py": "7ee0ecda6327f1457c931389a302e6ca3a1020863ead38ab120b792cb1d8d246",
+    "src/acp_cl/cifar_domains.py": "7ec1b258a1ec0faa72df9226b78da574f7cd176e40765b48045b1cd5c60f3534",
+    "src/acp_cl/cli.py": "d17005fe47a212c314b888a7f420379036f0b8e76809dd31f5159a2f3f65f7e5",
+    "src/acp_cl/controller.py": "f648a131256ac42f45bccc0d5a0c4be17e4693ae50aa666b7c002bed25d64433",
+    "src/acp_cl/controller_v2.py": "cfa9d7715188b8756950e38a2622d04daf63a721f271d0a56647c19ea465b076",
+    "src/acp_cl/data.py": "9004a38a3b21d8f5dbf92ea01bdcfb95664b0c6912b1582757dbbef12063f5c0",
+    "src/acp_cl/dual_path.py": "0bedf9729fb06a35a29117c649ceb847e676b6c3e3821470b78e0d94d43a91da",
+    "src/acp_cl/experiment.py": "af144d1ed7d6498bfee06f03240d6dc1de773bfcfb6d712fa4540924be77471e",
+    "src/acp_cl/learner.py": "3270e5c01c1b7ee8787da0ce45286c4176d8265aad8ba22b4d4ee18f0560175d",
+    "src/acp_cl/metrics.py": "b5e3615ebedb3fde4baf26a172a74bd891e1431b38190f7894736abbfc00a01d",
+    "src/acp_cl/models.py": "7edca2fa30c4fcc679d1d860f85b24d47c9c79f756a0ac656af1e2afcd02d165",
+    "src/acp_cl/monitor.py": "998f9d99452213204ee46b68c843834455e8c1ab09f820dc08cc6c4da271e322",
+    "src/acp_cl/plasticity.py": "60c13862b52da7e6f9c86bfc94aa71559895dfcae06472420672a22afbef751a",
+    "src/acp_cl/plasticity_v3.py": "ff539c066e7b93a5fd9f3ea08b2fb1a603792579232ffa5582345b7ad18616f8",
+    "src/acp_cl/replay.py": "7210414a430b79bdad84ca605884fd50b1064dbad8da3b40d8a418ae85e08301",
+    "src/acp_cl/sensor.py": "849097615356ab1f9f9d713be38dc482a1648c9041e99ff85ecfed49f89f5e64",
+    "src/acp_cl/shapes.py": "5dffe294d0f2f688d16631e0cfbc3b6058ff8f21e1d1b13eb6c449aa79c65b56",
+    "configs/dual_path_cifar100_pilot.json": "8dbad53b4111935b4fd64a6324cd5d2eb6ba944bcf2c895cfcc4661b67c36007",
+    "configs/dual_path_smoke.json": "cf44734668dd2f6feee2001c4ef6a3b1e1d499882f131df47edc1fa4b94fd385",
+    "docs/dual_path.md": "f4d20b2428ce05c1b6cee502ae3bdd931a6661ab9334a9fa8e8ca539f1433338"
+  }
+}

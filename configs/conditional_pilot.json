@@ -1,0 +1,19 @@
+{
+  "study": "conditional_pilot",
+  "seeds": [3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008],
+  "schedules": ["recurring", "stable", "unpredictable"],
+  "methods": ["pooled", "conditional", "shuffled", "current_only", "frozen_features", "oracle"],
+  "block_size": 1024,
+  "batch_size": 32,
+  "eval_size": 384,
+  "probe_every": 256,
+  "support_replicates": 4,
+  "width": 64,
+  "experts": 4,
+  "lr": 0.002,
+  "memory_packets": 16,
+  "updates_per_batch": 3,
+  "evidence_strength": 1.0,
+  "threads": 1,
+  "workers": 4
+}

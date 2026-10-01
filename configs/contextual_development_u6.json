@@ -1,0 +1,36 @@
+{
+  "study": "contextual_development_u6",
+  "seeds": [
+    117,
+    118
+  ],
+  "gaps": [
+    "long"
+  ],
+  "branches": [
+    "return",
+    "novel",
+    "noise"
+  ],
+  "methods": [
+    "pooled",
+    "recurrent",
+    "oracle"
+  ],
+  "block_size": 1024,
+  "batch_size": 32,
+  "eval_size": 384,
+  "probe_every": 256,
+  "support_replicates": 4,
+  "width": 64,
+  "experts": 4,
+  "context_width": 38,
+  "decoder_width": 66,
+  "lr": 0.002,
+  "memory_packets": 16,
+  "updates_per_batch": 6,
+  "evidence_strength": 1.0,
+  "feedback_noise": 0.2,
+  "threads": 1,
+  "workers": 2
+}

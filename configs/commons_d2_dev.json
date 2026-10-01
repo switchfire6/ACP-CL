@@ -1,0 +1,147 @@
+{
+  "study": "commons_d2",
+  "protocol": "docs/commons_d2_protocol.md",
+  "phase": "dev",
+  "world": {
+    "separability": "reports/commons_d0b/separability.json",
+    "spec": "reports/commons_d0b/world_spec.json",
+    "key": "1586f04b8d3cc8c2"
+  },
+  "seeds": [
+    22101,
+    22102,
+    22103
+  ],
+  "episodes": 20000,
+  "core": {
+    "lr": 0.001,
+    "U": 2,
+    "ema_decay": 0.99,
+    "count_c": 0.05,
+    "members": 5,
+    "hidden": 128,
+    "minibatch": 64,
+    "grad_clip": 5.0,
+    "bootstrap_p": 0.5,
+    "plan_samples": 256,
+    "capacity": 1024
+  },
+  "fc": {
+    "max_codes": 6,
+    "h": 0.05,
+    "switch_posterior": 0.95,
+    "default_fraction": 0.2,
+    "spawn_run": 2,
+    "spawn_rule": "lrt",
+    "fit_steps": 20,
+    "fit_ridge": 1.0,
+    "code_decay": 1.0
+  },
+  "oc_code_lr": 0.03,
+  "grid": {
+    "AM": {
+      "k": [
+        1,
+        8,
+        32
+      ],
+      "enc_lr": [
+        0.001,
+        0.003
+      ]
+    },
+    "AM-factored": {
+      "k": [
+        1,
+        8,
+        32
+      ],
+      "enc_lr": [
+        0.001,
+        0.003
+      ]
+    },
+    "FC": {
+      "tau": [
+        5,
+        15
+      ],
+      "code_lr": [
+        0.01,
+        0.03
+      ]
+    },
+    "FC-single": {
+      "tau": [
+        5,
+        15
+      ],
+      "code_lr": [
+        0.01,
+        0.03
+      ]
+    }
+  },
+  "knobs": null,
+  "arms": [
+    "G",
+    "W",
+    "AM",
+    "AM-factored",
+    "FC",
+    "FC-single",
+    "FC-K1",
+    "OC"
+  ],
+  "probe_positions": [
+    2,
+    5,
+    10,
+    20,
+    40
+  ],
+  "panel_size": 32,
+  "oracle": {
+    "draws": 16384,
+    "stream_chunk": 500
+  },
+  "checkpoint_every": 1000,
+  "parity": {
+    "contexts": [
+      "A0B0C0",
+      "A1B0C0",
+      "A0B1C0",
+      "A0B0C1",
+      "A1B1C1"
+    ],
+    "episodes": 4096,
+    "panel_size": 512,
+    "tolerance": 0.003,
+    "reference": {
+      "path": "reports/commons_d1b/results.json",
+      "sha256": "2270833f3acd9cc434a0cafff650b21a21946ebf029773f9838f7409c22819c0",
+      "value": 0.009568609817956443
+    },
+    "d1b_panels": "runs/commons_d1b/oracle"
+  },
+  "analysis": {
+    "v1_margin": 0.005,
+    "v2_fraction": 0.5,
+    "c1_margin": 0.002,
+    "relative_margin": 0.25,
+    "oc_gate_max": 0.01,
+    "oc_gate_positions": [
+      5,
+      10,
+      20,
+      40
+    ],
+    "power_target": 0.8
+  },
+  "workers": 6,
+  "threads": 1,
+  "device": "cpu",
+  "stall_seconds": 14400,
+  "stage_attempts": 3,
+  "notes": "DEVELOPMENT (protocol docs/commons_d2_protocol.md, Development phase). Seeds 22101-22103. Gates first (OC competence; core parity), then the declared grids, FC-K1 at FC's selected code lr. FC spawn rule 'lrt' is a PROPOSED REVISION (the literal rule cannot fire: a one-code library's default equals that code, so literal FC is bit-identical to FC-K1; shown in the smoke check). OC code lr .03 (declared here; OC is run before FC's code lr is selected). Parity gate: G on D1's stationary protocol (dev seeds x 5 training contexts x 4,096 episodes, D1's 512-state panels scored with D1b's stored O tables) vs D1b's MB-count test context average; MB-count on the same seeds is run as a paired reference. Code decay 1.0 (decoupled weight decay on stepped code rows): implementation fix after the first development gate attempt (OC codes drifted to |c| ~ 15-55 under constant-size Adam steps)."
+}

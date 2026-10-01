@@ -1,0 +1,27 @@
+{
+  "machine": "AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD",
+  "threads": 1,
+  "n_actions": 13,
+  "O_one_context_s": 0.037312427500000925,
+  "I_values_all_8_contexts_s": 0.11372805250011879,
+  "likelihood_all_actions_s": 0.016470214999935708,
+  "likelihood_one_action_s": 0.002790672499941138,
+  "lookahead_stream_seconds": 707.7277345657349,
+  "lookahead_decisions_with_lookahead": 5493,
+  "projection_D2": {
+    "assumptions": {
+      "seeds": 12,
+      "arms": 6,
+      "episodes": 20000,
+      "workers": 6,
+      "arm_per_episode_s": 0.0624147271433945,
+      "arm_proxy": "D0 neural proxy scaled by n_actions/7",
+      "lookahead_reference": "one lookahead pass per stream (sequential, 1 worker per stream)"
+    },
+    "reference_cpu_hours": 11.167379666670362,
+    "lookahead_cpu_hours": 2.3590924485524494,
+    "arm_cpu_hours": 24.9658908573578,
+    "wall_hours_on_6_workers": 6.415393828763435,
+    "over_12h_flag": false
+  }
+}

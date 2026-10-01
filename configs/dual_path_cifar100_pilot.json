@@ -1,0 +1,26 @@
+{
+  "stage": "initial dual-path CIFAR-100 feasibility diagnostic; no tuning or confirmatory claim",
+  "data": {
+    "dataset": "cifar100", "root": "data", "download": false,
+    "n_experiences": 10, "classes_per_experience": 10,
+    "train_per_class": 450, "validation_per_class": 50, "test_per_class": 0,
+    "record_arrival_ids": true
+  },
+  "model": "cnn", "width": 64, "threads": 2,
+  "batch_size": 64, "epochs": 1, "single_pass": true,
+  "eval_every_steps": 4, "early_examples": 512,
+  "eval_split": "validation", "scratch_reference": true, "checkpoint": true,
+  "replay_capacity": 512, "replay_batch_size": 64, "probe_batch_size": 64,
+  "retention_eval_every_experiences": 1, "progress_every_experiences": 2,
+  "seeds": [2027, 2131],
+  "methods": ["er", "derpp", "dual_joint", "dual_derpp", "dual_frozen", "dual_consolidate"],
+  "primary_method": "dual_consolidate",
+  "report_acquisition_change": true,
+  "plasticity": {"lr": 0.03, "momentum": 0.9, "weight_decay": 0.0001},
+  "dual_path": {
+    "fast_width": 32, "consolidation_interval": 73, "consolidation_steps": 24,
+    "consolidation_batch_size": 64, "consolidation_pool_size": 256,
+    "consolidation_lr": 0.03, "distillation_weight": 1.0,
+    "temperature": 2.0, "max_grad_norm": 10.0, "probe_interval": 10
+  }
+}

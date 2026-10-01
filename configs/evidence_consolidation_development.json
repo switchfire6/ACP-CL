@@ -1,0 +1,39 @@
+{
+  "study": "evidence_consolidation",
+  "kind": "development",
+  "seeds": [
+    11001,
+    11002
+  ],
+  "models": [
+    "conditional",
+    "recurrent"
+  ],
+  "prefix_blocks": 4,
+  "prefix_size": 1024,
+  "episode_size": 8192,
+  "batch_size": 32,
+  "eval_size": 512,
+  "probe_every": 256,
+  "support_replicates": 2,
+  "width": 64,
+  "experts": 4,
+  "context_width": 12,
+  "decoder_width": 64,
+  "interaction_features": true,
+  "lr": 0.002,
+  "memory_packets": 16,
+  "updates_per_batch": 12,
+  "evidence_strength": 1.0,
+  "feedback_noise": 0.2,
+  "threads": 1,
+  "workers": 4,
+  "cpu_affinity": 85,
+  "evidence_window": 8,
+  "evidence_margin": 0.002,
+  "evidence_positive": 6,
+  "burst_period": 64,
+  "burst_length": 16,
+  "burst_noise": 0.8,
+  "blocks": 18
+}

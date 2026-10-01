@@ -1,0 +1,35 @@
+{
+ "arm": "U12_R16_W64",
+ "seed": 19102,
+ "rerun_seconds": 61.88445299999876,
+ "tmp": "C:\\Users\\pounc\\AppData\\Local\\Temp\\cg_review_U12_R16_W64_19102",
+ "scores_probes_equal": [
+  true
+ ],
+ "scores_signature_equal": [
+  true
+ ],
+ "scores_model_sha_equal": [
+  true
+ ],
+ "end_signature_equal": true,
+ "final_model_sha256_equal": true,
+ "initial_model_sha256_equal": true,
+ "initial_signature_equal": true,
+ "fingerprints_equal": true,
+ "marginals_equal": true,
+ "optimizer_steps_equal": true,
+ "evaluations.npz_sha_equal": true,
+ "evaluations.json_sha_equal": true,
+ "training.npz_sha_equal": true,
+ "training_arrays_equal": {
+  "probabilities": true,
+  "truth": true,
+  "actions": true,
+  "outcomes": true
+ },
+ "evaluation_arrays_equal": true,
+ "diagnostics_equal_excl_cost": true,
+ "cost_equal_excl_seconds": true,
+ "all_identical": true
+}

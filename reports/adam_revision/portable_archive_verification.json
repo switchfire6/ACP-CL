@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "artifacts": 40,
+  "cohorts": {
+    "smoke": {
+      "trajectories": 2,
+      "episodes": 12,
+      "prefix_fits": 2,
+      "raw_prefix_records": 2,
+      "stable_files": 46,
+      "source_sha256": "28c72eaf806a2059ef4df297668c1989db5dddebec88cd6a6432a189f827d38e",
+      "protocol_sha256": "797b13dea903209a81ccbd809a7d57b1de3875148b96ca4011ff0c99d8681197",
+      "independent_metric_rows": 12,
+      "critical_paired_contrasts": 30,
+      "fresh_qualification_recomputed": true,
+      "outcome_and_attribution_screens_recomputed": true
+    },
+    "development": {
+      "trajectories": 12,
+      "episodes": 72,
+      "prefix_fits": 12,
+      "raw_prefix_records": 12,
+      "stable_files": 246,
+      "source_sha256": "28c72eaf806a2059ef4df297668c1989db5dddebec88cd6a6432a189f827d38e",
+      "protocol_sha256": "797b13dea903209a81ccbd809a7d57b1de3875148b96ca4011ff0c99d8681197",
+      "independent_metric_rows": 72,
+      "critical_paired_contrasts": 30,
+      "fresh_qualification_recomputed": true,
+      "outcome_and_attribution_screens_recomputed": true
+    }
+  },
+  "scope": "Portable byte/lock/coverage checks and independent recomputation of critical recorded metrics, bootstrap intervals and screens; no model retraining or scientific replication."
+}

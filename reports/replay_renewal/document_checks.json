@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "local_links": 77,
+  "files": [
+    "README.md",
+    "docs/research_charter.md",
+    "docs/reproduction.md",
+    "docs/replay_memory_mechanism.md",
+    "docs/replay_renewal_protocol.md",
+    "reports/replay_renewal_results.md"
+  ]
+}

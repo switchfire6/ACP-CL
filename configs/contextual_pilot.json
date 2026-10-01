@@ -1,0 +1,47 @@
+{
+  "study": "contextual_pilot",
+  "seeds": [
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008
+  ],
+  "gaps": [
+    "short",
+    "long"
+  ],
+  "branches": [
+    "return",
+    "novel",
+    "noise"
+  ],
+  "methods": [
+    "pooled",
+    "conditional",
+    "recurrent",
+    "query_routed",
+    "recurrent_frozen",
+    "oracle"
+  ],
+  "block_size": 1024,
+  "batch_size": 32,
+  "eval_size": 384,
+  "probe_every": 256,
+  "support_replicates": 4,
+  "width": 64,
+  "experts": 4,
+  "context_width": 12,
+  "decoder_width": 64,
+  "lr": 0.002,
+  "memory_packets": 16,
+  "updates_per_batch": 12,
+  "evidence_strength": 1.0,
+  "feedback_noise": 0.2,
+  "threads": 1,
+  "workers": 4,
+  "interaction_features": true
+}

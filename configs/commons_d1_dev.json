@@ -1,0 +1,71 @@
+{
+  "study": "commons_d1_dev",
+  "protocol": "docs/commons_d1_protocol.md",
+  "phase": "dev",
+  "world": {
+    "separability": "reports/commons_d0b/separability.json",
+    "spec": "reports/commons_d0b/world_spec.json",
+    "key": "1586f04b8d3cc8c2"
+  },
+  "contexts": [
+    "A0B0C0",
+    "A1B0C0",
+    "A0B1C0",
+    "A0B0C1",
+    "A1B1C1"
+  ],
+  "seeds": [
+    21001,
+    21002
+  ],
+  "episodes": 4096,
+  "checkpoint_every": 256,
+  "panel_size": 512,
+  "oracle": {
+    "draws": 16384,
+    "stream_chunk": 512,
+    "floor_draws": 256
+  },
+  "learner": {
+    "members": 5,
+    "hidden": 128,
+    "minibatch": 64,
+    "grad_clip": 5.0,
+    "bootstrap_p": 0.5,
+    "aux_weight": 1.0,
+    "plan_samples": 256,
+    "capacity": 1024
+  },
+  "grid": {
+    "lr": [
+      0.001,
+      0.003
+    ],
+    "U": [
+      2,
+      8
+    ],
+    "ema_decay": [
+      0.99,
+      0.998
+    ]
+  },
+  "knobs": null,
+  "arms": [
+    "MF",
+    "MB"
+  ],
+  "analysis": {
+    "competent_mean": 0.015,
+    "competent_worst": 0.025,
+    "consistency_seeds": 10,
+    "budget_cost": 0.005,
+    "endpoint": 4096
+  },
+  "workers": 6,
+  "threads": 1,
+  "device": "cpu",
+  "stall_seconds": 2400,
+  "stage_attempts": 3,
+  "notes": "Development phase: seeds 21001-21002 x 5 contexts x the 8-configuration grid (lr, U, EMA decay) for MF and MB with bounded replay; then the unbounded arms at each family's selected configuration. Only lr, U and d may change."
+}

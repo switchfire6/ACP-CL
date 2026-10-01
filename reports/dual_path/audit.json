@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "scope": "local checkpoint re-evaluation and arithmetic audit, not external replication",
+  "source_sha256": "f1517828a6b26be23809fecd16c0805f286bb0f78b4c37b32683701a339ce1b2",
+  "runtime": {
+    "runtime_fingerprint": {
+      "python": "3.10.11",
+      "torch": "2.8.0+cu128",
+      "numpy": "2.2.6",
+      "cuda_runtime": "12.8",
+      "gpu": "NVIDIA GeForce RTX 4070 Ti"
+    },
+    "runtime_sha256": "eaa3eeb6552fb64e38fa3af4a81505d5ae7a8b57ecbfe506da7a03677ccc17cf"
+  },
+  "all_runs": [
+    {
+      "method": "er",
+      "seed": 2027,
+      "final_accuracy_recomputed": 0.0236,
+      "checkpoint_sha256": "27660a7acee09619b1ba540a204e284cd1734c09507b52feae33bb732d5844f1",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "derpp",
+      "seed": 2027,
+      "final_accuracy_recomputed": 0.0514,
+      "checkpoint_sha256": "1b3f9ce5a08dcad6ce3b2b1861b9e559b8f02ffb23f6c6e222dedde9efef8c89",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "dual_joint",
+      "seed": 2027,
+      "final_accuracy_recomputed": 0.0324,
+      "checkpoint_sha256": "7fdf05073868352bde5f63a934c7cd50150756b748021eb33145c25d4496dba2",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "dual_derpp",
+      "seed": 2027,
+      "final_accuracy_recomputed": 0.0516,
+      "checkpoint_sha256": "a6bad71daef37da1514b0eaa7cb83dde7aff117c5347e426e8885fdf81c13b88",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "dual_frozen",
+      "seed": 2027,
+      "final_accuracy_recomputed": 0.008799999999999999,
+      "checkpoint_sha256": "b8a7260379a97b6fac85aa2f3995476266bb38b3d73e9a9f91a4c3fa9f63edcf",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "dual_consolidate",
+      "seed": 2027,
+      "final_accuracy_recomputed": 0.014800000000000002,
+      "checkpoint_sha256": "28d099764a9b2350ce62b96faadcf21288f2989ae963791df5b2d9403c655cb1",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "er",
+      "seed": 2131,
+      "final_accuracy_recomputed": 0.039,
+      "checkpoint_sha256": "852fc22fcff5b79e43536d30b18336701ce73cbffb9087533e2e1845c03313fa",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "derpp",
+      "seed": 2131,
+      "final_accuracy_recomputed": 0.039,
+      "checkpoint_sha256": "6d5e97556eb8ef6e336eeb16d8f6d068774396c80c60d7d9eddfb13541f1eecb",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "dual_joint",
+      "seed": 2131,
+      "final_accuracy_recomputed": 0.033600000000000005,
+      "checkpoint_sha256": "5edba769beb18d2536366f47a3b227091c0fcfc417f83f77b09cddef2259aa47",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "dual_derpp",
+      "seed": 2131,
+      "final_accuracy_recomputed": 0.044,
+      "checkpoint_sha256": "c0e037e86413c307bc4a8c3e12fdba4ef63d8766aa587b6c74c92fec1a9fdfac",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "dual_frozen",
+      "seed": 2131,
+      "final_accuracy_recomputed": 0.01,
+      "checkpoint_sha256": "b2de449ff22f3f9c4fe30d4b6852e05092e81bebef1fa41aeb87bdb1188c7172",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    },
+    {
+      "method": "dual_consolidate",
+      "seed": 2131,
+      "final_accuracy_recomputed": 0.0268,
+      "checkpoint_sha256": "df13b556c561271f82456b272d312885a3580202cf0320ff088f66b2c33bb703",
+      "checkpoint_evaluation_matches": true,
+      "metric_arithmetic_matches": true,
+      "paired_replay_matches": true
+    }
+  ],
+  "class_support": 100,
+  "unique_current_images_per_run": 45000,
+  "validation_images_per_seed": 5000,
+  "test_examples_used": 0,
+  "resume_all_completed_runs": "passed before audit"
+}

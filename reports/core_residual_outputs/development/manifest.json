@@ -1,0 +1,66 @@
+{
+  "locked_utc": "2026-09-28T03:26:05.367435+00:00",
+  "specification": {
+    "base": "C:\\Users\\pounc\\Desktop\\Code\\ACP-CL\\runs\\core_residual_development",
+    "identity": {
+      "config_sha256": "e0ab9198f29aadf138a589e589146644828fdb64e64b44adfc9db3689db2a1a2",
+      "source_sha256": "c5ac7b538363930c68c999b60f5d26244eaf5b5eb676c8cf562d1ca354109a3b",
+      "runtime_sha256": "58d8e22d8baf8f3d7446e5a35a6088b4dc961eb7bd2d10bee2e20ddd38deb829"
+    },
+    "base_files": {
+      "manifest.json": "1a6f4148d1bdfe692b034ed437cd5e4df132968d9802f13982551e1e2b73c4e1",
+      "analysis_lock.json": "6c8515450805cf2556fc99e2652b88eff26fd9d99fd74b9242b3ccb3331e88c0",
+      "protocol_lock.json": "ba4481ba0c3db25ab88f2e16c7a47885916011c9e2a7e0a4c4def5f38584d310",
+      "completion.json": "6ed301f7c6e1f86caf736f14c05088675cfcf0988b4086db3d23dfd3e965b27d",
+      "training_source.zip": "e373549fd1781211b4915f101d4c2b0597fdc40c7a481ee86f0e62056304712e",
+      "analysis_at_lock.zip": "b0f5d24b831683694d7c81b6424e0a64d23dd962de614c3003a1bca34549f069",
+      "conditional_16001/result.json": "ee3875e258cbfdeb52b722a8f0f5cd591b1db9800b729c83720c9774764795c8",
+      "conditional_16002/result.json": "271645f64a37eea28823bf88921ee0183a90b6701affdf1a6b0029a1f7c4e137",
+      "conditional_16003/result.json": "71b4cda2d8217cfce989aa9d6faf1a98d9514ef5124656d2087af9aadf33965e",
+      "conditional_16004/result.json": "7c459454f0a005bb46ac69d1e4bbe2686cd532eeb04cc979c456f664e924facd",
+      "conditional_16005/result.json": "b8e8dc915cbea1cbda4b254f3eed2381cce5055df1cc6d40acd61bd209849f5d",
+      "conditional_16006/result.json": "25347c5afe86d62502fc0e1fab67f8e97b53bcf84f1ab68327096b68aaf44534",
+      "recurrent_16001/result.json": "4ace1602d19d1006fd386e6dc7bb91e059ce053ff13de72cd0b9506c9427da69",
+      "recurrent_16002/result.json": "7d1780f6e8caf356dcffe713bf2284821a8d19319230005a72319d0ccb6740aa",
+      "recurrent_16003/result.json": "4bbb5711a9d8a6a41e6c855d9634b7f148bd82e861a9f9c76c8f0b9a502215a6",
+      "recurrent_16004/result.json": "64265d9683238b94f1d5395d9d9f44983f48810f98ce3f280331b1c22d5dfb67",
+      "recurrent_16005/result.json": "4b646cd48ba4f2a4761b6eb2d43c3b9c3423086495c7b946fa66af8362125d90",
+      "recurrent_16006/result.json": "028adb06e4890a6b0697e8925eecfa9da834df570a0b8bdd633ddc8f88f243af"
+    },
+    "seeds": [
+      16001,
+      16002,
+      16003,
+      16004,
+      16005,
+      16006
+    ],
+    "models": [
+      "conditional",
+      "recurrent"
+    ],
+    "arms": [
+      "joint",
+      "separate"
+    ],
+    "support_replicates": 2,
+    "source_files": {
+      "src/acp_cl/core_residual_outputs.py": "b071db4ff44b6782f22b6290d9a5dbc0e5574bc5f971b62e3465adbcd34092d6",
+      "scripts/diagnose_core_residual_outputs.py": "74fd1c129d94d609db6741f90f65f9230f06a9010bf3205f64f4038bcafc5ebb",
+      "scripts/summarize_core_residual_outputs.py": "a2a6ac2b95c565d1fbd0d7a4d8312132d1d89d9ea1011ce84eec4ac13c3eef73",
+      "tests/test_core_residual_outputs.py": "106b308e68f2436a8d21c5e796e4cdccbf8a0c66e24e641d861f6feeb18bf255",
+      "docs/core_residual_output_review.md": "a64a27b248fcf6952a02d684adb9c09c4baf9c47425bb71f25b48d9e34fc9819",
+      "scripts/plot_core_residual_outputs.py": "0465cb082bc24183fd3320145383414ab279460bf992fac7d6c2721d31744df8"
+    },
+    "runtime": {
+      "python": "3.10.11",
+      "numpy": "2.2.6",
+      "torch": "2.8.0+cu128",
+      "workers": 6,
+      "threads": 1,
+      "affinity": 1365
+    },
+    "interpretation": "exploratory saved-endpoint diagnostic; no fitting or deployable policy"
+  },
+  "source_archive_sha256": "d9bde94887de1e71d6ac008ca61a20b5853ba9fc14df90bff68d31019676ce42"
+}

@@ -1,0 +1,552 @@
+{
+  "source_identity": {
+    "config_sha256": "48f962d406e84cb90087b8312ea62ae9f5996eac6c0609b51f95cf6ac27db53b",
+    "source_sha256": "7e152cf8e1589cb2629652327d8a4821b9a37048560e628fd160b48f3392322c",
+    "runtime_sha256": "86823054be75bc3dd98f10a91791df395bc8203ae2baa100568a8cc2125ee946"
+  },
+  "calibration_size": 384,
+  "query_size": 1024,
+  "rows": [
+    {
+      "seed": 3001,
+      "condition": {
+        "mode": 0,
+        "gated": false
+      },
+      "ordinary": 0.7333984375,
+      "global_calibrated": 0.7333984375,
+      "gate_calibrated": 0.7333984375,
+      "global_head": 0,
+      "gate_heads": {
+        "0": 0
+      },
+      "calibration_sha256": "148f511771f15a1e95756fd913f3a0aa0bd1c33ab678fa04f0731c99e9e23d4d",
+      "model_sha256": "fd274f982c0dfe9f250b10102070d8741a5892116945e2fba6924aa79e6a2bc6"
+    },
+    {
+      "seed": 3001,
+      "condition": {
+        "mode": 0,
+        "gated": true
+      },
+      "ordinary": 0.685546875,
+      "global_calibrated": 0.685546875,
+      "gate_calibrated": 0.6513671875,
+      "global_head": 0,
+      "gate_heads": {
+        "0": 0,
+        "1": 3
+      },
+      "calibration_sha256": "131c4e862cc0a798aac2e9b3c9cde0057a2cd55d627362092fd9cd442e9f7f1e",
+      "model_sha256": "fd274f982c0dfe9f250b10102070d8741a5892116945e2fba6924aa79e6a2bc6"
+    },
+    {
+      "seed": 3001,
+      "condition": {
+        "mode": 1,
+        "gated": false
+      },
+      "ordinary": 0.71240234375,
+      "global_calibrated": 0.712890625,
+      "gate_calibrated": 0.712890625,
+      "global_head": 3,
+      "gate_heads": {
+        "0": 3
+      },
+      "calibration_sha256": "15f03a2a1b4d61cbef167bdaf2bca1b05e5817aa3839d7f185c13db1442a916d",
+      "model_sha256": "fd274f982c0dfe9f250b10102070d8741a5892116945e2fba6924aa79e6a2bc6"
+    },
+    {
+      "seed": 3001,
+      "condition": {
+        "mode": 1,
+        "gated": true
+      },
+      "ordinary": 0.596435546875,
+      "global_calibrated": 0.5986328125,
+      "gate_calibrated": 0.6396484375,
+      "global_head": 3,
+      "gate_heads": {
+        "0": 3,
+        "1": 0
+      },
+      "calibration_sha256": "07fe4236644e500fa9ef1aca6da58722fce9c123e0c0966e82e7d2824646e781",
+      "model_sha256": "fd274f982c0dfe9f250b10102070d8741a5892116945e2fba6924aa79e6a2bc6"
+    },
+    {
+      "seed": 3002,
+      "condition": {
+        "mode": 0,
+        "gated": false
+      },
+      "ordinary": 0.735107421875,
+      "global_calibrated": 0.7333984375,
+      "gate_calibrated": 0.7333984375,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 2
+      },
+      "calibration_sha256": "609772dd922e92b9819fa765f1b8c0ea94b0392a19e31080ee0b8fedbe526e8c",
+      "model_sha256": "268a5c169c37c379fe6c1bd3f9c59edaead607432ae79849db857bf21bb86c8c"
+    },
+    {
+      "seed": 3002,
+      "condition": {
+        "mode": 0,
+        "gated": true
+      },
+      "ordinary": 0.649658203125,
+      "global_calibrated": 0.6494140625,
+      "gate_calibrated": 0.73046875,
+      "global_head": 0,
+      "gate_heads": {
+        "0": 2,
+        "1": 1
+      },
+      "calibration_sha256": "303a4d9b62d2ebfe9315c0f074c278c668c02c967d726de3263ff0078b64a058",
+      "model_sha256": "268a5c169c37c379fe6c1bd3f9c59edaead607432ae79849db857bf21bb86c8c"
+    },
+    {
+      "seed": 3002,
+      "condition": {
+        "mode": 1,
+        "gated": false
+      },
+      "ordinary": 0.754150390625,
+      "global_calibrated": 0.7529296875,
+      "gate_calibrated": 0.7529296875,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1
+      },
+      "calibration_sha256": "de1ba970e0f7debc134697da679f64335cbad777f7c03ae7988defd747ff6abe",
+      "model_sha256": "268a5c169c37c379fe6c1bd3f9c59edaead607432ae79849db857bf21bb86c8c"
+    },
+    {
+      "seed": 3002,
+      "condition": {
+        "mode": 1,
+        "gated": true
+      },
+      "ordinary": 0.63623046875,
+      "global_calibrated": 0.6298828125,
+      "gate_calibrated": 0.7158203125,
+      "global_head": 0,
+      "gate_heads": {
+        "0": 1,
+        "1": 2
+      },
+      "calibration_sha256": "38313a106e77c930bb972352d2dd10ab9d99cd06d4ebe2c278539734b2bee9b7",
+      "model_sha256": "268a5c169c37c379fe6c1bd3f9c59edaead607432ae79849db857bf21bb86c8c"
+    },
+    {
+      "seed": 3003,
+      "condition": {
+        "mode": 0,
+        "gated": false
+      },
+      "ordinary": 0.68603515625,
+      "global_calibrated": 0.6875,
+      "gate_calibrated": 0.6875,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 2
+      },
+      "calibration_sha256": "210a214b471bd2dca1c1911f8b9e137c61c99d82b63d75119c31593d7d268f06",
+      "model_sha256": "5da6b2af76190063d5a66b3edfffe782cfb55cf1401572e216eb18fde798048d"
+    },
+    {
+      "seed": 3003,
+      "condition": {
+        "mode": 0,
+        "gated": true
+      },
+      "ordinary": 0.682861328125,
+      "global_calibrated": 0.68359375,
+      "gate_calibrated": 0.68359375,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 2,
+        "1": 2
+      },
+      "calibration_sha256": "d831c6cb46ec3dce0ba7fe4523cb2bad22b07cb77b849c215b24d286b5b1b047",
+      "model_sha256": "5da6b2af76190063d5a66b3edfffe782cfb55cf1401572e216eb18fde798048d"
+    },
+    {
+      "seed": 3003,
+      "condition": {
+        "mode": 1,
+        "gated": false
+      },
+      "ordinary": 0.725341796875,
+      "global_calibrated": 0.7041015625,
+      "gate_calibrated": 0.7041015625,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1
+      },
+      "calibration_sha256": "b515127d5dcaa79dd56f623eabb5589a5f90bc15e798aada7433f7fcef712f96",
+      "model_sha256": "5da6b2af76190063d5a66b3edfffe782cfb55cf1401572e216eb18fde798048d"
+    },
+    {
+      "seed": 3003,
+      "condition": {
+        "mode": 1,
+        "gated": true
+      },
+      "ordinary": 0.639892578125,
+      "global_calibrated": 0.6259765625,
+      "gate_calibrated": 0.6220703125,
+      "global_head": 0,
+      "gate_heads": {
+        "0": 1,
+        "1": 0
+      },
+      "calibration_sha256": "849ac740c1d933becaa3dbb0a018c6f39c6d9ea94f500f30789c245c2d8bec2b",
+      "model_sha256": "5da6b2af76190063d5a66b3edfffe782cfb55cf1401572e216eb18fde798048d"
+    },
+    {
+      "seed": 3004,
+      "condition": {
+        "mode": 0,
+        "gated": false
+      },
+      "ordinary": 0.71728515625,
+      "global_calibrated": 0.716796875,
+      "gate_calibrated": 0.716796875,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 2
+      },
+      "calibration_sha256": "b718b0fea746848b76f95f5d99e41af697059dd851da8b4e5cfafba519c7bead",
+      "model_sha256": "ee7e2b796b9443f62f03a05b8b9243e11bd6faab4d7e52bfb018cb406dafc5af"
+    },
+    {
+      "seed": 3004,
+      "condition": {
+        "mode": 0,
+        "gated": true
+      },
+      "ordinary": 0.638916015625,
+      "global_calibrated": 0.6533203125,
+      "gate_calibrated": 0.6953125,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 2,
+        "1": 0
+      },
+      "calibration_sha256": "6ebcf8dfb4c193b44d0d63e4070c9581b20c524cd9467eb6f87cf2654cad5a67",
+      "model_sha256": "ee7e2b796b9443f62f03a05b8b9243e11bd6faab4d7e52bfb018cb406dafc5af"
+    },
+    {
+      "seed": 3004,
+      "condition": {
+        "mode": 1,
+        "gated": false
+      },
+      "ordinary": 0.72314453125,
+      "global_calibrated": 0.7236328125,
+      "gate_calibrated": 0.7236328125,
+      "global_head": 0,
+      "gate_heads": {
+        "0": 0
+      },
+      "calibration_sha256": "5c75835667aa4c9399ab150b8161f168a7b4498c3365ea709eac521604334100",
+      "model_sha256": "ee7e2b796b9443f62f03a05b8b9243e11bd6faab4d7e52bfb018cb406dafc5af"
+    },
+    {
+      "seed": 3004,
+      "condition": {
+        "mode": 1,
+        "gated": true
+      },
+      "ordinary": 0.62841796875,
+      "global_calibrated": 0.6376953125,
+      "gate_calibrated": 0.7236328125,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 0,
+        "1": 2
+      },
+      "calibration_sha256": "02178f6cb9e01a013fa0c8c184a7f9ba269549b0d8cc3e3a3106df399205f7c1",
+      "model_sha256": "ee7e2b796b9443f62f03a05b8b9243e11bd6faab4d7e52bfb018cb406dafc5af"
+    },
+    {
+      "seed": 3005,
+      "condition": {
+        "mode": 0,
+        "gated": false
+      },
+      "ordinary": 0.7587890625,
+      "global_calibrated": 0.763671875,
+      "gate_calibrated": 0.763671875,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1
+      },
+      "calibration_sha256": "854a544cba0bd6ad22e026c92896b20f000155d648d011aa9c0a98971a39c187",
+      "model_sha256": "2252768cc55d77e6cfa514fef4594a518758e75bcfa263cfa0901b87401701c4"
+    },
+    {
+      "seed": 3005,
+      "condition": {
+        "mode": 0,
+        "gated": true
+      },
+      "ordinary": 0.63818359375,
+      "global_calibrated": 0.6318359375,
+      "gate_calibrated": 0.7119140625,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 1,
+        "1": 2
+      },
+      "calibration_sha256": "96c0cdcbbca00037b8ed85051f5f550ed5f733b57302d9cdf04ccac6346dac7c",
+      "model_sha256": "2252768cc55d77e6cfa514fef4594a518758e75bcfa263cfa0901b87401701c4"
+    },
+    {
+      "seed": 3005,
+      "condition": {
+        "mode": 1,
+        "gated": false
+      },
+      "ordinary": 0.683349609375,
+      "global_calibrated": 0.6796875,
+      "gate_calibrated": 0.6796875,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 2
+      },
+      "calibration_sha256": "3dda09ffcca5dc8dbfe0a2b76b23fa6ecde9f488587d2f4816814af096d5281d",
+      "model_sha256": "2252768cc55d77e6cfa514fef4594a518758e75bcfa263cfa0901b87401701c4"
+    },
+    {
+      "seed": 3005,
+      "condition": {
+        "mode": 1,
+        "gated": true
+      },
+      "ordinary": 0.637451171875,
+      "global_calibrated": 0.634765625,
+      "gate_calibrated": 0.71484375,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 2,
+        "1": 1
+      },
+      "calibration_sha256": "d4cce7709b6d18d019105373bb34c30beefcdc3bd0d806132f1ac4a4431cea5b",
+      "model_sha256": "2252768cc55d77e6cfa514fef4594a518758e75bcfa263cfa0901b87401701c4"
+    },
+    {
+      "seed": 3006,
+      "condition": {
+        "mode": 0,
+        "gated": false
+      },
+      "ordinary": 0.67578125,
+      "global_calibrated": 0.67578125,
+      "gate_calibrated": 0.67578125,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 2
+      },
+      "calibration_sha256": "c85461217985432cec92090e71e38865181ce0011b8b8b1a59a72e368d11ea33",
+      "model_sha256": "5b69fa552487551b4d28b59cc13afb85d173dcba85ea21810a5715a663207bef"
+    },
+    {
+      "seed": 3006,
+      "condition": {
+        "mode": 0,
+        "gated": true
+      },
+      "ordinary": 0.60791015625,
+      "global_calibrated": 0.6025390625,
+      "gate_calibrated": 0.6962890625,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 2,
+        "1": 3
+      },
+      "calibration_sha256": "f235df11d4dd89c3bbc1e9cbdf0b00c2ffc037ae66dc1b7fe97eb33284812149",
+      "model_sha256": "5b69fa552487551b4d28b59cc13afb85d173dcba85ea21810a5715a663207bef"
+    },
+    {
+      "seed": 3006,
+      "condition": {
+        "mode": 1,
+        "gated": false
+      },
+      "ordinary": 0.7109375,
+      "global_calibrated": 0.7109375,
+      "gate_calibrated": 0.7109375,
+      "global_head": 3,
+      "gate_heads": {
+        "0": 3
+      },
+      "calibration_sha256": "7688fed9b7043cf2e1b9661ed20aad107b8ed8d6a08d585945cdeb6d9262fc1c",
+      "model_sha256": "5b69fa552487551b4d28b59cc13afb85d173dcba85ea21810a5715a663207bef"
+    },
+    {
+      "seed": 3006,
+      "condition": {
+        "mode": 1,
+        "gated": true
+      },
+      "ordinary": 0.6279296875,
+      "global_calibrated": 0.61328125,
+      "gate_calibrated": 0.705078125,
+      "global_head": 2,
+      "gate_heads": {
+        "0": 3,
+        "1": 2
+      },
+      "calibration_sha256": "f8da47d6288d7445cd86b98b626b25d7628708623b643fca8d2d00362de22f76",
+      "model_sha256": "5b69fa552487551b4d28b59cc13afb85d173dcba85ea21810a5715a663207bef"
+    },
+    {
+      "seed": 3007,
+      "condition": {
+        "mode": 0,
+        "gated": false
+      },
+      "ordinary": 0.69091796875,
+      "global_calibrated": 0.736328125,
+      "gate_calibrated": 0.736328125,
+      "global_head": 0,
+      "gate_heads": {
+        "0": 0
+      },
+      "calibration_sha256": "94d9ba42392d1cdb341a7c57da217bb714b3e0af98b5ac1a87074790949a8034",
+      "model_sha256": "38291f8251dd4969a19752bb078e67684ab3c58f01baeb4d31af9a97e935ea74"
+    },
+    {
+      "seed": 3007,
+      "condition": {
+        "mode": 0,
+        "gated": true
+      },
+      "ordinary": 0.6171875,
+      "global_calibrated": 0.6171875,
+      "gate_calibrated": 0.666015625,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 0,
+        "1": 1
+      },
+      "calibration_sha256": "8b2f14644cc3a707770b6ccbfa05cd99917622a89ce3fa3cd4d4161ce1077029",
+      "model_sha256": "38291f8251dd4969a19752bb078e67684ab3c58f01baeb4d31af9a97e935ea74"
+    },
+    {
+      "seed": 3007,
+      "condition": {
+        "mode": 1,
+        "gated": false
+      },
+      "ordinary": 0.681640625,
+      "global_calibrated": 0.6494140625,
+      "gate_calibrated": 0.6494140625,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1
+      },
+      "calibration_sha256": "e7477d47eb7e113ce232e0950594a6cbc55577f7c047aebf2ee5a1e0e41f071e",
+      "model_sha256": "38291f8251dd4969a19752bb078e67684ab3c58f01baeb4d31af9a97e935ea74"
+    },
+    {
+      "seed": 3007,
+      "condition": {
+        "mode": 1,
+        "gated": true
+      },
+      "ordinary": 0.6328125,
+      "global_calibrated": 0.63671875,
+      "gate_calibrated": 0.6923828125,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1,
+        "1": 0
+      },
+      "calibration_sha256": "b7e3742595a395480ac820c6bb3a7c7072b876c94ef633c74fba6210629a65e0",
+      "model_sha256": "38291f8251dd4969a19752bb078e67684ab3c58f01baeb4d31af9a97e935ea74"
+    },
+    {
+      "seed": 3008,
+      "condition": {
+        "mode": 0,
+        "gated": false
+      },
+      "ordinary": 0.6962890625,
+      "global_calibrated": 0.6962890625,
+      "gate_calibrated": 0.6962890625,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1
+      },
+      "calibration_sha256": "4a0cdd8e4ee197bc4bb5cddc60e6db1874886e2cd44dd73c402d4d9848e06f51",
+      "model_sha256": "e2b20f5f95446a269c8bf3dcb01a2a8a51572fd5ed50ac24ec4ce4d3bce46612"
+    },
+    {
+      "seed": 3008,
+      "condition": {
+        "mode": 0,
+        "gated": true
+      },
+      "ordinary": 0.622314453125,
+      "global_calibrated": 0.6220703125,
+      "gate_calibrated": 0.6220703125,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1,
+        "1": 1
+      },
+      "calibration_sha256": "e877c12d2c0fb27dc00e3ce311f7f70eb2155905d5655113039b13e3182ba37c",
+      "model_sha256": "e2b20f5f95446a269c8bf3dcb01a2a8a51572fd5ed50ac24ec4ce4d3bce46612"
+    },
+    {
+      "seed": 3008,
+      "condition": {
+        "mode": 1,
+        "gated": false
+      },
+      "ordinary": 0.5576171875,
+      "global_calibrated": 0.5576171875,
+      "gate_calibrated": 0.5576171875,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1
+      },
+      "calibration_sha256": "8875c0494c3fd092748e47c057d52dce0500fbb9c401cac175787e5944328d19",
+      "model_sha256": "e2b20f5f95446a269c8bf3dcb01a2a8a51572fd5ed50ac24ec4ce4d3bce46612"
+    },
+    {
+      "seed": 3008,
+      "condition": {
+        "mode": 1,
+        "gated": true
+      },
+      "ordinary": 0.640380859375,
+      "global_calibrated": 0.640625,
+      "gate_calibrated": 0.640625,
+      "global_head": 1,
+      "gate_heads": {
+        "0": 1,
+        "1": 1
+      },
+      "calibration_sha256": "ed664a164a9fd55f75de09b61e1982b15ae8556036ecb07d3711fcafc9afa8a8",
+      "model_sha256": "e2b20f5f95446a269c8bf3dcb01a2a8a51572fd5ed50ac24ec4ce4d3bce46612"
+    }
+  ],
+  "aggregate": {
+    "False": {
+      "ordinary": 0.70263671875,
+      "global_calibrated": 0.7021484375,
+      "gate_calibrated": 0.7021484375
+    },
+    "True": {
+      "ordinary": 0.636383056640625,
+      "global_calibrated": 0.63519287109375,
+      "gate_calibrated": 0.68194580078125
+    }
+  },
+  "scope": "Exploratory diagnosis, privileged gate/condition grouping; no weight updates; new calibration and query seeds; not a deployable routing method or a causal attribution of all acquisition loss."
+}

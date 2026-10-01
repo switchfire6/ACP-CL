@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "source_unchanged": true,
+  "analysis_lock": true,
+  "protocol_lock": true,
+  "configuration_identity": true,
+  "all_expected_assessments": 48,
+  "scope": "JSON/source/lock/coverage/selection validation; independent tensor audit is separate."
+}
