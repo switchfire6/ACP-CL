@@ -18,5 +18,7 @@ reports/**/*.gz
 reports/**/*.pt
 reports/**/preservation_before.json
 reports/**/preservation_after.json
-# Small archive read by tests/test_core_residual_archive.py (52 KB).
-!reports/core_residual/smoke/raw_results.jsonl.gz
+# The complete locked core/residual smoke archive (~10 MB) is verified by
+# tests/test_core_residual_archive.py, so all of its files are tracked.
+!reports/core_residual/smoke/**/*.npz
+!reports/core_residual/smoke/**/*.gz
