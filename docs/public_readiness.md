@@ -7,8 +7,8 @@ The user authorized publishing the current project to the public repository
 the hypothesis and all three main studies, with paired-seed figures. The
 [Actions page](https://github.com/switchfire6/ACP-CL/actions/workflows/ci.yml)
 records hosted validation; historical local checks below should not be read as
-hosted runs or external scientific replication. No distribution license has
-been selected.
+hosted runs or external scientific replication. The owner selected the MIT
+License on 2026-10-01 (see [LICENSE](../LICENSE)).
 
 The subsequent [CIFAR-10 transfer pilot](../reports/cifar10_transfer_results.md)
 completed all 16 fixed development runs and failed its predeclared continuation
@@ -26,7 +26,7 @@ A reviewable release should contain:
 3. Exact study plans, development-selection rules and outputs, seed identities, attempted-run inventories, and all negative or failed outcomes. Preserve the original source/runtime identities.
 4. Reproducible setup and commands, a clean-environment CPU smoke run, relevant tests and lint, and a clear account of which archived numerical results require their historical GPU environment.
 5. Portable artifact references, an explanation of omitted raw data/checkpoints, and enough per-seed evidence to check the reported comparisons.
-6. A confirmed destination/visibility, accurate attribution, and an explicit licensing status. An open-source release also requires an owner-selected license; this public notebook currently has no distribution license.
+6. A confirmed destination/visibility, accurate attribution, and an explicit licensing status. An open-source release also requires an owner-selected license; the owner selected MIT on 2026-10-01.
 
 Scientific success is not a condition for sharing. A claim of algorithmic benefit requires additional evidence: meaningful gains against appropriately tuned baselines, active and interpretable component controls, independent seeds, established benchmarks, and reported retention/plasticity/resource tradeoffs. The [NeurIPS reproducibility guidance](https://neurips.cc/public/guides/PaperChecklist) similarly separates accurate claims, experimental details, uncertainty, compute disclosure, and access to reproduction materials.
 
@@ -108,7 +108,7 @@ Committed summary tables and diagnostic extracts are not a complete raw-run arch
 
 ## Remaining owner decisions and release checks
 
-- **License:** no project distribution license has been chosen. Confirm the owner's preferred code/documentation terms and any asset exceptions before adding a license. A public repository alone does not make code open source; see [GitHub's licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
+- **License:** MIT, selected by the owner on 2026-10-01 ([LICENSE](../LICENSE)). Third-party datasets and any externally sourced assets keep their own terms. A public repository alone does not make code open source; see [GitHub's licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
 - **Destination:** `switchfire6/ACP-CL`, public, as authorized by the user. The source history and compact research evidence are published together; ignored local data and checkpoints are omitted.
 - **Attribution:** confirm real author/contributor names and citation metadata. Do not invent an owner for `CITATION.cff` or apply the repository's eventual license to third-party work by implication.
 - **Artifacts:** compact evidence and portable export copies are prepared; decide whether to distribute additional raw traces or weights. The source revision for each study and the omission of ignored raw artifacts are documented.

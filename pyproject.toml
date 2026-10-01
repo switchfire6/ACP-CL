@@ -7,6 +7,7 @@ name = "acp-cl"
 version = "0.1.0"
 description = "Continual Relational Learning: falsifiable experiments in learning, reuse, and revision"
 requires-python = ">=3.10"
+license = { text = "MIT" }
 dependencies = [
   "torch>=2.8,<2.9",
   "torchvision>=0.23,<0.24",

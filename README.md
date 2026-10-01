@@ -343,6 +343,7 @@ The original [research report](docs/deep-research-report.md) and
 Historical artifact seals refer to their recorded Git snapshots: `a038786`
 for v3 and `5985b77` for CIFAR-10. Later README edits do not replace those seals.
 
-This is a public research notebook. No distribution license has been selected;
-publication alone does not grant an open-source license. See
+This is a public research notebook, released under the [MIT License](LICENSE).
+Third-party datasets (for example, CIFAR) are not included and keep their own
+terms. See
 [contribution guidance](CONTRIBUTING.md) for experiment-preservation practices.
