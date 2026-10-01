@@ -1,0 +1,203 @@
+{
+  "entities": 3,
+  "T": 12,
+  "horizons_reported": [
+    4,
+    8,
+    12
+  ],
+  "objective": "joint survival of all three entities after step 12",
+  "capacity": 18.0,
+  "maintenance_per_step": 2.0,
+  "initial_reserves": "iid U(1.0, 13.0) per entity per episode; episodes independent",
+  "supply": "s_i(t) ~ N(mu_i(A, t), 0.35^2), NOT clipped; negative supply allowed and audited",
+  "supply_mean": "mu_i(A,t) = mean_supply + imbalance * season(t) * sign_i(A) (+ entity3_mean_offset for i=3); season(t) = +1 for steps 1..6, -1 for steps 7..12; sign(A=0) = base_signs; A=1 multiplies the signs of entities 1 and 2 by (1 - 2*flip_amplitude) (amplitude 1 = full flip)",
+  "supply_mean_table_A0": [
+    [
+      2.7,
+      1.1,
+      1.5
+    ],
+    [
+      2.7,
+      1.1,
+      1.5
+    ],
+    [
+      2.7,
+      1.1,
+      1.5
+    ],
+    [
+      2.7,
+      1.1,
+      1.5
+    ],
+    [
+      2.7,
+      1.1,
+      1.5
+    ],
+    [
+      2.7,
+      1.1,
+      1.5
+    ],
+    [
+      1.1,
+      2.7,
+      2.3
+    ],
+    [
+      1.1,
+      2.7,
+      2.3
+    ],
+    [
+      1.1,
+      2.7,
+      2.3
+    ],
+    [
+      1.1,
+      2.7,
+      2.3
+    ],
+    [
+      1.1,
+      2.7,
+      2.3
+    ],
+    [
+      1.1,
+      2.7,
+      2.3
+    ]
+  ],
+  "supply_mean_table_A1": [
+    [
+      1.1,
+      2.7,
+      1.5
+    ],
+    [
+      1.1,
+      2.7,
+      1.5
+    ],
+    [
+      1.1,
+      2.7,
+      1.5
+    ],
+    [
+      1.1,
+      2.7,
+      1.5
+    ],
+    [
+      1.1,
+      2.7,
+      1.5
+    ],
+    [
+      1.1,
+      2.7,
+      1.5
+    ],
+    [
+      2.7,
+      1.1,
+      2.3
+    ],
+    [
+      2.7,
+      1.1,
+      2.3
+    ],
+    [
+      2.7,
+      1.1,
+      2.3
+    ],
+    [
+      2.7,
+      1.1,
+      2.3
+    ],
+    [
+      2.7,
+      1.1,
+      2.3
+    ],
+    [
+      2.7,
+      1.1,
+      2.3
+    ]
+  ],
+  "channels": {
+    "1->2": {
+      "efficiency": "0.9 (B=0) / 0.3000 (B=1)",
+      "delay": 1.0
+    },
+    "2->3": {
+      "efficiency": 0.9,
+      "delay": "C=0: 6.0 always; C=1: 0.0 if cue1 = 1 (aligned, fast) else 6.0"
+    },
+    "3->1": {
+      "efficiency": 0.8,
+      "delay": 2.0
+    }
+  },
+  "reverse_transfers": "use the same channel (efficiency, delay) as the forward direction: one physical pipe per pair",
+  "actions": {
+    "0": "none",
+    "1": "1->2",
+    "2": "2->1",
+    "3": "2->3",
+    "4": "3->2",
+    "5": "3->1",
+    "6": "1->3"
+  },
+  "transfer_amount": "sent = min(3.0, donor reserve); loss (1-e)*sent booked at departure",
+  "timing": "transfer departs before step 1; a delay d = k + f delivers (1-f) of the delivered amount before the supply of step k+1 and f one step later (integer delays reproduce the persistence convention; d >= 12 never arrives)",
+  "step_order": "arrivals -> supply -> clip at capacity (overflow booked) -> maintenance min(max(stock,0), 2) -> failure check (reserve <= 1e-10)",
+  "failure": "irreversible; physics continues after failure for accounting only (a failed entity still receives supply/arrivals)",
+  "probe": "external 0.3 units per channel per step injected at the channel entry, loss (1-e) at injection, travels with the channel's delay (split rule as transfers), measured at the outlet and discharged to an external sink: it NEVER enters a reserve, so probe level does not change survival or optimal actions",
+  "probe_start": {
+    "value": "steady",
+    "episode": "channel empty at t=0: probe arrivals start after the delay (onset reveals delay)",
+    "steady": "probe flow already running before the episode: arrivals are .3e every step (delay invisible to the probe)"
+  },
+  "probe_levels": {
+    "passive": "probes on",
+    "active": "probes off (channel sensors read pure noise)"
+  },
+  "observations_decision_time": "exact reserves (3) + 3-bit cue (iid uniform); cue bit 1 matters only when C=1; bits 2,3 are distractors",
+  "observations_post_episode": "supply sensors y = s + N(0,0.1^2) per entity per step; probe sensors y = probe arrivals + N(0,0.1^2) per channel per step (the agent's own transfer is NOT sensed); failure step (1..12) or survival per entity; mid-episode reserves are not observed",
+  "contexts": "c = 4A + 2B + C; A: seasonality of entities 1,2 flipped; B: channel 1->2 efficiency lowered by b_gap; C: channel 2<->3 delay fast (d23_fast) only when C=1 and cue1 = 1, otherwise d23_fast + c_delta",
+  "params": {
+    "mean_supply": 1.9,
+    "imbalance": 0.8,
+    "season_flip_step": 6,
+    "base_signs": [
+      1.0,
+      -1.0,
+      -0.5
+    ],
+    "entity3_mean_offset": 0.0,
+    "e12": 0.9,
+    "d12": 1.0,
+    "e23": 0.9,
+    "d23_fast": 0.0,
+    "e31": 0.8,
+    "d31": 2.0,
+    "flip_amplitude": 1.0,
+    "b_gap": 0.6,
+    "c_delta": 6.0,
+    "probe_start": "steady"
+  },
+  "params_sha256": "c0dea6a8dbadc5946f36fc585024b741208b479475906b713fe659b91223cb09",
+  "proposed_by": "reports/commons_d0/calibration.json (proposal rule declared there)"
+}

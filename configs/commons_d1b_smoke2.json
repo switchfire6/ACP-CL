@@ -1,0 +1,114 @@
+{
+  "study": "commons_d1b_smoke2",
+  "protocol": "docs/commons_d1b_protocol.md",
+  "phase": "smoke2",
+  "world": {
+    "separability": "reports/commons_d0b/separability.json",
+    "spec": "reports/commons_d0b/world_spec.json",
+    "key": "1586f04b8d3cc8c2"
+  },
+  "contexts": [
+    "A0B0C0",
+    "A1B0C0",
+    "A0B1C0",
+    "A0B0C1",
+    "A1B1C1"
+  ],
+  "trap_context_seeds": [
+    21299
+  ],
+  "other_context_seeds": [
+    21299
+  ],
+  "episodes": 256,
+  "checkpoint_every": 64,
+  "probe_episodes": [
+    64,
+    128,
+    192,
+    256
+  ],
+  "disagreement_episodes": [
+    128,
+    256
+  ],
+  "panel_size": 512,
+  "oracle": {
+    "draws": 16384,
+    "stream_chunk": 128,
+    "floor_draws": 256
+  },
+  "learner": {
+    "members": 5,
+    "hidden": 128,
+    "minibatch": 64,
+    "grad_clip": 5.0,
+    "bootstrap_p": 0.5,
+    "aux_weight": 1.0,
+    "plan_samples": 256,
+    "capacity": 1024
+  },
+  "base_knobs": {
+    "lr": 0.001,
+    "U": 2,
+    "ema_decay": 0.99
+  },
+  "d1_selection": {
+    "path": "reports/commons_d1/dev/dev_results.json",
+    "sha256": "8bb7f6bf935b19b4c784711f6f5bd61e174f1d698e8bcbb9ac9a4641b988da7d"
+  },
+  "d1b_dev1": {
+    "path": "reports/commons_d1b/dev/dev_results.json",
+    "sha256": "9f5add70031ff5862c6c8b19849b5dd80de592d6b37dfc94e40575f802b0dff1"
+  },
+  "grid": {
+    "MB-prior": {
+      "beta": [
+        1,
+        3
+      ]
+    },
+    "MB-count": {
+      "c": [
+        0.05,
+        0.15
+      ]
+    }
+  },
+  "knobs": {
+    "MB-prior": 3,
+    "MB-count": 0.15
+  },
+  "arms": [
+    "MB",
+    "MB-prior",
+    "MB-count"
+  ],
+  "disagreement_states": 128,
+  "analysis": {
+    "competent_mean": 0.015,
+    "competent_worst": 0.025,
+    "r1_seeds_required": 10,
+    "r2_seeds_required": 20,
+    "endpoint": 256,
+    "trap": {
+      "context": "A1B1C1",
+      "regret_max": 0.025,
+      "actions": [
+        6,
+        9,
+        12
+      ],
+      "ratio_min": 0.5,
+      "critical_loss": 0.015,
+      "definition": "Ratified (Amendment 1). Critical actions: the non-null actions whose removal from O's action set costs >= .015 expected survival on the A1B1C1 panel (O's choice by the selection table, values by the scoring table) = {6: 1->3x3, 9: 2->3x6, 12: 1->3x6}. f_O(a) = fraction of the 512 A1B1C1 panel states in which a is O's selected action. Usage condition (one-sided), per seed: for every critical a, training usage u(a) = (A1B1C1 training episodes with action a) / 4,096 >= 0.5 f_O(a). A seed is clean if its A1B1C1 greedy-probe regret at 4,096 is <= .025 AND the usage condition holds; otherwise it is trapped."
+    },
+    "payback_reference": "MB"
+  },
+  "workers": 6,
+  "threads": 1,
+  "device": "cpu",
+  "stall_seconds": 3600,
+  "stage_attempts": 3,
+  "notes": "Amendment-1 smoke (engineering only): seed 21299 in all 5 contexts, 256 episodes, MB, MB-prior (beta 3), MB-count (c .15)."
+}

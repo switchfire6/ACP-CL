@@ -1,0 +1,256 @@
+{
+  "cfg": {
+    "base_signs": [
+      1.0,
+      -1.0,
+      -1.0
+    ],
+    "probe_start": "steady",
+    "flip_amplitude": 0.5,
+    "b_gap": 0.8,
+    "c_delta": 6.0,
+    "amounts": [
+      3.0,
+      6.0
+    ],
+    "imbalance": 0.8,
+    "b_mode": "swap",
+    "c_mode": "ch23",
+    "e31": 0.9
+  },
+  "seed": 1,
+  "episodes": 20000,
+  "chunk_audit": [
+    {
+      "start": 6000,
+      "identical": true
+    },
+    {
+      "start": 17000,
+      "identical": true
+    }
+  ],
+  "agents": {
+    "O": {
+      "mean_expected_survival": 0.5913282667577672,
+      "mean_realised_survival": 0.5909,
+      "cumulative_regret_vs_O": 0.0,
+      "cumulative_regret_vs_O_se_conservative": 0.37691284695215044,
+      "per_quarter_mean_regret_vs_O": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_freq": [
+        4636,
+        2803,
+        1608,
+        718,
+        564,
+        910,
+        2921,
+        2209,
+        243,
+        201,
+        55,
+        16,
+        3116
+      ]
+    },
+    "I": {
+      "mean_expected_survival": 0.5906941042257833,
+      "mean_realised_survival": 0.59035,
+      "cumulative_regret_vs_O": 12.68325063967518,
+      "cumulative_regret_vs_O_se_conservative": 0.37691863568820644,
+      "per_quarter_mean_regret_vs_O": [
+        0.0006805415136736428,
+        0.0002692035858423424,
+        0.0006640000677050921,
+        0.0009229049607139587
+      ],
+      "action_freq": [
+        3619,
+        2727,
+        1565,
+        895,
+        690,
+        889,
+        3048,
+        2372,
+        174,
+        401,
+        80,
+        16,
+        3524
+      ]
+    },
+    "lookahead": {
+      "mean_expected_survival": 0.5907975917254418,
+      "mean_realised_survival": 0.59045,
+      "cumulative_regret_vs_O": 10.613500646506964,
+      "cumulative_regret_vs_O_se_conservative": 0.37693564240893535,
+      "per_quarter_mean_regret_vs_O": [
+        0.0004915424516691928,
+        0.00018541844465275973,
+        0.0005365885184868603,
+        0.00090915071449258
+      ],
+      "action_freq": [
+        3624,
+        2698,
+        1567,
+        988,
+        745,
+        892,
+        3026,
+        2369,
+        174,
+        417,
+        83,
+        16,
+        3401
+      ]
+    },
+    "tabular": {
+      "mean_expected_survival": 0.35275085386028915,
+      "mean_realised_survival": 0.35365,
+      "cumulative_regret_vs_O": 4771.548257949559,
+      "cumulative_regret_vs_O_se_conservative": 0.3670202212262988,
+      "per_quarter_mean_regret_vs_O": [
+        0.30473541185951486,
+        0.23795286656002362,
+        0.1980644597014034,
+        0.21355691346896996
+      ],
+      "action_freq": [
+        1962,
+        1816,
+        1675,
+        1632,
+        1540,
+        1502,
+        1716,
+        1735,
+        1273,
+        1247,
+        1149,
+        1179,
+        1574
+      ]
+    },
+    "random": {
+      "mean_expected_survival": 0.26516117868823713,
+      "mean_realised_survival": 0.2639,
+      "cumulative_regret_vs_O": 6523.341761390599,
+      "cumulative_regret_vs_O_se_conservative": 0.36049691475406015,
+      "per_quarter_mean_regret_vs_O": [
+        0.33440234802178914,
+        0.31207962572126585,
+        0.3214935392400012,
+        0.3366928392950636
+      ],
+      "action_freq": [
+        1536,
+        1570,
+        1479,
+        1511,
+        1604,
+        1573,
+        1498,
+        1499,
+        1617,
+        1560,
+        1559,
+        1522,
+        1472
+      ]
+    },
+    "none": {
+      "mean_expected_survival": 0.4354995005693687,
+      "mean_realised_survival": 0.4348,
+      "cumulative_regret_vs_O": 3116.5753237679683,
+      "cumulative_regret_vs_O_se_conservative": 0.3796427514773208,
+      "per_quarter_mean_regret_vs_O": [
+        0.164434668783193,
+        0.15276152346422908,
+        0.14555209400006064,
+        0.16056677850611087
+      ],
+      "action_freq": [
+        20000,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "tabular_regret_over_I_regret": 376.2086229711029,
+  "too_easy_flag": false,
+  "tabular_context_accuracy": 0.6736,
+  "lookahead_vs_I": {
+    "gain_in_cumulative_regret": 2.069749993168216,
+    "gain_fraction_of_I_regret": 0.16318766000679008,
+    "paired_se_of_gain_conservative": 0.0150861120293809,
+    "episodes_with_different_action": 320,
+    "decisions_with_lookahead": 5493,
+    "decisions_pruned_to_myopic": 14507,
+    "mean_evpi_bound": 0.0006703725461278582,
+    "seconds": 707.7277345657349,
+    "rule": "report I as a myopic reference and adopt lookahead if gain > 10% of I's regret vs O",
+    "adopt_lookahead_as_reference": true
+  },
+  "I_identification_lag_after_switch": {
+    "all": {
+      "runs": 116,
+      "median": 2.0,
+      "mean": 5.196428571428571,
+      "max": 29,
+      "never_reached": 4
+    },
+    "changed_only_C": {
+      "runs": 12,
+      "median": 10.5,
+      "mean": 13.0,
+      "max": 27,
+      "never_reached": 2
+    },
+    "changed_only_B": {
+      "runs": 19,
+      "median": 1.0,
+      "mean": 3.473684210526316,
+      "max": 20,
+      "never_reached": 0
+    },
+    "heldout_runs": {
+      "runs": 10,
+      "median": 4.0,
+      "mean": 6.3,
+      "max": 16,
+      "never_reached": 0
+    },
+    "minority_runs": {
+      "runs": 12,
+      "median": 1.0,
+      "mean": 2.3636363636363638,
+      "max": 11,
+      "never_reached": 1
+    }
+  },
+  "likelihood_pattern_stats": {
+    "refined": 42616,
+    "floored": 114446,
+    "entries": 6240000
+  },
+  "o_mc_se_mean": 0.0013128685891953828,
+  "seconds": 2613.951745033264
+}

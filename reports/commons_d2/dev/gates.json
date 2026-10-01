@@ -1,0 +1,275 @@
+{
+  "oc": {
+    "rule": "OC's held-out first-encounter probe excess over L <= .010 at every position 5, 10, 20, 40 (mean over dev seeds x held-out combinations reaching that position) AND OC beats G V1-like (G - OC >= .005 on R-held and on R-min) in >= 2 of 3 seeds",
+    "competence_by_position": {
+      "5": {
+        "mean": 0.061027806140495855,
+        "probes": 8
+      },
+      "10": {
+        "mean": 0.061994601645243286,
+        "probes": 8
+      },
+      "20": {
+        "mean": 0.06345161532546838,
+        "probes": 7
+      },
+      "40": {
+        "mean": 0.060581750619989806,
+        "probes": 5
+      }
+    },
+    "competence_passed": false,
+    "beats_G": [
+      {
+        "seed": 22101,
+        "G_minus_OC_R_held": 0.02742309006430174,
+        "G_minus_OC_R_min": 0.044438739031615486,
+        "passes": true
+      },
+      {
+        "seed": 22102,
+        "G_minus_OC_R_held": 0.04517848279253707,
+        "G_minus_OC_R_min": 0.056881363625644,
+        "passes": true
+      },
+      {
+        "seed": 22103,
+        "G_minus_OC_R_held": 0.05488105008087602,
+        "G_minus_OC_R_min": 0.07458101454906829,
+        "passes": true
+      }
+    ],
+    "seeds_beating_G": 3,
+    "passed": false
+  },
+  "core_parity": {
+    "rule": "|G context-average greedy regret at 4096 (dev seeds x 5 contexts) - D1b MB-count test context average (0.00957)| <= 0.003",
+    "G_context_average": 0.009679993084671807,
+    "MB_count_same_seeds": 0.009798885669484066,
+    "D1b_reference": 0.009568609817956443,
+    "difference": 0.00011138326671536469,
+    "paired_G_minus_MBcount": -0.00011889258481225795,
+    "by_context": {
+      "A0B0C0": {
+        "G": 0.004560437640538595,
+        "MB_count": 0.005665885490916474,
+        "D1b_test": 0.007028237474563714
+      },
+      "A1B0C0": {
+        "G": 0.007184536280960903,
+        "MB_count": 0.013347340124583754,
+        "D1b_test": 0.01164794535204868
+      },
+      "A0B1C0": {
+        "G": 0.005990527114041466,
+        "MB_count": 0.010206894835141552,
+        "D1b_test": 0.00665414354255948
+      },
+      "A0B0C1": {
+        "G": 0.013232204617973586,
+        "MB_count": 0.008606174131459957,
+        "D1b_test": 0.01184570562294355
+      },
+      "A1B1C1": {
+        "G": 0.01743225976984449,
+        "MB_count": 0.011168133765318592,
+        "D1b_test": 0.010667017097666784
+      }
+    },
+    "fits": [
+      {
+        "arm": "G",
+        "seed": 22101,
+        "context": "A0B0C0",
+        "regret": 0.005020400300982164
+      },
+      {
+        "arm": "G",
+        "seed": 22101,
+        "context": "A1B0C0",
+        "regret": 0.009764409029520582
+      },
+      {
+        "arm": "G",
+        "seed": 22101,
+        "context": "A0B1C0",
+        "regret": 0.0052519810150526425
+      },
+      {
+        "arm": "G",
+        "seed": 22101,
+        "context": "A0B0C1",
+        "regret": 0.011897090615383021
+      },
+      {
+        "arm": "G",
+        "seed": 22101,
+        "context": "A1B1C1",
+        "regret": 0.0123515616475518
+      },
+      {
+        "arm": "G",
+        "seed": 22102,
+        "context": "A0B0C0",
+        "regret": 0.0038287836650057194
+      },
+      {
+        "arm": "G",
+        "seed": 22102,
+        "context": "A1B0C0",
+        "regret": 0.007748350573542506
+      },
+      {
+        "arm": "G",
+        "seed": 22102,
+        "context": "A0B1C0",
+        "regret": 0.004253861267637493
+      },
+      {
+        "arm": "G",
+        "seed": 22102,
+        "context": "A0B0C1",
+        "regret": 0.015759052151089303
+      },
+      {
+        "arm": "G",
+        "seed": 22102,
+        "context": "A1B1C1",
+        "regret": 0.03224055544567328
+      },
+      {
+        "arm": "G",
+        "seed": 22103,
+        "context": "A0B0C0",
+        "regret": 0.004832128955627901
+      },
+      {
+        "arm": "G",
+        "seed": 22103,
+        "context": "A1B0C0",
+        "regret": 0.004040849239819622
+      },
+      {
+        "arm": "G",
+        "seed": 22103,
+        "context": "A0B1C0",
+        "regret": 0.008465739059434263
+      },
+      {
+        "arm": "G",
+        "seed": 22103,
+        "context": "A0B0C1",
+        "regret": 0.012040471087448434
+      },
+      {
+        "arm": "G",
+        "seed": 22103,
+        "context": "A1B1C1",
+        "regret": 0.007704662216308389
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22101,
+        "context": "A0B0C0",
+        "regret": 0.005782376585939275
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22101,
+        "context": "A1B0C0",
+        "regret": 0.01056091774255119
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22101,
+        "context": "A0B1C0",
+        "regret": 0.010389773408609582
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22101,
+        "context": "A0B0C1",
+        "regret": 0.007884217523694836
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22101,
+        "context": "A1B1C1",
+        "regret": 0.012142713240373748
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22102,
+        "context": "A0B0C0",
+        "regret": 0.005647909150085617
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22102,
+        "context": "A1B0C0",
+        "regret": 0.009881840143031173
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22102,
+        "context": "A0B1C0",
+        "regret": 0.0049317739294099106
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22102,
+        "context": "A0B0C1",
+        "regret": 0.00948650848744137
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22102,
+        "context": "A1B1C1",
+        "regret": 0.010632760177005096
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22103,
+        "context": "A0B0C0",
+        "regret": 0.005567370736724531
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22103,
+        "context": "A1B0C0",
+        "regret": 0.0195992624881689
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22103,
+        "context": "A0B1C0",
+        "regret": 0.015299137167405163
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22103,
+        "context": "A0B0C1",
+        "regret": 0.008447796383243666
+      },
+      {
+        "arm": "MB-count",
+        "seed": 22103,
+        "context": "A1B1C1",
+        "regret": 0.010728927878576933
+      }
+    ],
+    "passed": true
+  },
+  "utc": "2026-09-30T23:02:13.764988+00:00",
+  "identity": {
+    "config_sha256": "d51a1c79f7acab815a2f68114342aac0f6463d4d366d5a41e87d8711b5fe745d",
+    "config_file_sha256": "7e3e10d7d1719ebe4f037e84885359e01c96505201a7f4283fef6ce683da9165",
+    "protocol_sha256": "cb070e7954bc6d9038ea12386949af43d0d526cc25a3705eaaf92ad93fca633b",
+    "scripts_sha256": "f85dbc0d4a21585f18dec704ac510eff6e8efb5e6d4ee65e73daf98686dfd6af",
+    "source_sha256": "badc2448d015272d76becd0ee47b05dd487912d0b45431307da68a664a858d68",
+    "runtime_sha256": "6966039e61905acd7cc78589956b044b9fbedea2578680caafa19052fbb951b4",
+    "world_spec_sha256": "3a947c82b6738aad004cef1cbcc5e892134763323f063a8139a7de52cef0cdc2"
+  },
+  "passed": false
+}

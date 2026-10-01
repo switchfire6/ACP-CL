@@ -1,0 +1,237 @@
+{
+  "dials": {
+    "flip_amplitude": 1.0,
+    "b_gap": 0.6,
+    "c_delta": 6.0
+  },
+  "probe_start": "steady",
+  "seed": 1,
+  "episodes": 20000,
+  "chunk_audit": [
+    {
+      "start": 5000,
+      "stored": "3d6e92d17349ab97acefc99149230fd1e947a161ab36a386114cfbbc429c48d9",
+      "recomputed": "3d6e92d17349ab97acefc99149230fd1e947a161ab36a386114cfbbc429c48d9",
+      "identical": true
+    },
+    {
+      "start": 3000,
+      "stored": "85b94bc602a879428edbb510613d5afd300d1e0ab8b7406a282c2cf96600fdad",
+      "recomputed": "85b94bc602a879428edbb510613d5afd300d1e0ab8b7406a282c2cf96600fdad",
+      "identical": true
+    },
+    {
+      "start": 2000,
+      "stored": "cef24ade1af3e1a41684d3dde8fa7d57ef8b78712bec2c2ae460752beb7e7e94",
+      "recomputed": "cef24ade1af3e1a41684d3dde8fa7d57ef8b78712bec2c2ae460752beb7e7e94",
+      "identical": true
+    }
+  ],
+  "chunks_reused": 0,
+  "agents": {
+    "O": {
+      "mean_expected_survival": 0.6957445887079114,
+      "mean_realised_survival": 0.69795,
+      "cumulative_regret_vs_O": 0.0,
+      "cumulative_regret_vs_O_se_conservative": 0.39087718170431085,
+      "per_quarter_mean_regret_vs_O": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_quarter_cumulative_regret_vs_O": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_freq": [
+        3939,
+        5662,
+        2891,
+        691,
+        1022,
+        2440,
+        3355
+      ]
+    },
+    "I": {
+      "mean_expected_survival": 0.6948571126970849,
+      "mean_realised_survival": 0.697,
+      "cumulative_regret_vs_O": 17.749520216529618,
+      "cumulative_regret_vs_O_se_conservative": 0.3909313801886257,
+      "per_quarter_mean_regret_vs_O": [
+        0.0009813907739157912,
+        0.00047710354695796014,
+        0.0011481919494868635,
+        0.0009432177729453088
+      ],
+      "per_quarter_cumulative_regret_vs_O": [
+        4.906953869578956,
+        2.3855177347898007,
+        5.740959747434317,
+        4.716088864726544
+      ],
+      "action_freq": [
+        3120,
+        5653,
+        2831,
+        624,
+        1213,
+        3107,
+        3452
+      ]
+    },
+    "tabular": {
+      "mean_expected_survival": 0.5019555595099219,
+      "mean_realised_survival": 0.5029,
+      "cumulative_regret_vs_O": 3875.7805839597913,
+      "cumulative_regret_vs_O_se_conservative": 0.3900512758127379,
+      "per_quarter_mean_regret_vs_O": [
+        0.2560748083937585,
+        0.19451027339876814,
+        0.16306687659523705,
+        0.16150415840419455
+      ],
+      "per_quarter_cumulative_regret_vs_O": [
+        1280.3740419687927,
+        972.5513669938407,
+        815.3343829761852,
+        807.5207920209727
+      ],
+      "action_freq": [
+        3045,
+        3559,
+        2771,
+        2313,
+        2427,
+        2562,
+        3323
+      ]
+    },
+    "random": {
+      "mean_expected_survival": 0.40767878759163695,
+      "mean_realised_survival": 0.40785,
+      "cumulative_regret_vs_O": 5761.316022325491,
+      "cumulative_regret_vs_O_se_conservative": 0.3862978875427988,
+      "per_quarter_mean_regret_vs_O": [
+        0.28562118156800453,
+        0.2879650193562132,
+        0.28993658626066365,
+        0.2887404172802166
+      ],
+      "per_quarter_cumulative_regret_vs_O": [
+        1428.1059078400226,
+        1439.8250967810661,
+        1449.6829313033184,
+        1443.702086401083
+      ],
+      "action_freq": [
+        2888,
+        2866,
+        2842,
+        2815,
+        2855,
+        2834,
+        2900
+      ]
+    },
+    "none": {
+      "mean_expected_survival": 0.4979585577295027,
+      "mean_realised_survival": 0.497,
+      "cumulative_regret_vs_O": 3955.7206195681765,
+      "cumulative_regret_vs_O_se_conservative": 0.3952257209347641,
+      "per_quarter_mean_regret_vs_O": [
+        0.19373681503112708,
+        0.1960646268035573,
+        0.20306917339002054,
+        0.1982735086889304
+      ],
+      "per_quarter_cumulative_regret_vs_O": [
+        968.6840751556354,
+        980.3231340177865,
+        1015.3458669501026,
+        991.367543444652
+      ],
+      "action_freq": [
+        20000,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "I_minus_O_mean_expected_survival": -0.0008874760108264809,
+  "tabular_regret_over_I_regret": 218.3597379917001,
+  "too_easy_flag": false,
+  "verdict_rule": "too easy if tabular cumulative regret vs O <= 1.2 x I's cumulative regret vs O",
+  "tabular_agent": "state = 3 reserve bins per entity (<5, 5-9, >=9; 27 cells) x context estimate (nearest PRIVILEGED centroid of 4 last-episode sensor features: entity-1/2 first-minus-second-half supply readings, mean 1->2 probe/.3, mean of first three 2->3 probe readings/.3; centroids = expected features per (context, that episode's cue1), distance standardised by within-context SD) x full 3-bit cue (8) = 1728 cells; Thompson sampling from Beta(1+successes, 1+failures) per cell-action on realised joint survival",
+  "tabular_context_accuracy": 0.67315,
+  "tabular_context_accuracy_by_factor": {
+    "A": 0.9969,
+    "B": 0.99585,
+    "C": 0.67715
+  },
+  "I_identification_lag_after_switch": {
+    "all": {
+      "runs": 116,
+      "median": 1.0,
+      "mean": 10.933333333333334,
+      "max": 104,
+      "never_reached": 11
+    },
+    "changed_only_C": {
+      "runs": 12,
+      "median": 5.5,
+      "mean": 13.6,
+      "max": 53,
+      "never_reached": 2
+    },
+    "changed_only_B": {
+      "runs": 19,
+      "median": 1.0,
+      "mean": 8.733333333333333,
+      "max": 104,
+      "never_reached": 4
+    },
+    "changed_includes_A": {
+      "runs": 62,
+      "median": 1.0,
+      "mean": 10.655172413793103,
+      "max": 77,
+      "never_reached": 4
+    },
+    "heldout_runs": {
+      "runs": 10,
+      "median": 13.0,
+      "mean": 12.5,
+      "max": 30,
+      "never_reached": 2
+    },
+    "minority_runs": {
+      "runs": 12,
+      "median": 1.0,
+      "mean": 7.545454545454546,
+      "max": 50,
+      "never_reached": 1
+    }
+  },
+  "I_weight_on_truth_mean": 0.9408327998232138,
+  "I_weight_on_truth_per_quarter": [
+    0.9526077948544447,
+    0.9574932085171546,
+    0.9392525384345385,
+    0.9139776574867176
+  ],
+  "likelihood_pattern_stats": {
+    "refined": 17591,
+    "entries": 3360000,
+    "floored": 28372
+  },
+  "o_mc_se_mean": 0.0013958089883531258,
+  "seconds": 963.3891096115112
+}

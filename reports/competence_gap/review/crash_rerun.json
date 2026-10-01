@@ -1,0 +1,14 @@
+{
+ "exact": {
+  "query_counts": true,
+  "support_counts": true,
+  "kb": true,
+  "case_simulations": true
+ },
+ "gauge": {
+  "query_counts": true,
+  "support_counts": true,
+  "kb": true,
+  "case_simulations": true
+ }
+}

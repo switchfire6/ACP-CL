@@ -1,0 +1,41 @@
+{
+  "study": "competence_gap",
+  "protocol": "docs/competence_gap_protocol.md",
+  "smoke": false,
+  "seeds": [19101, 19102, 19103, 19104, 19105, 19106],
+  "stage": 3,
+  "arrivals": 8192,
+  "exposure_arrivals": 32768,
+  "chunk": 1024,
+  "checkpoint_every": 1024,
+  "batch_size": 32,
+  "eval_size": 512,
+  "support_replicates": 2,
+  "reference": {"U": 12, "R": 16, "W": 64},
+  "factors": {"U": [12, 3], "R": [16, 256], "W": [64, 256]},
+  "context_width": 12,
+  "experts": 4,
+  "interaction_features": true,
+  "lr": 0.002,
+  "evidence_strength": 1.0,
+  "auxiliary_weight": 1.0,
+  "oracle": {
+    "endpoint_kb": 512,
+    "endpoint_batches": 8,
+    "online_samples": 1024,
+    "online_sub": 256,
+    "online_batches_per_task": 16,
+    "gauge_sensitivity": true
+  },
+  "analysis": {
+    "matter_fraction": 0.25,
+    "consistency_seeds": 5,
+    "competent_excess": 0.010,
+    "bootstrap_resamples": 20000,
+    "analysis_seed": 19282026
+  },
+  "device": "cpu",
+  "threads": 1,
+  "workers": 6,
+  "cpu_affinity": 1365
+}

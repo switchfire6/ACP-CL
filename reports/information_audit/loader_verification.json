@@ -1,0 +1,1179 @@
+{
+  "label": "POST HOC / EXPLORATORY / NOT DECISION-BEARING",
+  "run": "runs/representation_learning_qualification",
+  "summary": "reports/representation_learning/qualification/summary.json",
+  "source_lock": {
+    "src/acp_cl/acquisition/world.py": {
+      "locked": "1840731d517e930b48107e7cdc85eb3158254591d004c5c62f459a6f32be451d",
+      "live": "1840731d517e930b48107e7cdc85eb3158254591d004c5c62f459a6f32be451d",
+      "matches": true
+    },
+    "src/acp_cl/acquisition/study.py": {
+      "locked": "d72af3f2c20e62f1f117279d67d31432fc0690382d9f010c4a179b1f3a703e40",
+      "live": "d72af3f2c20e62f1f117279d67d31432fc0690382d9f010c4a179b1f3a703e40",
+      "matches": true
+    },
+    "src/acp_cl/conditional/world.py": {
+      "locked": "d15f2c092d8bbee653817f27937b3fa6223a1709f2e0663a6ee45dc0173da0d8",
+      "live": "d15f2c092d8bbee653817f27937b3fa6223a1709f2e0663a6ee45dc0173da0d8",
+      "matches": true
+    },
+    "src/acp_cl/persistence/world.py": {
+      "locked": "a545aacde99158e19842c0df31774942e98d84ce72c0c38057f0485d7c855460",
+      "live": "a545aacde99158e19842c0df31774942e98d84ce72c0c38057f0485d7c855460",
+      "matches": true
+    },
+    "src/acp_cl/persistence/study.py": {
+      "locked": "71d694b487ea12ca7c226d8db5db4e65708e656c0586102a01946518f4d4fb82",
+      "live": "71d694b487ea12ca7c226d8db5db4e65708e656c0586102a01946518f4d4fb82",
+      "matches": true
+    },
+    "src/acp_cl/core_residual/evaluation.py": {
+      "locked": "762481a804f0ad9efecd2be33d3253055304795bee6a714768610fa918877b0b",
+      "live": "762481a804f0ad9efecd2be33d3253055304795bee6a714768610fa918877b0b",
+      "matches": true
+    },
+    "src/acp_cl/representation_learning/design.py": {
+      "locked": "59226094d5d10ad22aa5b380c281c342e47c57dfcadd4ad13f56a7dd6280f093",
+      "live": "59226094d5d10ad22aa5b380c281c342e47c57dfcadd4ad13f56a7dd6280f093",
+      "matches": true
+    },
+    "src/acp_cl/predictive_value/mechanism.py": {
+      "locked": "37c126261671b96c9f9b2735cf7abe5e52d591e21d6388ec67d6c222b5724946",
+      "live": "37c126261671b96c9f9b2735cf7abe5e52d591e21d6388ec67d6c222b5724946",
+      "matches": true
+    },
+    "src/acp_cl/conditional/learner.py": {
+      "locked": "f094a5e38cded7770048bff73cbab7a89dd681bf23e3b0dca592463c50a026ac",
+      "live": "f094a5e38cded7770048bff73cbab7a89dd681bf23e3b0dca592463c50a026ac",
+      "matches": true
+    },
+    "src/acp_cl/contextual/learner.py": {
+      "locked": "a8789e0db44adb0f7215e9d4e4ff74dc063c3e55b8c87e1c13ac14f41dccfce1",
+      "live": "a8789e0db44adb0f7215e9d4e4ff74dc063c3e55b8c87e1c13ac14f41dccfce1",
+      "matches": true
+    },
+    "src/acp_cl/representation_learning/learner.py": {
+      "locked": "985a0e6e9445a6a91c79d582cc1bc3add528752d46d91520e2365cf9e46f04b8",
+      "live": "985a0e6e9445a6a91c79d582cc1bc3add528752d46d91520e2365cf9e46f04b8",
+      "matches": true
+    },
+    "src/acp_cl/representation_learning/study.py": {
+      "locked": "656ce29fe5b4272691635642f048e551707760d335e8cb0563d01b6c74705c91",
+      "live": "656ce29fe5b4272691635642f048e551707760d335e8cb0563d01b6c74705c91",
+      "matches": true
+    },
+    "scripts/summarize_representation_learning.py": {
+      "locked": "a124f20564f7864f7db4ece3dab1fb064c498bbe8ff07805b320a995ffd17554",
+      "live": "a124f20564f7864f7db4ece3dab1fb064c498bbe8ff07805b320a995ffd17554",
+      "matches": true
+    }
+  },
+  "counts": {
+    "phases": 24,
+    "endpoint_evaluations": 240,
+    "regenerated_query_panels": 48,
+    "regenerated_supports": 96
+  },
+  "regeneration": "all byte/exactness assertions passed",
+  "comparison": {
+    "max_abs_diff": 0.0,
+    "components": {
+      "per_seed_values": 0.0,
+      "seed_means": 0.0,
+      "bootstrap_bounds": 0.0,
+      "end_target_metrics": 0.0
+    },
+    "pass_flags_match": true,
+    "decision_locked": "STOP",
+    "raw_passed_locked": false,
+    "raw_passed_recomputed": false,
+    "failed_cells": [
+      "interleaved/slot_0/absolute_brier",
+      "interleaved/stage_1/cue_1/cue_benefit",
+      "interleaved/stage_2/cue_1/cue_benefit",
+      "interleaved/stage_3/cue_1/cue_benefit"
+    ]
+  },
+  "cells": [
+    {
+      "name": "fresh/stage_1/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": 1,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.15397806834614108,
+        "18102": 0.16455802283370274,
+        "18103": 0.15763934097908394,
+        "18104": 0.15749378317094073,
+        "18105": 0.15199666964031658,
+        "18106": 0.14907166455803722
+      },
+      "mean": 0.15578959158803704,
+      "lower": 0.1521108189228891,
+      "upper": 0.1598970489945758,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/stage_1/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": 1,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.1849069924676445,
+        "18102": 0.02301431145326874,
+        "18103": 0.030803877778742376,
+        "18104": 0.004864636014492142,
+        "18105": 0.003430729776272144,
+        "18106": 0.20195528299034848
+      },
+      "mean": 0.07482930508012807,
+      "lower": 0.012794096816798889,
+      "upper": 0.1392833465715258,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/stage_2/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": 2,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.1448557583128436,
+        "18102": 0.16242694620488107,
+        "18103": 0.1537791303833166,
+        "18104": 0.15922644109522416,
+        "18105": 0.15400809321181994,
+        "18106": 0.14152120400426177
+      },
+      "mean": 0.15263626220205784,
+      "lower": 0.14675685803822452,
+      "upper": 0.1584315798529892,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/stage_2/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": 2,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.004047805640497365,
+        "18102": 0.008184497486416045,
+        "18103": 0.1882475698505662,
+        "18104": 0.016644932038919355,
+        "18105": 0.2039683342044734,
+        "18106": 0.021054821553859647
+      },
+      "mean": 0.07369132679578867,
+      "lower": 0.011050175282087418,
+      "upper": 0.13870705529845428,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/stage_3/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": 3,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.14557091391889093,
+        "18102": 0.16060763830144265,
+        "18103": 0.13917115325756468,
+        "18104": 0.15293155945813922,
+        "18105": 0.14856755857357232,
+        "18106": 0.1485999775498996
+      },
+      "mean": 0.14924146684325157,
+      "lower": 0.1441026517832706,
+      "upper": 0.15476291892514585,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/stage_3/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": 3,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.01036977430658615,
+        "18102": 0.17990027858269153,
+        "18103": -0.0004891505706100391,
+        "18104": 0.16797429612212728,
+        "18105": 0.022175914339586357,
+        "18106": 0.00015039424964110454
+      },
+      "mean": 0.06334691783833706,
+      "lower": 0.0053113626673724395,
+      "upper": 0.12335016301480173,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/cue_0/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": null,
+      "cue": 0,
+      "per_seed": {
+        "18101": 0.14557091391889093,
+        "18102": 0.16455802283370274,
+        "18103": 0.15763934097908394,
+        "18104": 0.15922644109522416,
+        "18105": 0.14856755857357232,
+        "18106": 0.14152120400426177
+      },
+      "mean": 0.15284724690078932,
+      "lower": 0.14655634502316897,
+      "upper": 0.15935179408238453,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/cue_0/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": null,
+      "cue": 0,
+      "per_seed": {
+        "18101": 0.01036977430658615,
+        "18102": 0.02301431145326874,
+        "18103": 0.030803877778742376,
+        "18104": 0.016644932038919355,
+        "18105": 0.022175914339586357,
+        "18106": 0.021054821553859647
+      },
+      "mean": 0.020677271911827107,
+      "lower": 0.015630479644202545,
+      "upper": 0.025522127629012566,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/cue_1/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": null,
+      "cue": 1,
+      "per_seed": {
+        "18101": 0.1448557583128436,
+        "18102": 0.16242694620488107,
+        "18103": 0.13917115325756468,
+        "18104": 0.15749378317094073,
+        "18105": 0.15199666964031658,
+        "18106": 0.1485999775498996
+      },
+      "mean": 0.1507573813560744,
+      "lower": 0.144743829801063,
+      "upper": 0.15693784162312402,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/cue_1/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": null,
+      "cue": 1,
+      "per_seed": {
+        "18101": 0.004047805640497365,
+        "18102": 0.008184497486416045,
+        "18103": -0.0004891505706100391,
+        "18104": 0.004864636014492142,
+        "18105": 0.003430729776272144,
+        "18106": 0.00015039424964110454
+      },
+      "mean": 0.003364818766118127,
+      "lower": 0.0011335037958052734,
+      "upper": 0.005632268986270397,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/cue_2/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": null,
+      "cue": 2,
+      "per_seed": {
+        "18101": 0.15397806834614108,
+        "18102": 0.16060763830144265,
+        "18103": 0.1537791303833166,
+        "18104": 0.15293155945813922,
+        "18105": 0.15400809321181994,
+        "18106": 0.14907166455803722
+      },
+      "mean": 0.1540626923764828,
+      "lower": 0.15149671426923153,
+      "upper": 0.15712343932007136,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "fresh/cue_2/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "fresh",
+      "slot": 0,
+      "stage": null,
+      "cue": 2,
+      "per_seed": {
+        "18101": 0.1849069924676445,
+        "18102": 0.17990027858269153,
+        "18103": 0.1882475698505662,
+        "18104": 0.16797429612212728,
+        "18105": 0.2039683342044734,
+        "18106": 0.20195528299034848
+      },
+      "mean": 0.18782545903630857,
+      "lower": 0.17794862995603974,
+      "upper": 0.19750029945130906,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_0/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "interleaved",
+      "slot": 0,
+      "stage": null,
+      "cue": null,
+      "per_seed": {
+        "18101": -0.03865269637659424,
+        "18102": 0.010778129856895524,
+        "18103": 0.11156906615107585,
+        "18104": -0.05566015977839606,
+        "18105": 0.1265130228891493,
+        "18106": 0.040749975463398674
+      },
+      "mean": 0.032549556367588175,
+      "lower": -0.022119467656216796,
+      "upper": 0.0879487139001241,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_0/absolute_brier",
+      "kind": "absolute_brier",
+      "phase": "interleaved",
+      "slot": 0,
+      "stage": null,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.2665472922421467,
+        "18102": 0.21454177137479608,
+        "18103": 0.11462637374757505,
+        "18104": 0.2865567736964969,
+        "18105": 0.10080566479518913,
+        "18106": 0.1905040409424396
+      },
+      "mean": 0.19559698613310725,
+      "lower": 0.13931831490046065,
+      "upper": 0.2512042825360861,
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": false
+    },
+    {
+      "name": "interleaved/slot_1/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "interleaved",
+      "slot": 1,
+      "stage": null,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.10758908225198177,
+        "18102": 0.11979914498241907,
+        "18103": 0.1155440229097131,
+        "18104": 0.13525045895815396,
+        "18105": 0.12648894052839968,
+        "18106": 0.09733567940465279
+      },
+      "mean": 0.11700122150588672,
+      "lower": 0.10714903816930062,
+      "upper": 0.12660475743954372,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_1/absolute_brier",
+      "kind": "absolute_brier",
+      "phase": "interleaved",
+      "slot": 1,
+      "stage": null,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.12232266243152401,
+        "18102": 0.11300885727352931,
+        "18103": 0.107511662916952,
+        "18104": 0.09650565330289627,
+        "18105": 0.10351603198565407,
+        "18106": 0.12978782978835
+      },
+      "mean": 0.11210878294981762,
+      "lower": 0.10342731512793034,
+      "upper": 0.12136850684262623,
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_2/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "interleaved",
+      "slot": 2,
+      "stage": 1,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.13977381177251372,
+        "18102": 0.116581738364303,
+        "18103": 0.11442326508302847,
+        "18104": 0.13638177045798355,
+        "18105": 0.1259224871795133,
+        "18106": 0.13855897300564302
+      },
+      "mean": 0.12860700764383085,
+      "lower": 0.12035929854181421,
+      "upper": 0.1362924980711566,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_2/absolute_brier",
+      "kind": "absolute_brier",
+      "phase": "interleaved",
+      "slot": 2,
+      "stage": 1,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.08398184332237285,
+        "18102": 0.11507925829111565,
+        "18103": 0.10782448234762265,
+        "18104": 0.096045193683147,
+        "18105": 0.10500642220684889,
+        "18106": 0.08435581076429416
+      },
+      "mean": 0.09871550176923354,
+      "lower": 0.08962115401055498,
+      "upper": 0.10809425829128022,
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": true
+    },
+    {
+      "name": "interleaved/stage_1/cue_0/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 2,
+      "stage": 1,
+      "cue": 0,
+      "per_seed": {
+        "18102": 0.009154154376707996,
+        "18103": 0.010043443422830818
+      },
+      "mean": 0.009598798899769407,
+      "lower": 0.009154154376707996,
+      "upper": 0.010043443422830818,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/stage_1/cue_1/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 2,
+      "stage": 1,
+      "cue": 1,
+      "per_seed": {
+        "18104": 0.0011011509125329472,
+        "18105": -0.0014050066045519921
+      },
+      "mean": -0.00015192784600952247,
+      "lower": -0.0014050066045519921,
+      "upper": 0.0011011509125329472,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_1/cue_2/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 2,
+      "stage": 1,
+      "cue": 2,
+      "per_seed": {
+        "18101": 0.16010090665288101,
+        "18106": 0.16088266953403085
+      },
+      "mean": 0.16049178809345593,
+      "lower": 0.16010090665288101,
+      "upper": 0.16088266953403085,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_3/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "interleaved",
+      "slot": 3,
+      "stage": 2,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.1394828070589736,
+        "18102": 0.118647021468135,
+        "18103": 0.12320758766129139,
+        "18104": 0.13615411172137198,
+        "18105": 0.1303182017682376,
+        "18106": 0.13971301308369422
+      },
+      "mean": 0.131253790460284,
+      "lower": 0.1244826116181863,
+      "upper": 0.1369609107436774,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_3/absolute_brier",
+      "kind": "absolute_brier",
+      "phase": "interleaved",
+      "slot": 3,
+      "stage": 2,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.08492981422265251,
+        "18102": 0.11402029110576067,
+        "18103": 0.09856292155236548,
+        "18104": 0.09634866512861648,
+        "18105": 0.0962977209565559,
+        "18106": 0.0835574557971165
+      },
+      "mean": 0.09561947812717791,
+      "lower": 0.08827864504946183,
+      "upper": 0.10365037903681944,
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": true
+    },
+    {
+      "name": "interleaved/stage_2/cue_0/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 3,
+      "stage": 2,
+      "cue": 0,
+      "per_seed": {
+        "18102": 0.007358130323148124,
+        "18103": 0.0015720821427609166,
+        "18104": 0.007891631691489619,
+        "18106": 0.0062769666370498176
+      },
+      "mean": 0.005774702698612119,
+      "lower": 0.0030185941878577184,
+      "upper": 0.007624881007318871,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/stage_2/cue_1/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 3,
+      "stage": 2,
+      "cue": 1,
+      "per_seed": {
+        "18101": -0.00041450528582986923,
+        "18102": 0.0027314247454297766,
+        "18104": 0.004423647054439046,
+        "18105": -0.0035326571474115845
+      },
+      "mean": 0.0008019773416568423,
+      "lower": -0.001973581216620727,
+      "upper": 0.0035775358999344115,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_2/cue_2/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 3,
+      "stage": 2,
+      "cue": 2,
+      "per_seed": {
+        "18101": 0.1611324484862887,
+        "18103": 0.11653796701695546,
+        "18105": 0.12306255874689978,
+        "18106": 0.16085282394151296
+      },
+      "mean": 0.1403964495479142,
+      "lower": 0.1198002628819276,
+      "upper": 0.1609926362139008,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_4/marginal_gain",
+      "kind": "marginal_gain",
+      "phase": "interleaved",
+      "slot": 4,
+      "stage": 3,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.13924546026122403,
+        "18102": 0.12869173571546766,
+        "18103": 0.12238302029615422,
+        "18104": 0.11283492026951676,
+        "18105": 0.12858780930918723,
+        "18106": 0.13772988906997602
+      },
+      "mean": 0.12824547248692098,
+      "lower": 0.12074600692477881,
+      "upper": 0.1352050406145092,
+      "minimum": 0.02,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/slot_4/absolute_brier",
+      "kind": "absolute_brier",
+      "phase": "interleaved",
+      "slot": 4,
+      "stage": 3,
+      "cue": null,
+      "per_seed": {
+        "18101": 0.08596252831630122,
+        "18102": 0.10003043348748406,
+        "18103": 0.09924256558347941,
+        "18104": 0.11456745092261524,
+        "18105": 0.0977233722286232,
+        "18106": 0.08657058313484298
+      },
+      "mean": 0.09734948894555767,
+      "lower": 0.09033869345239852,
+      "upper": 0.1049243224956087,
+      "minimum": null,
+      "maximum": 0.12,
+      "passed": true
+    },
+    {
+      "name": "interleaved/stage_3/cue_0/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 4,
+      "stage": 3,
+      "cue": 0,
+      "per_seed": {
+        "18101": 0.0011062934926328316,
+        "18102": 0.017063511742812475,
+        "18103": 0.0022499363984794657,
+        "18104": 0.006943882572788815,
+        "18105": -0.00019720944588435402,
+        "18106": 0.006639440118865379
+      },
+      "mean": 0.005634309146615769,
+      "lower": 0.0016447240264864337,
+      "upper": 0.010762774745701212,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    },
+    {
+      "name": "interleaved/stage_3/cue_1/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 4,
+      "stage": 3,
+      "cue": 1,
+      "per_seed": {
+        "18101": -0.0011582399948392788,
+        "18102": -0.0026926858143189736,
+        "18103": 0.001962755053535943,
+        "18104": 0.001202916093691983,
+        "18105": -0.0031606243799387965,
+        "18106": 0.002101136526922974
+      },
+      "mean": -0.00029079041915769144,
+      "lower": -0.0020216471425471096,
+      "upper": 0.0013620765432950897,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": false
+    },
+    {
+      "name": "interleaved/stage_3/cue_2/cue_benefit",
+      "kind": "cue_benefit",
+      "phase": "interleaved",
+      "slot": 4,
+      "stage": 3,
+      "cue": 2,
+      "per_seed": {
+        "18101": 0.16188970015312476,
+        "18102": 0.10284026217527655,
+        "18103": 0.11659066151553685,
+        "18104": 0.0634640075521713,
+        "18105": 0.12027133398974296,
+        "18106": 0.15883309422426597
+      },
+      "mean": 0.1206481766016864,
+      "lower": 0.09429831041432823,
+      "upper": 0.1463845973766769,
+      "minimum": 0.002,
+      "maximum": null,
+      "passed": true
+    }
+  ],
+  "structure": {
+    "label": "POST HOC / EXPLORATORY / NOT DECISION-BEARING",
+    "mode_claim_confirmed": true,
+    "delay_claim_confirmed": true,
+    "mode_rows": [
+      {
+        "seed": 18101,
+        "reference_modes": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "base_a_mode": 1,
+        "others_mode": 0,
+        "base_a_unique_mode": true,
+        "stage_law_modes": [
+          0,
+          0,
+          0
+        ],
+        "fresh_target_modes": [
+          0,
+          0,
+          0
+        ],
+        "interleaved_arrival_share_of_base_a_mode": 0.2,
+        "training_packet_share_law_index_0": 0.2,
+        "query_observations_identical_across_modes": true,
+        "base_supplies_are_column_swaps": true,
+        "truth_differs_base_a_vs_base_b": 465
+      },
+      {
+        "seed": 18102,
+        "reference_modes": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "base_a_mode": 0,
+        "others_mode": 1,
+        "base_a_unique_mode": true,
+        "stage_law_modes": [
+          1,
+          1,
+          1
+        ],
+        "fresh_target_modes": [
+          1,
+          1,
+          1
+        ],
+        "interleaved_arrival_share_of_base_a_mode": 0.2,
+        "training_packet_share_law_index_0": 0.2,
+        "query_observations_identical_across_modes": true,
+        "base_supplies_are_column_swaps": true,
+        "truth_differs_base_a_vs_base_b": 452
+      },
+      {
+        "seed": 18103,
+        "reference_modes": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "base_a_mode": 1,
+        "others_mode": 0,
+        "base_a_unique_mode": true,
+        "stage_law_modes": [
+          0,
+          0,
+          0
+        ],
+        "fresh_target_modes": [
+          0,
+          0,
+          0
+        ],
+        "interleaved_arrival_share_of_base_a_mode": 0.2,
+        "training_packet_share_law_index_0": 0.2,
+        "query_observations_identical_across_modes": true,
+        "base_supplies_are_column_swaps": true,
+        "truth_differs_base_a_vs_base_b": 453
+      },
+      {
+        "seed": 18104,
+        "reference_modes": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "base_a_mode": 0,
+        "others_mode": 1,
+        "base_a_unique_mode": true,
+        "stage_law_modes": [
+          1,
+          1,
+          1
+        ],
+        "fresh_target_modes": [
+          1,
+          1,
+          1
+        ],
+        "interleaved_arrival_share_of_base_a_mode": 0.2,
+        "training_packet_share_law_index_0": 0.2,
+        "query_observations_identical_across_modes": true,
+        "base_supplies_are_column_swaps": true,
+        "truth_differs_base_a_vs_base_b": 451
+      },
+      {
+        "seed": 18105,
+        "reference_modes": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "base_a_mode": 1,
+        "others_mode": 0,
+        "base_a_unique_mode": true,
+        "stage_law_modes": [
+          0,
+          0,
+          0
+        ],
+        "fresh_target_modes": [
+          0,
+          0,
+          0
+        ],
+        "interleaved_arrival_share_of_base_a_mode": 0.2,
+        "training_packet_share_law_index_0": 0.2,
+        "query_observations_identical_across_modes": true,
+        "base_supplies_are_column_swaps": true,
+        "truth_differs_base_a_vs_base_b": 465
+      },
+      {
+        "seed": 18106,
+        "reference_modes": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "base_a_mode": 0,
+        "others_mode": 1,
+        "base_a_unique_mode": true,
+        "stage_law_modes": [
+          1,
+          1,
+          1
+        ],
+        "fresh_target_modes": [
+          1,
+          1,
+          1
+        ],
+        "interleaved_arrival_share_of_base_a_mode": 0.2,
+        "training_packet_share_law_index_0": 0.2,
+        "query_observations_identical_across_modes": true,
+        "base_supplies_are_column_swaps": true,
+        "truth_differs_base_a_vs_base_b": 451
+      }
+    ],
+    "delay_rows": [
+      {
+        "seed": 18101,
+        "order": [
+          2,
+          1,
+          0
+        ],
+        "delay_stage": 2,
+        "law": {
+          "mode": 0,
+          "active": [
+            1,
+            2
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "predecessor": {
+          "mode": 0,
+          "active": [
+            2
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "same_mode": true,
+        "same_revised_noise": true,
+        "active_difference": [
+          1
+        ],
+        "predecessor_is_immediately_preceding_block": true,
+        "observations_identical": true,
+        "supplies_identical": true,
+        "efficiency_identical": true,
+        "delay_changes_only_on_delayed": true,
+        "truth_differs_only_on_delayed": true,
+        "delayed_queries": 256,
+        "truth_differs_queries": 16,
+        "truth_differs_cells": 30
+      },
+      {
+        "seed": 18102,
+        "order": [
+          0,
+          1,
+          2
+        ],
+        "delay_stage": 2,
+        "law": {
+          "mode": 1,
+          "active": [
+            0,
+            1
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "predecessor": {
+          "mode": 1,
+          "active": [
+            0
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "same_mode": true,
+        "same_revised_noise": true,
+        "active_difference": [
+          1
+        ],
+        "predecessor_is_immediately_preceding_block": true,
+        "observations_identical": true,
+        "supplies_identical": true,
+        "efficiency_identical": true,
+        "delay_changes_only_on_delayed": true,
+        "truth_differs_only_on_delayed": true,
+        "delayed_queries": 256,
+        "truth_differs_queries": 16,
+        "truth_differs_cells": 39
+      },
+      {
+        "seed": 18103,
+        "order": [
+          0,
+          2,
+          1
+        ],
+        "delay_stage": 3,
+        "law": {
+          "mode": 0,
+          "active": [
+            0,
+            1,
+            2
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "predecessor": {
+          "mode": 0,
+          "active": [
+            0,
+            2
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "same_mode": true,
+        "same_revised_noise": true,
+        "active_difference": [
+          1
+        ],
+        "predecessor_is_immediately_preceding_block": true,
+        "observations_identical": true,
+        "supplies_identical": true,
+        "efficiency_identical": true,
+        "delay_changes_only_on_delayed": true,
+        "truth_differs_only_on_delayed": true,
+        "delayed_queries": 256,
+        "truth_differs_queries": 13,
+        "truth_differs_cells": 35
+      },
+      {
+        "seed": 18104,
+        "order": [
+          1,
+          0,
+          2
+        ],
+        "delay_stage": 1,
+        "law": {
+          "mode": 1,
+          "active": [
+            1
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "predecessor": {
+          "mode": 1,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "same_mode": true,
+        "same_revised_noise": true,
+        "active_difference": [
+          1
+        ],
+        "predecessor_is_immediately_preceding_block": true,
+        "observations_identical": true,
+        "supplies_identical": true,
+        "efficiency_identical": true,
+        "delay_changes_only_on_delayed": true,
+        "truth_differs_only_on_delayed": true,
+        "delayed_queries": 256,
+        "truth_differs_queries": 22,
+        "truth_differs_cells": 57
+      },
+      {
+        "seed": 18105,
+        "order": [
+          1,
+          2,
+          0
+        ],
+        "delay_stage": 1,
+        "law": {
+          "mode": 0,
+          "active": [
+            1
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "predecessor": {
+          "mode": 0,
+          "active": [],
+          "revised": false,
+          "noise": 0.0
+        },
+        "same_mode": true,
+        "same_revised_noise": true,
+        "active_difference": [
+          1
+        ],
+        "predecessor_is_immediately_preceding_block": true,
+        "observations_identical": true,
+        "supplies_identical": true,
+        "efficiency_identical": true,
+        "delay_changes_only_on_delayed": true,
+        "truth_differs_only_on_delayed": true,
+        "delayed_queries": 256,
+        "truth_differs_queries": 14,
+        "truth_differs_cells": 40
+      },
+      {
+        "seed": 18106,
+        "order": [
+          2,
+          0,
+          1
+        ],
+        "delay_stage": 3,
+        "law": {
+          "mode": 1,
+          "active": [
+            0,
+            1,
+            2
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "predecessor": {
+          "mode": 1,
+          "active": [
+            0,
+            2
+          ],
+          "revised": false,
+          "noise": 0.0
+        },
+        "same_mode": true,
+        "same_revised_noise": true,
+        "active_difference": [
+          1
+        ],
+        "predecessor_is_immediately_preceding_block": true,
+        "observations_identical": true,
+        "supplies_identical": true,
+        "efficiency_identical": true,
+        "delay_changes_only_on_delayed": true,
+        "truth_differs_only_on_delayed": true,
+        "delayed_queries": 256,
+        "truth_differs_queries": 17,
+        "truth_differs_cells": 51
+      }
+    ]
+  }
+}

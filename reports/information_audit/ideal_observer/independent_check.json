@@ -1,0 +1,2578 @@
+{
+  "label": "POST HOC / EXPLORATORY / NOT DECISION-BEARING",
+  "settings": {
+    "seeds": [
+      18104,
+      18105,
+      18101,
+      18102,
+      18103,
+      18106
+    ],
+    "replicates": 4,
+    "query_draws": 4096,
+    "support_draws": 65536,
+    "kl_records": 2048,
+    "kl_draws": 16384,
+    "exact_seeds": [
+      18104,
+      18105,
+      18101
+    ],
+    "workers": 6,
+    "output": "reports/information_audit/ideal_observer/independent_check.json",
+    "no_write": false
+  },
+  "definitions": "Independent reimplementation check of the Bayes ideal-observer audit.\n\nPOST HOC / EXPLORATORY / NOT DECISION-BEARING. This script is an analysis\nreference for the locked representation-learning qualification run. It never\ntrains, updates, unpickles or executes a learner or checkpoint, never writes\ninto runs/, and cannot alter the locked STOP decision.\n\nLaw identities, hidden modes, clean physical outcomes and counterfactual\noutcomes are EVALUATOR-ONLY quantities. The ideal observer below is an\nanalysis reference, not a learner.\n\nIndependence: this file was written without reading\nscripts/ideal_observer_representation.py, scripts/ideal_observer_mc.py or\nreports/information_audit/ideal_observer/results.json. It uses\nscripts/ideal_observer_load.py only to read saved endpoint arrays (query\nimages, supports, truth, masks, learner forecasts) and to regenerate evaluator\ncases for a pipeline check. Its own code does the following:\n  * decodes every observable (reserve gauges, lossy/delayed glyphs, weather\n    motion, pulse-order signals) from the uint8 frames;\n  * samples hidden supply noise N(0, .35) clipped at 0 and the reserve\n    within its gauge quantisation bin;\n  * builds the law-specific physics by calling AcquisitionWorld.physics\n    (through AcquisitionWorld.simulate) on those sampled cases;\n  * computes per-law survival predictives, the support likelihoods, the law\n    posterior, the ideal-observer mixture and the locked-style scores.\n\nDefinitions\n  oracle O   : predictive P(y | query frames, true law), integrating hidden noise\n               and gauge quantisation.\n  ideal I    : sum_L w_L(support) P(y | query frames, L) over the 5 reference\n               laws, uniform prior, w from the 32-record support likelihood.\n  prior-only : uniform mixture over the 5 laws (no support).\nScores follow reports/information_audit/scoring_spec.md: all-case Brier, and\ncue benefit = focus Brier(flipped forecast) - focus Brier(correct forecast) on\nthe cue's affected subset, per support replicate, then replicate-averaged.\n",
+  "seeds": {
+    "18104": {
+      "order": [
+        1,
+        0,
+        2
+      ],
+      "delay_stage": 1,
+      "laws": [
+        [
+          0,
+          []
+        ],
+        [
+          1,
+          []
+        ],
+        [
+          1,
+          [
+            1
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      ],
+      "checks": {
+        "pipeline_truth_exact": true,
+        "pipeline_support_outcomes_exact": true,
+        "decoded_observables_match_evaluator": true,
+        "realised_noise_mean": 0.0029636346538222088,
+        "realised_noise_sd": 0.3517090192795175,
+        "sampler_noise_mean": -0.00048496962461500146,
+        "sampler_noise_sd": 0.3482363642162866,
+        "realised_zero_fraction": 0.0005696614583333334,
+        "sampler_reserve_within_bin": true,
+        "fresh_delay_panel_identical": true,
+        "fresh_learner_delay_benefit": 0.004864636014492142
+      },
+      "slots": {
+        "0": {
+          "oracle_brier": 0.044373366923537105,
+          "oracle_brier_se": 1.3268781954956832e-05,
+          "ideal_brier": 0.044373366923537105,
+          "ideal_brier_se": 1.3268781954956832e-05,
+          "prior_brier": 0.2717681859017467,
+          "prior_brier_se": 1.2230337044041548e-05,
+          "learner_brier": 0.2865567736964969,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            0,
+            []
+          ],
+          "posterior": [
+            [
+              1.0,
+              9.044575210513337e-61,
+              2.036772174099228e-65,
+              1.1884434423050149e-65,
+              1.4993932609249904e-71
+            ],
+            [
+              1.0,
+              5.845276336279413e-51,
+              3.862190929082435e-51,
+              1.2681970663357824e-51,
+              1.2499267770931083e-44
+            ]
+          ]
+        },
+        "1": {
+          "oracle_brier": 0.045342702579606944,
+          "oracle_brier_se": 2.8953391490744887e-05,
+          "ideal_brier": 0.047220294619158984,
+          "ideal_brier_se": 2.8400167474910864e-05,
+          "prior_brier": 0.0690289058368459,
+          "prior_brier_se": 1.8883534850500788e-05,
+          "learner_brier": 0.09650565330289627,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            1,
+            []
+          ],
+          "posterior": [
+            [
+              9.557412157446225e-70,
+              0.19331268640425048,
+              0.4925706225427542,
+              0.31411669105299533,
+              7.2316161509009e-31
+            ],
+            [
+              1.3168459432326824e-31,
+              0.7956514169932644,
+              0.09245882787149054,
+              0.1118897549636486,
+              1.7159642840800742e-10
+            ]
+          ]
+        },
+        "2": {
+          "oracle_brier": 0.044887008405445766,
+          "oracle_brier_se": 2.7655615398493807e-05,
+          "ideal_brier": 0.04610613705039175,
+          "ideal_brier_se": 2.9387202886141052e-05,
+          "prior_brier": 0.06746370693853047,
+          "prior_brier_se": 2.2071282971341118e-05,
+          "learner_brier": 0.096045193683147,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "1": 0.018463371724161952
+          },
+          "oracle_cue_benefit_se": {
+            "1": 1.9827315419654048e-05
+          },
+          "ideal_cue_benefit": {
+            "1": 0.012482934950837892
+          },
+          "ideal_cue_benefit_se": {
+            "1": 1.8141556328161406e-05
+          },
+          "prior_cue_benefit": {
+            "1": 0.009240609737074301
+          },
+          "prior_cue_benefit_se": {
+            "1": 1.3538578650669534e-05
+          },
+          "learner_cue_benefit": {
+            "1": 0.0011011509125329472
+          },
+          "learner_cue_benefit_se": {
+            "1": 0.0
+          },
+          "law": [
+            1,
+            [
+              1
+            ]
+          ],
+          "posterior": [
+            [
+              9.557412157446225e-70,
+              0.19331268640425048,
+              0.4925706225427542,
+              0.31411669105299533,
+              7.2316161509009e-31
+            ],
+            [
+              1.8158181125240322e-34,
+              0.34225863268969015,
+              0.3078372470794577,
+              0.34990411970064883,
+              5.302032584626774e-10
+            ]
+          ]
+        },
+        "3": {
+          "oracle_brier": 0.043708710833743676,
+          "oracle_brier_se": 2.8270778991265457e-05,
+          "ideal_brier": 0.04620612798414703,
+          "ideal_brier_se": 2.725449007805156e-05,
+          "prior_brier": 0.06760033350001321,
+          "prior_brier_se": 2.3617934624640804e-05,
+          "learner_brier": 0.09634866512861648,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.03656954302277882,
+            "1": 0.019873210554942483
+          },
+          "oracle_cue_benefit_se": {
+            "0": 1.481593768630239e-05,
+            "1": 2.235395733870442e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.011737433356177458,
+            "1": 0.013186186070194728
+          },
+          "ideal_cue_benefit_se": {
+            "0": 1.3615745274681256e-05,
+            "1": 1.4497141969367327e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.011378919013077388,
+            "1": 0.009810010524427829
+          },
+          "prior_cue_benefit_se": {
+            "0": 5.4683470981734615e-06,
+            "1": 1.2347116249781015e-05
+          },
+          "learner_cue_benefit": {
+            "0": 0.007891631691489619,
+            "1": 0.004423647054439046
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "1": 0.0
+          },
+          "law": [
+            1,
+            [
+              0,
+              1
+            ]
+          ],
+          "posterior": [
+            [
+              9.557412157446225e-70,
+              0.19331268640425048,
+              0.4925706225427542,
+              0.31411669105299533,
+              7.2316161509009e-31
+            ],
+            [
+              1.8158181125240322e-34,
+              0.34225863268969015,
+              0.3078372470794577,
+              0.34990411970064883,
+              5.302032584626774e-10
+            ]
+          ]
+        },
+        "4": {
+          "oracle_brier": 0.043559219611537026,
+          "oracle_brier_se": 1.6844553499123742e-05,
+          "ideal_brier": 0.04355921961153547,
+          "ideal_brier_se": 1.6844553498488393e-05,
+          "prior_brier": 0.09077975651433615,
+          "prior_brier_se": 1.9048090052669492e-05,
+          "learner_brier": 0.11456745092261524,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.03415351157212475,
+            "1": 0.010042132642896232,
+            "2": 0.21536275369516164
+          },
+          "oracle_cue_benefit_se": {
+            "0": 3.439925811436729e-05,
+            "1": 1.8125197253616063e-05,
+            "2": 3.4232794538757406e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.034153511571288854,
+            "1": 0.010042132642721451,
+            "2": 0.21536275369039842
+          },
+          "ideal_cue_benefit_se": {
+            "0": 3.439925796170768e-05,
+            "1": 1.812519724295201e-05,
+            "2": 3.423279499027037e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.009160920508438725,
+            "1": 0.004432756038343838,
+            "2": 0.04300267760023578
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.1125980671735749e-05,
+            "1": 3.678182615030531e-06,
+            "2": 7.3448156552073775e-06
+          },
+          "learner_cue_benefit": {
+            "0": 0.006943882572788815,
+            "1": 0.001202916093691983,
+            "2": 0.0634640075521713
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            1,
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              1.0179235916385161e-72,
+              1.5676597885125456e-18,
+              3.048132386076253e-18,
+              2.0406450401993088e-18,
+              1.0
+            ],
+            [
+              3.497066671904295e-38,
+              2.2610087177834324e-11,
+              2.0336161978890353e-11,
+              1.2160257944370799e-14,
+              0.9999999999570417
+            ]
+          ]
+        }
+      },
+      "delay_target_posterior": [
+        {
+          "replicate": 0,
+          "weights": [
+            9.557412157446225e-70,
+            0.19331268640425048,
+            0.4925706225427542,
+            0.31411669105299533,
+            7.2316161509009e-31
+          ],
+          "true_law": 0.4925706225427542,
+          "delay_active": 0.8066873135957495,
+          "predecessor": 0.19331268640425048,
+          "true_law_se": 0.00017349154683178735,
+          "delay_active_se": 0.00047362395503910325
+        },
+        {
+          "replicate": 1,
+          "weights": [
+            1.8158181125240322e-34,
+            0.34225863268969015,
+            0.3078372470794577,
+            0.34990411970064883,
+            5.302032584626774e-10
+          ],
+          "true_law": 0.3078372470794577,
+          "delay_active": 0.6577413673103097,
+          "predecessor": 0.34225863268969015,
+          "true_law_se": 0.00027819159542266783,
+          "delay_active_se": 0.00038869097967223447
+        }
+      ],
+      "zero_count_true_law_records": {
+        "0/0": 0,
+        "0/1": 0,
+        "1/0": 0,
+        "1/1": 0,
+        "2/0": 0,
+        "2/1": 0,
+        "3/0": 0,
+        "3/1": 0,
+        "4/0": 0,
+        "4/1": 0
+      },
+      "kl": {
+        "delay_law": [
+          1,
+          [
+            1
+          ]
+        ],
+        "predecessor": [
+          1,
+          []
+        ],
+        "per_record_nats": 0.030917708016678484,
+        "per_record_nats_se": 0.00046260501291150503,
+        "per_record_nats_by_replicate": [
+          0.03154619912650371,
+          0.03083873391850066,
+          0.031646896302097466,
+          0.0296390027196121
+        ],
+        "per_record_nats_half_draws": 0.030643723750850338,
+        "reverse_per_record_nats": 0.0297873173924167,
+        "reverse_se": 0.0015799723074123243,
+        "per_informative_record_nats": 0.0772942700416962,
+        "records_for_20_to_1": 96.89373714047466,
+        "records_for_20_to_1_by_replicate": [
+          94.9633349342904,
+          97.14186974961387,
+          94.66117135017257,
+          101.0739903057439
+        ],
+        "p_support32_lr_ge_20": 0.11925,
+        "mean_support32_log_lr": 0.9691226778276816,
+        "zero_support_pattern_events": 330,
+        "records_simulated": 8192,
+        "draws": 16384
+      },
+      "exact_reserve_sensitivity": {
+        "0": {
+          "oracle_brier": 0.04433399103581905,
+          "oracle_cue_benefit": {}
+        },
+        "1": {
+          "oracle_brier": 0.04524988698152205,
+          "oracle_cue_benefit": {}
+        },
+        "2": {
+          "oracle_brier": 0.04485089064886173,
+          "oracle_cue_benefit": {
+            "1": 0.018410810176283113
+          }
+        },
+        "3": {
+          "oracle_brier": 0.04364429907097171,
+          "oracle_cue_benefit": {
+            "0": 0.036652468129371604,
+            "1": 0.019847869019334517
+          }
+        },
+        "4": {
+          "oracle_brier": 0.04352554273015509,
+          "oracle_cue_benefit": {
+            "0": 0.03422582273681958,
+            "1": 0.010002164791027703,
+            "2": 0.21525820423331526
+          }
+        }
+      },
+      "fresh_learner_delay_benefit": 0.004864636014492142
+    },
+    "18105": {
+      "order": [
+        1,
+        2,
+        0
+      ],
+      "delay_stage": 1,
+      "laws": [
+        [
+          1,
+          []
+        ],
+        [
+          0,
+          []
+        ],
+        [
+          0,
+          [
+            1
+          ]
+        ],
+        [
+          0,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          0,
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      ],
+      "checks": {
+        "pipeline_truth_exact": true,
+        "pipeline_support_outcomes_exact": true,
+        "decoded_observables_match_evaluator": true,
+        "realised_noise_mean": 0.0010527077346722006,
+        "realised_noise_sd": 0.34989091640554376,
+        "sampler_noise_mean": -0.0005312118725098294,
+        "sampler_noise_sd": 0.3483053530577711,
+        "realised_zero_fraction": 0.0006510416666666666,
+        "sampler_reserve_within_bin": true,
+        "fresh_delay_panel_identical": true,
+        "fresh_learner_delay_benefit": 0.003430729776272144
+      },
+      "slots": {
+        "0": {
+          "oracle_brier": 0.04918307182136535,
+          "oracle_brier_se": 3.248343387101417e-05,
+          "ideal_brier": 0.04918307182136535,
+          "ideal_brier_se": 3.248343387101417e-05,
+          "prior_brier": 0.25895990620386633,
+          "prior_brier_se": 1.4176663325895298e-05,
+          "learner_brier": 0.10080566479518913,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            1,
+            []
+          ],
+          "posterior": [
+            [
+              1.0,
+              2.5041573779260985e-56,
+              2.838884490453162e-56,
+              1.220372270486713e-59,
+              3.7344941905748934e-60
+            ],
+            [
+              1.0,
+              1.0018071686013009e-74,
+              3.204921660750871e-76,
+              5.34001518878677e-78,
+              7.161843853196458e-79
+            ]
+          ]
+        },
+        "1": {
+          "oracle_brier": 0.04622479445000257,
+          "oracle_brier_se": 1.0137296449937504e-05,
+          "ideal_brier": 0.04636469983673733,
+          "ideal_brier_se": 9.128752791757681e-06,
+          "prior_brier": 0.0843792463375333,
+          "prior_brier_se": 1.613310775248567e-05,
+          "learner_brier": 0.10351603198565407,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            0,
+            []
+          ],
+          "posterior": [
+            [
+              8.669449247861676e-67,
+              0.9993664466099629,
+              0.0005911334176906992,
+              7.721365467453597e-06,
+              3.469860687926423e-05
+            ],
+            [
+              1.2142789305315454e-70,
+              0.42256229140459944,
+              0.5774377085953896,
+              1.1003486440593874e-14,
+              1.821865102899603e-17
+            ]
+          ]
+        },
+        "2": {
+          "oracle_brier": 0.04551035419426626,
+          "oracle_brier_se": 1.0686026860439744e-05,
+          "ideal_brier": 0.0461291454690871,
+          "ideal_brier_se": 9.410084470033712e-06,
+          "prior_brier": 0.08384869506291578,
+          "prior_brier_se": 1.621412512926129e-05,
+          "learner_brier": 0.10500642220684889,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "1": 0.015049926353579698
+          },
+          "oracle_cue_benefit_se": {
+            "1": 3.108312795570973e-05
+          },
+          "ideal_cue_benefit": {
+            "1": 0.007755540269712757
+          },
+          "ideal_cue_benefit_se": {
+            "1": 1.5321612037505134e-05
+          },
+          "prior_cue_benefit": {
+            "1": 0.00754257827682886
+          },
+          "prior_cue_benefit_se": {
+            "1": 1.4301025801011e-05
+          },
+          "learner_cue_benefit": {
+            "1": -0.0014050066045519921
+          },
+          "learner_cue_benefit_se": {
+            "1": 0.0
+          },
+          "law": [
+            0,
+            [
+              1
+            ]
+          ],
+          "posterior": [
+            [
+              2.795390695981372e-62,
+              0.46443751874882405,
+              0.5292328211534584,
+              0.0011521369816031106,
+              0.005177523116114393
+            ],
+            [
+              1.2142789305315454e-70,
+              0.42256229140459944,
+              0.5774377085953896,
+              1.1003486440593874e-14,
+              1.821865102899603e-17
+            ]
+          ]
+        },
+        "3": {
+          "oracle_brier": 0.042791139764206794,
+          "oracle_brier_se": 2.154251070208465e-06,
+          "ideal_brier": 0.04418822876743681,
+          "ideal_brier_se": 4.58265716103918e-06,
+          "prior_brier": 0.07454716613225174,
+          "prior_brier_se": 6.421827055736064e-06,
+          "learner_brier": 0.0962977209565559,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "1": 0.011728355977296205,
+            "2": 0.2207797608758685
+          },
+          "oracle_cue_benefit_se": {
+            "1": 1.6629730352521902e-05,
+            "2": 3.0247745729284002e-05
+          },
+          "ideal_cue_benefit": {
+            "1": 0.01200015691962789,
+            "2": 0.2169310151083242
+          },
+          "ideal_cue_benefit_se": {
+            "1": 1.8032262914310704e-05,
+            "2": 3.5210575859082766e-05
+          },
+          "prior_cue_benefit": {
+            "1": 0.007202453510796958,
+            "2": 0.08655597674122287
+          },
+          "prior_cue_benefit_se": {
+            "1": 1.0859033483075825e-05,
+            "2": 1.9676369730702644e-05
+          },
+          "learner_cue_benefit": {
+            "1": -0.0035326571474115845,
+            "2": 0.12306255874689978
+          },
+          "learner_cue_benefit_se": {
+            "1": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            0,
+            [
+              1,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              5.061951708988384e-70,
+              6.43693488637715e-13,
+              7.335005110162407e-13,
+              0.1820250195586819,
+              0.817974980439941
+            ],
+            [
+              3.335831191359733e-62,
+              1.63117297435459e-07,
+              4.0633924815180556e-07,
+              0.8802091881202949,
+              0.11979024242315942
+            ]
+          ]
+        },
+        "4": {
+          "oracle_brier": 0.043085181735902256,
+          "oracle_brier_se": 1.0545045030871726e-05,
+          "ideal_brier": 0.045114303442212074,
+          "ideal_brier_se": 8.767218397197638e-06,
+          "prior_brier": 0.07507165203821689,
+          "prior_brier_se": 8.216936521881435e-06,
+          "learner_brier": 0.0977233722286232,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.035231208438441776,
+            "1": 0.012907276880772159,
+            "2": 0.2159076061843532
+          },
+          "oracle_cue_benefit_se": {
+            "0": 4.1087242052478086e-05,
+            "1": 2.2179706626788938e-05,
+            "2": 2.7131479535919127e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.016197656546404638,
+            "1": 0.012169527303439835,
+            "2": 0.2143471434933656
+          },
+          "ideal_cue_benefit_se": {
+            "0": 2.9426171814349717e-05,
+            "1": 1.7944085854883278e-05,
+            "2": 2.653575321898462e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.007180559272645035,
+            "1": 0.007246208088433695,
+            "2": 0.0856519273976899
+          },
+          "prior_cue_benefit_se": {
+            "0": 7.482544252456873e-06,
+            "1": 1.0498740923103956e-05,
+            "2": 1.7000053319081877e-05
+          },
+          "learner_cue_benefit": {
+            "0": -0.00019720944588435402,
+            "1": -0.0031606243799387965,
+            "2": 0.12027133398974296
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            0,
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              5.061951708988384e-70,
+              6.43693488637715e-13,
+              7.335005110162407e-13,
+              0.1820250195586819,
+              0.817974980439941
+            ],
+            [
+              3.335831191359733e-62,
+              1.63117297435459e-07,
+              4.0633924815180556e-07,
+              0.8802091881202949,
+              0.11979024242315942
+            ]
+          ]
+        }
+      },
+      "delay_target_posterior": [
+        {
+          "replicate": 0,
+          "weights": [
+            2.795390695981372e-62,
+            0.46443751874882405,
+            0.5292328211534584,
+            0.0011521369816031106,
+            0.005177523116114393
+          ],
+          "true_law": 0.5292328211534584,
+          "delay_active": 0.5355624812511759,
+          "predecessor": 0.46443751874882405,
+          "true_law_se": 0.00020564133433531988,
+          "delay_active_se": 0.00019752593099856087
+        },
+        {
+          "replicate": 1,
+          "weights": [
+            1.2142789305315454e-70,
+            0.42256229140459944,
+            0.5774377085953896,
+            1.1003486440593874e-14,
+            1.821865102899603e-17
+          ],
+          "true_law": 0.5774377085953896,
+          "delay_active": 0.5774377085954006,
+          "predecessor": 0.42256229140459944,
+          "true_law_se": 5.453299503614732e-05,
+          "delay_active_se": 5.453299502809256e-05
+        }
+      ],
+      "zero_count_true_law_records": {
+        "0/0": 0,
+        "0/1": 0,
+        "1/0": 0,
+        "1/1": 0,
+        "2/0": 0,
+        "2/1": 0,
+        "3/0": 0,
+        "3/1": 0,
+        "4/0": 0,
+        "4/1": 0
+      },
+      "kl": {
+        "delay_law": [
+          0,
+          [
+            1
+          ]
+        ],
+        "predecessor": [
+          0,
+          []
+        ],
+        "per_record_nats": 0.0322138579623357,
+        "per_record_nats_se": 0.0006049974048004415,
+        "per_record_nats_by_replicate": [
+          0.031999674900946476,
+          0.03395619905412701,
+          0.03171717562896847,
+          0.031182382265300852
+        ],
+        "per_record_nats_half_draws": 0.03196512074525992,
+        "reverse_per_record_nats": 0.03288272706287042,
+        "reverse_se": 0.001160195296987549,
+        "per_informative_record_nats": 0.08053464490583925,
+        "records_for_20_to_1": 92.9951413164045,
+        "records_for_20_to_1_by_replicate": [
+          93.61758464194223,
+          88.22342773932738,
+          94.45141990568284,
+          96.07130873023718
+        ],
+        "p_support32_lr_ge_20": 0.1385,
+        "mean_support32_log_lr": 0.9981997173905803,
+        "zero_support_pattern_events": 355,
+        "records_simulated": 8192,
+        "draws": 16384
+      },
+      "exact_reserve_sensitivity": {
+        "0": {
+          "oracle_brier": 0.04917541181202978,
+          "oracle_cue_benefit": {}
+        },
+        "1": {
+          "oracle_brier": 0.046282202991036074,
+          "oracle_cue_benefit": {}
+        },
+        "2": {
+          "oracle_brier": 0.04553854227997363,
+          "oracle_cue_benefit": {
+            "1": 0.015173711938162644
+          }
+        },
+        "3": {
+          "oracle_brier": 0.042806877630452315,
+          "oracle_cue_benefit": {
+            "1": 0.011757198969523111,
+            "2": 0.22072464682989654
+          }
+        },
+        "4": {
+          "oracle_brier": 0.043130512644226356,
+          "oracle_cue_benefit": {
+            "0": 0.03518077496749658,
+            "1": 0.012919822180022793,
+            "2": 0.21588569013401868
+          }
+        }
+      },
+      "fresh_learner_delay_benefit": 0.003430729776272144
+    },
+    "18101": {
+      "order": [
+        2,
+        1,
+        0
+      ],
+      "delay_stage": 2,
+      "laws": [
+        [
+          1,
+          []
+        ],
+        [
+          0,
+          []
+        ],
+        [
+          0,
+          [
+            2
+          ]
+        ],
+        [
+          0,
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          0,
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      ],
+      "checks": {
+        "pipeline_truth_exact": true,
+        "pipeline_support_outcomes_exact": true,
+        "decoded_observables_match_evaluator": true,
+        "realised_noise_mean": -0.004335165547904579,
+        "realised_noise_sd": 0.34881204126433246,
+        "sampler_noise_mean": -0.0005568706127440369,
+        "sampler_noise_sd": 0.34834892287123703,
+        "realised_zero_fraction": 0.00016276041666666666,
+        "sampler_reserve_within_bin": true,
+        "fresh_delay_panel_identical": true,
+        "fresh_learner_delay_benefit": 0.004047805640497365
+      },
+      "slots": {
+        "0": {
+          "oracle_brier": 0.04358144691262472,
+          "oracle_brier_se": 1.581172104352483e-05,
+          "ideal_brier": 0.04358144691262472,
+          "ideal_brier_se": 1.581172104352483e-05,
+          "prior_brier": 0.2487375881699651,
+          "prior_brier_se": 7.844878514685394e-06,
+          "learner_brier": 0.2665472922421467,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            1,
+            []
+          ],
+          "posterior": [
+            [
+              1.0,
+              9.394490724393383e-76,
+              3.0940024674758956e-84,
+              2.9405058737788864e-84,
+              7.842816254857777e-83
+            ],
+            [
+              1.0,
+              5.670363223366843e-50,
+              3.0237357804547424e-55,
+              3.026058158166309e-55,
+              2.8087064477047308e-55
+            ]
+          ]
+        },
+        "1": {
+          "oracle_brier": 0.046353682386203826,
+          "oracle_brier_se": 1.042073754204388e-05,
+          "ideal_brier": 0.04634440732361606,
+          "ideal_brier_se": 1.0406102206856022e-05,
+          "prior_brier": 0.10041477704325613,
+          "prior_brier_se": 1.4511997431600642e-05,
+          "learner_brier": 0.12232266243152401,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            0,
+            []
+          ],
+          "posterior": [
+            [
+              2.91769431173525e-66,
+              0.9962401644625775,
+              0.0020232982670098545,
+              0.0004997567474720496,
+              0.0012367805229404989
+            ],
+            [
+              5.7157788895993414e-46,
+              0.9999999984324921,
+              5.353052353382524e-10,
+              5.353052353382524e-10,
+              4.968977389082162e-10
+            ]
+          ]
+        },
+        "2": {
+          "oracle_brier": 0.044761999714925574,
+          "oracle_brier_se": 2.0680252194893304e-05,
+          "ideal_brier": 0.04509825288758763,
+          "ideal_brier_se": 2.059794542262154e-05,
+          "prior_brier": 0.06284956161458588,
+          "prior_brier_se": 1.8811923150483418e-05,
+          "learner_brier": 0.08398184332237285,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "2": 0.2076239529453839
+          },
+          "oracle_cue_benefit_se": {
+            "2": 3.7454746490578096e-05
+          },
+          "ideal_cue_benefit": {
+            "2": 0.20589441257205307
+          },
+          "ideal_cue_benefit_se": {
+            "2": 3.372461604870877e-05
+          },
+          "prior_cue_benefit": {
+            "2": 0.1230127712418584
+          },
+          "prior_cue_benefit_se": {
+            "2": 1.6779768033427333e-05
+          },
+          "learner_cue_benefit": {
+            "2": 0.16010090665288101
+          },
+          "learner_cue_benefit_se": {
+            "2": 0.0
+          },
+          "law": [
+            0,
+            [
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              8.689347861118815e-73,
+              7.008046334860853e-15,
+              0.6859766927550194,
+              0.1730777950226757,
+              0.1409455122222979
+            ],
+            [
+              5.09446290228778e-57,
+              5.94155152606767e-05,
+              0.3414914999467862,
+              0.34147473990196325,
+              0.3169743446359899
+            ]
+          ]
+        },
+        "3": {
+          "oracle_brier": 0.04442283886940762,
+          "oracle_brier_se": 2.5336767904678063e-05,
+          "ideal_brier": 0.04511680841142502,
+          "ideal_brier_se": 2.1906711355535413e-05,
+          "prior_brier": 0.06302738690653738,
+          "prior_brier_se": 2.008185992410912e-05,
+          "learner_brier": 0.08492981422265251,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "1": 0.013886239442702689,
+            "2": 0.20896134519587375
+          },
+          "oracle_cue_benefit_se": {
+            "1": 1.5718791402060124e-05,
+            "2": 4.0557176263452725e-05
+          },
+          "ideal_cue_benefit": {
+            "1": 0.011460053893756744,
+            "2": 0.20659341168879686
+          },
+          "ideal_cue_benefit_se": {
+            "1": 1.3622329732012721e-05,
+            "2": 3.5632507380802486e-05
+          },
+          "prior_cue_benefit": {
+            "1": 0.005390937590234304,
+            "2": 0.1238300319840459
+          },
+          "prior_cue_benefit_se": {
+            "1": 5.552462460165672e-06,
+            "2": 1.7912117560448895e-05
+          },
+          "learner_cue_benefit": {
+            "1": -0.00041450528582986923,
+            "2": 0.1611324484862887
+          },
+          "learner_cue_benefit_se": {
+            "1": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            0,
+            [
+              1,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              4.3431553794091067e-76,
+              1.8355824879325358e-16,
+              0.011159269267843558,
+              0.5450116897540337,
+              0.44382904097812265
+            ],
+            [
+              5.09446290228778e-57,
+              5.94155152606767e-05,
+              0.3414914999467862,
+              0.34147473990196325,
+              0.3169743446359899
+            ]
+          ]
+        },
+        "4": {
+          "oracle_brier": 0.04413757180348815,
+          "oracle_brier_se": 1.4011084083434175e-05,
+          "ideal_brier": 0.046114860929383314,
+          "ideal_brier_se": 1.3860772314993436e-05,
+          "prior_brier": 0.06460278376220958,
+          "prior_brier_se": 1.2923538538503107e-05,
+          "learner_brier": 0.08596252831630122,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.032057434905436825,
+            "1": 0.014676806154117608,
+            "2": 0.21116165213299815
+          },
+          "oracle_cue_benefit_se": {
+            "0": 1.4273039357825481e-05,
+            "1": 1.3456398953310103e-05,
+            "2": 4.738429704781636e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.012148180618129688,
+            "1": 0.011073824743714895,
+            "2": 0.20832413466280136
+          },
+          "ideal_cue_benefit_se": {
+            "0": 5.076092468672305e-06,
+            "1": 9.925058240737188e-06,
+            "2": 4.549335084529967e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.00647213495720643,
+            "1": 0.005244828327132078,
+            "2": 0.12460987902316266
+          },
+          "prior_cue_benefit_se": {
+            "0": 2.0402323694698928e-06,
+            "1": 4.733321741668405e-06,
+            "2": 2.3352351461596977e-05
+          },
+          "learner_cue_benefit": {
+            "0": 0.0011062934926328316,
+            "1": -0.0011582399948392788,
+            "2": 0.16188970015312476
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            0,
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              4.3431553794091067e-76,
+              1.8355824879325358e-16,
+              0.011159269267843558,
+              0.5450116897540337,
+              0.44382904097812265
+            ],
+            [
+              5.09446290228778e-57,
+              5.94155152606767e-05,
+              0.3414914999467862,
+              0.34147473990196325,
+              0.3169743446359899
+            ]
+          ]
+        }
+      },
+      "delay_target_posterior": [
+        {
+          "replicate": 0,
+          "weights": [
+            4.3431553794091067e-76,
+            1.8355824879325358e-16,
+            0.011159269267843558,
+            0.5450116897540337,
+            0.44382904097812265
+          ],
+          "true_law": 0.5450116897540337,
+          "delay_active": 0.9888407307321563,
+          "predecessor": 0.011159269267843558,
+          "true_law_se": 0.00037301410147877305,
+          "delay_active_se": 0.00016884614447697384
+        },
+        {
+          "replicate": 1,
+          "weights": [
+            5.09446290228778e-57,
+            5.94155152606767e-05,
+            0.3414914999467862,
+            0.34147473990196325,
+            0.3169743446359899
+          ],
+          "true_law": 0.34147473990196325,
+          "delay_active": 0.6584490845379531,
+          "predecessor": 0.3414914999467862,
+          "true_law_se": 3.947715931294722e-05,
+          "delay_active_se": 3.9686179222765425e-05
+        }
+      ],
+      "zero_count_true_law_records": {
+        "0/0": 0,
+        "0/1": 0,
+        "1/0": 0,
+        "1/1": 0,
+        "2/0": 0,
+        "2/1": 0,
+        "3/0": 0,
+        "3/1": 0,
+        "4/0": 0,
+        "4/1": 0
+      },
+      "kl": {
+        "delay_law": [
+          0,
+          [
+            1,
+            2
+          ]
+        ],
+        "predecessor": [
+          0,
+          [
+            2
+          ]
+        ],
+        "per_record_nats": 0.02154308844227158,
+        "per_record_nats_se": 0.0019926971913132195,
+        "per_record_nats_by_replicate": [
+          0.02602355698811712,
+          0.018095326172814195,
+          0.018273991130388252,
+          0.02377947947776675
+        ],
+        "per_record_nats_half_draws": 0.021517207321001108,
+        "reverse_per_record_nats": 0.021858945440693157,
+        "reverse_se": 0.0016735877892628886,
+        "per_informative_record_nats": 0.05385772110567894,
+        "records_for_20_to_1": 139.05769739476176,
+        "records_for_20_to_1_by_replicate": [
+          115.11617243261183,
+          165.5528198245289,
+          163.93420857977307,
+          125.9797245080545
+        ],
+        "p_support32_lr_ge_20": 0.072,
+        "mean_support32_log_lr": 0.6618302619355623,
+        "zero_support_pattern_events": 246,
+        "records_simulated": 8192,
+        "draws": 16384
+      },
+      "exact_reserve_sensitivity": {
+        "0": {
+          "oracle_brier": 0.04354304959221432,
+          "oracle_cue_benefit": {}
+        },
+        "1": {
+          "oracle_brier": 0.0464691372665887,
+          "oracle_cue_benefit": {}
+        },
+        "2": {
+          "oracle_brier": 0.044816323377502465,
+          "oracle_cue_benefit": {
+            "2": 0.2075120057186319
+          }
+        },
+        "3": {
+          "oracle_brier": 0.044455767058146495,
+          "oracle_cue_benefit": {
+            "1": 0.013930846611037856,
+            "2": 0.2088446739129722
+          }
+        },
+        "4": {
+          "oracle_brier": 0.044180339489442604,
+          "oracle_cue_benefit": {
+            "0": 0.03210589494556189,
+            "1": 0.014716952387243507,
+            "2": 0.21106845409505895
+          }
+        }
+      },
+      "fresh_learner_delay_benefit": 0.004047805640497365
+    },
+    "18102": {
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "delay_stage": 2,
+      "laws": [
+        [
+          0,
+          []
+        ],
+        [
+          1,
+          []
+        ],
+        [
+          1,
+          [
+            0
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      ],
+      "checks": {
+        "pipeline_truth_exact": true,
+        "pipeline_support_outcomes_exact": true,
+        "decoded_observables_match_evaluator": true,
+        "realised_noise_mean": 0.003390742351855629,
+        "realised_noise_sd": 0.3510234237650121,
+        "sampler_noise_mean": -0.0005390469191474531,
+        "sampler_noise_sd": 0.3483329716256354,
+        "realised_zero_fraction": 0.0005696614583333334,
+        "sampler_reserve_within_bin": true,
+        "fresh_delay_panel_identical": true,
+        "fresh_learner_delay_benefit": 0.008184497486416045
+      },
+      "slots": {
+        "0": {
+          "oracle_brier": 0.04304593442017601,
+          "oracle_brier_se": 2.1025479626547872e-05,
+          "ideal_brier": 0.04304593442017601,
+          "ideal_brier_se": 2.1025479626547872e-05,
+          "prior_brier": 0.26130043231022626,
+          "prior_brier_se": 2.3729309678865883e-05,
+          "learner_brier": 0.21454177137479608,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            0,
+            []
+          ],
+          "posterior": [
+            [
+              1.0,
+              3.791681048106657e-49,
+              3.017263663386589e-51,
+              8.380993689326033e-54,
+              4.2435427077469985e-59
+            ],
+            [
+              1.0,
+              1.8710229044005766e-73,
+              1.152090562589591e-73,
+              7.737185570504069e-73,
+              5.179891979190659e-81
+            ]
+          ]
+        },
+        "1": {
+          "oracle_brier": 0.042275615028241495,
+          "oracle_brier_se": 2.679264156107843e-05,
+          "ideal_brier": 0.04275092561317593,
+          "ideal_brier_se": 2.7958315600991246e-05,
+          "prior_brier": 0.06651563209863767,
+          "prior_brier_se": 1.6656896780083384e-05,
+          "learner_brier": 0.11300885727352931,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            1,
+            []
+          ],
+          "posterior": [
+            [
+              2.3040747680467916e-56,
+              0.6121119818138001,
+              0.05544598400376686,
+              0.33244203418240925,
+              2.3745391433870042e-14
+            ],
+            [
+              8.561972694128895e-53,
+              0.524114047251966,
+              0.44813801776550266,
+              0.027747934982531332,
+              4.995295513353356e-17
+            ]
+          ]
+        },
+        "2": {
+          "oracle_brier": 0.042241333508475996,
+          "oracle_brier_se": 2.632011511553065e-05,
+          "ideal_brier": 0.04343888832493044,
+          "ideal_brier_se": 2.6916106206142257e-05,
+          "prior_brier": 0.06585698011092608,
+          "prior_brier_se": 1.3491329134801758e-05,
+          "learner_brier": 0.11507925829111565,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.03592461463219175
+          },
+          "oracle_cue_benefit_se": {
+            "0": 2.9609814036878345e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.02205242503608635
+          },
+          "ideal_cue_benefit_se": {
+            "0": 2.8641244281197103e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.01749603293110462
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.1623986780742827e-05
+          },
+          "learner_cue_benefit": {
+            "0": 0.009154154376707996
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0
+          },
+          "law": [
+            1,
+            [
+              0
+            ]
+          ],
+          "posterior": [
+            [
+              1.2982430896731948e-58,
+              0.2580892473903289,
+              0.7278388645813987,
+              0.01407188801784432,
+              1.0428230215944552e-11
+            ],
+            [
+              8.561972694128895e-53,
+              0.524114047251966,
+              0.44813801776550266,
+              0.027747934982531332,
+              4.995295513353356e-17
+            ]
+          ]
+        },
+        "3": {
+          "oracle_brier": 0.0416724726552881,
+          "oracle_brier_se": 2.1224207921793974e-05,
+          "ideal_brier": 0.04180260980427928,
+          "ideal_brier_se": 2.1282550153874392e-05,
+          "prior_brier": 0.06548882367782062,
+          "prior_brier_se": 1.228193908628333e-05,
+          "learner_brier": 0.11402029110576067,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.03464811076507128,
+            "1": 0.018656117244972854
+          },
+          "oracle_cue_benefit_se": {
+            "0": 3.9355289476935036e-05,
+            "1": 2.217531919759888e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.03397136097873006,
+            "1": 0.014291754381190912
+          },
+          "ideal_cue_benefit_se": {
+            "0": 4.0322531975657886e-05,
+            "1": 1.6607528758012258e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.01741009415953887,
+            "1": 0.005992429616861042
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.2221631367317003e-05,
+            "1": 8.618596997635295e-06
+          },
+          "learner_cue_benefit": {
+            "0": 0.007358130323148124,
+            "1": 0.0027314247454297766
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "1": 0.0
+          },
+          "law": [
+            1,
+            [
+              0,
+              1
+            ]
+          ],
+          "posterior": [
+            [
+              5.275925142198462e-57,
+              0.022331118206379744,
+              0.0593254546025632,
+              0.9183434271784254,
+              1.2631516081579557e-11
+            ],
+            [
+              3.0102984697232484e-53,
+              0.0025695330427205625,
+              0.3300744365363211,
+              0.6673560304209581,
+              1.3189789117051217e-16
+            ]
+          ]
+        },
+        "4": {
+          "oracle_brier": 0.04025105017450793,
+          "oracle_brier_se": 1.4669544027596246e-05,
+          "ideal_brier": 0.04025105017450792,
+          "ideal_brier_se": 1.4669544027595011e-05,
+          "prior_brier": 0.08746515793176757,
+          "prior_brier_se": 7.891462180497702e-06,
+          "learner_brier": 0.10003043348748406,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.037191459049548334,
+            "1": 0.015657755956635808,
+            "2": 0.21406033065674515
+          },
+          "oracle_cue_benefit_se": {
+            "0": 3.447728054510325e-05,
+            "1": 2.1587891708901595e-05,
+            "2": 3.6469708767485956e-06
+          },
+          "ideal_cue_benefit": {
+            "0": 0.03719145904954714,
+            "1": 0.015657755956635256,
+            "2": 0.21406033065673735
+          },
+          "ideal_cue_benefit_se": {
+            "0": 3.447728054455205e-05,
+            "1": 2.1587891708724806e-05,
+            "2": 3.646970877728084e-06
+          },
+          "prior_cue_benefit": {
+            "0": 0.014673856315707473,
+            "1": 0.005381385051024465,
+            "2": 0.04287514848978673
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.386627675907079e-05,
+            "1": 6.69138276071719e-06,
+            "2": 3.0026077786005446e-06
+          },
+          "learner_cue_benefit": {
+            "0": 0.017063511742812475,
+            "1": -0.0026926858143189736,
+            "2": 0.10284026217527655
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            1,
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              1.0250575544140705e-60,
+              5.575156539956164e-14,
+              1.6634774310236244e-15,
+              1.613580495115257e-14,
+              0.9999999999999265
+            ],
+            [
+              5.993754998456211e-77,
+              1.1533988098836106e-16,
+              3.8932604643537347e-17,
+              1.0307794395519313e-16,
+              0.9999999999999998
+            ]
+          ]
+        }
+      },
+      "delay_target_posterior": [
+        {
+          "replicate": 0,
+          "weights": [
+            5.275925142198462e-57,
+            0.022331118206379744,
+            0.0593254546025632,
+            0.9183434271784254,
+            1.2631516081579557e-11
+          ],
+          "true_law": 0.9183434271784254,
+          "delay_active": 0.918343427191057,
+          "predecessor": 0.0593254546025632,
+          "true_law_se": 0.0004693818890927353,
+          "delay_active_se": 0.00046938188957462165
+        },
+        {
+          "replicate": 1,
+          "weights": [
+            3.0102984697232484e-53,
+            0.0025695330427205625,
+            0.3300744365363211,
+            0.6673560304209581,
+            1.3189789117051217e-16
+          ],
+          "true_law": 0.6673560304209581,
+          "delay_active": 0.6673560304209583,
+          "predecessor": 0.3300744365363211,
+          "true_law_se": 0.0004321631159005082,
+          "delay_active_se": 0.0004321631159005003
+        }
+      ],
+      "zero_count_true_law_records": {
+        "0/0": 0,
+        "0/1": 0,
+        "1/0": 0,
+        "1/1": 0,
+        "2/0": 0,
+        "2/1": 0,
+        "3/0": 0,
+        "3/1": 0,
+        "4/0": 0,
+        "4/1": 0
+      },
+      "kl": {
+        "delay_law": [
+          1,
+          [
+            0,
+            1
+          ]
+        ],
+        "predecessor": [
+          1,
+          [
+            0
+          ]
+        ],
+        "per_record_nats": 0.03668439452706487,
+        "per_record_nats_se": 0.0011268307112921596,
+        "per_record_nats_by_replicate": [
+          0.0358533537686214,
+          0.03941266874294993,
+          0.034107417720281044,
+          0.03736413787640713
+        ],
+        "per_record_nats_half_draws": 0.03606623165220306,
+        "reverse_per_record_nats": 0.035653091969096475,
+        "reverse_se": 0.001059503407394541,
+        "per_informative_record_nats": 0.09171098631766218,
+        "records_for_20_to_1": 81.66230660680009,
+        "records_for_20_to_1_by_replicate": [
+          83.55514780812038,
+          76.00937386636276,
+          87.83228030108712,
+          80.1766732438269
+        ],
+        "p_support32_lr_ge_20": 0.16015,
+        "mean_support32_log_lr": 1.2275092225630437,
+        "zero_support_pattern_events": 389,
+        "records_simulated": 8192,
+        "draws": 16384
+      },
+      "exact_reserve_sensitivity": null,
+      "fresh_learner_delay_benefit": 0.008184497486416045
+    },
+    "18103": {
+      "order": [
+        0,
+        2,
+        1
+      ],
+      "delay_stage": 3,
+      "laws": [
+        [
+          1,
+          []
+        ],
+        [
+          0,
+          []
+        ],
+        [
+          0,
+          [
+            0
+          ]
+        ],
+        [
+          0,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          0,
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      ],
+      "checks": {
+        "pipeline_truth_exact": true,
+        "pipeline_support_outcomes_exact": true,
+        "decoded_observables_match_evaluator": true,
+        "realised_noise_mean": 0.0030124417969143546,
+        "realised_noise_sd": 0.3486990665801019,
+        "sampler_noise_mean": -0.0005645126254004981,
+        "sampler_noise_sd": 0.3483764960949509,
+        "realised_zero_fraction": 0.00048828125,
+        "sampler_reserve_within_bin": true,
+        "fresh_delay_panel_identical": true,
+        "fresh_learner_delay_benefit": -0.0004891505706100391
+      },
+      "slots": {
+        "0": {
+          "oracle_brier": 0.04403221320923573,
+          "oracle_brier_se": 1.5440911473486996e-05,
+          "ideal_brier": 0.04403221320923573,
+          "ideal_brier_se": 1.5440911473486996e-05,
+          "prior_brier": 0.24049604962527518,
+          "prior_brier_se": 2.3281039275369706e-05,
+          "learner_brier": 0.11462637374757505,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            1,
+            []
+          ],
+          "posterior": [
+            [
+              1.0,
+              3.249536803180493e-58,
+              8.966212338315618e-59,
+              2.870714884963831e-66,
+              2.9900251505096437e-66
+            ],
+            [
+              1.0,
+              6.496428111960382e-84,
+              8.015042899694947e-88,
+              7.622178516542484e-81,
+              7.622178516542484e-81
+            ]
+          ]
+        },
+        "1": {
+          "oracle_brier": 0.04231932393740862,
+          "oracle_brier_se": 1.2430093264659707e-05,
+          "ideal_brier": 0.04451101087365769,
+          "ideal_brier_se": 1.1161874837226621e-05,
+          "prior_brier": 0.0816998441046453,
+          "prior_brier_se": 1.7368820803223038e-05,
+          "learner_brier": 0.107511662916952,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            0,
+            []
+          ],
+          "posterior": [
+            [
+              9.131465134511138e-65,
+              0.1892877137141836,
+              0.810712284768424,
+              7.432509376990049e-10,
+              7.741413152870276e-10
+            ],
+            [
+              5.300533615590499e-83,
+              0.5038019078336623,
+              0.4961980921663377,
+              2.894866880535745e-20,
+              2.894866880535745e-20
+            ]
+          ]
+        },
+        "2": {
+          "oracle_brier": 0.03998318169324193,
+          "oracle_brier_se": 1.575261245554402e-05,
+          "ideal_brier": 0.041291073288292665,
+          "ideal_brier_se": 1.5643632856384345e-05,
+          "prior_brier": 0.08034647216657564,
+          "prior_brier_se": 1.3258778997972803e-05,
+          "learner_brier": 0.10782448234762265,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.03815876579319592
+          },
+          "oracle_cue_benefit_se": {
+            "0": 2.0548174750954518e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.024741879786731077
+          },
+          "ideal_cue_benefit_se": {
+            "0": 7.448904489765425e-06
+          },
+          "prior_cue_benefit": {
+            "0": 0.01459666458812231
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.1992420755739133e-05
+          },
+          "learner_cue_benefit": {
+            "0": 0.010043443422830818
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0
+          },
+          "law": [
+            0,
+            [
+              0
+            ]
+          ],
+          "posterior": [
+            [
+              9.131465134511138e-65,
+              0.1892877137141836,
+              0.810712284768424,
+              7.432509376990049e-10,
+              7.741413152870276e-10
+            ],
+            [
+              5.300533615590499e-83,
+              0.5038019078336623,
+              0.4961980921663377,
+              2.894866880535745e-20,
+              2.894866880535745e-20
+            ]
+          ]
+        },
+        "3": {
+          "oracle_brier": 0.040547951531092016,
+          "oracle_brier_se": 1.4099083641332345e-05,
+          "ideal_brier": 0.04139126826322976,
+          "ideal_brier_se": 1.43229240019198e-05,
+          "prior_brier": 0.06887393226484224,
+          "prior_brier_se": 5.807789857351442e-06,
+          "learner_brier": 0.09856292155236548,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.02999784225927822,
+            "2": 0.2099992020036249
+          },
+          "oracle_cue_benefit_se": {
+            "0": 3.423775910780254e-05,
+            "2": 3.4036848835159474e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.029552741433928158,
+            "2": 0.20944277484024762
+          },
+          "ideal_cue_benefit_se": {
+            "0": 3.251006641341687e-05,
+            "2": 3.4711831117536304e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.013783243974515538,
+            "2": 0.08410912078218019
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.7004065667492493e-05,
+            "2": 8.213173317506401e-06
+          },
+          "learner_cue_benefit": {
+            "0": 0.0015720821427609166,
+            "2": 0.11653796701695546
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            0,
+            [
+              0,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              2.109263722768194e-80,
+              4.349109232845472e-15,
+              5.89857348723981e-14,
+              0.48982122864825256,
+              0.5101787713516841
+            ],
+            [
+              2.1431202026483195e-89,
+              1.5620113007735537e-21,
+              1.5953713189695766e-21,
+              0.5,
+              0.5
+            ]
+          ]
+        },
+        "4": {
+          "oracle_brier": 0.04144387955457205,
+          "oracle_brier_se": 1.2549804807462721e-05,
+          "ideal_brier": 0.041834023896721015,
+          "ideal_brier_se": 1.363398510565637e-05,
+          "prior_brier": 0.07031142781436212,
+          "prior_brier_se": 5.193256666890519e-06,
+          "learner_brier": 0.09924256558347941,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.030819559343702473,
+            "1": 0.01103509000580137,
+            "2": 0.21043430079524922
+          },
+          "oracle_cue_benefit_se": {
+            "0": 3.4131031739307e-05,
+            "1": 2.2898220519592092e-05,
+            "2": 2.794235071696539e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.029710514059338736,
+            "1": 0.005539977759952425,
+            "2": 0.20994415494477026
+          },
+          "ideal_cue_benefit_se": {
+            "0": 3.1369036852779973e-05,
+            "1": 1.168310920982091e-05,
+            "2": 3.348921967073515e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.013521797339587166,
+            "1": 0.0023395630347852747,
+            "2": 0.08430513264334552
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.678151354734735e-05,
+            "1": 5.6173290171094325e-06,
+            "2": 8.065254626656899e-06
+          },
+          "learner_cue_benefit": {
+            "0": 0.0022499363984794657,
+            "1": 0.001962755053535943,
+            "2": 0.11659066151553685
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            0,
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              2.109263722768194e-80,
+              4.349109232845472e-15,
+              5.89857348723981e-14,
+              0.48982122864825256,
+              0.5101787713516841
+            ],
+            [
+              2.1431202026483195e-89,
+              1.5620113007735537e-21,
+              1.5953713189695766e-21,
+              0.5,
+              0.5
+            ]
+          ]
+        }
+      },
+      "delay_target_posterior": [
+        {
+          "replicate": 0,
+          "weights": [
+            2.109263722768194e-80,
+            4.349109232845472e-15,
+            5.89857348723981e-14,
+            0.48982122864825256,
+            0.5101787713516841
+          ],
+          "true_law": 0.5101787713516841,
+          "delay_active": 0.5101787713516841,
+          "predecessor": 0.48982122864825256,
+          "true_law_se": 0.00011781124573471826,
+          "delay_active_se": 0.00011781124573471826
+        },
+        {
+          "replicate": 1,
+          "weights": [
+            2.1431202026483195e-89,
+            1.5620113007735537e-21,
+            1.5953713189695766e-21,
+            0.5,
+            0.5
+          ],
+          "true_law": 0.5,
+          "delay_active": 0.5,
+          "predecessor": 0.5,
+          "true_law_se": 0.0,
+          "delay_active_se": 0.0
+        }
+      ],
+      "zero_count_true_law_records": {
+        "0/0": 0,
+        "0/1": 0,
+        "1/0": 0,
+        "1/1": 0,
+        "2/0": 0,
+        "2/1": 0,
+        "3/0": 0,
+        "3/1": 0,
+        "4/0": 0,
+        "4/1": 0
+      },
+      "kl": {
+        "delay_law": [
+          0,
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "predecessor": [
+          0,
+          [
+            0,
+            2
+          ]
+        ],
+        "per_record_nats": 0.024323952917487277,
+        "per_record_nats_se": 0.00224644885277808,
+        "per_record_nats_by_replicate": [
+          0.01805880657955665,
+          0.02864421471942849,
+          0.025908923052444854,
+          0.02468386731851912
+        ],
+        "per_record_nats_half_draws": 0.02412296694742909,
+        "reverse_per_record_nats": 0.026457676373165668,
+        "reverse_se": 0.0024780041051573045,
+        "per_informative_record_nats": 0.06080988229371819,
+        "records_for_20_to_1": 123.15976287720332,
+        "records_for_20_to_1_by_replicate": [
+          165.88761058802686,
+          104.58419973796934,
+          115.62550351822915,
+          121.36397570515366
+        ],
+        "p_support32_lr_ge_20": 0.1065,
+        "mean_support32_log_lr": 0.9267907301777341,
+        "zero_support_pattern_events": 295,
+        "records_simulated": 8192,
+        "draws": 16384
+      },
+      "exact_reserve_sensitivity": null,
+      "fresh_learner_delay_benefit": -0.0004891505706100391
+    },
+    "18106": {
+      "order": [
+        2,
+        0,
+        1
+      ],
+      "delay_stage": 3,
+      "laws": [
+        [
+          0,
+          []
+        ],
+        [
+          1,
+          []
+        ],
+        [
+          1,
+          [
+            2
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      ],
+      "checks": {
+        "pipeline_truth_exact": true,
+        "pipeline_support_outcomes_exact": true,
+        "decoded_observables_match_evaluator": true,
+        "realised_noise_mean": -0.005243656994418343,
+        "realised_noise_sd": 0.3525613810637821,
+        "sampler_noise_mean": -0.0005644268151830645,
+        "sampler_noise_sd": 0.34837644952439967,
+        "realised_zero_fraction": 0.000732421875,
+        "sampler_reserve_within_bin": true,
+        "fresh_delay_panel_identical": true,
+        "fresh_learner_delay_benefit": 0.00015039424964110454
+      },
+      "slots": {
+        "0": {
+          "oracle_brier": 0.04399208224931499,
+          "oracle_brier_se": 2.4130936328348315e-05,
+          "ideal_brier": 0.04399208224931499,
+          "ideal_brier_se": 2.4130936328348315e-05,
+          "prior_brier": 0.24987345385698911,
+          "prior_brier_se": 2.5401302864023455e-05,
+          "learner_brier": 0.1905040409424396,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            0,
+            []
+          ],
+          "posterior": [
+            [
+              1.0,
+              8.105988433167444e-52,
+              8.283542703426563e-54,
+              2.913782852588205e-49,
+              8.96951536312542e-49
+            ],
+            [
+              1.0,
+              3.682428162121765e-75,
+              4.5576708860646265e-69,
+              6.399317127951983e-69,
+              2.125209324085034e-68
+            ]
+          ]
+        },
+        "1": {
+          "oracle_brier": 0.04602319243810295,
+          "oracle_brier_se": 1.459966221524154e-05,
+          "ideal_brier": 0.04602319243810295,
+          "ideal_brier_se": 1.459966221524154e-05,
+          "prior_brier": 0.10047029821225442,
+          "prior_brier_se": 2.7888891201299994e-05,
+          "learner_brier": 0.12978782978835,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {},
+          "oracle_cue_benefit_se": {},
+          "ideal_cue_benefit": {},
+          "ideal_cue_benefit_se": {},
+          "prior_cue_benefit": {},
+          "prior_cue_benefit_se": {},
+          "learner_cue_benefit": {},
+          "learner_cue_benefit_se": {},
+          "law": [
+            1,
+            []
+          ],
+          "posterior": [
+            [
+              1.8411293826690473e-85,
+              1.0,
+              7.202775100788605e-28,
+              7.912862641841609e-27,
+              1.8071680724725308e-26
+            ],
+            [
+              1.9171184436682274e-62,
+              1.0,
+              3.894070532861509e-18,
+              1.8781519936738753e-18,
+              1.1264250256344037e-18
+            ]
+          ]
+        },
+        "2": {
+          "oracle_brier": 0.04318242138106143,
+          "oracle_brier_se": 1.853128236447851e-05,
+          "ideal_brier": 0.04663230069197634,
+          "ideal_brier_se": 2.3326178974227996e-05,
+          "prior_brier": 0.06459144282488463,
+          "prior_brier_se": 7.2106448461443635e-06,
+          "learner_brier": 0.08435581076429416,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "2": 0.22166270354064183
+          },
+          "oracle_cue_benefit_se": {
+            "2": 4.053185179386656e-05
+          },
+          "ideal_cue_benefit": {
+            "2": 0.21622535834564766
+          },
+          "ideal_cue_benefit_se": {
+            "2": 4.096243615420606e-05
+          },
+          "prior_cue_benefit": {
+            "2": 0.1290784127371541
+          },
+          "prior_cue_benefit_se": {
+            "2": 2.103815882563775e-05
+          },
+          "learner_cue_benefit": {
+            "2": 0.16088266953403085
+          },
+          "learner_cue_benefit_se": {
+            "2": 0.0
+          },
+          "law": [
+            1,
+            [
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              2.9008256136859744e-79,
+              2.250179708942308e-17,
+              0.13394908088087898,
+              0.4501050701631564,
+              0.4159458489559647
+            ],
+            [
+              3.3649120869837347e-81,
+              1.7623492377462123e-18,
+              0.641527220595621,
+              0.2240783542384382,
+              0.13439442516594086
+            ]
+          ]
+        },
+        "3": {
+          "oracle_brier": 0.043090715465465716,
+          "oracle_brier_se": 1.918291940664329e-05,
+          "ideal_brier": 0.04408758309648142,
+          "ideal_brier_se": 1.889662773621141e-05,
+          "prior_brier": 0.06296245583045917,
+          "prior_brier_se": 5.01851970561451e-06,
+          "learner_brier": 0.0835574557971165,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.03148412299342454,
+            "2": 0.21784369508709966
+          },
+          "oracle_cue_benefit_se": {
+            "0": 2.536023640218793e-05,
+            "2": 3.7062498409866566e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.026230971212449945,
+            "2": 0.21696815565320954
+          },
+          "ideal_cue_benefit_se": {
+            "0": 2.754612859845055e-05,
+            "2": 3.890129235785954e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.012080041156460844,
+            "2": 0.12933502742221265
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.0782351249084639e-05,
+            "2": 2.518155593908405e-05
+          },
+          "learner_cue_benefit": {
+            "0": 0.0062769666370498176,
+            "2": 0.16085282394151296
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            1,
+            [
+              0,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              3.4096339990513393e-74,
+              2.120374208118428e-21,
+              0.00688623541796906,
+              0.5161423316100743,
+              0.4769714329719566
+            ],
+            [
+              1.2850685878026975e-76,
+              5.749948563189488e-20,
+              0.2599109794770569,
+              0.462623493991,
+              0.2774655265319432
+            ]
+          ]
+        },
+        "4": {
+          "oracle_brier": 0.04416273244375286,
+          "oracle_brier_se": 2.079767058666573e-05,
+          "ideal_brier": 0.045380239974466385,
+          "ideal_brier_se": 2.1507315767874734e-05,
+          "prior_brier": 0.06501788783220885,
+          "prior_brier_se": 8.364625829824471e-06,
+          "learner_brier": 0.08657058313484298,
+          "learner_brier_se": 0.0,
+          "oracle_cue_benefit": {
+            "0": 0.03269597542045327,
+            "1": 0.012190386639364684,
+            "2": 0.21890079239577367
+          },
+          "oracle_cue_benefit_se": {
+            "0": 3.3847576443495906e-05,
+            "1": 2.8632161321158512e-05,
+            "2": 5.367104356900384e-05
+          },
+          "ideal_cue_benefit": {
+            "0": 0.027259104711123344,
+            "1": 0.004930321999165738,
+            "2": 0.21641087793304664
+          },
+          "ideal_cue_benefit_se": {
+            "0": 2.9259722604789673e-05,
+            "1": 1.7906021243418694e-05,
+            "2": 4.5368357885056446e-05
+          },
+          "prior_cue_benefit": {
+            "0": 0.012677626198778547,
+            "1": 0.0026614440033057157,
+            "2": 0.12896664634582383
+          },
+          "prior_cue_benefit_se": {
+            "0": 1.1610081454036056e-05,
+            "1": 8.973244787722634e-06,
+            "2": 2.9387101364075596e-05
+          },
+          "learner_cue_benefit": {
+            "0": 0.006639440118865379,
+            "1": 0.002101136526922974,
+            "2": 0.15883309422426597
+          },
+          "learner_cue_benefit_se": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0
+          },
+          "law": [
+            1,
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "posterior": [
+            [
+              3.4096339990513393e-74,
+              2.120374208118428e-21,
+              0.00688623541796906,
+              0.5161423316100743,
+              0.4769714329719566
+            ],
+            [
+              1.2850685878026975e-76,
+              5.749948563189488e-20,
+              0.2599109794770569,
+              0.462623493991,
+              0.2774655265319432
+            ]
+          ]
+        }
+      },
+      "delay_target_posterior": [
+        {
+          "replicate": 0,
+          "weights": [
+            3.4096339990513393e-74,
+            2.120374208118428e-21,
+            0.00688623541796906,
+            0.5161423316100743,
+            0.4769714329719566
+          ],
+          "true_law": 0.4769714329719566,
+          "delay_active": 0.4769714329719566,
+          "predecessor": 0.5161423316100743,
+          "true_law_se": 0.0006554455753139286,
+          "delay_active_se": 0.0006554455753139286
+        },
+        {
+          "replicate": 1,
+          "weights": [
+            1.2850685878026975e-76,
+            5.749948563189488e-20,
+            0.2599109794770569,
+            0.462623493991,
+            0.2774655265319432
+          ],
+          "true_law": 0.2774655265319432,
+          "delay_active": 0.2774655265319432,
+          "predecessor": 0.462623493991,
+          "true_law_se": 0.00014125213707897127,
+          "delay_active_se": 0.00014125213707897127
+        }
+      ],
+      "zero_count_true_law_records": {
+        "0/0": 0,
+        "0/1": 0,
+        "1/0": 0,
+        "1/1": 0,
+        "2/0": 0,
+        "2/1": 0,
+        "3/0": 0,
+        "3/1": 0,
+        "4/0": 0,
+        "4/1": 0
+      },
+      "kl": {
+        "delay_law": [
+          1,
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "predecessor": [
+          1,
+          [
+            0,
+            2
+          ]
+        ],
+        "per_record_nats": 0.024610078041583824,
+        "per_record_nats_se": 0.0010323763776445515,
+        "per_record_nats_by_replicate": [
+          0.02337778800052375,
+          0.027289611877674112,
+          0.02265277989070106,
+          0.025120132397436375
+        ],
+        "per_record_nats_half_draws": 0.0243363171958224,
+        "reverse_per_record_nats": 0.02466190029095866,
+        "reverse_se": 0.0008695385864951251,
+        "per_informative_record_nats": 0.061525195103959554,
+        "records_for_20_to_1": 121.72786565292807,
+        "records_for_20_to_1_by_replicate": [
+          128.1443853236617,
+          109.77555441178067,
+          132.2456796917775,
+          119.2562294719322
+        ],
+        "p_support32_lr_ge_20": 0.0958,
+        "mean_support32_log_lr": 0.8053773733667988,
+        "zero_support_pattern_events": 272,
+        "records_simulated": 8192,
+        "draws": 16384
+      },
+      "exact_reserve_sensitivity": null,
+      "fresh_learner_delay_benefit": 0.00015039424964110454
+    }
+  },
+  "seconds": 2373.0255675999942
+}
